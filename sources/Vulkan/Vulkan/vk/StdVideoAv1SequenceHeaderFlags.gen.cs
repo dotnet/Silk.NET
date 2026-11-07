@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoAV1SequenceHeaderFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1SequenceHeaderFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("still_picture")]
+    [SupportedApiProfile("vulkan")]
     public uint StillPicture
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("reduced_still_picture_header")]
+    [SupportedApiProfile("vulkan")]
     public uint ReducedStillPictureHeader
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("use_128x128_superblock")]
+    [SupportedApiProfile("vulkan")]
     public uint Use128x128Superblock
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_filter_intra")]
+    [SupportedApiProfile("vulkan")]
     public uint EnableFilterIntra
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_intra_edge_filter")]
+    [SupportedApiProfile("vulkan")]
     public uint EnableIntraEdgeFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +67,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_interintra_compound")]
+    [SupportedApiProfile("vulkan")]
     public uint EnableInterintraCompound
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,6 +77,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_masked_compound")]
+    [SupportedApiProfile("vulkan")]
     public uint EnableMaskedCompound
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -78,6 +87,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_warped_motion")]
+    [SupportedApiProfile("vulkan")]
     public uint EnableWarpedMotion
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -87,6 +97,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_dual_filter")]
+    [SupportedApiProfile("vulkan")]
     public uint EnableDualFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -96,6 +107,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_order_hint")]
+    [SupportedApiProfile("vulkan")]
     public uint EnableOrderHint
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -105,6 +117,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_jnt_comp")]
+    [SupportedApiProfile("vulkan")]
     public uint EnableJntComp
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -114,6 +127,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_ref_frame_mvs")]
+    [SupportedApiProfile("vulkan")]
     public uint EnableRefFrameMvs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -123,6 +137,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("frame_id_numbers_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint FrameIdNumbersPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -132,6 +147,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_superres")]
+    [SupportedApiProfile("vulkan")]
     public uint EnableSuperres
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -141,6 +157,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_cdef")]
+    [SupportedApiProfile("vulkan")]
     public uint EnableCdef
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -150,6 +167,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_restoration")]
+    [SupportedApiProfile("vulkan")]
     public uint EnableRestoration
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -159,6 +177,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("film_grain_params_present")]
+    [SupportedApiProfile("vulkan")]
     public uint FilmGrainParamsPresent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -168,6 +187,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("timing_info_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint TimingInfoPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -177,6 +197,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("initial_display_delay_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint InitialDisplayDelayPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -186,6 +207,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

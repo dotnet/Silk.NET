@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceCubicClampFeaturesQCOM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceCubicClampFeaturesQCOM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_filter_cubic_clamp"],
+        ImpliesSets = [
+            "VK_EXT_filter_cubic+VK_EXT_sampler_filter_minmax",
+            "VK_EXT_filter_cubic+VK_VERSION_1_2",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceCubicClampFeaturesQCOM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_filter_cubic_clamp"],
+        ImpliesSets = [
+            "VK_EXT_filter_cubic+VK_EXT_sampler_filter_minmax",
+            "VK_EXT_filter_cubic+VK_VERSION_1_2",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("cubicRangeClamp")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_filter_cubic_clamp"],
+        ImpliesSets = [
+            "VK_EXT_filter_cubic+VK_EXT_sampler_filter_minmax",
+            "VK_EXT_filter_cubic+VK_VERSION_1_2",
+        ]
+    )]
     public MaybeBool<uint> CubicRangeClamp;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_filter_cubic_clamp"],
+        ImpliesSets = [
+            "VK_EXT_filter_cubic+VK_EXT_sampler_filter_minmax",
+            "VK_EXT_filter_cubic+VK_VERSION_1_2",
+        ]
+    )]
     public PhysicalDeviceCubicClampFeaturesQCOM() { }
 }

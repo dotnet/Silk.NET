@@ -9,31 +9,122 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkMemoryToImageCopy")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryToImageCopy
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public StructureType SType = StructureType.MemoryToImageCopy;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public void* PNext;
 
     [NativeName("pHostPointer")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public void* PHostPointer;
 
     [NativeName("memoryRowLength")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public uint MemoryRowLength;
 
     [NativeName("memoryImageHeight")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public uint MemoryImageHeight;
 
     [NativeName("imageSubresource")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public ImageSubresourceLayers ImageSubresource;
 
     [NativeName("imageOffset")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public Offset3D ImageOffset;
 
     [NativeName("imageExtent")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public Extent3D ImageExtent;
 
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public MemoryToImageCopy() { }
 }

@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceLinearColorAttachmentFeaturesNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceLinearColorAttachmentFeaturesNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_linear_color_attachment"],
+        ImpliesSets = [
+            "VK_NV_linear_color_attachment+VK_KHR_get_physical_device_properties2",
+            "VK_NV_linear_color_attachment+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceLinearColorAttachmentFeaturesNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_linear_color_attachment"],
+        ImpliesSets = [
+            "VK_NV_linear_color_attachment+VK_KHR_get_physical_device_properties2",
+            "VK_NV_linear_color_attachment+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("linearColorAttachment")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_linear_color_attachment"],
+        ImpliesSets = [
+            "VK_NV_linear_color_attachment+VK_KHR_get_physical_device_properties2",
+            "VK_NV_linear_color_attachment+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> LinearColorAttachment;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_linear_color_attachment"],
+        ImpliesSets = [
+            "VK_NV_linear_color_attachment+VK_KHR_get_physical_device_properties2",
+            "VK_NV_linear_color_attachment+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceLinearColorAttachmentFeaturesNV() { }
 }

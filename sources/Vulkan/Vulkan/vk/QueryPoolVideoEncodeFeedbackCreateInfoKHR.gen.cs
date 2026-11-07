@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkQueryPoolVideoEncodeFeedbackCreateInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct QueryPoolVideoEncodeFeedbackCreateInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType = StructureType.QueryPoolVideoEncodeFeedbackCreateInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("encodeFeedbackFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public VideoEncodeFeedbackFlagsKHR EncodeFeedbackFlags;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public QueryPoolVideoEncodeFeedbackCreateInfoKHR() { }
 }

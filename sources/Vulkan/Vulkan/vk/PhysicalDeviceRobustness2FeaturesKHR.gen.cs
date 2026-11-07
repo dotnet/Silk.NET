@@ -9,22 +9,71 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceRobustness2FeaturesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRobustness2FeaturesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_robustness2"],
+        ImpliesSets = [
+            "VK_KHR_robustness2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_robustness2+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceRobustness2FeaturesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_robustness2"],
+        ImpliesSets = [
+            "VK_KHR_robustness2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_robustness2+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("robustBufferAccess2")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_robustness2"],
+        ImpliesSets = [
+            "VK_KHR_robustness2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_robustness2+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> RobustBufferAccess2;
 
     [NativeName("robustImageAccess2")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_robustness2"],
+        ImpliesSets = [
+            "VK_KHR_robustness2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_robustness2+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> RobustImageAccess2;
 
     [NativeName("nullDescriptor")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_robustness2"],
+        ImpliesSets = [
+            "VK_KHR_robustness2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_robustness2+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> NullDescriptor;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_robustness2"],
+        ImpliesSets = [
+            "VK_KHR_robustness2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_robustness2+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceRobustness2FeaturesKHR() { }
 }

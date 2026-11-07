@@ -9,22 +9,71 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkCopyMemoryToAccelerationStructureInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyMemoryToAccelerationStructureInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public StructureType SType = StructureType.CopyMemoryToAccelerationStructureInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("src")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public DeviceOrHostAddressConstKHR Src;
 
     [NativeName("dst")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public AccelerationStructureHandleKHR Dst;
 
     [NativeName("mode")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public CopyAccelerationStructureModeKHR Mode;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public CopyMemoryToAccelerationStructureInfoKHR() { }
 }

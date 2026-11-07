@@ -9,28 +9,72 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceMeshShaderFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mesh_shader"],
+        ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceMeshShaderFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mesh_shader"],
+        ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
+    )]
     public void* PNext;
 
     [NativeName("taskShader")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mesh_shader"],
+        ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
+    )]
     public MaybeBool<uint> TaskShader;
 
     [NativeName("meshShader")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_mesh_shader"],
+        ImpliesSets = [
+            "VK_NV_mesh_shader+VK_KHR_get_physical_device_properties2",
+            "VK_NV_mesh_shader+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> MeshShader;
 
     [NativeName("multiviewMeshShader")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mesh_shader"],
+        ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
+    )]
     public MaybeBool<uint> MultiviewMeshShader;
 
     [NativeName("primitiveFragmentShadingRateMeshShader")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mesh_shader"],
+        ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
+    )]
     public MaybeBool<uint> PrimitiveFragmentShadingRateMeshShader;
 
     [NativeName("meshShaderQueries")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mesh_shader"],
+        ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
+    )]
     public MaybeBool<uint> MeshShaderQueries;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mesh_shader"],
+        ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
+    )]
     public PhysicalDeviceMeshShaderFeaturesEXT() { }
 }

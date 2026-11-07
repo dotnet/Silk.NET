@@ -9,16 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceSubpassShadingFeaturesHUAWEI")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceSubpassShadingFeaturesHUAWEI
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_subpass_shading"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_create_renderpass2",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceSubpassShadingFeaturesHUAWEI;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_subpass_shading"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_create_renderpass2",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("subpassShading")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_subpass_shading"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_create_renderpass2",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public MaybeBool<uint> SubpassShading;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_subpass_shading"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_create_renderpass2",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public PhysicalDeviceSubpassShadingFeaturesHUAWEI() { }
 }

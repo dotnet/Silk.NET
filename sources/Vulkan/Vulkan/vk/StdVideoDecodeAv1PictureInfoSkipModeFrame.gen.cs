@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_SkipModeFrame_e__FixedBuffer")]
 [InlineArray(2)]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeAv1PictureInfoSkipModeFrame
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public byte E0;
 }

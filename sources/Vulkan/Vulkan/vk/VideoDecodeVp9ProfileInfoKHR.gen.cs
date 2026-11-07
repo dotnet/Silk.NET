@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoDecodeVP9ProfileInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeVp9ProfileInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_vp9"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public StructureType SType = StructureType.VideoDecodeVp9ProfileInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_vp9"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public void* PNext;
 
     [NativeName("stdProfile")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_vp9"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public StdVideoVp9Profile StdProfile;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_vp9"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public VideoDecodeVp9ProfileInfoKHR() { }
 }

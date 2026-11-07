@@ -9,14 +9,78 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDescriptorBufferInfo")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorBufferInfo
 {
     [NativeName("buffer")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     public BufferHandle Buffer;
 
     [NativeName("offset")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     public ulong Offset;
 
     [NativeName("range")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     public ulong Range;
 }

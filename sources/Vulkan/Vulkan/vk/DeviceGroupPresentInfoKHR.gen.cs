@@ -9,22 +9,59 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeviceGroupPresentInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceGroupPresentInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
     public StructureType SType = StructureType.DeviceGroupPresentInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
     public void* PNext;
 
     [NativeName("swapchainCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
     public uint SwapchainCount;
 
     [NativeName("pDeviceMasks")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
     public uint* PDeviceMasks;
 
     [NativeName("mode")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
     public DeviceGroupPresentModeFlagsKHR Mode;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
     public DeviceGroupPresentInfoKHR() { }
 }

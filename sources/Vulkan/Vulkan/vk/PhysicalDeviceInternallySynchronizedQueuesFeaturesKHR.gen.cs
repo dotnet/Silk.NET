@@ -9,17 +9,38 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceInternallySynchronizedQueuesFeaturesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_internally_synchronized_queues"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
     public StructureType SType =
         StructureType.PhysicalDeviceInternallySynchronizedQueuesFeaturesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_internally_synchronized_queues"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
     public void* PNext;
 
     [NativeName("internallySynchronizedQueues")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_internally_synchronized_queues"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
     public MaybeBool<uint> InternallySynchronizedQueues;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_internally_synchronized_queues"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
     public PhysicalDeviceInternallySynchronizedQueuesFeaturesKHR() { }
 }

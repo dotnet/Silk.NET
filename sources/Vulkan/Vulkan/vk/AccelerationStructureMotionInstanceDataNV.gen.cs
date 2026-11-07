@@ -10,17 +10,33 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkAccelerationStructureMotionInstanceDataNV")]
 [StructLayout(LayoutKind.Explicit)]
+[SupportedApiProfile("vulkan")]
 public partial struct AccelerationStructureMotionInstanceDataNV
 {
     [NativeName("staticInstance")]
     [FieldOffset(0)]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public AccelerationStructureInstanceKHR StaticInstance;
 
     [NativeName("matrixMotionInstance")]
     [FieldOffset(0)]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public AccelerationStructureMatrixMotionInstanceNV MatrixMotionInstance;
 
     [NativeName("srtMotionInstance")]
     [FieldOffset(0)]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public AccelerationStructureSrtMotionInstanceNV SrtMotionInstance;
 }

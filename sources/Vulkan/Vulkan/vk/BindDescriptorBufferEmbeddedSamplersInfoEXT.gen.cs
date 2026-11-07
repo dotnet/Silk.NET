@@ -9,22 +9,59 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkBindDescriptorBufferEmbeddedSamplersInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct BindDescriptorBufferEmbeddedSamplersInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public StructureType SType = StructureType.BindDescriptorBufferEmbeddedSamplersInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public void* PNext;
 
     [NativeName("stageFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public ShaderStageFlags StageFlags;
 
     [NativeName("layout")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public PipelineLayoutHandle Layout;
 
     [NativeName("set")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public uint Set;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public BindDescriptorBufferEmbeddedSamplersInfoEXT() { }
 }

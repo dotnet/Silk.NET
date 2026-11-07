@@ -9,11 +9,44 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVertexInputRate")]
+[SupportedApiProfile("vulkan")]
 public enum VertexInputRate : uint
 {
     [NativeName("VK_VERTEX_INPUT_RATE_VERTEX")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     Vertex = 0,
 
     [NativeName("VK_VERTEX_INPUT_RATE_INSTANCE")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     Instance = 1,
 }

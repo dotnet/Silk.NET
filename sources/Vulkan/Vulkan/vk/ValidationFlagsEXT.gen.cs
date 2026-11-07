@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkValidationFlagsEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct ValidationFlagsEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     public StructureType SType = StructureType.ValidationFlagsEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     public void* PNext;
 
     [NativeName("disabledValidationCheckCount")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     public uint DisabledValidationCheckCount;
 
     [NativeName("pDisabledValidationChecks")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     public ValidationCheckEXT* PDisabledValidationChecks;
 
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     public ValidationFlagsEXT() { }
 }

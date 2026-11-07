@@ -9,25 +9,96 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeviceMemoryCopyKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceMemoryCopyKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType = StructureType.DeviceMemoryCopyKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("srcRange")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public DeviceAddressRangeKHR SrcRange;
 
     [NativeName("srcFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public AddressCommandFlagsKHR SrcFlags;
 
     [NativeName("dstRange")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public DeviceAddressRangeKHR DstRange;
 
     [NativeName("dstFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public AddressCommandFlagsKHR DstFlags;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public DeviceMemoryCopyKHR() { }
 }

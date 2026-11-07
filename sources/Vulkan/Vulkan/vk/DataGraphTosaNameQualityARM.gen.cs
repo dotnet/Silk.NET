@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDataGraphTOSANameQualityARM")]
+[SupportedApiProfile("vulkan")]
 public partial struct DataGraphTosaNameQualityARM
 {
     [NativeName("name")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public DataGraphTosaNameQualityARMName Name;
 
     [NativeName("qualityFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public DataGraphTosaQualityFlagsARM QualityFlags;
 }

@@ -9,17 +9,38 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImageCompressionControlSwapchainFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control_swapchain"],
+        ImpliesSets = ["VK_EXT_image_compression_control"]
+    )]
     public StructureType SType =
         StructureType.PhysicalDeviceImageCompressionControlSwapchainFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control_swapchain"],
+        ImpliesSets = ["VK_EXT_image_compression_control"]
+    )]
     public void* PNext;
 
     [NativeName("imageCompressionControlSwapchain")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control_swapchain"],
+        ImpliesSets = ["VK_EXT_image_compression_control"]
+    )]
     public MaybeBool<uint> ImageCompressionControlSwapchain;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control_swapchain"],
+        ImpliesSets = ["VK_EXT_image_compression_control"]
+    )]
     public PhysicalDeviceImageCompressionControlSwapchainFeaturesEXT() { }
 }

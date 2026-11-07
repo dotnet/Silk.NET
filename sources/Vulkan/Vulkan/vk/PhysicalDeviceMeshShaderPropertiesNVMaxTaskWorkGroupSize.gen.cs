@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_maxTaskWorkGroupSize_e__FixedBuffer")]
 [InlineArray(3)]
+[SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceMeshShaderPropertiesNVMaxTaskWorkGroupSize
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public uint E0;
 }

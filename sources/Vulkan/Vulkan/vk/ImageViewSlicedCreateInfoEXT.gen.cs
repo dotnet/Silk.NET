@@ -9,19 +9,60 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkImageViewSlicedCreateInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageViewSlicedCreateInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_sliced_view_of_3d"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.ImageViewSlicedCreateInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_sliced_view_of_3d"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("sliceOffset")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_sliced_view_of_3d"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
     public uint SliceOffset;
 
     [NativeName("sliceCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_sliced_view_of_3d"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
     public uint SliceCount;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_sliced_view_of_3d"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
     public ImageViewSlicedCreateInfoEXT() { }
 }

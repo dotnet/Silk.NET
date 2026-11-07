@@ -9,19 +9,60 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceCooperativeMatrixFeaturesNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceCooperativeMatrixFeaturesNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix"],
+        ImpliesSets = [
+            "VK_NV_cooperative_matrix+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_matrix+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceCooperativeMatrixFeaturesNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix"],
+        ImpliesSets = [
+            "VK_NV_cooperative_matrix+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_matrix+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("cooperativeMatrix")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix"],
+        ImpliesSets = [
+            "VK_NV_cooperative_matrix+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_matrix+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> CooperativeMatrix;
 
     [NativeName("cooperativeMatrixRobustBufferAccess")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix"],
+        ImpliesSets = [
+            "VK_NV_cooperative_matrix+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_matrix+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> CooperativeMatrixRobustBufferAccess;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix"],
+        ImpliesSets = [
+            "VK_NV_cooperative_matrix+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_matrix+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceCooperativeMatrixFeaturesNV() { }
 }

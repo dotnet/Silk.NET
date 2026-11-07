@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsFeaturesNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceDeviceGeneratedCommandsFeaturesNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
     public void* PNext;
 
     [NativeName("deviceGeneratedCommands")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
     public MaybeBool<uint> DeviceGeneratedCommands;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
     public PhysicalDeviceDeviceGeneratedCommandsFeaturesNV() { }
 }

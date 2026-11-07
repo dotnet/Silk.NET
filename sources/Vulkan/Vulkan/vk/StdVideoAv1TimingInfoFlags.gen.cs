@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoAV1TimingInfoFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1TimingInfoFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("equal_picture_interval")]
+    [SupportedApiProfile("vulkan")]
     public uint EqualPictureInterval
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoAv1TimingInfoFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

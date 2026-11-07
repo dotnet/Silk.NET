@@ -9,20 +9,61 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_primitive_topology_list_restart"],
+        ImpliesSets = [
+            "VK_EXT_primitive_topology_list_restart+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_primitive_topology_list_restart+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType =
         StructureType.PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_primitive_topology_list_restart"],
+        ImpliesSets = [
+            "VK_EXT_primitive_topology_list_restart+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_primitive_topology_list_restart+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("primitiveTopologyListRestart")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_primitive_topology_list_restart"],
+        ImpliesSets = [
+            "VK_EXT_primitive_topology_list_restart+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_primitive_topology_list_restart+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> PrimitiveTopologyListRestart;
 
     [NativeName("primitiveTopologyPatchListRestart")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_primitive_topology_list_restart"],
+        ImpliesSets = [
+            "VK_EXT_primitive_topology_list_restart+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_primitive_topology_list_restart+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> PrimitiveTopologyPatchListRestart;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_primitive_topology_list_restart"],
+        ImpliesSets = [
+            "VK_EXT_primitive_topology_list_restart+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_primitive_topology_list_restart+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT() { }
 }

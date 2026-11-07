@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_maximal_reconvergence"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_maximal_reconvergence"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
     public void* PNext;
 
     [NativeName("shaderMaximalReconvergence")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_maximal_reconvergence"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
     public MaybeBool<uint> ShaderMaximalReconvergence;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_maximal_reconvergence"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
     public PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR() { }
 }

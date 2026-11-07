@@ -9,8 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkRefreshCycleDurationGOOGLE")]
+[SupportedApiProfile("vulkan")]
 public partial struct RefreshCycleDurationGOOGLE
 {
     [NativeName("refreshDuration")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GOOGLE_display_timing"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
     public ulong RefreshDuration;
 }

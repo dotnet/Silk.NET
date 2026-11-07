@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkWriteDescriptorSetPartitionedAccelerationStructureNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct WriteDescriptorSetPartitionedAccelerationStructureNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public StructureType SType = StructureType.WriteDescriptorSetPartitionedAccelerationStructureNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public void* PNext;
 
     [NativeName("accelerationStructureCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint AccelerationStructureCount;
 
     [NativeName("pAccelerationStructures")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong* PAccelerationStructures;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public WriteDescriptorSetPartitionedAccelerationStructureNV() { }
 }

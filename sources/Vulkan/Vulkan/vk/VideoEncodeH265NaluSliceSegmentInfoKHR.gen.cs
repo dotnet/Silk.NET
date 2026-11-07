@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoEncodeH265NaluSliceSegmentInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH265NaluSliceSegmentInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h265"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public StructureType SType = StructureType.VideoEncodeH265NaluSliceSegmentInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h265"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public void* PNext;
 
     [NativeName("constantQp")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h265"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public int ConstantQp;
 
     [NativeName("pStdSliceSegmentHeader")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h265"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public StdVideoEncodeH265SliceSegmentHeader* PStdSliceSegmentHeader;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h265"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public VideoEncodeH265NaluSliceSegmentInfoKHR() { }
 }

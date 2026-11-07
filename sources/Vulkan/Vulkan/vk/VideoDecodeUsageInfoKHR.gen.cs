@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoDecodeUsageInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeUsageInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType = StructureType.VideoDecodeUsageInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("videoUsageHints")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public VideoDecodeUsageFlagsKHR VideoUsageHints;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public VideoDecodeUsageInfoKHR() { }
 }

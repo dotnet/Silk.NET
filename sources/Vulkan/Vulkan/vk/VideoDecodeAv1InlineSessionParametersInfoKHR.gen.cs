@@ -9,16 +9,41 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoDecodeAV1InlineSessionParametersInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeAv1InlineSessionParametersInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_av1", "VK_KHR_video_maintenance2"],
+        ImpliesSets = ["VK_KHR_video_queue"],
+        RequireAll = true
+    )]
     public StructureType SType = StructureType.VideoDecodeAv1InlineSessionParametersInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_av1", "VK_KHR_video_maintenance2"],
+        ImpliesSets = ["VK_KHR_video_queue"],
+        RequireAll = true
+    )]
     public void* PNext;
 
     [NativeName("pStdSequenceHeader")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_av1", "VK_KHR_video_maintenance2"],
+        ImpliesSets = ["VK_KHR_video_queue"],
+        RequireAll = true
+    )]
     public StdVideoAv1SequenceHeader* PStdSequenceHeader;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_av1", "VK_KHR_video_maintenance2"],
+        ImpliesSets = ["VK_KHR_video_queue"],
+        RequireAll = true
+    )]
     public VideoDecodeAv1InlineSessionParametersInfoKHR() { }
 }

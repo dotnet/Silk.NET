@@ -9,25 +9,82 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDataGraphPipelinePropertyQueryResultARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DataGraphPipelinePropertyQueryResultARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
+    )]
     public StructureType SType = StructureType.DataGraphPipelinePropertyQueryResultARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("property")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
+    )]
     public DataGraphPipelinePropertyARM Property;
 
     [NativeName("isText")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
+    )]
     public MaybeBool<uint> IsText;
 
     [NativeName("dataSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
+    )]
     public nuint DataSize;
 
     [NativeName("pData")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
+    )]
     public void* PData;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
+    )]
     public DataGraphPipelinePropertyQueryResultARM() { }
 }

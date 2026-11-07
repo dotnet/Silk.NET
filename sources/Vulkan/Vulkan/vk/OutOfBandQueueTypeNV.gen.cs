@@ -9,11 +9,32 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkOutOfBandQueueTypeNV")]
+[SupportedApiProfile("vulkan")]
 public enum OutOfBandQueueTypeNV : uint
 {
     [NativeName("VK_OUT_OF_BAND_QUEUE_TYPE_RENDER_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_low_latency2"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
+        ]
+    )]
     Render = 0,
 
     [NativeName("VK_OUT_OF_BAND_QUEUE_TYPE_PRESENT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_low_latency2"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
+        ]
+    )]
     Present = 1,
 }

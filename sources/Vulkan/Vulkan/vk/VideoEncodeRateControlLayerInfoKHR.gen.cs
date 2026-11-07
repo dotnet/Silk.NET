@@ -9,25 +9,82 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoEncodeRateControlLayerInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeRateControlLayerInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType = StructureType.VideoEncodeRateControlLayerInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("averageBitrate")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public ulong AverageBitrate;
 
     [NativeName("maxBitrate")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public ulong MaxBitrate;
 
     [NativeName("frameRateNumerator")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public uint FrameRateNumerator;
 
     [NativeName("frameRateDenominator")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public uint FrameRateDenominator;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     public VideoEncodeRateControlLayerInfoKHR() { }
 }

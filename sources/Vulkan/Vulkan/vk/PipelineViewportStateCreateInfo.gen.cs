@@ -9,28 +9,157 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineViewportStateCreateInfo")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineViewportStateCreateInfo
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     public StructureType SType = StructureType.PipelineViewportStateCreateInfo;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     public void* PNext;
 
     [NativeName("flags")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     public uint Flags;
 
     [NativeName("viewportCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     public uint ViewportCount;
 
     [NativeName("pViewports")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     public Viewport* PViewports;
 
     [NativeName("scissorCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     public uint ScissorCount;
 
     [NativeName("pScissors")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     public Rect2D* PScissors;
 
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     public PipelineViewportStateCreateInfo() { }
 }

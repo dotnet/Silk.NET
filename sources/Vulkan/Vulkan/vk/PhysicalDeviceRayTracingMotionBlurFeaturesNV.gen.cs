@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceRayTracingMotionBlurFeaturesNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRayTracingMotionBlurFeaturesNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceRayTracingMotionBlurFeaturesNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public void* PNext;
 
     [NativeName("rayTracingMotionBlur")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public MaybeBool<uint> RayTracingMotionBlur;
 
     [NativeName("rayTracingMotionBlurPipelineTraceRaysIndirect")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public MaybeBool<uint> RayTracingMotionBlurPipelineTraceRaysIndirect;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public PhysicalDeviceRayTracingMotionBlurFeaturesNV() { }
 }

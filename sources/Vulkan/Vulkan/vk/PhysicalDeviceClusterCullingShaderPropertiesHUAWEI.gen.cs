@@ -9,25 +9,82 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceClusterCullingShaderPropertiesHUAWEI
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_cluster_culling_shader"],
+        ImpliesSets = [
+            "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
+            "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceClusterCullingShaderPropertiesHUAWEI;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_cluster_culling_shader"],
+        ImpliesSets = [
+            "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
+            "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("maxWorkGroupCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_cluster_culling_shader"],
+        ImpliesSets = [
+            "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
+            "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceClusterCullingShaderPropertiesHUAWEIMaxWorkGroupCount MaxWorkGroupCount;
 
     [NativeName("maxWorkGroupSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_cluster_culling_shader"],
+        ImpliesSets = [
+            "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
+            "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceClusterCullingShaderPropertiesHUAWEIMaxWorkGroupSize MaxWorkGroupSize;
 
     [NativeName("maxOutputClusterCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_cluster_culling_shader"],
+        ImpliesSets = [
+            "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
+            "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
+        ]
+    )]
     public uint MaxOutputClusterCount;
 
     [NativeName("indirectBufferOffsetAlignment")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_cluster_culling_shader"],
+        ImpliesSets = [
+            "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
+            "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
+        ]
+    )]
     public ulong IndirectBufferOffsetAlignment;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_cluster_culling_shader"],
+        ImpliesSets = [
+            "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
+            "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceClusterCullingShaderPropertiesHUAWEI() { }
 }

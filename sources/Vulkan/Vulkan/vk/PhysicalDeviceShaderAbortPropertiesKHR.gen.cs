@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderAbortPropertiesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderAbortPropertiesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_abort"],
+        ImpliesSets = ["VK_KHR_device_fault", "VK_KHR_shader_constant_data"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceShaderAbortPropertiesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_abort"],
+        ImpliesSets = ["VK_KHR_device_fault", "VK_KHR_shader_constant_data"]
+    )]
     public void* PNext;
 
     [NativeName("maxShaderAbortMessageSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_abort"],
+        ImpliesSets = ["VK_KHR_device_fault", "VK_KHR_shader_constant_data"]
+    )]
     public ulong MaxShaderAbortMessageSize;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_abort"],
+        ImpliesSets = ["VK_KHR_device_fault", "VK_KHR_shader_constant_data"]
+    )]
     public PhysicalDeviceShaderAbortPropertiesKHR() { }
 }

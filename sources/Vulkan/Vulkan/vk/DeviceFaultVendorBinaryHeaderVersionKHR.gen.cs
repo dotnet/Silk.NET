@@ -9,11 +9,28 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeviceFaultVendorBinaryHeaderVersionKHR")]
+[SupportedApiProfile("vulkan")]
 public enum DeviceFaultVendorBinaryHeaderVersionKHR : uint
 {
     [NativeName("VK_DEVICE_FAULT_VENDOR_BINARY_HEADER_VERSION_ONE_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     One = 1,
 
     [NativeName("VK_DEVICE_FAULT_VENDOR_BINARY_HEADER_VERSION_ONE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     OneEXT = One,
 }

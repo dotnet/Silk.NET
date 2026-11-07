@@ -9,37 +9,93 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkClusterAccelerationStructureTriangleClusterInputNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct ClusterAccelerationStructureTriangleClusterInputNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public StructureType SType = StructureType.ClusterAccelerationStructureTriangleClusterInputNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public void* PNext;
 
     [NativeName("vertexFormat")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public Format VertexFormat;
 
     [NativeName("maxGeometryIndexValue")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint MaxGeometryIndexValue;
 
     [NativeName("maxClusterUniqueGeometryCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint MaxClusterUniqueGeometryCount;
 
     [NativeName("maxClusterTriangleCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint MaxClusterTriangleCount;
 
     [NativeName("maxClusterVertexCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint MaxClusterVertexCount;
 
     [NativeName("maxTotalTriangleCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint MaxTotalTriangleCount;
 
     [NativeName("maxTotalVertexCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint MaxTotalVertexCount;
 
     [NativeName("minPositionTruncateBitCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint MinPositionTruncateBitCount;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ClusterAccelerationStructureTriangleClusterInputNV() { }
 }

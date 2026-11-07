@@ -9,17 +9,38 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkRayTracingInvocationReorderModeEXT")]
+[SupportedApiProfile("vulkan")]
 public enum RayTracingInvocationReorderModeEXT : uint
 {
     [NativeName("VK_RAY_TRACING_INVOCATION_REORDER_MODE_NONE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_ray_tracing_invocation_reorder"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     None = 0,
 
     [NativeName("VK_RAY_TRACING_INVOCATION_REORDER_MODE_REORDER_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_ray_tracing_invocation_reorder"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     Reorder = 1,
 
     [NativeName("VK_RAY_TRACING_INVOCATION_REORDER_MODE_NONE_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_invocation_reorder"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     NoneNV = None,
 
     [NativeName("VK_RAY_TRACING_INVOCATION_REORDER_MODE_REORDER_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_invocation_reorder"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     ReorderNV = Reorder,
 }

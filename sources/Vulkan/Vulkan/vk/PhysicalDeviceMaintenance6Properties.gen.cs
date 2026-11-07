@@ -9,22 +9,83 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceMaintenance6Properties")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMaintenance6Properties
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public StructureType SType = StructureType.PhysicalDeviceMaintenance6Properties;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public void* PNext;
 
     [NativeName("blockTexelViewCompatibleMultipleLayers")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public MaybeBool<uint> BlockTexelViewCompatibleMultipleLayers;
 
     [NativeName("maxCombinedImageSamplerDescriptorCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public uint MaxCombinedImageSamplerDescriptorCount;
 
     [NativeName("fragmentShadingRateClampCombinerInputs")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public MaybeBool<uint> FragmentShadingRateClampCombinerInputs;
 
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     public PhysicalDeviceMaintenance6Properties() { }
 }

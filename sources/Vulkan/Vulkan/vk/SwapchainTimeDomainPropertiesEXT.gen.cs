@@ -9,22 +9,83 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSwapchainTimeDomainPropertiesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct SwapchainTimeDomainPropertiesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
     public StructureType SType = StructureType.SwapchainTimeDomainPropertiesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("timeDomainCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
     public uint TimeDomainCount;
 
     [NativeName("pTimeDomains")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
     public TimeDomainKHR* PTimeDomains;
 
     [NativeName("pTimeDomainIds")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
     public ulong* PTimeDomainIds;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
     public SwapchainTimeDomainPropertiesEXT() { }
 }

@@ -9,25 +9,61 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkGraphicsPipelineShaderGroupsCreateInfoNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct GraphicsPipelineShaderGroupsCreateInfoNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
     public StructureType SType = StructureType.GraphicsPipelineShaderGroupsCreateInfoNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
     public void* PNext;
 
     [NativeName("groupCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
     public uint GroupCount;
 
     [NativeName("pGroups")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
     public GraphicsShaderGroupCreateInfoNV* PGroups;
 
     [NativeName("pipelineCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
     public uint PipelineCount;
 
     [NativeName("pPipelines")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
     public PipelineHandle* PPipelines;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
     public GraphicsPipelineShaderGroupsCreateInfoNV() { }
 }

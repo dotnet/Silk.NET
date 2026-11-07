@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceVideoMaintenance2FeaturesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceVideoMaintenance2FeaturesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_maintenance2"],
+        ImpliesSets = ["VK_KHR_video_queue"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceVideoMaintenance2FeaturesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_maintenance2"],
+        ImpliesSets = ["VK_KHR_video_queue"]
+    )]
     public void* PNext;
 
     [NativeName("videoMaintenance2")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_maintenance2"],
+        ImpliesSets = ["VK_KHR_video_queue"]
+    )]
     public MaybeBool<uint> VideoMaintenance2;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_maintenance2"],
+        ImpliesSets = ["VK_KHR_video_queue"]
+    )]
     public PhysicalDeviceVideoMaintenance2FeaturesKHR() { }
 }

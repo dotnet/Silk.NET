@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderSMBuiltinsPropertiesNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderSMBuiltinsPropertiesNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_NV_shader_sm_builtins"], ImpliesSets = ["VK_VERSION_1_1"])]
     public StructureType SType = StructureType.PhysicalDeviceShaderSmBuiltinsPropertiesNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_NV_shader_sm_builtins"], ImpliesSets = ["VK_VERSION_1_1"])]
     public void* PNext;
 
     [NativeName("shaderSMCount")]
+    [SupportedApiProfile("vulkan", ["VK_NV_shader_sm_builtins"], ImpliesSets = ["VK_VERSION_1_1"])]
     public uint ShaderSMCount;
 
     [NativeName("shaderWarpsPerSM")]
+    [SupportedApiProfile("vulkan", ["VK_NV_shader_sm_builtins"], ImpliesSets = ["VK_VERSION_1_1"])]
     public uint ShaderWarpsPerSM;
 
+    [SupportedApiProfile("vulkan", ["VK_NV_shader_sm_builtins"], ImpliesSets = ["VK_VERSION_1_1"])]
     public PhysicalDeviceShaderSMBuiltinsPropertiesNV() { }
 }

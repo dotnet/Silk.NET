@@ -9,8 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDataGraphPipelineNodeTypeARM")]
+[SupportedApiProfile("vulkan")]
 public enum DataGraphPipelineNodeTypeARM : uint
 {
     [NativeName("VK_DATA_GRAPH_PIPELINE_NODE_TYPE_OPTICAL_FLOW_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     OpticalFlow = 1000631000,
 }

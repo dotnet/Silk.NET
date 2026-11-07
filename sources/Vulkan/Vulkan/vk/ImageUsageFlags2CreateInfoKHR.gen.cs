@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkImageUsageFlags2CreateInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageUsageFlags2CreateInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_extended_flags"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_extended_flags+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.ImageUsageFlags2CreateInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_extended_flags"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_extended_flags+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("usage")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_extended_flags"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_extended_flags+VK_VERSION_1_1",
+        ]
+    )]
     public ImageUsageFlags2KHR Usage;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_extended_flags"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_extended_flags+VK_VERSION_1_1",
+        ]
+    )]
     public ImageUsageFlags2CreateInfoKHR() { }
 }

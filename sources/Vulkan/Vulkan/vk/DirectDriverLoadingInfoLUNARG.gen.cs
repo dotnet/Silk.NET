@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDirectDriverLoadingInfoLUNARG")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DirectDriverLoadingInfoLUNARG
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     public StructureType SType = StructureType.DirectDriverLoadingInfoLUNARG;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     public void* PNext;
 
     [NativeName("flags")]
+    [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     public uint Flags;
 
     [NativeName("pfnGetInstanceProcAddr")]
+    [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     public GetInstanceProcAddrLUNARG PfnGetInstanceProcAddr;
 
+    [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     public DirectDriverLoadingInfoLUNARG() { }
 }

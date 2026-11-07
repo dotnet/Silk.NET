@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderQuadControlFeaturesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderQuadControlFeaturesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_quad_control"],
+        ImpliesSets = [
+            "VK_KHR_shader_maximal_reconvergence+VK_VERSION_1_1+VK_KHR_vulkan_memory_model",
+            "VK_KHR_shader_maximal_reconvergence+VK_VERSION_1_2",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceShaderQuadControlFeaturesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_quad_control"],
+        ImpliesSets = [
+            "VK_KHR_shader_maximal_reconvergence+VK_VERSION_1_1+VK_KHR_vulkan_memory_model",
+            "VK_KHR_shader_maximal_reconvergence+VK_VERSION_1_2",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("shaderQuadControl")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_quad_control"],
+        ImpliesSets = [
+            "VK_KHR_shader_maximal_reconvergence+VK_VERSION_1_1+VK_KHR_vulkan_memory_model",
+            "VK_KHR_shader_maximal_reconvergence+VK_VERSION_1_2",
+        ]
+    )]
     public MaybeBool<uint> ShaderQuadControl;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_quad_control"],
+        ImpliesSets = [
+            "VK_KHR_shader_maximal_reconvergence+VK_VERSION_1_1+VK_KHR_vulkan_memory_model",
+            "VK_KHR_shader_maximal_reconvergence+VK_VERSION_1_2",
+        ]
+    )]
     public PhysicalDeviceShaderQuadControlFeaturesKHR() { }
 }

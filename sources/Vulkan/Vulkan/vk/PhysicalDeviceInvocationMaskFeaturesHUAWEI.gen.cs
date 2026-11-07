@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceInvocationMaskFeaturesHUAWEI")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceInvocationMaskFeaturesHUAWEI
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_invocation_mask"],
+        ImpliesSets = [
+            "VK_KHR_ray_tracing_pipeline+VK_KHR_synchronization2",
+            "VK_KHR_ray_tracing_pipeline+VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceInvocationMaskFeaturesHUAWEI;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_invocation_mask"],
+        ImpliesSets = [
+            "VK_KHR_ray_tracing_pipeline+VK_KHR_synchronization2",
+            "VK_KHR_ray_tracing_pipeline+VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("invocationMask")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_invocation_mask"],
+        ImpliesSets = [
+            "VK_KHR_ray_tracing_pipeline+VK_KHR_synchronization2",
+            "VK_KHR_ray_tracing_pipeline+VK_VERSION_1_3",
+        ]
+    )]
     public MaybeBool<uint> InvocationMask;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_invocation_mask"],
+        ImpliesSets = [
+            "VK_KHR_ray_tracing_pipeline+VK_KHR_synchronization2",
+            "VK_KHR_ray_tracing_pipeline+VK_VERSION_1_3",
+        ]
+    )]
     public PhysicalDeviceInvocationMaskFeaturesHUAWEI() { }
 }

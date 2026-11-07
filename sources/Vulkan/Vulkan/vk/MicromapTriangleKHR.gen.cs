@@ -9,14 +9,30 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkMicromapTriangleKHR")]
+[SupportedApiProfile("vulkan")]
 public partial struct MicromapTriangleKHR
 {
     [NativeName("dataOffset")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
     public uint DataOffset;
 
     [NativeName("subdivisionLevel")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
     public ushort SubdivisionLevel;
 
     [NativeName("format")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
     public ushort Format;
 }

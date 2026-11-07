@@ -9,22 +9,71 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkCopyMicromapInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyMicromapInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType = StructureType.CopyMicromapInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("src")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
     public MicromapHandleEXT Src;
 
     [NativeName("dst")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
     public MicromapHandleEXT Dst;
 
     [NativeName("mode")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
     public CopyMicromapModeEXT Mode;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
     public CopyMicromapInfoEXT() { }
 }

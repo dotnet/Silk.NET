@@ -10,16 +10,41 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkBuildMicromapFlagsEXT")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum BuildMicromapFlagsEXT : uint
 {
     None = 0x0,
 
     [NativeName("VK_BUILD_MICROMAP_PREFER_FAST_TRACE_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
     PreferFastTraceBit = 0x1,
 
     [NativeName("VK_BUILD_MICROMAP_PREFER_FAST_BUILD_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
     PreferFastBuildBit = 0x2,
 
     [NativeName("VK_BUILD_MICROMAP_ALLOW_COMPACTION_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
     AllowCompactionBit = 0x4,
 }

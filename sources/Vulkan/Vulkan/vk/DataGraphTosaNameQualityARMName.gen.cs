@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_name_e__FixedBuffer")]
 [InlineArray(128)]
+[SupportedApiProfile("vulkan")]
 public partial struct DataGraphTosaNameQualityARMName
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public sbyte E0;
 }

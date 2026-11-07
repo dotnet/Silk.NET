@@ -9,19 +9,68 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPresentWait2InfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PresentWait2InfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_wait2"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_surface",
+            "VK_KHR_swapchain",
+        ]
+    )]
     public StructureType SType = StructureType.PresentWait2InfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_wait2"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_surface",
+            "VK_KHR_swapchain",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("presentId")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_id"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
     public ulong PresentId;
 
     [NativeName("timeout")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_wait2"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_surface",
+            "VK_KHR_swapchain",
+        ]
+    )]
     public ulong Timeout;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_wait2"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_surface",
+            "VK_KHR_swapchain",
+        ]
+    )]
     public PresentWait2InfoKHR() { }
 }

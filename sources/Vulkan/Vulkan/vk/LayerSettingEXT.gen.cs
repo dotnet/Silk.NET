@@ -9,20 +9,26 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkLayerSettingEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct LayerSettingEXT
 {
     [NativeName("pLayerName")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
     public sbyte* PLayerName;
 
     [NativeName("pSettingName")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
     public sbyte* PSettingName;
 
     [NativeName("type")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
     public LayerSettingTypeEXT Type;
 
     [NativeName("valueCount")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
     public uint ValueCount;
 
     [NativeName("pValues")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
     public void* PValues;
 }

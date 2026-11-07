@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceCooperativeMatrix2PropertiesNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceCooperativeMatrix2PropertiesNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceCooperativeMatrix2PropertiesNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
     public void* PNext;
 
     [NativeName("cooperativeMatrixWorkgroupScopeMaxWorkgroupSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
     public uint CooperativeMatrixWorkgroupScopeMaxWorkgroupSize;
 
     [NativeName("cooperativeMatrixFlexibleDimensionsMaxDimension")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
     public uint CooperativeMatrixFlexibleDimensionsMaxDimension;
 
     [NativeName("cooperativeMatrixWorkgroupScopeReservedSharedMemory")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
     public uint CooperativeMatrixWorkgroupScopeReservedSharedMemory;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
     public PhysicalDeviceCooperativeMatrix2PropertiesNV() { }
 }

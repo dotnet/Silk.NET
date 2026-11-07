@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkIndirectCommandsStreamNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectCommandsStreamNV
 {
     [NativeName("buffer")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
     public BufferHandle Buffer;
 
     [NativeName("offset")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
     public ulong Offset;
 }

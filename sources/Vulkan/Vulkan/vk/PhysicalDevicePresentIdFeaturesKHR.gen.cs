@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDevicePresentIdFeaturesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePresentIdFeaturesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_id"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDevicePresentIdFeaturesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_id"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("presentId")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_id"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> PresentId;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_id"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDevicePresentIdFeaturesKHR() { }
 }

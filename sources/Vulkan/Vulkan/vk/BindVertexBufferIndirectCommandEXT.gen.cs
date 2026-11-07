@@ -9,14 +9,48 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkBindVertexBufferIndirectCommandEXT")]
+[SupportedApiProfile("vulkan")]
 public partial struct BindVertexBufferIndirectCommandEXT
 {
     [NativeName("bufferAddress")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public ulong BufferAddress;
 
     [NativeName("size")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public uint Size;
 
     [NativeName("stride")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public uint Stride;
 }

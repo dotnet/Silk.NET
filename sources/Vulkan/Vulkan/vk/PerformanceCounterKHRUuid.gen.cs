@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_uuid_e__FixedBuffer")]
 [InlineArray(16)]
+[SupportedApiProfile("vulkan")]
 public partial struct PerformanceCounterKHRUuid
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public byte E0;
 }

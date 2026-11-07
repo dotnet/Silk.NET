@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_deviceName_e__FixedBuffer")]
 [InlineArray(256)]
+[SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceLayeredApiPropertiesKHRDeviceName
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public sbyte E0;
 }

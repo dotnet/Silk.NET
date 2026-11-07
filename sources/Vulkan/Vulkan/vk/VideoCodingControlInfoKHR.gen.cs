@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoCodingControlInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoCodingControlInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_queue"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
+    )]
     public StructureType SType = StructureType.VideoCodingControlInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_queue"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
+    )]
     public void* PNext;
 
     [NativeName("flags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_queue"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
+    )]
     public VideoCodingControlFlagsKHR Flags;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_queue"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
+    )]
     public VideoCodingControlInfoKHR() { }
 }

@@ -9,17 +9,50 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkShaderInstrumentationMetricDataHeaderARM")]
+[SupportedApiProfile("vulkan")]
 public partial struct ShaderInstrumentationMetricDataHeaderARM
 {
     [NativeName("resultIndex")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation"],
+        ImpliesSets = [
+            "VK_ARM_shader_instrumentation+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_instrumentation+VK_VERSION_1_1",
+        ]
+    )]
     public uint ResultIndex;
 
     [NativeName("resultSubIndex")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation"],
+        ImpliesSets = [
+            "VK_ARM_shader_instrumentation+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_instrumentation+VK_VERSION_1_1",
+        ]
+    )]
     public uint ResultSubIndex;
 
     [NativeName("stages")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation"],
+        ImpliesSets = [
+            "VK_ARM_shader_instrumentation+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_instrumentation+VK_VERSION_1_1",
+        ]
+    )]
     public ShaderStageFlags Stages;
 
     [NativeName("basicBlockIndex")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation"],
+        ImpliesSets = [
+            "VK_ARM_shader_instrumentation+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_instrumentation+VK_VERSION_1_1",
+        ]
+    )]
     public uint BasicBlockIndex;
 }

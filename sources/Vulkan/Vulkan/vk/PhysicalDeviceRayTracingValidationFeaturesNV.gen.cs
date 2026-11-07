@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceRayTracingValidationFeaturesNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRayTracingValidationFeaturesNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_validation"],
+        ImpliesSets = [
+            "VK_NV_ray_tracing_validation+VK_KHR_get_physical_device_properties2",
+            "VK_NV_ray_tracing_validation+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceRayTracingValidationFeaturesNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_validation"],
+        ImpliesSets = [
+            "VK_NV_ray_tracing_validation+VK_KHR_get_physical_device_properties2",
+            "VK_NV_ray_tracing_validation+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("rayTracingValidation")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_validation"],
+        ImpliesSets = [
+            "VK_NV_ray_tracing_validation+VK_KHR_get_physical_device_properties2",
+            "VK_NV_ray_tracing_validation+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> RayTracingValidation;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_validation"],
+        ImpliesSets = [
+            "VK_NV_ray_tracing_validation+VK_KHR_get_physical_device_properties2",
+            "VK_NV_ray_tracing_validation+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceRayTracingValidationFeaturesNV() { }
 }

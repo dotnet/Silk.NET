@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkThrottleHintTypeSEC")]
+[SupportedApiProfile("vulkan")]
 public enum ThrottleHintTypeSEC : uint
 {
     [NativeName("VK_THROTTLE_HINT_TYPE_DEFAULT_SEC")]
+    [SupportedApiProfile("vulkan", ["VK_SEC_throttle_hint"])]
     Default = 0,
 
     [NativeName("VK_THROTTLE_HINT_TYPE_LOW_SEC")]
+    [SupportedApiProfile("vulkan", ["VK_SEC_throttle_hint"])]
     Low = 1,
 
     [NativeName("VK_THROTTLE_HINT_TYPE_HIGH_SEC")]
+    [SupportedApiProfile("vulkan", ["VK_SEC_throttle_hint"])]
     High = 2,
 }

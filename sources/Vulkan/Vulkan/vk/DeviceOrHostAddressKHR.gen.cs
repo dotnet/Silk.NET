@@ -10,13 +10,30 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeviceOrHostAddressKHR")]
 [StructLayout(LayoutKind.Explicit)]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceOrHostAddressKHR
 {
     [NativeName("deviceAddress")]
     [FieldOffset(0)]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public ulong DeviceAddress;
 
     [NativeName("hostAddress")]
     [FieldOffset(0)]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public void* HostAddress;
 }

@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkStridedDeviceAddressNV")]
+[SupportedApiProfile("vulkan")]
 public partial struct StridedDeviceAddressNV
 {
     [NativeName("startAddress")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong StartAddress;
 
     [NativeName("strideInBytes")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong StrideInBytes;
 }

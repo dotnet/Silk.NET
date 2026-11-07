@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkAccelerationStructureVersionInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureVersionInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public StructureType SType = StructureType.AccelerationStructureVersionInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("pVersionData")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public byte* PVersionData;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public AccelerationStructureVersionInfoKHR() { }
 }

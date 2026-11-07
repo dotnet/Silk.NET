@@ -9,31 +9,77 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkBuildPartitionedAccelerationStructureInfoNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public StructureType SType = StructureType.BuildPartitionedAccelerationStructureInfoNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public void* PNext;
 
     [NativeName("input")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public PartitionedAccelerationStructureInstancesInputNV Input;
 
     [NativeName("srcAccelerationStructureData")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong SrcAccelerationStructureData;
 
     [NativeName("dstAccelerationStructureData")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong DstAccelerationStructureData;
 
     [NativeName("scratchData")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong ScratchData;
 
     [NativeName("srcInfos")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong SrcInfos;
 
     [NativeName("srcInfosCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong SrcInfosCount;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public BuildPartitionedAccelerationStructureInfoNV() { }
 }

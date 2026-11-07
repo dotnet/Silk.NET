@@ -9,43 +9,148 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceTransformFeedbackPropertiesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceTransformFeedbackPropertiesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("maxTransformFeedbackStreams")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public uint MaxTransformFeedbackStreams;
 
     [NativeName("maxTransformFeedbackBuffers")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public uint MaxTransformFeedbackBuffers;
 
     [NativeName("maxTransformFeedbackBufferSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public ulong MaxTransformFeedbackBufferSize;
 
     [NativeName("maxTransformFeedbackStreamDataSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public uint MaxTransformFeedbackStreamDataSize;
 
     [NativeName("maxTransformFeedbackBufferDataSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public uint MaxTransformFeedbackBufferDataSize;
 
     [NativeName("maxTransformFeedbackBufferDataStride")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public uint MaxTransformFeedbackBufferDataStride;
 
     [NativeName("transformFeedbackQueries")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> TransformFeedbackQueries;
 
     [NativeName("transformFeedbackStreamsLinesTriangles")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> TransformFeedbackStreamsLinesTriangles;
 
     [NativeName("transformFeedbackRasterizationStreamSelect")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> TransformFeedbackRasterizationStreamSelect;
 
     [NativeName("transformFeedbackDraw")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> TransformFeedbackDraw;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceTransformFeedbackPropertiesEXT() { }
 }

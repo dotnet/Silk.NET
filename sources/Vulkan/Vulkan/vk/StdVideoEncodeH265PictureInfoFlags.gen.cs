@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoEncodeH265PictureInfoFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265PictureInfoFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("is_reference")]
+    [SupportedApiProfile("vulkan")]
     public uint IsReference
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("IrapPicFlag")]
+    [SupportedApiProfile("vulkan")]
     public uint IrapPicFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("used_for_long_term_reference")]
+    [SupportedApiProfile("vulkan")]
     public uint UsedForLongTermReference
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("discardable_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint DiscardableFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("cross_layer_bla_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint CrossLayerBlaFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +67,7 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("pic_output_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint PicOutputFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,6 +77,7 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("no_output_of_prior_pics_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint NoOutputOfPriorPicsFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -78,6 +87,7 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("short_term_ref_pic_set_sps_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint ShortTermRefPicSetSpsFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -87,6 +97,7 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("slice_temporal_mvp_enabled_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint SliceTemporalMvpEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -96,6 +107,7 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

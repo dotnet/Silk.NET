@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_description_e__FixedBuffer")]
 [InlineArray(256)]
+[SupportedApiProfile("vulkan")]
 public partial struct DeviceFaultVendorInfoKHRDescription
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public sbyte E0;
 }

@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoEncodeH265ReferenceInfoFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265ReferenceInfoFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("used_for_long_term_reference")]
+    [SupportedApiProfile("vulkan")]
     public uint UsedForLongTermReference
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoEncodeH265ReferenceInfoFlags
     }
 
     [NativeName("unused_for_reference")]
+    [SupportedApiProfile("vulkan")]
     public uint UnusedForReference
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoEncodeH265ReferenceInfoFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

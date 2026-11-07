@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoEncodeH264SessionParametersCreateInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH264SessionParametersCreateInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h264"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public StructureType SType = StructureType.VideoEncodeH264SessionParametersCreateInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h264"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public void* PNext;
 
     [NativeName("maxStdSPSCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h264"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public uint MaxStdSpsCount;
 
     [NativeName("maxStdPPSCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h264"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public uint MaxStdPpsCount;
 
     [NativeName("pParametersAddInfo")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h264"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public VideoEncodeH264SessionParametersAddInfoKHR* PParametersAddInfo;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h264"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public VideoEncodeH264SessionParametersCreateInfoKHR() { }
 }

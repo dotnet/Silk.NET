@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSharedPresentSurfaceCapabilitiesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct SharedPresentSurfaceCapabilitiesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shared_presentable_image"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_get_surface_capabilities2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_get_surface_capabilities2+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.SharedPresentSurfaceCapabilitiesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shared_presentable_image"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_get_surface_capabilities2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_get_surface_capabilities2+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("sharedPresentSupportedUsageFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shared_presentable_image"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_get_surface_capabilities2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_get_surface_capabilities2+VK_VERSION_1_1",
+        ]
+    )]
     public ImageUsageFlags SharedPresentSupportedUsageFlags;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shared_presentable_image"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_get_surface_capabilities2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_get_surface_capabilities2+VK_VERSION_1_1",
+        ]
+    )]
     public SharedPresentSurfaceCapabilitiesKHR() { }
 }

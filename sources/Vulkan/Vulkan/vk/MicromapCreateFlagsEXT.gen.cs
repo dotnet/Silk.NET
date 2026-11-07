@@ -10,10 +10,19 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkMicromapCreateFlagsEXT")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum MicromapCreateFlagsEXT : uint
 {
     None = 0x0,
 
     [NativeName("VK_MICROMAP_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
     DeviceAddressCaptureReplayBit = 0x1,
 }

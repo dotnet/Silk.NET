@@ -9,17 +9,50 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkCoarseSampleOrderTypeNV")]
+[SupportedApiProfile("vulkan")]
 public enum CoarseSampleOrderTypeNV : uint
 {
     [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_DEFAULT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     Default = 0,
 
     [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_CUSTOM_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     Custom = 1,
 
     [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_PIXEL_MAJOR_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     PixelMajor = 2,
 
     [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_SAMPLE_MAJOR_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     SampleMajor = 3,
 }

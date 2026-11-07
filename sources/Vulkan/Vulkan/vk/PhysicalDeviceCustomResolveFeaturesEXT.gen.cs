@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceCustomResolveFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceCustomResolveFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_resolve"],
+        ImpliesSets = [
+            "VK_EXT_custom_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_resolve+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceCustomResolveFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_resolve"],
+        ImpliesSets = [
+            "VK_EXT_custom_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_resolve+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("customResolve")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_resolve"],
+        ImpliesSets = [
+            "VK_EXT_custom_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_resolve+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> CustomResolve;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_resolve"],
+        ImpliesSets = [
+            "VK_EXT_custom_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_resolve+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceCustomResolveFeaturesEXT() { }
 }

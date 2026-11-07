@@ -10,13 +10,30 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoEncodeRgbChromaOffsetFlagsVALVE")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum VideoEncodeRgbChromaOffsetFlagsVALVE : uint
 {
     None = 0x0,
 
     [NativeName("VK_VIDEO_ENCODE_RGB_CHROMA_OFFSET_COSITED_EVEN_BIT_VALVE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_video_encode_rgb_conversion"],
+        ImpliesSets = [
+            "VK_KHR_video_encode_queue+VK_KHR_sampler_ycbcr_conversion",
+            "VK_KHR_video_encode_queue+VK_VERSION_1_1",
+        ]
+    )]
     CositedEvenBit = 0x1,
 
     [NativeName("VK_VIDEO_ENCODE_RGB_CHROMA_OFFSET_MIDPOINT_BIT_VALVE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_video_encode_rgb_conversion"],
+        ImpliesSets = [
+            "VK_KHR_video_encode_queue+VK_KHR_sampler_ycbcr_conversion",
+            "VK_KHR_video_encode_queue+VK_VERSION_1_1",
+        ]
+    )]
     MidpointBit = 0x2,
 }

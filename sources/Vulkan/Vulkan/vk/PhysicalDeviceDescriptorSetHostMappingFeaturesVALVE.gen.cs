@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDescriptorSetHostMappingFeaturesVALVE
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_descriptor_set_host_mapping"],
+        ImpliesSets = [
+            "VK_VALVE_descriptor_set_host_mapping+VK_KHR_get_physical_device_properties2",
+            "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceDescriptorSetHostMappingFeaturesVALVE;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_descriptor_set_host_mapping"],
+        ImpliesSets = [
+            "VK_VALVE_descriptor_set_host_mapping+VK_KHR_get_physical_device_properties2",
+            "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("descriptorSetHostMapping")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_descriptor_set_host_mapping"],
+        ImpliesSets = [
+            "VK_VALVE_descriptor_set_host_mapping+VK_KHR_get_physical_device_properties2",
+            "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> DescriptorSetHostMapping;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_descriptor_set_host_mapping"],
+        ImpliesSets = [
+            "VK_VALVE_descriptor_set_host_mapping+VK_KHR_get_physical_device_properties2",
+            "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceDescriptorSetHostMappingFeaturesVALVE() { }
 }

@@ -9,22 +9,71 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineRasterizationConservativeStateCreateInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineRasterizationConservativeStateCreateInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conservative_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_conservative_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PipelineRasterizationConservativeStateCreateInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conservative_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_conservative_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("flags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conservative_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_conservative_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
+        ]
+    )]
     public uint Flags;
 
     [NativeName("conservativeRasterizationMode")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conservative_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_conservative_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
+        ]
+    )]
     public ConservativeRasterizationModeEXT ConservativeRasterizationMode;
 
     [NativeName("extraPrimitiveOverestimationSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conservative_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_conservative_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
+        ]
+    )]
     public float ExtraPrimitiveOverestimationSize;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conservative_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_conservative_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
+        ]
+    )]
     public PipelineRasterizationConservativeStateCreateInfoEXT() { }
 }

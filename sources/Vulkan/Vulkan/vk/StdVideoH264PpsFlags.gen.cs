@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoH264PpsFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoH264PpsFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("transform_8x8_mode_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint Transform8x8ModeFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoH264PpsFlags
     }
 
     [NativeName("redundant_pic_cnt_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint RedundantPicCntPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoH264PpsFlags
     }
 
     [NativeName("constrained_intra_pred_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint ConstrainedIntraPredFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoH264PpsFlags
     }
 
     [NativeName("deblocking_filter_control_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint DeblockingFilterControlPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct StdVideoH264PpsFlags
     }
 
     [NativeName("weighted_pred_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint WeightedPredFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +67,7 @@ public partial struct StdVideoH264PpsFlags
     }
 
     [NativeName("bottom_field_pic_order_in_frame_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint BottomFieldPicOrderInFramePresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,6 +77,7 @@ public partial struct StdVideoH264PpsFlags
     }
 
     [NativeName("entropy_coding_mode_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint EntropyCodingModeFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -78,6 +87,7 @@ public partial struct StdVideoH264PpsFlags
     }
 
     [NativeName("pic_scaling_matrix_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint PicScalingMatrixPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

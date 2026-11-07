@@ -9,16 +9,58 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceImagelessFramebufferFeatures")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImagelessFramebufferFeatures
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
     public StructureType SType = StructureType.PhysicalDeviceImagelessFramebufferFeatures;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
     public void* PNext;
 
     [NativeName("imagelessFramebuffer")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.2"
+    )]
     public MaybeBool<uint> ImagelessFramebuffer;
 
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
     public PhysicalDeviceImagelessFramebufferFeatures() { }
 }

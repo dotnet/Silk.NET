@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkValidationFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct ValidationFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     public StructureType SType = StructureType.ValidationFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     public void* PNext;
 
     [NativeName("enabledValidationFeatureCount")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     public uint EnabledValidationFeatureCount;
 
     [NativeName("pEnabledValidationFeatures")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     public ValidationFeatureEnableEXT* PEnabledValidationFeatures;
 
     [NativeName("disabledValidationFeatureCount")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     public uint DisabledValidationFeatureCount;
 
     [NativeName("pDisabledValidationFeatures")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     public ValidationFeatureDisableEXT* PDisabledValidationFeatures;
 
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     public ValidationFeaturesEXT() { }
 }

@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkAcquireProfilingLockFlagsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum AcquireProfilingLockFlagsKHR : uint
 {
     None = 0x0,

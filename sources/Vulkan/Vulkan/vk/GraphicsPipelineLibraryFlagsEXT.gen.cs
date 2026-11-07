@@ -10,19 +10,52 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkGraphicsPipelineLibraryFlagsEXT")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum GraphicsPipelineLibraryFlagsEXT : uint
 {
     None = 0x0,
 
     [NativeName("VK_GRAPHICS_PIPELINE_LIBRARY_VERTEX_INPUT_INTERFACE_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_graphics_pipeline_library"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_library+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_library+VK_VERSION_1_1",
+        ]
+    )]
     VertexInputInterfaceBit = 0x1,
 
     [NativeName("VK_GRAPHICS_PIPELINE_LIBRARY_PRE_RASTERIZATION_SHADERS_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_graphics_pipeline_library"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_library+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_library+VK_VERSION_1_1",
+        ]
+    )]
     PreRasterizationShadersBit = 0x2,
 
     [NativeName("VK_GRAPHICS_PIPELINE_LIBRARY_FRAGMENT_SHADER_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_graphics_pipeline_library"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_library+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_library+VK_VERSION_1_1",
+        ]
+    )]
     FragmentShaderBit = 0x4,
 
     [NativeName("VK_GRAPHICS_PIPELINE_LIBRARY_FRAGMENT_OUTPUT_INTERFACE_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_graphics_pipeline_library"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_library+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_library+VK_VERSION_1_1",
+        ]
+    )]
     FragmentOutputInterfaceBit = 0x8,
 }

@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkThrottleHintSubmitInfoSEC")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct ThrottleHintSubmitInfoSEC
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_SEC_throttle_hint"])]
     public StructureType SType = StructureType.ThrottleHintSubmitInfoSEC;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_SEC_throttle_hint"])]
     public void* PNext;
 
     [NativeName("throttleHint")]
+    [SupportedApiProfile("vulkan", ["VK_SEC_throttle_hint"])]
     public ThrottleHintTypeSEC ThrottleHint;
 
+    [SupportedApiProfile("vulkan", ["VK_SEC_throttle_hint"])]
     public ThrottleHintSubmitInfoSEC() { }
 }

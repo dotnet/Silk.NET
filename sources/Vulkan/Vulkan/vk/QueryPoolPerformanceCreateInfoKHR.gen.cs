@@ -9,22 +9,71 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkQueryPoolPerformanceCreateInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct QueryPoolPerformanceCreateInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.QueryPoolPerformanceCreateInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("queueFamilyIndex")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public uint QueueFamilyIndex;
 
     [NativeName("counterIndexCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public uint CounterIndexCount;
 
     [NativeName("pCounterIndices")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public uint* PCounterIndices;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public QueryPoolPerformanceCreateInfoKHR() { }
 }

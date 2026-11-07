@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoEncodeIntraRefreshInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeIntraRefreshInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_intra_refresh"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public StructureType SType = StructureType.VideoEncodeIntraRefreshInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_intra_refresh"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public void* PNext;
 
     [NativeName("intraRefreshCycleDuration")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_intra_refresh"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public uint IntraRefreshCycleDuration;
 
     [NativeName("intraRefreshIndex")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_intra_refresh"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public uint IntraRefreshIndex;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_intra_refresh"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
     public VideoEncodeIntraRefreshInfoKHR() { }
 }

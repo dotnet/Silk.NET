@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceTileMemoryHeapFeaturesQCOM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceTileMemoryHeapFeaturesQCOM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_memory_heap"],
+        ImpliesSets = [
+            "VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceTileMemoryHeapFeaturesQCOM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_memory_heap"],
+        ImpliesSets = [
+            "VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("tileMemoryHeap")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_memory_heap"],
+        ImpliesSets = [
+            "VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> TileMemoryHeap;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_memory_heap"],
+        ImpliesSets = [
+            "VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceTileMemoryHeapFeaturesQCOM() { }
 }

@@ -10,17 +10,50 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkImageCompressionFlagsEXT")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum ImageCompressionFlagsEXT : uint
 {
     [NativeName("VK_IMAGE_COMPRESSION_DEFAULT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control"],
+        ImpliesSets = [
+            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_compression_control+VK_VERSION_1_1",
+        ]
+    )]
     Default = 0x0,
 
     [NativeName("VK_IMAGE_COMPRESSION_FIXED_RATE_DEFAULT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control"],
+        ImpliesSets = [
+            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_compression_control+VK_VERSION_1_1",
+        ]
+    )]
     FixedRateDefault = 0x1,
 
     [NativeName("VK_IMAGE_COMPRESSION_FIXED_RATE_EXPLICIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control"],
+        ImpliesSets = [
+            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_compression_control+VK_VERSION_1_1",
+        ]
+    )]
     FixedRateExplicit = 0x2,
 
     [NativeName("VK_IMAGE_COMPRESSION_DISABLED_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control"],
+        ImpliesSets = [
+            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_compression_control+VK_VERSION_1_1",
+        ]
+    )]
     Disabled = 0x4,
 }

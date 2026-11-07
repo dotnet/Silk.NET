@@ -10,19 +10,52 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeviceDiagnosticsConfigFlagsNV")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum DeviceDiagnosticsConfigFlagsNV : uint
 {
     None = 0x0,
 
     [NativeName("VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_SHADER_DEBUG_INFO_BIT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_diagnostics_config"],
+        ImpliesSets = [
+            "VK_NV_device_diagnostics_config+VK_KHR_get_physical_device_properties2",
+            "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
+        ]
+    )]
     EnableShaderDebugInfoBit = 0x1,
 
     [NativeName("VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_RESOURCE_TRACKING_BIT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_diagnostics_config"],
+        ImpliesSets = [
+            "VK_NV_device_diagnostics_config+VK_KHR_get_physical_device_properties2",
+            "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
+        ]
+    )]
     EnableResourceTrackingBit = 0x2,
 
     [NativeName("VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_AUTOMATIC_CHECKPOINTS_BIT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_diagnostics_config"],
+        ImpliesSets = [
+            "VK_NV_device_diagnostics_config+VK_KHR_get_physical_device_properties2",
+            "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
+        ]
+    )]
     EnableAutomaticCheckpointsBit = 0x4,
 
     [NativeName("VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_SHADER_ERROR_REPORTING_BIT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_diagnostics_config"],
+        ImpliesSets = [
+            "VK_NV_device_diagnostics_config+VK_KHR_get_physical_device_properties2",
+            "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
+        ]
+    )]
     EnableShaderErrorReportingBit = 0x8,
 }

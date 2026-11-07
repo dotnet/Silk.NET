@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoEncodeAV1ReferenceInfoFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeAv1ReferenceInfoFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("disable_frame_end_update_cdf")]
+    [SupportedApiProfile("vulkan")]
     public uint DisableFrameEndUpdateCdf
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoEncodeAv1ReferenceInfoFlags
     }
 
     [NativeName("segmentation_enabled")]
+    [SupportedApiProfile("vulkan")]
     public uint SegmentationEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoEncodeAv1ReferenceInfoFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

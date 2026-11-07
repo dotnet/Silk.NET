@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoH265ProfileTierLevelFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265ProfileTierLevelFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("general_tier_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint GeneralTierFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoH265ProfileTierLevelFlags
     }
 
     [NativeName("general_progressive_source_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint GeneralProgressiveSourceFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoH265ProfileTierLevelFlags
     }
 
     [NativeName("general_interlaced_source_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint GeneralInterlacedSourceFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoH265ProfileTierLevelFlags
     }
 
     [NativeName("general_non_packed_constraint_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint GeneralNonPackedConstraintFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct StdVideoH265ProfileTierLevelFlags
     }
 
     [NativeName("general_frame_only_constraint_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint GeneralFrameOnlyConstraintFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

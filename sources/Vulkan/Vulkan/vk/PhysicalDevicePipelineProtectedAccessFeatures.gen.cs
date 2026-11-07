@@ -9,16 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDevicePipelineProtectedAccessFeatures")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePipelineProtectedAccessFeatures
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public StructureType SType = StructureType.PhysicalDevicePipelineProtectedAccessFeatures;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public void* PNext;
 
     [NativeName("pipelineProtectedAccess")]
+    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public MaybeBool<uint> PipelineProtectedAccess;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public PhysicalDevicePipelineProtectedAccessFeatures() { }
 }

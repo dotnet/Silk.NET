@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceBorderColorSwizzleFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceBorderColorSwizzleFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_border_color_swizzle"],
+        ImpliesSets = ["VK_EXT_custom_border_color"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceBorderColorSwizzleFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_border_color_swizzle"],
+        ImpliesSets = ["VK_EXT_custom_border_color"]
+    )]
     public void* PNext;
 
     [NativeName("borderColorSwizzle")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_border_color_swizzle"],
+        ImpliesSets = ["VK_EXT_custom_border_color"]
+    )]
     public MaybeBool<uint> BorderColorSwizzle;
 
     [NativeName("borderColorSwizzleFromImage")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_border_color_swizzle"],
+        ImpliesSets = ["VK_EXT_custom_border_color"]
+    )]
     public MaybeBool<uint> BorderColorSwizzleFromImage;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_border_color_swizzle"],
+        ImpliesSets = ["VK_EXT_custom_border_color"]
+    )]
     public PhysicalDeviceBorderColorSwizzleFeaturesEXT() { }
 }

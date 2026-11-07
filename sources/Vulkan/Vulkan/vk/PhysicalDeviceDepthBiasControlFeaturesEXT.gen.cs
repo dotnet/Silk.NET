@@ -9,25 +9,82 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceDepthBiasControlFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_bias_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_bias_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_bias_control+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceDepthBiasControlFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_bias_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_bias_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_bias_control+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("depthBiasControl")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_bias_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_bias_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_bias_control+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> DepthBiasControl;
 
     [NativeName("leastRepresentableValueForceUnormRepresentation")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_bias_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_bias_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_bias_control+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> LeastRepresentableValueForceUnormRepresentation;
 
     [NativeName("floatRepresentation")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_bias_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_bias_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_bias_control+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> FloatRepresentation;
 
     [NativeName("depthBiasExact")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_bias_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_bias_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_bias_control+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> DepthBiasExact;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_bias_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_bias_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_bias_control+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceDepthBiasControlFeaturesEXT() { }
 }

@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoAV1FilmGrainFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1FilmGrainFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("chroma_scaling_from_luma")]
+    [SupportedApiProfile("vulkan")]
     public uint ChromaScalingFromLuma
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoAv1FilmGrainFlags
     }
 
     [NativeName("overlap_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint OverlapFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoAv1FilmGrainFlags
     }
 
     [NativeName("clip_to_restricted_range")]
+    [SupportedApiProfile("vulkan")]
     public uint ClipToRestrictedRange
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoAv1FilmGrainFlags
     }
 
     [NativeName("update_grain")]
+    [SupportedApiProfile("vulkan")]
     public uint UpdateGrain
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct StdVideoAv1FilmGrainFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

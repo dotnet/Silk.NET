@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceLegacyVertexAttributesFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceLegacyVertexAttributesFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_legacy_vertex_attributes"],
+        ImpliesSets = ["VK_EXT_vertex_input_dynamic_state"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceLegacyVertexAttributesFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_legacy_vertex_attributes"],
+        ImpliesSets = ["VK_EXT_vertex_input_dynamic_state"]
+    )]
     public void* PNext;
 
     [NativeName("legacyVertexAttributes")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_legacy_vertex_attributes"],
+        ImpliesSets = ["VK_EXT_vertex_input_dynamic_state"]
+    )]
     public MaybeBool<uint> LegacyVertexAttributes;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_legacy_vertex_attributes"],
+        ImpliesSets = ["VK_EXT_vertex_input_dynamic_state"]
+    )]
     public PhysicalDeviceLegacyVertexAttributesFeaturesEXT() { }
 }

@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSurfaceProtectedCapabilitiesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct SurfaceProtectedCapabilitiesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_protected_capabilities"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_VERSION_1_1"]
+    )]
     public StructureType SType = StructureType.SurfaceProtectedCapabilitiesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_protected_capabilities"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_VERSION_1_1"]
+    )]
     public void* PNext;
 
     [NativeName("supportsProtected")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_protected_capabilities"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_VERSION_1_1"]
+    )]
     public MaybeBool<uint> SupportsProtected;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_protected_capabilities"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_VERSION_1_1"]
+    )]
     public SurfaceProtectedCapabilitiesKHR() { }
 }

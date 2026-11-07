@@ -9,25 +9,82 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDevicePCIBusInfoPropertiesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePciBusInfoPropertiesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pci_bus_info"],
+        ImpliesSets = [
+            "VK_EXT_pci_bus_info+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pci_bus_info+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDevicePciBusInfoPropertiesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pci_bus_info"],
+        ImpliesSets = [
+            "VK_EXT_pci_bus_info+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pci_bus_info+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("pciDomain")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pci_bus_info"],
+        ImpliesSets = [
+            "VK_EXT_pci_bus_info+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pci_bus_info+VK_VERSION_1_1",
+        ]
+    )]
     public uint PciDomain;
 
     [NativeName("pciBus")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pci_bus_info"],
+        ImpliesSets = [
+            "VK_EXT_pci_bus_info+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pci_bus_info+VK_VERSION_1_1",
+        ]
+    )]
     public uint PciBus;
 
     [NativeName("pciDevice")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pci_bus_info"],
+        ImpliesSets = [
+            "VK_EXT_pci_bus_info+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pci_bus_info+VK_VERSION_1_1",
+        ]
+    )]
     public uint PciDevice;
 
     [NativeName("pciFunction")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pci_bus_info"],
+        ImpliesSets = [
+            "VK_EXT_pci_bus_info+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pci_bus_info+VK_VERSION_1_1",
+        ]
+    )]
     public uint PciFunction;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pci_bus_info"],
+        ImpliesSets = [
+            "VK_EXT_pci_bus_info+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pci_bus_info+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDevicePciBusInfoPropertiesEXT() { }
 }

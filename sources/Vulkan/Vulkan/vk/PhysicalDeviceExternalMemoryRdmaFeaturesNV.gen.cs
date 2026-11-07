@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceExternalMemoryRDMAFeaturesNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceExternalMemoryRdmaFeaturesNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory_rdma"],
+        ImpliesSets = [
+            "VK_NV_external_memory_rdma+VK_KHR_external_memory",
+            "VK_NV_external_memory_rdma+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceExternalMemoryRdmaFeaturesNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory_rdma"],
+        ImpliesSets = [
+            "VK_NV_external_memory_rdma+VK_KHR_external_memory",
+            "VK_NV_external_memory_rdma+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("externalMemoryRDMA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory_rdma"],
+        ImpliesSets = [
+            "VK_NV_external_memory_rdma+VK_KHR_external_memory",
+            "VK_NV_external_memory_rdma+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ExternalMemoryRdma;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory_rdma"],
+        ImpliesSets = [
+            "VK_NV_external_memory_rdma+VK_KHR_external_memory",
+            "VK_NV_external_memory_rdma+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceExternalMemoryRdmaFeaturesNV() { }
 }

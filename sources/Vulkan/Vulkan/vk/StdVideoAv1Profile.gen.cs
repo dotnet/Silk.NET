@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoAV1Profile")]
+[SupportedApiProfile("vulkan")]
 public enum StdVideoAv1Profile : uint
 {
     [NativeName("STD_VIDEO_AV1_PROFILE_MAIN")]
+    [SupportedApiProfile("vulkan")]
     Main = 0,
 
     [NativeName("STD_VIDEO_AV1_PROFILE_HIGH")]
+    [SupportedApiProfile("vulkan")]
     High = 1,
 
     [NativeName("STD_VIDEO_AV1_PROFILE_PROFESSIONAL")]
+    [SupportedApiProfile("vulkan")]
     Professional = 2,
 }

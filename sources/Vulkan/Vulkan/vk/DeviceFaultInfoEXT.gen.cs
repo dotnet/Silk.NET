@@ -9,25 +9,82 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeviceFaultInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceFaultInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_fault"],
+        ImpliesSets = [
+            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.DeviceFaultInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_fault"],
+        ImpliesSets = [
+            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("description")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_fault"],
+        ImpliesSets = [
+            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public DeviceFaultInfoEXTDescription Description;
 
     [NativeName("pAddressInfos")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_fault"],
+        ImpliesSets = [
+            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public DeviceFaultAddressInfoKHR* PAddressInfos;
 
     [NativeName("pVendorInfos")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_fault"],
+        ImpliesSets = [
+            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public DeviceFaultVendorInfoKHR* PVendorInfos;
 
     [NativeName("pVendorBinaryData")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_fault"],
+        ImpliesSets = [
+            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public void* PVendorBinaryData;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_fault"],
+        ImpliesSets = [
+            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public DeviceFaultInfoEXT() { }
 }

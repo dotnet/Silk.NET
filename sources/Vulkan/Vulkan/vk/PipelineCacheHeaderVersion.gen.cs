@@ -9,11 +9,38 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineCacheHeaderVersion")]
+[SupportedApiProfile("vulkan")]
 public enum PipelineCacheHeaderVersion : uint
 {
     [NativeName("VK_PIPELINE_CACHE_HEADER_VERSION_ONE")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     One = 1,
 
     [NativeName("VK_PIPELINE_CACHE_HEADER_VERSION_DATA_GRAPH_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_data_graph_model"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     DataGraphQCOM = 1000629000,
 }

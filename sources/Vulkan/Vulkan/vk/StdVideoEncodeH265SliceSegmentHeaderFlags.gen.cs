@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoEncodeH265SliceSegmentHeaderFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("first_slice_segment_in_pic_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint FirstSliceSegmentInPicFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("dependent_slice_segment_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint DependentSliceSegmentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("slice_sao_luma_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint SliceSaoLumaFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("slice_sao_chroma_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint SliceSaoChromaFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("num_ref_idx_active_override_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint NumRefIdxActiveOverrideFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +67,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("mvd_l1_zero_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint MvdL1ZeroFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,6 +77,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("cabac_init_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint CabacInitFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -78,6 +87,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("cu_chroma_qp_offset_enabled_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint CuChromaQpOffsetEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -87,6 +97,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("deblocking_filter_override_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint DeblockingFilterOverrideFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -96,6 +107,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("slice_deblocking_filter_disabled_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint SliceDeblockingFilterDisabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -105,6 +117,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("collocated_from_l0_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint CollocatedFromL0Flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -114,6 +127,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("slice_loop_filter_across_slices_enabled_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint SliceLoopFilterAcrossSlicesEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -123,6 +137,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

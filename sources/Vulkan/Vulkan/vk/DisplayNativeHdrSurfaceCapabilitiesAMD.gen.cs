@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDisplayNativeHdrSurfaceCapabilitiesAMD")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DisplayNativeHdrSurfaceCapabilitiesAMD
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_display_native_hdr"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.DisplayNativeHdrSurfaceCapabilitiesAMD;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_display_native_hdr"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("localDimmingSupport")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_display_native_hdr"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> LocalDimmingSupport;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_display_native_hdr"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
     public DisplayNativeHdrSurfaceCapabilitiesAMD() { }
 }

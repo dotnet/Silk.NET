@@ -9,19 +9,60 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDescriptorSetLayoutHostMappingInfoVALVE")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorSetLayoutHostMappingInfoVALVE
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_descriptor_set_host_mapping"],
+        ImpliesSets = [
+            "VK_VALVE_descriptor_set_host_mapping+VK_KHR_get_physical_device_properties2",
+            "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.DescriptorSetLayoutHostMappingInfoVALVE;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_descriptor_set_host_mapping"],
+        ImpliesSets = [
+            "VK_VALVE_descriptor_set_host_mapping+VK_KHR_get_physical_device_properties2",
+            "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("descriptorOffset")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_descriptor_set_host_mapping"],
+        ImpliesSets = [
+            "VK_VALVE_descriptor_set_host_mapping+VK_KHR_get_physical_device_properties2",
+            "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
+        ]
+    )]
     public nuint DescriptorOffset;
 
     [NativeName("descriptorSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_descriptor_set_host_mapping"],
+        ImpliesSets = [
+            "VK_VALVE_descriptor_set_host_mapping+VK_KHR_get_physical_device_properties2",
+            "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
+        ]
+    )]
     public uint DescriptorSize;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_descriptor_set_host_mapping"],
+        ImpliesSets = [
+            "VK_VALVE_descriptor_set_host_mapping+VK_KHR_get_physical_device_properties2",
+            "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
+        ]
+    )]
     public DescriptorSetLayoutHostMappingInfoVALVE() { }
 }

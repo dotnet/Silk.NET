@@ -9,20 +9,46 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineCacheHeaderVersionDataGraphQCOM")]
+[SupportedApiProfile("vulkan")]
 public partial struct PipelineCacheHeaderVersionDataGraphQCOM
 {
     [NativeName("headerSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_data_graph_model"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public uint HeaderSize;
 
     [NativeName("headerVersion")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_data_graph_model"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public PipelineCacheHeaderVersion HeaderVersion;
 
     [NativeName("cacheType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_data_graph_model"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public DataGraphModelCacheTypeQCOM CacheType;
 
     [NativeName("cacheVersion")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_data_graph_model"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public uint CacheVersion;
 
     [NativeName("toolchainVersion")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_data_graph_model"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public PipelineCacheHeaderVersionDataGraphQCOMToolchainVersion ToolchainVersion;
 }

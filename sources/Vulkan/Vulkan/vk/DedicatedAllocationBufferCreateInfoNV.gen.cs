@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDedicatedAllocationBufferCreateInfoNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DedicatedAllocationBufferCreateInfoNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
     public StructureType SType = StructureType.DedicatedAllocationBufferCreateInfoNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
     public void* PNext;
 
     [NativeName("dedicatedAllocation")]
+    [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
     public MaybeBool<uint> DedicatedAllocation;
 
+    [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
     public DedicatedAllocationBufferCreateInfoNV() { }
 }

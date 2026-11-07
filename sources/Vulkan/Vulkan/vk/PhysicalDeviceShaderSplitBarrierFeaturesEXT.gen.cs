@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderSplitBarrierFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderSplitBarrierFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_split_barrier"],
+        ImpliesSets = [
+            "VK_EXT_shader_split_barrier+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_split_barrier+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceShaderSplitBarrierFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_split_barrier"],
+        ImpliesSets = [
+            "VK_EXT_shader_split_barrier+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_split_barrier+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("shaderSplitBarrier")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_split_barrier"],
+        ImpliesSets = [
+            "VK_EXT_shader_split_barrier+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_split_barrier+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderSplitBarrier;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_split_barrier"],
+        ImpliesSets = [
+            "VK_EXT_shader_split_barrier+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_split_barrier+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceShaderSplitBarrierFeaturesEXT() { }
 }

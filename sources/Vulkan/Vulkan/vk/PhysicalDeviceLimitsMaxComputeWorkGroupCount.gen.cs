@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_maxComputeWorkGroupCount_e__FixedBuffer")]
 [InlineArray(3)]
+[SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceLimitsMaxComputeWorkGroupCount
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public uint E0;
 }

@@ -9,17 +9,50 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkCoarseSampleOrderCustomNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct CoarseSampleOrderCustomNV
 {
     [NativeName("shadingRate")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     public ShadingRatePaletteEntryNV ShadingRate;
 
     [NativeName("sampleCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     public uint SampleCount;
 
     [NativeName("sampleLocationCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     public uint SampleLocationCount;
 
     [NativeName("pSampleLocations")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     public CoarseSampleLocationNV* PSampleLocations;
 }

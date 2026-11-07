@@ -9,22 +9,83 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDescriptorAddressInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorAddressInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType = StructureType.DescriptorAddressInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("address")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public ulong Address;
 
     [NativeName("range")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public ulong Range;
 
     [NativeName("format")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public Format Format;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public DescriptorAddressInfoEXT() { }
 }

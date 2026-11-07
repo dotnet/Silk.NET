@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceLineRasterizationProperties")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceLineRasterizationProperties
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public StructureType SType = StructureType.PhysicalDeviceLineRasterizationProperties;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public void* PNext;
 
     [NativeName("lineSubPixelPrecisionBits")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public uint LineSubPixelPrecisionBits;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public PhysicalDeviceLineRasterizationProperties() { }
 }

@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_lineWidthRange_e__FixedBuffer")]
 [InlineArray(2)]
+[SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceLimitsLineWidthRange
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public float E0;
 }

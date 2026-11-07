@@ -9,19 +9,60 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceImage2DViewOf3DFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImage2DViewOf3DFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_2d_view_of_3d"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceImage2DViewOf3DFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_2d_view_of_3d"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("image2DViewOf3D")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_2d_view_of_3d"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> Image2DViewOf3D;
 
     [NativeName("sampler2DViewOf3D")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_2d_view_of_3d"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> Sampler2DViewOf3D;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_2d_view_of_3d"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceImage2DViewOf3DFeaturesEXT() { }
 }

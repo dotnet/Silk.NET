@@ -9,15 +9,40 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkAccelerationStructureInstanceKHR")]
+[SupportedApiProfile("vulkan")]
 public partial struct AccelerationStructureInstanceKHR
 {
     [NativeName("transform")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public TransformMatrixKHR Transform;
 
     [NativeName("_bitfield1")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public uint Bitfield1;
 
     [NativeName("instanceCustomIndex")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public uint InstanceCustomIndex
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -27,6 +52,14 @@ public partial struct AccelerationStructureInstanceKHR
     }
 
     [NativeName("mask")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public uint Mask
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -36,9 +69,25 @@ public partial struct AccelerationStructureInstanceKHR
     }
 
     [NativeName("_bitfield2")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public uint Bitfield2;
 
     [NativeName("instanceShaderBindingTableRecordOffset")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public uint InstanceShaderBindingTableRecordOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -48,6 +97,14 @@ public partial struct AccelerationStructureInstanceKHR
     }
 
     [NativeName("flags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public GeometryInstanceFlagsKHR Flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -57,5 +114,13 @@ public partial struct AccelerationStructureInstanceKHR
     }
 
     [NativeName("accelerationStructureReference")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
     public ulong AccelerationStructureReference;
 }

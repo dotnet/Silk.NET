@@ -9,18 +9,39 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkClusterAccelerationStructureBuildTriangleClusterInfoNV")]
+[SupportedApiProfile("vulkan")]
 public partial struct ClusterAccelerationStructureBuildTriangleClusterInfoNV
 {
     [NativeName("clusterID")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint ClusterID;
 
     [NativeName("clusterFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ClusterAccelerationStructureClusterFlagsNV ClusterFlags;
 
     [NativeName("_bitfield")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint Bitfield;
 
     [NativeName("triangleCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint TriangleCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -30,6 +51,11 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterInfoNV
     }
 
     [NativeName("vertexCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint VertexCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +65,11 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterInfoNV
     }
 
     [NativeName("positionTruncateBitCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint PositionTruncateBitCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -48,6 +79,11 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterInfoNV
     }
 
     [NativeName("indexType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint IndexType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -57,6 +93,11 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterInfoNV
     }
 
     [NativeName("opacityMicromapIndexType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint OpacityMicromapIndexType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -66,32 +107,82 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterInfoNV
     }
 
     [NativeName("baseGeometryIndexAndGeometryFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV BaseGeometryIndexAndGeometryFlags;
 
     [NativeName("indexBufferStride")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ushort IndexBufferStride;
 
     [NativeName("vertexBufferStride")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ushort VertexBufferStride;
 
     [NativeName("geometryIndexAndFlagsBufferStride")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ushort GeometryIndexAndFlagsBufferStride;
 
     [NativeName("opacityMicromapIndexBufferStride")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ushort OpacityMicromapIndexBufferStride;
 
     [NativeName("indexBuffer")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong IndexBuffer;
 
     [NativeName("vertexBuffer")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong VertexBuffer;
 
     [NativeName("geometryIndexAndFlagsBuffer")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong GeometryIndexAndFlagsBuffer;
 
     [NativeName("opacityMicromapArray")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong OpacityMicromapArray;
 
     [NativeName("opacityMicromapIndexBuffer")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong OpacityMicromapIndexBuffer;
 }

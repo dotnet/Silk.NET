@@ -9,17 +9,70 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSemaphoreType")]
+[SupportedApiProfile("vulkan")]
 public enum SemaphoreType : uint
 {
     [NativeName("VK_SEMAPHORE_TYPE_BINARY")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
     Binary = 0,
 
     [NativeName("VK_SEMAPHORE_TYPE_TIMELINE")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
     Timeline = 1,
 
     [NativeName("VK_SEMAPHORE_TYPE_BINARY_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_timeline_semaphore"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
+        ]
+    )]
     BinaryKHR = Binary,
 
     [NativeName("VK_SEMAPHORE_TYPE_TIMELINE_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_timeline_semaphore"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
+        ]
+    )]
     TimelineKHR = Timeline,
 }

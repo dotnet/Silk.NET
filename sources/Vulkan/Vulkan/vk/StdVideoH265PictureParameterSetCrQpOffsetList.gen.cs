@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_cr_qp_offset_list_e__FixedBuffer")]
 [InlineArray(6)]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265PictureParameterSetCrQpOffsetList
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public sbyte E0;
 }

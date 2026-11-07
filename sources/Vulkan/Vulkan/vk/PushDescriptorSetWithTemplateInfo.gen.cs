@@ -9,25 +9,61 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPushDescriptorSetWithTemplateInfo")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PushDescriptorSetWithTemplateInfo
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public StructureType SType = StructureType.PushDescriptorSetWithTemplateInfo;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public void* PNext;
 
     [NativeName("descriptorUpdateTemplate")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public DescriptorUpdateTemplateHandle DescriptorUpdateTemplate;
 
     [NativeName("layout")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public PipelineLayoutHandle Layout;
 
     [NativeName("set")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public uint Set;
 
     [NativeName("pData")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public void* PData;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public PushDescriptorSetWithTemplateInfo() { }
 }

@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDevicePerformanceQueryPropertiesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePerformanceQueryPropertiesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDevicePerformanceQueryPropertiesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("allowCommandBufferQueryCopies")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> AllowCommandBufferQueryCopies;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDevicePerformanceQueryPropertiesKHR() { }
 }

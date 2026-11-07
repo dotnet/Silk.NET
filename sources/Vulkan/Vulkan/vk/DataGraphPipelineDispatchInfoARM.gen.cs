@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDataGraphPipelineDispatchInfoARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DataGraphPipelineDispatchInfoARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
+    )]
     public StructureType SType = StructureType.DataGraphPipelineDispatchInfoARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("flags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
+    )]
     public DataGraphPipelineDispatchFlagsARM Flags;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
+    )]
     public DataGraphPipelineDispatchInfoARM() { }
 }

@@ -9,12 +9,23 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV")]
+[SupportedApiProfile("vulkan")]
 public partial struct ClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint Bitfield;
 
     [NativeName("geometryIndex")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint GeometryIndex
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +35,11 @@ public partial struct ClusterAccelerationStructureGeometryIndexAndGeometryFlagsN
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +49,11 @@ public partial struct ClusterAccelerationStructureGeometryIndexAndGeometryFlagsN
     }
 
     [NativeName("geometryFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint GeometryFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

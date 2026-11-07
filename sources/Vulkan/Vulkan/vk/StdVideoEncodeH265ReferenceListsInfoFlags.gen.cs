@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoEncodeH265ReferenceListsInfoFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265ReferenceListsInfoFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("ref_pic_list_modification_flag_l0")]
+    [SupportedApiProfile("vulkan")]
     public uint RefPicListModificationFlagL0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoEncodeH265ReferenceListsInfoFlags
     }
 
     [NativeName("ref_pic_list_modification_flag_l1")]
+    [SupportedApiProfile("vulkan")]
     public uint RefPicListModificationFlagL1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoEncodeH265ReferenceListsInfoFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

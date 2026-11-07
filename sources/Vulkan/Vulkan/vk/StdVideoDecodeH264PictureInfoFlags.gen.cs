@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoDecodeH264PictureInfoFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeH264PictureInfoFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("field_pic_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint FieldPicFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
     }
 
     [NativeName("is_intra")]
+    [SupportedApiProfile("vulkan")]
     public uint IsIntra
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
     }
 
     [NativeName("IdrPicFlag")]
+    [SupportedApiProfile("vulkan")]
     public uint IdrPicFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
     }
 
     [NativeName("bottom_field_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint BottomFieldFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
     }
 
     [NativeName("is_reference")]
+    [SupportedApiProfile("vulkan")]
     public uint IsReference
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +67,7 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
     }
 
     [NativeName("complementary_field_pair")]
+    [SupportedApiProfile("vulkan")]
     public uint ComplementaryFieldPair
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

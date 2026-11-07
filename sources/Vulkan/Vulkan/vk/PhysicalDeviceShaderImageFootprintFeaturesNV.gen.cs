@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderImageFootprintFeaturesNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderImageFootprintFeaturesNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shader_image_footprint"],
+        ImpliesSets = [
+            "VK_NV_shader_image_footprint+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shader_image_footprint+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceShaderImageFootprintFeaturesNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shader_image_footprint"],
+        ImpliesSets = [
+            "VK_NV_shader_image_footprint+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shader_image_footprint+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("imageFootprint")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shader_image_footprint"],
+        ImpliesSets = [
+            "VK_NV_shader_image_footprint+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shader_image_footprint+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ImageFootprint;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shader_image_footprint"],
+        ImpliesSets = [
+            "VK_NV_shader_image_footprint+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shader_image_footprint+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceShaderImageFootprintFeaturesNV() { }
 }

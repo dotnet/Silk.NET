@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_reserved1_e__FixedBuffer")]
 [InlineArray(7)]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1TileInfoReserved1
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public byte E0;
 }

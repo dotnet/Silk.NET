@@ -10,13 +10,30 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoDecodeCapabilityFlagsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum VideoDecodeCapabilityFlagsKHR : uint
 {
     None = 0x0,
 
     [NativeName("VK_VIDEO_DECODE_CAPABILITY_DPB_AND_OUTPUT_COINCIDE_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     DpbAndOutputCoincideBit = 0x1,
 
     [NativeName("VK_VIDEO_DECODE_CAPABILITY_DPB_AND_OUTPUT_DISTINCT_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     DpbAndOutputDistinctBit = 0x2,
 }

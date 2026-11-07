@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPartitionedAccelerationStructureWritePartitionTranslationDataNV")]
+[SupportedApiProfile("vulkan")]
 public partial struct PartitionedAccelerationStructureWritePartitionTranslationDataNV
 {
     [NativeName("partitionIndex")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint PartitionIndex;
 
     [NativeName("partitionTranslation")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public PartitionedAccelerationStructureWritePartitionTranslationDataNVPartitionTranslation PartitionTranslation;
 }

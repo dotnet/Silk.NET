@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkTensorFormatPropertiesARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct TensorFormatPropertiesARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public StructureType SType = StructureType.TensorFormatPropertiesARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public void* PNext;
 
     [NativeName("optimalTilingTensorFeatures")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public FormatFeatureFlags2 OptimalTilingTensorFeatures;
 
     [NativeName("linearTilingTensorFeatures")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public FormatFeatureFlags2 LinearTilingTensorFeatures;
 
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public TensorFormatPropertiesARM() { }
 }

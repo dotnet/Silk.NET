@@ -9,38 +9,127 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeviceFaultVendorBinaryHeaderVersionOneKHR")]
+[SupportedApiProfile("vulkan")]
 public partial struct DeviceFaultVendorBinaryHeaderVersionOneKHR
 {
     [NativeName("headerSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public uint HeaderSize;
 
     [NativeName("headerVersion")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public DeviceFaultVendorBinaryHeaderVersionKHR HeaderVersion;
 
     [NativeName("vendorID")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public uint VendorID;
 
     [NativeName("deviceID")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public uint DeviceID;
 
     [NativeName("driverVersion")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public uint DriverVersion;
 
     [NativeName("pipelineCacheUUID")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public DeviceFaultVendorBinaryHeaderVersionOneKHRPipelineCacheUuid PipelineCacheUuid;
 
     [NativeName("applicationNameOffset")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public uint ApplicationNameOffset;
 
     [NativeName("applicationVersion")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public uint ApplicationVersion;
 
     [NativeName("engineNameOffset")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public uint EngineNameOffset;
 
     [NativeName("engineVersion")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public uint EngineVersion;
 
     [NativeName("apiVersion")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public uint ApiVersion;
 }

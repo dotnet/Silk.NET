@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkNeuralAcceleratorStatisticsModeARM")]
+[SupportedApiProfile("vulkan")]
 public enum NeuralAcceleratorStatisticsModeARM : uint
 {
     [NativeName("VK_NEURAL_ACCELERATOR_STATISTICS_MODE_DISABLED_ARM")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_data_graph_neural_accelerator_statistics"])]
     Disabled = 0,
 
     [NativeName("VK_NEURAL_ACCELERATOR_STATISTICS_MODE_STATISTICS0_ARM")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_data_graph_neural_accelerator_statistics"])]
     Statistics0 = 1,
 
     [NativeName("VK_NEURAL_ACCELERATOR_STATISTICS_MODE_STATISTICS1_ARM")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_data_graph_neural_accelerator_statistics"])]
     Statistics1 = 2,
 }

@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDataGraphOpticalFlowImageFormatPropertiesARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DataGraphOpticalFlowImageFormatPropertiesARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public StructureType SType = StructureType.DataGraphOpticalFlowImageFormatPropertiesARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public void* PNext;
 
     [NativeName("format")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public Format Format;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public DataGraphOpticalFlowImageFormatPropertiesARM() { }
 }

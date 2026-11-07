@@ -9,19 +9,75 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkShaderDescriptorSetAndBindingMappingInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct ShaderDescriptorSetAndBindingMappingInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
     public StructureType SType = StructureType.ShaderDescriptorSetAndBindingMappingInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("mappingCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
     public uint MappingCount;
 
     [NativeName("pMappings")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
     public DescriptorSetAndBindingMappingEXT* PMappings;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
     public ShaderDescriptorSetAndBindingMappingInfoEXT() { }
 }

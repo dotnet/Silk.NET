@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderLongVectorFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderLongVectorFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_shader_long_vector"], ImpliesSets = ["VK_VERSION_1_2"])]
     public StructureType SType = StructureType.PhysicalDeviceShaderLongVectorFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_shader_long_vector"], ImpliesSets = ["VK_VERSION_1_2"])]
     public void* PNext;
 
     [NativeName("longVector")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_shader_long_vector"], ImpliesSets = ["VK_VERSION_1_2"])]
     public MaybeBool<uint> LongVector;
 
+    [SupportedApiProfile("vulkan", ["VK_EXT_shader_long_vector"], ImpliesSets = ["VK_VERSION_1_2"])]
     public PhysicalDeviceShaderLongVectorFeaturesEXT() { }
 }

@@ -9,19 +9,65 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceFragmentShadingRateKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFragmentShadingRateKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_fragment_shading_rate"],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceFragmentShadingRateKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_fragment_shading_rate"],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("sampleCounts")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_fragment_shading_rate"],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
     public SampleCountFlags SampleCounts;
 
     [NativeName("fragmentSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_fragment_shading_rate"],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
     public Extent2D FragmentSize;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_fragment_shading_rate"],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
     public PhysicalDeviceFragmentShadingRateKHR() { }
 }

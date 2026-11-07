@@ -9,14 +9,39 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkGpaPerfCounterAMD")]
+[SupportedApiProfile("vulkan")]
 public partial struct GpaPerfCounterAMD
 {
     [NativeName("blockType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
     public GpaPerfBlockAMD BlockType;
 
     [NativeName("blockInstance")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
     public uint BlockInstance;
 
     [NativeName("eventID")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
     public uint EventID;
 }

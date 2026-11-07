@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceFaultPropertiesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFaultPropertiesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceFaultPropertiesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("maxDeviceFaultCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public uint MaxDeviceFaultCount;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceFaultPropertiesKHR() { }
 }

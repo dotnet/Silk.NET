@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDisplayPlaneCapabilities2KHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DisplayPlaneCapabilities2KHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_get_display_properties2"],
+        ImpliesSets = ["VK_KHR_display"]
+    )]
     public StructureType SType = StructureType.DisplayPlaneCapabilities2KHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_get_display_properties2"],
+        ImpliesSets = ["VK_KHR_display"]
+    )]
     public void* PNext;
 
     [NativeName("capabilities")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_get_display_properties2"],
+        ImpliesSets = ["VK_KHR_display"]
+    )]
     public DisplayPlaneCapabilitiesKHR Capabilities;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_get_display_properties2"],
+        ImpliesSets = ["VK_KHR_display"]
+    )]
     public DisplayPlaneCapabilities2KHR() { }
 }

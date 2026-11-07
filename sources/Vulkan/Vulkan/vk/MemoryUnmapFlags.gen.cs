@@ -10,10 +10,19 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkMemoryUnmapFlags")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum MemoryUnmapFlags : uint
 {
     None = 0x0,
 
     [NativeName("VK_MEMORY_UNMAP_RESERVE_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_map_memory_placed"],
+        ImpliesSets = [
+            "VK_EXT_map_memory_placed+VK_KHR_map_memory2",
+            "VK_EXT_map_memory_placed+VK_VERSION_1_4",
+        ]
+    )]
     ReserveBitEXT = 0x1,
 }

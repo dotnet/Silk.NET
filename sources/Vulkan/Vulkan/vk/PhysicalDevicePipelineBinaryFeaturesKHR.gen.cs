@@ -9,16 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDevicePipelineBinaryFeaturesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePipelineBinaryFeaturesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDevicePipelineBinaryFeaturesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("pipelineBinaries")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
     public MaybeBool<uint> PipelineBinaries;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
     public PhysicalDevicePipelineBinaryFeaturesKHR() { }
 }

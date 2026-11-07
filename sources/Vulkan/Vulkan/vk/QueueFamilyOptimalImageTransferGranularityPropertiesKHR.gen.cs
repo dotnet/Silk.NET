@@ -9,17 +9,50 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct QueueFamilyOptimalImageTransferGranularityPropertiesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance11"],
+        ImpliesSets = [
+            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance11+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType =
         StructureType.QueueFamilyOptimalImageTransferGranularityPropertiesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance11"],
+        ImpliesSets = [
+            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance11+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("optimalImageTransferGranularity")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance11"],
+        ImpliesSets = [
+            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance11+VK_VERSION_1_1",
+        ]
+    )]
     public Extent3D OptimalImageTransferGranularity;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance11"],
+        ImpliesSets = [
+            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance11+VK_VERSION_1_1",
+        ]
+    )]
     public QueueFamilyOptimalImageTransferGranularityPropertiesKHR() { }
 }

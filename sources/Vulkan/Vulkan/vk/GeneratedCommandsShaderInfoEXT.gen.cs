@@ -9,19 +9,75 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkGeneratedCommandsShaderInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct GeneratedCommandsShaderInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType = StructureType.GeneratedCommandsShaderInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("shaderCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public uint ShaderCount;
 
     [NativeName("pShaders")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public ShaderHandleEXT* PShaders;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public GeneratedCommandsShaderInfoEXT() { }
 }

@@ -9,16 +9,57 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkOutOfBandQueueTypeInfoNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct OutOfBandQueueTypeInfoNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_low_latency2"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
+        ]
+    )]
     public StructureType SType = StructureType.OutOfBandQueueTypeInfoNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_low_latency2"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("queueType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_low_latency2"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
+        ]
+    )]
     public OutOfBandQueueTypeNV QueueType;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_low_latency2"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
+        ]
+    )]
     public OutOfBandQueueTypeInfoNV() { }
 }

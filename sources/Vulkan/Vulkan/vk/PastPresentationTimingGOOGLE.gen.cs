@@ -9,20 +9,46 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPastPresentationTimingGOOGLE")]
+[SupportedApiProfile("vulkan")]
 public partial struct PastPresentationTimingGOOGLE
 {
     [NativeName("presentID")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GOOGLE_display_timing"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
     public uint PresentID;
 
     [NativeName("desiredPresentTime")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GOOGLE_display_timing"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
     public ulong DesiredPresentTime;
 
     [NativeName("actualPresentTime")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GOOGLE_display_timing"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
     public ulong ActualPresentTime;
 
     [NativeName("earliestPresentTime")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GOOGLE_display_timing"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
     public ulong EarliestPresentTime;
 
     [NativeName("presentMargin")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GOOGLE_display_timing"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
     public ulong PresentMargin;
 }

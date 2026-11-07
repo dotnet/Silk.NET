@@ -9,17 +9,54 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceFragmentDensityMapLayeredPropertiesVALVE")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFragmentDensityMapLayeredPropertiesVALVE
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_fragment_density_map_layered"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_extended_flags",
+            "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_4",
+        ]
+    )]
     public StructureType SType =
         StructureType.PhysicalDeviceFragmentDensityMapLayeredPropertiesVALVE;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_fragment_density_map_layered"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_extended_flags",
+            "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_4",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("maxFragmentDensityMapLayers")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_fragment_density_map_layered"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_extended_flags",
+            "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_4",
+        ]
+    )]
     public uint MaxFragmentDensityMapLayers;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_fragment_density_map_layered"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_extended_flags",
+            "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_4",
+        ]
+    )]
     public PhysicalDeviceFragmentDensityMapLayeredPropertiesVALVE() { }
 }

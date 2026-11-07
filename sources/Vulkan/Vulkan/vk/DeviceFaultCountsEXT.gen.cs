@@ -9,22 +9,71 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeviceFaultCountsEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceFaultCountsEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_fault"],
+        ImpliesSets = [
+            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.DeviceFaultCountsEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_fault"],
+        ImpliesSets = [
+            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("addressInfoCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_fault"],
+        ImpliesSets = [
+            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public uint AddressInfoCount;
 
     [NativeName("vendorInfoCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_fault"],
+        ImpliesSets = [
+            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public uint VendorInfoCount;
 
     [NativeName("vendorBinarySize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_fault"],
+        ImpliesSets = [
+            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public ulong VendorBinarySize;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_fault"],
+        ImpliesSets = [
+            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public DeviceFaultCountsEXT() { }
 }

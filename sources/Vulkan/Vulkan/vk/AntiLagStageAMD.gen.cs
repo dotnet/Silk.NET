@@ -9,11 +9,28 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkAntiLagStageAMD")]
+[SupportedApiProfile("vulkan")]
 public enum AntiLagStageAMD : uint
 {
     [NativeName("VK_ANTI_LAG_STAGE_INPUT_AMD")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_anti_lag"],
+        ImpliesSets = [
+            "VK_AMD_anti_lag+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_anti_lag+VK_VERSION_1_1",
+        ]
+    )]
     Input = 0,
 
     [NativeName("VK_ANTI_LAG_STAGE_PRESENT_AMD")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_anti_lag"],
+        ImpliesSets = [
+            "VK_AMD_anti_lag+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_anti_lag+VK_VERSION_1_1",
+        ]
+    )]
     Present = 1,
 }

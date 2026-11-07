@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSurfacePresentModeKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct SurfacePresentModeKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
+    )]
     public StructureType SType = StructureType.SurfacePresentModeKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
+    )]
     public void* PNext;
 
     [NativeName("presentMode")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
+    )]
     public PresentModeKHR PresentMode;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
+    )]
     public SurfacePresentModeKHR() { }
 }

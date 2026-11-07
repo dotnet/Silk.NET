@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_PredictorPaletteEntries_e__FixedBuffer")]
 [InlineArray(3 * 128)]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265PredictorPaletteEntriesPredictorPaletteEntries
 {
     [NativeName("e0_0")]
+    [SupportedApiProfile("vulkan")]
     public ushort E0x0;
 }

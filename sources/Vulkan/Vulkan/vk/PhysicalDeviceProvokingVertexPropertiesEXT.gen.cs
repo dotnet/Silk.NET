@@ -9,19 +9,60 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceProvokingVertexPropertiesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceProvokingVertexPropertiesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_provoking_vertex"],
+        ImpliesSets = [
+            "VK_EXT_provoking_vertex+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_provoking_vertex+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceProvokingVertexPropertiesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_provoking_vertex"],
+        ImpliesSets = [
+            "VK_EXT_provoking_vertex+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_provoking_vertex+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("provokingVertexModePerPipeline")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_provoking_vertex"],
+        ImpliesSets = [
+            "VK_EXT_provoking_vertex+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_provoking_vertex+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ProvokingVertexModePerPipeline;
 
     [NativeName("transformFeedbackPreservesTriangleFanProvokingVertex")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_provoking_vertex"],
+        ImpliesSets = [
+            "VK_EXT_provoking_vertex+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_provoking_vertex+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> TransformFeedbackPreservesTriangleFanProvokingVertex;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_provoking_vertex"],
+        ImpliesSets = [
+            "VK_EXT_provoking_vertex+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_provoking_vertex+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceProvokingVertexPropertiesEXT() { }
 }

@@ -9,16 +9,67 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceTextureCompressionASTCHDRFeatures")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceTextureCompressionAstchdrFeatures
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     public StructureType SType = StructureType.PhysicalDeviceTextureCompressionAstcHdrFeatures;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     public void* PNext;
 
     [NativeName("textureCompressionASTC_HDR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> TextureCompressionAstcHdr;
 
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     public PhysicalDeviceTextureCompressionAstchdrFeatures() { }
 }

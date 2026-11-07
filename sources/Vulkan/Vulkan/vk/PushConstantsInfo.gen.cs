@@ -9,28 +9,69 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPushConstantsInfo")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PushConstantsInfo
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public StructureType SType = StructureType.PushConstantsInfo;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public void* PNext;
 
     [NativeName("layout")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public PipelineLayoutHandle Layout;
 
     [NativeName("stageFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public ShaderStageFlags StageFlags;
 
     [NativeName("offset")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public uint Offset;
 
     [NativeName("size")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public uint Size;
 
     [NativeName("pValues")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public void* PValues;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public PushConstantsInfo() { }
 }

@@ -9,25 +9,61 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkRenderingInputAttachmentIndexInfo")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderingInputAttachmentIndexInfo
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public StructureType SType = StructureType.RenderingInputAttachmentIndexInfo;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public void* PNext;
 
     [NativeName("colorAttachmentCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public uint ColorAttachmentCount;
 
     [NativeName("pColorAttachmentInputIndices")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public uint* PColorAttachmentInputIndices;
 
     [NativeName("pDepthInputAttachmentIndex")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public uint* PDepthInputAttachmentIndex;
 
     [NativeName("pStencilInputAttachmentIndex")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public uint* PStencilInputAttachmentIndex;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     public RenderingInputAttachmentIndexInfo() { }
 }

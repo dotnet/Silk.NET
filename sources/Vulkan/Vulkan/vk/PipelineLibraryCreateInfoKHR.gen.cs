@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineLibraryCreateInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineLibraryCreateInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
     public StructureType SType = StructureType.PipelineLibraryCreateInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
     public void* PNext;
 
     [NativeName("libraryCount")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
     public uint LibraryCount;
 
     [NativeName("pLibraries")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
     public PipelineHandle* PLibraries;
 
+    [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
     public PipelineLibraryCreateInfoKHR() { }
 }

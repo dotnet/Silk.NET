@@ -9,19 +9,60 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineViewportExclusiveScissorStateCreateInfoNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineViewportExclusiveScissorStateCreateInfoNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_scissor_exclusive"],
+        ImpliesSets = [
+            "VK_NV_scissor_exclusive+VK_KHR_get_physical_device_properties2",
+            "VK_NV_scissor_exclusive+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PipelineViewportExclusiveScissorStateCreateInfoNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_scissor_exclusive"],
+        ImpliesSets = [
+            "VK_NV_scissor_exclusive+VK_KHR_get_physical_device_properties2",
+            "VK_NV_scissor_exclusive+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("exclusiveScissorCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_scissor_exclusive"],
+        ImpliesSets = [
+            "VK_NV_scissor_exclusive+VK_KHR_get_physical_device_properties2",
+            "VK_NV_scissor_exclusive+VK_VERSION_1_1",
+        ]
+    )]
     public uint ExclusiveScissorCount;
 
     [NativeName("pExclusiveScissors")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_scissor_exclusive"],
+        ImpliesSets = [
+            "VK_NV_scissor_exclusive+VK_KHR_get_physical_device_properties2",
+            "VK_NV_scissor_exclusive+VK_VERSION_1_1",
+        ]
+    )]
     public Rect2D* PExclusiveScissors;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_scissor_exclusive"],
+        ImpliesSets = [
+            "VK_NV_scissor_exclusive+VK_KHR_get_physical_device_properties2",
+            "VK_NV_scissor_exclusive+VK_VERSION_1_1",
+        ]
+    )]
     public PipelineViewportExclusiveScissorStateCreateInfoNV() { }
 }

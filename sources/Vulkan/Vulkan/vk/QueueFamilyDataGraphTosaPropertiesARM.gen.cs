@@ -9,28 +9,69 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkQueueFamilyDataGraphTOSAPropertiesARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct QueueFamilyDataGraphTosaPropertiesARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public StructureType SType = StructureType.QueueFamilyDataGraphTosaPropertiesARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public void* PNext;
 
     [NativeName("profileCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public uint ProfileCount;
 
     [NativeName("pProfiles")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public DataGraphTosaNameQualityARM* PProfiles;
 
     [NativeName("extensionCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public uint ExtensionCount;
 
     [NativeName("pExtensions")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public DataGraphTosaNameQualityARM* PExtensions;
 
     [NativeName("level")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public DataGraphTosaLevelARM Level;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public QueueFamilyDataGraphTosaPropertiesARM() { }
 }

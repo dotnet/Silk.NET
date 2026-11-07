@@ -9,17 +9,50 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineExecutableStatisticFormatKHR")]
+[SupportedApiProfile("vulkan")]
 public enum PipelineExecutableStatisticFormatKHR : uint
 {
     [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_BOOL32_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_executable_properties"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_executable_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
+        ]
+    )]
     Bool32 = 0,
 
     [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_INT64_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_executable_properties"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_executable_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
+        ]
+    )]
     Int64 = 1,
 
     [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_UINT64_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_executable_properties"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_executable_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
+        ]
+    )]
     Uint64 = 2,
 
     [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_FLOAT64_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_executable_properties"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_executable_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
+        ]
+    )]
     Float64 = 3,
 }

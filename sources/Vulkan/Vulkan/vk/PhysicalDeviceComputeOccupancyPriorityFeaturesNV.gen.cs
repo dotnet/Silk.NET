@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceComputeOccupancyPriorityFeaturesNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceComputeOccupancyPriorityFeaturesNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_compute_occupancy_priority"],
+        ImpliesSets = [
+            "VK_NV_compute_occupancy_priority+VK_KHR_get_physical_device_properties2",
+            "VK_NV_compute_occupancy_priority+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceComputeOccupancyPriorityFeaturesNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_compute_occupancy_priority"],
+        ImpliesSets = [
+            "VK_NV_compute_occupancy_priority+VK_KHR_get_physical_device_properties2",
+            "VK_NV_compute_occupancy_priority+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("computeOccupancyPriority")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_compute_occupancy_priority"],
+        ImpliesSets = [
+            "VK_NV_compute_occupancy_priority+VK_KHR_get_physical_device_properties2",
+            "VK_NV_compute_occupancy_priority+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ComputeOccupancyPriority;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_compute_occupancy_priority"],
+        ImpliesSets = [
+            "VK_NV_compute_occupancy_priority+VK_KHR_get_physical_device_properties2",
+            "VK_NV_compute_occupancy_priority+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceComputeOccupancyPriorityFeaturesNV() { }
 }

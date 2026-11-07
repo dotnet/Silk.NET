@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceYcbcrDegammaFeaturesQCOM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceYcbcrDegammaFeaturesQCOM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_ycbcr_degamma"],
+        ImpliesSets = [
+            "VK_QCOM_ycbcr_degamma+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_ycbcr_degamma+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceYcbcrDegammaFeaturesQCOM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_ycbcr_degamma"],
+        ImpliesSets = [
+            "VK_QCOM_ycbcr_degamma+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_ycbcr_degamma+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("ycbcrDegamma")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_ycbcr_degamma"],
+        ImpliesSets = [
+            "VK_QCOM_ycbcr_degamma+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_ycbcr_degamma+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> YcbcrDegamma;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_ycbcr_degamma"],
+        ImpliesSets = [
+            "VK_QCOM_ycbcr_degamma+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_ycbcr_degamma+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceYcbcrDegammaFeaturesQCOM() { }
 }

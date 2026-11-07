@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoAV1ColorConfigFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1ColorConfigFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("mono_chrome")]
+    [SupportedApiProfile("vulkan")]
     public uint MonoChrome
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoAv1ColorConfigFlags
     }
 
     [NativeName("color_range")]
+    [SupportedApiProfile("vulkan")]
     public uint ColorRange
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoAv1ColorConfigFlags
     }
 
     [NativeName("separate_uv_delta_q")]
+    [SupportedApiProfile("vulkan")]
     public uint SeparateUvDeltaQ
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoAv1ColorConfigFlags
     }
 
     [NativeName("color_description_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint ColorDescriptionPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct StdVideoAv1ColorConfigFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

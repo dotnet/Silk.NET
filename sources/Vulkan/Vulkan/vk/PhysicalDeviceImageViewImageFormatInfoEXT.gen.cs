@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceImageViewImageFormatInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImageViewImageFormatInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     public StructureType SType = StructureType.PhysicalDeviceImageViewImageFormatInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     public void* PNext;
 
     [NativeName("imageViewType")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     public ImageViewType ImageViewType;
 
+    [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     public PhysicalDeviceImageViewImageFormatInfoEXT() { }
 }

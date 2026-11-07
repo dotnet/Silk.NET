@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkTensorCopyARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct TensorCopyARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public StructureType SType = StructureType.TensorCopyARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public void* PNext;
 
     [NativeName("dimensionCount")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint DimensionCount;
 
     [NativeName("pSrcOffset")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public ulong* PSrcOffset;
 
     [NativeName("pDstOffset")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public ulong* PDstOffset;
 
     [NativeName("pExtent")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public ulong* PExtent;
 
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public TensorCopyARM() { }
 }

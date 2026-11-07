@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkShaderCorePropertiesFlagsAMD")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum ShaderCorePropertiesFlagsAMD : uint
 {
     None = 0x0,

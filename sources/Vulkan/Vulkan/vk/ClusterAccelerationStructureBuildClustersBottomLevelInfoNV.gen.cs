@@ -9,14 +9,30 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV")]
+[SupportedApiProfile("vulkan")]
 public partial struct ClusterAccelerationStructureBuildClustersBottomLevelInfoNV
 {
     [NativeName("clusterReferencesCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint ClusterReferencesCount;
 
     [NativeName("clusterReferencesStride")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public uint ClusterReferencesStride;
 
     [NativeName("clusterReferences")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong ClusterReferences;
 }

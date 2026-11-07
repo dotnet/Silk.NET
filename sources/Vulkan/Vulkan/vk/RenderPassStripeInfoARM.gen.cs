@@ -9,16 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkRenderPassStripeInfoARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassStripeInfoARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_render_pass_striped"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType = StructureType.RenderPassStripeInfoARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_render_pass_striped"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("stripeArea")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_render_pass_striped"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public Rect2D StripeArea;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_render_pass_striped"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public RenderPassStripeInfoARM() { }
 }

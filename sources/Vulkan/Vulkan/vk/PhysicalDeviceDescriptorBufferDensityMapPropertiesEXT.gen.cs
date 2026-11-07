@@ -9,17 +9,62 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDescriptorBufferDensityMapPropertiesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_EXT_fragment_density_map"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ],
+        RequireAll = true
+    )]
     public StructureType SType =
         StructureType.PhysicalDeviceDescriptorBufferDensityMapPropertiesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_EXT_fragment_density_map"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ],
+        RequireAll = true
+    )]
     public void* PNext;
 
     [NativeName("combinedImageSamplerDensityMapDescriptorSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_EXT_fragment_density_map"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ],
+        RequireAll = true
+    )]
     public nuint CombinedImageSamplerDensityMapDescriptorSize;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_EXT_fragment_density_map"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ],
+        RequireAll = true
+    )]
     public PhysicalDeviceDescriptorBufferDensityMapPropertiesEXT() { }
 }

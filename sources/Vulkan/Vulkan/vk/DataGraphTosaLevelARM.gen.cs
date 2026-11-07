@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDataGraphTOSALevelARM")]
+[SupportedApiProfile("vulkan")]
 public enum DataGraphTosaLevelARM : uint
 {
     [NativeName("VK_DATA_GRAPH_TOSA_LEVEL_NONE_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     TosaLevelNone = 0,
 
     [NativeName("VK_DATA_GRAPH_TOSA_LEVEL_8K_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     TosaLevel8K = 1,
 }

@@ -9,19 +9,65 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineBinaryHandlesInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineBinaryHandlesInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
     public StructureType SType = StructureType.PipelineBinaryHandlesInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("pipelineBinaryCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
     public uint PipelineBinaryCount;
 
     [NativeName("pPipelineBinaries")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
     public PipelineBinaryHandleKHR* PPipelineBinaries;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
     public PipelineBinaryHandlesInfoKHR() { }
 }

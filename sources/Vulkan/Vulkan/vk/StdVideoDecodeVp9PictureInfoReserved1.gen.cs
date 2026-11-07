@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_reserved1_e__FixedBuffer")]
 [InlineArray(3)]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeVp9PictureInfoReserved1
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public ushort E0;
 }

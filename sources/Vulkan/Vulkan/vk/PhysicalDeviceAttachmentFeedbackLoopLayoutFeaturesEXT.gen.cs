@@ -9,17 +9,50 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_attachment_feedback_loop_layout"],
+        ImpliesSets = [
+            "VK_EXT_attachment_feedback_loop_layout+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType =
         StructureType.PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_attachment_feedback_loop_layout"],
+        ImpliesSets = [
+            "VK_EXT_attachment_feedback_loop_layout+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("attachmentFeedbackLoopLayout")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_attachment_feedback_loop_layout"],
+        ImpliesSets = [
+            "VK_EXT_attachment_feedback_loop_layout+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> AttachmentFeedbackLoopLayout;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_attachment_feedback_loop_layout"],
+        ImpliesSets = [
+            "VK_EXT_attachment_feedback_loop_layout+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT() { }
 }

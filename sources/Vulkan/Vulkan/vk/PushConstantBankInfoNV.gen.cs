@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPushConstantBankInfoNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PushConstantBankInfoNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_NV_push_constant_bank"])]
     public StructureType SType = StructureType.PushConstantBankInfoNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_NV_push_constant_bank"])]
     public void* PNext;
 
     [NativeName("bank")]
+    [SupportedApiProfile("vulkan", ["VK_NV_push_constant_bank"])]
     public uint Bank;
 
+    [SupportedApiProfile("vulkan", ["VK_NV_push_constant_bank"])]
     public PushConstantBankInfoNV() { }
 }

@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDevicePresentMeteringFeaturesNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePresentMeteringFeaturesNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_present_metering"],
+        ImpliesSets = [
+            "VK_NV_present_metering+VK_KHR_get_physical_device_properties2",
+            "VK_NV_present_metering+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDevicePresentMeteringFeaturesNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_present_metering"],
+        ImpliesSets = [
+            "VK_NV_present_metering+VK_KHR_get_physical_device_properties2",
+            "VK_NV_present_metering+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("presentMetering")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_present_metering"],
+        ImpliesSets = [
+            "VK_NV_present_metering+VK_KHR_get_physical_device_properties2",
+            "VK_NV_present_metering+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> PresentMetering;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_present_metering"],
+        ImpliesSets = [
+            "VK_NV_present_metering+VK_KHR_get_physical_device_properties2",
+            "VK_NV_present_metering+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDevicePresentMeteringFeaturesNV() { }
 }

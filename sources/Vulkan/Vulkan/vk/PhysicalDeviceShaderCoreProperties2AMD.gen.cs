@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderCoreProperties2AMD")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderCoreProperties2AMD
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_shader_core_properties2"],
+        ImpliesSets = ["VK_AMD_shader_core_properties"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceShaderCoreProperties2AMD;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_shader_core_properties2"],
+        ImpliesSets = ["VK_AMD_shader_core_properties"]
+    )]
     public void* PNext;
 
     [NativeName("shaderCoreFeatures")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_shader_core_properties2"],
+        ImpliesSets = ["VK_AMD_shader_core_properties"]
+    )]
     public ShaderCorePropertiesFlagsAMD ShaderCoreFeatures;
 
     [NativeName("activeComputeUnitCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_shader_core_properties2"],
+        ImpliesSets = ["VK_AMD_shader_core_properties"]
+    )]
     public uint ActiveComputeUnitCount;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_shader_core_properties2"],
+        ImpliesSets = ["VK_AMD_shader_core_properties"]
+    )]
     public PhysicalDeviceShaderCoreProperties2AMD() { }
 }

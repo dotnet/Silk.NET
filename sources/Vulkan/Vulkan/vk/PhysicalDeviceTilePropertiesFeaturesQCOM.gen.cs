@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceTilePropertiesFeaturesQCOM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceTilePropertiesFeaturesQCOM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_properties"],
+        ImpliesSets = [
+            "VK_QCOM_tile_properties+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_tile_properties+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceTilePropertiesFeaturesQCOM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_properties"],
+        ImpliesSets = [
+            "VK_QCOM_tile_properties+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_tile_properties+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("tileProperties")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_properties"],
+        ImpliesSets = [
+            "VK_QCOM_tile_properties+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_tile_properties+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> TileProperties;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_properties"],
+        ImpliesSets = [
+            "VK_QCOM_tile_properties+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_tile_properties+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceTilePropertiesFeaturesQCOM() { }
 }

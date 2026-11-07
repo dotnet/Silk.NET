@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_dstOffsets_e__FixedBuffer")]
 [InlineArray(2)]
+[SupportedApiProfile("vulkan")]
 public partial struct ImageBlitDstOffsets
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public Offset3D E0;
 }

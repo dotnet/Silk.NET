@@ -9,25 +9,82 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceImageProcessingPropertiesQCOM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImageProcessingPropertiesQCOM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing+VK_KHR_format_feature_flags2",
+            "VK_QCOM_image_processing+VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceImageProcessingPropertiesQCOM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing+VK_KHR_format_feature_flags2",
+            "VK_QCOM_image_processing+VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("maxWeightFilterPhases")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing+VK_KHR_format_feature_flags2",
+            "VK_QCOM_image_processing+VK_VERSION_1_3",
+        ]
+    )]
     public uint MaxWeightFilterPhases;
 
     [NativeName("maxWeightFilterDimension")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing+VK_KHR_format_feature_flags2",
+            "VK_QCOM_image_processing+VK_VERSION_1_3",
+        ]
+    )]
     public Extent2D MaxWeightFilterDimension;
 
     [NativeName("maxBlockMatchRegion")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing+VK_KHR_format_feature_flags2",
+            "VK_QCOM_image_processing+VK_VERSION_1_3",
+        ]
+    )]
     public Extent2D MaxBlockMatchRegion;
 
     [NativeName("maxBoxFilterBlockSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing+VK_KHR_format_feature_flags2",
+            "VK_QCOM_image_processing+VK_VERSION_1_3",
+        ]
+    )]
     public Extent2D MaxBoxFilterBlockSize;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing+VK_KHR_format_feature_flags2",
+            "VK_QCOM_image_processing+VK_VERSION_1_3",
+        ]
+    )]
     public PhysicalDeviceImageProcessingPropertiesQCOM() { }
 }

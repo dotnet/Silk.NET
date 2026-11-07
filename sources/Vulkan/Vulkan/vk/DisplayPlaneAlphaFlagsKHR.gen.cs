@@ -10,19 +10,24 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkDisplayPlaneAlphaFlagsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum DisplayPlaneAlphaFlagsKHR : uint
 {
     None = 0x0,
 
     [NativeName("VK_DISPLAY_PLANE_ALPHA_OPAQUE_BIT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     OpaqueBit = 0x1,
 
     [NativeName("VK_DISPLAY_PLANE_ALPHA_GLOBAL_BIT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     GlobalBit = 0x2,
 
     [NativeName("VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_BIT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     PerPixelBit = 0x4,
 
     [NativeName("VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_PREMULTIPLIED_BIT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     PerPixelPremultipliedBit = 0x8,
 }

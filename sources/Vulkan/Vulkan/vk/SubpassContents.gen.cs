@@ -9,17 +9,59 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSubpassContents")]
+[SupportedApiProfile("vulkan")]
 public enum SubpassContents : uint
 {
     [NativeName("VK_SUBPASS_CONTENTS_INLINE")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     Inline = 0,
 
     [NativeName("VK_SUBPASS_CONTENTS_SECONDARY_COMMAND_BUFFERS")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
     SecondaryCommandBuffers = 1,
 
     [NativeName("VK_SUBPASS_CONTENTS_INLINE_AND_SECONDARY_COMMAND_BUFFERS_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     InlineAndSecondaryCommandBuffersKHR = 1000451000,
 
     [NativeName("VK_SUBPASS_CONTENTS_INLINE_AND_SECONDARY_COMMAND_BUFFERS_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_nested_command_buffer"],
+        ImpliesSets = [
+            "VK_EXT_nested_command_buffer+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_nested_command_buffer+VK_VERSION_1_1",
+        ]
+    )]
     InlineAndSecondaryCommandBuffersEXT = InlineAndSecondaryCommandBuffersKHR,
 }

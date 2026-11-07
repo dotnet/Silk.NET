@@ -9,25 +9,82 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPerformanceCounterDescriptionKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PerformanceCounterDescriptionKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PerformanceCounterDescriptionKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("flags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public PerformanceCounterDescriptionFlagsKHR Flags;
 
     [NativeName("name")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public PerformanceCounterDescriptionKHRName Name;
 
     [NativeName("category")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public PerformanceCounterDescriptionKHRCategory Category;
 
     [NativeName("description")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public PerformanceCounterDescriptionKHRDescription Description;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
     public PerformanceCounterDescriptionKHR() { }
 }

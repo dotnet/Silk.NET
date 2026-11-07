@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPerformanceOverrideInfoINTEL")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PerformanceOverrideInfoINTEL
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public StructureType SType = StructureType.PerformanceOverrideInfoINTEL;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public void* PNext;
 
     [NativeName("type")]
+    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public PerformanceOverrideTypeINTEL Type;
 
     [NativeName("enable")]
+    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public MaybeBool<uint> Enable;
 
     [NativeName("parameter")]
+    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public ulong Parameter;
 
+    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public PerformanceOverrideInfoINTEL() { }
 }

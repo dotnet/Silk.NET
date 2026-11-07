@@ -9,22 +9,71 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceImageProcessing3FeaturesQCOM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImageProcessing3FeaturesQCOM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing3"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing3+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_image_processing3+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceImageProcessing3FeaturesQCOM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing3"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing3+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_image_processing3+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("imageGatherLinear")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing3"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing3+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_image_processing3+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ImageGatherLinear;
 
     [NativeName("imageGatherExtendedModes")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing3"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing3+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_image_processing3+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ImageGatherExtendedModes;
 
     [NativeName("blockMatchExtendedClampToEdge")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing3"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing3+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_image_processing3+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> BlockMatchExtendedClampToEdge;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing3"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing3+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_image_processing3+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceImageProcessing3FeaturesQCOM() { }
 }

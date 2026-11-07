@@ -9,19 +9,75 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkWriteIndirectExecutionSetPipelineEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct WriteIndirectExecutionSetPipelineEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType = StructureType.WriteIndirectExecutionSetPipelineEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("index")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public uint Index;
 
     [NativeName("pipeline")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public PipelineHandle Pipeline;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public WriteIndirectExecutionSetPipelineEXT() { }
 }

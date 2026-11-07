@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderAtomicFloat16VectorFeaturesNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shader_atomic_float16_vector"],
+        ImpliesSets = [
+            "VK_NV_shader_atomic_float16_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shader_atomic_float16_vector+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceShaderAtomicFloat16VectorFeaturesNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shader_atomic_float16_vector"],
+        ImpliesSets = [
+            "VK_NV_shader_atomic_float16_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shader_atomic_float16_vector+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("shaderFloat16VectorAtomics")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shader_atomic_float16_vector"],
+        ImpliesSets = [
+            "VK_NV_shader_atomic_float16_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shader_atomic_float16_vector+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderFloat16VectorAtomics;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shader_atomic_float16_vector"],
+        ImpliesSets = [
+            "VK_NV_shader_atomic_float16_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shader_atomic_float16_vector+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceShaderAtomicFloat16VectorFeaturesNV() { }
 }

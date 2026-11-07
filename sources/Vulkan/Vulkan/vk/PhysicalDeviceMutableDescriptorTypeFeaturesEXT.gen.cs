@@ -9,16 +9,46 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMutableDescriptorTypeFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mutable_descriptor_type"],
+        ImpliesSets = [
+            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
+            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceMutableDescriptorTypeFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mutable_descriptor_type"],
+        ImpliesSets = [
+            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
+            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("mutableDescriptorType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_mutable_descriptor_type"],
+        ImpliesSets = ["VK_KHR_maintenance3"]
+    )]
     public MaybeBool<uint> MutableDescriptorType;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mutable_descriptor_type"],
+        ImpliesSets = [
+            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
+            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceMutableDescriptorTypeFeaturesEXT() { }
 }

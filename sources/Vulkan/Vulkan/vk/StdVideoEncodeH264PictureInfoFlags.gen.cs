@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoEncodeH264PictureInfoFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH264PictureInfoFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("IdrPicFlag")]
+    [SupportedApiProfile("vulkan")]
     public uint IdrPicFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
     }
 
     [NativeName("is_reference")]
+    [SupportedApiProfile("vulkan")]
     public uint IsReference
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
     }
 
     [NativeName("no_output_of_prior_pics_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint NoOutputOfPriorPicsFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
     }
 
     [NativeName("long_term_reference_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint LongTermReferenceFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
     }
 
     [NativeName("adaptive_ref_pic_marking_mode_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint AdaptiveRefPicMarkingModeFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +67,7 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

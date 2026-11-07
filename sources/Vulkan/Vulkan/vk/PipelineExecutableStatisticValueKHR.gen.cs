@@ -10,21 +10,54 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineExecutableStatisticValueKHR")]
 [StructLayout(LayoutKind.Explicit)]
+[SupportedApiProfile("vulkan")]
 public partial struct PipelineExecutableStatisticValueKHR
 {
     [NativeName("b32")]
     [FieldOffset(0)]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_executable_properties"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_executable_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> B32;
 
     [NativeName("i64")]
     [FieldOffset(0)]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_executable_properties"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_executable_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
+        ]
+    )]
     public long I64;
 
     [NativeName("u64")]
     [FieldOffset(0)]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_executable_properties"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_executable_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
+        ]
+    )]
     public ulong U64;
 
     [NativeName("f64")]
     [FieldOffset(0)]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_executable_properties"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_executable_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
+        ]
+    )]
     public double F64;
 }

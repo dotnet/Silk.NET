@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_zero_initialize_device_memory"],
+        ImpliesSets = [
+            "VK_EXT_zero_initialize_device_memory+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_zero_initialize_device_memory+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_zero_initialize_device_memory"],
+        ImpliesSets = [
+            "VK_EXT_zero_initialize_device_memory+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_zero_initialize_device_memory+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("zeroInitializeDeviceMemory")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_zero_initialize_device_memory"],
+        ImpliesSets = [
+            "VK_EXT_zero_initialize_device_memory+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_zero_initialize_device_memory+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ZeroInitializeDeviceMemory;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_zero_initialize_device_memory"],
+        ImpliesSets = [
+            "VK_EXT_zero_initialize_device_memory+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_zero_initialize_device_memory+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT() { }
 }

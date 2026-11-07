@@ -9,18 +9,39 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkAccelerationStructureMatrixMotionInstanceNV")]
+[SupportedApiProfile("vulkan")]
 public partial struct AccelerationStructureMatrixMotionInstanceNV
 {
     [NativeName("transformT0")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public TransformMatrixKHR TransformT0;
 
     [NativeName("transformT1")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public TransformMatrixKHR TransformT1;
 
     [NativeName("_bitfield1")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public uint Bitfield1;
 
     [NativeName("instanceCustomIndex")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public uint InstanceCustomIndex
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -30,6 +51,11 @@ public partial struct AccelerationStructureMatrixMotionInstanceNV
     }
 
     [NativeName("mask")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public uint Mask
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,9 +65,19 @@ public partial struct AccelerationStructureMatrixMotionInstanceNV
     }
 
     [NativeName("_bitfield2")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public uint Bitfield2;
 
     [NativeName("instanceShaderBindingTableRecordOffset")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public uint InstanceShaderBindingTableRecordOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +87,11 @@ public partial struct AccelerationStructureMatrixMotionInstanceNV
     }
 
     [NativeName("flags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public GeometryInstanceFlagsKHR Flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,5 +101,10 @@ public partial struct AccelerationStructureMatrixMotionInstanceNV
     }
 
     [NativeName("accelerationStructureReference")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
     public ulong AccelerationStructureReference;
 }

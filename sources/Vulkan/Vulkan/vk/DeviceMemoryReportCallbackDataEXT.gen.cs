@@ -9,34 +9,115 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeviceMemoryReportCallbackDataEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceMemoryReportCallbackDataEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.DeviceMemoryReportCallbackDataEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("flags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public uint Flags;
 
     [NativeName("type")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public DeviceMemoryReportEventTypeEXT Type;
 
     [NativeName("memoryObjectId")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public ulong MemoryObjectId;
 
     [NativeName("size")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public ulong Size;
 
     [NativeName("objectType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public ObjectType ObjectType;
 
     [NativeName("objectHandle")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public ulong ObjectHandle;
 
     [NativeName("heapIndex")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public uint HeapIndex;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public DeviceMemoryReportCallbackDataEXT() { }
 }

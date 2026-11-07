@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSamplerBorderColorComponentMappingCreateInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct SamplerBorderColorComponentMappingCreateInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_border_color_swizzle"],
+        ImpliesSets = ["VK_EXT_custom_border_color"]
+    )]
     public StructureType SType = StructureType.SamplerBorderColorComponentMappingCreateInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_border_color_swizzle"],
+        ImpliesSets = ["VK_EXT_custom_border_color"]
+    )]
     public void* PNext;
 
     [NativeName("components")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_border_color_swizzle"],
+        ImpliesSets = ["VK_EXT_custom_border_color"]
+    )]
     public ComponentMapping Components;
 
     [NativeName("srgb")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_border_color_swizzle"],
+        ImpliesSets = ["VK_EXT_custom_border_color"]
+    )]
     public MaybeBool<uint> Srgb;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_border_color_swizzle"],
+        ImpliesSets = ["VK_EXT_custom_border_color"]
+    )]
     public SamplerBorderColorComponentMappingCreateInfoEXT() { }
 }

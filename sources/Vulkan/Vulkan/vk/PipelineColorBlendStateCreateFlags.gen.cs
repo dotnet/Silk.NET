@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineColorBlendStateCreateFlags")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum PipelineColorBlendStateCreateFlags : uint
 {
     None = 0x0,
@@ -17,10 +18,26 @@ public enum PipelineColorBlendStateCreateFlags : uint
     [NativeName(
         "VK_PIPELINE_COLOR_BLEND_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_BIT_EXT"
     )]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_rasterization_order_attachment_access"],
+        ImpliesSets = [
+            "VK_EXT_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
+        ]
+    )]
     RasterizationOrderAttachmentAccessBitEXT = 0x1,
 
     [NativeName(
         "VK_PIPELINE_COLOR_BLEND_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_BIT_ARM"
+    )]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_rasterization_order_attachment_access"],
+        ImpliesSets = [
+            "VK_ARM_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_rasterization_order_attachment_access+VK_VERSION_1_1",
+        ]
     )]
     RasterizationOrderAttachmentAccessBitARM = RasterizationOrderAttachmentAccessBitEXT,
 }

@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoEncodeAV1OperatingPointInfoFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeAv1OperatingPointInfoFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("decoder_model_present_for_this_op")]
+    [SupportedApiProfile("vulkan")]
     public uint DecoderModelPresentForThisOp
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoEncodeAv1OperatingPointInfoFlags
     }
 
     [NativeName("low_delay_mode_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint LowDelayModeFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoEncodeAv1OperatingPointInfoFlags
     }
 
     [NativeName("initial_display_delay_present_for_this_op")]
+    [SupportedApiProfile("vulkan")]
     public uint InitialDisplayDelayPresentForThisOp
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoEncodeAv1OperatingPointInfoFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

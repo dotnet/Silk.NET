@@ -9,14 +9,39 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeviceFaultVendorInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public partial struct DeviceFaultVendorInfoKHR
 {
     [NativeName("description")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public DeviceFaultVendorInfoKHRDescription Description;
 
     [NativeName("vendorFaultCode")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public ulong VendorFaultCode;
 
     [NativeName("vendorFaultData")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
     public ulong VendorFaultData;
 }

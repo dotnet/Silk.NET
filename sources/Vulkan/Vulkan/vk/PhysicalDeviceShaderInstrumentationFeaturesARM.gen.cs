@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderInstrumentationFeaturesARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderInstrumentationFeaturesARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation"],
+        ImpliesSets = [
+            "VK_ARM_shader_instrumentation+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_instrumentation+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceShaderInstrumentationFeaturesARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation"],
+        ImpliesSets = [
+            "VK_ARM_shader_instrumentation+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_instrumentation+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("shaderInstrumentation")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation"],
+        ImpliesSets = [
+            "VK_ARM_shader_instrumentation+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_instrumentation+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderInstrumentation;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation"],
+        ImpliesSets = [
+            "VK_ARM_shader_instrumentation+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_instrumentation+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceShaderInstrumentationFeaturesARM() { }
 }

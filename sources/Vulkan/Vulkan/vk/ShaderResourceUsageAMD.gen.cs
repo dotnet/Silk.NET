@@ -9,20 +9,26 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkShaderResourceUsageAMD")]
+[SupportedApiProfile("vulkan")]
 public partial struct ShaderResourceUsageAMD
 {
     [NativeName("numUsedVgprs")]
+    [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     public uint NumUsedVgprs;
 
     [NativeName("numUsedSgprs")]
+    [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     public uint NumUsedSgprs;
 
     [NativeName("ldsSizePerLocalWorkGroup")]
+    [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     public uint LdsSizePerLocalWorkGroup;
 
     [NativeName("ldsUsageSizeInBytes")]
+    [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     public nuint LdsUsageSizeInBytes;
 
     [NativeName("scratchMemUsageInBytes")]
+    [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     public nuint ScratchMemUsageInBytes;
 }

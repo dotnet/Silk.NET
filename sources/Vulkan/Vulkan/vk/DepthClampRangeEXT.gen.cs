@@ -9,11 +9,28 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDepthClampRangeEXT")]
+[SupportedApiProfile("vulkan")]
 public partial struct DepthClampRangeEXT
 {
     [NativeName("minDepthClamp")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_clamp_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_clamp_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_clamp_control+VK_VERSION_1_1",
+        ]
+    )]
     public float MinDepthClamp;
 
     [NativeName("maxDepthClamp")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_clamp_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_clamp_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_clamp_control+VK_VERSION_1_1",
+        ]
+    )]
     public float MaxDepthClamp;
 }

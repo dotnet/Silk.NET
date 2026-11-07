@@ -9,9 +9,13 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("PFN_vkDebugReportCallbackEXT")]
+[SupportedApiProfile("vulkan")]
 public readonly unsafe struct DebugReportCallbackEXT : IDisposable
 {
+    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     private readonly void* Pointer;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     public delegate* unmanaged<
         DebugReportFlagsEXT,
         DebugReportObjectTypeEXT,
@@ -33,6 +37,7 @@ public readonly unsafe struct DebugReportCallbackEXT : IDisposable
             void*,
             uint>)Pointer;
 
+    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     public DebugReportCallbackEXT(
         delegate* unmanaged<
             DebugReportFlagsEXT,
@@ -46,11 +51,14 @@ public readonly unsafe struct DebugReportCallbackEXT : IDisposable
             uint> ptr
     ) => Pointer = ptr;
 
+    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     public DebugReportCallbackEXT(DebugReportCallbackEXTDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
+    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     public void Dispose() => SilkMarshal.Free(Pointer);
 
+    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     public static implicit operator DebugReportCallbackEXT(
         delegate* unmanaged<
             DebugReportFlagsEXT,
@@ -64,6 +72,7 @@ public readonly unsafe struct DebugReportCallbackEXT : IDisposable
             uint> pfn
     ) => new(pfn);
 
+    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     public static implicit operator delegate* unmanaged<
         DebugReportFlagsEXT,
         DebugReportObjectTypeEXT,

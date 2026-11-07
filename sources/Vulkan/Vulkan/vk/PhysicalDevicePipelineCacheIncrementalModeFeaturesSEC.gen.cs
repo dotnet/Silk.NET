@@ -9,17 +9,50 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePipelineCacheIncrementalModeFeaturesSEC
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_SEC_pipeline_cache_incremental_mode"],
+        ImpliesSets = [
+            "VK_SEC_pipeline_cache_incremental_mode+VK_KHR_get_physical_device_properties2",
+            "VK_SEC_pipeline_cache_incremental_mode+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType =
         StructureType.PhysicalDevicePipelineCacheIncrementalModeFeaturesSEC;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_SEC_pipeline_cache_incremental_mode"],
+        ImpliesSets = [
+            "VK_SEC_pipeline_cache_incremental_mode+VK_KHR_get_physical_device_properties2",
+            "VK_SEC_pipeline_cache_incremental_mode+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("pipelineCacheIncrementalMode")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_SEC_pipeline_cache_incremental_mode"],
+        ImpliesSets = [
+            "VK_SEC_pipeline_cache_incremental_mode+VK_KHR_get_physical_device_properties2",
+            "VK_SEC_pipeline_cache_incremental_mode+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> PipelineCacheIncrementalMode;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_SEC_pipeline_cache_incremental_mode"],
+        ImpliesSets = [
+            "VK_SEC_pipeline_cache_incremental_mode+VK_KHR_get_physical_device_properties2",
+            "VK_SEC_pipeline_cache_incremental_mode+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDevicePipelineCacheIncrementalModeFeaturesSEC() { }
 }

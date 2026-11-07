@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceMaintenance11FeaturesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMaintenance11FeaturesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance11"],
+        ImpliesSets = [
+            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance11+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceMaintenance11FeaturesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance11"],
+        ImpliesSets = [
+            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance11+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("maintenance11")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance11"],
+        ImpliesSets = [
+            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance11+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> Maintenance11;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance11"],
+        ImpliesSets = [
+            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance11+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceMaintenance11FeaturesKHR() { }
 }

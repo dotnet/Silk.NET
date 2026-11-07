@@ -9,38 +9,50 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoDecodeH265PictureInfo")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeH265PictureInfo
 {
     [NativeName("flags")]
+    [SupportedApiProfile("vulkan")]
     public StdVideoDecodeH265PictureInfoFlags Flags;
 
     [NativeName("sps_video_parameter_set_id")]
+    [SupportedApiProfile("vulkan")]
     public byte SpsVideoParameterSetId;
 
     [NativeName("pps_seq_parameter_set_id")]
+    [SupportedApiProfile("vulkan")]
     public byte PpsSeqParameterSetId;
 
     [NativeName("pps_pic_parameter_set_id")]
+    [SupportedApiProfile("vulkan")]
     public byte PpsPicParameterSetId;
 
     [NativeName("NumDeltaPocsOfRefRpsIdx")]
+    [SupportedApiProfile("vulkan")]
     public byte NumDeltaPocsOfRefRpsIdx;
 
     [NativeName("PicOrderCntVal")]
+    [SupportedApiProfile("vulkan")]
     public int PicOrderCntVal;
 
     [NativeName("NumBitsForSTRefPicSetInSlice")]
+    [SupportedApiProfile("vulkan")]
     public ushort NumBitsForSTRefPicSetInSlice;
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public ushort Reserved;
 
     [NativeName("RefPicSetStCurrBefore")]
+    [SupportedApiProfile("vulkan")]
     public StdVideoDecodeH265PictureInfoRefPicSetStCurrBefore RefPicSetStCurrBefore;
 
     [NativeName("RefPicSetStCurrAfter")]
+    [SupportedApiProfile("vulkan")]
     public StdVideoDecodeH265PictureInfoRefPicSetStCurrAfter RefPicSetStCurrAfter;
 
     [NativeName("RefPicSetLtCurr")]
+    [SupportedApiProfile("vulkan")]
     public StdVideoDecodeH265PictureInfoRefPicSetLtCurr RefPicSetLtCurr;
 }

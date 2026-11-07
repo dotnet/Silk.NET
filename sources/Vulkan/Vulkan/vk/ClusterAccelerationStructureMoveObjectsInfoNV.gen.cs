@@ -9,8 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkClusterAccelerationStructureMoveObjectsInfoNV")]
+[SupportedApiProfile("vulkan")]
 public partial struct ClusterAccelerationStructureMoveObjectsInfoNV
 {
     [NativeName("srcAccelerationStructure")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     public ulong SrcAccelerationStructure;
 }

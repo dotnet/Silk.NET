@@ -9,31 +9,77 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoDecodeAV1PictureInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeAv1PictureInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_av1"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public StructureType SType = StructureType.VideoDecodeAv1PictureInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_av1"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public void* PNext;
 
     [NativeName("pStdPictureInfo")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_av1"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public StdVideoDecodeAv1PictureInfo* PStdPictureInfo;
 
     [NativeName("referenceNameSlotIndices")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_av1"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public VideoDecodeAv1PictureInfoKHRReferenceNameSlotIndices ReferenceNameSlotIndices;
 
     [NativeName("frameHeaderOffset")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_av1"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public uint FrameHeaderOffset;
 
     [NativeName("tileCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_av1"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public uint TileCount;
 
     [NativeName("pTileOffsets")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_av1"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public uint* PTileOffsets;
 
     [NativeName("pTileSizes")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_av1"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public uint* PTileSizes;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_av1"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public VideoDecodeAv1PictureInfoKHR() { }
 }

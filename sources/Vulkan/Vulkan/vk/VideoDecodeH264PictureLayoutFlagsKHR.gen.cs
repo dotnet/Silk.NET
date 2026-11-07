@@ -10,14 +10,30 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoDecodeH264PictureLayoutFlagsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum VideoDecodeH264PictureLayoutFlagsKHR : uint
 {
     [NativeName("VK_VIDEO_DECODE_H264_PICTURE_LAYOUT_PROGRESSIVE_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     Progressive = 0x0,
 
     [NativeName("VK_VIDEO_DECODE_H264_PICTURE_LAYOUT_INTERLACED_INTERLEAVED_LINES_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     InterlacedInterleavedLinesBit = 0x1,
 
     [NativeName("VK_VIDEO_DECODE_H264_PICTURE_LAYOUT_INTERLACED_SEPARATE_PLANES_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     InterlacedSeparatePlanesBit = 0x2,
 }

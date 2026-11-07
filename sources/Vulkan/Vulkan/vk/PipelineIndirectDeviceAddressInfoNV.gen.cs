@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineIndirectDeviceAddressInfoNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineIndirectDeviceAddressInfoNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands_compute"],
+        ImpliesSets = ["VK_NV_device_generated_commands"]
+    )]
     public StructureType SType = StructureType.PipelineIndirectDeviceAddressInfoNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands_compute"],
+        ImpliesSets = ["VK_NV_device_generated_commands"]
+    )]
     public void* PNext;
 
     [NativeName("pipelineBindPoint")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands_compute"],
+        ImpliesSets = ["VK_NV_device_generated_commands"]
+    )]
     public PipelineBindPoint PipelineBindPoint;
 
     [NativeName("pipeline")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands_compute"],
+        ImpliesSets = ["VK_NV_device_generated_commands"]
+    )]
     public PipelineHandle Pipeline;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands_compute"],
+        ImpliesSets = ["VK_NV_device_generated_commands"]
+    )]
     public PipelineIndirectDeviceAddressInfoNV() { }
 }

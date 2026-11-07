@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkGpaSessionCreateInfoAMD")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct GpaSessionCreateInfoAMD
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.GpaSessionCreateInfoAMD;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("secondaryCopySource")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
     public GpaSessionHandleAMD SecondaryCopySource;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
     public GpaSessionCreateInfoAMD() { }
 }

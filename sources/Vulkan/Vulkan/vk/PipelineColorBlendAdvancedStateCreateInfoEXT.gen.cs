@@ -9,22 +9,71 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineColorBlendAdvancedStateCreateInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineColorBlendAdvancedStateCreateInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_blend_operation_advanced"],
+        ImpliesSets = [
+            "VK_EXT_blend_operation_advanced+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PipelineColorBlendAdvancedStateCreateInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_blend_operation_advanced"],
+        ImpliesSets = [
+            "VK_EXT_blend_operation_advanced+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("srcPremultiplied")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_blend_operation_advanced"],
+        ImpliesSets = [
+            "VK_EXT_blend_operation_advanced+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> SrcPremultiplied;
 
     [NativeName("dstPremultiplied")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_blend_operation_advanced"],
+        ImpliesSets = [
+            "VK_EXT_blend_operation_advanced+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> DstPremultiplied;
 
     [NativeName("blendOverlap")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_blend_operation_advanced"],
+        ImpliesSets = [
+            "VK_EXT_blend_operation_advanced+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
+        ]
+    )]
     public BlendOverlapEXT BlendOverlap;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_blend_operation_advanced"],
+        ImpliesSets = [
+            "VK_EXT_blend_operation_advanced+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
+        ]
+    )]
     public PipelineColorBlendAdvancedStateCreateInfoEXT() { }
 }

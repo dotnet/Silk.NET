@@ -9,28 +9,69 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoDecodeVP9PictureInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeVp9PictureInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_vp9"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public StructureType SType = StructureType.VideoDecodeVp9PictureInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_vp9"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public void* PNext;
 
     [NativeName("pStdPictureInfo")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_vp9"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public StdVideoDecodeVp9PictureInfo* PStdPictureInfo;
 
     [NativeName("referenceNameSlotIndices")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_vp9"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public VideoDecodeVp9PictureInfoKHRReferenceNameSlotIndices ReferenceNameSlotIndices;
 
     [NativeName("uncompressedHeaderOffset")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_vp9"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public uint UncompressedHeaderOffset;
 
     [NativeName("compressedHeaderOffset")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_vp9"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public uint CompressedHeaderOffset;
 
     [NativeName("tilesOffset")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_vp9"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public uint TilesOffset;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_vp9"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public VideoDecodeVp9PictureInfoKHR() { }
 }

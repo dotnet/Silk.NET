@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("PFN_vkDebugReportCallbackEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe delegate uint DebugReportCallbackEXTDelegate(
     DebugReportFlagsEXT arg0,
     DebugReportObjectTypeEXT arg1,

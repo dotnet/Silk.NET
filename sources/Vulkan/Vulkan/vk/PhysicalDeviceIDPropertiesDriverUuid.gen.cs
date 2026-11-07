@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_driverUUID_e__FixedBuffer")]
 [InlineArray(16)]
+[SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceIDPropertiesDriverUuid
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public byte E0;
 }

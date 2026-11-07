@@ -10,13 +10,33 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkHostImageCopyFlags")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum HostImageCopyFlags : uint
 {
     None = 0x0,
 
     [NativeName("VK_HOST_IMAGE_COPY_MEMCPY_BIT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     MemcpyBit = 0x1,
 
     [NativeName("VK_HOST_IMAGE_COPY_MEMCPY_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_host_image_copy"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
     MemcpyBitEXT = MemcpyBit,
 }

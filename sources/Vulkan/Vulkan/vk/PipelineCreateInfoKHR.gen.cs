@@ -9,13 +9,41 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineCreateInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineCreateInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
     public StructureType SType = StructureType.PipelineCreateInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
     public void* PNext;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
     public PipelineCreateInfoKHR() { }
 }

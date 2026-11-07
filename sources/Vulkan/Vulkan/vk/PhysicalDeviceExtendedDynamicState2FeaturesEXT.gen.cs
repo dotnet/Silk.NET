@@ -9,22 +9,71 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceExtendedDynamicState2FeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceExtendedDynamicState2FeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state2"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceExtendedDynamicState2FeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state2"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("extendedDynamicState2")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state2"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ExtendedDynamicState2;
 
     [NativeName("extendedDynamicState2LogicOp")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state2"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ExtendedDynamicState2LogicOp;
 
     [NativeName("extendedDynamicState2PatchControlPoints")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state2"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ExtendedDynamicState2PatchControlPoints;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state2"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceExtendedDynamicState2FeaturesEXT() { }
 }

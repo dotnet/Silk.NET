@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoDecodeH264ReferenceInfoFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeH264ReferenceInfoFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("top_field_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint TopFieldFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoDecodeH264ReferenceInfoFlags
     }
 
     [NativeName("bottom_field_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint BottomFieldFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoDecodeH264ReferenceInfoFlags
     }
 
     [NativeName("used_for_long_term_reference")]
+    [SupportedApiProfile("vulkan")]
     public uint UsedForLongTermReference
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoDecodeH264ReferenceInfoFlags
     }
 
     [NativeName("is_non_existing")]
+    [SupportedApiProfile("vulkan")]
     public uint IsNonExisting
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

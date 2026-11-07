@@ -9,17 +9,50 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_shader_early_and_late_fragment_tests"],
+        ImpliesSets = [
+            "VK_AMD_shader_early_and_late_fragment_tests+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_shader_early_and_late_fragment_tests+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType =
         StructureType.PhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_shader_early_and_late_fragment_tests"],
+        ImpliesSets = [
+            "VK_AMD_shader_early_and_late_fragment_tests+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_shader_early_and_late_fragment_tests+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("shaderEarlyAndLateFragmentTests")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_shader_early_and_late_fragment_tests"],
+        ImpliesSets = [
+            "VK_AMD_shader_early_and_late_fragment_tests+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_shader_early_and_late_fragment_tests+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderEarlyAndLateFragmentTests;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_shader_early_and_late_fragment_tests"],
+        ImpliesSets = [
+            "VK_AMD_shader_early_and_late_fragment_tests+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_shader_early_and_late_fragment_tests+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD() { }
 }

@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkTextureLODGatherFormatPropertiesAMD")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct TextureLodGatherFormatPropertiesAMD
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_texture_gather_bias_lod"],
+        ImpliesSets = [
+            "VK_AMD_texture_gather_bias_lod+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_texture_gather_bias_lod+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.TextureLodGatherFormatPropertiesAMD;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_texture_gather_bias_lod"],
+        ImpliesSets = [
+            "VK_AMD_texture_gather_bias_lod+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_texture_gather_bias_lod+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("supportsTextureGatherLODBiasAMD")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_texture_gather_bias_lod"],
+        ImpliesSets = [
+            "VK_AMD_texture_gather_bias_lod+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_texture_gather_bias_lod+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> SupportsTextureGatherLodBiasAMD;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_texture_gather_bias_lod"],
+        ImpliesSets = [
+            "VK_AMD_texture_gather_bias_lod+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_texture_gather_bias_lod+VK_VERSION_1_1",
+        ]
+    )]
     public TextureLodGatherFormatPropertiesAMD() { }
 }

@@ -9,19 +9,75 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkIndirectExecutionSetPipelineInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectExecutionSetPipelineInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType = StructureType.IndirectExecutionSetPipelineInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("initialPipeline")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public PipelineHandle InitialPipeline;
 
     [NativeName("maxPipelineCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public uint MaxPipelineCount;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public IndirectExecutionSetPipelineInfoEXT() { }
 }

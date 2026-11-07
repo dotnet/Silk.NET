@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceFragmentShadingRateEnumsPropertiesNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_fragment_shading_rate_enums"],
+        ImpliesSets = ["VK_KHR_fragment_shading_rate"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceFragmentShadingRateEnumsPropertiesNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_fragment_shading_rate_enums"],
+        ImpliesSets = ["VK_KHR_fragment_shading_rate"]
+    )]
     public void* PNext;
 
     [NativeName("maxFragmentShadingRateInvocationCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_fragment_shading_rate_enums"],
+        ImpliesSets = ["VK_KHR_fragment_shading_rate"]
+    )]
     public SampleCountFlags MaxFragmentShadingRateInvocationCount;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_fragment_shading_rate_enums"],
+        ImpliesSets = ["VK_KHR_fragment_shading_rate"]
+    )]
     public PhysicalDeviceFragmentShadingRateEnumsPropertiesNV() { }
 }

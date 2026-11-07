@@ -9,25 +9,96 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceDescriptorBufferFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDescriptorBufferFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceDescriptorBufferFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("descriptorBuffer")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public MaybeBool<uint> DescriptorBuffer;
 
     [NativeName("descriptorBufferCaptureReplay")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public MaybeBool<uint> DescriptorBufferCaptureReplay;
 
     [NativeName("descriptorBufferImageLayoutIgnored")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public MaybeBool<uint> DescriptorBufferImageLayoutIgnored;
 
     [NativeName("descriptorBufferPushDescriptors")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public MaybeBool<uint> DescriptorBufferPushDescriptors;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public PhysicalDeviceDescriptorBufferFeaturesEXT() { }
 }

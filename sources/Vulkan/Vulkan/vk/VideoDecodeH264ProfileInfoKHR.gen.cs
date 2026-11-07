@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoDecodeH264ProfileInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeH264ProfileInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public StructureType SType = StructureType.VideoDecodeH264ProfileInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public void* PNext;
 
     [NativeName("stdProfileIdc")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public StdVideoH264ProfileIdc StdProfileIdc;
 
     [NativeName("pictureLayout")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public VideoDecodeH264PictureLayoutFlagsKHR PictureLayout;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public VideoDecodeH264ProfileInfoKHR() { }
 }

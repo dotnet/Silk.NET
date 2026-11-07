@@ -10,19 +10,80 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkExternalFenceFeatureFlags")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum ExternalFenceFeatureFlags : uint
 {
     None = 0x0,
 
     [NativeName("VK_EXTERNAL_FENCE_FEATURE_EXPORTABLE_BIT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
     ExportableBit = 0x1,
 
     [NativeName("VK_EXTERNAL_FENCE_FEATURE_IMPORTABLE_BIT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
     ImportableBit = 0x2,
 
     [NativeName("VK_EXTERNAL_FENCE_FEATURE_EXPORTABLE_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
+        ]
+    )]
     ExportableBitKHR = ExportableBit,
 
     [NativeName("VK_EXTERNAL_FENCE_FEATURE_IMPORTABLE_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
+        ]
+    )]
     ImportableBitKHR = ImportableBit,
 }

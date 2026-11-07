@@ -9,19 +9,60 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkAmigoProfilingSubmitInfoSEC")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct AmigoProfilingSubmitInfoSEC
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_SEC_amigo_profiling"],
+        ImpliesSets = [
+            "VK_SEC_amigo_profiling+VK_KHR_get_physical_device_properties2",
+            "VK_SEC_amigo_profiling+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.AmigoProfilingSubmitInfoSEC;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_SEC_amigo_profiling"],
+        ImpliesSets = [
+            "VK_SEC_amigo_profiling+VK_KHR_get_physical_device_properties2",
+            "VK_SEC_amigo_profiling+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("firstDrawTimestamp")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_SEC_amigo_profiling"],
+        ImpliesSets = [
+            "VK_SEC_amigo_profiling+VK_KHR_get_physical_device_properties2",
+            "VK_SEC_amigo_profiling+VK_VERSION_1_1",
+        ]
+    )]
     public ulong FirstDrawTimestamp;
 
     [NativeName("swapBufferTimestamp")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_SEC_amigo_profiling"],
+        ImpliesSets = [
+            "VK_SEC_amigo_profiling+VK_KHR_get_physical_device_properties2",
+            "VK_SEC_amigo_profiling+VK_VERSION_1_1",
+        ]
+    )]
     public ulong SwapBufferTimestamp;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_SEC_amigo_profiling"],
+        ImpliesSets = [
+            "VK_SEC_amigo_profiling+VK_KHR_get_physical_device_properties2",
+            "VK_SEC_amigo_profiling+VK_VERSION_1_1",
+        ]
+    )]
     public AmigoProfilingSubmitInfoSEC() { }
 }

@@ -9,20 +9,61 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeviceMemoryReportEventTypeEXT")]
+[SupportedApiProfile("vulkan")]
 public enum DeviceMemoryReportEventTypeEXT : uint
 {
     [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_ALLOCATE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     Allocate = 0,
 
     [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_FREE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     Free = 1,
 
     [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_IMPORT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     Import = 2,
 
     [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_UNIMPORT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     Unimport = 3,
 
     [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_ALLOCATION_FAILED_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     AllocationFailed = 4,
 }

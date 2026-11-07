@@ -9,19 +9,60 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceComputeShaderDerivativesFeaturesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_compute_shader_derivatives"],
+        ImpliesSets = [
+            "VK_KHR_compute_shader_derivatives+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_compute_shader_derivatives+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceComputeShaderDerivativesFeaturesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_compute_shader_derivatives"],
+        ImpliesSets = [
+            "VK_KHR_compute_shader_derivatives+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_compute_shader_derivatives+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("computeDerivativeGroupQuads")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_compute_shader_derivatives"],
+        ImpliesSets = [
+            "VK_KHR_compute_shader_derivatives+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_compute_shader_derivatives+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ComputeDerivativeGroupQuads;
 
     [NativeName("computeDerivativeGroupLinear")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_compute_shader_derivatives"],
+        ImpliesSets = [
+            "VK_KHR_compute_shader_derivatives+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_compute_shader_derivatives+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ComputeDerivativeGroupLinear;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_compute_shader_derivatives"],
+        ImpliesSets = [
+            "VK_KHR_compute_shader_derivatives+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_compute_shader_derivatives+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceComputeShaderDerivativesFeaturesKHR() { }
 }

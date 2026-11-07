@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceASTCDecodeFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceAstcDecodeFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_astc_decode_mode"],
+        ImpliesSets = [
+            "VK_EXT_astc_decode_mode+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_astc_decode_mode+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceAstcDecodeFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_astc_decode_mode"],
+        ImpliesSets = [
+            "VK_EXT_astc_decode_mode+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_astc_decode_mode+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("decodeModeSharedExponent")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_astc_decode_mode"],
+        ImpliesSets = [
+            "VK_EXT_astc_decode_mode+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_astc_decode_mode+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> DecodeModeSharedExponent;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_astc_decode_mode"],
+        ImpliesSets = [
+            "VK_EXT_astc_decode_mode+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_astc_decode_mode+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceAstcDecodeFeaturesEXT() { }
 }

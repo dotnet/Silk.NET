@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoH264SpsVuiFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoH264SpsVuiFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("aspect_ratio_info_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint AspectRatioInfoPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoH264SpsVuiFlags
     }
 
     [NativeName("overscan_info_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint OverscanInfoPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoH264SpsVuiFlags
     }
 
     [NativeName("overscan_appropriate_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint OverscanAppropriateFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoH264SpsVuiFlags
     }
 
     [NativeName("video_signal_type_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint VideoSignalTypePresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct StdVideoH264SpsVuiFlags
     }
 
     [NativeName("video_full_range_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint VideoFullRangeFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +67,7 @@ public partial struct StdVideoH264SpsVuiFlags
     }
 
     [NativeName("color_description_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint ColorDescriptionPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,6 +77,7 @@ public partial struct StdVideoH264SpsVuiFlags
     }
 
     [NativeName("chroma_loc_info_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint ChromaLocInfoPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -78,6 +87,7 @@ public partial struct StdVideoH264SpsVuiFlags
     }
 
     [NativeName("timing_info_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint TimingInfoPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -87,6 +97,7 @@ public partial struct StdVideoH264SpsVuiFlags
     }
 
     [NativeName("fixed_frame_rate_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint FixedFrameRateFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -96,6 +107,7 @@ public partial struct StdVideoH264SpsVuiFlags
     }
 
     [NativeName("bitstream_restriction_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint BitstreamRestrictionFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -105,6 +117,7 @@ public partial struct StdVideoH264SpsVuiFlags
     }
 
     [NativeName("nal_hrd_parameters_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint NalHrdParametersPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -114,6 +127,7 @@ public partial struct StdVideoH264SpsVuiFlags
     }
 
     [NativeName("vcl_hrd_parameters_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint VclHrdParametersPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

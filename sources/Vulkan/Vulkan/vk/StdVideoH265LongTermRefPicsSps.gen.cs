@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoH265LongTermRefPicsSps")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265LongTermRefPicsSps
 {
     [NativeName("used_by_curr_pic_lt_sps_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint UsedByCurrPicLtSpsFlag;
 
     [NativeName("lt_ref_pic_poc_lsb_sps")]
+    [SupportedApiProfile("vulkan")]
     public StdVideoH265LongTermRefPicsSpsLtRefPicPocLsbSps LtRefPicPocLsbSps;
 }

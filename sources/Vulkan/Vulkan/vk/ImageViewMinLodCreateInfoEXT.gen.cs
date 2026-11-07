@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkImageViewMinLodCreateInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageViewMinLodCreateInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_view_min_lod"],
+        ImpliesSets = [
+            "VK_EXT_image_view_min_lod+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_view_min_lod+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.ImageViewMinLodCreateInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_view_min_lod"],
+        ImpliesSets = [
+            "VK_EXT_image_view_min_lod+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_view_min_lod+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("minLod")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_view_min_lod"],
+        ImpliesSets = [
+            "VK_EXT_image_view_min_lod+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_view_min_lod+VK_VERSION_1_1",
+        ]
+    )]
     public float MinLod;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_view_min_lod"],
+        ImpliesSets = [
+            "VK_EXT_image_view_min_lod+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_view_min_lod+VK_VERSION_1_1",
+        ]
+    )]
     public ImageViewMinLodCreateInfoEXT() { }
 }

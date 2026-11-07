@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoDecodeH264PictureInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeH264PictureInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public StructureType SType = StructureType.VideoDecodeH264PictureInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public void* PNext;
 
     [NativeName("pStdPictureInfo")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public StdVideoDecodeH264PictureInfo* PStdPictureInfo;
 
     [NativeName("sliceCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public uint SliceCount;
 
     [NativeName("pSliceOffsets")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public uint* PSliceOffsets;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
     public VideoDecodeH264PictureInfoKHR() { }
 }

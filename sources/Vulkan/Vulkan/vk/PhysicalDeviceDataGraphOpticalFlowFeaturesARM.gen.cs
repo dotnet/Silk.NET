@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDataGraphOpticalFlowFeaturesARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceDataGraphOpticalFlowFeaturesARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public void* PNext;
 
     [NativeName("dataGraphOpticalFlow")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public MaybeBool<uint> DataGraphOpticalFlow;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     public PhysicalDeviceDataGraphOpticalFlowFeaturesARM() { }
 }

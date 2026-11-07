@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDevicePipelinePropertiesFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePipelinePropertiesFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_properties"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_properties+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_properties+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDevicePipelinePropertiesFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_properties"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_properties+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_properties+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("pipelinePropertiesIdentifier")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_properties"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_properties+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_properties+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> PipelinePropertiesIdentifier;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_properties"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_properties+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_properties+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDevicePipelinePropertiesFeaturesEXT() { }
 }

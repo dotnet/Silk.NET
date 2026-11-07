@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_gm_params_e__FixedBuffer")]
 [InlineArray(8 * 6)]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1GlobalMotionGmParams
 {
     [NativeName("e0_0")]
+    [SupportedApiProfile("vulkan")]
     public int E0x0;
 }

@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_point_y_scaling_e__FixedBuffer")]
 [InlineArray(14)]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1FilmGrainPointYScaling
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public byte E0;
 }

@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_ar_coeffs_cb_plus_128_e__FixedBuffer")]
 [InlineArray(25)]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1FilmGrainArCoeffsCbPlus128
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public sbyte E0;
 }

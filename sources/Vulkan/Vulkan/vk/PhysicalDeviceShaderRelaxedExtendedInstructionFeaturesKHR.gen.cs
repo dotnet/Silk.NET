@@ -9,17 +9,50 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_relaxed_extended_instruction"],
+        ImpliesSets = [
+            "VK_KHR_shader_relaxed_extended_instruction+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_relaxed_extended_instruction+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType =
         StructureType.PhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_relaxed_extended_instruction"],
+        ImpliesSets = [
+            "VK_KHR_shader_relaxed_extended_instruction+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_relaxed_extended_instruction+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("shaderRelaxedExtendedInstruction")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_relaxed_extended_instruction"],
+        ImpliesSets = [
+            "VK_KHR_shader_relaxed_extended_instruction+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_relaxed_extended_instruction+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderRelaxedExtendedInstruction;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_relaxed_extended_instruction"],
+        ImpliesSets = [
+            "VK_KHR_shader_relaxed_extended_instruction+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_relaxed_extended_instruction+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR() { }
 }

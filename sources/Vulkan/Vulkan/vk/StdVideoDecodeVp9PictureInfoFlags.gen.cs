@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoDecodeVP9PictureInfoFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeVp9PictureInfoFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("error_resilient_mode")]
+    [SupportedApiProfile("vulkan")]
     public uint ErrorResilientMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("intra_only")]
+    [SupportedApiProfile("vulkan")]
     public uint IntraOnly
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("allow_high_precision_mv")]
+    [SupportedApiProfile("vulkan")]
     public uint AllowHighPrecisionMv
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("refresh_frame_context")]
+    [SupportedApiProfile("vulkan")]
     public uint RefreshFrameContext
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("frame_parallel_decoding_mode")]
+    [SupportedApiProfile("vulkan")]
     public uint FrameParallelDecodingMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +67,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("segmentation_enabled")]
+    [SupportedApiProfile("vulkan")]
     public uint SegmentationEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,6 +77,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("show_frame")]
+    [SupportedApiProfile("vulkan")]
     public uint ShowFrame
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -78,6 +87,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("UsePrevFrameMvs")]
+    [SupportedApiProfile("vulkan")]
     public uint UsePrevFrameMvs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -87,6 +97,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

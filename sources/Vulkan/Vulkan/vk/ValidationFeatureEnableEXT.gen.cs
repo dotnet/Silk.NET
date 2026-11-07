@@ -9,20 +9,26 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkValidationFeatureEnableEXT")]
+[SupportedApiProfile("vulkan")]
 public enum ValidationFeatureEnableEXT : uint
 {
     [NativeName("VK_VALIDATION_FEATURE_ENABLE_GPU_ASSISTED_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     GpuAssisted = 0,
 
     [NativeName("VK_VALIDATION_FEATURE_ENABLE_GPU_ASSISTED_RESERVE_BINDING_SLOT_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     GpuAssistedReserveBindingSlot = 1,
 
     [NativeName("VK_VALIDATION_FEATURE_ENABLE_BEST_PRACTICES_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     BestPractices = 2,
 
     [NativeName("VK_VALIDATION_FEATURE_ENABLE_DEBUG_PRINTF_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     DebugPrintf = 3,
 
     [NativeName("VK_VALIDATION_FEATURE_ENABLE_SYNCHRONIZATION_VALIDATION_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     SynchronizationValidation = 4,
 }

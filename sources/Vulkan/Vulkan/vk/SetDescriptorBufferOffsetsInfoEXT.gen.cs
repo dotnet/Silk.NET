@@ -9,31 +9,86 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSetDescriptorBufferOffsetsInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public StructureType SType = StructureType.SetDescriptorBufferOffsetsInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public void* PNext;
 
     [NativeName("stageFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public ShaderStageFlags StageFlags;
 
     [NativeName("layout")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public PipelineLayoutHandle Layout;
 
     [NativeName("firstSet")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public uint FirstSet;
 
     [NativeName("setCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public uint SetCount;
 
     [NativeName("pBufferIndices")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public uint* PBufferIndices;
 
     [NativeName("pOffsets")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public ulong* POffsets;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
     public SetDescriptorBufferOffsetsInfoEXT() { }
 }

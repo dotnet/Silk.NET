@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_multiview_per_view_viewports"],
+        ImpliesSets = [
+            "VK_QCOM_multiview_per_view_viewports+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_multiview_per_view_viewports+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_multiview_per_view_viewports"],
+        ImpliesSets = [
+            "VK_QCOM_multiview_per_view_viewports+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_multiview_per_view_viewports+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("multiviewPerViewViewports")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_multiview_per_view_viewports"],
+        ImpliesSets = [
+            "VK_QCOM_multiview_per_view_viewports+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_multiview_per_view_viewports+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> MultiviewPerViewViewports;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_multiview_per_view_viewports"],
+        ImpliesSets = [
+            "VK_QCOM_multiview_per_view_viewports+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_multiview_per_view_viewports+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM() { }
 }

@@ -9,17 +9,54 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_dynamic_rendering_unused_attachments"],
+        ImpliesSets = [
+            "VK_KHR_dynamic_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_dynamic_rendering+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public StructureType SType =
         StructureType.PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_dynamic_rendering_unused_attachments"],
+        ImpliesSets = [
+            "VK_KHR_dynamic_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_dynamic_rendering+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("dynamicRenderingUnusedAttachments")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_dynamic_rendering_unused_attachments"],
+        ImpliesSets = [
+            "VK_KHR_dynamic_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_dynamic_rendering+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public MaybeBool<uint> DynamicRenderingUnusedAttachments;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_dynamic_rendering_unused_attachments"],
+        ImpliesSets = [
+            "VK_KHR_dynamic_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_dynamic_rendering+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT() { }
 }

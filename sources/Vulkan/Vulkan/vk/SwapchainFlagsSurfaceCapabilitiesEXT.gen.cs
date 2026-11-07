@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSwapchainFlagsSurfaceCapabilitiesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct SwapchainFlagsSurfaceCapabilitiesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_multisampled_render_to_swapchain"],
+        ImpliesSets = ["VK_EXT_multisampled_render_to_single_sampled", "VK_KHR_swapchain"]
+    )]
     public StructureType SType = StructureType.SwapchainFlagsSurfaceCapabilitiesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_multisampled_render_to_swapchain"],
+        ImpliesSets = ["VK_EXT_multisampled_render_to_single_sampled", "VK_KHR_swapchain"]
+    )]
     public void* PNext;
 
     [NativeName("swapchainSupportedFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_multisampled_render_to_swapchain"],
+        ImpliesSets = ["VK_EXT_multisampled_render_to_single_sampled", "VK_KHR_swapchain"]
+    )]
     public SwapchainCreateFlagsKHR SwapchainSupportedFlags;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_multisampled_render_to_swapchain"],
+        ImpliesSets = ["VK_EXT_multisampled_render_to_single_sampled", "VK_KHR_swapchain"]
+    )]
     public SwapchainFlagsSurfaceCapabilitiesEXT() { }
 }

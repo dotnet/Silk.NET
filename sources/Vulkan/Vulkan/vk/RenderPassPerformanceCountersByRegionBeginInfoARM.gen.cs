@@ -9,28 +9,93 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkRenderPassPerformanceCountersByRegionBeginInfoARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassPerformanceCountersByRegionBeginInfoARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_performance_counters_by_region"],
+        ImpliesSets = [
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.RenderPassPerformanceCountersByRegionBeginInfoARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_performance_counters_by_region"],
+        ImpliesSets = [
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("counterAddressCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_performance_counters_by_region"],
+        ImpliesSets = [
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+        ]
+    )]
     public uint CounterAddressCount;
 
     [NativeName("pCounterAddresses")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_performance_counters_by_region"],
+        ImpliesSets = [
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+        ]
+    )]
     public ulong* PCounterAddresses;
 
     [NativeName("serializeRegions")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_performance_counters_by_region"],
+        ImpliesSets = [
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> SerializeRegions;
 
     [NativeName("counterIndexCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_performance_counters_by_region"],
+        ImpliesSets = [
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+        ]
+    )]
     public uint CounterIndexCount;
 
     [NativeName("pCounterIndices")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_performance_counters_by_region"],
+        ImpliesSets = [
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+        ]
+    )]
     public uint* PCounterIndices;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_performance_counters_by_region"],
+        ImpliesSets = [
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+        ]
+    )]
     public RenderPassPerformanceCountersByRegionBeginInfoARM() { }
 }

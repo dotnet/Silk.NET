@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_optimalTilingLayoutUUID_e__FixedBuffer")]
 [InlineArray(16)]
+[SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceVulkan14PropertiesOptimalTilingLayoutUuid
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public byte E0;
 }

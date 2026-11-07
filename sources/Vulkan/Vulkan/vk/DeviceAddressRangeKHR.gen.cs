@@ -9,11 +9,32 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeviceAddressRangeKHR")]
+[SupportedApiProfile("vulkan")]
 public partial struct DeviceAddressRangeKHR
 {
     [NativeName("address")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public ulong Address;
 
     [NativeName("size")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public ulong Size;
 }

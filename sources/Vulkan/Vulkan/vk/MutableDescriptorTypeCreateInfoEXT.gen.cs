@@ -9,19 +9,60 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkMutableDescriptorTypeCreateInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct MutableDescriptorTypeCreateInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mutable_descriptor_type"],
+        ImpliesSets = [
+            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
+            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.MutableDescriptorTypeCreateInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mutable_descriptor_type"],
+        ImpliesSets = [
+            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
+            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("mutableDescriptorTypeListCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mutable_descriptor_type"],
+        ImpliesSets = [
+            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
+            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
+        ]
+    )]
     public uint MutableDescriptorTypeListCount;
 
     [NativeName("pMutableDescriptorTypeLists")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mutable_descriptor_type"],
+        ImpliesSets = [
+            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
+            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
+        ]
+    )]
     public MutableDescriptorTypeListEXT* PMutableDescriptorTypeLists;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mutable_descriptor_type"],
+        ImpliesSets = [
+            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
+            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
+        ]
+    )]
     public MutableDescriptorTypeCreateInfoEXT() { }
 }

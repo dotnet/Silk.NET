@@ -10,19 +10,24 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkCompositeAlphaFlagsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum CompositeAlphaFlagsKHR : uint
 {
     None = 0x0,
 
     [NativeName("VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     OpaqueBit = 0x1,
 
     [NativeName("VK_COMPOSITE_ALPHA_PRE_MULTIPLIED_BIT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     PreMultipliedBit = 0x2,
 
     [NativeName("VK_COMPOSITE_ALPHA_POST_MULTIPLIED_BIT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     PostMultipliedBit = 0x4,
 
     [NativeName("VK_COMPOSITE_ALPHA_INHERIT_BIT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     InheritBit = 0x8,
 }

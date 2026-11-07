@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_maxViewportDimensions_e__FixedBuffer")]
 [InlineArray(2)]
+[SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceLimitsMaxViewportDimensions
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public uint E0;
 }

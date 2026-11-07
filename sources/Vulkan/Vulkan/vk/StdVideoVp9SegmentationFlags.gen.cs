@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoVP9SegmentationFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoVp9SegmentationFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("segmentation_update_map")]
+    [SupportedApiProfile("vulkan")]
     public uint SegmentationUpdateMap
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoVp9SegmentationFlags
     }
 
     [NativeName("segmentation_temporal_update")]
+    [SupportedApiProfile("vulkan")]
     public uint SegmentationTemporalUpdate
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoVp9SegmentationFlags
     }
 
     [NativeName("segmentation_update_data")]
+    [SupportedApiProfile("vulkan")]
     public uint SegmentationUpdateData
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoVp9SegmentationFlags
     }
 
     [NativeName("segmentation_abs_or_delta_update")]
+    [SupportedApiProfile("vulkan")]
     public uint SegmentationAbsOrDeltaUpdate
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct StdVideoVp9SegmentationFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -9,19 +9,50 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkFrameBoundaryTensorsARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct FrameBoundaryTensorsARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_frame_boundary"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     public StructureType SType = StructureType.FrameBoundaryTensorsARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_frame_boundary"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     public void* PNext;
 
     [NativeName("tensorCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_frame_boundary"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     public uint TensorCount;
 
     [NativeName("pTensors")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_frame_boundary"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     public TensorHandleARM* PTensors;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_frame_boundary"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     public FrameBoundaryTensorsARM() { }
 }

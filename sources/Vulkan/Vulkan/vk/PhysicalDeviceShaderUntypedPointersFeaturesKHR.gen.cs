@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderUntypedPointersFeaturesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderUntypedPointersFeaturesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_untyped_pointers"],
+        ImpliesSets = ["VK_KHR_get_physical_device_properties2"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceShaderUntypedPointersFeaturesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_untyped_pointers"],
+        ImpliesSets = ["VK_KHR_get_physical_device_properties2"]
+    )]
     public void* PNext;
 
     [NativeName("shaderUntypedPointers")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_untyped_pointers"],
+        ImpliesSets = ["VK_KHR_get_physical_device_properties2"]
+    )]
     public MaybeBool<uint> ShaderUntypedPointers;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_untyped_pointers"],
+        ImpliesSets = ["VK_KHR_get_physical_device_properties2"]
+    )]
     public PhysicalDeviceShaderUntypedPointersFeaturesKHR() { }
 }

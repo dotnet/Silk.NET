@@ -9,49 +9,178 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderAtomicFloatFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderAtomicFloatFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float"],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceShaderAtomicFloatFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float"],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("shaderBufferFloat32Atomics")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float"],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderBufferFloat32Atomics;
 
     [NativeName("shaderBufferFloat32AtomicAdd")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float"],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderBufferFloat32AtomicAdd;
 
     [NativeName("shaderBufferFloat64Atomics")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float"],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderBufferFloat64Atomics;
 
     [NativeName("shaderBufferFloat64AtomicAdd")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float"],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderBufferFloat64AtomicAdd;
 
     [NativeName("shaderSharedFloat32Atomics")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float"],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderSharedFloat32Atomics;
 
     [NativeName("shaderSharedFloat32AtomicAdd")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float"],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderSharedFloat32AtomicAdd;
 
     [NativeName("shaderSharedFloat64Atomics")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float"],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderSharedFloat64Atomics;
 
     [NativeName("shaderSharedFloat64AtomicAdd")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float"],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderSharedFloat64AtomicAdd;
 
     [NativeName("shaderImageFloat32Atomics")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_EXT_shader_atomic_float",
+            "VkPhysicalDeviceShaderAtomicFloatFeaturesEXT::sparseImageFloat32Atomics",
+        ],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
     public MaybeBool<uint> ShaderImageFloat32Atomics;
 
     [NativeName("shaderImageFloat32AtomicAdd")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_EXT_shader_atomic_float",
+            "VkPhysicalDeviceShaderAtomicFloatFeaturesEXT::sparseImageFloat32AtomicAdd",
+        ],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
     public MaybeBool<uint> ShaderImageFloat32AtomicAdd;
 
     [NativeName("sparseImageFloat32Atomics")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float"],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> SparseImageFloat32Atomics;
 
     [NativeName("sparseImageFloat32AtomicAdd")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float"],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> SparseImageFloat32AtomicAdd;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float"],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceShaderAtomicFloatFeaturesEXT() { }
 }

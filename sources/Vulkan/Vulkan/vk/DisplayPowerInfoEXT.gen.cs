@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDisplayPowerInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DisplayPowerInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_display_control"],
+        ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
+    )]
     public StructureType SType = StructureType.DisplayPowerInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_display_control"],
+        ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
+    )]
     public void* PNext;
 
     [NativeName("powerState")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_display_control"],
+        ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
+    )]
     public DisplayPowerStateEXT PowerState;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_display_control"],
+        ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
+    )]
     public DisplayPowerInfoEXT() { }
 }

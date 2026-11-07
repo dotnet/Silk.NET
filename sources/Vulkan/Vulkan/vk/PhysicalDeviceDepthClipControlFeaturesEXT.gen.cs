@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceDepthClipControlFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDepthClipControlFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_clip_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_clip_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_clip_control+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceDepthClipControlFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_clip_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_clip_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_clip_control+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("depthClipControl")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_clip_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_clip_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_clip_control+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> DepthClipControl;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_clip_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_clip_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_clip_control+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceDepthClipControlFeaturesEXT() { }
 }

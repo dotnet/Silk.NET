@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceLegacyDitheringFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceLegacyDitheringFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_legacy_dithering"],
+        ImpliesSets = [
+            "VK_EXT_legacy_dithering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_legacy_dithering+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceLegacyDitheringFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_legacy_dithering"],
+        ImpliesSets = [
+            "VK_EXT_legacy_dithering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_legacy_dithering+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("legacyDithering")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_legacy_dithering"],
+        ImpliesSets = [
+            "VK_EXT_legacy_dithering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_legacy_dithering+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> LegacyDithering;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_legacy_dithering"],
+        ImpliesSets = [
+            "VK_EXT_legacy_dithering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_legacy_dithering+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceLegacyDitheringFeaturesEXT() { }
 }

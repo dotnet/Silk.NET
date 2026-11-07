@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceShaderCoreBuiltinsFeaturesARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderCoreBuiltinsFeaturesARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_core_builtins"],
+        ImpliesSets = [
+            "VK_ARM_shader_core_builtins+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_core_builtins+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceShaderCoreBuiltinsFeaturesARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_core_builtins"],
+        ImpliesSets = [
+            "VK_ARM_shader_core_builtins+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_core_builtins+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("shaderCoreBuiltins")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_core_builtins"],
+        ImpliesSets = [
+            "VK_ARM_shader_core_builtins+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_core_builtins+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderCoreBuiltins;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_core_builtins"],
+        ImpliesSets = [
+            "VK_ARM_shader_core_builtins+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_core_builtins+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceShaderCoreBuiltinsFeaturesARM() { }
 }

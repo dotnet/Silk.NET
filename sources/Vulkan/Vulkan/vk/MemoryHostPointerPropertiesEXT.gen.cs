@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkMemoryHostPointerPropertiesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryHostPointerPropertiesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_host"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_host+VK_KHR_external_memory",
+            "VK_EXT_external_memory_host+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.MemoryHostPointerPropertiesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_host"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_host+VK_KHR_external_memory",
+            "VK_EXT_external_memory_host+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("memoryTypeBits")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_host"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_host+VK_KHR_external_memory",
+            "VK_EXT_external_memory_host+VK_VERSION_1_1",
+        ]
+    )]
     public uint MemoryTypeBits;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_host"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_host+VK_KHR_external_memory",
+            "VK_EXT_external_memory_host+VK_VERSION_1_1",
+        ]
+    )]
     public MemoryHostPointerPropertiesEXT() { }
 }

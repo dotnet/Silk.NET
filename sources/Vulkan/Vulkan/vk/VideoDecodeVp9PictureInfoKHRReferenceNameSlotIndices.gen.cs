@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_referenceNameSlotIndices_e__FixedBuffer")]
 [InlineArray(3)]
+[SupportedApiProfile("vulkan")]
 public partial struct VideoDecodeVp9PictureInfoKHRReferenceNameSlotIndices
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public int E0;
 }

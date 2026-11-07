@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPerformanceStreamMarkerInfoINTEL")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PerformanceStreamMarkerInfoINTEL
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public StructureType SType = StructureType.PerformanceStreamMarkerInfoINTEL;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public void* PNext;
 
     [NativeName("marker")]
+    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public uint Marker;
 
+    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public PerformanceStreamMarkerInfoINTEL() { }
 }

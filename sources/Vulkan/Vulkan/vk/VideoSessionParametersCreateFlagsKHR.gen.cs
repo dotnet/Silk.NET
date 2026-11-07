@@ -10,10 +10,19 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoSessionParametersCreateFlagsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum VideoSessionParametersCreateFlagsKHR : uint
 {
     None = 0x0,
 
     [NativeName("VK_VIDEO_SESSION_PARAMETERS_CREATE_QUANTIZATION_MAP_COMPATIBLE_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_quantization_map"],
+        ImpliesSets = [
+            "VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2",
+            "VK_KHR_video_encode_queue+VK_VERSION_1_3",
+        ]
+    )]
     QuantizationMapCompatibleBit = 0x1,
 }

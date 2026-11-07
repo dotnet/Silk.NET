@@ -9,22 +9,71 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkImageCompressionControlEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageCompressionControlEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control"],
+        ImpliesSets = [
+            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_compression_control+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.ImageCompressionControlEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control"],
+        ImpliesSets = [
+            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_compression_control+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("flags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control"],
+        ImpliesSets = [
+            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_compression_control+VK_VERSION_1_1",
+        ]
+    )]
     public ImageCompressionFlagsEXT Flags;
 
     [NativeName("compressionControlPlaneCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control"],
+        ImpliesSets = [
+            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_compression_control+VK_VERSION_1_1",
+        ]
+    )]
     public uint CompressionControlPlaneCount;
 
     [NativeName("pFixedRateFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control"],
+        ImpliesSets = [
+            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_compression_control+VK_VERSION_1_1",
+        ]
+    )]
     public ImageCompressionFixedRateFlagsEXT* PFixedRateFlags;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control"],
+        ImpliesSets = [
+            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_compression_control+VK_VERSION_1_1",
+        ]
+    )]
     public ImageCompressionControlEXT() { }
 }

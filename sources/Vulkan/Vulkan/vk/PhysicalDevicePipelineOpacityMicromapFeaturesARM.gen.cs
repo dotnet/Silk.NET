@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDevicePipelineOpacityMicromapFeaturesARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePipelineOpacityMicromapFeaturesARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_pipeline_opacity_micromap"],
+        ImpliesSets = ["VK_EXT_opacity_micromap"]
+    )]
     public StructureType SType = StructureType.PhysicalDevicePipelineOpacityMicromapFeaturesARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_pipeline_opacity_micromap"],
+        ImpliesSets = ["VK_EXT_opacity_micromap"]
+    )]
     public void* PNext;
 
     [NativeName("pipelineOpacityMicromap")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_pipeline_opacity_micromap"],
+        ImpliesSets = ["VK_EXT_opacity_micromap"]
+    )]
     public MaybeBool<uint> PipelineOpacityMicromap;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_pipeline_opacity_micromap"],
+        ImpliesSets = ["VK_EXT_opacity_micromap"]
+    )]
     public PhysicalDevicePipelineOpacityMicromapFeaturesARM() { }
 }

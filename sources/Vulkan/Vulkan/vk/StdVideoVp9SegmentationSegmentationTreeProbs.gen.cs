@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_segmentation_tree_probs_e__FixedBuffer")]
 [InlineArray(7)]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoVp9SegmentationSegmentationTreeProbs
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public byte E0;
 }

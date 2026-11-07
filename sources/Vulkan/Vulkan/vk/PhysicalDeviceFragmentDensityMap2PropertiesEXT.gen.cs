@@ -9,25 +9,61 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceFragmentDensityMap2PropertiesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFragmentDensityMap2PropertiesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map2"],
+        ImpliesSets = ["VK_EXT_fragment_density_map"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceFragmentDensityMap2PropertiesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map2"],
+        ImpliesSets = ["VK_EXT_fragment_density_map"]
+    )]
     public void* PNext;
 
     [NativeName("subsampledLoads")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map2"],
+        ImpliesSets = ["VK_EXT_fragment_density_map"]
+    )]
     public MaybeBool<uint> SubsampledLoads;
 
     [NativeName("subsampledCoarseReconstructionEarlyAccess")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map2"],
+        ImpliesSets = ["VK_EXT_fragment_density_map"]
+    )]
     public MaybeBool<uint> SubsampledCoarseReconstructionEarlyAccess;
 
     [NativeName("maxSubsampledArrayLayers")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map2"],
+        ImpliesSets = ["VK_EXT_fragment_density_map"]
+    )]
     public uint MaxSubsampledArrayLayers;
 
     [NativeName("maxDescriptorSetSubsampledSamplers")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map2"],
+        ImpliesSets = ["VK_EXT_fragment_density_map"]
+    )]
     public uint MaxDescriptorSetSubsampledSamplers;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map2"],
+        ImpliesSets = ["VK_EXT_fragment_density_map"]
+    )]
     public PhysicalDeviceFragmentDensityMap2PropertiesEXT() { }
 }

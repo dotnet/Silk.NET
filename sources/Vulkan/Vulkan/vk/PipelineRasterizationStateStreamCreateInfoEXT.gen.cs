@@ -9,19 +9,60 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineRasterizationStateStreamCreateInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineRasterizationStateStreamCreateInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PipelineRasterizationStateStreamCreateInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("flags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public uint Flags;
 
     [NativeName("rasterizationStream")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public uint RasterizationStream;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
     public PipelineRasterizationStateStreamCreateInfoEXT() { }
 }

@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_delta_chroma_weight_l1_e__FixedBuffer")]
 [InlineArray(15 * 2)]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265WeightTableDeltaChromaWeightL1
 {
     [NativeName("e0_0")]
+    [SupportedApiProfile("vulkan")]
     public sbyte E0x0;
 }

@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_data_graph_neural_accelerator_statistics"])]
     public StructureType SType =
         StructureType.PhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_data_graph_neural_accelerator_statistics"])]
     public void* PNext;
 
     [NativeName("dataGraphNeuralAcceleratorStatistics")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_data_graph_neural_accelerator_statistics"])]
     public MaybeBool<uint> DataGraphNeuralAcceleratorStatistics;
 
+    [SupportedApiProfile("vulkan", ["VK_ARM_data_graph_neural_accelerator_statistics"])]
     public PhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM() { }
 }

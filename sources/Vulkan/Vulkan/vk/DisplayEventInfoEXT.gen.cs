@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDisplayEventInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DisplayEventInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_display_control"],
+        ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
+    )]
     public StructureType SType = StructureType.DisplayEventInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_display_control"],
+        ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
+    )]
     public void* PNext;
 
     [NativeName("displayEvent")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_display_control"],
+        ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
+    )]
     public DisplayEventTypeEXT DisplayEvent;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_display_control"],
+        ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
+    )]
     public DisplayEventInfoEXT() { }
 }

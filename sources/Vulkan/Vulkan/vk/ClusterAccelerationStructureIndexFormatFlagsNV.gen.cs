@@ -10,16 +10,32 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkClusterAccelerationStructureIndexFormatFlagsNV")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum ClusterAccelerationStructureIndexFormatFlagsNV : uint
 {
     None = 0x0,
 
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_INDEX_FORMAT_8BIT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     Format8Bit = 0x1,
 
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_INDEX_FORMAT_16BIT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     Format16Bit = 0x2,
 
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_INDEX_FORMAT_32BIT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
     Format32Bit = 0x4,
 }

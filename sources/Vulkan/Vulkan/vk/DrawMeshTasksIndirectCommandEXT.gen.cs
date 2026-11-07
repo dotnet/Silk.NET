@@ -9,14 +9,30 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDrawMeshTasksIndirectCommandEXT")]
+[SupportedApiProfile("vulkan")]
 public partial struct DrawMeshTasksIndirectCommandEXT
 {
     [NativeName("groupCountX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mesh_shader"],
+        ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
+    )]
     public uint GroupCountX;
 
     [NativeName("groupCountY")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mesh_shader"],
+        ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
+    )]
     public uint GroupCountY;
 
     [NativeName("groupCountZ")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mesh_shader"],
+        ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
+    )]
     public uint GroupCountZ;
 }

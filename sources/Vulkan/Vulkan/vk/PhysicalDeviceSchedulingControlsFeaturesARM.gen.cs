@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceSchedulingControlsFeaturesARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceSchedulingControlsFeaturesARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_scheduling_controls"],
+        ImpliesSets = ["VK_ARM_shader_core_builtins"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceSchedulingControlsFeaturesARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_scheduling_controls"],
+        ImpliesSets = ["VK_ARM_shader_core_builtins"]
+    )]
     public void* PNext;
 
     [NativeName("schedulingControls")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_scheduling_controls"],
+        ImpliesSets = ["VK_ARM_shader_core_builtins"]
+    )]
     public MaybeBool<uint> SchedulingControls;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_scheduling_controls"],
+        ImpliesSets = ["VK_ARM_shader_core_builtins"]
+    )]
     public PhysicalDeviceSchedulingControlsFeaturesARM() { }
 }

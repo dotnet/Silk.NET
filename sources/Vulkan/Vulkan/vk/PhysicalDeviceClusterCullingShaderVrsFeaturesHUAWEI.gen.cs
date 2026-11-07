@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_cluster_culling_shader"],
+        ImpliesSets = [
+            "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
+            "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_cluster_culling_shader"],
+        ImpliesSets = [
+            "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
+            "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("clusterShadingRate")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_cluster_culling_shader"],
+        ImpliesSets = [
+            "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
+            "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ClusterShadingRate;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_cluster_culling_shader"],
+        ImpliesSets = [
+            "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
+            "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI() { }
 }

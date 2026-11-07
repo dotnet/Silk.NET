@@ -9,8 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSetStateFlagsIndirectCommandNV")]
+[SupportedApiProfile("vulkan")]
 public partial struct SetStateFlagsIndirectCommandNV
 {
     [NativeName("data")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
     public uint Data;
 }

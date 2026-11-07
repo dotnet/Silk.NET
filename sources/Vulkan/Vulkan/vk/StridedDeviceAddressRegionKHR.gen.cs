@@ -9,14 +9,39 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkStridedDeviceAddressRegionKHR")]
+[SupportedApiProfile("vulkan")]
 public partial struct StridedDeviceAddressRegionKHR
 {
     [NativeName("deviceAddress")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_ray_tracing_pipeline"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
+        ]
+    )]
     public ulong DeviceAddress;
 
     [NativeName("stride")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_ray_tracing_pipeline"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
+        ]
+    )]
     public ulong Stride;
 
     [NativeName("size")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_ray_tracing_pipeline"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
+        ]
+    )]
     public ulong Size;
 }

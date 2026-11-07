@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPresentTimeGOOGLE")]
+[SupportedApiProfile("vulkan")]
 public partial struct PresentTimeGOOGLE
 {
     [NativeName("presentID")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GOOGLE_display_timing"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
     public uint PresentID;
 
     [NativeName("desiredPresentTime")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GOOGLE_display_timing"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
     public ulong DesiredPresentTime;
 }

@@ -9,22 +9,71 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkReleaseSwapchainImagesInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct ReleaseSwapchainImagesInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.ReleaseSwapchainImagesInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("swapchain")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
     public SwapchainHandleKHR Swapchain;
 
     [NativeName("imageIndexCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
     public uint ImageIndexCount;
 
     [NativeName("pImageIndices")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
     public uint* PImageIndices;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
     public ReleaseSwapchainImagesInfoKHR() { }
 }

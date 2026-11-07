@@ -9,19 +9,60 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceCustomBorderColorFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceCustomBorderColorFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_border_color"],
+        ImpliesSets = [
+            "VK_EXT_custom_border_color+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_border_color+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceCustomBorderColorFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_border_color"],
+        ImpliesSets = [
+            "VK_EXT_custom_border_color+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_border_color+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("customBorderColors")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_border_color"],
+        ImpliesSets = [
+            "VK_EXT_custom_border_color+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_border_color+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> CustomBorderColors;
 
     [NativeName("customBorderColorWithoutFormat")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_border_color"],
+        ImpliesSets = [
+            "VK_EXT_custom_border_color+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_border_color+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> CustomBorderColorWithoutFormat;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_border_color"],
+        ImpliesSets = [
+            "VK_EXT_custom_border_color+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_border_color+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceCustomBorderColorFeaturesEXT() { }
 }

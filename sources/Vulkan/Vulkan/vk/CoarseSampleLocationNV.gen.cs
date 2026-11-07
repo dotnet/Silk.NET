@@ -9,14 +9,39 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkCoarseSampleLocationNV")]
+[SupportedApiProfile("vulkan")]
 public partial struct CoarseSampleLocationNV
 {
     [NativeName("pixelX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     public uint PixelX;
 
     [NativeName("pixelY")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     public uint PixelY;
 
     [NativeName("sample")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     public uint Sample;
 }

@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceExtendedDynamicState3PropertiesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceExtendedDynamicState3PropertiesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceExtendedDynamicState3PropertiesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("dynamicPrimitiveTopologyUnrestricted")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> DynamicPrimitiveTopologyUnrestricted;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceExtendedDynamicState3PropertiesEXT() { }
 }

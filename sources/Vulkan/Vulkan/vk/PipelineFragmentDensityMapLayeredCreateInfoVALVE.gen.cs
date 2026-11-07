@@ -9,16 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineFragmentDensityMapLayeredCreateInfoVALVE")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineFragmentDensityMapLayeredCreateInfoVALVE
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_fragment_density_map_layered"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_extended_flags",
+            "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_4",
+        ]
+    )]
     public StructureType SType = StructureType.PipelineFragmentDensityMapLayeredCreateInfoVALVE;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_fragment_density_map_layered"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_extended_flags",
+            "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_4",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("maxFragmentDensityMapLayers")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_fragment_density_map_layered"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_extended_flags",
+            "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_4",
+        ]
+    )]
     public uint MaxFragmentDensityMapLayers;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_fragment_density_map_layered"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_extended_flags",
+            "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_4",
+        ]
+    )]
     public PipelineFragmentDensityMapLayeredCreateInfoVALVE() { }
 }

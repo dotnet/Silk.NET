@@ -10,21 +10,66 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkIndirectCommandsTokenDataEXT")]
 [StructLayout(LayoutKind.Explicit)]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectCommandsTokenDataEXT
 {
     [NativeName("pPushConstant")]
     [FieldOffset(0)]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public IndirectCommandsPushConstantTokenEXT* PPushConstant;
 
     [NativeName("pVertexBuffer")]
     [FieldOffset(0)]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public IndirectCommandsVertexBufferTokenEXT* PVertexBuffer;
 
     [NativeName("pIndexBuffer")]
     [FieldOffset(0)]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public IndirectCommandsIndexBufferTokenEXT* PIndexBuffer;
 
     [NativeName("pExecutionSet")]
     [FieldOffset(0)]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
+            "VK_VERSION_1_3",
+        ]
+    )]
     public IndirectCommandsExecutionSetTokenEXT* PExecutionSet;
 }

@@ -10,13 +10,30 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkResolveImageFlagsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum ResolveImageFlagsKHR : uint
 {
     None = 0x0,
 
     [NativeName("VK_RESOLVE_IMAGE_SKIP_TRANSFER_FUNCTION_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance10+VK_KHR_copy_commands2", "VK_KHR_maintenance10+VK_VERSION_1_3"],
+        ImpliesSets = [
+            "VK_KHR_maintenance10+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance10+VK_VERSION_1_1",
+        ]
+    )]
     SkipTransferFunctionBit = 0x1,
 
     [NativeName("VK_RESOLVE_IMAGE_ENABLE_TRANSFER_FUNCTION_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance10+VK_KHR_copy_commands2", "VK_KHR_maintenance10+VK_VERSION_1_3"],
+        ImpliesSets = [
+            "VK_KHR_maintenance10+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance10+VK_VERSION_1_1",
+        ]
+    )]
     EnableTransferFunctionBit = 0x2,
 }

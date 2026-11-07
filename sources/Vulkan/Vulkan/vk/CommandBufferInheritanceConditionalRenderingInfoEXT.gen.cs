@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkCommandBufferInheritanceConditionalRenderingInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct CommandBufferInheritanceConditionalRenderingInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conditional_rendering"],
+        ImpliesSets = [
+            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.CommandBufferInheritanceConditionalRenderingInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conditional_rendering"],
+        ImpliesSets = [
+            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("conditionalRenderingEnable")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conditional_rendering"],
+        ImpliesSets = [
+            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ConditionalRenderingEnable;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conditional_rendering"],
+        ImpliesSets = [
+            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
+        ]
+    )]
     public CommandBufferInheritanceConditionalRenderingInfoEXT() { }
 }

@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceFragmentDensityMap2FeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFragmentDensityMap2FeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map2"],
+        ImpliesSets = ["VK_EXT_fragment_density_map"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceFragmentDensityMap2FeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map2"],
+        ImpliesSets = ["VK_EXT_fragment_density_map"]
+    )]
     public void* PNext;
 
     [NativeName("fragmentDensityMapDeferred")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map2"],
+        ImpliesSets = ["VK_EXT_fragment_density_map"]
+    )]
     public MaybeBool<uint> FragmentDensityMapDeferred;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map2"],
+        ImpliesSets = ["VK_EXT_fragment_density_map"]
+    )]
     public PhysicalDeviceFragmentDensityMap2FeaturesEXT() { }
 }

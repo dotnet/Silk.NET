@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkMemoryPriorityAllocateInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryPriorityAllocateInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_memory_priority"],
+        ImpliesSets = [
+            "VK_EXT_memory_priority+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_memory_priority+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.MemoryPriorityAllocateInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_memory_priority"],
+        ImpliesSets = [
+            "VK_EXT_memory_priority+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_memory_priority+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("priority")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_memory_priority"],
+        ImpliesSets = [
+            "VK_EXT_memory_priority+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_memory_priority+VK_VERSION_1_1",
+        ]
+    )]
     public float Priority;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_memory_priority"],
+        ImpliesSets = [
+            "VK_EXT_memory_priority+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_memory_priority+VK_VERSION_1_1",
+        ]
+    )]
     public MemoryPriorityAllocateInfoEXT() { }
 }

@@ -10,19 +10,40 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkDataGraphTOSAQualityFlagsARM")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum DataGraphTosaQualityFlagsARM : uint
 {
     None = 0x0,
 
     [NativeName("VK_DATA_GRAPH_TOSA_QUALITY_ACCELERATED_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     TosaQualityAccelerated = 0x1,
 
     [NativeName("VK_DATA_GRAPH_TOSA_QUALITY_CONFORMANT_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     TosaQualityConformant = 0x2,
 
     [NativeName("VK_DATA_GRAPH_TOSA_QUALITY_EXPERIMENTAL_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     TosaQualityExperimental = 0x4,
 
     [NativeName("VK_DATA_GRAPH_TOSA_QUALITY_DEPRECATED_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
     TosaQualityDeprecated = 0x8,
 }

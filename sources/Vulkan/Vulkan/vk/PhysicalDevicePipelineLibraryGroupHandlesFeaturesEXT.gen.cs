@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_library_group_handles"],
+        ImpliesSets = ["VK_KHR_pipeline_library", "VK_KHR_ray_tracing_pipeline"]
+    )]
     public StructureType SType = StructureType.PhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_library_group_handles"],
+        ImpliesSets = ["VK_KHR_pipeline_library", "VK_KHR_ray_tracing_pipeline"]
+    )]
     public void* PNext;
 
     [NativeName("pipelineLibraryGroupHandles")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_library_group_handles"],
+        ImpliesSets = ["VK_KHR_pipeline_library", "VK_KHR_ray_tracing_pipeline"]
+    )]
     public MaybeBool<uint> PipelineLibraryGroupHandles;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_library_group_handles"],
+        ImpliesSets = ["VK_KHR_pipeline_library", "VK_KHR_ray_tracing_pipeline"]
+    )]
     public PhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT() { }
 }

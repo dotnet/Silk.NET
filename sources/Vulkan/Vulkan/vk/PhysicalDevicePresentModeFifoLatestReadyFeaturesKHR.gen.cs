@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_mode_fifo_latest_ready"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
     public StructureType SType = StructureType.PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_mode_fifo_latest_ready"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
     public void* PNext;
 
     [NativeName("presentModeFifoLatestReady")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_mode_fifo_latest_ready"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
     public MaybeBool<uint> PresentModeFifoLatestReady;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_mode_fifo_latest_ready"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
     public PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR() { }
 }

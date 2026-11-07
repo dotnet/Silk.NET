@@ -9,14 +9,39 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkBlendOverlapEXT")]
+[SupportedApiProfile("vulkan")]
 public enum BlendOverlapEXT : uint
 {
     [NativeName("VK_BLEND_OVERLAP_UNCORRELATED_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_blend_operation_advanced"],
+        ImpliesSets = [
+            "VK_EXT_blend_operation_advanced+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
+        ]
+    )]
     Uncorrelated = 0,
 
     [NativeName("VK_BLEND_OVERLAP_DISJOINT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_blend_operation_advanced"],
+        ImpliesSets = [
+            "VK_EXT_blend_operation_advanced+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
+        ]
+    )]
     Disjoint = 1,
 
     [NativeName("VK_BLEND_OVERLAP_CONJOINT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_blend_operation_advanced"],
+        ImpliesSets = [
+            "VK_EXT_blend_operation_advanced+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
+        ]
+    )]
     Conjoint = 2,
 }

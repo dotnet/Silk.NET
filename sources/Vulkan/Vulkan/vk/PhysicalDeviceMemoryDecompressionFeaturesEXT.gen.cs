@@ -9,16 +9,41 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceMemoryDecompressionFeaturesEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMemoryDecompressionFeaturesEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_memory_decompression"],
+        ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceMemoryDecompressionFeaturesEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_memory_decompression"],
+        ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
+    )]
     public void* PNext;
 
     [NativeName("memoryDecompression")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_memory_decompression"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
     public MaybeBool<uint> MemoryDecompression;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_memory_decompression"],
+        ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
+    )]
     public PhysicalDeviceMemoryDecompressionFeaturesEXT() { }
 }

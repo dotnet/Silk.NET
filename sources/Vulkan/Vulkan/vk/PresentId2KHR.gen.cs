@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPresentId2KHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PresentId2KHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_id2"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface", "VK_KHR_swapchain"]
+    )]
     public StructureType SType = StructureType.PresentId2KHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_id2"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface", "VK_KHR_swapchain"]
+    )]
     public void* PNext;
 
     [NativeName("swapchainCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_id2"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface", "VK_KHR_swapchain"]
+    )]
     public uint SwapchainCount;
 
     [NativeName("pPresentIds")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_id2"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface", "VK_KHR_swapchain"]
+    )]
     public ulong* PPresentIds;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_id2"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface", "VK_KHR_swapchain"]
+    )]
     public PresentId2KHR() { }
 }

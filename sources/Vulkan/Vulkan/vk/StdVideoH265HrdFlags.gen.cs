@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoH265HrdFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265HrdFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("nal_hrd_parameters_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint NalHrdParametersPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoH265HrdFlags
     }
 
     [NativeName("vcl_hrd_parameters_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint VclHrdParametersPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoH265HrdFlags
     }
 
     [NativeName("sub_pic_hrd_params_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint SubPicHrdParamsPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoH265HrdFlags
     }
 
     [NativeName("sub_pic_cpb_params_in_pic_timing_sei_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint SubPicCpbParamsInPicTimingSeiFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct StdVideoH265HrdFlags
     }
 
     [NativeName("fixed_pic_rate_general_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint FixedPicRateGeneralFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +67,7 @@ public partial struct StdVideoH265HrdFlags
     }
 
     [NativeName("fixed_pic_rate_within_cvs_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint FixedPicRateWithinCvsFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,6 +77,7 @@ public partial struct StdVideoH265HrdFlags
     }
 
     [NativeName("low_delay_hrd_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint LowDelayHrdFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

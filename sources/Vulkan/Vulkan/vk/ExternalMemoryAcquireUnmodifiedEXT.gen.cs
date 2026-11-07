@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkExternalMemoryAcquireUnmodifiedEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct ExternalMemoryAcquireUnmodifiedEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_acquire_unmodified"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_acquire_unmodified+VK_KHR_external_memory",
+            "VK_EXT_external_memory_acquire_unmodified+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.ExternalMemoryAcquireUnmodifiedEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_acquire_unmodified"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_acquire_unmodified+VK_KHR_external_memory",
+            "VK_EXT_external_memory_acquire_unmodified+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("acquireUnmodifiedMemory")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_acquire_unmodified"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_acquire_unmodified+VK_KHR_external_memory",
+            "VK_EXT_external_memory_acquire_unmodified+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> AcquireUnmodifiedMemory;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_acquire_unmodified"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_acquire_unmodified+VK_KHR_external_memory",
+            "VK_EXT_external_memory_acquire_unmodified+VK_VERSION_1_1",
+        ]
+    )]
     public ExternalMemoryAcquireUnmodifiedEXT() { }
 }

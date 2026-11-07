@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeviceFaultShaderAbortMessageInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceFaultShaderAbortMessageInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_abort"],
+        ImpliesSets = ["VK_KHR_device_fault", "VK_KHR_shader_constant_data"]
+    )]
     public StructureType SType = StructureType.DeviceFaultShaderAbortMessageInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_abort"],
+        ImpliesSets = ["VK_KHR_device_fault", "VK_KHR_shader_constant_data"]
+    )]
     public void* PNext;
 
     [NativeName("messageDataSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_abort"],
+        ImpliesSets = ["VK_KHR_device_fault", "VK_KHR_shader_constant_data"]
+    )]
     public ulong MessageDataSize;
 
     [NativeName("pMessageData")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_abort"],
+        ImpliesSets = ["VK_KHR_device_fault", "VK_KHR_shader_constant_data"]
+    )]
     public void* PMessageData;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_abort"],
+        ImpliesSets = ["VK_KHR_device_fault", "VK_KHR_shader_constant_data"]
+    )]
     public DeviceFaultShaderAbortMessageInfoKHR() { }
 }

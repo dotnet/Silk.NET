@@ -10,8 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_delta_poc_msb_present_flag_e__FixedBuffer")]
 [InlineArray(48)]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265LongTermRefPicsDeltaPocMsbPresentFlag
 {
     [NativeName("e0")]
+    [SupportedApiProfile("vulkan")]
     public byte E0;
 }

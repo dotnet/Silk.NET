@@ -10,13 +10,40 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkSemaphoreWaitFlags")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum SemaphoreWaitFlags : uint
 {
     None = 0x0,
 
     [NativeName("VK_SEMAPHORE_WAIT_ANY_BIT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
     AnyBit = 0x1,
 
     [NativeName("VK_SEMAPHORE_WAIT_ANY_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_timeline_semaphore"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
+        ]
+    )]
     AnyBitKHR = AnyBit,
 }

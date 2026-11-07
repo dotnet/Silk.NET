@@ -9,25 +9,82 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkImportFenceFdInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct ImportFenceFdInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_fd+VK_KHR_external_fence",
+            "VK_KHR_external_fence_fd+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.ImportFenceFdInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_fd+VK_KHR_external_fence",
+            "VK_KHR_external_fence_fd+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("fence")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_fd+VK_KHR_external_fence",
+            "VK_KHR_external_fence_fd+VK_VERSION_1_1",
+        ]
+    )]
     public FenceHandle Fence;
 
     [NativeName("flags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_fd+VK_KHR_external_fence",
+            "VK_KHR_external_fence_fd+VK_VERSION_1_1",
+        ]
+    )]
     public FenceImportFlags Flags;
 
     [NativeName("handleType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_fd+VK_KHR_external_fence",
+            "VK_KHR_external_fence_fd+VK_VERSION_1_1",
+        ]
+    )]
     public ExternalFenceHandleTypeFlags HandleType;
 
     [NativeName("fd")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_fd+VK_KHR_external_fence",
+            "VK_KHR_external_fence_fd+VK_VERSION_1_1",
+        ]
+    )]
     public int Fd;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_fd+VK_KHR_external_fence",
+            "VK_KHR_external_fence_fd+VK_VERSION_1_1",
+        ]
+    )]
     public ImportFenceFdInfoKHR() { }
 }

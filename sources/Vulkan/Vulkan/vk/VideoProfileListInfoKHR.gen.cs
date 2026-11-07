@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoProfileListInfoKHR")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoProfileListInfoKHR
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_queue"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
+    )]
     public StructureType SType = StructureType.VideoProfileListInfoKHR;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_queue"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
+    )]
     public void* PNext;
 
     [NativeName("profileCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_queue"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
+    )]
     public uint ProfileCount;
 
     [NativeName("pProfiles")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_queue"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
+    )]
     public VideoProfileInfoKHR* PProfiles;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_queue"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
+    )]
     public VideoProfileListInfoKHR() { }
 }

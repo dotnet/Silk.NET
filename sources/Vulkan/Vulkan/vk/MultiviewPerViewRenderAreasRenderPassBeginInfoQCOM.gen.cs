@@ -9,19 +9,60 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct MultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_multiview_per_view_render_areas"],
+        ImpliesSets = [
+            "VK_QCOM_multiview_per_view_render_areas+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_multiview_per_view_render_areas+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.MultiviewPerViewRenderAreasRenderPassBeginInfoQCOM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_multiview_per_view_render_areas"],
+        ImpliesSets = [
+            "VK_QCOM_multiview_per_view_render_areas+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_multiview_per_view_render_areas+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("perViewRenderAreaCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_multiview_per_view_render_areas"],
+        ImpliesSets = [
+            "VK_QCOM_multiview_per_view_render_areas+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_multiview_per_view_render_areas+VK_VERSION_1_1",
+        ]
+    )]
     public uint PerViewRenderAreaCount;
 
     [NativeName("pPerViewRenderAreas")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_multiview_per_view_render_areas"],
+        ImpliesSets = [
+            "VK_QCOM_multiview_per_view_render_areas+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_multiview_per_view_render_areas+VK_VERSION_1_1",
+        ]
+    )]
     public Rect2D* PPerViewRenderAreas;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_multiview_per_view_render_areas"],
+        ImpliesSets = [
+            "VK_QCOM_multiview_per_view_render_areas+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_multiview_per_view_render_areas+VK_VERSION_1_1",
+        ]
+    )]
     public MultiviewPerViewRenderAreasRenderPassBeginInfoQCOM() { }
 }

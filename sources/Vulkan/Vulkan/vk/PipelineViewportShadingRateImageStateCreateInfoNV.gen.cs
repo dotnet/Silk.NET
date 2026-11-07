@@ -9,22 +9,71 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineViewportShadingRateImageStateCreateInfoNV")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineViewportShadingRateImageStateCreateInfoNV
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PipelineViewportShadingRateImageStateCreateInfoNV;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("shadingRateImageEnable")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShadingRateImageEnable;
 
     [NativeName("viewportCount")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     public uint ViewportCount;
 
     [NativeName("pShadingRatePalettes")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     public ShadingRatePaletteNV* PShadingRatePalettes;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
     public PipelineViewportShadingRateImageStateCreateInfoNV() { }
 }

@@ -10,17 +10,50 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoDecodeUsageFlagsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum VideoDecodeUsageFlagsKHR : uint
 {
     [NativeName("VK_VIDEO_DECODE_USAGE_DEFAULT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     Default = 0x0,
 
     [NativeName("VK_VIDEO_DECODE_USAGE_TRANSCODING_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     TranscodingBit = 0x1,
 
     [NativeName("VK_VIDEO_DECODE_USAGE_OFFLINE_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     OfflineBit = 0x2,
 
     [NativeName("VK_VIDEO_DECODE_USAGE_STREAMING_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
     StreamingBit = 0x4,
 }

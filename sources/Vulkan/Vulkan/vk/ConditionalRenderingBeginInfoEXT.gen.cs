@@ -9,22 +9,71 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkConditionalRenderingBeginInfoEXT")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct ConditionalRenderingBeginInfoEXT
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conditional_rendering"],
+        ImpliesSets = [
+            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.ConditionalRenderingBeginInfoEXT;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conditional_rendering"],
+        ImpliesSets = [
+            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("buffer")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conditional_rendering"],
+        ImpliesSets = [
+            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
+        ]
+    )]
     public BufferHandle Buffer;
 
     [NativeName("offset")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conditional_rendering"],
+        ImpliesSets = [
+            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
+        ]
+    )]
     public ulong Offset;
 
     [NativeName("flags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conditional_rendering"],
+        ImpliesSets = [
+            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
+        ]
+    )]
     public ConditionalRenderingFlagsEXT Flags;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conditional_rendering"],
+        ImpliesSets = [
+            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
+        ]
+    )]
     public ConditionalRenderingBeginInfoEXT() { }
 }

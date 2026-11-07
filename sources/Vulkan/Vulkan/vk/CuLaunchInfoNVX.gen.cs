@@ -9,49 +9,65 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkCuLaunchInfoNVX")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct CuLaunchInfoNVX
 {
     [NativeName("sType")]
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public StructureType SType = StructureType.CuLaunchInfoNVX;
 
     [NativeName("pNext")]
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public void* PNext;
 
     [NativeName("function")]
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public CuFunctionHandleNVX Function;
 
     [NativeName("gridDimX")]
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public uint GridDimX;
 
     [NativeName("gridDimY")]
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public uint GridDimY;
 
     [NativeName("gridDimZ")]
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public uint GridDimZ;
 
     [NativeName("blockDimX")]
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public uint BlockDimX;
 
     [NativeName("blockDimY")]
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public uint BlockDimY;
 
     [NativeName("blockDimZ")]
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public uint BlockDimZ;
 
     [NativeName("sharedMemBytes")]
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public uint SharedMemBytes;
 
     [NativeName("paramCount")]
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public nuint ParamCount;
 
     [NativeName("pParams")]
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public void** PParams;
 
     [NativeName("extraCount")]
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public nuint ExtraCount;
 
     [NativeName("pExtras")]
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public void** PExtras;
 
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public CuLaunchInfoNVX() { }
 }

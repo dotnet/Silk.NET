@@ -9,16 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceFormatPackFeaturesARM")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFormatPackFeaturesARM
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_format_pack"],
+        ImpliesSets = [
+            "VK_ARM_format_pack+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_format_pack+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.PhysicalDeviceFormatPackFeaturesARM;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_format_pack"],
+        ImpliesSets = [
+            "VK_ARM_format_pack+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_format_pack+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("formatPack")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_format_pack"],
+        ImpliesSets = [
+            "VK_ARM_format_pack+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_format_pack+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> FormatPack;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_format_pack"],
+        ImpliesSets = [
+            "VK_ARM_format_pack+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_format_pack+VK_VERSION_1_1",
+        ]
+    )]
     public PhysicalDeviceFormatPackFeaturesARM() { }
 }

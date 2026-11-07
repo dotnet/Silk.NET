@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoAV1QuantizationFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1QuantizationFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("using_qmatrix")]
+    [SupportedApiProfile("vulkan")]
     public uint UsingQmatrix
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoAv1QuantizationFlags
     }
 
     [NativeName("diff_uv_delta")]
+    [SupportedApiProfile("vulkan")]
     public uint DiffUvDelta
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoAv1QuantizationFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

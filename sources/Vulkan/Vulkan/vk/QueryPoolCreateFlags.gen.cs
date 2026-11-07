@@ -10,10 +10,19 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkQueryPoolCreateFlags")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum QueryPoolCreateFlags : uint
 {
     None = 0x0,
 
     [NativeName("VK_QUERY_POOL_CREATE_RESET_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance9"],
+        ImpliesSets = [
+            "VK_KHR_maintenance9+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance9+VK_VERSION_1_1",
+        ]
+    )]
     ResetBitKHR = 0x1,
 }

@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoDecodeAV1PictureInfoFlags")]
+[SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeAv1PictureInfoFlags
 {
     [NativeName("_bitfield")]
+    [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
     [NativeName("error_resilient_mode")]
+    [SupportedApiProfile("vulkan")]
     public uint ErrorResilientMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("disable_cdf_update")]
+    [SupportedApiProfile("vulkan")]
     public uint DisableCdfUpdate
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("use_superres")]
+    [SupportedApiProfile("vulkan")]
     public uint UseSuperres
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("render_and_frame_size_different")]
+    [SupportedApiProfile("vulkan")]
     public uint RenderAndFrameSizeDifferent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("allow_screen_content_tools")]
+    [SupportedApiProfile("vulkan")]
     public uint AllowScreenContentTools
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +67,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("is_filter_switchable")]
+    [SupportedApiProfile("vulkan")]
     public uint IsFilterSwitchable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,6 +77,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("force_integer_mv")]
+    [SupportedApiProfile("vulkan")]
     public uint ForceIntegerMv
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -78,6 +87,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("frame_size_override_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint FrameSizeOverrideFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -87,6 +97,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("buffer_removal_time_present_flag")]
+    [SupportedApiProfile("vulkan")]
     public uint BufferRemovalTimePresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -96,6 +107,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("allow_intrabc")]
+    [SupportedApiProfile("vulkan")]
     public uint AllowIntrabc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -105,6 +117,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("frame_refs_short_signaling")]
+    [SupportedApiProfile("vulkan")]
     public uint FrameRefsShortSignaling
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -114,6 +127,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("allow_high_precision_mv")]
+    [SupportedApiProfile("vulkan")]
     public uint AllowHighPrecisionMv
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -123,6 +137,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("is_motion_mode_switchable")]
+    [SupportedApiProfile("vulkan")]
     public uint IsMotionModeSwitchable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -132,6 +147,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("use_ref_frame_mvs")]
+    [SupportedApiProfile("vulkan")]
     public uint UseRefFrameMvs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -141,6 +157,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("disable_frame_end_update_cdf")]
+    [SupportedApiProfile("vulkan")]
     public uint DisableFrameEndUpdateCdf
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -150,6 +167,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("allow_warped_motion")]
+    [SupportedApiProfile("vulkan")]
     public uint AllowWarpedMotion
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -159,6 +177,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("reduced_tx_set")]
+    [SupportedApiProfile("vulkan")]
     public uint ReducedTxSet
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -168,6 +187,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("reference_select")]
+    [SupportedApiProfile("vulkan")]
     public uint ReferenceSelect
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -177,6 +197,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("skip_mode_present")]
+    [SupportedApiProfile("vulkan")]
     public uint SkipModePresent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -186,6 +207,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("delta_q_present")]
+    [SupportedApiProfile("vulkan")]
     public uint DeltaQPresent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -195,6 +217,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("delta_lf_present")]
+    [SupportedApiProfile("vulkan")]
     public uint DeltaLfPresent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -204,6 +227,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("delta_lf_multi")]
+    [SupportedApiProfile("vulkan")]
     public uint DeltaLfMulti
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -213,6 +237,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("segmentation_enabled")]
+    [SupportedApiProfile("vulkan")]
     public uint SegmentationEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -222,6 +247,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("segmentation_update_map")]
+    [SupportedApiProfile("vulkan")]
     public uint SegmentationUpdateMap
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -231,6 +257,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("segmentation_temporal_update")]
+    [SupportedApiProfile("vulkan")]
     public uint SegmentationTemporalUpdate
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -240,6 +267,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("segmentation_update_data")]
+    [SupportedApiProfile("vulkan")]
     public uint SegmentationUpdateData
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -249,6 +277,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("UsesLr")]
+    [SupportedApiProfile("vulkan")]
     public uint UsesLr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -258,6 +287,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("usesChromaLr")]
+    [SupportedApiProfile("vulkan")]
     public uint UsesChromaLr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -267,6 +297,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("apply_grain")]
+    [SupportedApiProfile("vulkan")]
     public uint ApplyGrain
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -276,6 +307,7 @@ public partial struct StdVideoDecodeAv1PictureInfoFlags
     }
 
     [NativeName("reserved")]
+    [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -9,19 +9,75 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkMultiviewPerViewAttributesInfoNVX")]
+[SupportedApiProfile("vulkan")]
 public unsafe partial struct MultiviewPerViewAttributesInfoNVX
 {
     [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_NVX_multiview_per_view_attributes+VK_KHR_dynamic_rendering",
+            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_3",
+        ],
+        ImpliesSets = [
+            "VK_NVX_multiview_per_view_attributes+VK_KHR_multiview",
+            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType = StructureType.MultiviewPerViewAttributesInfoNVX;
 
     [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_NVX_multiview_per_view_attributes+VK_KHR_dynamic_rendering",
+            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_3",
+        ],
+        ImpliesSets = [
+            "VK_NVX_multiview_per_view_attributes+VK_KHR_multiview",
+            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeName("perViewAttributes")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_NVX_multiview_per_view_attributes+VK_KHR_dynamic_rendering",
+            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_3",
+        ],
+        ImpliesSets = [
+            "VK_NVX_multiview_per_view_attributes+VK_KHR_multiview",
+            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> PerViewAttributes;
 
     [NativeName("perViewAttributesPositionXOnly")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_NVX_multiview_per_view_attributes+VK_KHR_dynamic_rendering",
+            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_3",
+        ],
+        ImpliesSets = [
+            "VK_NVX_multiview_per_view_attributes+VK_KHR_multiview",
+            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> PerViewAttributesPositionXOnly;
 
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_NVX_multiview_per_view_attributes+VK_KHR_dynamic_rendering",
+            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_3",
+        ],
+        ImpliesSets = [
+            "VK_NVX_multiview_per_view_attributes+VK_KHR_multiview",
+            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
+        ]
+    )]
     public MultiviewPerViewAttributesInfoNVX() { }
 }
