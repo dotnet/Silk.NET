@@ -193,7 +193,7 @@ affect the native builds and bindings. When these changes are detected, CI will 
 either a `/native` command or a `/bindings` command. This command can be commented by someone with **push privileges**
 to trigger a rebuild or regeneration.
 
-This is in contrast to 2.x where changes automatically triggered rebuilds and opened separate PRs requesting for the
+This is in contrast to 2.X where changes automatically triggered rebuilds and opened separate PRs requesting for the
 changes to be merged, which was very noisy and annoying.
 
 ### Adding new native build and bindings regeneration jobs
@@ -351,14 +351,14 @@ those triggers affect permissions, and the need to split untrusted and trusted w
 To clarify some terminology, workflows refer to the entire `.yml` file, jobs refer to the individual jobs within each
 workflow, and steps refer to the individual steps within each job.
 
-These are the current workflows in use for Silk 3 native builds and bindings regeneration:
+These are the current workflows in use for Silk.NET 3.X native builds and bindings regeneration:
 
-Silk 3 - `develop/3.0` branch:
+Silk.NET 3.X - `develop/3.0` branch:
 
 - `check-affected.yml`: Triggered using `pull_request: synchronize`, this identifies what jobs are affected by changes
   within the PR.
 
-Silk 2 - `main` branch:
+Silk.NET 2.X - `main` branch:
 
 - `silk3-affected-comment.yml`: Triggered using `workflow_run` when `check-affected.yml` completes. This workflow's
   sole purpose is to post the PR comment written by `check-affected.yml`. This is because `check-affected.yml` does not
@@ -374,9 +374,9 @@ know is that this also defines the set of permissions that a workflow has and wh
 from. GitHub does this for security purposes, but it means that we have to split what might otherwise be one workflow
 into multiple parts. We also do something similar with individual jobs to isolate untrusted code.
 
-For example, `issue_comment` always uses the default branch, which currently is the `main` branch used for Silk 2.x.
+For example, `issue_comment` always uses the default branch, which currently is the `main` branch used for Silk.NET 2.X.
 However, `pull_request: synchronize` uses the base branch of the PR, which usually is the `develop/3.0` branch used for
-Silk 3. This is why our Silk 3 workflow definitions are split between `main` and `develop/3.0`.
+Silk.NET 3.X. This is why our Silk.NET 3.X workflow definitions are split between `main` and `develop/3.0`.
 
 Similarly, because `pull_request: synchronize` is unprivileged when triggered by a PR from a fork, in order for us to
 post a PR comment during `check-affected.yml`, `check-affected.yml` must generate the comment and upload it as an
@@ -396,8 +396,8 @@ NUKE is used to provide an easy interface into both MSBuild and our other non-C#
 However, if you have to build native packages or do anything that involves more than just a C# MSBuild runthrough then
 NUKE serves this purpose.
 
-All tasks can be seen in `eng/build/Build.cs`. They can be executed using the `build` scripts (in the repo root) or
-using the `NUKE.GlobalTool` `dotnet tool`. If you don't specify a task, `Compile` is used, which just runs
+All tasks can be seen in `eng/build/Build.cs`. They can be executed using the `build` scripts (in the repository root)
+or using the `NUKE.GlobalTool` `dotnet tool`. If you don't specify a task, `Compile` is used, which just runs
 `dotnet build`.
 
 ### CI/CD/Release Processes

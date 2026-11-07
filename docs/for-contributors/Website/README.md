@@ -101,8 +101,8 @@ compatibility, and these files will just redirect to the URls without the `.html
 Docusaurus has built-in versioning, but it doesn't use Git. Instead, it expects all versions to be checked into the
 repository in the branch the website is being built on (resulting in lots of duplication - this is not acceptable for
 us!) As a result of this, we decided to forgo the standard Docusaurus versioning workflow and "emulate" it at build-time
-using the NUKE workflow. This pulls on the Git repo to provide the historical versions, and makes up most of the logic
-in the NUKE script.
+using the NUKE workflow. This pulls on the Git repository to provide the historical versions, and makes up most of the
+logic in the NUKE script.
 
 The versioning process is as follows:
 1. See if we're currently working on the next version of Silk.NET by looking for a `develop/X.0` branch. See

@@ -3,9 +3,9 @@
 **Warning: The generator is still in heavy development and will likely be subject to frequent breaking changes.**
 This will likely be the case until we are a few previews in.
 
-SilkTouch is Silk 3's bindings generator, which works by taking the output of ClangSharpPInvokeGenerator, which itself
-is its own bindings generator, and modifying the output with a set of mods. These mods apply transformations such as
-renaming identifiers, creating types such as handle structs or enums, and adding method overloads.
+SilkTouch is Silk.NET 3.X's bindings generator, which works by taking the output of ClangSharpPInvokeGenerator, which
+itself is its own bindings generator, and modifying the output with a set of mods. These mods apply transformations such
+as renaming identifiers, creating types such as handle structs or enums, and adding method overloads.
 
 In other words, ClangSharpPInvokeGenerator acts as the input to the SilkTouch generator and SilkTouch works to improve
 on that input. Other inputs to the SilkTouch generator will likely be available in the future to cover APIs such as
@@ -17,7 +17,8 @@ Metal.
 
 There are three main things to configure:
 
-1. Silk 3 - This is the [`Silk.NET.SilkTouch.Jobs`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/sources/SilkTouch/Jobs/Program.cs)
+1. SilkTouch - This is the
+   [`Silk.NET.SilkTouch.Jobs`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/sources/SilkTouch/Jobs/Program.cs)
    project. You may also use a single file app instead of a full C# project.
 
 2. ClangSharpPInvokeGenerator - This is the [`eng/silktouch`](https://github.com/dotnet/Silk.NET/tree/develop/3.0/eng/silktouch) folder.
@@ -33,12 +34,12 @@ you are binding.
 
 ## SilkTouch Configuration
 
-Silk defines the configuration for SilkTouch as regular C# in the
+Silk.NET defines the SilkTouch configuration as regular C# in the
 [`Silk.NET.SilkTouch.Jobs`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/sources/SilkTouch/Jobs/Program.cs)
 project.
 
-This project defines the different bindings jobs and the list of mods to run for each job. Silk's own bindings jobs are
-split into multiple files for maintainability, but since this is regular C# code, you may organize your own job
+This project defines the different bindings jobs and the list of mods to run for each job. Silk.NET's own bindings jobs
+are split into multiple files for maintainability, but since this is regular C# code, you may organize your own job
 definitions however you wish.
 
 For example, when binding to a C API:
@@ -63,7 +64,7 @@ Aside from reading documentation, some other ways to learn about the mods are to
 ## ClangSharpPInvokeGenerator Configuration
 
 Due to SilkTouch using ClangSharpPInvokeGenerator as an input, ClangSharpPInvokeGenerator must also be configured.
-Silk stores its configuration for ClangSharpPInvokeGenerator in the
+Silk.NET stores its configuration for ClangSharpPInvokeGenerator in the
 [`eng/silktouch`](https://github.com/dotnet/Silk.NET/tree/develop/3.0/eng/silktouch) folder as `.rsp` files (response
 files). These response files store command line arguments to be passed into ClangSharpPInvokeGenerator.
 
@@ -82,17 +83,17 @@ generator looks for these response files.
 Aside from simply storing the command line arguments to be passed into ClangSharpPInvokeGenerator, response files can
 also import other response files using the `@path` syntax. For example: `@../settings.rsp`.
 
-Silk commonly uses these import paths to share settings between different sets of bindings, such as the
+Silk.NET commonly uses these imports to share settings between different sets of bindings, such as the
 [common.rsp](https://github.com/dotnet/Silk.NET/blob/develop/3.0/eng/silktouch/common.rsp) file for general shared
 settings and the [remap-stdint.rsp](https://github.com/dotnet/Silk.NET/blob/develop/3.0/eng/silktouch/remap-stdint.rsp)
 file used to ensure that the `stdint.h` types behave consistently between Windows and Linux.
 
-Please note that these paths are relative to the response file specified in the generator and **not** relative to the
+Please note that these imports are relative to the response file specified in the generator and **not** relative to the
 response file the `@path` directive is actually defined in.
 
-For example, Silk's SDL bindings sets `ClangSharpResponseFiles` to be `eng/silktouch/sdl/**/generate.rsp`. Therefore,
-any import paths used in the response files, including transitively imported response files, must be relative to
-the matched `generate.rsp` file.
+For example, Silk.NET's SDL bindings sets `ClangSharpResponseFiles` to be `eng/silktouch/sdl/**/generate.rsp`.
+Therefore, any imports used in the response files, including transitively imported response files, must be relative
+to the matched `generate.rsp` file.
 
 ### Example Response File Folder Structure
 
@@ -107,24 +108,24 @@ eng
     - gles1
     - gles2
   - sdl
-    - SDL3
+    - sdl3
 ```
 
 Profiles are not likely to be required for your average C API required, so the examples here will keep focusing on the
 SDL case. Profiles are needed when your API has multiple variants or needs to be generated on multiple platforms. For
 additional reference, please use the OpenGL (TODO: or OpenXR bindings) bindings jobs as examples.
 
-The following is the folder structure used for Silk's SDL bindings. You do not have to structure it the way Silk does.
-Silk's structure focuses on keeping consistency in its response file organization, regardless of whether the API makes
-use of profiles or not.
+The following is the folder structure used for Silk.NET's SDL bindings. You do not have to structure it the way Silk.NET
+does. Silk.NET's structure focuses on keeping consistency in its response file organization, regardless of whether the
+API makes use of profiles or not.
 
 ```
 eng
 - silktouch
   - sdl
-    - SDL3
+    - sdl3
       - generate.rsp <-- The main settings file. Used as the entrypoint. All import paths must be relative to this file.
-      - sdl-SDL.h <-- Handwritten header file that #includes the relevant headers of the library you want to bind.
+      - sdl3.h <-- Handwritten header file that #includes the relevant headers of the library you want to bind.
     - header.txt
     - remap.rsp
     - settings.rsp <-- Shared settings for all profiles.
@@ -132,10 +133,10 @@ eng
 
 ### Example ClangSharpPInvokeGenerator Configuration
 
-This section will now focus on how to actually create the response files, starting with the `sdl-SDL.h`, `generate.rsp`,
+This section will now focus on how to actually create the response files, starting with the `sdl3.h`, `generate.rsp`,
 and `settings.rsp` files. The snippets below will only contain the most important sections of those files for brevity.
 
-`sdl-SDL.h`:
+`sdl3.h`:
 ```h
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
@@ -152,7 +153,7 @@ SDL_SetWindowsMessageHook
 SDL_FILE
 SDL_LINE
 --file
-sdl-SDL.h
+sdl3.h
 --methodClassName
 Sdl
 --namespace
@@ -200,11 +201,11 @@ want to include those headers as part of the final set of generated bindings.
 
 #### Relevant options from `settings.rsp`:
 
-- `--headerFile` specifies the header file appended to the top of every generated file. Silk uses this to inject its
+- `--headerFile` specifies the header file appended to the top of every generated file. Silk.NET uses this to inject its
   copyright headers.
 
 - `--include-directory` specifies the include directories to be used. This affects all headers included, such as
-  `sdl-SDL.h`.
+  `sdl3.h`.
 
 - `--with-librarypath` is the name of the native library without prefixes/suffixes. If the library name differs outside
   of the usual `lib` prefix or `.dll`/`.so`/`.dylib` suffixes, the way to handle this is to add `UseAlternativeName` in
@@ -234,7 +235,7 @@ The paths for these files correspond to the following options in the `generator.
 For the source project file, ensure that the project references the `Silk.NET.Core` project or package by using the
 corresponding `ProjectReference` or `PackageReference`. Also ensure the `AllowUnsafeBlocks` property is set to true.
 
-> Note: In Silk's repository, `AllowUnsafeBlocks` is set globally by
+> Note: In Silk.NET's repository, `AllowUnsafeBlocks` is set globally by
 > [Directory.Build.props](https://github.com/dotnet/Silk.NET/blob/develop/3.0/Directory.Build.props).
 
 For the solution file, both `.sln` and `.slnx` file formats are supported. This is because we defer to Roslyn and
@@ -272,6 +273,6 @@ extension are left untouched by the generator.
 
 `dotnet pack` should simply work here.
 
-If you are contributing to Silk's repository, Silk automatically packs and pushes changes made during a pull request
-to its experimental NuGet feed. More information on how to access this feed is available in the
+If you are contributing to Silk.NET's repository, Silk.NET automatically packs and pushes changes made during a pull
+request to its experimental NuGet feed. More information on how to access this feed is available in the
 [Experimental Feed](../../silk.net/experimental-feed.md) documentation.

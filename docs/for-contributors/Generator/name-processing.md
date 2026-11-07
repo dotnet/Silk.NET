@@ -29,11 +29,11 @@ This section explains how names flow through the SilkTouch generator pipeline.
    - The affixes are first stripped → `CreateSwapchain`
    - The base name is "prettified" (pascal-casing, removal of underscores) → `CreateSwapchain` (No change in this case)
    - Affixes are reapplied according to user configuration → `CreateSwapchainKHR`
-      - Silk's bindings remove shared prefixes since these represent C namespace prefixes and preserve Khronos vendor
-        suffixes verbatim for emphasis (notably in contradiction with the Framework Design Guidelines).
+      - Silk.NET's bindings remove shared prefixes since these represent C namespace prefixes and preserve Khronos
+        vendor suffixes verbatim for emphasis (notably in contradiction with the Framework Design Guidelines).
 
 4. Mods strip most metadata from the generated bindings to keep the output clean.
-   - Silk's bindings keep metadata useful for users, while removing internal generator metadata.
+   - Silk.NET's bindings keep metadata useful for users, while removing internal generator metadata.
    - For example, `[NativeName]` is kept and `[NameAffix]` is removed during the `StripAttributes` mod.
    - Tip: Disabling the `StripAttributes` mod can be helpful for debugging unwanted outputs.
 
@@ -335,7 +335,7 @@ Referenced affixes were added to handle compound names where part of the name is
 identifier. This ensures that the "referenced" part of the name always matches the name being referenced, in other
 words, changes to the referenced name is "synchronized" to the name referencing it (more on this later).
 
-This occurs primarily in types added to the bindings by Silk. For example:
+This occurs primarily in types added to the bindings by Silk.NET. For example:
 
 - **Nested types** - Nested types are extracted by `ExtractNestedTyping` to be non-nested types. These types have the name
   of their parent type plus their original name (for nested types that have proper names in the native code) or the name
@@ -346,7 +346,7 @@ This occurs primarily in types added to the bindings by Silk. For example:
      latter is an inline array used by the field, `PerformanceCounterDescriptionARM.Name`.
 
 - **Derived types** - Derived types refer to types that are generated based on another type (not to be confused with
-  inheritance). At time of writing, this only refers to function pointer types for which Silk generates a function
+  inheritance). At time of writing, this only refers to function pointer types for which Silk.NET generates a function
   pointer struct and a corresponding delegate type. The delegate type has the `-Delegate` suffix appended to it.
    - Example: `DebugReportCallbackEXT` and `DebugReportCallbackEXTDelegate` in the Vulkan bindings.
 

@@ -78,7 +78,7 @@ popular, they will be considered for more of the exposed APIs in future.
 
 ## Chaining methodologies
 
-There are 3, chaining methodologies supported by Silk.Net.
+There are 3 chaining methodologies supported by Silk.NET.
 
 ### Managed Chaining
 

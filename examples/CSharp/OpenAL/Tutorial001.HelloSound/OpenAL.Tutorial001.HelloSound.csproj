@@ -6,7 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
 
-        <!-- Ensure native binaries are copied when referencing Silk by ProjectReference -->
+        <!-- Ensure native binaries are copied when referencing Silk.NET by ProjectReference -->
         <!-- See: https://dotnet.github.io/Silk.NET/docs/v3/for-contributors/build-system#native-packaging -->
         <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
     </PropertyGroup>
