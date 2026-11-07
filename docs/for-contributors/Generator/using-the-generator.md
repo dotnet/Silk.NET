@@ -103,7 +103,7 @@ This is the general structure of the `eng/silktouch` folder:
 eng
 - silktouch
   - opengl <-- This level contains folders per native API.
-    - glcompat <-- This level contains folders for each "profile", which represent variants of the API.
+    - glcompat <-- This level contains folders for each "source set", which represent variants of the API.
     - glcore
     - gles1
     - gles2
@@ -111,13 +111,15 @@ eng
     - sdl3
 ```
 
-Profiles are not likely to be required for your average C API required, so the examples here will keep focusing on the
-SDL case. Profiles are needed when your API has multiple variants or needs to be generated on multiple platforms. For
-additional reference, please use the OpenGL (TODO: or OpenXR bindings) bindings jobs as examples.
+You likely do not neede multiple source sets are likely not required for your average C API.
+
+For those curious, the main use cases are when there are multiple variants of an API, such as the different OpenGL
+profiles, or when you need to scrape the initial set of bindings from multiple platforms, such as with Silk.NET's OpenXR
+bindings.
 
 The following is the folder structure used for Silk.NET's SDL bindings. You do not have to structure it the way Silk.NET
 does. Silk.NET's structure focuses on keeping consistency in its response file organization, regardless of whether the
-API makes use of profiles or not.
+API makes use of multiple source sets or not.
 
 ```
 eng
@@ -128,7 +130,7 @@ eng
       - sdl3.h <-- Handwritten header file that #includes the relevant headers of the library you want to bind.
     - header.txt
     - remap.rsp
-    - settings.rsp <-- Shared settings for all profiles.
+    - settings.rsp <-- Shared settings for all source sets.
 ```
 
 ### Example ClangSharpPInvokeGenerator Configuration

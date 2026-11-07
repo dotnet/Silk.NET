@@ -125,7 +125,7 @@ Usage recommendations:
 
 Mod categories: Transformation
 
-This mod merges multiple sets of source code into one set of source code.
+This mod merges multiple sets of source code, called source sets, into one source set.
 
 Usage recommendations:
 
@@ -133,7 +133,8 @@ The main use case for this mod is for when an API has different APIs available d
 OpenXR has platform-specific integrations. Silk.NET handles this by generating the raw OpenXR bindings on Windows,
 Linux, and Mac, then combining the three sets of raw bindings into one before doing further transformations.
 
-Silk.NET also uses this mod to merge the different OpenGL profiles into one.
+Silk.NET also uses this mod to merge the different OpenGL source sets, each corresponding to an OpenGL profile, into
+one source set.
 
 ### ChangeNamespace
 
