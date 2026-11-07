@@ -287,9 +287,11 @@ jobs=
 ----- Native -----
 Running as a dry run. Please use the --apply option if you want the prerequisites to be applied
 Initializing submodules: eng/submodules/sdl
+git submodule update --init --recursive --depth 1 eng/submodules/sdl
 ----- Bindings -----
 Running as a dry run. Please use the --apply option if you want the prerequisites to be applied
 Initializing submodules: eng/submodules/sdl
+git submodule update --init --recursive --depth 1 eng/submodules/sdl
 Restoring .NET and its workloads
 Installing dependencies needed for regeneration
 ----- Reminder comment - No affected, no existing comment (Should have no output) -----
@@ -327,7 +329,7 @@ comment<<EOF
 ## Silk.NET native build reminder
 
 Some of the native builds are likely affected by this PR. \
-Please rebuild these by posting a comment with `/native OpenAL-Soft`. \
+Please rebuild these by posting a comment with `/native OpenAL-Soft`.
 
 If you believe this to be in error, then please write a comment explaining why and ignore this reminder.
 EOF
@@ -336,7 +338,7 @@ comment<<EOF
 ## Silk.NET bindings regeneration reminder
 
 Some of the bindings are likely affected by this PR. \
-Please regenerate these by posting a comment with `/bindings OpenAL OpenXR`. \
+Please regenerate these by posting a comment with `/bindings OpenAL OpenXR`.
 
 If you believe this to be in error, then please write a comment explaining why and ignore this reminder.
 EOF
