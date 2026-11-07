@@ -1,0 +1,343 @@
+----- Dependencies -----
+----- Native -----
+workflowFilters<<EOF
+OpenAL-Soft: ["sources/OpenAL/Soft.Native/*","eng/submodules/openal-soft"]
+SDL: ["sources/SDL/Native/*","eng/submodules/sdl"]
+EOF
+----- Bindings -----
+workflowFilters<<EOF
+OpenAL: ["sources/SilkTouch/**","eng/submodules/openal-soft","eng/silktouch/openal/**"]
+OpenCL: ["sources/SilkTouch/**","eng/submodules/opencl-docs","eng/submodules/opencl-headers","eng/silktouch/opencl/**"]
+OpenGL: ["sources/SilkTouch/**","eng/submodules/egl-registry","eng/submodules/opengl-registry","eng/silktouch/opengl/**","eng/include/**"]
+OpenXR: ["sources/SilkTouch/**","eng/submodules/openxr-sdk","eng/submodules/vulkan-headers","eng/silktouch/openxr/**"]
+SDL: ["sources/SilkTouch/**","eng/submodules/sdl","eng/silktouch/sdl/**"]
+Vulkan: ["sources/SilkTouch/**","eng/submodules/vulkan-docs","eng/submodules/vulkan-headers","eng/silktouch/vulkan/**"]
+EOF
+----- Matrix - Valid -----
+----- Native -----
+matrix<<EOF
+[
+  {
+    "job": "OpenAL-Soft",
+    "os": "ubuntu-latest",
+    "runtime": "android-arm64",
+    "dir": "sources/OpenAL/Soft.Native",
+    "exec": "build-android-arm64.sh"
+  },
+  {
+    "job": "OpenAL-Soft",
+    "os": "ubuntu-latest",
+    "runtime": "android-arm",
+    "dir": "sources/OpenAL/Soft.Native",
+    "exec": "build-android-arm.sh"
+  },
+  {
+    "job": "OpenAL-Soft",
+    "os": "ubuntu-latest",
+    "runtime": "android-x64",
+    "dir": "sources/OpenAL/Soft.Native",
+    "exec": "build-android-x64.sh"
+  },
+  {
+    "job": "OpenAL-Soft",
+    "os": "ubuntu-latest",
+    "runtime": "android-x86",
+    "dir": "sources/OpenAL/Soft.Native",
+    "exec": "build-android-x86.sh"
+  },
+  {
+    "job": "OpenAL-Soft",
+    "os": "macos-latest",
+    "runtime": "ios",
+    "dir": "sources/OpenAL/Soft.Native",
+    "exec": "build-ios.sh"
+  },
+  {
+    "job": "OpenAL-Soft",
+    "os": "macos-latest",
+    "runtime": "iossimulator",
+    "dir": "sources/OpenAL/Soft.Native",
+    "exec": "build-iossimulator.sh"
+  },
+  {
+    "job": "OpenAL-Soft",
+    "os": "ubuntu-latest",
+    "runtime": "linux-arm64",
+    "dir": "sources/OpenAL/Soft.Native",
+    "exec": "build-linux-arm64.sh"
+  },
+  {
+    "job": "OpenAL-Soft",
+    "os": "ubuntu-latest",
+    "runtime": "linux-arm",
+    "dir": "sources/OpenAL/Soft.Native",
+    "exec": "build-linux-arm.sh"
+  },
+  {
+    "job": "OpenAL-Soft",
+    "os": "ubuntu-latest",
+    "runtime": "linux-x64",
+    "dir": "sources/OpenAL/Soft.Native",
+    "exec": "build-linux-x64.sh"
+  },
+  {
+    "job": "OpenAL-Soft",
+    "os": "macos-latest",
+    "runtime": "osx",
+    "dir": "sources/OpenAL/Soft.Native",
+    "exec": "build-osx.sh"
+  },
+  {
+    "job": "OpenAL-Soft",
+    "os": "macos-latest",
+    "runtime": "tvos",
+    "dir": "sources/OpenAL/Soft.Native",
+    "exec": "build-tvos.sh"
+  },
+  {
+    "job": "OpenAL-Soft",
+    "os": "macos-latest",
+    "runtime": "tvossimulator",
+    "dir": "sources/OpenAL/Soft.Native",
+    "exec": "build-tvossimulator.sh"
+  },
+  {
+    "job": "OpenAL-Soft",
+    "os": "windows-latest",
+    "runtime": "win-arm64",
+    "dir": "sources/OpenAL/Soft.Native",
+    "exec": "build-win-arm64.cmd"
+  },
+  {
+    "job": "OpenAL-Soft",
+    "os": "windows-latest",
+    "runtime": "win-x64",
+    "dir": "sources/OpenAL/Soft.Native",
+    "exec": "build-win-x64.cmd"
+  },
+  {
+    "job": "SDL",
+    "os": "ubuntu-latest",
+    "runtime": "android",
+    "dir": "sources/SDL/Native",
+    "exec": "build-android.sh"
+  },
+  {
+    "job": "SDL",
+    "os": "macos-latest",
+    "runtime": "ios",
+    "dir": "sources/SDL/Native",
+    "exec": "build-ios.sh"
+  },
+  {
+    "job": "SDL",
+    "os": "macos-latest",
+    "runtime": "iossimulator",
+    "dir": "sources/SDL/Native",
+    "exec": "build-iossimulator.sh"
+  },
+  {
+    "job": "SDL",
+    "os": "ubuntu-latest",
+    "runtime": "linux-arm64",
+    "dir": "sources/SDL/Native",
+    "exec": "build-linux-arm64.sh"
+  },
+  {
+    "job": "SDL",
+    "os": "ubuntu-latest",
+    "runtime": "linux-arm",
+    "dir": "sources/SDL/Native",
+    "exec": "build-linux-arm.sh"
+  },
+  {
+    "job": "SDL",
+    "os": "ubuntu-latest",
+    "runtime": "linux-x64",
+    "dir": "sources/SDL/Native",
+    "exec": "build-linux-x64.sh"
+  },
+  {
+    "job": "SDL",
+    "os": "macos-latest",
+    "runtime": "osx",
+    "dir": "sources/SDL/Native",
+    "exec": "build-osx.sh"
+  },
+  {
+    "job": "SDL",
+    "os": "macos-latest",
+    "runtime": "tvos",
+    "dir": "sources/SDL/Native",
+    "exec": "build-tvos.sh"
+  },
+  {
+    "job": "SDL",
+    "os": "macos-latest",
+    "runtime": "tvossimulator",
+    "dir": "sources/SDL/Native",
+    "exec": "build-tvossimulator.sh"
+  },
+  {
+    "job": "SDL",
+    "os": "windows-latest",
+    "runtime": "win-arm64",
+    "dir": "sources/SDL/Native",
+    "exec": "build-win-arm64.cmd"
+  },
+  {
+    "job": "SDL",
+    "os": "windows-latest",
+    "runtime": "win-x64",
+    "dir": "sources/SDL/Native",
+    "exec": "build-win-x64.cmd"
+  }
+]
+EOF
+----- Bindings -----
+scrapeMatrix<<EOF
+[
+  {
+    "job": "Vulkan",
+    "os": "windows-latest",
+    "caches": [
+      "vulkan-clangsharp.stout"
+    ]
+  },
+  {
+    "job": "OpenXR",
+    "os": "ubuntu-latest",
+    "caches": [
+      "openxr-linux-clangsharp.stout"
+    ]
+  },
+  {
+    "job": "OpenXR",
+    "os": "macos-latest",
+    "caches": [
+      "openxr-mac-clangsharp.stout"
+    ]
+  },
+  {
+    "job": "OpenXR",
+    "os": "windows-latest",
+    "caches": [
+      "openxr-windows-clangsharp.stout"
+    ]
+  },
+  {
+    "job": "OpenGL",
+    "os": "windows-latest",
+    "caches": [
+      "opengl-clangsharp.stout"
+    ]
+  }
+]
+EOF
+regenerateMatrix<<EOF
+[
+  {
+    "job": "Vulkan"
+  },
+  {
+    "job": "OpenXR"
+  },
+  {
+    "job": "OpenGL"
+  }
+]
+EOF
+----- Matrix - Invalid -----
+----- Native -----
+Unknown job name: 123123123
+matrix<<EOF
+[]
+EOF
+----- Bindings -----
+Unknown job name: 123123123
+scrapeMatrix<<EOF
+[]
+EOF
+regenerateMatrix<<EOF
+[]
+EOF
+----- Parse - No input -----
+----- Native -----
+jobs=
+----- Bindings -----
+jobs=
+----- Parse - Wildcard -----
+----- Native -----
+jobs=OpenAL-Soft SDL
+----- Bindings -----
+jobs=OpenAL OpenCL OpenGL OpenXR SDL Vulkan
+----- Parse - Valid -----
+----- Native -----
+jobs=OpenAL-Soft SDL
+----- Bindings -----
+jobs=OpenGL OpenXR Vulkan
+----- Parse - Invalid -----
+----- Native -----
+Unknown job name: 123123123
+jobs=
+----- Bindings -----
+Unknown job name: 123123123
+jobs=
+----- Prerequisites -----
+----- Native -----
+Running as a dry run. Please use the --apply option if you want the prerequisites to be applied
+Initializing submodules: eng/submodules/sdl
+----- Bindings -----
+Running as a dry run. Please use the --apply option if you want the prerequisites to be applied
+Initializing submodules: eng/submodules/sdl
+Restoring .NET and its workloads
+Installing dependencies needed for regeneration
+----- Reminder comment - No affected, no existing comment (Should have no output) -----
+----- Native -----
+----- Bindings -----
+----- Reminder comment - Missing affected, with existing comment -----
+----- Native -----
+comment<<EOF
+## Silk.NET native build reminder
+
+No native builds are likely to have been affected by this PR.
+EOF
+----- Bindings -----
+comment<<EOF
+## Silk.NET bindings regeneration reminder
+
+No bindings are likely to have been affected by this PR.
+EOF
+----- Reminder comment - No affected, with existing comment -----
+----- Native -----
+comment<<EOF
+## Silk.NET native build reminder
+
+No native builds are likely to have been affected by this PR.
+EOF
+----- Bindings -----
+comment<<EOF
+## Silk.NET bindings regeneration reminder
+
+No bindings are likely to have been affected by this PR.
+EOF
+----- Reminder comment - Affected, with existing comment -----
+----- Native -----
+comment<<EOF
+## Silk.NET native build reminder
+
+Some of the native builds are likely affected by this PR. \
+Please rebuild these by posting a comment with `/native OpenAL-Soft`. \
+
+If you believe this to be in error, then please write a comment explaining why and ignore this reminder.
+EOF
+----- Bindings -----
+comment<<EOF
+## Silk.NET bindings regeneration reminder
+
+Some of the bindings are likely affected by this PR. \
+Please regenerate these by posting a comment with `/bindings OpenAL OpenXR`. \
+
+If you believe this to be in error, then please write a comment explaining why and ignore this reminder.
+EOF
+

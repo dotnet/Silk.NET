@@ -1,10 +1,5 @@
 #!/usr/bin/env -S bash -eu
 
-# Submodule
-if [ ! -e ../../../eng/submodules/openal-soft/CMakeLists.txt ]; then
-    git submodule update --init --recursive --depth 1 ../../../eng/submodules/openal-soft
-fi
-
 # Build
 rm -rf build
 mkdir build

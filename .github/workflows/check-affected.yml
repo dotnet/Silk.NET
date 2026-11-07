@@ -1,0 +1,91 @@
+name: Check Affected Natives/Bindings
+
+on:
+  pull_request:
+    types:
+      - synchronize
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.event.number }}"
+  cancel-in-progress: false
+
+jobs:
+
+  # Unprivileged - Executes untrusted code
+  check:
+    name: Check affected (${{ matrix.type }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        type:
+          - native
+          - bindings
+
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v7
+        with:
+          submodules: false
+          path: repo
+
+      - name: Identify job dependencies
+        id: dependencies
+        shell: pwsh
+        working-directory: repo/eng/workflows/${{ matrix.type }}
+        run: ./dependencies.ps1 >> $env:GITHUB_OUTPUT
+
+      - name: Determine which jobs need to be reran
+        id: affected
+        uses: dorny/paths-filter@v4
+        with:
+          filters: ${{ steps.dependencies.outputs.workflowFilters }}
+
+      - name: Generate reminder message
+        id: reminder
+        shell: pwsh
+        working-directory: repo/eng/workflows/${{ matrix.type }}
+        env:
+          AFFECTED_JOBS: ${{ steps.affected.outputs.changes }}
+        run: |
+          # Duplicate is to output to logs
+          ./reminder.ps1
+          ./reminder.ps1 >> $env:GITHUB_OUTPUT
+
+      - name: Output reminder to file
+        if: ${{ steps.reminder.outputs.comment }}
+        shell: pwsh
+        env:
+          COMMENT: ${{ steps.reminder.outputs.comment }}
+        run: $env:COMMENT > ${{ matrix.type }}.txt
+
+      - name: Upload reminder
+        if: ${{ steps.reminder.outputs.comment }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ matrix.type }}-reminder-comment
+          path: ${{ matrix.type }}.txt
+
+  prNumber:
+    name: Output PR number
+    runs-on: ubuntu-latest
+
+    needs: [ check ]
+
+    steps:
+
+      - name: Output PR number
+        shell: pwsh
+        run: ${{ github.event.number }} > pr.txt
+
+      - name: Upload PR number
+        uses: actions/upload-artifact@v7
+        with:
+          name: pr-number
+          path: pr.txt
+          overwrite: true
