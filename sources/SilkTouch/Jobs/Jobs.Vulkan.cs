@@ -57,10 +57,7 @@ internal static partial class Jobs
                     .AddApiProfiles(
                         new()
                         {
-                            Profiles =
-                            [
-                                new() { Profile = "vulkan", SourceSubdirectory = "vulkan" },
-                            ],
+                            Profiles = [new() { Profile = "vulkan", SourceSubdirectory = "vk" }],
                         }
                     )
                     .InterceptNativeFunctions(
