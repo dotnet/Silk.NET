@@ -10,6 +10,102 @@ namespace Silk.NET.OpenGL;
 [NativeName("GetPName")]
 public enum GetPName : uint
 {
+    [NativeName("GL_BLEND_EQUATION_OES")]
+    BlendEquationOES = 32777,
+
+    [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_OES")]
+    TextureBindingCubeMapOES = 34068,
+
+    [NativeName("GL_MAX_CUBE_MAP_TEXTURE_SIZE_OES")]
+    MaxCubeMapTextureSizeOES = 34076,
+
+    [NativeName("GL_TEXTURE_GEN_STR_OES")]
+    TextureGenStrOES = 36192,
+
+    [NativeName("GL_FETCH_PER_SAMPLE_ARM")]
+    FetchPerSampleARM = 36709,
+
+    [NativeName("GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM")]
+    FragmentShaderFramebufferFetchMrtARM = 36710,
+
+    [NativeName("GL_TIMESTAMP_EXT")]
+    TimestampEXT = 36392,
+
+    [NativeName("GL_SHADING_RATE_EXT")]
+    ShadingRateEXT = 38608,
+
+    [NativeName("GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
+    MinFragmentShadingRateAttachmentTexelWidthEXT = 38615,
+
+    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
+    MaxFragmentShadingRateAttachmentTexelWidthEXT = 38616,
+
+    [NativeName("GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
+    MinFragmentShadingRateAttachmentTexelHeightEXT = 38617,
+
+    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
+    MaxFragmentShadingRateAttachmentTexelHeightEXT = 38618,
+
+    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_ASPECT_RATIO_EXT")]
+    MaxFragmentShadingRateAttachmentTexelAspectRatioEXT = 38619,
+
+    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_LAYERS_EXT")]
+    MaxFragmentShadingRateAttachmentLayersEXT = 38620,
+
+    [NativeName("GL_FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_SUPPORTED_EXT")]
+    FragmentShadingRateWithShaderDepthStencilWritesSupportedEXT = 38621,
+
+    [NativeName("GL_FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_SUPPORTED_EXT")]
+    FragmentShadingRateWithSampleMaskSupportedEXT = 38622,
+
+    [NativeName("GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT")]
+    FragmentShadingRateAttachmentWithDefaultFramebufferSupportedEXT = 38623,
+
+    [NativeName("GL_FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINERS_SUPPORTED_EXT")]
+    FragmentShadingRateNonTrivialCombinersSupportedEXT = 36719,
+
+    [NativeName("GL_DRAW_BUFFER_EXT")]
+    DrawBufferEXT = 3073,
+
+    [NativeName("GL_READ_BUFFER_EXT")]
+    ReadBufferEXT = 3074,
+
+    [NativeName("GL_MAX_COLOR_ATTACHMENTS_NV")]
+    MaxColorAttachmentsNV = 36063,
+
+    [NativeName("GL_PACK_ROW_LENGTH_NV")]
+    PackRowLengthNV = 3330,
+
+    [NativeName("GL_PACK_SKIP_ROWS_NV")]
+    PackSkipRowsNV = 3331,
+
+    [NativeName("GL_PACK_SKIP_PIXELS_NV")]
+    PackSkipPixelsNV = 3332,
+
+    [NativeName("GL_READ_BUFFER_NV")]
+    ReadBufferNV = 3074,
+
+    [NativeName("GL_ALPHA_TEST_QCOM")]
+    AlphaTestQCOM = 3008,
+
+    [NativeName("GL_ALPHA_TEST_FUNC_QCOM")]
+    AlphaTestFuncQCOM = 3009,
+
+    [NativeName("GL_ALPHA_TEST_REF_QCOM")]
+    AlphaTestRefQCOM = 3010,
+
+    [NativeName("GL_MOTION_ESTIMATION_SEARCH_BLOCK_X_QCOM")]
+    MotionEstimationSearchBlockXQCOM = 35984,
+
+    [NativeName("GL_MOTION_ESTIMATION_SEARCH_BLOCK_Y_QCOM")]
+    MotionEstimationSearchBlockYQCOM = 35985,
+
+    [NativeName("GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
+    FramebufferFetchNoncoherentQCOM = 38562,
+
+    [NativeName("GL_SHADING_RATE_QCOM")]
+    ShadingRateQCOM = 38564,
+
     [NativeName("GL_POINT_SIZE")]
     PointSize = 2833,
 
@@ -1731,100 +1827,4 @@ public enum GetPName : uint
 
     [NativeName("GL_TEXTURE_COLOR_TABLE_SGI")]
     TextureColorTableSGI = 32956,
-
-    [NativeName("GL_FETCH_PER_SAMPLE_ARM")]
-    FetchPerSampleARM = 36709,
-
-    [NativeName("GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM")]
-    FragmentShaderFramebufferFetchMrtARM = 36710,
-
-    [NativeName("GL_TIMESTAMP_EXT")]
-    TimestampEXT = 36392,
-
-    [NativeName("GL_SHADING_RATE_EXT")]
-    ShadingRateEXT = 38608,
-
-    [NativeName("GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
-    MinFragmentShadingRateAttachmentTexelWidthEXT = 38615,
-
-    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
-    MaxFragmentShadingRateAttachmentTexelWidthEXT = 38616,
-
-    [NativeName("GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
-    MinFragmentShadingRateAttachmentTexelHeightEXT = 38617,
-
-    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
-    MaxFragmentShadingRateAttachmentTexelHeightEXT = 38618,
-
-    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_ASPECT_RATIO_EXT")]
-    MaxFragmentShadingRateAttachmentTexelAspectRatioEXT = 38619,
-
-    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_LAYERS_EXT")]
-    MaxFragmentShadingRateAttachmentLayersEXT = 38620,
-
-    [NativeName("GL_FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_SUPPORTED_EXT")]
-    FragmentShadingRateWithShaderDepthStencilWritesSupportedEXT = 38621,
-
-    [NativeName("GL_FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_SUPPORTED_EXT")]
-    FragmentShadingRateWithSampleMaskSupportedEXT = 38622,
-
-    [NativeName("GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT")]
-    FragmentShadingRateAttachmentWithDefaultFramebufferSupportedEXT = 38623,
-
-    [NativeName("GL_FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINERS_SUPPORTED_EXT")]
-    FragmentShadingRateNonTrivialCombinersSupportedEXT = 36719,
-
-    [NativeName("GL_DRAW_BUFFER_EXT")]
-    DrawBufferEXT = 3073,
-
-    [NativeName("GL_READ_BUFFER_EXT")]
-    ReadBufferEXT = 3074,
-
-    [NativeName("GL_MAX_COLOR_ATTACHMENTS_NV")]
-    MaxColorAttachmentsNV = 36063,
-
-    [NativeName("GL_PACK_ROW_LENGTH_NV")]
-    PackRowLengthNV = 3330,
-
-    [NativeName("GL_PACK_SKIP_ROWS_NV")]
-    PackSkipRowsNV = 3331,
-
-    [NativeName("GL_PACK_SKIP_PIXELS_NV")]
-    PackSkipPixelsNV = 3332,
-
-    [NativeName("GL_READ_BUFFER_NV")]
-    ReadBufferNV = 3074,
-
-    [NativeName("GL_ALPHA_TEST_QCOM")]
-    AlphaTestQCOM = 3008,
-
-    [NativeName("GL_ALPHA_TEST_FUNC_QCOM")]
-    AlphaTestFuncQCOM = 3009,
-
-    [NativeName("GL_ALPHA_TEST_REF_QCOM")]
-    AlphaTestRefQCOM = 3010,
-
-    [NativeName("GL_MOTION_ESTIMATION_SEARCH_BLOCK_X_QCOM")]
-    MotionEstimationSearchBlockXQCOM = 35984,
-
-    [NativeName("GL_MOTION_ESTIMATION_SEARCH_BLOCK_Y_QCOM")]
-    MotionEstimationSearchBlockYQCOM = 35985,
-
-    [NativeName("GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
-    FramebufferFetchNoncoherentQCOM = 38562,
-
-    [NativeName("GL_SHADING_RATE_QCOM")]
-    ShadingRateQCOM = 38564,
-
-    [NativeName("GL_BLEND_EQUATION_OES")]
-    BlendEquationOES = 32777,
-
-    [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_OES")]
-    TextureBindingCubeMapOES = 34068,
-
-    [NativeName("GL_MAX_CUBE_MAP_TEXTURE_SIZE_OES")]
-    MaxCubeMapTextureSizeOES = 34076,
-
-    [NativeName("GL_TEXTURE_GEN_STR_OES")]
-    TextureGenStrOES = 36192,
 }

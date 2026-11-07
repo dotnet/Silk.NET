@@ -10,6 +10,9 @@ namespace Silk.NET.OpenGL;
 [NativeName("InternalFormatPName")]
 public enum InternalFormatPName : uint
 {
+    [NativeName("GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT")]
+    NumSurfaceCompressionFixedRatesEXT = 36718,
+
     [NativeName("GL_SAMPLES")]
     Samples = 32937,
 
@@ -222,7 +225,4 @@ public enum InternalFormatPName : uint
 
     [NativeName("GL_CLEAR_TEXTURE")]
     ClearTexture = 37733,
-
-    [NativeName("GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT")]
-    NumSurfaceCompressionFixedRatesEXT = 36718,
 }

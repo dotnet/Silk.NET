@@ -4,14 +4,14 @@
 __gl_gl_h_
 WIN32_LEAN_AND_MEAN
 --file
-opengl-gl.h
+glcompat.h
 --methodClassName
 GL
 --namespace
 Silk.NET.OpenGL
 --output
-../../../../sources/OpenGL/glcompat/gl
+../../../../sources/OpenGL/glcompat
 --test-output
-../../../../tests/OpenGL/glcompat/gl
+../../../../tests/OpenGL/glcompat
 --traverse
 ../../../include/glcompat/OpenGL/gl.h

@@ -13,6 +13,9 @@ public enum MemoryBarrierMask : uint
 {
     None = 0x0,
 
+    [NativeName("GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT_EXT")]
+    ClientMappedBufferBarrierBitEXT = 0x4000,
+
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT")]
     VertexAttribArrayBarrierBit = 0x1,
 
@@ -102,7 +105,4 @@ public enum MemoryBarrierMask : uint
 
     [NativeName("GL_SHADER_GLOBAL_ACCESS_BARRIER_BIT_NV")]
     ShaderGlobalAccessBarrierBitNV = 0x10,
-
-    [NativeName("GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT_EXT")]
-    ClientMappedBufferBarrierBitEXT = 0x4000,
 }

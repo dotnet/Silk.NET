@@ -4,14 +4,14 @@
 __gles1_gl_h_
 WIN32_LEAN_AND_MEAN
 --file
-opengl-gl.h
+gles1.h
 --methodClassName
 GL
 --namespace
 Silk.NET.OpenGL
 --output
-../../../../sources/OpenGL/gles1/gl
+../../../../sources/OpenGL/gles1
 --test-output
-../../../../tests/OpenGL/gles1/gl
+../../../../tests/OpenGL/gles1
 --traverse
 ../../../include/gles1/gl.h

@@ -113,7 +113,8 @@ public static class ModUtils
     public static string GetMethodDiscriminator(SyntaxTokenList? toks, TypeSyntax? type) =>
         toks?.Any(x =>
             x.Kind() is SyntaxKind.RefKeyword or SyntaxKind.InKeyword or SyntaxKind.OutKeyword
-        ) ?? false
+        )
+        ?? false
             ? $"{type}&"
             : type?.ToString() ?? string.Empty;
 
@@ -194,7 +195,6 @@ public static class ModUtils
     /// </summary>
     /// <param name="proj">The project.</param>
     /// <param name="relativePath">The relative path.</param>
-    /// <returns>The full path. Upon failure, null is returned.</returns>
     public static string FullPath(this Project proj, string relativePath) =>
         Path.GetDirectoryName(proj.FilePath) is { Length: > 0 } dir
             ? Path.GetFullPath(relativePath, dir)

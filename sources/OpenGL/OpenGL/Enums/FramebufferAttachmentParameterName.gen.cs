@@ -10,6 +10,36 @@ namespace Silk.NET.OpenGL;
 [NativeName("FramebufferAttachmentParameterName")]
 public enum FramebufferAttachmentParameterName : uint
 {
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES")]
+    ObjectTypeOES = 36048,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES")]
+    ObjectNameOES = 36049,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES")]
+    TextureLevelOES = 36050,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES")]
+    TextureCubeMapFaceOES = 36051,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT")]
+    TextureSamplesEXT = 36204,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT")]
+    ColorEncodingEXT = 33296,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_LAYERED_OES")]
+    LayeredOES = 36263,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_OES")]
+    Texture3DZoffsetOES = 36052,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT")]
+    ComponentTypeEXT = 33297,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SCALE_IMG")]
+    TextureScaleIMG = 37183,
+
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING")]
     ColorEncoding = 33296,
 
@@ -81,34 +111,4 @@ public enum FramebufferAttachmentParameterName : uint
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR")]
     TextureBaseViewIndexOVR = 38450,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_LAYERED_OES")]
-    LayeredOES = 36263,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_OES")]
-    Texture3DZoffsetOES = 36052,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT")]
-    ComponentTypeEXT = 33297,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT")]
-    TextureSamplesEXT = 36204,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT")]
-    ColorEncodingEXT = 33296,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SCALE_IMG")]
-    TextureScaleIMG = 37183,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES")]
-    ObjectTypeOES = 36048,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES")]
-    ObjectNameOES = 36049,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES")]
-    TextureLevelOES = 36050,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES")]
-    TextureCubeMapFaceOES = 36051,
 }

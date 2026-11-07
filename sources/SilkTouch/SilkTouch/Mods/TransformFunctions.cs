@@ -30,10 +30,10 @@ public class TransformFunctions(FunctionTransformer ft, DocumentFactory document
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var proj = ctx.SourceProject;
-        foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
+        foreach (var docId in ctx.SourceProject.DocumentIds)
         {
             var doc =
-                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             if (await doc.GetSyntaxRootAsync(ct) is { } root)
             {
                 proj = doc.WithSyntaxRoot(Visit(root)).Project;

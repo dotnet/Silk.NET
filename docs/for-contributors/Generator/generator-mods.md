@@ -129,7 +129,11 @@ This mod merges multiple sets of source code into one set of source code.
 
 Usage recommendations:
 
-(TODO: To be added)
+The main use case for this mod is for when an API has different APIs available depending on the platform. For example,
+OpenXR has platform-specific integrations. Silk handles this by generating the raw OpenXR bindings on Windows, Linux,
+and Mac, then combining the three sets of raw bindings into one before doing further transformations.
+
+Silk also uses this mod to merge the different OpenGL profiles into one.
 
 ### ChangeNamespace
 

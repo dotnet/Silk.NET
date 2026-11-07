@@ -3,6 +3,7 @@
 
 using System.CommandLine;
 using System.CommandLine.Invocation;
+using System.Diagnostics.CodeAnalysis;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Build.Locator;
@@ -45,6 +46,18 @@ public class SilkTouchHost
             Description = "Maximum number of parallel jobs.",
         };
 
+    private static Option<bool> UseCacheOnlyOption { get; } =
+        new(["--use-cache-only"], () => false)
+        {
+            Description = "Limits the generator to only using the cache.",
+        };
+
+    private static Option<bool> GenerateCacheOnlyOption { get; } =
+        new(["--generate-cache-only"], () => false)
+        {
+            Description = "Limits the generator to only generating the cache.",
+        };
+
     private readonly Dictionary<string, JobDefinition> _jobDefinitions = [];
 
     private SilkTouchHost() { }
@@ -72,66 +85,92 @@ public class SilkTouchHost
     /// </summary>
     public async Task RunAsync(string[] args)
     {
-        var rootCommand = new RootCommand { LoggingOption, SkipOption, OnlyOption, JobsOption };
+        var rootCommand = new RootCommand
+        {
+            LoggingOption,
+            SkipOption,
+            OnlyOption,
+            JobsOption,
+            UseCacheOnlyOption,
+            GenerateCacheOnlyOption,
+        };
 
         rootCommand.SetHandler(async ctx =>
         {
-            // Register MSBuild
-            MSBuildLocator.RegisterDefaults();
-
-            // Build container
-            ILifetimeScope container;
+            try
             {
+                // Register MSBuild
+                MSBuildLocator.RegisterDefaults();
+
+                // Build container
                 var builder = new ContainerBuilder();
                 Configure(builder, ctx);
-                container = builder.Build();
+                await using ILifetimeScope container = builder.Build();
+
+                var jobKeysToRun = new HashSet<string>(
+                    ctx.ParseResult.GetValueForOption(OnlyOption) ?? [],
+                    StringComparer.OrdinalIgnoreCase
+                );
+
+                var jobKeysToSkip = new HashSet<string>(
+                    ctx.ParseResult.GetValueForOption(SkipOption) ?? [],
+                    StringComparer.OrdinalIgnoreCase
+                );
+
+                var jobsToRun = _jobDefinitions.Where(job =>
+                {
+                    if (jobKeysToSkip.Contains(job.Key))
+                    {
+                        return false;
+                    }
+
+                    return jobKeysToRun.Count == 0 || jobKeysToRun.Contains(job.Key);
+                });
+
+                var logger = container.Resolve<ILogger<SilkTouchHost>>();
+                try
+                {
+                    await Parallel.ForEachAsync(
+                        jobsToRun,
+                        new ParallelOptions
+                        {
+                            MaxDegreeOfParallelism = ctx.ParseResult.GetValueForOption(JobsOption),
+                        },
+                        async (jobKvp, ct) =>
+                        {
+                            using var job = new SilkTouchJob(
+                                jobKvp.Key,
+                                jobKvp.Value.Config,
+                                container,
+                                builder => jobKvp.Value.Configure.Invoke(builder.SilkTouch())
+                            );
+
+                            await job.RunAsync(ct);
+                        }
+                    );
+                }
+                catch (Exception e)
+                {
+                    logger.LogError(e, "Error occurred while running SilkTouch");
+                    throw;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Exit(1);
             }
 
-            var jobKeysToRun = new HashSet<string>(
-                ctx.ParseResult.GetValueForOption(OnlyOption) ?? [],
-                StringComparer.OrdinalIgnoreCase
-            );
-
-            var jobKeysToSkip = new HashSet<string>(
-                ctx.ParseResult.GetValueForOption(SkipOption) ?? [],
-                StringComparer.OrdinalIgnoreCase
-            );
-
-            var jobsToRun = _jobDefinitions.Where(job =>
-            {
-                if (jobKeysToSkip.Contains(job.Key))
-                {
-                    return false;
-                }
-
-                return jobKeysToRun.Count == 0 || jobKeysToRun.Contains(job.Key);
-            });
-
-            await Parallel.ForEachAsync(
-                jobsToRun,
-                new ParallelOptions
-                {
-                    MaxDegreeOfParallelism = ctx.ParseResult.GetValueForOption(JobsOption),
-                },
-                async (jobKvp, ct) =>
-                {
-                    using var job = new SilkTouchJob(
-                        jobKvp.Key,
-                        jobKvp.Value.Config,
-                        container,
-                        builder => jobKvp.Value.Configure.Invoke(builder.SilkTouch())
-                    );
-
-                    await job.RunAsync(ct);
-                }
-            );
-
-            // Workaround for dangling logging/socket engine threads
-            Environment.Exit(0);
+            Exit(0);
         });
 
         await rootCommand.InvokeAsync(args);
     }
+
+    [DoesNotReturn]
+    private static void Exit(int exitCode) =>
+        // Workaround for dangling logging/socket engine threads
+        Environment.Exit(exitCode);
 
     /// <summary>
     /// Dependencies defined here will be shared by all jobs.
@@ -157,6 +196,22 @@ public class SilkTouchHost
         builder.Populate(services);
 
         {
+            // Create config
+            var config = new SilkTouchHostConfiguration()
+            {
+                UseCacheOnly = ctx.ParseResult.GetValueForOption(UseCacheOnlyOption),
+                GenerateCacheOnly = ctx.ParseResult.GetValueForOption(GenerateCacheOnlyOption),
+            };
+
+            if (config.GenerateCacheOnly && config.UseCacheOnly)
+            {
+                throw new InvalidOperationException(
+                    $"{UseCacheOnlyOption.Name} and {GenerateCacheOnlyOption.Name} cannot be enabled at the same time."
+                );
+            }
+
+            builder.RegisterInstance(config).SingleInstance();
+
             builder
                 .RegisterType<MSBuildModContextFactory>()
                 .As<IModContextFactory>()

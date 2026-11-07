@@ -25,10 +25,6 @@ public partial class ExtractNestedTypes(DocumentFactory documentFactory) : IMod
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var project = ctx.SourceProject;
-        if (project == null)
-        {
-            return;
-        }
 
         // Scan and extract nested structs
         var rewriter = new Rewriter();

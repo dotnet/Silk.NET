@@ -10,6 +10,21 @@ namespace Silk.NET.OpenGL;
 [NativeName("GetTextureParameter")]
 public enum GetTextureParameter : uint
 {
+    [NativeName("GL_NORMAL_MAP_OES")]
+    NormalMapOES = 34065,
+
+    [NativeName("GL_REFLECTION_MAP_OES")]
+    ReflectionMapOES = 34066,
+
+    [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
+    TextureUnnormalizedCoordinatesARM = 36714,
+
+    [NativeName("GL_SURFACE_COMPRESSION_EXT")]
+    SurfaceCompressionEXT = 38592,
+
+    [NativeName("GL_TEXTURE_BORDER_COLOR_NV")]
+    TextureBorderColorNV = 4100,
+
     [NativeName("GL_TEXTURE_WIDTH")]
     TextureWidth = 4096,
 
@@ -192,19 +207,4 @@ public enum GetTextureParameter : uint
 
     [NativeName("GL_POST_TEXTURE_FILTER_SCALE_SGIX")]
     PostTextureFilterScaleSGIX = 33146,
-
-    [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
-    TextureUnnormalizedCoordinatesARM = 36714,
-
-    [NativeName("GL_SURFACE_COMPRESSION_EXT")]
-    SurfaceCompressionEXT = 38592,
-
-    [NativeName("GL_TEXTURE_BORDER_COLOR_NV")]
-    TextureBorderColorNV = 4100,
-
-    [NativeName("GL_NORMAL_MAP_OES")]
-    NormalMapOES = 34065,
-
-    [NativeName("GL_REFLECTION_MAP_OES")]
-    ReflectionMapOES = 34066,
 }

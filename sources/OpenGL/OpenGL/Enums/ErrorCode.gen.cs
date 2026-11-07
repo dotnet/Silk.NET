@@ -10,6 +10,9 @@ namespace Silk.NET.OpenGL;
 [NativeName("ErrorCode")]
 public enum ErrorCode : uint
 {
+    [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_OES")]
+    InvalidFramebufferOperationOES = 1286,
+
     [NativeName("GL_NO_ERROR")]
     NoError = 0,
 
@@ -45,7 +48,4 @@ public enum ErrorCode : uint
 
     [NativeName("GL_TEXTURE_TOO_LARGE_EXT")]
     TextureTooLargeEXT = 32869,
-
-    [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_OES")]
-    InvalidFramebufferOperationOES = 1286,
 }

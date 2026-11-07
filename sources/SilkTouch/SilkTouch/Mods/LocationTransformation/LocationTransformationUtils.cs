@@ -30,10 +30,6 @@ public static class LocationTransformationUtils
     )
     {
         var sourceProject = ctx.SourceProject;
-        if (sourceProject == null)
-        {
-            return;
-        }
 
         // We need to track both the original solution and modified solution
         // The original is where we retrieve documents and semantic models
@@ -75,7 +71,7 @@ public static class LocationTransformationUtils
             }
         );
 
-        var modifiedSolution = sourceProject.Solution;
+        var modifiedSolution = originalSolution;
         foreach (var (documentId, newRoot) in newDocuments)
         {
             var modifiedDocument = modifiedSolution.GetDocument(documentId);
@@ -87,6 +83,15 @@ public static class LocationTransformationUtils
             modifiedSolution = modifiedDocument.WithSyntaxRoot(newRoot).Project.Solution;
         }
 
-        ctx.SourceProject = modifiedSolution.GetProject(sourceProject.Id);
+        ctx.SourceProject =
+            modifiedSolution.GetProject(sourceProject.Id)
+            ?? throw new InvalidOperationException("Failed to get source project");
+
+        if (ctx.TestProject != null && ctx.SourceProject.Solution != ctx.TestProject.Solution)
+        {
+            throw new InvalidOperationException(
+                "IModContext must ensure the source and test projects belong to the same solution"
+            );
+        }
     }
 }

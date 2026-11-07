@@ -522,8 +522,6 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory sharedD
             vTables.Length
         ];
 
-        public Dictionary<string, UsingDirectiveSyntax> AggregatedUsings { get; } = new();
-
         private string _staticDefault =
             vTables.FirstOrDefault(x => x.IsDefault && x.IsStatic)?.Name
             ?? throw new InvalidOperationException("Needs at least one static default.");
@@ -1386,10 +1384,10 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory sharedD
         var rw = new Rewriter(vTables);
         var newFiles = new List<(string, CSharpSyntaxNode)>(rw.FullClassNames.Count);
         var proj = ctx.SourceProject;
-        foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
+        foreach (var docId in ctx.SourceProject.DocumentIds)
         {
             var doc =
-                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
             if (fname is null)
             {
@@ -1461,13 +1459,11 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory sharedD
             var (fname, root) in newFiles.Concat(rw.GetExtraFiles().Select(x => (x.Key, x.Value)))
         )
         {
-            proj = proj
-                ?.AddDocument(
-                    Path.GetFileName(fname),
-                    documentFactory.PopulateDocument(root),
-                    filePath: proj.FullPath(fname)
-                )
-                .Project;
+            proj = proj.AddDocument(
+                Path.GetFileName(fname),
+                documentFactory.PopulateDocument(root),
+                filePath: proj.FullPath(fname)
+            ).Project;
         }
 
         ctx.SourceProject = proj;

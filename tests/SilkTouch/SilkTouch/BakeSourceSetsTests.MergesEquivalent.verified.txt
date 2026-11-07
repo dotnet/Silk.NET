@@ -1,0 +1,115 @@
+﻿// Class.gen.cs @ merged/Class.gen.cs
+public class Class : IInterface
+{
+    public int A;
+    public int B;
+    public int C;
+    public int Data;
+    public static int StaticData;
+    public Class()
+    {
+        A = 1;
+        B = 2;
+        C = 3;
+    }
+
+    ~Class()
+    {
+        Method();
+    }
+
+    public int this[int value] => value;
+    public int Number => 123;
+    public static int StaticNumber => 123;
+    public int Value { get; set; } = 234;
+    public static int StaticValue { get; set; } = 234;
+
+    public event Action? Occurred;
+    public static event Action? StaticOccurred;
+    [Obsolete]
+    public void Method()
+    {
+    }
+
+    public static void StaticMethod()
+    {
+    }
+
+    public struct Nested
+    {
+    }
+}
+
+// Delegate.gen.cs @ merged/Delegate.gen.cs
+public delegate int Delegate(int value);
+
+// Enum.gen.cs @ merged/Enum.gen.cs
+public enum Enum
+{
+    None = 0,
+    First,
+    Second,
+    Third,
+    One = First,
+    Two = Second,
+    Three = Third
+}
+
+// IInterface.gen.cs @ merged/IInterface.gen.cs
+public interface IInterface
+{
+}
+
+// Record.gen.cs @ merged/Record.gen.cs
+public record Record
+{
+}
+
+// RecordClass.gen.cs @ merged/RecordClass.gen.cs
+public record class RecordClass
+{
+}
+
+// RecordStruct.gen.cs @ merged/RecordStruct.gen.cs
+public record struct RecordStruct
+{
+}
+
+// Struct.gen.cs @ merged/Struct.gen.cs
+public struct Struct : IInterface
+{
+    public int A;
+    public int B;
+    public int C;
+    public int Data;
+    public static int StaticData;
+    public Struct()
+    {
+        A = 1;
+        B = 2;
+        C = 3;
+    }
+
+    public int this[int value] => value;
+    public int Number => 123;
+    public static int StaticNumber => 123;
+    public int Value { get; set; } = 234;
+    public static int StaticValue { get; set; } = 234;
+
+    public event Action? Occurred;
+    public static event Action? StaticOccurred;
+    [Obsolete]
+    public void Method()
+    {
+    }
+
+    public static void StaticMethod()
+    {
+    }
+
+    public static explicit operator int (Struct value) => value.Value;
+    public static int operator +(Struct a, Struct b) => a.Value + b.Value;
+    public struct Nested
+    {
+    }
+}

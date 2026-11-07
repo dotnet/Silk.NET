@@ -10,6 +10,12 @@ namespace Silk.NET.OpenGL;
 [NativeName("HintTarget")]
 public enum HintTarget : uint
 {
+    [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES")]
+    FragmentShaderDerivativeHintOES = 35723,
+
+    [NativeName("GL_BINNING_CONTROL_HINT_QCOM")]
+    BinningControlHintQCOM = 36784,
+
     [NativeName("GL_LINE_SMOOTH_HINT")]
     LineSmoothHint = 3154,
 
@@ -153,10 +159,4 @@ public enum HintTarget : uint
 
     [NativeName("GL_PHONG_HINT_WIN")]
     PhongHintWIN = 33003,
-
-    [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES")]
-    FragmentShaderDerivativeHintOES = 35723,
-
-    [NativeName("GL_BINNING_CONTROL_HINT_QCOM")]
-    BinningControlHintQCOM = 36784,
 }

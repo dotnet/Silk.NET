@@ -172,11 +172,6 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
             .ToList();
 
         var proj = ctx.SourceProject;
-        if (proj == null)
-        {
-            return;
-        }
-
         var compilation = await proj.GetCompilationAsync(ct);
         if (compilation == null)
         {
@@ -382,9 +377,9 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                     if (baseTypes.Count == 0)
                     {
                         node = node.WithBaseList(
-                            BaseList(
-                                [SimpleBaseType(PredefinedType(Token(SyntaxKind.UIntKeyword)))]
-                            )
+                            BaseList([
+                                SimpleBaseType(PredefinedType(Token(SyntaxKind.UIntKeyword))),
+                            ])
                         );
                     }
                     else
