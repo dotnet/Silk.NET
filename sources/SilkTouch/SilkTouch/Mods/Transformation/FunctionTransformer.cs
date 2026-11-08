@@ -220,7 +220,7 @@ public class FunctionTransformer(
 
         var declTy = function.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>();
 
-        // The Silk DSL can be applied to static and non-static methods in a class or a struct.
+        // The Silk.NET DSL can be applied to static and non-static methods in a class or a struct.
         if (declTy is not (ClassDeclarationSyntax or StructDeclarationSyntax))
         {
             return null;
