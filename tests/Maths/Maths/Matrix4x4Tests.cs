@@ -198,7 +198,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Matrix4x4InvertProjectionTest()
         {
-            Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfView(1, 1.333f, 0.1f, 666);
+            Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfViewRH(1, 1.333f, 0.1f, 666);
 
             Matrix4X4<float> actual;
             Assert.True(Matrix4X4.Invert(mtx, out actual));
@@ -242,7 +242,7 @@ namespace Silk.NET.Maths.Tests
 
         void DecomposeTest(float yaw, float pitch, float roll, Vector3D<float> expectedTranslation, Vector3D<float> expectedScales)
         {
-            Quaternion<float> expectedRotation = Quaternion<float>.CreateFromYawPitchRoll(MathHelper.ToRadians(yaw),
+            Quaternion<float> expectedRotation = Quaternion.CreateFromYawPitchRoll(MathHelper.ToRadians(yaw),
                                                                             MathHelper.ToRadians(pitch),
                                                                             MathHelper.ToRadians(roll));
 
@@ -375,7 +375,7 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> translation;
 
             Assert.False(Matrix4X4.Decompose(GenerateIncrementalMatrixNumber(), out scales, out rotation, out translation), "decompose should have failed.");
-            Assert.False(Matrix4X4.Decompose(new Matrix4X4<float>(Matrix3X2.CreateSkew<float>(1, 2)), out scales, out rotation, out translation), "decompose should have failed.");
+            Assert.False(Matrix4X4.Decompose(Matrix4X4.CreateFromAffine(Matrix3X2.CreateSkew<float>(1, 2)), out scales, out rotation, out translation), "decompose should have failed.");
         }
 
         // Transform by quaternion test
@@ -389,7 +389,7 @@ namespace Silk.NET.Maths.Tests
                 Matrix4X4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
                 Matrix4X4.CreateRotationZ(MathHelper.ToRadians(30.0f));
 
-            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
+            Quaternion<float> q = Quaternion.CreateFromRotationMatrix(m);
 
             Matrix4X4<float> expected = target * m;
             Matrix4X4<float> actual;
@@ -521,7 +521,7 @@ namespace Silk.NET.Maths.Tests
             actual = Matrix4X4.CreateFromAxisAngle(Vector3D<float>.UnitZ, radians);
             Assert.True(MathHelper.Equal(expected, actual));
 
-            expected = Matrix4X4.CreateFromQuaternion(Quaternion<float>.CreateFromAxisAngle(Vector3D.Normalize(Vector3D<float>.One), radians));
+            expected = Matrix4X4.CreateFromQuaternion(Quaternion.CreateFromAxisAngle(Vector3D.Normalize(Vector3D<float>.One), radians));
             actual = Matrix4X4.CreateFromAxisAngle(Vector3D.Normalize(Vector3D<float>.One), radians);
             Assert.True(MathHelper.Equal(expected, actual));
 
@@ -538,7 +538,7 @@ namespace Silk.NET.Maths.Tests
                     for (int k = 0; k < rotCount; ++k)
                     {
                         float rot = (2.0f * MathHelper.Pi) * ((float)k / (float)rotCount);
-                        expected = Matrix4X4.CreateFromQuaternion(Quaternion<float>.CreateFromAxisAngle(axis, rot));
+                        expected = Matrix4X4.CreateFromQuaternion(Quaternion.CreateFromAxisAngle(axis, rot));
                         actual = Matrix4X4.CreateFromAxisAngle(axis, rot);
                         Assert.True(MathHelper.Equal(expected, actual));
                     }
@@ -810,7 +810,7 @@ namespace Silk.NET.Maths.Tests
             expected.M43 = -37.0820961f;
             expected.M44 = 1.0f;
 
-            Matrix4X4<float> actual = Matrix4X4.CreateLookAt(cameraPosition, cameraTarget, cameraUpVector);
+            Matrix4X4<float> actual = Matrix4X4.CreateLookAtRH(cameraPosition, cameraTarget, cameraUpVector);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateLookAt did not return the expected value.");
         }
 
@@ -870,7 +870,7 @@ namespace Silk.NET.Maths.Tests
             expected.M44 = 1.0f;
 
             Matrix4X4<float> actual;
-            actual = Matrix4X4.CreateOrthographic(width, height, zNearPlane, zFarPlane);
+            actual = Matrix4X4.CreateOrthographicRH(width, height, zNearPlane, zFarPlane);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateOrtho did not return the expected value.");
         }
 
@@ -895,7 +895,7 @@ namespace Silk.NET.Maths.Tests
             expected.M44 = 1.0f;
 
             Matrix4X4<float> actual;
-            actual = Matrix4X4.CreateOrthographicOffCenter(left, right, bottom, top, zNearPlane, zFarPlane);
+            actual = Matrix4X4.CreateOrthographicOffCenterRH(left, right, bottom, top, zNearPlane, zFarPlane);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateOrthoOffCenter did not return the expected value.");
         }
 
@@ -916,7 +916,7 @@ namespace Silk.NET.Maths.Tests
             expected.M43 = -1.50225341f;
 
             Matrix4X4<float> actual;
-            actual = Matrix4X4.CreatePerspective(width, height, zNearPlane, zFarPlane);
+            actual = Matrix4X4.CreatePerspectiveRH(width, height, zNearPlane, zFarPlane);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreatePerspective did not return the expected value.");
         }
 
@@ -932,7 +932,7 @@ namespace Silk.NET.Maths.Tests
                 float zNearPlane = 0.0f;
                 float zFarPlane = 0.0f;
 
-                Matrix4X4<float> actual = Matrix4X4.CreatePerspective(width, height, zNearPlane, zFarPlane);
+                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveRH(width, height, zNearPlane, zFarPlane);
             });
         }
 
@@ -943,7 +943,7 @@ namespace Silk.NET.Maths.Tests
         {
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
-                Matrix4X4<float> actual = Matrix4X4.CreatePerspective<float>(10, 10, -10, 10);
+                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveRH<float>(10, 10, -10, 10);
             });
         }
 
@@ -954,7 +954,7 @@ namespace Silk.NET.Maths.Tests
         {
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
-                Matrix4X4<float> actual = Matrix4X4.CreatePerspective<float>(10, 10, 10, -10);
+                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveRH<float>(10, 10, 10, -10);
             });
         }
 
@@ -975,7 +975,7 @@ namespace Silk.NET.Maths.Tests
             expected.M43 = -1.50225341f;
             Matrix4X4<float> actual;
 
-            actual = Matrix4X4.CreatePerspectiveFieldOfView(fieldOfView, aspectRatio, zNearPlane, zFarPlane);
+            actual = Matrix4X4.CreatePerspectiveFieldOfViewRH(fieldOfView, aspectRatio, zNearPlane, zFarPlane);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreatePerspectiveFieldOfView did not return the expected value.");
         }
 
@@ -986,7 +986,7 @@ namespace Silk.NET.Maths.Tests
         {
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
-                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfView<float>(-1, 1, 1, 10);
+                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfViewRH<float>(-1, 1, 1, 10);
             });
         }
 
@@ -997,7 +997,7 @@ namespace Silk.NET.Maths.Tests
         {
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
-                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfView(MathHelper.Pi + 0.01f, 1, 1, 10);
+                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfViewRH(MathHelper.Pi + 0.01f, 1, 1, 10);
             });
         }
 
@@ -1008,7 +1008,7 @@ namespace Silk.NET.Maths.Tests
         {
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
-                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, 1, -1, 10);
+                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfViewRH(MathHelper.PiOver4, 1, -1, 10);
             });
         }
 
@@ -1019,7 +1019,7 @@ namespace Silk.NET.Maths.Tests
         {
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
-                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, 1, 1, -10);
+                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfViewRH(MathHelper.PiOver4, 1, 1, -10);
             });
         }
 
@@ -1044,7 +1044,7 @@ namespace Silk.NET.Maths.Tests
             expected.M43 = -1.50225341f;
 
             Matrix4X4<float> actual;
-            actual = Matrix4X4.CreatePerspectiveOffCenter(left, right, bottom, top, zNearPlane, zFarPlane);
+            actual = Matrix4X4.CreatePerspectiveOffCenterRH(left, right, bottom, top, zNearPlane, zFarPlane);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreatePerspectiveOffCenter did not return the expected value.");
         }
 
@@ -1056,7 +1056,7 @@ namespace Silk.NET.Maths.Tests
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 float left = 10.0f, right = 90.0f, bottom = 20.0f, top = 180.0f;
-                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveOffCenter(left, right, bottom, top, -1, 10);
+                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveOffCenterRH(left, right, bottom, top, -1, 10);
             });
         }
 
@@ -1068,7 +1068,7 @@ namespace Silk.NET.Maths.Tests
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 float left = 10.0f, right = 90.0f, bottom = 20.0f, top = 180.0f;
-                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveOffCenter(left, right, bottom, top, 1, -10);
+                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveOffCenterRH(left, right, bottom, top, 1, -10);
             });
         }
 
@@ -1098,16 +1098,7 @@ namespace Silk.NET.Maths.Tests
             float detA = a.GetDeterminant();
             Assert.True(MathHelper.Equal(detA, 0.0f), "Matrix4X4<float>.Invert did not return the expected value.");
 
-            Matrix4X4<float> actual;
-            Assert.False(Matrix4X4.Invert(a, out actual));
-
-            // all the elements in Actual is NaN
-            Assert.True(
-                float.IsNaN(actual.M11) && float.IsNaN(actual.M12) && float.IsNaN(actual.M13) && float.IsNaN(actual.M14) &&
-                float.IsNaN(actual.M21) && float.IsNaN(actual.M22) && float.IsNaN(actual.M23) && float.IsNaN(actual.M24) &&
-                float.IsNaN(actual.M31) && float.IsNaN(actual.M32) && float.IsNaN(actual.M33) && float.IsNaN(actual.M34) &&
-                float.IsNaN(actual.M41) && float.IsNaN(actual.M42) && float.IsNaN(actual.M43) && float.IsNaN(actual.M44)
-                , "Matrix4X4<float>.Invert did not return the expected value.");
+            Assert.False(Matrix4X4.Invert(a, out _));
         }
 
         // A test for Lerp (Matrix4X4<float>, Matrix4X4<float>, float)
@@ -1357,7 +1348,7 @@ namespace Silk.NET.Maths.Tests
         public void Matrix4x4FromQuaternionTest1()
         {
             Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
-            Quaternion<float> q = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
             Matrix4X4<float> expected = new Matrix4X4<float>();
             expected.M11 = 0.875595033f;
@@ -1391,7 +1382,7 @@ namespace Silk.NET.Maths.Tests
         {
             for (float angle = 0.0f; angle < 720.0f; angle += 10.0f)
             {
-                Quaternion<float> quat = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
+                Quaternion<float> quat = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
 
                 Matrix4X4<float> expected = Matrix4X4.CreateRotationX(angle);
                 Matrix4X4<float> actual = Matrix4X4.CreateFromQuaternion(quat);
@@ -1400,7 +1391,7 @@ namespace Silk.NET.Maths.Tests
                     angle.ToString()));
 
                 // make sure convert back to quaternion is same as we passed quaternion.
-                Quaternion<float> q2 = Quaternion<float>.CreateFromRotationMatrix(actual);
+                Quaternion<float> q2 = Quaternion.CreateFromRotationMatrix(actual);
                 Assert.True(MathHelper.EqualRotation(quat, q2),
                     string.Format("Quaternion.FromQuaternion did not return the expected value. angle:{0}",
                     angle.ToString()));
@@ -1414,7 +1405,7 @@ namespace Silk.NET.Maths.Tests
         {
             for (float angle = 0.0f; angle < 720.0f; angle += 10.0f)
             {
-                Quaternion<float> quat = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitY, angle);
+                Quaternion<float> quat = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitY, angle);
 
                 Matrix4X4<float> expected = Matrix4X4.CreateRotationY(angle);
                 Matrix4X4<float> actual = Matrix4X4.CreateFromQuaternion(quat);
@@ -1423,7 +1414,7 @@ namespace Silk.NET.Maths.Tests
                     angle.ToString()));
 
                 // make sure convert back to quaternion is same as we passed quaternion.
-                Quaternion<float> q2 = Quaternion<float>.CreateFromRotationMatrix(actual);
+                Quaternion<float> q2 = Quaternion.CreateFromRotationMatrix(actual);
                 Assert.True(MathHelper.EqualRotation(quat, q2),
                     string.Format("Quaternion.FromQuaternion did not return the expected value. angle:{0}",
                     angle.ToString()));
@@ -1437,7 +1428,7 @@ namespace Silk.NET.Maths.Tests
         {
             for (float angle = 0.0f; angle < 720.0f; angle += 10.0f)
             {
-                Quaternion<float> quat = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle);
+                Quaternion<float> quat = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle);
 
                 Matrix4X4<float> expected = Matrix4X4.CreateRotationZ(angle);
                 Matrix4X4<float> actual = Matrix4X4.CreateFromQuaternion(quat);
@@ -1446,7 +1437,7 @@ namespace Silk.NET.Maths.Tests
                     angle.ToString()));
 
                 // make sure convert back to quaternion is same as we passed quaternion.
-                Quaternion<float> q2 = Quaternion<float>.CreateFromRotationMatrix(actual);
+                Quaternion<float> q2 = Quaternion.CreateFromRotationMatrix(actual);
                 Assert.True(MathHelper.EqualRotation(quat, q2),
                     string.Format("Quaternion.FromQuaternion did not return the expected value. angle:{0}",
                     angle.ToString()));
@@ -1461,9 +1452,9 @@ namespace Silk.NET.Maths.Tests
             for (float angle = 0.0f; angle < 720.0f; angle += 10.0f)
             {
                 Quaternion<float> quat =
-                    Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle) *
-                    Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitY, angle) *
-                    Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
+                    Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle) *
+                    Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitY, angle) *
+                    Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
 
                 Matrix4X4<float> expected =
                     Matrix4X4.CreateRotationX(angle) *
@@ -1475,7 +1466,7 @@ namespace Silk.NET.Maths.Tests
                     angle.ToString()));
 
                 // make sure convert back to quaternion is same as we passed quaternion.
-                Quaternion<float> q2 = Quaternion<float>.CreateFromRotationMatrix(actual);
+                Quaternion<float> q2 = Quaternion.CreateFromRotationMatrix(actual);
                 Assert.True(MathHelper.EqualRotation(quat, q2),
                     string.Format("Quaternion.FromQuaternion did not return the expected value. angle:{0}",
                     angle.ToString()));
@@ -1575,40 +1566,6 @@ namespace Silk.NET.Maths.Tests
             obj = null!;
             expected = false;
             actual = a.Equals(obj);
-            Assert.Equal(expected, actual);
-        }
-
-        // A test for GetHashCode ()
-        [Fact]
-        public void Matrix4x4GetHashCodeTest()
-        {
-            Matrix4X4<float> target = GenerateIncrementalMatrixNumber();
-
-            HashCode hash = default;
-
-            hash.Add(target.M11);
-            hash.Add(target.M12);
-            hash.Add(target.M13);
-            hash.Add(target.M14);
-
-            hash.Add(target.M21);
-            hash.Add(target.M22);
-            hash.Add(target.M23);
-            hash.Add(target.M24);
-
-            hash.Add(target.M31);
-            hash.Add(target.M32);
-            hash.Add(target.M33);
-            hash.Add(target.M34);
-
-            hash.Add(target.M41);
-            hash.Add(target.M42);
-            hash.Add(target.M43);
-            hash.Add(target.M44);
-
-            int expected = hash.ToHashCode();
-            int actual = target.GetHashCode();
-
             Assert.Equal(expected, actual);
         }
 
@@ -1768,7 +1725,7 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> cameraPosition = new Vector3D<float>(3.0f, 4.0f, 5.0f);
             Vector3D<float> objectPosition = cameraPosition + placeDirection * 10.0f;
             Matrix4X4<float> expected = expectedRotation * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateBillboard(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateBillboardRH(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateBillboard did not return the expected value.");
         }
 
@@ -1899,7 +1856,7 @@ namespace Silk.NET.Maths.Tests
 
             // Doesn't pass camera face direction. CreateBillboard uses new Vector3D<float>f(0, 0, -1) direction. Result must be same as 180 degrees rotate along y-axis.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationY(MathHelper.ToRadians(180.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateBillboard(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(0, 0, 1));
+            Matrix4X4<float> actual = Matrix4X4.CreateBillboardRH(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(0, 0, 1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateBillboard did not return the expected value.");
         }
 
@@ -1914,7 +1871,7 @@ namespace Silk.NET.Maths.Tests
 
             // Passes Vector3D<float>f.Right as camera face direction. Result must be same as -90 degrees rotate along y-axis.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationY(MathHelper.ToRadians(-90.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateBillboard(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(1, 0, 0));
+            Matrix4X4<float> actual = Matrix4X4.CreateBillboardRH(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(1, 0, 0));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateBillboard did not return the expected value.");
         }
 
@@ -1923,16 +1880,16 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> cameraPosition = new Vector3D<float>(3.0f, 4.0f, 5.0f);
             Vector3D<float> objectPosition = cameraPosition + placeDirection * 10.0f;
             Matrix4X4<float> expected = expectedRotation * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
 
             // When you move camera along rotateAxis, result must be same.
             cameraPosition += rotateAxis * 10.0f;
-            actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
+            actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
 
             cameraPosition -= rotateAxis * 30.0f;
-            actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
+            actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2063,7 +2020,7 @@ namespace Silk.NET.Maths.Tests
 
             // Doesn't pass camera face direction. CreateConstrainedBillboard uses new Vector3D<float>f(0, 0, -1) direction. Result must be same as 180 degrees rotate along y-axis.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationY(MathHelper.ToRadians(180.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(0, 0, 1), new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(0, 0, 1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2078,7 +2035,7 @@ namespace Silk.NET.Maths.Tests
 
             // Passes Vector3D<float>f.Right as camera face direction. Result must be same as -90 degrees rotate along y-axis.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationY(MathHelper.ToRadians(-90.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(1, 0, 0), new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(1, 0, 0), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2094,7 +2051,7 @@ namespace Silk.NET.Maths.Tests
 
             // In this case, CreateConstrainedBillboard picks new Vector3D<float>f(0, 0, -1) as object forward vector.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationY(MathHelper.ToRadians(180.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2110,7 +2067,7 @@ namespace Silk.NET.Maths.Tests
 
             // In this case, CreateConstrainedBillboard picks new Vector3D<float>f(1, 0, 0) as object forward vector.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationX(MathHelper.ToRadians(-90.0f)) * Matrix4X4.CreateRotationZ(MathHelper.ToRadians(-90.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2126,7 +2083,7 @@ namespace Silk.NET.Maths.Tests
 
             // User passes correct objectForwardVector.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationY(MathHelper.ToRadians(180.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2142,7 +2099,7 @@ namespace Silk.NET.Maths.Tests
 
             // User passes correct objectForwardVector.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationY(MathHelper.ToRadians(180.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 1, 0));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 1, 0));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2158,7 +2115,7 @@ namespace Silk.NET.Maths.Tests
 
             // In this case, CreateConstrainedBillboard picks Vector3D<float>f.Right as object forward vector.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationX(MathHelper.ToRadians(-90.0f)) * Matrix4X4.CreateRotationZ(MathHelper.ToRadians(-90.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2335,7 +2292,7 @@ namespace Silk.NET.Maths.Tests
         public void Matrix4x4From3x2Test()
         {
             Matrix3X2<float> source = new Matrix3X2<float>(1, 2, 3, 4, 5, 6);
-            Matrix4X4<float> result = new Matrix4X4<float>(source);
+            Matrix4X4<float> result = Matrix4X4.CreateFromAffine(source);
 
             Assert.Equal(source.M11, result.M11);
             Assert.Equal(source.M12, result.M12);
@@ -2448,22 +2405,41 @@ namespace Silk.NET.Maths.Tests
             Assert.False(p.IsIdentity);
 
             // Counterintuitive result - IEEE rules for NaN comparison are weird!
-            Assert.False(a.Equals(a));
-            Assert.False(b.Equals(b));
-            Assert.False(c.Equals(c));
-            Assert.False(d.Equals(d));
-            Assert.False(e.Equals(e));
-            Assert.False(f.Equals(f));
-            Assert.False(g.Equals(g));
-            Assert.False(h.Equals(h));
-            Assert.False(i.Equals(i));
-            Assert.False(j.Equals(j));
-            Assert.False(k.Equals(k));
-            Assert.False(l.Equals(l));
-            Assert.False(m.Equals(m));
-            Assert.False(n.Equals(n));
-            Assert.False(o.Equals(o));
-            Assert.False(p.Equals(p));
+#pragma warning disable CS1718 // Comparison made to same variable
+            Assert.False(a == a);
+            Assert.False(b == b);
+            Assert.False(c == c);
+            Assert.False(d == d);
+            Assert.False(e == e);
+            Assert.False(f == f);
+            Assert.False(g == g);
+            Assert.False(h == h);
+            Assert.False(i == i);
+            Assert.False(j == j);
+            Assert.False(k == k);
+            Assert.False(l == l);
+            Assert.False(m == m);
+            Assert.False(n == n);
+            Assert.False(o == o);
+            Assert.False(p == p);
+#pragma warning restore CS1718 // Comparison made to same variable
+
+            Assert.True(a.Equals(a));
+            Assert.True(b.Equals(b));
+            Assert.True(c.Equals(c));
+            Assert.True(d.Equals(d));
+            Assert.True(e.Equals(e));
+            Assert.True(f.Equals(f));
+            Assert.True(g.Equals(g));
+            Assert.True(h.Equals(h));
+            Assert.True(i.Equals(i));
+            Assert.True(j.Equals(j));
+            Assert.True(k.Equals(k));
+            Assert.True(l.Equals(l));
+            Assert.True(m.Equals(m));
+            Assert.True(n.Equals(n));
+            Assert.True(o.Equals(o));
+            Assert.True(p.Equals(p));
         }
 
         // A test to make sure these types are blittable directly into GPU buffer memory layouts
@@ -2521,7 +2497,7 @@ namespace Silk.NET.Maths.Tests
         public void PerspectiveFarPlaneAtInfinityTest()
         {
             var nearPlaneDistance = 0.125f;
-            var m = Matrix4X4.CreatePerspective(1.0f, 1.0f, nearPlaneDistance, float.PositiveInfinity);
+            var m = Matrix4X4.CreatePerspectiveRH(1.0f, 1.0f, nearPlaneDistance, float.PositiveInfinity);
             Assert.Equal(-1.0f, m.M33);
             Assert.Equal(-nearPlaneDistance, m.M43);
         }
@@ -2530,7 +2506,7 @@ namespace Silk.NET.Maths.Tests
         public void PerspectiveFieldOfViewFarPlaneAtInfinityTest()
         {
             var nearPlaneDistance = 0.125f;
-            var m = Matrix4X4.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), 1.5f, nearPlaneDistance, float.PositiveInfinity);
+            var m = Matrix4X4.CreatePerspectiveFieldOfViewRH(MathHelper.ToRadians(60.0f), 1.5f, nearPlaneDistance, float.PositiveInfinity);
             Assert.Equal(-1.0f, m.M33);
             Assert.Equal(-nearPlaneDistance, m.M43);
         }
@@ -2539,7 +2515,7 @@ namespace Silk.NET.Maths.Tests
         public void PerspectiveOffCenterFarPlaneAtInfinityTest()
         {
             var nearPlaneDistance = 0.125f;
-            var m = Matrix4X4.CreatePerspectiveOffCenter(0.0f, 0.0f, 1.0f, 1.0f, nearPlaneDistance, float.PositiveInfinity);
+            var m = Matrix4X4.CreatePerspectiveOffCenterRH(0.0f, 0.0f, 1.0f, 1.0f, nearPlaneDistance, float.PositiveInfinity);
             Assert.Equal(-1.0f, m.M33);
             Assert.Equal(-nearPlaneDistance, m.M43);
         }

@@ -16,10 +16,10 @@ using Silk.NET.Maths;
 /// <param name="NewClientArea">The new value of <see cref="ISurfaceWindow.ClientArea" />.</param>
 public readonly record struct WindowCoordinatesEvent(
     Surface Surface,
-    Rectangle<float> OldBounds,
-    Rectangle<float> NewBounds,
-    Rectangle<float> OldClientArea,
-    Rectangle<float> NewClientArea
+    Rect2D<float> OldBounds,
+    Rect2D<float> NewBounds,
+    Rect2D<float> OldClientArea,
+    Rect2D<float> NewClientArea
 )
 {
     /// <summary>
