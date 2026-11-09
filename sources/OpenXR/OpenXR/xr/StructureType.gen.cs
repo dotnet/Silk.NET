@@ -212,18 +212,6 @@ public enum StructureType : uint
     [SupportedApiProfile("openxr")]
     InputSourceLocalizedNameGetInfo = 63,
 
-    [NativeName("XR_TYPE_SPACES_LOCATE_INFO")]
-    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
-    SpacesLocateInfo = 1000471000,
-
-    [NativeName("XR_TYPE_SPACE_LOCATIONS")]
-    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
-    SpaceLocations = 1000471001,
-
-    [NativeName("XR_TYPE_SPACE_VELOCITIES")]
-    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
-    SpaceVelocities = 1000471002,
-
     [NativeName("XR_TYPE_COMPOSITION_LAYER_CUBE_KHR")]
     [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_cube"])]
     CompositionLayerCubeKHR = 1000006000,
@@ -312,13 +300,25 @@ public enum StructureType : uint
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable"])]
     GraphicsBindingVulkanKHR = 1000025000,
 
+    [NativeName("XR_TYPE_GRAPHICS_BINDING_VULKAN2_KHR")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
+    GraphicsBindingVulkan2KHR = GraphicsBindingVulkanKHR,
+
     [NativeName("XR_TYPE_SWAPCHAIN_IMAGE_VULKAN_KHR")]
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable"])]
     SwapchainImageVulkanKHR = 1000025001,
 
+    [NativeName("XR_TYPE_SWAPCHAIN_IMAGE_VULKAN2_KHR")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
+    SwapchainImageVulkan2KHR = SwapchainImageVulkanKHR,
+
     [NativeName("XR_TYPE_GRAPHICS_REQUIREMENTS_VULKAN_KHR")]
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable"])]
     GraphicsRequirementsVulkanKHR = 1000025002,
+
+    [NativeName("XR_TYPE_GRAPHICS_REQUIREMENTS_VULKAN2_KHR")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
+    GraphicsRequirementsVulkan2KHR = GraphicsRequirementsVulkanKHR,
 
     [NativeName("XR_TYPE_GRAPHICS_BINDING_D3D11_KHR")]
     [SupportedApiProfile("openxr", ["XR_KHR_D3D11_enable"])]
@@ -772,21 +772,17 @@ public enum StructureType : uint
     )]
     HandTrackingCapsulesStateFB = 1000112000,
 
-    [NativeName("XR_TYPE_SYSTEM_SPATIAL_ENTITY_PROPERTIES_FB")]
+    [NativeName("XR_TYPE_SPACE_COMPONENT_STATUS_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
-    SystemSpatialEntityPropertiesFB = 1000113004,
+    SpaceComponentStatusFB = 1000113001,
 
     [NativeName("XR_TYPE_SPATIAL_ANCHOR_CREATE_INFO_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     SpatialAnchorCreateInfoFB = 1000113003,
 
-    [NativeName("XR_TYPE_SPACE_COMPONENT_STATUS_SET_INFO_FB")]
+    [NativeName("XR_TYPE_SYSTEM_SPATIAL_ENTITY_PROPERTIES_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
-    SpaceComponentStatusSetInfoFB = 1000113007,
-
-    [NativeName("XR_TYPE_SPACE_COMPONENT_STATUS_FB")]
-    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
-    SpaceComponentStatusFB = 1000113001,
+    SystemSpatialEntityPropertiesFB = 1000113004,
 
     [NativeName("XR_TYPE_EVENT_DATA_SPATIAL_ANCHOR_CREATE_COMPLETE_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
@@ -795,6 +791,10 @@ public enum StructureType : uint
     [NativeName("XR_TYPE_EVENT_DATA_SPACE_SET_STATUS_COMPLETE_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     EventDataSpaceSetStatusCompleteFB = 1000113006,
+
+    [NativeName("XR_TYPE_SPACE_COMPONENT_STATUS_SET_INFO_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
+    SpaceComponentStatusSetInfoFB = 1000113007,
 
     [NativeName("XR_TYPE_FOVEATION_PROFILE_CREATE_INFO_FB")]
     [SupportedApiProfile(
@@ -828,17 +828,17 @@ public enum StructureType : uint
     )]
     FoveationLevelProfileCreateInfoFB = 1000115000,
 
-    [NativeName("XR_TYPE_KEYBOARD_SPACE_CREATE_INFO_FB")]
+    [NativeName("XR_TYPE_SYSTEM_KEYBOARD_TRACKING_PROPERTIES_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]
-    KeyboardSpaceCreateInfoFB = 1000116009,
+    SystemKeyboardTrackingPropertiesFB = 1000116002,
 
     [NativeName("XR_TYPE_KEYBOARD_TRACKING_QUERY_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]
     KeyboardTrackingQueryFB = 1000116004,
 
-    [NativeName("XR_TYPE_SYSTEM_KEYBOARD_TRACKING_PROPERTIES_FB")]
+    [NativeName("XR_TYPE_KEYBOARD_SPACE_CREATE_INFO_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]
-    SystemKeyboardTrackingPropertiesFB = 1000116002,
+    KeyboardSpaceCreateInfoFB = 1000116009,
 
     [NativeName("XR_TYPE_TRIANGLE_MESH_CREATE_INFO_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_triangle_mesh"])]
@@ -1168,18 +1168,6 @@ public enum StructureType : uint
     )]
     SpatialAnchorsUpdateExpirationCompletionDetailsML = 1000141012,
 
-    [NativeName("XR_TYPE_EVENT_DATA_HEADSET_FIT_CHANGED_ML")]
-    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
-    EventDataHeadsetFitChangedML = 1000472000,
-
-    [NativeName("XR_TYPE_EVENT_DATA_EYE_CALIBRATION_CHANGED_ML")]
-    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
-    EventDataEyeCalibrationChangedML = 1000472001,
-
-    [NativeName("XR_TYPE_USER_CALIBRATION_ENABLE_EVENTS_INFO_ML")]
-    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
-    UserCalibrationEnableEventsInfoML = 1000472002,
-
     [NativeName("XR_TYPE_SPATIAL_ANCHOR_PERSISTENCE_INFO_MSFT")]
     [SupportedApiProfile(
         "openxr",
@@ -1244,14 +1232,6 @@ public enum StructureType : uint
     )]
     SpaceStorageLocationFilterInfoFB = 1000156003,
 
-    [NativeName("XR_TYPE_SPACE_UUID_FILTER_INFO_FB")]
-    [SupportedApiProfile(
-        "openxr",
-        ["XR_FB_spatial_entity_query"],
-        ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
-    )]
-    SpaceUuidFilterInfoFB = 1000156054,
-
     [NativeName("XR_TYPE_SPACE_COMPONENT_FILTER_INFO_FB")]
     [SupportedApiProfile(
         "openxr",
@@ -1259,6 +1239,14 @@ public enum StructureType : uint
         ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
     )]
     SpaceComponentFilterInfoFB = 1000156052,
+
+    [NativeName("XR_TYPE_SPACE_UUID_FILTER_INFO_FB")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_query"],
+        ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
+    )]
+    SpaceUuidFilterInfoFB = 1000156054,
 
     [NativeName("XR_TYPE_EVENT_DATA_SPACE_QUERY_RESULTS_AVAILABLE_FB")]
     [SupportedApiProfile(
@@ -1448,6 +1436,10 @@ public enum StructureType : uint
     )]
     SystemFoveationEyeTrackedPropertiesMETA = 1000200002,
 
+    [NativeName("XR_TYPE_FACE_EXPRESSION_INFO_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
+    FaceExpressionInfoFB = 1000201002,
+
     [NativeName("XR_TYPE_SYSTEM_FACE_TRACKING_PROPERTIES_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
     SystemFaceTrackingPropertiesFB = 1000201004,
@@ -1455,10 +1447,6 @@ public enum StructureType : uint
     [NativeName("XR_TYPE_FACE_TRACKER_CREATE_INFO_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
     FaceTrackerCreateInfoFB = 1000201005,
-
-    [NativeName("XR_TYPE_FACE_EXPRESSION_INFO_FB")]
-    [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
-    FaceExpressionInfoFB = 1000201002,
 
     [NativeName("XR_TYPE_FACE_EXPRESSION_WEIGHTS_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
@@ -1499,6 +1487,10 @@ public enum StructureType : uint
     [NativeName("XR_TYPE_DEVICE_PCM_SAMPLE_RATE_STATE_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_haptic_pcm"])]
     DevicePcmSampleRateStateFB = 1000209002,
+
+    [NativeName("XR_TYPE_DEVICE_PCM_SAMPLE_RATE_GET_INFO_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_haptic_pcm"])]
+    DevicePcmSampleRateGetInfoFB = DevicePcmSampleRateStateFB,
 
     [NativeName("XR_TYPE_FRAME_SYNTHESIS_INFO_EXT")]
     [SupportedApiProfile("openxr", ["XR_EXT_frame_synthesis"])]
@@ -2664,6 +2656,42 @@ public enum StructureType : uint
     [SupportedApiProfile("openxr", ["XR_EXT_user_presence"])]
     SystemUserPresencePropertiesEXT = 1000470001,
 
+    [NativeName("XR_TYPE_SPACES_LOCATE_INFO")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
+    SpacesLocateInfo = 1000471000,
+
+    [NativeName("XR_TYPE_SPACES_LOCATE_INFO_KHR")]
+    [SupportedApiProfile("openxr", ["XR_KHR_locate_spaces"])]
+    SpacesLocateInfoKHR = SpacesLocateInfo,
+
+    [NativeName("XR_TYPE_SPACE_LOCATIONS")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
+    SpaceLocations = 1000471001,
+
+    [NativeName("XR_TYPE_SPACE_LOCATIONS_KHR")]
+    [SupportedApiProfile("openxr", ["XR_KHR_locate_spaces"])]
+    SpaceLocationsKHR = SpaceLocations,
+
+    [NativeName("XR_TYPE_SPACE_VELOCITIES")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
+    SpaceVelocities = 1000471002,
+
+    [NativeName("XR_TYPE_SPACE_VELOCITIES_KHR")]
+    [SupportedApiProfile("openxr", ["XR_KHR_locate_spaces"])]
+    SpaceVelocitiesKHR = SpaceVelocities,
+
+    [NativeName("XR_TYPE_EVENT_DATA_HEADSET_FIT_CHANGED_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
+    EventDataHeadsetFitChangedML = 1000472000,
+
+    [NativeName("XR_TYPE_EVENT_DATA_EYE_CALIBRATION_CHANGED_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
+    EventDataEyeCalibrationChangedML = 1000472001,
+
+    [NativeName("XR_TYPE_USER_CALIBRATION_ENABLE_EVENTS_INFO_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
+    UserCalibrationEnableEventsInfoML = 1000472002,
+
     [NativeName("XR_TYPE_SYSTEM_NOTIFICATIONS_SET_INFO_ML")]
     [SupportedApiProfile("openxr", ["XR_ML_system_notifications"])]
     SystemNotificationsSetInfoML = 1000473000,
@@ -3467,32 +3495,4 @@ public enum StructureType : uint
     [NativeName("XR_TYPE_EVENT_DATA_VIEW_CONFIGURATION_VIEWS_CHANGED_EXT")]
     [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_views_change"])]
     EventDataViewConfigurationViewsChangedEXT = 1000839000,
-
-    [NativeName("XR_TYPE_GRAPHICS_BINDING_VULKAN2_KHR")]
-    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
-    GraphicsBindingVulkan2KHR = GraphicsBindingVulkanKHR,
-
-    [NativeName("XR_TYPE_SWAPCHAIN_IMAGE_VULKAN2_KHR")]
-    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
-    SwapchainImageVulkan2KHR = SwapchainImageVulkanKHR,
-
-    [NativeName("XR_TYPE_GRAPHICS_REQUIREMENTS_VULKAN2_KHR")]
-    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
-    GraphicsRequirementsVulkan2KHR = GraphicsRequirementsVulkanKHR,
-
-    [NativeName("XR_TYPE_DEVICE_PCM_SAMPLE_RATE_GET_INFO_FB")]
-    [SupportedApiProfile("openxr", ["XR_FB_haptic_pcm"])]
-    DevicePcmSampleRateGetInfoFB = DevicePcmSampleRateStateFB,
-
-    [NativeName("XR_TYPE_SPACES_LOCATE_INFO_KHR")]
-    [SupportedApiProfile("openxr", ["XR_KHR_locate_spaces"])]
-    SpacesLocateInfoKHR = SpacesLocateInfo,
-
-    [NativeName("XR_TYPE_SPACE_LOCATIONS_KHR")]
-    [SupportedApiProfile("openxr", ["XR_KHR_locate_spaces"])]
-    SpaceLocationsKHR = SpaceLocations,
-
-    [NativeName("XR_TYPE_SPACE_VELOCITIES_KHR")]
-    [SupportedApiProfile("openxr", ["XR_KHR_locate_spaces"])]
-    SpaceVelocitiesKHR = SpaceVelocities,
 }

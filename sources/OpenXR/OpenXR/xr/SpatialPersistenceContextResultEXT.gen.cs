@@ -12,13 +12,13 @@ namespace Silk.NET.OpenXR;
 [SupportedApiProfile("openxr")]
 public enum SpatialPersistenceContextResultEXT
 {
-    [NativeName("XR_SPATIAL_PERSISTENCE_CONTEXT_RESULT_SUCCESS_EXT")]
+    [NativeName("XR_SPATIAL_PERSISTENCE_CONTEXT_RESULT_PERSIST_UUID_NOT_FOUND_EXT")]
     [SupportedApiProfile(
         "openxr",
-        ["XR_EXT_spatial_persistence"],
-        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+        ["XR_EXT_spatial_persistence_operations"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_persistence"]
     )]
-    Success = 0,
+    PersistUuidNotFound = -1000781002,
 
     [NativeName("XR_SPATIAL_PERSISTENCE_CONTEXT_RESULT_ENTITY_NOT_TRACKING_EXT")]
     [SupportedApiProfile(
@@ -28,11 +28,11 @@ public enum SpatialPersistenceContextResultEXT
     )]
     EntityNotTracking = -1000781001,
 
-    [NativeName("XR_SPATIAL_PERSISTENCE_CONTEXT_RESULT_PERSIST_UUID_NOT_FOUND_EXT")]
+    [NativeName("XR_SPATIAL_PERSISTENCE_CONTEXT_RESULT_SUCCESS_EXT")]
     [SupportedApiProfile(
         "openxr",
-        ["XR_EXT_spatial_persistence_operations"],
-        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_persistence"]
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
     )]
-    PersistUuidNotFound = -1000781002,
+    Success = 0,
 }
