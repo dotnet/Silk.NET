@@ -21,6 +21,9 @@ public enum DeviceSideAvcMotionEstimationWindowINTEL : uint
     [NativeName("CL_AVC_ME_SEARCH_WINDOW_TINY_INTEL")]
     WindowTiny = 2,
 
+    [NativeName("CL_AVC_ME_SEARCH_WINDOW_4x4_RADIUS_INTEL")]
+    Window4x4Radius = 2,
+
     [NativeName("CL_AVC_ME_SEARCH_WINDOW_EXTRA_TINY_INTEL")]
     WindowExtraTiny = 3,
 
@@ -41,9 +44,6 @@ public enum DeviceSideAvcMotionEstimationWindowINTEL : uint
 
     [NativeName("CL_AVC_ME_SEARCH_WINDOW_16x12_RADIUS_INTEL")]
     Window16x12Radius = 9,
-
-    [NativeName("CL_AVC_ME_SEARCH_WINDOW_4x4_RADIUS_INTEL")]
-    Window4x4Radius = 2,
 
     [NativeName("CL_AVC_ME_SEARCH_WINDOW_2x2_RADIUS_INTEL")]
     Window2x2Radius = 10,

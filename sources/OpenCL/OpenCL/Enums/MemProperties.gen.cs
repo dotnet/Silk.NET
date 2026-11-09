@@ -12,11 +12,11 @@ namespace Silk.NET.OpenCL;
 [NativeName("cl_mem_properties")]
 public enum MemProperties : ulong
 {
-    [NativeName("CL_MEM_ALLOC_FLAGS_IMG")]
-    AllocFlagsIMG = 16599,
-
     [NativeName("CL_MEM_DEVICE_HANDLE_LIST_KHR")]
     DeviceHandleListKHR = 8273,
+
+    [NativeName("CL_MEM_ALLOC_FLAGS_IMG")]
+    AllocFlagsIMG = 16599,
 
     [NativeName("CL_MEM_LOCALLY_UNCACHED_RESOURCE_INTEL")]
     LocallyUncachedResourceINTEL = 16920,

@@ -18,9 +18,9 @@ public enum MemMigrationFlags : ulong
     [NativeName("CL_MIGRATE_MEM_OBJECT_HOST")]
     Host = 0x1,
 
-    [NativeName("CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED")]
-    ContentUndefined = 0x2,
-
     [NativeName("CL_MIGRATE_MEM_OBJECT_HOST_EXT")]
     HostEXT = 0x1,
+
+    [NativeName("CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED")]
+    ContentUndefined = 0x2,
 }

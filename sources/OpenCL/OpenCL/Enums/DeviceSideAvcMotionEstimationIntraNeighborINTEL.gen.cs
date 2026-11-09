@@ -12,15 +12,15 @@ namespace Silk.NET.OpenCL;
 [NativeName("cl_intel_device_side_avc_motion_estimation.intra.neighbor")]
 public enum DeviceSideAvcMotionEstimationIntraNeighborINTEL : uint
 {
-    [NativeName("CL_AVC_ME_INTRA_NEIGHBOR_LEFT_MASK_ENABLE_INTEL")]
-    LeftMaskEnable = 96,
-
-    [NativeName("CL_AVC_ME_INTRA_NEIGHBOR_UPPER_MASK_ENABLE_INTEL")]
-    UpperMaskEnable = 16,
+    [NativeName("CL_AVC_ME_INTRA_NEIGHBOR_UPPER_LEFT_MASK_ENABLE_INTEL")]
+    UpperLeftMaskEnable = 4,
 
     [NativeName("CL_AVC_ME_INTRA_NEIGHBOR_UPPER_RIGHT_MASK_ENABLE_INTEL")]
     UpperRightMaskEnable = 8,
 
-    [NativeName("CL_AVC_ME_INTRA_NEIGHBOR_UPPER_LEFT_MASK_ENABLE_INTEL")]
-    UpperLeftMaskEnable = 4,
+    [NativeName("CL_AVC_ME_INTRA_NEIGHBOR_UPPER_MASK_ENABLE_INTEL")]
+    UpperMaskEnable = 16,
+
+    [NativeName("CL_AVC_ME_INTRA_NEIGHBOR_LEFT_MASK_ENABLE_INTEL")]
+    LeftMaskEnable = 96,
 }

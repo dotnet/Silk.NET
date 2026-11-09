@@ -12,11 +12,14 @@ namespace Silk.NET.OpenCL;
 [NativeName("cl_image_requirements_info_ext")]
 public enum ImageRequirementsInfoEXT : uint
 {
-    [NativeName("CL_IMAGE_REQUIREMENTS_BASE_ADDRESS_ALIGNMENT_EXT")]
-    BaseAddressAlignment = 4754,
-
     [NativeName("CL_IMAGE_REQUIREMENTS_ROW_PITCH_ALIGNMENT_EXT")]
     RowPitchAlignment = 4752,
+
+    [NativeName("CL_IMAGE_REQUIREMENTS_SLICE_PITCH_ALIGNMENT_EXT")]
+    SlicePitchAlignment = 4753,
+
+    [NativeName("CL_IMAGE_REQUIREMENTS_BASE_ADDRESS_ALIGNMENT_EXT")]
+    BaseAddressAlignment = 4754,
 
     [NativeName("CL_IMAGE_REQUIREMENTS_SIZE_EXT")]
     Size = 4786,
@@ -32,7 +35,4 @@ public enum ImageRequirementsInfoEXT : uint
 
     [NativeName("CL_IMAGE_REQUIREMENTS_MAX_ARRAY_SIZE_EXT")]
     MaxArraySize = 4790,
-
-    [NativeName("CL_IMAGE_REQUIREMENTS_SLICE_PITCH_ALIGNMENT_EXT")]
-    SlicePitchAlignment = 4753,
 }

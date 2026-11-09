@@ -30,9 +30,9 @@ public enum ContextProperties : long
     [NativeName("CL_PRINTF_BUFFERSIZE_ARM")]
     PrintfBuffersizeARM = 16561,
 
-    [NativeName("CL_CONTEXT_SHOW_DIAGNOSTICS_INTEL")]
-    ShowDiagnosticsINTEL = 16646,
-
     [NativeName("CL_CONTEXT_SAFETY_PROPERTIES_IMG")]
     SafetyPropertiesIMG = 16601,
+
+    [NativeName("CL_CONTEXT_SHOW_DIAGNOSTICS_INTEL")]
+    ShowDiagnosticsINTEL = 16646,
 }
