@@ -84,6 +84,11 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
         /// Whether to sort enum members by their value.
         /// </summary>
         public bool SortMembers { get; init; } = false;
+
+        /// <summary>
+        /// Whether to identify enum types that are likely to be [Flags] enums as [Flags] enums.
+        /// </summary>
+        public bool IdentifyFlags { get; init; } = false;
     }
 
     /// <summary>
@@ -202,7 +207,7 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
     private static bool IsProbablyFlags(List<EnumMemberInfo> members)
     {
         var values = members.Where(m => m.Value != null).Select(m => m.Value!.Value).ToArray();
-        var countWith1BitSet = values.Count(x => BitOperations.PopCount((ulong)x) == 1);
+        var countWith1BitSet = values.Count(x => BitOperations.PopCount(unchecked((ulong)x)) == 1);
         return (
                 // There is more than one member
                 members.Count > 1
@@ -282,6 +287,13 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
             }
 
             var isFlagsEnum = node.AttributeLists.ContainsAttribute("System.Flags");
+            var addFlagsAttribute = false;
+            if (!isFlagsEnum && config.IdentifyFlags && IsProbablyFlags(members))
+            {
+                isFlagsEnum = true;
+                addFlagsAttribute = true;
+            }
+
             if (isFlagsEnum && config.AddNoneMemberToFlags)
             {
                 // Add None member if it doesn't exist yet
@@ -476,6 +488,11 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
             }
 
             node = node.WithMembers([.. members.Select(m => m.Node)]);
+
+            if (addFlagsAttribute)
+            {
+                node = node.WithAttributeLists(node.AttributeLists.WithFlags());
+            }
 
             return base.VisitEnumDeclaration(node);
         }

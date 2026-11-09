@@ -1911,11 +1911,7 @@ public partial class MixKhronosData(
             )
             {
                 // Add [Flags] attribute
-                var flagsAttribute = AttributeList(
-                    SingletonSeparatedList(Attribute(IdentifierName("Flags")))
-                );
-
-                node = node.WithAttributeLists(node.AttributeLists.Add(flagsAttribute));
+                node = node.WithAttributeLists(node.AttributeLists.WithFlags());
             }
 
             return base.VisitEnumDeclaration(node);
