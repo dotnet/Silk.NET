@@ -78,6 +78,11 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
         /// This likely is required if <see cref="CoerceBackingTypes"/> is enabled.
         /// </remarks>
         public bool RewriteMemberValues { get; init; } = false;
+
+        /// <summary>
+        /// Whether to sort enum members by their value.
+        /// </summary>
+        public bool SortMembers { get; init; } = false;
     }
 
     /// <summary>
@@ -130,10 +135,8 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
             }
         }
 
-        public bool IsTypeMatch(ITypeSymbol? enumType)
-        {
-            return enumType != null && TypeName.IsMatch(enumType.Name);
-        }
+        public bool IsTypeMatch(ITypeSymbol? enumType) =>
+            enumType != null && TypeName.IsMatch(enumType.Name);
 
         public bool IsMemberMatch(ISymbol? enumMember)
         {
