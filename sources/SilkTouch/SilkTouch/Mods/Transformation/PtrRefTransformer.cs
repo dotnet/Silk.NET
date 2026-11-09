@@ -11,7 +11,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.SilkTouch.Mods.Transformation;
 
 /// <summary>
-/// A transformer that converts between raw pointers and Silk DSL pointer types.
+/// A transformer that converts between raw pointers and Silk.NET DSL pointer types.
 /// </summary>
 public sealed partial class PtrRefTransformer() : CSharpSyntaxRewriter(true), IFunctionTransformer
 {

@@ -1,9 +1,9 @@
 # Generator Mods
 
-Silk's SilkTouch bindings generator is designed to be a linear pipeline where a set of mods sequentially transform C#
-source code represented by Roslyn syntax nodes. This approach used by Silk 3 is in contrast to the approach in Silk 2,
-where a monolithic generator output code represented by bespoke data structures. Silk 3 focuses on breaking down each
-transformation step into its own mod to aid in maintainability and understanding of the codebase.
+Silk.NET's SilkTouch bindings generator is designed to be a linear pipeline where a set of mods sequentially transform
+C# source code represented by Roslyn syntax nodes. This approach used by Silk.NET 3.X is in contrast to the approach in
+Silk.NET 2.X, where a monolithic generator output code represented by bespoke data structures. Silk.NET 3.X focuses on
+breaking down each transformation step into its own mod to aid in maintainability and understanding of the codebase.
 
 This document is intended to act as both documentation on how to use the mods as well notes on how the mods were
 implemented. For users of the generator, first read the [Using the Generator](using-the-generator.md) documentation,
@@ -27,8 +27,8 @@ ideally, no communication is done at all so that mods are kept completely standa
 
 ### Mod Configuration
 
-Mods are configured as part of bindings generation jobs in a separate C# project. Silk's own configuration project is
-the
+Mods are configured as part of bindings generation jobs in a separate C# project. Silk.NET's own configuration project
+is the
 [`Silk.NET.SilkTouch.Jobs`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/sources/SilkTouch/Jobs/Program.cs)
 project. This project can be used as reference for your own SilkTouch configuration projects. More information about
 using the SilkTouch generator can be found in the [Using the Generator](using-the-generator.md) documentation.
@@ -53,12 +53,12 @@ Standardized sections:
   represents.
 
 - **Usage recommendations** - Provides information such as situations the mod is useful for, how to configure it, and
-  where to place it in the mod order. This information can include examples of how Silk's own bindings use it or whether
-  the mod is mainly designed for Silk internal use.
+  where to place it in the mod order. This information can include examples of how Silk.NET's own bindings use it or
+  whether the mod is mainly designed for Silk.NET internal use.
 
 General recommendations:
 
-For the most part, mods should be configured to run in an order similar to the mod orders used by Silk's existing
+For the most part, mods should be configured to run in an order similar to the mod orders used by Silk.NET's existing
 bindings. The same goes for the configuration, but more care needs to be done regarding whether the configuration is
 specific to that set of bindings.
 
@@ -125,15 +125,16 @@ Usage recommendations:
 
 Mod categories: Transformation
 
-This mod merges multiple sets of source code into one set of source code.
+This mod merges multiple sets of source code, called source sets, into one source set.
 
 Usage recommendations:
 
 The main use case for this mod is for when an API has different APIs available depending on the platform. For example,
-OpenXR has platform-specific integrations. Silk handles this by generating the raw OpenXR bindings on Windows, Linux,
-and Mac, then combining the three sets of raw bindings into one before doing further transformations.
+OpenXR has platform-specific integrations. Silk.NET handles this by generating the raw OpenXR bindings on Windows,
+Linux, and Mac, then combining the three sets of raw bindings into one before doing further transformations.
 
-Silk also uses this mod to merge the different OpenGL profiles into one.
+Silk.NET also uses this mod to merge the different OpenGL source sets, each corresponding to an OpenGL profile, into
+one source set.
 
 ### ChangeNamespace
 
@@ -169,26 +170,26 @@ differences in the API for which bindings are being generated will also affect t
 
 Platform-specific differences:
 
-For the most part, these behaviors are expected, but potentially unwanted behaviors considering the goal of Silk is to
-provide cross-platform bindings.
+For the most part, these behaviors are expected, but potentially unwanted behaviors considering the goal of Silk.NET is
+to provide cross-platform bindings.
 
 - `uint64_t` in C becomes `ulong` on Windows, `nuint` on Linux. This is filed as an issue in the ClangSharp repo:
-  https://github.com/dotnet/ClangSharp/issues/574. Silk handles this by  remapping the `stdint.h` types in
+  https://github.com/dotnet/ClangSharp/issues/574. Silk.NET handles this by  remapping the `stdint.h` types in
   [remap-stdint.rsp](https://github.com/dotnet/Silk.NET/blob/develop/3.0/eng/silktouch/remap-stdint.rsp). APIs, such as
   OpenGL, that define their own integer types may require additional configuration.
 
-- Enums use `uint` as their backing type on Linux instead of `int` like on Windows. Silk handles this by using
+- Enums use `uint` as their backing type on Linux instead of `int` like on Windows. Silk.NET handles this by using
   `TransformEnums` to "coerce" the backing types to their Windows equivalents when possible.
 
-- C `long` is output as C# `long` on Windows and C# `nint` on Linux. Silk handles this by generating bindings on Windows
-  where possible.
+- C `long` is output as C# `long` on Windows and C# `nint` on Linux. Silk.NET handles this by generating bindings on
+  Windows where possible.
 
 Note: There may be other differences not yet documented here. In the case new differences are discovered, please
 update this section. API-specific differences should not be documented here and should be documented in the
 [API-Specific Notes](api-specific-notes.md) document.
 
-To further avoid platform-specific differences, Silk prefers to generate its bindings on Windows. However, for sake of
-development and iteration, the generator is typically set up so that platform-specific differences are minimalized.
+To further avoid platform-specific differences, Silk.NET prefers to generate its bindings on Windows. However, for
+consistency, the configuration Silk.NET itself uses is set up so platform-specific differences are minimalized.
 
 Usage recommendations:
 
@@ -371,11 +372,11 @@ notably relating to how existing name affixes are treated in the
 
 Name affix categories:
 
-- `SharedPrefix` - This is a prefix that represents the shared prefix that is identified for a group of names. Silk's
-  bindings typically remove this prefix because these prefixes are typically used to prevent naming collisions in C
-  libraries. C# has its own namespacing functionality, thus making this prefix irrelevant. This prefix can be kept or
-  prettified if preferred over removing the prefix. The prefix can also be configured as a discriminator, which removes
-  the prefix by default, but allows the prefix to be used in case of name conflicts.
+- `SharedPrefix` - This is a prefix that represents the shared prefix that is identified for a group of names.
+  Silk.NET's bindings typically remove this prefix because these prefixes are typically used to prevent naming
+  collisions in C libraries. C# has its own namespacing functionality, thus making this prefix irrelevant. This prefix
+  can be kept or prettified if preferred over removing the prefix. The prefix can also be configured as a discriminator,
+  which removes the prefix by default, but preserves the prefix in the case of name conflicts.
 
 Example name affix configurations for `PrettifyNames`:
 
@@ -467,8 +468,8 @@ This is a monolithic mod that handles behavior specific to Khronos-style APIs su
 
 Because this mod is intended more for internal use rather than public use, the documentation here will focus on
 decisions made during the development of the mod and other internal details rather than the exact usage of the mod.
-For information relating to how the mod should be used, please use Silk's own configuration, source code, and
-`MixKhronosDataTests` as a reference.
+For information relating to how the mod should be used, please refer to Silk.NET's own configuration, source code, and
+`MixKhronosDataTests`.
 
 (TODO: Document major decisions relating to `MixKhronosData`. This is difficult because of the mod's long development
 history, and while this section is already massive, it still does not cover everything the mod does. This should be done
@@ -504,14 +505,14 @@ Khronos-style XML specifications:
 - OpenXR: https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK/main/specification/registry/xr.xml
 - Vulkan: https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/main/xml/vk.xml
 
-Be aware that these link to the latest version. Silk's repo may be using an older version of these XML files.
+Be aware that these link to the latest version. Silk.NET's repository may be using an older version of these XML files.
 
 Name affix categories:
 
 - `KhronosFunctionDataType` - `IdentifyFunctionDataTypes` must be set to true in the `MixKhronosData` configuration for
   this affix category to be identified. This is a suffix relevant to OpenGL-like APIs where functions like `glColor3`
   have variants such as `glColor3i`, `glColor3f`, and `glColor3b`. These suffixes indicate the data type that the
-  function expects. In this case, integer, float, and byte, respectively. Silk's bindings configure these as
+  function expects. In this case, integer, float, and byte, respectively. Silk.NET's bindings configure these as
   discriminators so that they can be removed when removing them does not lead to method overload conflicts.
 
 - `KhronosHandleType` - This is a suffix used on handle structs resulting from the typedefs used by Khronos in their
@@ -527,14 +528,14 @@ Name affix categories:
   enum member is usually defined as a standalone, global constant without any other context whether the enum member is
   part of an extension. In C#, this is not a problem because the enum type itself conveys that information. For example,
   in Vulkan, `VkPresentModeKHR` in Vulkan is a `KHR` suffixed enum type that contains `VK_PRESENT_MODE_IMMEDIATE_KHR` as
-  a member. In C#, this `KHR` suffix on the member is redundant. As such, Silk's bindings are configured to remove this
-  suffix.
+  a member. In C#, this `KHR` suffix on the member is redundant. As such, Silk.NET's bindings are configured to remove
+  this suffix.
 
 - `KhronosNamespaceEnum` - This is a prefix added to the "namespace" enum of OpenGL-like APIs such as `GLEnum`,
   `ALEnum`, and `ALCEnum`. In this case, the value of the prefix would be `GL`, `AL`, and `ALC`, respectively. This is
-  so that the casing of the prefix is preserved by `PrettifyNames`. As such, Silk's bindings leaves the affix category
-  unconfigured in the `PrettifyNames` configuration so that `PrettifyNames` uses the default behavior of preserving the
-  affix.
+  so that the casing of the prefix is preserved by `PrettifyNames`. As such, Silk.NET's bindings leaves the affix
+  category unconfigured in the `PrettifyNames` configuration so that `PrettifyNames` uses the default behavior of
+  preserving the affix.
 
 - `KhronosNonExclusiveVendor` - `IdentifyEnumTypeNonExclusiveVendors` must be set to true in the `MixKhronosData`
   configuration for this affix category to be identified. This is a suffix used on enum types instead of `KhronosVendor`
@@ -546,7 +547,7 @@ Name affix categories:
   This affix category is only intended to be used for OpenGL-like APIs where enum member promotion was not
   fully defined, leading to inconsistent vendor suffixing where a non-promoted enum type contains a promoted enum
   member. Modern APIs like Vulkan do not have this issue. In modern APIs, there can be "mismatches", but those are cases
-  where promoted enum types contain non-promoted enum members, which is allowed. As such, Silk's bindings enables
+  where promoted enum types contain non-promoted enum members, which is allowed. As such, Silk.NET's bindings enables
   `IdentifyEnumTypeNonExclusiveVendors` and configures `KhronosNonExclusiveVendor` affixes to be removed only for
   OpenGL-like APIs.
 
@@ -564,13 +565,13 @@ Name affix categories:
   identification of other suffixes. For example, OpenAL has names such as `alAuxiliaryEffectSlotfDirect` where the
   `Direct` suffix is after the `KhronosFunctionDataType` suffix, thus blocking the `KhronosFunctionDataType` suffix
   from being identified. In this case, adding `Direct` as a non-vendor suffix fixes the issue. Because this is a
-  "helper" affix, Silk's bindings leave this affix category unconfigured in the `PrettifyNames` configuration.
+  "helper" affix, Silk.NET's bindings leave this affix category unconfigured in the `PrettifyNames` configuration.
 
 - `KhronosVendor` - This is a suffix added to any identifier that is identified to contain a Khronos vendor suffix such
   as `KHR`, `EXT`, or `NV`. The list of vendor suffixes used during identification is retrieved from the provided XML
-  specification. Silk's bindings are configured to move `KhronosVendor` suffixes to the end of the name. This is to
-  match Khronos's own naming convention. This primarily affects cases where Silk's generator added additional suffixes
-  to the end of the name, such as with `HandleType` suffixes like in `DebugUtilsMessengerHandleEXT` in Vulkan.
+  specification. Silk.NET's bindings are configured to move `KhronosVendor` suffixes to the end of the name. This is to
+  match Khronos's own naming convention. This primarily affects cases where Silk.NET's generator adds additional
+  suffixes to the end of the name, such as with `HandleType` suffixes like in `DebugUtilsMessengerHandleEXT` in Vulkan.
 
 Usage recommendations:
 
@@ -580,10 +581,10 @@ the XML specification file, `MixKhronosData` has not been tested for use without
 One key consideration when using `MixKhronosData` is identifying the conventions used by the API for which bindings are
 being generated for. Older Khronos APIs are more similar to OpenGL while newer Khronos APIs are more similar to Vulkan.
 These conventions determine which settings should be used in the `MixKhronosData` configuration. For exact configuration
-details, please refer to the configurations used by Silk for the existing Khronos-style bindings as well as the source
-code.
+details, please refer to the configurations used by Silk.NET for the existing Khronos-style bindings as well as the
+source code.
 
-Note: Although `MixKhronosData` has not been used by Silk for generating bindings for APIs that do not have XML
+Note: Although `MixKhronosData` has not been used by Silk.NET for generating bindings for APIs that do not have XML
 specifications, we will likely experiment with using this mod for bindings that do not have XML specifications such as
 SPIRV-Reflect in the near future. Whether we end up using this mod for these types of bindings depends on how much
 benefit `MixKhronosData` provides for those bindings.
@@ -627,7 +628,7 @@ Usage recommendations:
 This mod is intended to be used as a way to clean up intermediate metadata attributes and other attributes usually
 useful during bindings generation or debugging, but not particularly useful to the end user of the generated bindings.
 
-These are attributes removed in Silk's own bindings:
+These are attributes removed in Silk.NET's own bindings:
 
 - `NameAffix` - Metadata attribute used to store name affix information. Introduced by various mods.
 
@@ -674,7 +675,8 @@ This mod focuses on the transformation of methods, such as by changing parameter
 
 (TODO: To be expanded)
 
-Notably, the transformations include transforming methods to use the Silk DSL types (`Ptr`, `Ref`, `MaybeBool`, etc).
+Notably, the transformations include transforming methods to use the Silk.NET DSL types (`Ptr`, `Ref`, `MaybeBool`,
+etc).
 
 Name affix categories:
 

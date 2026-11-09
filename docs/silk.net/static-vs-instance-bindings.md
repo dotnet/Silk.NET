@@ -139,5 +139,5 @@ However, extension functions depend on the `PlatformIdHandle` being used. Unlike
 automatically set the `CurrentPlatform` property on the OpenCL API object. This is because unlike Vulkan's
 `CreateInstance` and `CreateDevice` functions, OpenCL's `GetPlatformIDs` function does not imply the selection of a
 particular platform. In order to use extension functions, you must manually set the `CurrentPlatform` property to
-indicate your selected platform. This platform will then be used by Silk to retrieve extension functions by calling
+indicate your selected platform. This platform will then be used by Silk.NET to retrieve extension functions by calling
 `clGetExtensionFunctionAddressForPlatform`.

@@ -45,7 +45,8 @@ public class BakeSourceSets(
         /// The key defines the folder to take documents from.
         /// The value defines the folder to merge documents into.
         /// <para/>
-        /// For example, at time of writing, Silk's OpenGL bindings have 4 source sets: glcompat -> gl, glcore -> gl, gles1 -> gl, gles2 -> gl.
+        /// For example, at time of writing, Silk.NET's OpenGL bindings have 4 source sets:
+        /// glcompat -> gl, glcore -> gl, gles1 -> gl, gles2 -> gl.
         /// These correspond to four input folders of the same name.
         /// After baking, there will be one output folder named "gl".
         /// <para/>

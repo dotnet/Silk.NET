@@ -13,7 +13,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.SilkTouch.Mods.Transformation;
 
 /// <summary>
-/// Utilities for implementing the Silk DSL.
+/// Utilities for implementing the Silk.NET DSL.
 /// </summary>
 public static class TransformationUtils
 {

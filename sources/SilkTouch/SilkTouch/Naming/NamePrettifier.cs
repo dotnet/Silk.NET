@@ -55,7 +55,7 @@ public class NamePrettifier(int longAcronymThreshold)
         // ["REG", "0"] is also 4 characters, but has an effective length of 5
         // "REG0" therefore becomes "Reg0"
         //
-        // Comment from Exanite: This behavior is ported from the original Silk 3 prettifier, which used spaces instead.
+        // Comment from Exanite: This behavior is ported from the original Silk.NET 3.X prettifier, which used spaces instead.
         // Since this leads to better behavior, I'm not sure if this was intentionally taken advantage of
         // or a happy accident from using Humanizer's Humanize method.
         var effectiveLength = int.Max(0, words.Count - 1);
