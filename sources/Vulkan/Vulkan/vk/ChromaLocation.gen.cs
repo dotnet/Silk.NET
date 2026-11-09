@@ -33,6 +33,17 @@ public enum ChromaLocation : uint
     )]
     CositedEven = 0,
 
+    [NativeName("VK_CHROMA_LOCATION_COSITED_EVEN_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    CositedEvenKHR = CositedEven,
+
     [NativeName("VK_CHROMA_LOCATION_MIDPOINT")]
     [SupportedApiProfile(
         "vulkan",
@@ -53,17 +64,6 @@ public enum ChromaLocation : uint
         MinVersion = "1.1"
     )]
     Midpoint = 1,
-
-    [NativeName("VK_CHROMA_LOCATION_COSITED_EVEN_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    CositedEvenKHR = CositedEven,
 
     [NativeName("VK_CHROMA_LOCATION_MIDPOINT_KHR")]
     [SupportedApiProfile(

@@ -23,72 +23,6 @@ public enum DeviceFaultAddressTypeKHR : uint
     )]
     None = 0,
 
-    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_READ_INVALID_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_device_fault"],
-        ImpliesSets = [
-            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_device_fault+VK_VERSION_1_1",
-        ]
-    )]
-    ReadInvalid = 1,
-
-    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_WRITE_INVALID_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_device_fault"],
-        ImpliesSets = [
-            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_device_fault+VK_VERSION_1_1",
-        ]
-    )]
-    WriteInvalid = 2,
-
-    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_EXECUTE_INVALID_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_device_fault"],
-        ImpliesSets = [
-            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_device_fault+VK_VERSION_1_1",
-        ]
-    )]
-    ExecuteInvalid = 3,
-
-    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_UNKNOWN_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_device_fault"],
-        ImpliesSets = [
-            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_device_fault+VK_VERSION_1_1",
-        ]
-    )]
-    InstructionPointerUnknown = 4,
-
-    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_INVALID_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_device_fault"],
-        ImpliesSets = [
-            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_device_fault+VK_VERSION_1_1",
-        ]
-    )]
-    InstructionPointerInvalid = 5,
-
-    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_FAULT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_device_fault"],
-        ImpliesSets = [
-            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_device_fault+VK_VERSION_1_1",
-        ]
-    )]
-    InstructionPointerFault = 6,
-
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_NONE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -99,6 +33,17 @@ public enum DeviceFaultAddressTypeKHR : uint
         ]
     )]
     NoneEXT = None,
+
+    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_READ_INVALID_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
+    ReadInvalid = 1,
 
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_READ_INVALID_EXT")]
     [SupportedApiProfile(
@@ -111,6 +56,17 @@ public enum DeviceFaultAddressTypeKHR : uint
     )]
     ReadInvalidEXT = ReadInvalid,
 
+    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_WRITE_INVALID_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
+    WriteInvalid = 2,
+
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_WRITE_INVALID_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -121,6 +77,17 @@ public enum DeviceFaultAddressTypeKHR : uint
         ]
     )]
     WriteInvalidEXT = WriteInvalid,
+
+    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_EXECUTE_INVALID_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
+    ExecuteInvalid = 3,
 
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_EXECUTE_INVALID_EXT")]
     [SupportedApiProfile(
@@ -133,6 +100,17 @@ public enum DeviceFaultAddressTypeKHR : uint
     )]
     ExecuteInvalidEXT = ExecuteInvalid,
 
+    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_UNKNOWN_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
+    InstructionPointerUnknown = 4,
+
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_UNKNOWN_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -144,6 +122,17 @@ public enum DeviceFaultAddressTypeKHR : uint
     )]
     InstructionPointerUnknownEXT = InstructionPointerUnknown,
 
+    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_INVALID_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
+    InstructionPointerInvalid = 5,
+
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_INVALID_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -154,6 +143,17 @@ public enum DeviceFaultAddressTypeKHR : uint
         ]
     )]
     InstructionPointerInvalidEXT = InstructionPointerInvalid,
+
+    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_FAULT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
+    InstructionPointerFault = 6,
 
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_FAULT_EXT")]
     [SupportedApiProfile(

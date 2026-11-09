@@ -23,39 +23,6 @@ public enum ScopeKHR : uint
     )]
     Device = 1,
 
-    [NativeName("VK_SCOPE_WORKGROUP_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_cooperative_matrix"],
-        ImpliesSets = [
-            "VK_KHR_cooperative_matrix+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
-        ]
-    )]
-    Workgroup = 2,
-
-    [NativeName("VK_SCOPE_SUBGROUP_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_cooperative_matrix"],
-        ImpliesSets = [
-            "VK_KHR_cooperative_matrix+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
-        ]
-    )]
-    Subgroup = 3,
-
-    [NativeName("VK_SCOPE_QUEUE_FAMILY_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_cooperative_matrix"],
-        ImpliesSets = [
-            "VK_KHR_cooperative_matrix+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
-        ]
-    )]
-    QueueFamily = 5,
-
     [NativeName("VK_SCOPE_DEVICE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -66,6 +33,17 @@ public enum ScopeKHR : uint
         ]
     )]
     DeviceNV = Device,
+
+    [NativeName("VK_SCOPE_WORKGROUP_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_cooperative_matrix"],
+        ImpliesSets = [
+            "VK_KHR_cooperative_matrix+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
+        ]
+    )]
+    Workgroup = 2,
 
     [NativeName("VK_SCOPE_WORKGROUP_NV")]
     [SupportedApiProfile(
@@ -78,6 +56,17 @@ public enum ScopeKHR : uint
     )]
     WorkgroupNV = Workgroup,
 
+    [NativeName("VK_SCOPE_SUBGROUP_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_cooperative_matrix"],
+        ImpliesSets = [
+            "VK_KHR_cooperative_matrix+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
+        ]
+    )]
+    Subgroup = 3,
+
     [NativeName("VK_SCOPE_SUBGROUP_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -88,6 +77,17 @@ public enum ScopeKHR : uint
         ]
     )]
     SubgroupNV = Subgroup,
+
+    [NativeName("VK_SCOPE_QUEUE_FAMILY_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_cooperative_matrix"],
+        ImpliesSets = [
+            "VK_KHR_cooperative_matrix+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
+        ]
+    )]
+    QueueFamily = 5,
 
     [NativeName("VK_SCOPE_QUEUE_FAMILY_NV")]
     [SupportedApiProfile(

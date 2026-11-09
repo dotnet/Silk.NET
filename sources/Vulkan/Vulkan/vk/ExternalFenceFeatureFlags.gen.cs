@@ -40,6 +40,17 @@ public enum ExternalFenceFeatureFlags : uint
     )]
     ExportableBit = 0x1,
 
+    [NativeName("VK_EXTERNAL_FENCE_FEATURE_EXPORTABLE_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    ExportableBitKHR = ExportableBit,
+
     [NativeName("VK_EXTERNAL_FENCE_FEATURE_IMPORTABLE_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -64,17 +75,6 @@ public enum ExternalFenceFeatureFlags : uint
         MinVersion = "1.1"
     )]
     ImportableBit = 0x2,
-
-    [NativeName("VK_EXTERNAL_FENCE_FEATURE_EXPORTABLE_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_fence_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_fence_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    ExportableBitKHR = ExportableBit,
 
     [NativeName("VK_EXTERNAL_FENCE_FEATURE_IMPORTABLE_BIT_KHR")]
     [SupportedApiProfile(

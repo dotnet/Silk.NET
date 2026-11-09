@@ -276,48 +276,38 @@ public enum BufferUsageFlags : uint
     )]
     IndirectBufferBit = 0x100,
 
-    [NativeName("VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT")]
+    [NativeName("VK_BUFFER_USAGE_CONDITIONAL_RENDERING_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    ShaderDeviceAddressBit = 0x20000,
-
-    [NativeName("VK_BUFFER_USAGE_VIDEO_DECODE_SRC_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_decode_queue"],
+        ["VK_EXT_conditional_rendering"],
         ImpliesSets = [
-            "VK_KHR_video_queue+VK_KHR_synchronization2",
-            "VK_KHR_video_queue+VK_VERSION_1_3",
+            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    VideoDecodeSrcBitKHR = 0x2000,
+    ConditionalRenderingBitEXT = 0x200,
 
-    [NativeName("VK_BUFFER_USAGE_VIDEO_DECODE_DST_BIT_KHR")]
+    [NativeName("VK_BUFFER_USAGE_SHADER_BINDING_TABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_video_decode_queue"],
+        ["VK_KHR_ray_tracing_pipeline"],
         ImpliesSets = [
-            "VK_KHR_video_queue+VK_KHR_synchronization2",
-            "VK_KHR_video_queue+VK_VERSION_1_3",
+            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    VideoDecodeDstBitKHR = 0x4000,
+    ShaderBindingTableBitKHR = 0x400,
+
+    [NativeName("VK_BUFFER_USAGE_RAY_TRACING_BIT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    RayTracingBitNV = ShaderBindingTableBitKHR,
 
     [NativeName("VK_BUFFER_USAGE_TRANSFORM_FEEDBACK_BUFFER_BIT_EXT")]
     [SupportedApiProfile(
@@ -341,74 +331,27 @@ public enum BufferUsageFlags : uint
     )]
     TransformFeedbackCounterBufferBitEXT = 0x1000,
 
-    [NativeName("VK_BUFFER_USAGE_CONDITIONAL_RENDERING_BIT_EXT")]
+    [NativeName("VK_BUFFER_USAGE_VIDEO_DECODE_SRC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_conditional_rendering"],
+        ["VK_KHR_video_decode_queue"],
         ImpliesSets = [
-            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    ConditionalRenderingBitEXT = 0x200,
+    VideoDecodeSrcBitKHR = 0x2000,
 
-    [NativeName("VK_BUFFER_USAGE_EXECUTION_GRAPH_SCRATCH_BIT_AMDX")]
+    [NativeName("VK_BUFFER_USAGE_VIDEO_DECODE_DST_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_AMDX_shader_enqueue"],
+        ["VK_KHR_video_decode_queue"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_KHR_synchronization2+VK_KHR_spirv_1_4+VK_EXT_extended_dynamic_state",
-            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_VERSION_1_3",
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    ExecutionGraphScratchBitAMDX = 0x2000000,
-
-    [NativeName("VK_BUFFER_USAGE_DESCRIPTOR_HEAP_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_heap"],
-        ImpliesSets = [
-            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
-            "VK_KHR_extended_flags+VK_VERSION_1_2",
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
-            "VK_VERSION_1_4",
-        ]
-    )]
-    DescriptorHeapBitEXT = 0x10000000,
-
-    [NativeName("VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_acceleration_structure"],
-        ImpliesSets = [
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
-        ]
-    )]
-    AccelerationStructureBuildInputReadOnlyBitKHR = 0x80000,
-
-    [NativeName("VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_STORAGE_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_acceleration_structure"],
-        ImpliesSets = [
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
-        ]
-    )]
-    AccelerationStructureStorageBitKHR = 0x100000,
-
-    [NativeName("VK_BUFFER_USAGE_SHADER_BINDING_TABLE_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_ray_tracing_pipeline"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
-        ]
-    )]
-    ShaderBindingTableBitKHR = 0x400,
+    VideoDecodeDstBitKHR = 0x4000,
 
     [NativeName("VK_BUFFER_USAGE_VIDEO_ENCODE_DST_BIT_KHR")]
     [SupportedApiProfile(
@@ -431,6 +374,71 @@ public enum BufferUsageFlags : uint
         ]
     )]
     VideoEncodeSrcBitKHR = 0x10000,
+
+    [NativeName("VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    ShaderDeviceAddressBit = 0x20000,
+
+    [NativeName("VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_buffer_device_address"],
+        ImpliesSets = [
+            "VK_EXT_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_buffer_device_address+VK_VERSION_1_1",
+        ]
+    )]
+    ShaderDeviceAddressBitEXT = ShaderDeviceAddressBit,
+
+    [NativeName("VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_buffer_device_address"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_device_group",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    ShaderDeviceAddressBitKHR = ShaderDeviceAddressBit,
+
+    [NativeName("VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
+    AccelerationStructureBuildInputReadOnlyBitKHR = 0x80000,
+
+    [NativeName("VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_STORAGE_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
+    AccelerationStructureStorageBitKHR = 0x100000,
 
     [NativeName("VK_BUFFER_USAGE_SAMPLER_DESCRIPTOR_BUFFER_BIT_EXT")]
     [SupportedApiProfile(
@@ -458,19 +466,6 @@ public enum BufferUsageFlags : uint
     )]
     ResourceDescriptorBufferBitEXT = 0x400000,
 
-    [NativeName("VK_BUFFER_USAGE_PUSH_DESCRIPTORS_DESCRIPTOR_BUFFER_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_buffer"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
-            "VK_KHR_synchronization2+VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    PushDescriptorsDescriptorBufferBitEXT = 0x4000000,
-
     [NativeName("VK_BUFFER_USAGE_MICROMAP_BUILD_INPUT_READ_ONLY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -493,6 +488,30 @@ public enum BufferUsageFlags : uint
     )]
     MicromapStorageBitEXT = 0x1000000,
 
+    [NativeName("VK_BUFFER_USAGE_EXECUTION_GRAPH_SCRATCH_BIT_AMDX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMDX_shader_enqueue"],
+        ImpliesSets = [
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_KHR_synchronization2+VK_KHR_spirv_1_4+VK_EXT_extended_dynamic_state",
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_VERSION_1_3",
+        ]
+    )]
+    ExecutionGraphScratchBitAMDX = 0x2000000,
+
+    [NativeName("VK_BUFFER_USAGE_PUSH_DESCRIPTORS_DESCRIPTOR_BUFFER_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    PushDescriptorsDescriptorBufferBitEXT = 0x4000000,
+
     [NativeName("VK_BUFFER_USAGE_TILE_MEMORY_BIT_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -504,36 +523,17 @@ public enum BufferUsageFlags : uint
     )]
     TileMemoryBitQCOM = 0x8000000,
 
-    [NativeName("VK_BUFFER_USAGE_RAY_TRACING_BIT_NV")]
+    [NativeName("VK_BUFFER_USAGE_DESCRIPTOR_HEAP_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_ray_tracing"],
+        ["VK_EXT_descriptor_heap"],
         ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
-            "VK_VERSION_1_1",
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
         ]
     )]
-    RayTracingBitNV = ShaderBindingTableBitKHR,
-
-    [NativeName("VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_buffer_device_address"],
-        ImpliesSets = [
-            "VK_EXT_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_buffer_device_address+VK_VERSION_1_1",
-        ]
-    )]
-    ShaderDeviceAddressBitEXT = ShaderDeviceAddressBit,
-
-    [NativeName("VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_buffer_device_address"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_device_group",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    ShaderDeviceAddressBitKHR = ShaderDeviceAddressBit,
+    DescriptorHeapBitEXT = 0x10000000,
 }

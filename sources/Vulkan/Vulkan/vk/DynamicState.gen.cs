@@ -183,134 +183,6 @@ public enum DynamicState : uint
     )]
     StencilReference = 8,
 
-    [NativeName("VK_DYNAMIC_STATE_CULL_MODE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    CullMode = 1000267000,
-
-    [NativeName("VK_DYNAMIC_STATE_FRONT_FACE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    FrontFace = 1000267001,
-
-    [NativeName("VK_DYNAMIC_STATE_PRIMITIVE_TOPOLOGY")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    PrimitiveTopology = 1000267002,
-
-    [NativeName("VK_DYNAMIC_STATE_VIEWPORT_WITH_COUNT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    ViewportWithCount = 1000267003,
-
-    [NativeName("VK_DYNAMIC_STATE_SCISSOR_WITH_COUNT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    ScissorWithCount = 1000267004,
-
-    [NativeName("VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    VertexInputBindingStride = 1000267005,
-
-    [NativeName("VK_DYNAMIC_STATE_DEPTH_TEST_ENABLE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    DepthTestEnable = 1000267006,
-
-    [NativeName("VK_DYNAMIC_STATE_DEPTH_WRITE_ENABLE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    DepthWriteEnable = 1000267007,
-
-    [NativeName("VK_DYNAMIC_STATE_DEPTH_COMPARE_OP")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    DepthCompareOp = 1000267008,
-
-    [NativeName("VK_DYNAMIC_STATE_DEPTH_BOUNDS_TEST_ENABLE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    DepthBoundsTestEnable = 1000267009,
-
-    [NativeName("VK_DYNAMIC_STATE_STENCIL_TEST_ENABLE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    StencilTestEnable = 1000267010,
-
-    [NativeName("VK_DYNAMIC_STATE_STENCIL_OP")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    StencilOp = 1000267011,
-
-    [NativeName("VK_DYNAMIC_STATE_RASTERIZER_DISCARD_ENABLE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    RasterizerDiscardEnable = 1000377001,
-
-    [NativeName("VK_DYNAMIC_STATE_DEPTH_BIAS_ENABLE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    DepthBiasEnable = 1000377002,
-
-    [NativeName("VK_DYNAMIC_STATE_PRIMITIVE_RESTART_ENABLE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    PrimitiveRestartEnable = 1000377004,
-
-    [NativeName("VK_DYNAMIC_STATE_LINE_STIPPLE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    LineStipple = 1000259000,
-
     [NativeName("VK_DYNAMIC_STATE_VIEWPORT_W_SCALING_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
     ViewportWScalingNV = 1000087000,
@@ -358,17 +230,6 @@ public enum DynamicState : uint
         ]
     )]
     SampleLocationsEXT = 1000143000,
-
-    [NativeName("VK_DYNAMIC_STATE_RAY_TRACING_PIPELINE_STACK_SIZE_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_ray_tracing_pipeline"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
-        ]
-    )]
-    RayTracingPipelineStackSizeKHR = 1000347000,
 
     [NativeName("VK_DYNAMIC_STATE_VIEWPORT_SHADING_RATE_PALETTE_NV")]
     [SupportedApiProfile(
@@ -426,6 +287,275 @@ public enum DynamicState : uint
     )]
     FragmentShadingRateKHR = 1000226000,
 
+    [NativeName("VK_DYNAMIC_STATE_LINE_STIPPLE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    LineStipple = 1000259000,
+
+    [NativeName("VK_DYNAMIC_STATE_LINE_STIPPLE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_line_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_line_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_line_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    LineStippleEXT = LineStipple,
+
+    [NativeName("VK_DYNAMIC_STATE_LINE_STIPPLE_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_line_rasterization"],
+        ImpliesSets = [
+            "VK_KHR_line_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_line_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    LineStippleKHR = LineStipple,
+
+    [NativeName("VK_DYNAMIC_STATE_CULL_MODE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    CullMode = 1000267000,
+
+    [NativeName("VK_DYNAMIC_STATE_CULL_MODE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    CullModeEXT = CullMode,
+
+    [NativeName("VK_DYNAMIC_STATE_FRONT_FACE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    FrontFace = 1000267001,
+
+    [NativeName("VK_DYNAMIC_STATE_FRONT_FACE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    FrontFaceEXT = FrontFace,
+
+    [NativeName("VK_DYNAMIC_STATE_PRIMITIVE_TOPOLOGY")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    PrimitiveTopology = 1000267002,
+
+    [NativeName("VK_DYNAMIC_STATE_PRIMITIVE_TOPOLOGY_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    PrimitiveTopologyEXT = PrimitiveTopology,
+
+    [NativeName("VK_DYNAMIC_STATE_VIEWPORT_WITH_COUNT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    ViewportWithCount = 1000267003,
+
+    [NativeName("VK_DYNAMIC_STATE_VIEWPORT_WITH_COUNT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    ViewportWithCountEXT = ViewportWithCount,
+
+    [NativeName("VK_DYNAMIC_STATE_SCISSOR_WITH_COUNT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    ScissorWithCount = 1000267004,
+
+    [NativeName("VK_DYNAMIC_STATE_SCISSOR_WITH_COUNT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    ScissorWithCountEXT = ScissorWithCount,
+
+    [NativeName("VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    VertexInputBindingStride = 1000267005,
+
+    [NativeName("VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    VertexInputBindingStrideEXT = VertexInputBindingStride,
+
+    [NativeName("VK_DYNAMIC_STATE_DEPTH_TEST_ENABLE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    DepthTestEnable = 1000267006,
+
+    [NativeName("VK_DYNAMIC_STATE_DEPTH_TEST_ENABLE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    DepthTestEnableEXT = DepthTestEnable,
+
+    [NativeName("VK_DYNAMIC_STATE_DEPTH_WRITE_ENABLE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    DepthWriteEnable = 1000267007,
+
+    [NativeName("VK_DYNAMIC_STATE_DEPTH_WRITE_ENABLE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    DepthWriteEnableEXT = DepthWriteEnable,
+
+    [NativeName("VK_DYNAMIC_STATE_DEPTH_COMPARE_OP")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    DepthCompareOp = 1000267008,
+
+    [NativeName("VK_DYNAMIC_STATE_DEPTH_COMPARE_OP_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    DepthCompareOpEXT = DepthCompareOp,
+
+    [NativeName("VK_DYNAMIC_STATE_DEPTH_BOUNDS_TEST_ENABLE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    DepthBoundsTestEnable = 1000267009,
+
+    [NativeName("VK_DYNAMIC_STATE_DEPTH_BOUNDS_TEST_ENABLE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    DepthBoundsTestEnableEXT = DepthBoundsTestEnable,
+
+    [NativeName("VK_DYNAMIC_STATE_STENCIL_TEST_ENABLE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    StencilTestEnable = 1000267010,
+
+    [NativeName("VK_DYNAMIC_STATE_STENCIL_TEST_ENABLE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    StencilTestEnableEXT = StencilTestEnable,
+
+    [NativeName("VK_DYNAMIC_STATE_STENCIL_OP")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    StencilOp = 1000267011,
+
+    [NativeName("VK_DYNAMIC_STATE_STENCIL_OP_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    StencilOpEXT = StencilOp,
+
+    [NativeName("VK_DYNAMIC_STATE_RAY_TRACING_PIPELINE_STACK_SIZE_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_ray_tracing_pipeline"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
+        ]
+    )]
+    RayTracingPipelineStackSizeKHR = 1000347000,
+
     [NativeName("VK_DYNAMIC_STATE_VERTEX_INPUT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -448,6 +578,44 @@ public enum DynamicState : uint
     )]
     PatchControlPointsEXT = 1000377000,
 
+    [NativeName("VK_DYNAMIC_STATE_RASTERIZER_DISCARD_ENABLE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    RasterizerDiscardEnable = 1000377001,
+
+    [NativeName("VK_DYNAMIC_STATE_RASTERIZER_DISCARD_ENABLE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state2"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+        ]
+    )]
+    RasterizerDiscardEnableEXT = RasterizerDiscardEnable,
+
+    [NativeName("VK_DYNAMIC_STATE_DEPTH_BIAS_ENABLE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    DepthBiasEnable = 1000377002,
+
+    [NativeName("VK_DYNAMIC_STATE_DEPTH_BIAS_ENABLE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state2"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+        ]
+    )]
+    DepthBiasEnableEXT = DepthBiasEnable,
+
     [NativeName("VK_DYNAMIC_STATE_LOGIC_OP_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -459,6 +627,25 @@ public enum DynamicState : uint
     )]
     LogicOpEXT = 1000377003,
 
+    [NativeName("VK_DYNAMIC_STATE_PRIMITIVE_RESTART_ENABLE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    PrimitiveRestartEnable = 1000377004,
+
+    [NativeName("VK_DYNAMIC_STATE_PRIMITIVE_RESTART_ENABLE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state2"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+        ]
+    )]
+    PrimitiveRestartEnableEXT = PrimitiveRestartEnable,
+
     [NativeName("VK_DYNAMIC_STATE_COLOR_WRITE_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -469,6 +656,20 @@ public enum DynamicState : uint
         ]
     )]
     ColorWriteEnableEXT = 1000381000,
+
+    [NativeName("VK_DYNAMIC_STATE_TESSELLATION_DOMAIN_ORIGIN_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_maintenance2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ]
+    )]
+    TessellationDomainOriginEXT = 1000455002,
 
     [NativeName("VK_DYNAMIC_STATE_DEPTH_CLAMP_ENABLE_EXT")]
     [SupportedApiProfile(
@@ -579,20 +780,6 @@ public enum DynamicState : uint
         ]
     )]
     ColorWriteMaskEXT = 1000455012,
-
-    [NativeName("VK_DYNAMIC_STATE_TESSELLATION_DOMAIN_ORIGIN_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_EXT_extended_dynamic_state3+VK_KHR_maintenance2",
-            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
-        ],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
-        ]
-    )]
-    TessellationDomainOriginEXT = 1000455002,
 
     [NativeName("VK_DYNAMIC_STATE_RASTERIZATION_STREAM_EXT")]
     [SupportedApiProfile(
@@ -861,191 +1048,4 @@ public enum DynamicState : uint
         ]
     )]
     DepthClampRangeEXT = 1000582000,
-
-    [NativeName("VK_DYNAMIC_STATE_LINE_STIPPLE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_line_rasterization"],
-        ImpliesSets = [
-            "VK_EXT_line_rasterization+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_line_rasterization+VK_VERSION_1_1",
-        ]
-    )]
-    LineStippleEXT = LineStipple,
-
-    [NativeName("VK_DYNAMIC_STATE_CULL_MODE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
-        ]
-    )]
-    CullModeEXT = CullMode,
-
-    [NativeName("VK_DYNAMIC_STATE_FRONT_FACE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
-        ]
-    )]
-    FrontFaceEXT = FrontFace,
-
-    [NativeName("VK_DYNAMIC_STATE_PRIMITIVE_TOPOLOGY_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
-        ]
-    )]
-    PrimitiveTopologyEXT = PrimitiveTopology,
-
-    [NativeName("VK_DYNAMIC_STATE_VIEWPORT_WITH_COUNT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
-        ]
-    )]
-    ViewportWithCountEXT = ViewportWithCount,
-
-    [NativeName("VK_DYNAMIC_STATE_SCISSOR_WITH_COUNT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
-        ]
-    )]
-    ScissorWithCountEXT = ScissorWithCount,
-
-    [NativeName("VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
-        ]
-    )]
-    VertexInputBindingStrideEXT = VertexInputBindingStride,
-
-    [NativeName("VK_DYNAMIC_STATE_DEPTH_TEST_ENABLE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
-        ]
-    )]
-    DepthTestEnableEXT = DepthTestEnable,
-
-    [NativeName("VK_DYNAMIC_STATE_DEPTH_WRITE_ENABLE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
-        ]
-    )]
-    DepthWriteEnableEXT = DepthWriteEnable,
-
-    [NativeName("VK_DYNAMIC_STATE_DEPTH_COMPARE_OP_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
-        ]
-    )]
-    DepthCompareOpEXT = DepthCompareOp,
-
-    [NativeName("VK_DYNAMIC_STATE_DEPTH_BOUNDS_TEST_ENABLE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
-        ]
-    )]
-    DepthBoundsTestEnableEXT = DepthBoundsTestEnable,
-
-    [NativeName("VK_DYNAMIC_STATE_STENCIL_TEST_ENABLE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
-        ]
-    )]
-    StencilTestEnableEXT = StencilTestEnable,
-
-    [NativeName("VK_DYNAMIC_STATE_STENCIL_OP_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
-        ]
-    )]
-    StencilOpEXT = StencilOp,
-
-    [NativeName("VK_DYNAMIC_STATE_RASTERIZER_DISCARD_ENABLE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state2"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
-        ]
-    )]
-    RasterizerDiscardEnableEXT = RasterizerDiscardEnable,
-
-    [NativeName("VK_DYNAMIC_STATE_DEPTH_BIAS_ENABLE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state2"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
-        ]
-    )]
-    DepthBiasEnableEXT = DepthBiasEnable,
-
-    [NativeName("VK_DYNAMIC_STATE_PRIMITIVE_RESTART_ENABLE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_extended_dynamic_state2"],
-        ImpliesSets = [
-            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
-        ]
-    )]
-    PrimitiveRestartEnableEXT = PrimitiveRestartEnable,
-
-    [NativeName("VK_DYNAMIC_STATE_LINE_STIPPLE_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_line_rasterization"],
-        ImpliesSets = [
-            "VK_KHR_line_rasterization+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_line_rasterization+VK_VERSION_1_1",
-        ]
-    )]
-    LineStippleKHR = LineStipple,
 }

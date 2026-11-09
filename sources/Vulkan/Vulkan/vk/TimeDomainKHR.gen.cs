@@ -23,6 +23,17 @@ public enum TimeDomainKHR : uint
     )]
     Device = 0,
 
+    [NativeName("VK_TIME_DOMAIN_DEVICE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_calibrated_timestamps"],
+        ImpliesSets = [
+            "VK_EXT_calibrated_timestamps+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
+        ]
+    )]
+    DeviceEXT = Device,
+
     [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -33,6 +44,17 @@ public enum TimeDomainKHR : uint
         ]
     )]
     ClockMonotonic = 1,
+
+    [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_calibrated_timestamps"],
+        ImpliesSets = [
+            "VK_EXT_calibrated_timestamps+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
+        ]
+    )]
+    ClockMonotonicEXT = ClockMonotonic,
 
     [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_RAW_KHR")]
     [SupportedApiProfile(
@@ -45,6 +67,17 @@ public enum TimeDomainKHR : uint
     )]
     ClockMonotonicRaw = 2,
 
+    [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_RAW_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_calibrated_timestamps"],
+        ImpliesSets = [
+            "VK_EXT_calibrated_timestamps+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
+        ]
+    )]
+    ClockMonotonicRawEXT = ClockMonotonicRaw,
+
     [NativeName("VK_TIME_DOMAIN_QUERY_PERFORMANCE_COUNTER_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -55,6 +88,17 @@ public enum TimeDomainKHR : uint
         ]
     )]
     QueryPerformanceCounter = 3,
+
+    [NativeName("VK_TIME_DOMAIN_QUERY_PERFORMANCE_COUNTER_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_calibrated_timestamps"],
+        ImpliesSets = [
+            "VK_EXT_calibrated_timestamps+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
+        ]
+    )]
+    QueryPerformanceCounterEXT = QueryPerformanceCounter,
 
     [NativeName("VK_TIME_DOMAIN_PRESENT_STAGE_LOCAL_EXT")]
     [SupportedApiProfile(
@@ -81,48 +125,4 @@ public enum TimeDomainKHR : uint
         ]
     )]
     SwapchainLocalEXT = 1000208001,
-
-    [NativeName("VK_TIME_DOMAIN_DEVICE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_calibrated_timestamps"],
-        ImpliesSets = [
-            "VK_EXT_calibrated_timestamps+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
-        ]
-    )]
-    DeviceEXT = Device,
-
-    [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_calibrated_timestamps"],
-        ImpliesSets = [
-            "VK_EXT_calibrated_timestamps+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
-        ]
-    )]
-    ClockMonotonicEXT = ClockMonotonic,
-
-    [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_RAW_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_calibrated_timestamps"],
-        ImpliesSets = [
-            "VK_EXT_calibrated_timestamps+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
-        ]
-    )]
-    ClockMonotonicRawEXT = ClockMonotonicRaw,
-
-    [NativeName("VK_TIME_DOMAIN_QUERY_PERFORMANCE_COUNTER_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_calibrated_timestamps"],
-        ImpliesSets = [
-            "VK_EXT_calibrated_timestamps+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
-        ]
-    )]
-    QueryPerformanceCounterEXT = QueryPerformanceCounter,
 }

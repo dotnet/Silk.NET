@@ -40,6 +40,17 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     OpaqueFdBit = 0x1,
 
+    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    OpaqueFdBitKHR = OpaqueFdBit,
+
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -64,6 +75,17 @@ public enum ExternalMemoryHandleTypeFlags : uint
         MinVersion = "1.1"
     )]
     OpaqueWin32Bit = 0x2,
+
+    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    OpaqueWin32BitKHR = OpaqueWin32Bit,
 
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT")]
     [SupportedApiProfile(
@@ -90,6 +112,17 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     OpaqueWin32KmtBit = 0x4,
 
+    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    OpaqueWin32KmtBitKHR = OpaqueWin32KmtBit,
+
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -114,6 +147,17 @@ public enum ExternalMemoryHandleTypeFlags : uint
         MinVersion = "1.1"
     )]
     D3D11TextureBit = 0x8,
+
+    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    D3D11TextureBitKHR = D3D11TextureBit,
 
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_KMT_BIT")]
     [SupportedApiProfile(
@@ -140,6 +184,17 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     D3D11TextureKmtBit = 0x10,
 
+    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_KMT_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    D3D11TextureKmtBitKHR = D3D11TextureKmtBit,
+
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -164,6 +219,17 @@ public enum ExternalMemoryHandleTypeFlags : uint
         MinVersion = "1.1"
     )]
     D3D12HeapBit = 0x20,
+
+    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    D3D12HeapBitKHR = D3D12HeapBit,
 
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE_BIT")]
     [SupportedApiProfile(
@@ -190,24 +256,16 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     D3D12ResourceBit = 0x40,
 
-    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_DMA_BUF_BIT_EXT")]
+    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_external_memory_dma_buf"],
-        ImpliesSets = ["VK_KHR_external_memory_fd"]
-    )]
-    DmaBufBitEXT = 0x200,
-
-    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_ANDROID_HARDWARE_BUFFER_BIT_ANDROID")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_ANDROID_external_memory_android_hardware_buffer"],
+        ["VK_KHR_external_memory_capabilities"],
         ImpliesSets = [
-            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
-            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
         ]
     )]
-    AndroidHardwareBufferBitANDROID = 0x400,
+    D3D12ResourceBitKHR = D3D12ResourceBit,
 
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_HOST_ALLOCATION_BIT_EXT")]
     [SupportedApiProfile(
@@ -231,6 +289,25 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     HostMappedForeignMemoryBitEXT = 0x100,
 
+    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_DMA_BUF_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_dma_buf"],
+        ImpliesSets = ["VK_KHR_external_memory_fd"]
+    )]
+    DmaBufBitEXT = 0x200,
+
+    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_ANDROID_HARDWARE_BUFFER_BIT_ANDROID")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ANDROID_external_memory_android_hardware_buffer"],
+        ImpliesSets = [
+            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+        ]
+    )]
+    AndroidHardwareBufferBitANDROID = 0x400,
+
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_ZIRCON_VMO_BIT_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -253,17 +330,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     RdmaAddressBitNV = 0x1000,
 
-    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OH_NATIVE_BUFFER_BIT_OHOS")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_OHOS_external_memory"],
-        ImpliesSets = [
-            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
-            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
-        ]
-    )]
-    OhNativeBufferBitOHOS = 0x8000,
-
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_SCREEN_BUFFER_BIT_QNX")]
     [SupportedApiProfile(
         "vulkan",
@@ -274,6 +340,17 @@ public enum ExternalMemoryHandleTypeFlags : uint
         ]
     )]
     ScreenBufferBitQNX = 0x4000,
+
+    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OH_NATIVE_BUFFER_BIT_OHOS")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_OHOS_external_memory"],
+        ImpliesSets = [
+            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+        ]
+    )]
+    OhNativeBufferBitOHOS = 0x8000,
 
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_MTLBUFFER_BIT_EXT")]
     [SupportedApiProfile(
@@ -307,81 +384,4 @@ public enum ExternalMemoryHandleTypeFlags : uint
         ]
     )]
     MtlheapBitEXT = 0x40000,
-
-    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    OpaqueFdBitKHR = OpaqueFdBit,
-
-    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    OpaqueWin32BitKHR = OpaqueWin32Bit,
-
-    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    OpaqueWin32KmtBitKHR = OpaqueWin32KmtBit,
-
-    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    D3D11TextureBitKHR = D3D11TextureBit,
-
-    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_KMT_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    D3D11TextureKmtBitKHR = D3D11TextureKmtBit,
-
-    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    D3D12HeapBitKHR = D3D12HeapBit,
-
-    [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    D3D12ResourceBitKHR = D3D12ResourceBit,
 }

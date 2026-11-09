@@ -20,30 +20,6 @@ public enum LineRasterizationMode : uint
     )]
     Default = 0,
 
-    [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    Rectangular = 1,
-
-    [NativeName("VK_LINE_RASTERIZATION_MODE_BRESENHAM")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    Bresenham = 2,
-
-    [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    RectangularSmooth = 3,
-
     [NativeName("VK_LINE_RASTERIZATION_MODE_DEFAULT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -54,39 +30,6 @@ public enum LineRasterizationMode : uint
         ]
     )]
     DefaultEXT = Default,
-
-    [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_line_rasterization"],
-        ImpliesSets = [
-            "VK_EXT_line_rasterization+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_line_rasterization+VK_VERSION_1_1",
-        ]
-    )]
-    RectangularEXT = Rectangular,
-
-    [NativeName("VK_LINE_RASTERIZATION_MODE_BRESENHAM_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_line_rasterization"],
-        ImpliesSets = [
-            "VK_EXT_line_rasterization+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_line_rasterization+VK_VERSION_1_1",
-        ]
-    )]
-    BresenhamEXT = Bresenham,
-
-    [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_line_rasterization"],
-        ImpliesSets = [
-            "VK_EXT_line_rasterization+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_line_rasterization+VK_VERSION_1_1",
-        ]
-    )]
-    RectangularSmoothEXT = RectangularSmooth,
 
     [NativeName("VK_LINE_RASTERIZATION_MODE_DEFAULT_KHR")]
     [SupportedApiProfile(
@@ -99,6 +42,25 @@ public enum LineRasterizationMode : uint
     )]
     DefaultKHR = Default,
 
+    [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    Rectangular = 1,
+
+    [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_line_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_line_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_line_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    RectangularEXT = Rectangular,
+
     [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -110,6 +72,25 @@ public enum LineRasterizationMode : uint
     )]
     RectangularKHR = Rectangular,
 
+    [NativeName("VK_LINE_RASTERIZATION_MODE_BRESENHAM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    Bresenham = 2,
+
+    [NativeName("VK_LINE_RASTERIZATION_MODE_BRESENHAM_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_line_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_line_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_line_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    BresenhamEXT = Bresenham,
+
     [NativeName("VK_LINE_RASTERIZATION_MODE_BRESENHAM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -120,6 +101,25 @@ public enum LineRasterizationMode : uint
         ]
     )]
     BresenhamKHR = Bresenham,
+
+    [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    RectangularSmooth = 3,
+
+    [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_line_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_line_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_line_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    RectangularSmoothEXT = RectangularSmooth,
 
     [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH_KHR")]
     [SupportedApiProfile(

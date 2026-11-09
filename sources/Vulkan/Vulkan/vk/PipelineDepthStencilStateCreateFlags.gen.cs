@@ -29,19 +29,6 @@ public enum PipelineDepthStencilStateCreateFlags : uint
     RasterizationOrderAttachmentDepthAccessBitEXT = 0x1,
 
     [NativeName(
-        "VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_EXT"
-    )]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_rasterization_order_attachment_access"],
-        ImpliesSets = [
-            "VK_EXT_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
-        ]
-    )]
-    RasterizationOrderAttachmentStencilAccessBitEXT = 0x2,
-
-    [NativeName(
         "VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_ARM"
     )]
     [SupportedApiProfile(
@@ -53,6 +40,19 @@ public enum PipelineDepthStencilStateCreateFlags : uint
         ]
     )]
     RasterizationOrderAttachmentDepthAccessBitARM = RasterizationOrderAttachmentDepthAccessBitEXT,
+
+    [NativeName(
+        "VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_EXT"
+    )]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_rasterization_order_attachment_access"],
+        ImpliesSets = [
+            "VK_EXT_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
+        ]
+    )]
+    RasterizationOrderAttachmentStencilAccessBitEXT = 0x2,
 
     [NativeName(
         "VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_ARM"

@@ -20,14 +20,6 @@ public enum OpacityMicromapFormatKHR : uint
     )]
     Format2State = 1,
 
-    [NativeName("VK_OPACITY_MICROMAP_FORMAT_4_STATE_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_opacity_micromap"],
-        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
-    )]
-    Format4State = 2,
-
     [NativeName("VK_OPACITY_MICROMAP_FORMAT_2_STATE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -38,6 +30,14 @@ public enum OpacityMicromapFormatKHR : uint
         ]
     )]
     Format2StateEXT = Format2State,
+
+    [NativeName("VK_OPACITY_MICROMAP_FORMAT_4_STATE_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    Format4State = 2,
 
     [NativeName("VK_OPACITY_MICROMAP_FORMAT_4_STATE_EXT")]
     [SupportedApiProfile(

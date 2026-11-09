@@ -33,6 +33,17 @@ public enum DescriptorBindingFlags : uint
     )]
     UpdateAfterBindBit = 0x1,
 
+    [NativeName("VK_DESCRIPTOR_BINDING_UPDATE_AFTER_BIND_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_indexing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    UpdateAfterBindBitEXT = UpdateAfterBindBit,
+
     [NativeName("VK_DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -50,6 +61,17 @@ public enum DescriptorBindingFlags : uint
         MinVersion = "1.2"
     )]
     UpdateUnusedWhilePendingBit = 0x2,
+
+    [NativeName("VK_DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_indexing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    UpdateUnusedWhilePendingBitEXT = UpdateUnusedWhilePendingBit,
 
     [NativeName("VK_DESCRIPTOR_BINDING_PARTIALLY_BOUND_BIT")]
     [SupportedApiProfile(
@@ -69,6 +91,17 @@ public enum DescriptorBindingFlags : uint
     )]
     PartiallyBoundBit = 0x4,
 
+    [NativeName("VK_DESCRIPTOR_BINDING_PARTIALLY_BOUND_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_indexing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    PartiallyBoundBitEXT = PartiallyBoundBit,
+
     [NativeName("VK_DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -86,39 +119,6 @@ public enum DescriptorBindingFlags : uint
         MinVersion = "1.2"
     )]
     VariableDescriptorCountBit = 0x8,
-
-    [NativeName("VK_DESCRIPTOR_BINDING_UPDATE_AFTER_BIND_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_indexing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    UpdateAfterBindBitEXT = UpdateAfterBindBit,
-
-    [NativeName("VK_DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_indexing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    UpdateUnusedWhilePendingBitEXT = UpdateUnusedWhilePendingBit,
-
-    [NativeName("VK_DESCRIPTOR_BINDING_PARTIALLY_BOUND_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_indexing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    PartiallyBoundBitEXT = PartiallyBoundBit,
 
     [NativeName("VK_DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BIT_EXT")]
     [SupportedApiProfile(

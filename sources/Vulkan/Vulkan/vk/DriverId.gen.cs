@@ -33,6 +33,17 @@ public enum DriverId : uint
     )]
     AmdProprietary = 1,
 
+    [NativeName("VK_DRIVER_ID_AMD_PROPRIETARY_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_driver_properties"],
+        ImpliesSets = [
+            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_driver_properties+VK_VERSION_1_1",
+        ]
+    )]
+    AmdProprietaryKHR = AmdProprietary,
+
     [NativeName("VK_DRIVER_ID_AMD_OPEN_SOURCE")]
     [SupportedApiProfile(
         "vulkan",
@@ -53,6 +64,17 @@ public enum DriverId : uint
         MinVersion = "1.2"
     )]
     AmdOpenSource = 2,
+
+    [NativeName("VK_DRIVER_ID_AMD_OPEN_SOURCE_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_driver_properties"],
+        ImpliesSets = [
+            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_driver_properties+VK_VERSION_1_1",
+        ]
+    )]
+    AmdOpenSourceKHR = AmdOpenSource,
 
     [NativeName("VK_DRIVER_ID_MESA_RADV")]
     [SupportedApiProfile(
@@ -75,6 +97,17 @@ public enum DriverId : uint
     )]
     MesaRadv = 3,
 
+    [NativeName("VK_DRIVER_ID_MESA_RADV_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_driver_properties"],
+        ImpliesSets = [
+            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_driver_properties+VK_VERSION_1_1",
+        ]
+    )]
+    MesaRadvKHR = MesaRadv,
+
     [NativeName("VK_DRIVER_ID_NVIDIA_PROPRIETARY")]
     [SupportedApiProfile(
         "vulkan",
@@ -95,6 +128,17 @@ public enum DriverId : uint
         MinVersion = "1.2"
     )]
     NvidiaProprietary = 4,
+
+    [NativeName("VK_DRIVER_ID_NVIDIA_PROPRIETARY_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_driver_properties"],
+        ImpliesSets = [
+            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_driver_properties+VK_VERSION_1_1",
+        ]
+    )]
+    NvidiaProprietaryKHR = NvidiaProprietary,
 
     [NativeName("VK_DRIVER_ID_INTEL_PROPRIETARY_WINDOWS")]
     [SupportedApiProfile(
@@ -117,6 +161,17 @@ public enum DriverId : uint
     )]
     IntelProprietaryWindows = 5,
 
+    [NativeName("VK_DRIVER_ID_INTEL_PROPRIETARY_WINDOWS_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_driver_properties"],
+        ImpliesSets = [
+            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_driver_properties+VK_VERSION_1_1",
+        ]
+    )]
+    IntelProprietaryWindowsKHR = IntelProprietaryWindows,
+
     [NativeName("VK_DRIVER_ID_INTEL_OPEN_SOURCE_MESA")]
     [SupportedApiProfile(
         "vulkan",
@@ -137,6 +192,17 @@ public enum DriverId : uint
         MinVersion = "1.2"
     )]
     IntelOpenSourceMESA = 6,
+
+    [NativeName("VK_DRIVER_ID_INTEL_OPEN_SOURCE_MESA_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_driver_properties"],
+        ImpliesSets = [
+            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_driver_properties+VK_VERSION_1_1",
+        ]
+    )]
+    IntelOpenSourceMesaKHR = IntelOpenSourceMESA,
 
     [NativeName("VK_DRIVER_ID_IMAGINATION_PROPRIETARY")]
     [SupportedApiProfile(
@@ -159,6 +225,17 @@ public enum DriverId : uint
     )]
     ImaginationProprietary = 7,
 
+    [NativeName("VK_DRIVER_ID_IMAGINATION_PROPRIETARY_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_driver_properties"],
+        ImpliesSets = [
+            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_driver_properties+VK_VERSION_1_1",
+        ]
+    )]
+    ImaginationProprietaryKHR = ImaginationProprietary,
+
     [NativeName("VK_DRIVER_ID_QUALCOMM_PROPRIETARY")]
     [SupportedApiProfile(
         "vulkan",
@@ -179,6 +256,17 @@ public enum DriverId : uint
         MinVersion = "1.2"
     )]
     QualcommProprietary = 8,
+
+    [NativeName("VK_DRIVER_ID_QUALCOMM_PROPRIETARY_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_driver_properties"],
+        ImpliesSets = [
+            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_driver_properties+VK_VERSION_1_1",
+        ]
+    )]
+    QualcommProprietaryKHR = QualcommProprietary,
 
     [NativeName("VK_DRIVER_ID_ARM_PROPRIETARY")]
     [SupportedApiProfile(
@@ -201,6 +289,17 @@ public enum DriverId : uint
     )]
     ArmProprietary = 9,
 
+    [NativeName("VK_DRIVER_ID_ARM_PROPRIETARY_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_driver_properties"],
+        ImpliesSets = [
+            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_driver_properties+VK_VERSION_1_1",
+        ]
+    )]
+    ArmProprietaryKHR = ArmProprietary,
+
     [NativeName("VK_DRIVER_ID_GOOGLE_SWIFTSHADER")]
     [SupportedApiProfile(
         "vulkan",
@@ -221,6 +320,17 @@ public enum DriverId : uint
         MinVersion = "1.2"
     )]
     GoogleSwiftshader = 10,
+
+    [NativeName("VK_DRIVER_ID_GOOGLE_SWIFTSHADER_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_driver_properties"],
+        ImpliesSets = [
+            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_driver_properties+VK_VERSION_1_1",
+        ]
+    )]
+    GoogleSwiftshaderKHR = GoogleSwiftshader,
 
     [NativeName("VK_DRIVER_ID_GGP_PROPRIETARY")]
     [SupportedApiProfile(
@@ -243,6 +353,17 @@ public enum DriverId : uint
     )]
     GgpProprietary = 11,
 
+    [NativeName("VK_DRIVER_ID_GGP_PROPRIETARY_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_driver_properties"],
+        ImpliesSets = [
+            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_driver_properties+VK_VERSION_1_1",
+        ]
+    )]
+    GgpProprietaryKHR = GgpProprietary,
+
     [NativeName("VK_DRIVER_ID_BROADCOM_PROPRIETARY")]
     [SupportedApiProfile(
         "vulkan",
@@ -263,6 +384,17 @@ public enum DriverId : uint
         MinVersion = "1.2"
     )]
     BroadcomProprietary = 12,
+
+    [NativeName("VK_DRIVER_ID_BROADCOM_PROPRIETARY_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_driver_properties"],
+        ImpliesSets = [
+            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_driver_properties+VK_VERSION_1_1",
+        ]
+    )]
+    BroadcomProprietaryKHR = BroadcomProprietary,
 
     [NativeName("VK_DRIVER_ID_MESA_LLVMPIPE")]
     [SupportedApiProfile(
@@ -641,136 +773,4 @@ public enum DriverId : uint
         MinVersion = "1.2"
     )]
     ApeSoft = 30,
-
-    [NativeName("VK_DRIVER_ID_AMD_PROPRIETARY_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_driver_properties"],
-        ImpliesSets = [
-            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_driver_properties+VK_VERSION_1_1",
-        ]
-    )]
-    AmdProprietaryKHR = AmdProprietary,
-
-    [NativeName("VK_DRIVER_ID_AMD_OPEN_SOURCE_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_driver_properties"],
-        ImpliesSets = [
-            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_driver_properties+VK_VERSION_1_1",
-        ]
-    )]
-    AmdOpenSourceKHR = AmdOpenSource,
-
-    [NativeName("VK_DRIVER_ID_MESA_RADV_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_driver_properties"],
-        ImpliesSets = [
-            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_driver_properties+VK_VERSION_1_1",
-        ]
-    )]
-    MesaRadvKHR = MesaRadv,
-
-    [NativeName("VK_DRIVER_ID_NVIDIA_PROPRIETARY_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_driver_properties"],
-        ImpliesSets = [
-            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_driver_properties+VK_VERSION_1_1",
-        ]
-    )]
-    NvidiaProprietaryKHR = NvidiaProprietary,
-
-    [NativeName("VK_DRIVER_ID_INTEL_PROPRIETARY_WINDOWS_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_driver_properties"],
-        ImpliesSets = [
-            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_driver_properties+VK_VERSION_1_1",
-        ]
-    )]
-    IntelProprietaryWindowsKHR = IntelProprietaryWindows,
-
-    [NativeName("VK_DRIVER_ID_INTEL_OPEN_SOURCE_MESA_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_driver_properties"],
-        ImpliesSets = [
-            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_driver_properties+VK_VERSION_1_1",
-        ]
-    )]
-    IntelOpenSourceMesaKHR = IntelOpenSourceMESA,
-
-    [NativeName("VK_DRIVER_ID_IMAGINATION_PROPRIETARY_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_driver_properties"],
-        ImpliesSets = [
-            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_driver_properties+VK_VERSION_1_1",
-        ]
-    )]
-    ImaginationProprietaryKHR = ImaginationProprietary,
-
-    [NativeName("VK_DRIVER_ID_QUALCOMM_PROPRIETARY_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_driver_properties"],
-        ImpliesSets = [
-            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_driver_properties+VK_VERSION_1_1",
-        ]
-    )]
-    QualcommProprietaryKHR = QualcommProprietary,
-
-    [NativeName("VK_DRIVER_ID_ARM_PROPRIETARY_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_driver_properties"],
-        ImpliesSets = [
-            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_driver_properties+VK_VERSION_1_1",
-        ]
-    )]
-    ArmProprietaryKHR = ArmProprietary,
-
-    [NativeName("VK_DRIVER_ID_GOOGLE_SWIFTSHADER_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_driver_properties"],
-        ImpliesSets = [
-            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_driver_properties+VK_VERSION_1_1",
-        ]
-    )]
-    GoogleSwiftshaderKHR = GoogleSwiftshader,
-
-    [NativeName("VK_DRIVER_ID_GGP_PROPRIETARY_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_driver_properties"],
-        ImpliesSets = [
-            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_driver_properties+VK_VERSION_1_1",
-        ]
-    )]
-    GgpProprietaryKHR = GgpProprietary,
-
-    [NativeName("VK_DRIVER_ID_BROADCOM_PROPRIETARY_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_driver_properties"],
-        ImpliesSets = [
-            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_driver_properties+VK_VERSION_1_1",
-        ]
-    )]
-    BroadcomProprietaryKHR = BroadcomProprietary,
 }
