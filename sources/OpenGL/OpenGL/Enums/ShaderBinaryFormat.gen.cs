@@ -10,20 +10,20 @@ namespace Silk.NET.OpenGL;
 [NativeName("ShaderBinaryFormat")]
 public enum ShaderBinaryFormat : uint
 {
+    [NativeName("GL_SGX_BINARY_IMG")]
+    SgxBinaryIMG = 35850,
+
     [NativeName("GL_MALI_SHADER_BINARY_ARM")]
     MaliShaderBinaryARM = 36704,
+
+    [NativeName("GL_SHADER_BINARY_VIV")]
+    ShaderBinaryVIV = 36804,
 
     [NativeName("GL_SHADER_BINARY_DMP")]
     ShaderBinaryDMP = 37456,
 
     [NativeName("GL_GCCSO_SHADER_BINARY_FJ")]
     GccsoShaderBinaryFJ = 37472,
-
-    [NativeName("GL_SGX_BINARY_IMG")]
-    SgxBinaryIMG = 35850,
-
-    [NativeName("GL_SHADER_BINARY_VIV")]
-    ShaderBinaryVIV = 36804,
 
     [NativeName("GL_SHADER_BINARY_FORMAT_SPIR_V")]
     ShaderBinaryFormatSpirV = 38225,

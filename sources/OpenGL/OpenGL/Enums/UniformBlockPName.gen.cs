@@ -10,6 +10,12 @@ namespace Silk.NET.OpenGL;
 [NativeName("UniformBlockPName")]
 public enum UniformBlockPName : uint
 {
+    [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_CONTROL_SHADER")]
+    ReferencedByTessControlShader = 34032,
+
+    [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER")]
+    ReferencedByTessEvaluationShader = 34033,
+
     [NativeName("GL_UNIFORM_BLOCK_BINDING")]
     Binding = 35391,
 
@@ -33,12 +39,6 @@ public enum UniformBlockPName : uint
 
     [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER")]
     ReferencedByFragmentShader = 35398,
-
-    [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_CONTROL_SHADER")]
-    ReferencedByTessControlShader = 34032,
-
-    [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER")]
-    ReferencedByTessEvaluationShader = 34033,
 
     [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER")]
     ReferencedByComputeShader = 37100,

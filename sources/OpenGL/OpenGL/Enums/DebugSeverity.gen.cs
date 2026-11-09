@@ -13,6 +13,9 @@ public enum DebugSeverity : uint
     [NativeName("GL_DONT_CARE")]
     DontCare = 4352,
 
+    [NativeName("GL_DEBUG_SEVERITY_NOTIFICATION")]
+    DebugSeverityNotification = 33387,
+
     [NativeName("GL_DEBUG_SEVERITY_HIGH")]
     DebugSeverityHigh = 37190,
 
@@ -21,7 +24,4 @@ public enum DebugSeverity : uint
 
     [NativeName("GL_DEBUG_SEVERITY_LOW")]
     DebugSeverityLow = 37192,
-
-    [NativeName("GL_DEBUG_SEVERITY_NOTIFICATION")]
-    DebugSeverityNotification = 33387,
 }

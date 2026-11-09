@@ -10,9 +10,6 @@ namespace Silk.NET.OpenGL;
 [NativeName("VertexAttribEnum")]
 public enum VertexAttribEnum : uint
 {
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING")]
-    VertexAttribArrayBufferBinding = 34975,
-
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_ENABLED")]
     VertexAttribArrayEnabled = 34338,
 
@@ -30,6 +27,9 @@ public enum VertexAttribEnum : uint
 
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_NORMALIZED")]
     VertexAttribArrayNormalized = 34922,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING")]
+    VertexAttribArrayBufferBinding = 34975,
 
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_INTEGER")]
     VertexAttribArrayInteger = 35069,

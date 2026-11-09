@@ -10,6 +10,9 @@ namespace Silk.NET.OpenGL;
 [NativeName("PipelineParameterName")]
 public enum PipelineParameterName : uint
 {
+    [NativeName("GL_ACTIVE_PROGRAM")]
+    ActiveProgram = 33369,
+
     [NativeName("GL_FRAGMENT_SHADER")]
     FragmentShader = 35632,
 
@@ -27,7 +30,4 @@ public enum PipelineParameterName : uint
 
     [NativeName("GL_TESS_CONTROL_SHADER")]
     TessControlShader = 36488,
-
-    [NativeName("GL_ACTIVE_PROGRAM")]
-    ActiveProgram = 33369,
 }

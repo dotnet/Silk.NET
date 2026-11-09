@@ -19,6 +19,9 @@ public enum ProgramResourceProperty : uint
     [NativeName("GL_UNIFORM")]
     Uniform = 37601,
 
+    [NativeName("GL_IS_PER_PATCH")]
+    IsPerPatch = 37607,
+
     [NativeName("GL_NAME_LENGTH")]
     NameLength = 37625,
 
@@ -87,9 +90,6 @@ public enum ProgramResourceProperty : uint
 
     [NativeName("GL_LOCATION_INDEX")]
     LocationIndex = 37647,
-
-    [NativeName("GL_IS_PER_PATCH")]
-    IsPerPatch = 37607,
 
     [NativeName("GL_LOCATION_COMPONENT")]
     LocationComponent = 37706,

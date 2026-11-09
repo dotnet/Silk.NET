@@ -13,11 +13,11 @@ public enum HistogramTargetEXT : uint
     [NativeName("GL_HISTOGRAM")]
     Histogram = 32804,
 
-    [NativeName("GL_PROXY_HISTOGRAM")]
-    ProxyHistogram = 32805,
-
     [NativeName("GL_HISTOGRAM_EXT")]
     HistogramEXT = 32804,
+
+    [NativeName("GL_PROXY_HISTOGRAM")]
+    ProxyHistogram = 32805,
 
     [NativeName("GL_PROXY_HISTOGRAM_EXT")]
     ProxyHistogramEXT = 32805,

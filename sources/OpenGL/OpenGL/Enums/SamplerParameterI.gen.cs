@@ -10,9 +10,6 @@ namespace Silk.NET.OpenGL;
 [NativeName("SamplerParameterI")]
 public enum SamplerParameterI : uint
 {
-    [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
-    UnnormalizedCoordinatesARM = 36714,
-
     [NativeName("GL_TEXTURE_MAG_FILTER")]
     MagFilter = 10240,
 
@@ -33,4 +30,7 @@ public enum SamplerParameterI : uint
 
     [NativeName("GL_TEXTURE_COMPARE_FUNC")]
     CompareFunc = 34893,
+
+    [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
+    UnnormalizedCoordinatesARM = 36714,
 }

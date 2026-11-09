@@ -10,14 +10,14 @@ namespace Silk.NET.OpenGL;
 [NativeName("TextureEnvMode")]
 public enum TextureEnvMode : uint
 {
+    [NativeName("GL_ADD")]
+    Add = 260,
+
     [NativeName("GL_BLEND")]
     Blend = 3042,
 
     [NativeName("GL_REPLACE")]
     Replace = 7681,
-
-    [NativeName("GL_ADD")]
-    Add = 260,
 
     [NativeName("GL_MODULATE")]
     Modulate = 8448,
@@ -25,12 +25,12 @@ public enum TextureEnvMode : uint
     [NativeName("GL_DECAL")]
     Decal = 8449,
 
-    [NativeName("GL_COMBINE")]
-    Combine = 34160,
-
     [NativeName("GL_REPLACE_EXT")]
     ReplaceEXT = 32866,
 
     [NativeName("GL_TEXTURE_ENV_BIAS_SGIX")]
     TextureEnvBiasSGIX = 32958,
+
+    [NativeName("GL_COMBINE")]
+    Combine = 34160,
 }

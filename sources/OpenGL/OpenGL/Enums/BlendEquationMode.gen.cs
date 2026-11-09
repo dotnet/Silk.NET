@@ -13,29 +13,29 @@ public enum BlendEquationMode : uint
     [NativeName("GL_FUNC_ADD")]
     FuncAdd = 32774,
 
-    [NativeName("GL_FUNC_REVERSE_SUBTRACT")]
-    FuncReverseSubtract = 32779,
-
-    [NativeName("GL_FUNC_SUBTRACT")]
-    FuncSubtract = 32778,
+    [NativeName("GL_FUNC_ADD_EXT")]
+    FuncAddEXT = 32774,
 
     [NativeName("GL_MIN")]
     Min = 32775,
 
-    [NativeName("GL_MAX")]
-    Max = 32776,
-
     [NativeName("GL_MIN_EXT")]
     MinEXT = 32775,
+
+    [NativeName("GL_MAX")]
+    Max = 32776,
 
     [NativeName("GL_MAX_EXT")]
     MaxEXT = 32776,
 
-    [NativeName("GL_FUNC_ADD_EXT")]
-    FuncAddEXT = 32774,
+    [NativeName("GL_FUNC_SUBTRACT")]
+    FuncSubtract = 32778,
 
     [NativeName("GL_FUNC_SUBTRACT_EXT")]
     FuncSubtractEXT = 32778,
+
+    [NativeName("GL_FUNC_REVERSE_SUBTRACT")]
+    FuncReverseSubtract = 32779,
 
     [NativeName("GL_FUNC_REVERSE_SUBTRACT_EXT")]
     FuncReverseSubtractEXT = 32779,
