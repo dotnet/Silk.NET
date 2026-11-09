@@ -138,14 +138,9 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
         public bool IsTypeMatch(ITypeSymbol? enumType) =>
             enumType != null && TypeName.IsMatch(enumType.Name);
 
-        public bool IsMemberMatch(ISymbol? enumMember)
+        public bool IsMemberMatch(EnumMemberInfo member)
         {
-            if (enumMember is not IFieldSymbol fieldSymbol)
-            {
-                return false;
-            }
-
-            if (!MemberName.IsMatch(enumMember.Name))
+            if (!MemberName.IsMatch(member.Node.Identifier.Text))
             {
                 return false;
             }
@@ -156,14 +151,14 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 return true;
             }
 
-            if (fieldSymbol.ConstantValue == null)
+            if (member.Value == null)
             {
                 // We don't know the constant value for sure
                 // Return false as a default
                 return false;
             }
 
-            return Convert.ToInt64(fieldSymbol.ConstantValue) == MemberValue;
+            return member.Value == MemberValue;
         }
     }
 
@@ -229,7 +224,7 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                     continue;
                 }
 
-                members.RemoveAll(n => filter.IsMemberMatch(n.Symbol));
+                members.RemoveAll(m => filter.IsMemberMatch(m));
             }
 
             var isFlagsEnum = node.AttributeLists.ContainsAttribute("System.Flags");
