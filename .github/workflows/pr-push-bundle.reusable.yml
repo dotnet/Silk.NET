@@ -45,7 +45,7 @@ jobs:
         shell: pwsh
         env:
           HEAD_REPO: ${{ inputs.headRepo }}
-          HEAD_COMMIT: ${{ needs.bundle.outputs.newHeadCommit }}
+          HEAD_COMMIT: ${{ inputs.headCommit }}
           BUNDLE_PATH: ${{ inputs.bundlePath }}
         run: |
           $ErrorActionPreference = "Stop"
