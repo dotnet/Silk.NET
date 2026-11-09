@@ -32,6 +32,20 @@ public static class ModUtils
         };
 
     /// <summary>
+    /// Whether the syntax kind represents an enum base type.
+    /// </summary>
+    public static bool IsEnumBaseType(this SyntaxKind syntaxKind) =>
+        syntaxKind
+            is SyntaxKind.ByteKeyword
+                or SyntaxKind.SByteKeyword
+                or SyntaxKind.ShortKeyword
+                or SyntaxKind.UShortKeyword
+                or SyntaxKind.IntKeyword
+                or SyntaxKind.UIntKeyword
+                or SyntaxKind.LongKeyword
+                or SyntaxKind.ULongKeyword;
+
+    /// <summary>
     /// Returns the specified list as a span.
     /// </summary>
     public static Span<T> AsSpan<T>(this List<T> list) => CollectionsMarshal.AsSpan(list);

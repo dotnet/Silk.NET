@@ -1839,7 +1839,12 @@ public partial class MixKhronosData(
                 return base.VisitFieldDeclaration(node);
             }
 
-            if (node.AttributeLists.TryParseNativeTypeName(out var info) && info.IsConst)
+            if (
+                node.Declaration.Type is PredefinedTypeSyntax predefined
+                && predefined.Keyword.Kind().IsEnumBaseType()
+                && node.AttributeLists.TryParseNativeTypeName(out var info)
+                && info.IsConst
+            )
             {
                 var name = info.Name.Replace("FlagBits", "Flags");
                 if (info.IsDefine)
