@@ -212,10 +212,15 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 return base.VisitEnumDeclaration(node);
             }
 
-            // This list is used to defer the modification of the enum declaration syntax node
-            // This is important because modifying the node will detach it from the semantic model
             var originalNode = node;
-            var members = node.Members.ToList();
+            var members = node
+                .Members.Select(n =>
+                {
+                    var symbol = semanticModel.GetDeclaredSymbol(n);
+                    long? value = symbol != null ? Convert.ToInt64(symbol.ConstantValue) : null;
+                    return new EnumMemberInfo(n, symbol, value);
+                })
+                .ToList();
 
             foreach (var filter in removeMemberFilters)
             {
@@ -224,9 +229,7 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                     continue;
                 }
 
-                members = members
-                    .Where(member => !filter.IsMemberMatch(semanticModel.GetDeclaredSymbol(member)))
-                    .ToList();
+                members.RemoveAll(n => filter.IsMemberMatch(n.Symbol));
             }
 
             var isFlagsEnum = node.AttributeLists.ContainsAttribute("System.Flags");
@@ -261,7 +264,7 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 {
                     var noneMember = EnumMemberDeclaration("None")
                         .WithEqualsValue(CreateEqualsValueClause(0, isFlagsEnum));
-                    members.Insert(0, noneMember);
+                    members.Insert(0, new EnumMemberInfo(noneMember, null, 0));
                 }
             }
 
@@ -320,18 +323,12 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 {
                     var hasNegativeValues = members.Any(m =>
                     {
-                        if (m.Parent == null)
+                        if (m.Symbol == null)
                         {
                             return false;
                         }
 
-                        var fieldSymbol = semanticModel.GetDeclaredSymbol(m);
-                        if (fieldSymbol == null)
-                        {
-                            return false;
-                        }
-
-                        var value = Convert.ToInt64(fieldSymbol.ConstantValue);
+                        var value = Convert.ToInt64(m.Symbol.ConstantValue);
                         return value < 0;
                     });
 
@@ -399,38 +396,32 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 members = members
                     .Select(m =>
                     {
-                        if (m.Parent == null)
+                        if (m.Node.EqualsValue != null)
                         {
-                            return m;
-                        }
-
-                        if (m.EqualsValue != null)
-                        {
-                            memberRewriteDecider.Visit(m.EqualsValue);
+                            memberRewriteDecider.Visit(m.Node.EqualsValue);
                             if (!memberRewriteDecider.ShouldRewrite)
                             {
                                 return m;
                             }
                         }
 
-                        var fieldSymbol = semanticModel.GetDeclaredSymbol(m);
-                        if (fieldSymbol == null)
+                        var value = m.Value;
+                        if (value == null)
                         {
                             return m;
                         }
 
-                        if (fieldSymbol.ConstantValue == null)
+                        return m with
                         {
-                            return m;
-                        }
-
-                        var value = Convert.ToInt64(fieldSymbol.ConstantValue);
-                        return m.WithEqualsValue(CreateEqualsValueClause(value, isFlagsEnum));
+                            Node = m.Node.WithEqualsValue(
+                                CreateEqualsValueClause(value.Value, isFlagsEnum)
+                            ),
+                        };
                     })
                     .ToList();
             }
 
-            node = node.WithMembers([.. members]);
+            node = node.WithMembers([.. members.Select(m => m.Node)]);
 
             return base.VisitEnumDeclaration(node);
         }
@@ -481,4 +472,13 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
             // uint is an identifier, but we want to rewrite this anyway
         }
     }
+
+    /// <param name="Node">The node corresponding to the member.</param>
+    /// <param name="Symbol">The symbol corresponding to the member, if available.</param>
+    /// <param name="Value">The value of the member, if known.</param>
+    private readonly record struct EnumMemberInfo(
+        EnumMemberDeclarationSyntax Node,
+        IFieldSymbol? Symbol,
+        long? Value
+    );
 }
