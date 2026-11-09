@@ -18,6 +18,20 @@ namespace Silk.NET.SilkTouch.Mods;
 public static class ModUtils
 {
     /// <summary>
+    /// Whether the symbol represents a signed integer.
+    /// </summary>
+    public static bool IsSignedInteger(this INamedTypeSymbol type) =>
+        type.SpecialType switch
+        {
+            SpecialType.System_SByte
+            or SpecialType.System_Int16
+            or SpecialType.System_Int32
+            or SpecialType.System_Int64
+            or SpecialType.System_IntPtr => true,
+            _ => false,
+        };
+
+    /// <summary>
     /// Returns the specified list as a span.
     /// </summary>
     public static Span<T> AsSpan<T>(this List<T> list) => CollectionsMarshal.AsSpan(list);

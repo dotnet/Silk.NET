@@ -206,8 +206,12 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
     /// </remarks>
     private static bool IsProbablyFlags(List<EnumMemberInfo> members)
     {
-        var values = members.Where(m => m.Value != null).Select(m => m.Value!.Value).ToArray();
-        var countWith1BitSet = values.Count(x => BitOperations.PopCount(unchecked((ulong)x)) == 1);
+        var values = members
+            .Where(m => m.Value != null)
+            .Select(m => unchecked((ulong)m.Value!.Value))
+            .ToArray();
+        var countWith1BitSet = values.Count(x => BitOperations.PopCount(x) == 1);
+
         return (
                 // There is more than one member
                 members.Count > 1
@@ -230,13 +234,13 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
 
     // Renamed from IsSequential as suggested by this comment:
     // https://discord.com/channels/521092042781229087/587346162802229298/1284528132807987212
-    private static bool IsSeeminglySequential(long[] @enum)
+    private static bool IsSeeminglySequential(ulong[] values)
     {
         const int maxMisses = 1;
         var misses = 0;
-        for (var i = 0; i < @enum.Length; i++)
+        for (var i = 0; i < values.Length; i++)
         {
-            if (@enum[i] != i - misses && @enum[i] != i - misses + 1)
+            if (values[i] != (ulong)(i - misses) && values[i] != (ulong)(i - misses + 1))
             {
                 misses++;
             }
@@ -265,6 +269,8 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
             {
                 return base.VisitEnumDeclaration(node);
             }
+
+            var isSigned = symbol.EnumUnderlyingType?.IsSignedInteger() ?? true;
 
             var originalNode = node;
             var members = node
@@ -334,6 +340,8 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
             {
                 case EnumBackingTypePreference.PreferSigned:
                 {
+                    isSigned = true;
+
                     var baseList = originalNode.BaseList;
                     var baseTypes = (baseList?.Types ?? [])
                         .Select<BaseTypeSyntax, BaseTypeSyntax?>(t =>
@@ -398,6 +406,8 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                         // Enum has negative values, we can't use an unsigned backing type
                         break;
                     }
+
+                    isSigned = false;
 
                     var baseList = originalNode.BaseList;
                     var baseTypes = (baseList?.Types ?? [])
@@ -484,7 +494,9 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
 
             if (config.SortMembers)
             {
-                members = members.OrderBy(m => m, new EnumMemberInfoValueComparer()).ToList();
+                members = members
+                    .OrderBy(m => m, new EnumMemberInfoValueComparer(isSigned))
+                    .ToList();
             }
 
             node = node.WithMembers([.. members.Select(m => m.Node)]);
@@ -553,7 +565,8 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
         long? Value
     );
 
-    private class EnumMemberInfoValueComparer : IComparer<EnumMemberInfo>
+    /// <param name="isSigned">Whether the enum type is signed or unsigned.</param>
+    private class EnumMemberInfoValueComparer(bool isSigned) : IComparer<EnumMemberInfo>
     {
         public int Compare(EnumMemberInfo a, EnumMemberInfo b)
         {
@@ -563,7 +576,17 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
             {
                 if (b.Value.HasValue)
                 {
-                    return a.Value.Value.CompareTo(b.Value.Value);
+                    if (isSigned)
+                    {
+                        return a.Value.Value.CompareTo(b.Value.Value);
+                    }
+                    else
+                    {
+                        unchecked
+                        {
+                            return ((ulong)a.Value.Value).CompareTo((ulong)b.Value.Value);
+                        }
+                    }
                 }
 
                 return -1;
