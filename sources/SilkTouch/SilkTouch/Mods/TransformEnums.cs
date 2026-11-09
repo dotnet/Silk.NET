@@ -416,6 +416,11 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                     .ToList();
             }
 
+            if (config.SortMembers)
+            {
+                members = members.OrderBy(m => m, new EnumMemberInfoValueComparer()).ToList();
+            }
+
             node = node.WithMembers([.. members.Select(m => m.Node)]);
 
             return base.VisitEnumDeclaration(node);
@@ -476,4 +481,29 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
         IFieldSymbol? Symbol,
         long? Value
     );
+
+    private class EnumMemberInfoValueComparer : IComparer<EnumMemberInfo>
+    {
+        public int Compare(EnumMemberInfo a, EnumMemberInfo b)
+        {
+            // Ascending value
+            // Null is after non-null
+            if (a.Value.HasValue)
+            {
+                if (b.Value.HasValue)
+                {
+                    return a.Value.Value.CompareTo(b.Value.Value);
+                }
+
+                return -1;
+            }
+
+            if (b.Value.HasValue)
+            {
+                return 1;
+            }
+
+            return 0;
+        }
+    }
 }
