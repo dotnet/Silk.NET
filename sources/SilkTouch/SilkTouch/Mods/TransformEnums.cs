@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Globalization;
+using System.Numerics;
 using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -189,6 +190,59 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
         }
 
         ctx.SourceProject = proj;
+    }
+
+    /// <summary>
+    /// Identifies whether an enum is probably a [Flags] enum based on its members.
+    /// </summary>
+    /// <remarks>
+    /// Ported from Silk.NET 2.X BuildTools IsProbablyABitmask:
+    /// https://github.com/dotnet/Silk.NET/blob/c87fc664cc5d15abd754997b0a9ad138470554c4/src/Core/Silk.NET.BuildTools/Common/Utilities.cs#L627
+    /// </remarks>
+    private static bool IsProbablyFlags(List<EnumMemberInfo> members)
+    {
+        var values = members.Where(m => m.Value != null).Select(m => m.Value!.Value).ToArray();
+        var countWith1BitSet = values.Count(x => BitOperations.PopCount((ulong)x) == 1);
+        return (
+                // There is more than one member
+                members.Count > 1
+                &&
+                // At least approx 50% of the members have only one bit set
+                countWith1BitSet >= MathF.Floor(members.Count / 2f)
+                &&
+                // It's not sequential (1, 2, 3)
+                !IsSeeminglySequential(values)
+            )
+            || (
+                // Alternatively, all items that are not MaxValue or 0 have popcnt == 1
+                // https://github.com/dotnet/Silk.NET/issues/2238
+                values.Count(x => x is not 0 and not 0x7FFFFFFF) == countWith1BitSet
+                &&
+                // And there are more than two items with popcnt == 1
+                countWith1BitSet > 2
+            );
+    }
+
+    // Renamed from IsSequential as suggested by this comment:
+    // https://discord.com/channels/521092042781229087/587346162802229298/1284528132807987212
+    private static bool IsSeeminglySequential(long[] @enum)
+    {
+        const int maxMisses = 1;
+        var misses = 0;
+        for (var i = 0; i < @enum.Length; i++)
+        {
+            if (@enum[i] != i - misses && @enum[i] != i - misses + 1)
+            {
+                misses++;
+            }
+
+            if (misses > maxMisses)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private class Rewriter(
