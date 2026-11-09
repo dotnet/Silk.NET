@@ -13,14 +13,17 @@ namespace Silk.NET.OpenAL;
 [NativeName("ContextPName")]
 public enum ContextPName : uint
 {
-    [NativeName("ALC_FREQUENCY")]
-    Frequency = 4103,
+    [NativeName("ALC_CAPTURE_DEVICE_SPECIFIER")]
+    CaptureDeviceSpecifier = 784,
 
-    [NativeName("ALC_REFRESH")]
-    Refresh = 4104,
+    [NativeName("ALC_CAPTURE_DEFAULT_DEVICE_SPECIFIER")]
+    CaptureDefaultDeviceSpecifier = 785,
 
-    [NativeName("ALC_SYNC")]
-    Sync = 4105,
+    [NativeName("ALC_CAPTURE_SAMPLES")]
+    CaptureSamples = 786,
+
+    [NativeName("ALC_CONNECTED")]
+    Connected = 787,
 
     [NativeName("ALC_MAJOR_VERSION")]
     MajorVersion = 4096,
@@ -43,20 +46,20 @@ public enum ContextPName : uint
     [NativeName("ALC_EXTENSIONS")]
     Extensions = 4102,
 
+    [NativeName("ALC_FREQUENCY")]
+    Frequency = 4103,
+
+    [NativeName("ALC_REFRESH")]
+    Refresh = 4104,
+
+    [NativeName("ALC_SYNC")]
+    Sync = 4105,
+
     [NativeName("ALC_MONO_SOURCES")]
     MonoSources = 4112,
 
     [NativeName("ALC_STEREO_SOURCES")]
     StereoSources = 4113,
-
-    [NativeName("ALC_CAPTURE_DEVICE_SPECIFIER")]
-    CaptureDeviceSpecifier = 784,
-
-    [NativeName("ALC_CAPTURE_DEFAULT_DEVICE_SPECIFIER")]
-    CaptureDefaultDeviceSpecifier = 785,
-
-    [NativeName("ALC_CAPTURE_SAMPLES")]
-    CaptureSamples = 786,
 
     [NativeName("ALC_DEFAULT_ALL_DEVICES_SPECIFIER")]
     DefaultAllDevicesSpecifier = 4114,
@@ -64,11 +67,17 @@ public enum ContextPName : uint
     [NativeName("ALC_ALL_DEVICES_SPECIFIER")]
     AllDevicesSpecifier = 4115,
 
-    [NativeName("ALC_CONNECTED")]
-    Connected = 787,
-
     [NativeName("ALC_DEFAULT_FILTER_ORDER")]
     DefaultFilterOrder = 4352,
+
+    [NativeName("ALC_DEVICE_CLOCK_SOFT")]
+    DeviceClockSOFT = 5632,
+
+    [NativeName("ALC_DEVICE_LATENCY_SOFT")]
+    DeviceLatencySOFT = 5633,
+
+    [NativeName("ALC_DEVICE_CLOCK_LATENCY_SOFT")]
+    DeviceClockLatencySOFT = 5634,
 
     [NativeName("ALC_HRTF_SOFT")]
     HrtfSOFT = 6546,
@@ -84,15 +93,6 @@ public enum ContextPName : uint
 
     [NativeName("ALC_OUTPUT_LIMITER_SOFT")]
     OutputLimiterSOFT = 6554,
-
-    [NativeName("ALC_DEVICE_CLOCK_SOFT")]
-    DeviceClockSOFT = 5632,
-
-    [NativeName("ALC_DEVICE_LATENCY_SOFT")]
-    DeviceLatencySOFT = 5633,
-
-    [NativeName("ALC_DEVICE_CLOCK_LATENCY_SOFT")]
-    DeviceClockLatencySOFT = 5634,
 
     [NativeName("ALC_MAX_AMBISONIC_ORDER_SOFT")]
     MaxAmbisonicOrderSOFT = 6555,

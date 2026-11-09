@@ -13,6 +13,9 @@ namespace Silk.NET.OpenAL;
 [NativeName("StringPName")]
 public enum StringPName : uint
 {
+    [NativeName("AL_RESAMPLER_NAME_SOFT")]
+    ResamplerNameSOFT = 4627,
+
     [NativeName("AL_VENDOR")]
     Vendor = 45057,
 
@@ -24,7 +27,4 @@ public enum StringPName : uint
 
     [NativeName("AL_EXTENSIONS")]
     Extensions = 45060,
-
-    [NativeName("AL_RESAMPLER_NAME_SOFT")]
-    ResamplerNameSOFT = 4627,
 }
