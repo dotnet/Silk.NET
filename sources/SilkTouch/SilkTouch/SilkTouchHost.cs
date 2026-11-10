@@ -142,7 +142,12 @@ public class SilkTouchHost
                                 jobKvp.Key,
                                 jobKvp.Value.Config,
                                 container,
-                                builder => jobKvp.Value.Configure.Invoke(builder.SilkTouch())
+                                builder =>
+                                {
+                                    var services = new ServiceCollection();
+                                    jobKvp.Value.Configure.Invoke(services.SilkTouch());
+                                    builder.Populate(services);
+                                }
                             );
 
                             await job.RunAsync(ct);
