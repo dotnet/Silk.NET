@@ -4,7 +4,9 @@
 using System.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods;
+using Silk.NET.SilkTouch.Mods.Bakery;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Sources;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -61,6 +63,8 @@ internal class SilkTouchJob : IDisposable
             // Register default dependencies
             services.AddSingleton<DocumentFactory>();
             services.AddSingleton<FunctionTransformer>();
+            services.AddSingleton<ResponseFileHandler>();
+            services.AddSingleton<IBakeStrategy, DefaultBakeStrategy>();
 
             // Register user defined dependencies
             configure.Invoke(services);
@@ -71,7 +75,7 @@ internal class SilkTouchJob : IDisposable
         _inputResolver = _provider.GetRequiredService<IInputResolver>();
         _modContextFactory = _provider.GetRequiredService<IModContextFactory>();
         _documentFactory = _provider.GetRequiredService<DocumentFactory>();
-        Mods = _provider.GetRequiredService<IMod[]>();
+        Mods = _provider.GetRequiredService<IEnumerable<IMod>>().ToArray();
     }
 
     /// <summary>

@@ -4,8 +4,6 @@
 using System.CommandLine;
 using System.CommandLine.Invocation;
 using System.Diagnostics.CodeAnalysis;
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
 using Microsoft.Build.Locator;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -13,7 +11,6 @@ using Microsoft.Extensions.Logging.Console;
 using Silk.NET.SilkTouch.Caching;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods;
-using Silk.NET.SilkTouch.Mods.Bakery;
 using Silk.NET.SilkTouch.Sources;
 
 namespace Silk.NET.SilkTouch;
@@ -102,10 +99,10 @@ public class SilkTouchHost
                 // Register MSBuild
                 MSBuildLocator.RegisterDefaults();
 
-                // Build container
-                var builder = new ContainerBuilder();
-                Configure(builder, ctx);
-                await using ILifetimeScope container = builder.Build();
+                // Build service provider
+                var services = new ServiceCollection();
+                Configure(services, ctx);
+                await using var provider = services.BuildServiceProvider();
 
                 var jobKeysToRun = new HashSet<string>(
                     ctx.ParseResult.GetValueForOption(OnlyOption) ?? [],
@@ -127,7 +124,7 @@ public class SilkTouchHost
                     return jobKeysToRun.Count == 0 || jobKeysToRun.Contains(job.Key);
                 });
 
-                var logger = container.Resolve<ILogger<SilkTouchHost>>();
+                var logger = provider.GetRequiredService<ILogger<SilkTouchHost>>();
                 try
                 {
                     await Parallel.ForEachAsync(
@@ -143,10 +140,7 @@ public class SilkTouchHost
                                 jobKvp.Value.Config,
                                 services =>
                                 {
-                                    ConfigureForward(
-                                        new AutofacServiceProvider(container),
-                                        services
-                                    );
+                                    ConfigureForward(provider, services);
                                     jobKvp.Value.Configure.Invoke(services.SilkTouch());
                                 }
                             );
@@ -182,9 +176,9 @@ public class SilkTouchHost
     /// Dependencies defined here are only accessible to the host.
     /// Make them available to the jobs by using <see cref="ConfigureForward"/>.
     /// </summary>
-    private void Configure(ContainerBuilder builder, InvocationContext ctx)
+    private void Configure(IServiceCollection services, InvocationContext ctx)
     {
-        var services = new ServiceCollection()
+        services
             .AddLogging(builder =>
             {
                 builder.AddSimpleConsole(opts =>
@@ -199,8 +193,6 @@ public class SilkTouchHost
                 builder.SetMinimumLevel(ctx.ParseResult.GetValueForOption(LoggingOption));
             })
             .AddOptions();
-
-        builder.Populate(services);
 
         {
             // Create config
@@ -217,49 +209,25 @@ public class SilkTouchHost
                 );
             }
 
-            builder.RegisterInstance(config).SingleInstance();
+            services.AddSingleton(config);
 
-            builder
-                .RegisterType<MSBuildModContextFactory>()
-                .As<IModContextFactory>()
-                .SingleInstance();
-
-            builder.RegisterType<ResponseFileHandler>().SingleInstance();
-
-            builder
-                .RegisterType<DefaultBakeStrategy>()
-                .AsSelf()
-                .AsImplementedInterfaces()
-                .SingleInstance();
-
-            builder.RegisterType<FileSystemCacheProvider>().As<ICacheProvider>().SingleInstance();
-
-            builder.RegisterType<GitInputSource>().As<IInputSource>().SingleInstance();
-
-            builder.RegisterType<NuGetInputSource>().As<IInputSource>().SingleInstance();
-
-            builder.RegisterType<UriBasedInputResolver>().As<IInputResolver>().SingleInstance();
+            services.AddSingleton<IModContextFactory, MSBuildModContextFactory>();
+            services.AddSingleton<ICacheProvider, FileSystemCacheProvider>();
+            services.AddSingleton<IInputSource, GitInputSource>();
+            services.AddSingleton<IInputSource, NuGetInputSource>();
+            services.AddSingleton<IInputResolver, UriBasedInputResolver>();
 
             if (OperatingSystem.IsWindows())
             {
-                builder
-                    .RegisterType<WindowsStdIncludeResolver>()
-                    .As<IStdIncludeResolver>()
-                    .SingleInstance();
+                services.AddSingleton<IStdIncludeResolver, WindowsStdIncludeResolver>();
             }
             else if (OperatingSystem.IsMacOS())
             {
-                builder
-                    .RegisterType<MacOSStdIncludeResolver>()
-                    .As<IStdIncludeResolver>()
-                    .SingleInstance();
+                services.AddSingleton<IStdIncludeResolver, MacOSStdIncludeResolver>();
             }
             else
             {
-                builder
-                    .RegisterType<UnixStdIncludeResolver>()
-                    .As<IStdIncludeResolver>()
-                    .SingleInstance();
+                services.AddSingleton<IStdIncludeResolver, UnixStdIncludeResolver>();
             }
         }
     }
@@ -273,50 +241,11 @@ public class SilkTouchHost
         services.AddSingleton(host.GetRequiredService<ILoggerFactory>());
         services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));
 
-        services.AddSingleton(host.GetRequiredService<IInputResolver>());
-
         services.AddSingleton(host.GetRequiredService<SilkTouchHostConfiguration>());
         services.AddSingleton(host.GetRequiredService<IModContextFactory>());
-
-        builder.RegisterType<MSBuildModContextFactory>().As<IModContextFactory>().SingleInstance();
-
-        builder.RegisterType<ResponseFileHandler>().SingleInstance();
-
-        builder
-            .RegisterType<DefaultBakeStrategy>()
-            .AsSelf()
-            .AsImplementedInterfaces()
-            .SingleInstance();
-
-        builder.RegisterType<FileSystemCacheProvider>().As<ICacheProvider>().SingleInstance();
-
-        builder.RegisterType<GitInputSource>().As<IInputSource>().SingleInstance();
-
-        builder.RegisterType<NuGetInputSource>().As<IInputSource>().SingleInstance();
-
-        builder.RegisterType<UriBasedInputResolver>().As<IInputResolver>().SingleInstance();
-
-        if (OperatingSystem.IsWindows())
-        {
-            builder
-                .RegisterType<WindowsStdIncludeResolver>()
-                .As<IStdIncludeResolver>()
-                .SingleInstance();
-        }
-        else if (OperatingSystem.IsMacOS())
-        {
-            builder
-                .RegisterType<MacOSStdIncludeResolver>()
-                .As<IStdIncludeResolver>()
-                .SingleInstance();
-        }
-        else
-        {
-            builder
-                .RegisterType<UnixStdIncludeResolver>()
-                .As<IStdIncludeResolver>()
-                .SingleInstance();
-        }
+        services.AddSingleton(host.GetRequiredService<ICacheProvider>());
+        services.AddSingleton(host.GetRequiredService<IInputResolver>());
+        services.AddSingleton(host.GetRequiredService<IStdIncludeResolver>());
     }
 
     private record JobDefinition(
