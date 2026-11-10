@@ -2,7 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
-using Autofac;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Transformation;
@@ -16,7 +16,7 @@ namespace Silk.NET.SilkTouch;
 /// </summary>
 internal class SilkTouchJob : IDisposable
 {
-    private readonly ILifetimeScope _container;
+    private readonly ServiceProvider _provider;
 
     private readonly ILogger<SilkTouchJob> _logger;
     private readonly IInputResolver _inputResolver;
@@ -43,36 +43,42 @@ internal class SilkTouchJob : IDisposable
     /// </summary>
     /// <param name="key">The job key.</param>
     /// <param name="config">The job config.</param>
-    /// <param name="parentContainer">The parent container. Should be the one from the <see cref="SilkTouchHost"/>.</param>
+    /// <param name="parent">The parent service provider. Should be the one from the <see cref="SilkTouchHost"/>.</param>
     /// <param name="configure">
-    /// The action that configures the dependency container used by this job.
+    /// The action that configures the services used by this job.
     /// You'll want to register SilkTouch mods during this action. See <see cref="SilkTouchRegistrationExtensions"/>.
     /// </param>
     public SilkTouchJob(
         string key,
         SilkTouchConfiguration config,
-        ILifetimeScope parentContainer,
-        Action<ContainerBuilder> configure
+        IServiceProvider parent,
+        Action<IServiceCollection> configure
     )
     {
         Key = key;
         Config = config;
 
-        _logger = parentContainer.Resolve<ILogger<SilkTouchJob>>();
-        _inputResolver = parentContainer.Resolve<IInputResolver>();
-        _container = parentContainer.BeginLifetimeScope(builder =>
+        var services = new ServiceCollection();
         {
             // Register default dependencies
-            builder.RegisterType<DocumentFactory>().SingleInstance();
-            builder.RegisterType<FunctionTransformer>().SingleInstance();
+            services.AddSingleton(parent.GetRequiredService<ILoggerFactory>());
+            services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));
+
+            services.AddSingleton(parent.GetRequiredService<IInputResolver>());
+
+            services.AddSingleton<DocumentFactory>();
+            services.AddSingleton<FunctionTransformer>();
 
             // Register user defined dependencies
-            configure.Invoke(builder);
-        });
+            configure.Invoke(services);
+        }
 
-        _modContextFactory = _container.Resolve<IModContextFactory>();
-        _documentFactory = _container.Resolve<DocumentFactory>();
-        Mods = _container.Resolve<IMod[]>();
+        _provider = services.BuildServiceProvider();
+        _logger = _provider.GetRequiredService<ILogger<SilkTouchJob>>();
+        _inputResolver = _provider.GetRequiredService<IInputResolver>();
+        _modContextFactory = _provider.GetRequiredService<IModContextFactory>();
+        _documentFactory = _provider.GetRequiredService<DocumentFactory>();
+        Mods = _provider.GetRequiredService<IMod[]>();
     }
 
     /// <summary>
@@ -175,5 +181,5 @@ internal class SilkTouchJob : IDisposable
     }
 
     /// <inheritdoc />
-    public void Dispose() => _container.Dispose();
+    public void Dispose() => _provider.Dispose();
 }
