@@ -12,12 +12,25 @@ public static class TestUtils
     /// <summary>
     /// Creates a project that can be used for testing purposes.
     /// </summary>
-    public static Project CreateTestProject() =>
-        new AdhocWorkspace().CurrentSolution.AddProject(
-            "TestProject",
-            "TestAssembly",
-            LanguageNames.CSharp
+    public static Project CreateTestProject()
+    {
+        var workspace = new AdhocWorkspace();
+
+        var projectId = ProjectId.CreateNewId();
+        var projectInfo = ProjectInfo.Create(
+            projectId,
+            VersionStamp.Create(),
+            name: "TestProject",
+            assemblyName: "TestAssembly",
+            language: LanguageNames.CSharp,
+#pragma warning disable IL3000 // 'System.Reflection.Assembly.Location.get' always returns an empty string for assemblies embedded in a single-file app
+            // Without this, basic types like System.Int32 are missing
+            metadataReferences: [MetadataReference.CreateFromFile(typeof(object).Assembly.Location)]
+#pragma warning restore IL3000
         );
+
+        return workspace.AddProject(projectInfo);
+    }
 
     public static async Task VerifyDocumentsAsync(
         IEnumerable<Document> documents,

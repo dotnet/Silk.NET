@@ -12,12 +12,12 @@ namespace Silk.NET.OpenCL;
 [NativeName("cl_intel_device_side_avc_motion_estimation.intra.luma")]
 public enum DeviceSideAvcMotionEstimationIntraLumaINTEL : uint
 {
-    [NativeName("CL_AVC_ME_INTRA_LUMA_PARTITION_MASK_16x16_INTEL")]
-    Mask16x16 = 6,
+    [NativeName("CL_AVC_ME_INTRA_LUMA_PARTITION_MASK_4x4_INTEL")]
+    Mask4x4 = 3,
 
     [NativeName("CL_AVC_ME_INTRA_LUMA_PARTITION_MASK_8x8_INTEL")]
     Mask8x8 = 5,
 
-    [NativeName("CL_AVC_ME_INTRA_LUMA_PARTITION_MASK_4x4_INTEL")]
-    Mask4x4 = 3,
+    [NativeName("CL_AVC_ME_INTRA_LUMA_PARTITION_MASK_16x16_INTEL")]
+    Mask16x16 = 6,
 }

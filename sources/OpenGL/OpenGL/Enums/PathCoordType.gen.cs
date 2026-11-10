@@ -85,32 +85,11 @@ public enum PathCoordType : uint
     [NativeName("GL_RELATIVE_LARGE_CW_ARC_TO_NV")]
     RelativeLargeCwArcToNV = 25,
 
-    [NativeName("GL_RESTART_PATH_NV")]
-    RestartPathNV = 240,
+    [NativeName("GL_CONIC_CURVE_TO_NV")]
+    ConicCurveToNV = 26,
 
-    [NativeName("GL_DUP_FIRST_CUBIC_CURVE_TO_NV")]
-    DupFirstCubicCurveToNV = 242,
-
-    [NativeName("GL_DUP_LAST_CUBIC_CURVE_TO_NV")]
-    DupLastCubicCurveToNV = 244,
-
-    [NativeName("GL_RECT_NV")]
-    RectNV = 246,
-
-    [NativeName("GL_CIRCULAR_CCW_ARC_TO_NV")]
-    CircularCcwArcToNV = 248,
-
-    [NativeName("GL_CIRCULAR_CW_ARC_TO_NV")]
-    CircularCwArcToNV = 250,
-
-    [NativeName("GL_CIRCULAR_TANGENT_ARC_TO_NV")]
-    CircularTangentArcToNV = 252,
-
-    [NativeName("GL_ARC_TO_NV")]
-    ArcToNV = 254,
-
-    [NativeName("GL_RELATIVE_ARC_TO_NV")]
-    RelativeArcToNV = 255,
+    [NativeName("GL_RELATIVE_CONIC_CURVE_TO_NV")]
+    RelativeConicCurveToNV = 27,
 
     [NativeName("GL_ROUNDED_RECT_NV")]
     RoundedRectNV = 232,
@@ -136,12 +115,33 @@ public enum PathCoordType : uint
     [NativeName("GL_RELATIVE_ROUNDED_RECT8_NV")]
     RelativeRoundedRect8NV = 239,
 
+    [NativeName("GL_RESTART_PATH_NV")]
+    RestartPathNV = 240,
+
+    [NativeName("GL_DUP_FIRST_CUBIC_CURVE_TO_NV")]
+    DupFirstCubicCurveToNV = 242,
+
+    [NativeName("GL_DUP_LAST_CUBIC_CURVE_TO_NV")]
+    DupLastCubicCurveToNV = 244,
+
+    [NativeName("GL_RECT_NV")]
+    RectNV = 246,
+
     [NativeName("GL_RELATIVE_RECT_NV")]
     RelativeRectNV = 247,
 
-    [NativeName("GL_CONIC_CURVE_TO_NV")]
-    ConicCurveToNV = 26,
+    [NativeName("GL_CIRCULAR_CCW_ARC_TO_NV")]
+    CircularCcwArcToNV = 248,
 
-    [NativeName("GL_RELATIVE_CONIC_CURVE_TO_NV")]
-    RelativeConicCurveToNV = 27,
+    [NativeName("GL_CIRCULAR_CW_ARC_TO_NV")]
+    CircularCwArcToNV = 250,
+
+    [NativeName("GL_CIRCULAR_TANGENT_ARC_TO_NV")]
+    CircularTangentArcToNV = 252,
+
+    [NativeName("GL_ARC_TO_NV")]
+    ArcToNV = 254,
+
+    [NativeName("GL_RELATIVE_ARC_TO_NV")]
+    RelativeArcToNV = 255,
 }

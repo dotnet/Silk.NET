@@ -43,6 +43,24 @@ public enum SourceInteger : uint
     [NativeName("AL_SOURCE_TYPE")]
     SourceType = 4135,
 
+    [NativeName("AL_DIRECT_CHANNELS_SOFT")]
+    DirectChannelsSOFT = 4147,
+
+    [NativeName("AL_SAMPLE_OFFSET_LATENCY_SOFT")]
+    SampleOffsetLatencySOFT = 4608,
+
+    [NativeName("AL_SAMPLE_OFFSET_CLOCK_SOFT")]
+    SampleOffsetClockSOFT = 4610,
+
+    [NativeName("AL_SOURCE_RESAMPLER_SOFT")]
+    SourceResamplerSOFT = 4626,
+
+    [NativeName("AL_SOURCE_SPATIALIZE_SOFT")]
+    SourceSpatializeSOFT = 4628,
+
+    [NativeName("AL_STEREO_MODE_SOFT")]
+    StereoModeSOFT = 6576,
+
     [NativeName("AL_DIRECT_FILTER")]
     DirectFilter = 131077,
 
@@ -54,22 +72,4 @@ public enum SourceInteger : uint
 
     [NativeName("AL_ROOM_ROLLOFF_FACTOR")]
     RoomRolloffFactor = 131080,
-
-    [NativeName("AL_DIRECT_CHANNELS_SOFT")]
-    DirectChannelsSOFT = 4147,
-
-    [NativeName("AL_SAMPLE_OFFSET_LATENCY_SOFT")]
-    SampleOffsetLatencySOFT = 4608,
-
-    [NativeName("AL_SOURCE_RESAMPLER_SOFT")]
-    SourceResamplerSOFT = 4626,
-
-    [NativeName("AL_SOURCE_SPATIALIZE_SOFT")]
-    SourceSpatializeSOFT = 4628,
-
-    [NativeName("AL_SAMPLE_OFFSET_CLOCK_SOFT")]
-    SampleOffsetClockSOFT = 4610,
-
-    [NativeName("AL_STEREO_MODE_SOFT")]
-    StereoModeSOFT = 6576,
 }

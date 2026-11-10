@@ -13,15 +13,6 @@ namespace Silk.NET.OpenAL;
 [NativeName("FloatPName")]
 public enum FloatPName : uint
 {
-    [NativeName("AL_DOPPLER_FACTOR")]
-    DopplerFactor = 49152,
-
-    [NativeName("AL_DOPPLER_VELOCITY")]
-    DopplerVelocity = 49153,
-
-    [NativeName("AL_SPEED_OF_SOUND")]
-    SpeedOfSound = 49155,
-
     [NativeName("AL_DEBUG_LOGGED_MESSAGES_EXT")]
     DebugLoggedMessagesEXT = 6599,
 
@@ -39,4 +30,13 @@ public enum FloatPName : uint
 
     [NativeName("AL_MAX_LABEL_LENGTH_EXT")]
     MaxLabelLengthEXT = 6604,
+
+    [NativeName("AL_DOPPLER_FACTOR")]
+    DopplerFactor = 49152,
+
+    [NativeName("AL_DOPPLER_VELOCITY")]
+    DopplerVelocity = 49153,
+
+    [NativeName("AL_SPEED_OF_SOUND")]
+    SpeedOfSound = 49155,
 }

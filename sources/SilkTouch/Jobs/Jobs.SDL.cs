@@ -45,7 +45,12 @@ internal static partial class Jobs
                         new() { Affixes = new() { ["SharedPrefix"] = new() { Remove = true } } }
                     )
                     .TransformEnums(
-                        new() { AddNoneMemberToFlags = true, RewriteMemberValues = true }
+                        new()
+                        {
+                            AddNoneMemberToFlags = true,
+                            RewriteMemberValues = true,
+                            SortMembers = true,
+                        }
                     )
                     .AddVTables()
                     .StripAttributes(

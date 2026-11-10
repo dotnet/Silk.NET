@@ -57,6 +57,17 @@ public enum DescriptorPoolCreateFlags : uint
     )]
     UpdateAfterBindBit = 0x2,
 
+    [NativeName("VK_DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_indexing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    UpdateAfterBindBitEXT = UpdateAfterBindBit,
+
     [NativeName("VK_DESCRIPTOR_POOL_CREATE_HOST_ONLY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -67,6 +78,14 @@ public enum DescriptorPoolCreateFlags : uint
         ]
     )]
     HostOnlyBitEXT = 0x4,
+
+    [NativeName("VK_DESCRIPTOR_POOL_CREATE_HOST_ONLY_BIT_VALVE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_mutable_descriptor_type"],
+        ImpliesSets = ["VK_KHR_maintenance3"]
+    )]
+    HostOnlyBitVALVE = HostOnlyBitEXT,
 
     [NativeName("VK_DESCRIPTOR_POOL_CREATE_ALLOW_OVERALLOCATION_SETS_BIT_NV")]
     [SupportedApiProfile(
@@ -83,23 +102,4 @@ public enum DescriptorPoolCreateFlags : uint
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
     AllowOverallocationPoolsBitNV = 0x10,
-
-    [NativeName("VK_DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_indexing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    UpdateAfterBindBitEXT = UpdateAfterBindBit,
-
-    [NativeName("VK_DESCRIPTOR_POOL_CREATE_HOST_ONLY_BIT_VALVE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VALVE_mutable_descriptor_type"],
-        ImpliesSets = ["VK_KHR_maintenance3"]
-    )]
-    HostOnlyBitVALVE = HostOnlyBitEXT,
 }

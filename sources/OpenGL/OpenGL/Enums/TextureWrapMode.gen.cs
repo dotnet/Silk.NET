@@ -10,8 +10,11 @@ namespace Silk.NET.OpenGL;
 [NativeName("TextureWrapMode")]
 public enum TextureWrapMode : uint
 {
-    [NativeName("GL_MIRRORED_REPEAT_OES")]
-    MirroredRepeatOES = 33648,
+    [NativeName("GL_CLAMP")]
+    Clamp = 10496,
+
+    [NativeName("GL_REPEAT")]
+    Repeat = 10497,
 
     [NativeName("GL_CLAMP_TO_BORDER_OES")]
     ClampToBorderOES = 33069,
@@ -22,33 +25,30 @@ public enum TextureWrapMode : uint
     [NativeName("GL_CLAMP_TO_BORDER_NV")]
     ClampToBorderNV = 33069,
 
-    [NativeName("GL_REPEAT")]
-    Repeat = 10497,
+    [NativeName("GL_CLAMP_TO_BORDER")]
+    ClampToBorder = 33069,
 
-    [NativeName("GL_CLAMP")]
-    Clamp = 10496,
+    [NativeName("GL_CLAMP_TO_BORDER_ARB")]
+    ClampToBorderARB = 33069,
+
+    [NativeName("GL_CLAMP_TO_BORDER_SGIS")]
+    ClampToBorderSGIS = 33069,
 
     [NativeName("GL_CLAMP_TO_EDGE")]
     ClampToEdge = 33071,
 
-    [NativeName("GL_CLAMP_TO_BORDER")]
-    ClampToBorder = 33069,
+    [NativeName("GL_CLAMP_TO_EDGE_SGIS")]
+    ClampToEdgeSGIS = 33071,
+
+    [NativeName("GL_MIRRORED_REPEAT_OES")]
+    MirroredRepeatOES = 33648,
 
     [NativeName("GL_MIRRORED_REPEAT")]
     MirroredRepeat = 33648,
-
-    [NativeName("GL_CLAMP_TO_BORDER_ARB")]
-    ClampToBorderARB = 33069,
 
     [NativeName("GL_MIRRORED_REPEAT_ARB")]
     MirroredRepeatARB = 33648,
 
     [NativeName("GL_MIRRORED_REPEAT_IBM")]
     MirroredRepeatIBM = 33648,
-
-    [NativeName("GL_CLAMP_TO_BORDER_SGIS")]
-    ClampToBorderSGIS = 33069,
-
-    [NativeName("GL_CLAMP_TO_EDGE_SGIS")]
-    ClampToEdgeSGIS = 33071,
 }

@@ -27,30 +27,6 @@ public enum ShaderCreateFlagsEXT : uint
     )]
     CreateLinkStageBit = 0x1,
 
-    [NativeName("VK_SHADER_CREATE_DESCRIPTOR_HEAP_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_heap", "VK_EXT_shader_object"],
-        ImpliesSets = [
-            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
-            "VK_KHR_extended_flags+VK_VERSION_1_2",
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
-            "VK_VERSION_1_4",
-        ],
-        RequireAll = true
-    )]
-    CreateDescriptorHeapBit = 0x400,
-
-    [NativeName("VK_SHADER_CREATE_INSTRUMENT_SHADER_BIT_ARM")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_ARM_shader_instrumentation", "VK_KHR_maintenance5"],
-        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"],
-        RequireAll = true
-    )]
-    CreateInstrumentShaderBitARM = 0x800,
-
     [NativeName("VK_SHADER_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -144,6 +120,30 @@ public enum ShaderCreateFlagsEXT : uint
         ]
     )]
     CreateIndirectBindableBit = 0x80,
+
+    [NativeName("VK_SHADER_CREATE_DESCRIPTOR_HEAP_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap", "VK_EXT_shader_object"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ],
+        RequireAll = true
+    )]
+    CreateDescriptorHeapBit = 0x400,
+
+    [NativeName("VK_SHADER_CREATE_INSTRUMENT_SHADER_BIT_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation", "VK_KHR_maintenance5"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"],
+        RequireAll = true
+    )]
+    CreateInstrumentShaderBitARM = 0x800,
 
     [NativeName("VK_SHADER_CREATE_OPACITY_MICROMAP_DISALLOW_MIXED_SPECIAL_INDEX_BIT_EXT")]
     [SupportedApiProfile(

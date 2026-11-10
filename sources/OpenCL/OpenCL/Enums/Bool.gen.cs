@@ -15,12 +15,12 @@ public enum Bool : uint
     [NativeName("CL_FALSE")]
     False = 0,
 
+    [NativeName("CL_NON_BLOCKING")]
+    NonBlocking = 0,
+
     [NativeName("CL_TRUE")]
     True = 1,
 
     [NativeName("CL_BLOCKING")]
     Blocking = 1,
-
-    [NativeName("CL_NON_BLOCKING")]
-    NonBlocking = 0,
 }

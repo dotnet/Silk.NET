@@ -37,58 +37,6 @@ public enum SubpassDescriptionFlags : uint
     )]
     PerViewPositionXOnlyBitNVX = 0x2,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_TILE_SHADING_APRON_BIT_QCOM")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_QCOM_tile_shading"],
-        ImpliesSets = ["VK_QCOM_tile_properties"]
-    )]
-    TileShadingApronBitQCOM = 0x100,
-
-    [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_COLOR_ACCESS_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_rasterization_order_attachment_access"],
-        ImpliesSets = [
-            "VK_EXT_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
-        ]
-    )]
-    RasterizationOrderAttachmentColorAccessBitEXT = 0x10,
-
-    [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_rasterization_order_attachment_access"],
-        ImpliesSets = [
-            "VK_EXT_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
-        ]
-    )]
-    RasterizationOrderAttachmentDepthAccessBitEXT = 0x20,
-
-    [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_rasterization_order_attachment_access"],
-        ImpliesSets = [
-            "VK_EXT_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
-        ]
-    )]
-    RasterizationOrderAttachmentStencilAccessBitEXT = 0x40,
-
-    [NativeName("VK_SUBPASS_DESCRIPTION_ENABLE_LEGACY_DITHERING_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_legacy_dithering"],
-        ImpliesSets = [
-            "VK_EXT_legacy_dithering+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_legacy_dithering+VK_VERSION_1_1",
-        ]
-    )]
-    EnableLegacyDitheringBitEXT = 0x80,
-
     [NativeName("VK_SUBPASS_DESCRIPTION_FRAGMENT_REGION_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -99,6 +47,10 @@ public enum SubpassDescriptionFlags : uint
         ]
     )]
     FragmentRegionBitEXT = 0x4,
+
+    [NativeName("VK_SUBPASS_DESCRIPTION_FRAGMENT_REGION_BIT_QCOM")]
+    [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
+    FragmentRegionBitQCOM = FragmentRegionBitEXT,
 
     [NativeName("VK_SUBPASS_DESCRIPTION_CUSTOM_RESOLVE_BIT_EXT")]
     [SupportedApiProfile(
@@ -111,13 +63,20 @@ public enum SubpassDescriptionFlags : uint
     )]
     CustomResolveBitEXT = 0x8,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_FRAGMENT_REGION_BIT_QCOM")]
-    [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
-    FragmentRegionBitQCOM = FragmentRegionBitEXT,
-
     [NativeName("VK_SUBPASS_DESCRIPTION_SHADER_RESOLVE_BIT_QCOM")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
     ShaderResolveBitQCOM = CustomResolveBitEXT,
+
+    [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_COLOR_ACCESS_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_rasterization_order_attachment_access"],
+        ImpliesSets = [
+            "VK_EXT_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
+        ]
+    )]
+    RasterizationOrderAttachmentColorAccessBitEXT = 0x10,
 
     [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_COLOR_ACCESS_BIT_ARM")]
     [SupportedApiProfile(
@@ -130,6 +89,17 @@ public enum SubpassDescriptionFlags : uint
     )]
     RasterizationOrderAttachmentColorAccessBitARM = RasterizationOrderAttachmentColorAccessBitEXT,
 
+    [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_rasterization_order_attachment_access"],
+        ImpliesSets = [
+            "VK_EXT_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
+        ]
+    )]
+    RasterizationOrderAttachmentDepthAccessBitEXT = 0x20,
+
     [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -140,6 +110,17 @@ public enum SubpassDescriptionFlags : uint
         ]
     )]
     RasterizationOrderAttachmentDepthAccessBitARM = RasterizationOrderAttachmentDepthAccessBitEXT,
+
+    [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_rasterization_order_attachment_access"],
+        ImpliesSets = [
+            "VK_EXT_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
+        ]
+    )]
+    RasterizationOrderAttachmentStencilAccessBitEXT = 0x40,
 
     [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_ARM")]
     [SupportedApiProfile(
@@ -152,4 +133,23 @@ public enum SubpassDescriptionFlags : uint
     )]
     RasterizationOrderAttachmentStencilAccessBitARM =
         RasterizationOrderAttachmentStencilAccessBitEXT,
+
+    [NativeName("VK_SUBPASS_DESCRIPTION_ENABLE_LEGACY_DITHERING_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_legacy_dithering"],
+        ImpliesSets = [
+            "VK_EXT_legacy_dithering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_legacy_dithering+VK_VERSION_1_1",
+        ]
+    )]
+    EnableLegacyDitheringBitEXT = 0x80,
+
+    [NativeName("VK_SUBPASS_DESCRIPTION_TILE_SHADING_APRON_BIT_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_shading"],
+        ImpliesSets = ["VK_QCOM_tile_properties"]
+    )]
+    TileShadingApronBitQCOM = 0x100,
 }

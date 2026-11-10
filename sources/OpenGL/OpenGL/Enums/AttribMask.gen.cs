@@ -13,15 +13,6 @@ public enum AttribMask : uint
 {
     None = 0x0,
 
-    [NativeName("GL_DEPTH_BUFFER_BIT")]
-    DepthBufferBit = 0x100,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT")]
-    StencilBufferBit = 0x400,
-
-    [NativeName("GL_COLOR_BUFFER_BIT")]
-    ColorBufferBit = 0x4000,
-
     [NativeName("GL_CURRENT_BIT")]
     CurrentBit = 0x1,
 
@@ -46,8 +37,14 @@ public enum AttribMask : uint
     [NativeName("GL_FOG_BIT")]
     FogBit = 0x80,
 
+    [NativeName("GL_DEPTH_BUFFER_BIT")]
+    DepthBufferBit = 0x100,
+
     [NativeName("GL_ACCUM_BUFFER_BIT")]
     AccumBufferBit = 0x200,
+
+    [NativeName("GL_STENCIL_BUFFER_BIT")]
+    StencilBufferBit = 0x400,
 
     [NativeName("GL_VIEWPORT_BIT")]
     ViewportBit = 0x800,
@@ -57,6 +54,9 @@ public enum AttribMask : uint
 
     [NativeName("GL_ENABLE_BIT")]
     EnableBit = 0x2000,
+
+    [NativeName("GL_COLOR_BUFFER_BIT")]
+    ColorBufferBit = 0x4000,
 
     [NativeName("GL_HINT_BIT")]
     HintBit = 0x8000,
@@ -73,9 +73,6 @@ public enum AttribMask : uint
     [NativeName("GL_SCISSOR_BIT")]
     ScissorBit = 0x80000,
 
-    [NativeName("GL_ALL_ATTRIB_BITS")]
-    AllAttribBits = 0xFFFFFFFF,
-
     [NativeName("GL_MULTISAMPLE_BIT")]
     MultisampleBit = 0x20000000,
 
@@ -87,4 +84,7 @@ public enum AttribMask : uint
 
     [NativeName("GL_MULTISAMPLE_BIT_EXT")]
     MultisampleBitEXT = 0x20000000,
+
+    [NativeName("GL_ALL_ATTRIB_BITS")]
+    AllAttribBits = 0xFFFFFFFF,
 }

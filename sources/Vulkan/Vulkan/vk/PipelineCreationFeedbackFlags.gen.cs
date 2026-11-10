@@ -30,6 +30,10 @@ public enum PipelineCreationFeedbackFlags : uint
     )]
     ValidBit = 0x1,
 
+    [NativeName("VK_PIPELINE_CREATION_FEEDBACK_VALID_BIT_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_pipeline_creation_feedback"])]
+    ValidBitEXT = ValidBit,
+
     [NativeName("VK_PIPELINE_CREATION_FEEDBACK_APPLICATION_PIPELINE_CACHE_HIT_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -45,6 +49,10 @@ public enum PipelineCreationFeedbackFlags : uint
     )]
     ApplicationPipelineCacheHitBit = 0x2,
 
+    [NativeName("VK_PIPELINE_CREATION_FEEDBACK_APPLICATION_PIPELINE_CACHE_HIT_BIT_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_pipeline_creation_feedback"])]
+    ApplicationPipelineCacheHitBitEXT = ApplicationPipelineCacheHitBit,
+
     [NativeName("VK_PIPELINE_CREATION_FEEDBACK_BASE_PIPELINE_ACCELERATION_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -59,14 +67,6 @@ public enum PipelineCreationFeedbackFlags : uint
         MinVersion = "1.3"
     )]
     BasePipelineAccelerationBit = 0x4,
-
-    [NativeName("VK_PIPELINE_CREATION_FEEDBACK_VALID_BIT_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_pipeline_creation_feedback"])]
-    ValidBitEXT = ValidBit,
-
-    [NativeName("VK_PIPELINE_CREATION_FEEDBACK_APPLICATION_PIPELINE_CACHE_HIT_BIT_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_pipeline_creation_feedback"])]
-    ApplicationPipelineCacheHitBitEXT = ApplicationPipelineCacheHitBit,
 
     [NativeName("VK_PIPELINE_CREATION_FEEDBACK_BASE_PIPELINE_ACCELERATION_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_pipeline_creation_feedback"])]

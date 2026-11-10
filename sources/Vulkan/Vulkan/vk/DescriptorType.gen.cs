@@ -291,6 +291,17 @@ public enum DescriptorType : uint
     )]
     InlineUniformBlock = 1000138000,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_inline_uniform_block"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance1",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    InlineUniformBlockEXT = InlineUniformBlock,
+
     [NativeName("VK_DESCRIPTOR_TYPE_ACCELERATION_STRUCTURE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -312,6 +323,25 @@ public enum DescriptorType : uint
         ]
     )]
     AccelerationStructureNV = 1000165000,
+
+    [NativeName("VK_DESCRIPTOR_TYPE_MUTABLE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mutable_descriptor_type"],
+        ImpliesSets = [
+            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
+            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
+        ]
+    )]
+    MutableEXT = 1000351000,
+
+    [NativeName("VK_DESCRIPTOR_TYPE_MUTABLE_VALVE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_mutable_descriptor_type"],
+        ImpliesSets = ["VK_KHR_maintenance3"]
+    )]
+    MutableVALVE = MutableEXT,
 
     [NativeName("VK_DESCRIPTOR_TYPE_SAMPLE_WEIGHT_IMAGE_QCOM")]
     [SupportedApiProfile(
@@ -339,17 +369,6 @@ public enum DescriptorType : uint
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorARM = 1000460000,
 
-    [NativeName("VK_DESCRIPTOR_TYPE_MUTABLE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_mutable_descriptor_type"],
-        ImpliesSets = [
-            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
-            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
-        ]
-    )]
-    MutableEXT = 1000351000,
-
     [NativeName("VK_DESCRIPTOR_TYPE_PARTITIONED_ACCELERATION_STRUCTURE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -357,23 +376,4 @@ public enum DescriptorType : uint
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     PartitionedAccelerationStructureNV = 1000570000,
-
-    [NativeName("VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_inline_uniform_block"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance1",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    InlineUniformBlockEXT = InlineUniformBlock,
-
-    [NativeName("VK_DESCRIPTOR_TYPE_MUTABLE_VALVE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VALVE_mutable_descriptor_type"],
-        ImpliesSets = ["VK_KHR_maintenance3"]
-    )]
-    MutableVALVE = MutableEXT,
 }

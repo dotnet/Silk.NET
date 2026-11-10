@@ -10,6 +10,9 @@ namespace Silk.NET.OpenGL;
 [NativeName("VertexArrayPName")]
 public enum VertexArrayPName : uint
 {
+    [NativeName("GL_VERTEX_ATTRIB_RELATIVE_OFFSET")]
+    RelativeOffset = 33493,
+
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_ENABLED")]
     ArrayEnabled = 34338,
 
@@ -22,6 +25,9 @@ public enum VertexArrayPName : uint
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_TYPE")]
     ArrayType = 34341,
 
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_LONG")]
+    ArrayLong = 34638,
+
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_NORMALIZED")]
     ArrayNormalized = 34922,
 
@@ -30,10 +36,4 @@ public enum VertexArrayPName : uint
 
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR")]
     ArrayDivisor = 35070,
-
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_LONG")]
-    ArrayLong = 34638,
-
-    [NativeName("GL_VERTEX_ATTRIB_RELATIVE_OFFSET")]
-    RelativeOffset = 33493,
 }

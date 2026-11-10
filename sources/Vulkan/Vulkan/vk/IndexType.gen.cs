@@ -70,19 +70,6 @@ public enum IndexType : uint
     )]
     Uint32 = 1,
 
-    [NativeName("VK_INDEX_TYPE_UINT8")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    Uint8 = 1000265000,
-
     [NativeName("VK_INDEX_TYPE_NONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -104,6 +91,19 @@ public enum IndexType : uint
         ]
     )]
     NoneNV = NoneKHR,
+
+    [NativeName("VK_INDEX_TYPE_UINT8")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    Uint8 = 1000265000,
 
     [NativeName("VK_INDEX_TYPE_UINT8_EXT")]
     [SupportedApiProfile(

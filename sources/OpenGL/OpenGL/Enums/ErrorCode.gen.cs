@@ -10,9 +10,6 @@ namespace Silk.NET.OpenGL;
 [NativeName("ErrorCode")]
 public enum ErrorCode : uint
 {
-    [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_OES")]
-    InvalidFramebufferOperationOES = 1286,
-
     [NativeName("GL_NO_ERROR")]
     NoError = 0,
 
@@ -25,23 +22,26 @@ public enum ErrorCode : uint
     [NativeName("GL_INVALID_OPERATION")]
     InvalidOperation = 1282,
 
-    [NativeName("GL_OUT_OF_MEMORY")]
-    OutOfMemory = 1285,
-
     [NativeName("GL_STACK_OVERFLOW")]
     StackOverflow = 1283,
 
     [NativeName("GL_STACK_UNDERFLOW")]
     StackUnderflow = 1284,
 
+    [NativeName("GL_OUT_OF_MEMORY")]
+    OutOfMemory = 1285,
+
+    [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_OES")]
+    InvalidFramebufferOperationOES = 1286,
+
     [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION")]
     InvalidFramebufferOperation = 1286,
 
-    [NativeName("GL_TABLE_TOO_LARGE")]
-    TableTooLarge = 32817,
-
     [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_EXT")]
     InvalidFramebufferOperationEXT = 1286,
+
+    [NativeName("GL_TABLE_TOO_LARGE")]
+    TableTooLarge = 32817,
 
     [NativeName("GL_TABLE_TOO_LARGE_EXT")]
     TableTooLargeEXT = 32817,

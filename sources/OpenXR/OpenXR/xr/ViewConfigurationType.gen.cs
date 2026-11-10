@@ -24,6 +24,10 @@ public enum ViewConfigurationType : uint
     [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     PrimaryStereoWithFoveatedInset = 1000037000,
 
+    [NativeName("XR_VIEW_CONFIGURATION_TYPE_PRIMARY_QUAD_VARJO")]
+    [SupportedApiProfile("openxr", ["XR_VARJO_quad_views"])]
+    PrimaryQuadVARJO = PrimaryStereoWithFoveatedInset,
+
     [NativeName("XR_VIEW_CONFIGURATION_TYPE_SECONDARY_MONO_FIRST_PERSON_OBSERVER_MSFT")]
     [SupportedApiProfile(
         "openxr",
@@ -31,8 +35,4 @@ public enum ViewConfigurationType : uint
         ImpliesSets = ["XR_MSFT_secondary_view_configuration", "XR_VERSION_1_0"]
     )]
     SecondaryMonoFirstPersonObserverMSFT = 1000054000,
-
-    [NativeName("XR_VIEW_CONFIGURATION_TYPE_PRIMARY_QUAD_VARJO")]
-    [SupportedApiProfile("openxr", ["XR_VARJO_quad_views"])]
-    PrimaryQuadVARJO = PrimaryStereoWithFoveatedInset,
 }

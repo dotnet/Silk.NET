@@ -766,65 +766,6 @@ public enum ObjectType : uint
     )]
     CommandPool = 25,
 
-    [NativeName("VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    DescriptorUpdateTemplate = 1000085000,
-
-    [NativeName("VK_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    SamplerYcbcrConversion = 1000156000,
-
-    [NativeName("VK_OBJECT_TYPE_PRIVATE_DATA_SLOT")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PrivateDataSlot = 1000295000,
-
     [NativeName("VK_OBJECT_TYPE_SURFACE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     SurfaceKHR = 1000000000,
@@ -869,6 +810,31 @@ public enum ObjectType : uint
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     CuFunctionNVX = 1000029001,
 
+    [NativeName("VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    DescriptorUpdateTemplate = 1000085000,
+
+    [NativeName("VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
+    DescriptorUpdateTemplateKHR = DescriptorUpdateTemplate,
+
     [NativeName("VK_OBJECT_TYPE_DEBUG_UTILS_MESSENGER_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     DebugUtilsMessengerEXT = 1000128000,
@@ -894,6 +860,38 @@ public enum ObjectType : uint
         ]
     )]
     AccelerationStructureKHR = 1000150000,
+
+    [NativeName("VK_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    SamplerYcbcrConversion = 1000156000,
+
+    [NativeName("VK_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    SamplerYcbcrConversionKHR = SamplerYcbcrConversion,
 
     [NativeName("VK_OBJECT_TYPE_VALIDATION_CACHE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
@@ -925,6 +923,34 @@ public enum ObjectType : uint
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
     IndirectCommandsLayoutNV = 1000277000,
+
+    [NativeName("VK_OBJECT_TYPE_PRIVATE_DATA_SLOT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PrivateDataSlot = 1000295000,
+
+    [NativeName("VK_OBJECT_TYPE_PRIVATE_DATA_SLOT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_private_data"],
+        ImpliesSets = [
+            "VK_EXT_private_data+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_private_data+VK_VERSION_1_1",
+        ]
+    )]
+    PrivateDataSlotEXT = PrivateDataSlot,
 
     [NativeName("VK_OBJECT_TYPE_CUDA_MODULE_NV")]
     [SupportedApiProfile(
@@ -1067,30 +1093,4 @@ public enum ObjectType : uint
         ]
     )]
     ShaderInstrumentationARM = 1000607000,
-
-    [NativeName("VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
-    DescriptorUpdateTemplateKHR = DescriptorUpdateTemplate,
-
-    [NativeName("VK_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    SamplerYcbcrConversionKHR = SamplerYcbcrConversion,
-
-    [NativeName("VK_OBJECT_TYPE_PRIVATE_DATA_SLOT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_private_data"],
-        ImpliesSets = [
-            "VK_EXT_private_data+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_private_data+VK_VERSION_1_1",
-        ]
-    )]
-    PrivateDataSlotEXT = PrivateDataSlot,
 }

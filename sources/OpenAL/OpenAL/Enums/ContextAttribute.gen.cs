@@ -28,23 +28,20 @@ public enum ContextAttribute : uint
     [NativeName("ALC_STEREO_SOURCES")]
     StereoSources = 4113,
 
+    [NativeName("ALC_DEFAULT_FILTER_ORDER")]
+    DefaultFilterOrder = 4352,
+
     [NativeName("ALC_FORMAT_CHANNELS_SOFT")]
     FormatChannelsSOFT = 6544,
 
     [NativeName("ALC_FORMAT_TYPE_SOFT")]
     FormatTypeSOFT = 6545,
 
-    [NativeName("ALC_DEFAULT_FILTER_ORDER")]
-    DefaultFilterOrder = 4352,
-
     [NativeName("ALC_HRTF_SOFT")]
     HrtfSOFT = 6546,
 
     [NativeName("ALC_HRTF_ID_SOFT")]
     HrtfIdSOFT = 6550,
-
-    [NativeName("ALC_OUTPUT_LIMITER_SOFT")]
-    OutputLimiterSOFT = 6554,
 
     [NativeName("ALC_AMBISONIC_LAYOUT_SOFT")]
     AmbisonicLayoutSOFT = 6551,
@@ -54,6 +51,9 @@ public enum ContextAttribute : uint
 
     [NativeName("ALC_AMBISONIC_ORDER_SOFT")]
     AmbisonicOrderSOFT = 6553,
+
+    [NativeName("ALC_OUTPUT_LIMITER_SOFT")]
+    OutputLimiterSOFT = 6554,
 
     [NativeName("ALC_OUTPUT_MODE_SOFT")]
     OutputModeSOFT = 6572,

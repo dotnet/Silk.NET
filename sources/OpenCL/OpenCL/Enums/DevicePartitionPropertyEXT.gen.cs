@@ -12,18 +12,6 @@ namespace Silk.NET.OpenCL;
 [NativeName("cl_device_partition_property_ext")]
 public enum DevicePartitionPropertyEXT : ulong
 {
-    [NativeName("CL_DEVICE_PARTITION_EQUALLY_EXT")]
-    DevicePartitionEqually = 16464,
-
-    [NativeName("CL_DEVICE_PARTITION_BY_COUNTS_EXT")]
-    DevicePartitionByCounts = 16465,
-
-    [NativeName("CL_DEVICE_PARTITION_BY_NAMES_EXT")]
-    DevicePartitionByNames = 16466,
-
-    [NativeName("CL_DEVICE_PARTITION_BY_AFFINITY_DOMAIN_EXT")]
-    DevicePartitionByAffinityDomain = 16467,
-
     [NativeName("CL_AFFINITY_DOMAIN_L1_CACHE_EXT")]
     AffinityDomainL1Cache = 1,
 
@@ -41,4 +29,16 @@ public enum DevicePartitionPropertyEXT : ulong
 
     [NativeName("CL_AFFINITY_DOMAIN_NEXT_FISSIONABLE_EXT")]
     AffinityDomainNextFissionable = 256,
+
+    [NativeName("CL_DEVICE_PARTITION_EQUALLY_EXT")]
+    DevicePartitionEqually = 16464,
+
+    [NativeName("CL_DEVICE_PARTITION_BY_COUNTS_EXT")]
+    DevicePartitionByCounts = 16465,
+
+    [NativeName("CL_DEVICE_PARTITION_BY_NAMES_EXT")]
+    DevicePartitionByNames = 16466,
+
+    [NativeName("CL_DEVICE_PARTITION_BY_AFFINITY_DOMAIN_EXT")]
+    DevicePartitionByAffinityDomain = 16467,
 }

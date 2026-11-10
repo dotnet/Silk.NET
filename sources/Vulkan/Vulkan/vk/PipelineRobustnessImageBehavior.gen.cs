@@ -25,6 +25,17 @@ public enum PipelineRobustnessImageBehavior : uint
     )]
     DeviceDefault = 0,
 
+    [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DEVICE_DEFAULT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_robustness"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
+        ]
+    )]
+    DeviceDefaultEXT = DeviceDefault,
+
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DISABLED")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,6 +48,17 @@ public enum PipelineRobustnessImageBehavior : uint
         MinVersion = "1.4"
     )]
     Disabled = 1,
+
+    [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DISABLED_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_robustness"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
+        ]
+    )]
+    DisabledEXT = Disabled,
 
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS")]
     [SupportedApiProfile(
@@ -51,6 +73,17 @@ public enum PipelineRobustnessImageBehavior : uint
     )]
     RobustImageAccess = 2,
 
+    [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_robustness"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
+        ]
+    )]
+    RobustImageAccessEXT = RobustImageAccess,
+
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_2")]
     [SupportedApiProfile(
         "vulkan",
@@ -63,39 +96,6 @@ public enum PipelineRobustnessImageBehavior : uint
         MinVersion = "1.4"
     )]
     RobustImageAccess2 = 3,
-
-    [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DEVICE_DEFAULT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_pipeline_robustness"],
-        ImpliesSets = [
-            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
-        ]
-    )]
-    DeviceDefaultEXT = DeviceDefault,
-
-    [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DISABLED_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_pipeline_robustness"],
-        ImpliesSets = [
-            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
-        ]
-    )]
-    DisabledEXT = Disabled,
-
-    [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_pipeline_robustness"],
-        ImpliesSets = [
-            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
-        ]
-    )]
-    RobustImageAccessEXT = RobustImageAccess,
 
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_2_EXT")]
     [SupportedApiProfile(

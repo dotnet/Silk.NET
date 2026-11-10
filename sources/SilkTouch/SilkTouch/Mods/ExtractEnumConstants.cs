@@ -237,20 +237,7 @@ public class ExtractEnumConstants(DocumentFactory documentFactory) : IMod
                     );
                 }
 
-                if (
-                    thisType
-                        is not (
-                            SyntaxKind.ByteKeyword
-                            or SyntaxKind.SByteKeyword
-                            or SyntaxKind.ShortKeyword
-                            or SyntaxKind.UShortKeyword
-                            or SyntaxKind.IntKeyword
-                            or SyntaxKind.UIntKeyword
-                            or SyntaxKind.LongKeyword
-                            or SyntaxKind.ULongKeyword
-                        )
-                    || thisType != numericTypeName?.Type
-                )
+                if (!thisType.IsEnumBaseType() || thisType != numericTypeName?.Type)
                 {
                     _numericTypeNames[nativeTypeName] = numericTypeName = null;
                 }

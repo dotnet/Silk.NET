@@ -87,15 +87,6 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
     )]
     GeneratePrefixNaluBit = 0x100,
 
-    [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_B_PICTURE_INTRA_REFRESH_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_h264", "VK_KHR_video_encode_intra_refresh"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"],
-        RequireAll = true
-    )]
-    BPictureIntraRefreshBit = 0x400,
-
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_MB_QP_DIFF_WRAPAROUND_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -107,4 +98,13 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
         RequireAll = true
     )]
     MbQpDiffWraparoundBit = 0x200,
+
+    [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_B_PICTURE_INTRA_REFRESH_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h264", "VK_KHR_video_encode_intra_refresh"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"],
+        RequireAll = true
+    )]
+    BPictureIntraRefreshBit = 0x400,
 }

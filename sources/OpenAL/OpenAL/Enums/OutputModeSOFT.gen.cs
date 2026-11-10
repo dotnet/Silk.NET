@@ -13,6 +13,15 @@ namespace Silk.NET.OpenAL;
 [NativeName("OutputModeSOFT")]
 public enum OutputModeSOFT : uint
 {
+    [NativeName("ALC_SURROUND_5_1_SOFT")]
+    Surround5x1 = 5380,
+
+    [NativeName("ALC_SURROUND_6_1_SOFT")]
+    Surround6x1 = 5381,
+
+    [NativeName("ALC_SURROUND_7_1_SOFT")]
+    Surround7x1 = 5382,
+
     [NativeName("ALC_ANY_SOFT")]
     Any = 6573,
 
@@ -24,13 +33,4 @@ public enum OutputModeSOFT : uint
 
     [NativeName("ALC_STEREO_HRTF_SOFT")]
     StereoHrtf = 6578,
-
-    [NativeName("ALC_SURROUND_5_1_SOFT")]
-    Surround5x1 = 5380,
-
-    [NativeName("ALC_SURROUND_6_1_SOFT")]
-    Surround6x1 = 5381,
-
-    [NativeName("ALC_SURROUND_7_1_SOFT")]
-    Surround7x1 = 5382,
 }

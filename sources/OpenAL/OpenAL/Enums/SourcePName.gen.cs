@@ -79,6 +79,45 @@ public enum SourcePName : uint
     [NativeName("AL_SOURCE_TYPE")]
     SourceType = 4135,
 
+    [NativeName("AL_STEREO_ANGLES")]
+    StereoAngles = 4144,
+
+    [NativeName("AL_BYTE_RW_OFFSETS_SOFT")]
+    ByteRwOffsetsSOFT = 4145,
+
+    [NativeName("AL_SOURCE_RADIUS")]
+    SourceRadius = 4145,
+
+    [NativeName("AL_SAMPLE_RW_OFFSETS_SOFT")]
+    SampleRwOffsetsSOFT = 4146,
+
+    [NativeName("AL_DIRECT_CHANNELS_SOFT")]
+    DirectChannelsSOFT = 4147,
+
+    [NativeName("AL_SAMPLE_OFFSET_LATENCY_SOFT")]
+    SampleOffsetLatencySOFT = 4608,
+
+    [NativeName("AL_SEC_OFFSET_LATENCY_SOFT")]
+    SecOffsetLatencySOFT = 4609,
+
+    [NativeName("AL_SAMPLE_OFFSET_CLOCK_SOFT")]
+    SampleOffsetClockSOFT = 4610,
+
+    [NativeName("AL_SEC_OFFSET_CLOCK_SOFT")]
+    SecOffsetClockSOFT = 4611,
+
+    [NativeName("AL_SOURCE_RESAMPLER_SOFT")]
+    SourceResamplerSOFT = 4626,
+
+    [NativeName("AL_SOURCE_SPATIALIZE_SOFT")]
+    SourceSpatializeSOFT = 4628,
+
+    [NativeName("AL_STEREO_MODE_SOFT")]
+    StereoModeSOFT = 6576,
+
+    [NativeName("AL_SUPER_STEREO_WIDTH_SOFT")]
+    SuperStereoWidthSOFT = 6577,
+
     [NativeName("AL_DIRECT_FILTER")]
     DirectFilter = 131077,
 
@@ -102,43 +141,4 @@ public enum SourcePName : uint
 
     [NativeName("AL_AUXILIARY_SEND_FILTER_GAINHF_AUTO")]
     AuxiliarySendFilterGainhfAuto = 131084,
-
-    [NativeName("AL_BYTE_RW_OFFSETS_SOFT")]
-    ByteRwOffsetsSOFT = 4145,
-
-    [NativeName("AL_SAMPLE_RW_OFFSETS_SOFT")]
-    SampleRwOffsetsSOFT = 4146,
-
-    [NativeName("AL_DIRECT_CHANNELS_SOFT")]
-    DirectChannelsSOFT = 4147,
-
-    [NativeName("AL_STEREO_ANGLES")]
-    StereoAngles = 4144,
-
-    [NativeName("AL_SOURCE_RADIUS")]
-    SourceRadius = 4145,
-
-    [NativeName("AL_SAMPLE_OFFSET_LATENCY_SOFT")]
-    SampleOffsetLatencySOFT = 4608,
-
-    [NativeName("AL_SEC_OFFSET_LATENCY_SOFT")]
-    SecOffsetLatencySOFT = 4609,
-
-    [NativeName("AL_SOURCE_RESAMPLER_SOFT")]
-    SourceResamplerSOFT = 4626,
-
-    [NativeName("AL_SOURCE_SPATIALIZE_SOFT")]
-    SourceSpatializeSOFT = 4628,
-
-    [NativeName("AL_SAMPLE_OFFSET_CLOCK_SOFT")]
-    SampleOffsetClockSOFT = 4610,
-
-    [NativeName("AL_SEC_OFFSET_CLOCK_SOFT")]
-    SecOffsetClockSOFT = 4611,
-
-    [NativeName("AL_STEREO_MODE_SOFT")]
-    StereoModeSOFT = 6576,
-
-    [NativeName("AL_SUPER_STEREO_WIDTH_SOFT")]
-    SuperStereoWidthSOFT = 6577,
 }

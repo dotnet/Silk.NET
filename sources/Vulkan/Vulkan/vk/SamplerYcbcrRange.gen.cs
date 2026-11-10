@@ -33,6 +33,17 @@ public enum SamplerYcbcrRange : uint
     )]
     ItuFull = 0,
 
+    [NativeName("VK_SAMPLER_YCBCR_RANGE_ITU_FULL_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    ItuFullKHR = ItuFull,
+
     [NativeName("VK_SAMPLER_YCBCR_RANGE_ITU_NARROW")]
     [SupportedApiProfile(
         "vulkan",
@@ -53,17 +64,6 @@ public enum SamplerYcbcrRange : uint
         MinVersion = "1.1"
     )]
     ItuNarrow = 1,
-
-    [NativeName("VK_SAMPLER_YCBCR_RANGE_ITU_FULL_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    ItuFullKHR = ItuFull,
 
     [NativeName("VK_SAMPLER_YCBCR_RANGE_ITU_NARROW_KHR")]
     [SupportedApiProfile(

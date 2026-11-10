@@ -12,38 +12,6 @@ namespace Silk.NET.Vulkan;
 [SupportedApiProfile("vulkan")]
 public enum OpacityMicromapSpecialIndexKHR
 {
-    [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_TRANSPARENT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_opacity_micromap"],
-        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
-    )]
-    FullyTransparent = -1,
-
-    [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_OPAQUE_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_opacity_micromap"],
-        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
-    )]
-    FullyOpaque = -2,
-
-    [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_TRANSPARENT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_opacity_micromap"],
-        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
-    )]
-    FullyUnknownTransparent = -3,
-
-    [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_OPAQUE_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_opacity_micromap"],
-        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
-    )]
-    FullyUnknownOpaque = -4,
-
     [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_CLUSTER_GEOMETRY_DISABLE_OPACITY_MICROMAP_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -53,18 +21,15 @@ public enum OpacityMicromapSpecialIndexKHR
     )]
     ClusterGeometryDisableOpacityMicromapNV = -5,
 
-    [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_TRANSPARENT_EXT")]
+    [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_OPAQUE_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_opacity_micromap"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
-        ]
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
     )]
-    FullyTransparentEXT = FullyTransparent,
+    FullyUnknownOpaque = -4,
 
-    [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_OPAQUE_EXT")]
+    [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_OPAQUE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -73,7 +38,15 @@ public enum OpacityMicromapSpecialIndexKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    FullyOpaqueEXT = FullyOpaque,
+    FullyUnknownOpaqueEXT = FullyUnknownOpaque,
+
+    [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_TRANSPARENT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    FullyUnknownTransparent = -3,
 
     [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_TRANSPARENT_EXT")]
     [SupportedApiProfile(
@@ -86,7 +59,15 @@ public enum OpacityMicromapSpecialIndexKHR
     )]
     FullyUnknownTransparentEXT = FullyUnknownTransparent,
 
-    [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_OPAQUE_EXT")]
+    [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_OPAQUE_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    FullyOpaque = -2,
+
+    [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_OPAQUE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -95,5 +76,24 @@ public enum OpacityMicromapSpecialIndexKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    FullyUnknownOpaqueEXT = FullyUnknownOpaque,
+    FullyOpaqueEXT = FullyOpaque,
+
+    [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_TRANSPARENT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    FullyTransparent = -1,
+
+    [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_TRANSPARENT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
+    FullyTransparentEXT = FullyTransparent,
 }

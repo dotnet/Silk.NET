@@ -160,7 +160,7 @@ public enum ImageCreateFlags : uint
     )]
     CreateCubeCompatibleBit = 0x10,
 
-    [NativeName("VK_IMAGE_CREATE_ALIAS_BIT")]
+    [NativeName("VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -183,7 +183,11 @@ public enum ImageCreateFlags : uint
         ],
         MinVersion = "1.1"
     )]
-    CreateAliasBit = 0x400,
+    Create2DArrayCompatibleBit = 0x20,
+
+    [NativeName("VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
+    Create2DArrayCompatibleBitKHR = Create2DArrayCompatibleBit,
 
     [NativeName("VK_IMAGE_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT")]
     [SupportedApiProfile(
@@ -210,30 +214,14 @@ public enum ImageCreateFlags : uint
     )]
     CreateSplitInstanceBindRegionsBit = 0x40,
 
-    [NativeName("VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT")]
+    [NativeName("VK_IMAGE_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
+        ["VK_KHR_bind_memory2", "VK_KHR_device_group"],
+        ImpliesSets = ["VK_KHR_device_group_creation"],
+        RequireAll = true
     )]
-    Create2DArrayCompatibleBit = 0x20,
+    CreateSplitInstanceBindRegionsBitKHR = CreateSplitInstanceBindRegionsBit,
 
     [NativeName("VK_IMAGE_CREATE_BLOCK_TEXEL_VIEW_COMPATIBLE_BIT")]
     [SupportedApiProfile(
@@ -260,6 +248,10 @@ public enum ImageCreateFlags : uint
     )]
     CreateBlockTexelViewCompatibleBit = 0x80,
 
+    [NativeName("VK_IMAGE_CREATE_BLOCK_TEXEL_VIEW_COMPATIBLE_BIT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
+    CreateBlockTexelViewCompatibleBitKHR = CreateBlockTexelViewCompatibleBit,
+
     [NativeName("VK_IMAGE_CREATE_EXTENDED_USAGE_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -285,30 +277,9 @@ public enum ImageCreateFlags : uint
     )]
     CreateExtendedUsageBit = 0x100,
 
-    [NativeName("VK_IMAGE_CREATE_PROTECTED_BIT")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    CreateProtectedBit = 0x800,
+    [NativeName("VK_IMAGE_CREATE_EXTENDED_USAGE_BIT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
+    CreateExtendedUsageBitKHR = CreateExtendedUsageBit,
 
     [NativeName("VK_IMAGE_CREATE_DISJOINT_BIT")]
     [SupportedApiProfile(
@@ -335,30 +306,70 @@ public enum ImageCreateFlags : uint
     )]
     CreateDisjointBit = 0x200,
 
-    [NativeName("VK_IMAGE_CREATE_CORNER_SAMPLED_BIT_NV")]
+    [NativeName("VK_IMAGE_CREATE_DISJOINT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_corner_sampled_image"],
+        ["VK_KHR_sampler_ycbcr_conversion"],
         ImpliesSets = [
-            "VK_NV_corner_sampled_image+VK_KHR_get_physical_device_properties2",
-            "VK_NV_corner_sampled_image+VK_VERSION_1_1",
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
         ]
     )]
-    CreateCornerSampledBitNV = 0x2000,
+    CreateDisjointBitKHR = CreateDisjointBit,
 
-    [NativeName("VK_IMAGE_CREATE_DESCRIPTOR_HEAP_CAPTURE_REPLAY_BIT_EXT")]
+    [NativeName("VK_IMAGE_CREATE_ALIAS_BIT")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_descriptor_heap"],
-        ImpliesSets = [
-            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
-            "VK_KHR_extended_flags+VK_VERSION_1_2",
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
             "VK_VERSION_1_4",
-        ]
+        ],
+        MinVersion = "1.1"
     )]
-    CreateDescriptorHeapCaptureReplayBitEXT = 0x10000,
+    CreateAliasBit = 0x400,
+
+    [NativeName("VK_IMAGE_CREATE_ALIAS_BIT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
+    CreateAliasBitKHR = CreateAliasBit,
+
+    [NativeName("VK_IMAGE_CREATE_PROTECTED_BIT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    CreateProtectedBit = 0x800,
 
     [NativeName("VK_IMAGE_CREATE_SAMPLE_LOCATIONS_COMPATIBLE_DEPTH_BIT_EXT")]
     [SupportedApiProfile(
@@ -371,6 +382,17 @@ public enum ImageCreateFlags : uint
     )]
     CreateSampleLocationsCompatibleDepthBitEXT = 0x1000,
 
+    [NativeName("VK_IMAGE_CREATE_CORNER_SAMPLED_BIT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_corner_sampled_image"],
+        ImpliesSets = [
+            "VK_NV_corner_sampled_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_corner_sampled_image+VK_VERSION_1_1",
+        ]
+    )]
+    CreateCornerSampledBitNV = 0x2000,
+
     [NativeName("VK_IMAGE_CREATE_SUBSAMPLED_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -381,33 +403,6 @@ public enum ImageCreateFlags : uint
         ]
     )]
     CreateSubsampledBitEXT = 0x4000,
-
-    [NativeName("VK_IMAGE_CREATE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_multisampled_render_to_single_sampled"],
-        ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
-    )]
-    CreateMultisampledRenderToSingleSampledBitEXT = 0x40000,
-
-    [NativeName("VK_IMAGE_CREATE_2D_VIEW_COMPATIBLE_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_image_2d_view_of_3d"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    Create2DViewCompatibleBitEXT = 0x20000,
-
-    [NativeName("VK_IMAGE_CREATE_VIDEO_PROFILE_INDEPENDENT_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_maintenance1"],
-        ImpliesSets = ["VK_KHR_video_queue"]
-    )]
-    CreateVideoProfileIndependentBitKHR = 0x100000,
 
     [NativeName("VK_IMAGE_CREATE_FRAGMENT_DENSITY_MAP_OFFSET_BIT_EXT")]
     [SupportedApiProfile(
@@ -426,52 +421,30 @@ public enum ImageCreateFlags : uint
     )]
     CreateFragmentDensityMapOffsetBitEXT = 0x8000,
 
-    [NativeName("VK_IMAGE_CREATE_ALIAS_SINGLE_LAYER_DESCRIPTOR_BIT_KHR")]
+    [NativeName("VK_IMAGE_CREATE_FRAGMENT_DENSITY_MAP_OFFSET_BIT_QCOM")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_maintenance11"],
+        ["VK_QCOM_fragment_density_map_offset"],
         ImpliesSets = [
-            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_maintenance11+VK_VERSION_1_1",
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    CreateAliasSingleLayerDescriptorBitKHR = 0x400000,
+    CreateFragmentDensityMapOffsetBitQCOM = CreateFragmentDensityMapOffsetBitEXT,
 
-    [NativeName("VK_IMAGE_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT_KHR")]
+    [NativeName("VK_IMAGE_CREATE_DESCRIPTOR_HEAP_CAPTURE_REPLAY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_bind_memory2", "VK_KHR_device_group"],
-        ImpliesSets = ["VK_KHR_device_group_creation"],
-        RequireAll = true
-    )]
-    CreateSplitInstanceBindRegionsBitKHR = CreateSplitInstanceBindRegionsBit,
-
-    [NativeName("VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
-    Create2DArrayCompatibleBitKHR = Create2DArrayCompatibleBit,
-
-    [NativeName("VK_IMAGE_CREATE_BLOCK_TEXEL_VIEW_COMPATIBLE_BIT_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    CreateBlockTexelViewCompatibleBitKHR = CreateBlockTexelViewCompatibleBit,
-
-    [NativeName("VK_IMAGE_CREATE_EXTENDED_USAGE_BIT_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    CreateExtendedUsageBitKHR = CreateExtendedUsageBit,
-
-    [NativeName("VK_IMAGE_CREATE_DISJOINT_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
+        ["VK_EXT_descriptor_heap"],
         ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
         ]
     )]
-    CreateDisjointBitKHR = CreateDisjointBit,
-
-    [NativeName("VK_IMAGE_CREATE_ALIAS_BIT_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
-    CreateAliasBitKHR = CreateAliasBit,
+    CreateDescriptorHeapCaptureReplayBitEXT = 0x10000,
 
     [NativeName("VK_IMAGE_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
     [SupportedApiProfile(
@@ -486,14 +459,41 @@ public enum ImageCreateFlags : uint
     )]
     CreateDescriptorBufferCaptureReplayBitEXT = CreateDescriptorHeapCaptureReplayBitEXT,
 
-    [NativeName("VK_IMAGE_CREATE_FRAGMENT_DENSITY_MAP_OFFSET_BIT_QCOM")]
+    [NativeName("VK_IMAGE_CREATE_2D_VIEW_COMPATIBLE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_QCOM_fragment_density_map_offset"],
+        ["VK_EXT_image_2d_view_of_3d"],
         ImpliesSets = [
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
+            "VK_KHR_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
         ]
     )]
-    CreateFragmentDensityMapOffsetBitQCOM = CreateFragmentDensityMapOffsetBitEXT,
+    Create2DViewCompatibleBitEXT = 0x20000,
+
+    [NativeName("VK_IMAGE_CREATE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_multisampled_render_to_single_sampled"],
+        ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
+    )]
+    CreateMultisampledRenderToSingleSampledBitEXT = 0x40000,
+
+    [NativeName("VK_IMAGE_CREATE_VIDEO_PROFILE_INDEPENDENT_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_maintenance1"],
+        ImpliesSets = ["VK_KHR_video_queue"]
+    )]
+    CreateVideoProfileIndependentBitKHR = 0x100000,
+
+    [NativeName("VK_IMAGE_CREATE_ALIAS_SINGLE_LAYER_DESCRIPTOR_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance11"],
+        ImpliesSets = [
+            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance11+VK_VERSION_1_1",
+        ]
+    )]
+    CreateAliasSingleLayerDescriptorBitKHR = 0x400000,
 }

@@ -12,12 +12,6 @@ namespace Silk.NET.OpenCL;
 [NativeName("cl_kernel_sub_group_info")]
 public enum KernelSubGroupInfo : uint
 {
-    [NativeName("CL_KERNEL_MAX_SUB_GROUP_SIZE_FOR_NDRANGE")]
-    MaxSubGroupSizeForNdrange = 8243,
-
-    [NativeName("CL_KERNEL_SUB_GROUP_COUNT_FOR_NDRANGE")]
-    SubGroupCountForNdrange = 8244,
-
     [NativeName("CL_KERNEL_LOCAL_SIZE_FOR_SUB_GROUP_COUNT")]
     LocalSizeForSubGroupCount = 4536,
 
@@ -27,8 +21,14 @@ public enum KernelSubGroupInfo : uint
     [NativeName("CL_KERNEL_COMPILE_NUM_SUB_GROUPS")]
     CompileNumSubGroups = 4538,
 
+    [NativeName("CL_KERNEL_MAX_SUB_GROUP_SIZE_FOR_NDRANGE")]
+    MaxSubGroupSizeForNdrange = 8243,
+
     [NativeName("CL_KERNEL_MAX_SUB_GROUP_SIZE_FOR_NDRANGE_KHR")]
     MaxSubGroupSizeForNdrangeKHR = 8243,
+
+    [NativeName("CL_KERNEL_SUB_GROUP_COUNT_FOR_NDRANGE")]
+    SubGroupCountForNdrange = 8244,
 
     [NativeName("CL_KERNEL_SUB_GROUP_COUNT_FOR_NDRANGE_KHR")]
     SubGroupCountForNdrangeKHR = 8244,

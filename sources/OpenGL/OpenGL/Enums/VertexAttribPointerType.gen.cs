@@ -10,9 +10,6 @@ namespace Silk.NET.OpenGL;
 [NativeName("VertexAttribPointerType")]
 public enum VertexAttribPointerType : uint
 {
-    [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
-    UnsignedInt2x10x10x10RevEXT = 33640,
-
     [NativeName("GL_BYTE")]
     Byte = 5120,
 
@@ -37,23 +34,11 @@ public enum VertexAttribPointerType : uint
     [NativeName("GL_DOUBLE")]
     Double = 5130,
 
-    [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV")]
-    UnsignedInt2x10x10x10Rev = 33640,
-
-    [NativeName("GL_UNSIGNED_INT_10F_11F_11F_REV")]
-    UnsignedInt10F11F11FRev = 35899,
-
     [NativeName("GL_HALF_FLOAT")]
     HalfFloat = 5131,
 
-    [NativeName("GL_INT_2_10_10_10_REV")]
-    Int2x10x10x10Rev = 36255,
-
     [NativeName("GL_FIXED")]
     Fixed = 5132,
-
-    [NativeName("GL_UNSIGNED_INT64_ARB")]
-    UnsignedInt64ARB = 5135,
 
     [NativeName("GL_INT64_ARB")]
     Int64ARB = 5134,
@@ -61,6 +46,21 @@ public enum VertexAttribPointerType : uint
     [NativeName("GL_INT64_NV")]
     Int64NV = 5134,
 
+    [NativeName("GL_UNSIGNED_INT64_ARB")]
+    UnsignedInt64ARB = 5135,
+
     [NativeName("GL_UNSIGNED_INT64_NV")]
     UnsignedInt64NV = 5135,
+
+    [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
+    UnsignedInt2x10x10x10RevEXT = 33640,
+
+    [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV")]
+    UnsignedInt2x10x10x10Rev = 33640,
+
+    [NativeName("GL_UNSIGNED_INT_10F_11F_11F_REV")]
+    UnsignedInt10F11F11FRev = 35899,
+
+    [NativeName("GL_INT_2_10_10_10_REV")]
+    Int2x10x10x10Rev = 36255,
 }

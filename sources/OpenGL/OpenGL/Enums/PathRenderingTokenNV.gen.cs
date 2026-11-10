@@ -85,32 +85,14 @@ public enum PathRenderingTokenNV : uint
     [NativeName("GL_RELATIVE_LARGE_CW_ARC_TO_NV")]
     RelativeLargeCwArcTo = 25,
 
-    [NativeName("GL_RESTART_PATH_NV")]
-    RestartPath = 240,
+    [NativeName("GL_CONIC_CURVE_TO_NV")]
+    ConicCurveTo = 26,
 
-    [NativeName("GL_DUP_FIRST_CUBIC_CURVE_TO_NV")]
-    DupFirstCubicCurveTo = 242,
+    [NativeName("GL_RELATIVE_CONIC_CURVE_TO_NV")]
+    RelativeConicCurveTo = 27,
 
-    [NativeName("GL_DUP_LAST_CUBIC_CURVE_TO_NV")]
-    DupLastCubicCurveTo = 244,
-
-    [NativeName("GL_RECT_NV")]
-    Rect = 246,
-
-    [NativeName("GL_CIRCULAR_CCW_ARC_TO_NV")]
-    CircularCcwArcTo = 248,
-
-    [NativeName("GL_CIRCULAR_CW_ARC_TO_NV")]
-    CircularCwArcTo = 250,
-
-    [NativeName("GL_CIRCULAR_TANGENT_ARC_TO_NV")]
-    CircularTangentArcTo = 252,
-
-    [NativeName("GL_ARC_TO_NV")]
-    ArcTo = 254,
-
-    [NativeName("GL_RELATIVE_ARC_TO_NV")]
-    RelativeArcTo = 255,
+    [NativeName("GL_SHARED_EDGE_NV")]
+    SharedEdge = 192,
 
     [NativeName("GL_ROUNDED_RECT_NV")]
     RoundedRect = 232,
@@ -136,15 +118,33 @@ public enum PathRenderingTokenNV : uint
     [NativeName("GL_RELATIVE_ROUNDED_RECT8_NV")]
     RelativeRoundedRect8 = 239,
 
+    [NativeName("GL_RESTART_PATH_NV")]
+    RestartPath = 240,
+
+    [NativeName("GL_DUP_FIRST_CUBIC_CURVE_TO_NV")]
+    DupFirstCubicCurveTo = 242,
+
+    [NativeName("GL_DUP_LAST_CUBIC_CURVE_TO_NV")]
+    DupLastCubicCurveTo = 244,
+
+    [NativeName("GL_RECT_NV")]
+    Rect = 246,
+
     [NativeName("GL_RELATIVE_RECT_NV")]
     RelativeRect = 247,
 
-    [NativeName("GL_CONIC_CURVE_TO_NV")]
-    ConicCurveTo = 26,
+    [NativeName("GL_CIRCULAR_CCW_ARC_TO_NV")]
+    CircularCcwArcTo = 248,
 
-    [NativeName("GL_RELATIVE_CONIC_CURVE_TO_NV")]
-    RelativeConicCurveTo = 27,
+    [NativeName("GL_CIRCULAR_CW_ARC_TO_NV")]
+    CircularCwArcTo = 250,
 
-    [NativeName("GL_SHARED_EDGE_NV")]
-    SharedEdge = 192,
+    [NativeName("GL_CIRCULAR_TANGENT_ARC_TO_NV")]
+    CircularTangentArcTo = 252,
+
+    [NativeName("GL_ARC_TO_NV")]
+    ArcTo = 254,
+
+    [NativeName("GL_RELATIVE_ARC_TO_NV")]
+    RelativeArcTo = 255,
 }

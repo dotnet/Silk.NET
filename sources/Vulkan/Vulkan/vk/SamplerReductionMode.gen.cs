@@ -30,6 +30,17 @@ public enum SamplerReductionMode : uint
     )]
     WeightedAverage = 0,
 
+    [NativeName("VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sampler_filter_minmax"],
+        ImpliesSets = [
+            "VK_EXT_sampler_filter_minmax+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
+        ]
+    )]
+    WeightedAverageEXT = WeightedAverage,
+
     [NativeName("VK_SAMPLER_REDUCTION_MODE_MIN")]
     [SupportedApiProfile(
         "vulkan",
@@ -47,6 +58,17 @@ public enum SamplerReductionMode : uint
         MinVersion = "1.2"
     )]
     Min = 1,
+
+    [NativeName("VK_SAMPLER_REDUCTION_MODE_MIN_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sampler_filter_minmax"],
+        ImpliesSets = [
+            "VK_EXT_sampler_filter_minmax+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
+        ]
+    )]
+    MinEXT = Min,
 
     [NativeName("VK_SAMPLER_REDUCTION_MODE_MAX")]
     [SupportedApiProfile(
@@ -66,39 +88,6 @@ public enum SamplerReductionMode : uint
     )]
     Max = 2,
 
-    [NativeName("VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_RANGECLAMP_QCOM")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_QCOM_filter_cubic_clamp"],
-        ImpliesSets = [
-            "VK_EXT_filter_cubic+VK_EXT_sampler_filter_minmax",
-            "VK_EXT_filter_cubic+VK_VERSION_1_2",
-        ]
-    )]
-    WeightedAverageRangeclampQCOM = 1000521000,
-
-    [NativeName("VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_sampler_filter_minmax"],
-        ImpliesSets = [
-            "VK_EXT_sampler_filter_minmax+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
-        ]
-    )]
-    WeightedAverageEXT = WeightedAverage,
-
-    [NativeName("VK_SAMPLER_REDUCTION_MODE_MIN_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_sampler_filter_minmax"],
-        ImpliesSets = [
-            "VK_EXT_sampler_filter_minmax+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
-        ]
-    )]
-    MinEXT = Min,
-
     [NativeName("VK_SAMPLER_REDUCTION_MODE_MAX_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -109,4 +98,15 @@ public enum SamplerReductionMode : uint
         ]
     )]
     MaxEXT = Max,
+
+    [NativeName("VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_RANGECLAMP_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_filter_cubic_clamp"],
+        ImpliesSets = [
+            "VK_EXT_filter_cubic+VK_EXT_sampler_filter_minmax",
+            "VK_EXT_filter_cubic+VK_VERSION_1_2",
+        ]
+    )]
+    WeightedAverageRangeclampQCOM = 1000521000,
 }

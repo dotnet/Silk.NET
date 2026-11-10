@@ -13,11 +13,11 @@ public enum LightModelColorControl : uint
     [NativeName("GL_SINGLE_COLOR")]
     SingleColor = 33273,
 
-    [NativeName("GL_SEPARATE_SPECULAR_COLOR")]
-    SeparateSpecularColor = 33274,
-
     [NativeName("GL_SINGLE_COLOR_EXT")]
     SingleColorEXT = 33273,
+
+    [NativeName("GL_SEPARATE_SPECULAR_COLOR")]
+    SeparateSpecularColor = 33274,
 
     [NativeName("GL_SEPARATE_SPECULAR_COLOR_EXT")]
     SeparateSpecularColorEXT = 33274,

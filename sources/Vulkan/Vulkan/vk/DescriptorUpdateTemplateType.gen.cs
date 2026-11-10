@@ -33,6 +33,10 @@ public enum DescriptorUpdateTemplateType : uint
     )]
     DescriptorSet = 0,
 
+    [NativeName("VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_DESCRIPTOR_SET_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
+    DescriptorSetKHR = DescriptorSet,
+
     [NativeName("VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_PUSH_DESCRIPTORS")]
     [SupportedApiProfile(
         "vulkan",
@@ -54,8 +58,4 @@ public enum DescriptorUpdateTemplateType : uint
         ]
     )]
     PushDescriptorsKHR = PushDescriptors,
-
-    [NativeName("VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_DESCRIPTOR_SET_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
-    DescriptorSetKHR = DescriptorSet,
 }

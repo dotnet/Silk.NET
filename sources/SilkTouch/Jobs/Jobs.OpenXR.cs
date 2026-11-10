@@ -141,6 +141,7 @@ internal static partial class Jobs
                                 .EnumBackingTypePreference
                                 .PreferUnsigned,
                             RewriteMemberValues = true,
+                            SortMembers = true,
                         }
                     )
                     .AddVTables(

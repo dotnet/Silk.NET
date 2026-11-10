@@ -22,6 +22,9 @@ public enum FragmentShaderGenericSource : uint
     [NativeName("GL_PRIMARY_COLOR_ARB")]
     PrimaryColorARB = 34167,
 
+    [NativeName("GL_PRIMARY_COLOR_EXT")]
+    PrimaryColorEXT = 34167,
+
     [NativeName("GL_REG_0_ATI")]
     Reg0ATI = 35105,
 
@@ -216,7 +219,4 @@ public enum FragmentShaderGenericSource : uint
 
     [NativeName("GL_SECONDARY_INTERPOLATOR_ATI")]
     SecondaryInterpolatorATI = 35181,
-
-    [NativeName("GL_PRIMARY_COLOR_EXT")]
-    PrimaryColorEXT = 34167,
 }

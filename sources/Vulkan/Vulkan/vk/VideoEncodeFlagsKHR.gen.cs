@@ -15,14 +15,6 @@ public enum VideoEncodeFlagsKHR : uint
 {
     None = 0x0,
 
-    [NativeName("VK_VIDEO_ENCODE_INTRA_REFRESH_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_intra_refresh"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
-    )]
-    IntraRefreshBit = 0x4,
-
     [NativeName("VK_VIDEO_ENCODE_WITH_QUANTIZATION_DELTA_MAP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -44,4 +36,12 @@ public enum VideoEncodeFlagsKHR : uint
         ]
     )]
     WithEmphasisMapBit = 0x2,
+
+    [NativeName("VK_VIDEO_ENCODE_INTRA_REFRESH_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_intra_refresh"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    IntraRefreshBit = 0x4,
 }

@@ -23,6 +23,17 @@ public enum CopyAccelerationStructureModeKHR : uint
     )]
     Clone = 0,
 
+    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_CLONE_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    CloneNV = Clone,
+
     [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -33,6 +44,17 @@ public enum CopyAccelerationStructureModeKHR : uint
         ]
     )]
     Compact = 1,
+
+    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    CompactNV = Compact,
 
     [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_SERIALIZE_KHR")]
     [SupportedApiProfile(
@@ -55,26 +77,4 @@ public enum CopyAccelerationStructureModeKHR : uint
         ]
     )]
     Deserialize = 3,
-
-    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_CLONE_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_ray_tracing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    CloneNV = Clone,
-
-    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_ray_tracing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    CompactNV = Compact,
 }

@@ -69,12 +69,6 @@ public enum ChannelOrder : uint
     [NativeName("CL_ABGR")]
     Abgr = 4291,
 
-    [NativeName("CL_NV21_IMG")]
-    Nv21IMG = 16592,
-
-    [NativeName("CL_YV12_IMG")]
-    Yv12IMG = 16593,
-
     [NativeName("CL_YUYV_INTEL")]
     YuyvINTEL = 16502,
 
@@ -86,6 +80,12 @@ public enum ChannelOrder : uint
 
     [NativeName("CL_VYUY_INTEL")]
     VyuyINTEL = 16505,
+
+    [NativeName("CL_NV21_IMG")]
+    Nv21IMG = 16592,
+
+    [NativeName("CL_YV12_IMG")]
+    Yv12IMG = 16593,
 
     [NativeName("CL_NV12_INTEL")]
     Nv12INTEL = 16654,
