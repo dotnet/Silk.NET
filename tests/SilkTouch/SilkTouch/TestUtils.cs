@@ -23,7 +23,7 @@ public static class TestUtils
             name: "TestProject",
             assemblyName: "TestAssembly",
             language: LanguageNames.CSharp,
-#pragma warning disable IL3000 - 'System.Reflection.Assembly.Location.get' always returns an empty string for assemblies embedded in a single-file app
+#pragma warning disable IL3000 // 'System.Reflection.Assembly.Location.get' always returns an empty string for assemblies embedded in a single-file app
             // Without this, basic types like System.Int32 are missing
             metadataReferences: [MetadataReference.CreateFromFile(typeof(object).Assembly.Location)]
 #pragma warning restore IL3000
