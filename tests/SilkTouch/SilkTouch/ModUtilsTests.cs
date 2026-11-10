@@ -22,12 +22,12 @@ public class ModUtilsTests
             (string Input, string EffectiveName, string Directory, string Remainder) testData
     )
     {
-        ModUtils.GetEffectiveName(
-            testData.Input,
+        testData.Input.GetEffectiveName(
             out var effectiveName,
             out var directory,
             out var remainder
         );
+
         Assert.That(effectiveName.ToString(), Is.EqualTo(testData.EffectiveName));
         Assert.That(directory.ToString(), Is.EqualTo(testData.Directory));
         Assert.That(remainder.ToString(), Is.EqualTo(testData.Remainder));
