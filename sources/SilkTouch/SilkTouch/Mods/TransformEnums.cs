@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.Extensions.Logging;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -13,7 +14,8 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Contains various transformations related to enums.
 /// </summary>
-public class TransformEnums(TransformEnums.Configuration config) : IMod
+public class TransformEnums(TransformEnums.Configuration config, ILogger<TransformEnums> logger)
+    : IMod
 {
     /// <summary>
     /// The preferred backing type for enums.
@@ -87,7 +89,13 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
         /// <summary>
         /// Whether to identify enum types that are likely to be [Flags] enums as [Flags] enums.
         /// </summary>
-        public bool IdentifyFlags { get; init; } = true;
+        public bool IdentifyFlags { get; init; } = false;
+
+        /// <summary>
+        /// Enums manually identified as [Flags] enums or non-[Flags].
+        /// </summary>
+        public IReadOnlyDictionary<string, bool> FlagsOverrides { get; init; } =
+            new Dictionary<string, bool>();
     }
 
     /// <summary>
@@ -182,7 +190,13 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
         }
 
         var memberRewriteDecider = new MemberRewriteDecider();
-        var rewriter = new Rewriter(config, removeMemberFilters, compilation, memberRewriteDecider);
+        var rewriter = new Rewriter(
+            config,
+            removeMemberFilters,
+            compilation,
+            memberRewriteDecider,
+            logger
+        );
         foreach (var docId in proj.DocumentIds)
         {
             var doc =
@@ -200,7 +214,8 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
         Configuration config,
         List<EnumMemberFilter> removeMemberFilters,
         Compilation compilation,
-        MemberRewriteDecider memberRewriteDecider
+        MemberRewriteDecider memberRewriteDecider,
+        ILogger logger
     ) : CSharpSyntaxRewriter
     {
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
@@ -214,6 +229,7 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
 
             // Gather type information
             var originalNode = node;
+            var nativeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
             var isSigned = symbol.EnumUnderlyingType?.IsSignedInteger() ?? true;
             var members = node
                 .Members.Select(n =>
@@ -224,23 +240,43 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 })
                 .ToList();
 
-            // var isFlagsEnum = node.AttributeLists.ContainsAttribute("System.Flags");
+            var isFlagsEnumKnown = false;
             var isFlagsEnum = false;
-            var addFlagsAttribute = false;
+
+            if (node.AttributeLists.ContainsAttribute("System.Flags"))
+            {
+                isFlagsEnumKnown = true;
+                isFlagsEnum = true;
+            }
+
+            if (config.FlagsOverrides.TryGetValue(nativeName, out var isFlags))
+            {
+                isFlagsEnumKnown = true;
+                isFlagsEnum = isFlags;
+            }
 
             // This identification step should happen as early as possible
             // to ensure we are testing against the original member values
-            if (
-                !isFlagsEnum
-                && config.IdentifyFlags
-                && ModUtils.IsProbablyFlags(
+            if (!isFlagsEnumKnown && config.IdentifyFlags)
+            {
+                var isProbablyFlags = ModUtils.IsProbablyFlags(
                     members.Where(m => m.Value != null).Select(m => m.Value!.Value).ToArray(),
                     isSigned
-                ) == true // TODO Warn if inconclusive
-            )
-            {
-                isFlagsEnum = true;
-                addFlagsAttribute = true;
+                );
+
+                if (isProbablyFlags == null)
+                {
+                    logger.LogWarning(
+                        "Unable to conclusively identify whether {Enum} is a [Flags] enum. Please manually identify this using the {FlagsOverride} option.",
+                        nativeName,
+                        nameof(Configuration.FlagsOverrides)
+                    );
+                    isFlagsEnum = false;
+                }
+                else
+                {
+                    isFlagsEnum = isProbablyFlags.Value;
+                }
             }
 
             foreach (var filter in removeMemberFilters)
@@ -452,11 +488,7 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
             }
 
             node = node.WithMembers([.. members.Select(m => m.Node)]);
-
-            if (addFlagsAttribute)
-            {
-                node = node.WithAttributeLists(node.AttributeLists.WithFlags());
-            }
+            node = node.WithAttributeLists(node.AttributeLists.WithFlags(isFlagsEnum));
 
             return base.VisitEnumDeclaration(node);
         }

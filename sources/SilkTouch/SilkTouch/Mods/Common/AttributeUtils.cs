@@ -269,16 +269,42 @@ public static class AttributeUtils
     /// Ensures the attribute list contains the [Flags] attribute.
     /// </summary>
     public static SyntaxList<AttributeListSyntax> WithFlags(
-        this IEnumerable<AttributeListSyntax> attributeLists
+        this IEnumerable<AttributeListSyntax> attributeLists,
+        bool add = true
     )
     {
-        var list = List([.. attributeLists]);
-        if (list.ContainsAttribute("System.Flags"))
+        if (add)
         {
-            return list;
-        }
+            var list = List([.. attributeLists]);
+            if (list.ContainsAttribute("System.Flags"))
+            {
+                return list;
+            }
 
-        return list.Add(AttributeList(SingletonSeparatedList(Attribute(IdentifierName("Flags")))));
+            return list.Add(
+                AttributeList(SingletonSeparatedList(Attribute(IdentifierName("Flags"))))
+            );
+        }
+        else
+        {
+            return List(
+                attributeLists
+                    .Select(list =>
+                    {
+                        var attributes = list.Attributes;
+                        attributes =
+                        [
+                            .. attributes.Where(attribute =>
+                                !attribute.IsAttribute("System.Flags")
+                            ),
+                        ];
+
+                        return attributes.Count == 0 ? null : list.WithAttributes(attributes);
+                    })
+                    .Where(list => list != null)
+                    .Cast<AttributeListSyntax>()
+            );
+        }
     }
 
     /// <summary>
