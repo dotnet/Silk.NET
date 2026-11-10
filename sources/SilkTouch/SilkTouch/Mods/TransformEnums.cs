@@ -88,7 +88,7 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
         /// <summary>
         /// Whether to identify enum types that are likely to be [Flags] enums as [Flags] enums.
         /// </summary>
-        public bool IdentifyFlags { get; init; } = false;
+        public bool IdentifyFlags { get; init; } = true;
     }
 
     /// <summary>
@@ -201,57 +201,71 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
     /// Identifies whether an enum is probably a [Flags] enum based on its members.
     /// </summary>
     /// <remarks>
-    /// Ported from Silk.NET 2.X BuildTools IsProbablyABitmask:
+    /// Based off of Silk.NET 2.X BuildTools IsProbablyABitmask (not an exact port):
     /// https://github.com/dotnet/Silk.NET/blob/c87fc664cc5d15abd754997b0a9ad138470554c4/src/Core/Silk.NET.BuildTools/Common/Utilities.cs#L627
     /// </remarks>
-    private static bool IsProbablyFlags(List<EnumMemberInfo> members)
+    private static bool IsProbablyFlags(List<EnumMemberInfo> members, bool isSigned)
     {
+        if (isSigned && members.Any(m => m.Value != null && m.Value.Value < 0))
+        {
+            return false;
+        }
+
         var values = members
             .Where(m => m.Value != null)
             .Select(m => unchecked((ulong)m.Value!.Value))
+            // Ignore 0 since 0 is used in both Flags/non-Flags enums
+            // Ignore MaxValues since these are used to ensure the bitwidth of the native enum
+            // This is based on how BuildTools handles https://github.com/dotnet/Silk.NET/issues/2238, but generalized
+            // Reason we filter these out is that these shouldn't influence the Flags identification process
+            .Where(x =>
+                x is not (0 or int.MaxValue or uint.MaxValue or long.MaxValue or ulong.MaxValue)
+            )
+            .Distinct()
+            .OrderBy(x => x)
             .ToArray();
+
         var countWith1BitSet = values.Count(x => BitOperations.PopCount(x) == 1);
 
         return (
-                // There is more than one member
-                members.Count > 1
+                // There is at least 1 item
+                values.Length >= 1
                 &&
-                // At least approx 50% of the members have only one bit set
-                countWith1BitSet >= MathF.Floor(members.Count / 2f)
+                // At least 50% of the members have only one bit set
+                countWith1BitSet >= MathF.Floor(values.Length * 0.5f)
                 &&
                 // It's not sequential (1, 2, 3)
                 !IsSeeminglySequential(values)
             )
             || (
-                // Alternatively, all items that are not MaxValue or 0 have popcnt == 1
-                // https://github.com/dotnet/Silk.NET/issues/2238
-                values.Count(x => x is not 0 and not 0x7FFFFFFF) == countWith1BitSet
+                // There are at least 2 items
+                values.Length >= 2
                 &&
-                // And there are more than two items with popcnt == 1
-                countWith1BitSet > 2
+                // All items have one bit set
+                values.Length == countWith1BitSet
             );
-    }
 
-    // Renamed from IsSequential as suggested by this comment:
-    // https://discord.com/channels/521092042781229087/587346162802229298/1284528132807987212
-    private static bool IsSeeminglySequential(ulong[] values)
-    {
-        const int maxMisses = 1;
-        var misses = 0;
-        for (var i = 0; i < values.Length; i++)
+        // Renamed from IsSequential as suggested by this comment:
+        // https://discord.com/channels/521092042781229087/587346162802229298/1284528132807987212
+        bool IsSeeminglySequential(ulong[] values)
         {
-            if (values[i] != (ulong)(i - misses) && values[i] != (ulong)(i - misses + 1))
+            const int maxMisses = 1;
+            var misses = 0;
+            for (var i = 0; i < values.Length; i++)
             {
-                misses++;
+                if (values[i] != (ulong)(i - misses) && values[i] != (ulong)(i - misses + 1))
+                {
+                    misses++;
+                }
+
+                if (misses > maxMisses)
+                {
+                    return false;
+                }
             }
 
-            if (misses > maxMisses)
-            {
-                return false;
-            }
+            return true;
         }
-
-        return true;
     }
 
     private class Rewriter(
@@ -270,9 +284,9 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 return base.VisitEnumDeclaration(node);
             }
 
-            var isSigned = symbol.EnumUnderlyingType?.IsSignedInteger() ?? true;
-
+            // Gather type information
             var originalNode = node;
+            var isSigned = symbol.EnumUnderlyingType?.IsSignedInteger() ?? true;
             var members = node
                 .Members.Select(n =>
                 {
@@ -282,6 +296,18 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 })
                 .ToList();
 
+            // var isFlagsEnum = node.AttributeLists.ContainsAttribute("System.Flags");
+            var isFlagsEnum = false;
+            var addFlagsAttribute = false;
+
+            // This identification step should happen as early as possible
+            // to ensure we are testing against the original member values
+            if (!isFlagsEnum && config.IdentifyFlags && IsProbablyFlags(members, isSigned))
+            {
+                isFlagsEnum = true;
+                addFlagsAttribute = true;
+            }
+
             foreach (var filter in removeMemberFilters)
             {
                 if (!filter.IsTypeMatch(symbol))
@@ -290,14 +316,6 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 }
 
                 members.RemoveAll(m => filter.IsMemberMatch(m));
-            }
-
-            var isFlagsEnum = node.AttributeLists.ContainsAttribute("System.Flags");
-            var addFlagsAttribute = false;
-            if (!isFlagsEnum && config.IdentifyFlags && IsProbablyFlags(members))
-            {
-                isFlagsEnum = true;
-                addFlagsAttribute = true;
             }
 
             if (isFlagsEnum && config.AddNoneMemberToFlags)
@@ -335,7 +353,6 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 }
             }
 
-            // This code uses the semantic model for members so it has to run before the members are rewritten below
             switch (config.CoerceBackingTypes)
             {
                 case EnumBackingTypePreference.PreferSigned:
