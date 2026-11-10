@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Globalization;
-using System.Numerics;
 using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -237,7 +236,7 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 && ModUtils.IsProbablyFlags(
                     members.Where(m => m.Value != null).Select(m => m.Value!.Value).ToArray(),
                     isSigned
-                )
+                ) == true // TODO Warn if inconclusive
             )
             {
                 isFlagsEnum = true;

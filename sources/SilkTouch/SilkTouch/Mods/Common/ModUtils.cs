@@ -53,7 +53,8 @@ public static class ModUtils
     /// Based off of Silk.NET 2.X BuildTools IsProbablyABitmask (not an exact port):
     /// https://github.com/dotnet/Silk.NET/blob/c87fc664cc5d15abd754997b0a9ad138470554c4/src/Core/Silk.NET.BuildTools/Common/Utilities.cs#L627
     /// </remarks>
-    public static bool IsProbablyFlags(IReadOnlyList<long> members, bool isSigned)
+    /// <returns>false if unlikely, null if inconclusive, true if likely</returns>
+    public static bool? IsProbablyFlags(IReadOnlyList<long> members, bool isSigned)
     {
         if (isSigned && members.Any(x => x < 0))
         {
@@ -73,14 +74,20 @@ public static class ModUtils
             .OrderBy(x => x)
             .ToArray();
 
+        if (values is [1, 2] or [1, 2, 3])
+        {
+            // Inconclusive
+            return null;
+        }
+
         var countWith1BitSet = values.Count(x => BitOperations.PopCount(x) == 1);
 
         return (
                 // There is at least 1 item
                 values.Length >= 1
                 &&
-                // At least 50% of the members have only one bit set
-                countWith1BitSet >= MathF.Floor(values.Length * 0.5f)
+                // Majority of the members have one bit set
+                countWith1BitSet > values.Length / 2
                 &&
                 // It's not sequential (1, 2, 3)
                 !IsSeeminglySequential(values)
