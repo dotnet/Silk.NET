@@ -26131,6 +26131,962 @@ public unsafe partial class AL : IAL, IAL.Static
         }
     }
 
+    [NativeName("AL_LOWPASS_MIN_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float LowpassMinGain = 0.0f;
+
+    [NativeName("AL_LOWPASS_MAX_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float LowpassMaxGain = 1.0f;
+
+    [NativeName("AL_LOWPASS_DEFAULT_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float LowpassDefaultGain = 1.0f;
+
+    [NativeName("AL_LOWPASS_MIN_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float LowpassMinGainhf = 0.0f;
+
+    [NativeName("AL_LOWPASS_MAX_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float LowpassMaxGainhf = 1.0f;
+
+    [NativeName("AL_LOWPASS_DEFAULT_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float LowpassDefaultGainhf = 1.0f;
+
+    [NativeName("AL_HIGHPASS_MIN_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float HighpassMinGain = 0.0f;
+
+    [NativeName("AL_HIGHPASS_MAX_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float HighpassMaxGain = 1.0f;
+
+    [NativeName("AL_HIGHPASS_DEFAULT_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float HighpassDefaultGain = 1.0f;
+
+    [NativeName("AL_HIGHPASS_MIN_GAINLF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float HighpassMinGainlf = 0.0f;
+
+    [NativeName("AL_HIGHPASS_MAX_GAINLF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float HighpassMaxGainlf = 1.0f;
+
+    [NativeName("AL_HIGHPASS_DEFAULT_GAINLF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float HighpassDefaultGainlf = 1.0f;
+
+    [NativeName("AL_BANDPASS_MIN_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float BandpassMinGain = 0.0f;
+
+    [NativeName("AL_BANDPASS_MAX_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float BandpassMaxGain = 1.0f;
+
+    [NativeName("AL_BANDPASS_DEFAULT_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float BandpassDefaultGain = 1.0f;
+
+    [NativeName("AL_BANDPASS_MIN_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float BandpassMinGainhf = 0.0f;
+
+    [NativeName("AL_BANDPASS_MAX_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float BandpassMaxGainhf = 1.0f;
+
+    [NativeName("AL_BANDPASS_DEFAULT_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float BandpassDefaultGainhf = 1.0f;
+
+    [NativeName("AL_BANDPASS_MIN_GAINLF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float BandpassMinGainlf = 0.0f;
+
+    [NativeName("AL_BANDPASS_MAX_GAINLF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float BandpassMaxGainlf = 1.0f;
+
+    [NativeName("AL_BANDPASS_DEFAULT_GAINLF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float BandpassDefaultGainlf = 1.0f;
+
+    [NativeName("AL_REVERB_MIN_DENSITY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMinDensity = 0.0f;
+
+    [NativeName("AL_REVERB_MAX_DENSITY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMaxDensity = 1.0f;
+
+    [NativeName("AL_REVERB_DEFAULT_DENSITY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbDefaultDensity = 1.0f;
+
+    [NativeName("AL_REVERB_MIN_DIFFUSION")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMinDiffusion = 0.0f;
+
+    [NativeName("AL_REVERB_MAX_DIFFUSION")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMaxDiffusion = 1.0f;
+
+    [NativeName("AL_REVERB_DEFAULT_DIFFUSION")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbDefaultDiffusion = 1.0f;
+
+    [NativeName("AL_REVERB_MIN_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMinGain = 0.0f;
+
+    [NativeName("AL_REVERB_MAX_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMaxGain = 1.0f;
+
+    [NativeName("AL_REVERB_DEFAULT_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbDefaultGain = 0.32f;
+
+    [NativeName("AL_REVERB_MIN_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMinGainhf = 0.0f;
+
+    [NativeName("AL_REVERB_MAX_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMaxGainhf = 1.0f;
+
+    [NativeName("AL_REVERB_DEFAULT_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbDefaultGainhf = 0.89f;
+
+    [NativeName("AL_REVERB_MIN_DECAY_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMinDecayTime = 0.1f;
+
+    [NativeName("AL_REVERB_MAX_DECAY_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMaxDecayTime = 20.0f;
+
+    [NativeName("AL_REVERB_DEFAULT_DECAY_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbDefaultDecayTime = 1.49f;
+
+    [NativeName("AL_REVERB_MIN_DECAY_HFRATIO")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMinDecayHfratio = 0.1f;
+
+    [NativeName("AL_REVERB_MAX_DECAY_HFRATIO")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMaxDecayHfratio = 2.0f;
+
+    [NativeName("AL_REVERB_DEFAULT_DECAY_HFRATIO")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbDefaultDecayHfratio = 0.83f;
+
+    [NativeName("AL_REVERB_MIN_REFLECTIONS_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMinReflectionsGain = 0.0f;
+
+    [NativeName("AL_REVERB_MAX_REFLECTIONS_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMaxReflectionsGain = 3.16f;
+
+    [NativeName("AL_REVERB_DEFAULT_REFLECTIONS_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbDefaultReflectionsGain = 0.05f;
+
+    [NativeName("AL_REVERB_MIN_REFLECTIONS_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMinReflectionsDelay = 0.0f;
+
+    [NativeName("AL_REVERB_MAX_REFLECTIONS_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMaxReflectionsDelay = 0.3f;
+
+    [NativeName("AL_REVERB_DEFAULT_REFLECTIONS_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbDefaultReflectionsDelay = 0.007f;
+
+    [NativeName("AL_REVERB_MIN_LATE_REVERB_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMinLateReverbGain = 0.0f;
+
+    [NativeName("AL_REVERB_MAX_LATE_REVERB_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMaxLateReverbGain = 10.0f;
+
+    [NativeName("AL_REVERB_DEFAULT_LATE_REVERB_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbDefaultLateReverbGain = 1.26f;
+
+    [NativeName("AL_REVERB_MIN_LATE_REVERB_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMinLateReverbDelay = 0.0f;
+
+    [NativeName("AL_REVERB_MAX_LATE_REVERB_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMaxLateReverbDelay = 0.1f;
+
+    [NativeName("AL_REVERB_DEFAULT_LATE_REVERB_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbDefaultLateReverbDelay = 0.011f;
+
+    [NativeName("AL_REVERB_MIN_AIR_ABSORPTION_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMinAirAbsorptionGainhf = 0.892f;
+
+    [NativeName("AL_REVERB_MAX_AIR_ABSORPTION_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMaxAirAbsorptionGainhf = 1.0f;
+
+    [NativeName("AL_REVERB_DEFAULT_AIR_ABSORPTION_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbDefaultAirAbsorptionGainhf = 0.994f;
+
+    [NativeName("AL_REVERB_MIN_ROOM_ROLLOFF_FACTOR")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMinRoomRolloffFactor = 0.0f;
+
+    [NativeName("AL_REVERB_MAX_ROOM_ROLLOFF_FACTOR")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbMaxRoomRolloffFactor = 10.0f;
+
+    [NativeName("AL_REVERB_DEFAULT_ROOM_ROLLOFF_FACTOR")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ReverbDefaultRoomRolloffFactor = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MIN_DENSITY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinDensity = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MAX_DENSITY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxDensity = 1.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_DENSITY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultDensity = 1.0f;
+
+    [NativeName("AL_EAXREVERB_MIN_DIFFUSION")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinDiffusion = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MAX_DIFFUSION")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxDiffusion = 1.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_DIFFUSION")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultDiffusion = 1.0f;
+
+    [NativeName("AL_EAXREVERB_MIN_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinGain = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MAX_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxGain = 1.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultGain = 0.32f;
+
+    [NativeName("AL_EAXREVERB_MIN_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinGainhf = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MAX_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxGainhf = 1.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultGainhf = 0.89f;
+
+    [NativeName("AL_EAXREVERB_MIN_GAINLF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinGainlf = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MAX_GAINLF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxGainlf = 1.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_GAINLF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultGainlf = 1.0f;
+
+    [NativeName("AL_EAXREVERB_MIN_DECAY_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinDecayTime = 0.1f;
+
+    [NativeName("AL_EAXREVERB_MAX_DECAY_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxDecayTime = 20.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_DECAY_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultDecayTime = 1.49f;
+
+    [NativeName("AL_EAXREVERB_MIN_DECAY_HFRATIO")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinDecayHfratio = 0.1f;
+
+    [NativeName("AL_EAXREVERB_MAX_DECAY_HFRATIO")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxDecayHfratio = 2.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_DECAY_HFRATIO")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultDecayHfratio = 0.83f;
+
+    [NativeName("AL_EAXREVERB_MIN_DECAY_LFRATIO")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinDecayLfratio = 0.1f;
+
+    [NativeName("AL_EAXREVERB_MAX_DECAY_LFRATIO")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxDecayLfratio = 2.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_DECAY_LFRATIO")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultDecayLfratio = 1.0f;
+
+    [NativeName("AL_EAXREVERB_MIN_REFLECTIONS_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinReflectionsGain = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MAX_REFLECTIONS_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxReflectionsGain = 3.16f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_REFLECTIONS_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultReflectionsGain = 0.05f;
+
+    [NativeName("AL_EAXREVERB_MIN_REFLECTIONS_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinReflectionsDelay = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MAX_REFLECTIONS_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxReflectionsDelay = 0.3f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_REFLECTIONS_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultReflectionsDelay = 0.007f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_REFLECTIONS_PAN_XYZ")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultReflectionsPanXyz = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MIN_LATE_REVERB_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinLateReverbGain = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MAX_LATE_REVERB_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxLateReverbGain = 10.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_LATE_REVERB_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultLateReverbGain = 1.26f;
+
+    [NativeName("AL_EAXREVERB_MIN_LATE_REVERB_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinLateReverbDelay = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MAX_LATE_REVERB_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxLateReverbDelay = 0.1f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_LATE_REVERB_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultLateReverbDelay = 0.011f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_LATE_REVERB_PAN_XYZ")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultLateReverbPanXyz = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MIN_ECHO_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinEchoTime = 0.075f;
+
+    [NativeName("AL_EAXREVERB_MAX_ECHO_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxEchoTime = 0.25f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_ECHO_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultEchoTime = 0.25f;
+
+    [NativeName("AL_EAXREVERB_MIN_ECHO_DEPTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinEchoDepth = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MAX_ECHO_DEPTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxEchoDepth = 1.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_ECHO_DEPTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultEchoDepth = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MIN_MODULATION_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinModulationTime = 0.04f;
+
+    [NativeName("AL_EAXREVERB_MAX_MODULATION_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxModulationTime = 4.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_MODULATION_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultModulationTime = 0.25f;
+
+    [NativeName("AL_EAXREVERB_MIN_MODULATION_DEPTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinModulationDepth = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MAX_MODULATION_DEPTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxModulationDepth = 1.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_MODULATION_DEPTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultModulationDepth = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MIN_AIR_ABSORPTION_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinAirAbsorptionGainhf = 0.892f;
+
+    [NativeName("AL_EAXREVERB_MAX_AIR_ABSORPTION_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxAirAbsorptionGainhf = 1.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_AIR_ABSORPTION_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultAirAbsorptionGainhf = 0.994f;
+
+    [NativeName("AL_EAXREVERB_MIN_HFREFERENCE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinHfreference = 1000.0f;
+
+    [NativeName("AL_EAXREVERB_MAX_HFREFERENCE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxHfreference = 20000.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_HFREFERENCE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultHfreference = 5000.0f;
+
+    [NativeName("AL_EAXREVERB_MIN_LFREFERENCE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinLfreference = 20.0f;
+
+    [NativeName("AL_EAXREVERB_MAX_LFREFERENCE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxLfreference = 1000.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_LFREFERENCE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultLfreference = 250.0f;
+
+    [NativeName("AL_EAXREVERB_MIN_ROOM_ROLLOFF_FACTOR")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMinRoomRolloffFactor = 0.0f;
+
+    [NativeName("AL_EAXREVERB_MAX_ROOM_ROLLOFF_FACTOR")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbMaxRoomRolloffFactor = 10.0f;
+
+    [NativeName("AL_EAXREVERB_DEFAULT_ROOM_ROLLOFF_FACTOR")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EaxreverbDefaultRoomRolloffFactor = 0.0f;
+
+    [NativeName("AL_CHORUS_MIN_RATE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ChorusMinRate = 0.0f;
+
+    [NativeName("AL_CHORUS_MAX_RATE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ChorusMaxRate = 10.0f;
+
+    [NativeName("AL_CHORUS_DEFAULT_RATE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ChorusDefaultRate = 1.1f;
+
+    [NativeName("AL_CHORUS_MIN_DEPTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ChorusMinDepth = 0.0f;
+
+    [NativeName("AL_CHORUS_MAX_DEPTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ChorusMaxDepth = 1.0f;
+
+    [NativeName("AL_CHORUS_DEFAULT_DEPTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ChorusDefaultDepth = 0.1f;
+
+    [NativeName("AL_CHORUS_MIN_FEEDBACK")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ChorusMinFeedback = -1.0f;
+
+    [NativeName("AL_CHORUS_MAX_FEEDBACK")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ChorusMaxFeedback = 1.0f;
+
+    [NativeName("AL_CHORUS_DEFAULT_FEEDBACK")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ChorusDefaultFeedback = 0.25f;
+
+    [NativeName("AL_CHORUS_MIN_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ChorusMinDelay = 0.0f;
+
+    [NativeName("AL_CHORUS_MAX_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ChorusMaxDelay = 0.016f;
+
+    [NativeName("AL_CHORUS_DEFAULT_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float ChorusDefaultDelay = 0.016f;
+
+    [NativeName("AL_DISTORTION_MIN_EDGE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionMinEdge = 0.0f;
+
+    [NativeName("AL_DISTORTION_MAX_EDGE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionMaxEdge = 1.0f;
+
+    [NativeName("AL_DISTORTION_DEFAULT_EDGE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionDefaultEdge = 0.2f;
+
+    [NativeName("AL_DISTORTION_MIN_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionMinGain = 0.01f;
+
+    [NativeName("AL_DISTORTION_MAX_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionMaxGain = 1.0f;
+
+    [NativeName("AL_DISTORTION_DEFAULT_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionDefaultGain = 0.05f;
+
+    [NativeName("AL_DISTORTION_MIN_LOWPASS_CUTOFF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionMinLowpassCutoff = 80.0f;
+
+    [NativeName("AL_DISTORTION_MAX_LOWPASS_CUTOFF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionMaxLowpassCutoff = 24000.0f;
+
+    [NativeName("AL_DISTORTION_DEFAULT_LOWPASS_CUTOFF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionDefaultLowpassCutoff = 8000.0f;
+
+    [NativeName("AL_DISTORTION_MIN_EQCENTER")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionMinEqcenter = 80.0f;
+
+    [NativeName("AL_DISTORTION_MAX_EQCENTER")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionMaxEqcenter = 24000.0f;
+
+    [NativeName("AL_DISTORTION_DEFAULT_EQCENTER")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionDefaultEqcenter = 3600.0f;
+
+    [NativeName("AL_DISTORTION_MIN_EQBANDWIDTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionMinEqbandwidth = 80.0f;
+
+    [NativeName("AL_DISTORTION_MAX_EQBANDWIDTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionMaxEqbandwidth = 24000.0f;
+
+    [NativeName("AL_DISTORTION_DEFAULT_EQBANDWIDTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DistortionDefaultEqbandwidth = 3600.0f;
+
+    [NativeName("AL_ECHO_MIN_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoMinDelay = 0.0f;
+
+    [NativeName("AL_ECHO_MAX_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoMaxDelay = 0.207f;
+
+    [NativeName("AL_ECHO_DEFAULT_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoDefaultDelay = 0.1f;
+
+    [NativeName("AL_ECHO_MIN_LRDELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoMinLrdelay = 0.0f;
+
+    [NativeName("AL_ECHO_MAX_LRDELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoMaxLrdelay = 0.404f;
+
+    [NativeName("AL_ECHO_DEFAULT_LRDELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoDefaultLrdelay = 0.1f;
+
+    [NativeName("AL_ECHO_MIN_DAMPING")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoMinDamping = 0.0f;
+
+    [NativeName("AL_ECHO_MAX_DAMPING")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoMaxDamping = 0.99f;
+
+    [NativeName("AL_ECHO_DEFAULT_DAMPING")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoDefaultDamping = 0.5f;
+
+    [NativeName("AL_ECHO_MIN_FEEDBACK")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoMinFeedback = 0.0f;
+
+    [NativeName("AL_ECHO_MAX_FEEDBACK")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoMaxFeedback = 1.0f;
+
+    [NativeName("AL_ECHO_DEFAULT_FEEDBACK")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoDefaultFeedback = 0.5f;
+
+    [NativeName("AL_ECHO_MIN_SPREAD")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoMinSpread = -1.0f;
+
+    [NativeName("AL_ECHO_MAX_SPREAD")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoMaxSpread = 1.0f;
+
+    [NativeName("AL_ECHO_DEFAULT_SPREAD")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EchoDefaultSpread = -1.0f;
+
+    [NativeName("AL_FLANGER_MIN_RATE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FlangerMinRate = 0.0f;
+
+    [NativeName("AL_FLANGER_MAX_RATE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FlangerMaxRate = 10.0f;
+
+    [NativeName("AL_FLANGER_DEFAULT_RATE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FlangerDefaultRate = 0.27f;
+
+    [NativeName("AL_FLANGER_MIN_DEPTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FlangerMinDepth = 0.0f;
+
+    [NativeName("AL_FLANGER_MAX_DEPTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FlangerMaxDepth = 1.0f;
+
+    [NativeName("AL_FLANGER_DEFAULT_DEPTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FlangerDefaultDepth = 1.0f;
+
+    [NativeName("AL_FLANGER_MIN_FEEDBACK")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FlangerMinFeedback = -1.0f;
+
+    [NativeName("AL_FLANGER_MAX_FEEDBACK")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FlangerMaxFeedback = 1.0f;
+
+    [NativeName("AL_FLANGER_DEFAULT_FEEDBACK")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FlangerDefaultFeedback = -0.5f;
+
+    [NativeName("AL_FLANGER_MIN_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FlangerMinDelay = 0.0f;
+
+    [NativeName("AL_FLANGER_MAX_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FlangerMaxDelay = 0.004f;
+
+    [NativeName("AL_FLANGER_DEFAULT_DELAY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FlangerDefaultDelay = 0.002f;
+
+    [NativeName("AL_FREQUENCY_SHIFTER_MIN_FREQUENCY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FrequencyShifterMinFrequency = 0.0f;
+
+    [NativeName("AL_FREQUENCY_SHIFTER_MAX_FREQUENCY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FrequencyShifterMaxFrequency = 24000.0f;
+
+    [NativeName("AL_FREQUENCY_SHIFTER_DEFAULT_FREQUENCY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float FrequencyShifterDefaultFrequency = 0.0f;
+
+    [NativeName("AL_VOCAL_MORPHER_MIN_RATE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float VocalMorpherMinRate = 0.0f;
+
+    [NativeName("AL_VOCAL_MORPHER_MAX_RATE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float VocalMorpherMaxRate = 10.0f;
+
+    [NativeName("AL_VOCAL_MORPHER_DEFAULT_RATE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float VocalMorpherDefaultRate = 1.41f;
+
+    [NativeName("AL_RING_MODULATOR_MIN_FREQUENCY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float RingModulatorMinFrequency = 0.0f;
+
+    [NativeName("AL_RING_MODULATOR_MAX_FREQUENCY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float RingModulatorMaxFrequency = 8000.0f;
+
+    [NativeName("AL_RING_MODULATOR_DEFAULT_FREQUENCY")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float RingModulatorDefaultFrequency = 440.0f;
+
+    [NativeName("AL_RING_MODULATOR_MIN_HIGHPASS_CUTOFF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float RingModulatorMinHighpassCutoff = 0.0f;
+
+    [NativeName("AL_RING_MODULATOR_MAX_HIGHPASS_CUTOFF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float RingModulatorMaxHighpassCutoff = 24000.0f;
+
+    [NativeName("AL_RING_MODULATOR_DEFAULT_HIGHPASS_CUTOFF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float RingModulatorDefaultHighpassCutoff = 800.0f;
+
+    [NativeName("AL_AUTOWAH_MIN_ATTACK_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float AutowahMinAttackTime = 0.0001f;
+
+    [NativeName("AL_AUTOWAH_MAX_ATTACK_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float AutowahMaxAttackTime = 1.0f;
+
+    [NativeName("AL_AUTOWAH_DEFAULT_ATTACK_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float AutowahDefaultAttackTime = 0.06f;
+
+    [NativeName("AL_AUTOWAH_MIN_RELEASE_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float AutowahMinReleaseTime = 0.0001f;
+
+    [NativeName("AL_AUTOWAH_MAX_RELEASE_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float AutowahMaxReleaseTime = 1.0f;
+
+    [NativeName("AL_AUTOWAH_DEFAULT_RELEASE_TIME")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float AutowahDefaultReleaseTime = 0.06f;
+
+    [NativeName("AL_AUTOWAH_MIN_RESONANCE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float AutowahMinResonance = 2.0f;
+
+    [NativeName("AL_AUTOWAH_MAX_RESONANCE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float AutowahMaxResonance = 1000.0f;
+
+    [NativeName("AL_AUTOWAH_DEFAULT_RESONANCE")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float AutowahDefaultResonance = 1000.0f;
+
+    [NativeName("AL_AUTOWAH_MIN_PEAK_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float AutowahMinPeakGain = 0.00003f;
+
+    [NativeName("AL_AUTOWAH_MAX_PEAK_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float AutowahMaxPeakGain = 31621.0f;
+
+    [NativeName("AL_AUTOWAH_DEFAULT_PEAK_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float AutowahDefaultPeakGain = 11.22f;
+
+    [NativeName("AL_EQUALIZER_MIN_LOW_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMinLowGain = 0.126f;
+
+    [NativeName("AL_EQUALIZER_MAX_LOW_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMaxLowGain = 7.943f;
+
+    [NativeName("AL_EQUALIZER_DEFAULT_LOW_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerDefaultLowGain = 1.0f;
+
+    [NativeName("AL_EQUALIZER_MIN_LOW_CUTOFF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMinLowCutoff = 50.0f;
+
+    [NativeName("AL_EQUALIZER_MAX_LOW_CUTOFF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMaxLowCutoff = 800.0f;
+
+    [NativeName("AL_EQUALIZER_DEFAULT_LOW_CUTOFF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerDefaultLowCutoff = 200.0f;
+
+    [NativeName("AL_EQUALIZER_MIN_MID1_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMinMid1Gain = 0.126f;
+
+    [NativeName("AL_EQUALIZER_MAX_MID1_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMaxMid1Gain = 7.943f;
+
+    [NativeName("AL_EQUALIZER_DEFAULT_MID1_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerDefaultMid1Gain = 1.0f;
+
+    [NativeName("AL_EQUALIZER_MIN_MID1_CENTER")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMinMid1Center = 200.0f;
+
+    [NativeName("AL_EQUALIZER_MAX_MID1_CENTER")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMaxMid1Center = 3000.0f;
+
+    [NativeName("AL_EQUALIZER_DEFAULT_MID1_CENTER")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerDefaultMid1Center = 500.0f;
+
+    [NativeName("AL_EQUALIZER_MIN_MID1_WIDTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMinMid1Width = 0.01f;
+
+    [NativeName("AL_EQUALIZER_MAX_MID1_WIDTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMaxMid1Width = 1.0f;
+
+    [NativeName("AL_EQUALIZER_DEFAULT_MID1_WIDTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerDefaultMid1Width = 1.0f;
+
+    [NativeName("AL_EQUALIZER_MIN_MID2_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMinMid2Gain = 0.126f;
+
+    [NativeName("AL_EQUALIZER_MAX_MID2_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMaxMid2Gain = 7.943f;
+
+    [NativeName("AL_EQUALIZER_DEFAULT_MID2_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerDefaultMid2Gain = 1.0f;
+
+    [NativeName("AL_EQUALIZER_MIN_MID2_CENTER")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMinMid2Center = 1000.0f;
+
+    [NativeName("AL_EQUALIZER_MAX_MID2_CENTER")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMaxMid2Center = 8000.0f;
+
+    [NativeName("AL_EQUALIZER_DEFAULT_MID2_CENTER")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerDefaultMid2Center = 3000.0f;
+
+    [NativeName("AL_EQUALIZER_MIN_MID2_WIDTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMinMid2Width = 0.01f;
+
+    [NativeName("AL_EQUALIZER_MAX_MID2_WIDTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMaxMid2Width = 1.0f;
+
+    [NativeName("AL_EQUALIZER_DEFAULT_MID2_WIDTH")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerDefaultMid2Width = 1.0f;
+
+    [NativeName("AL_EQUALIZER_MIN_HIGH_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMinHighGain = 0.126f;
+
+    [NativeName("AL_EQUALIZER_MAX_HIGH_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMaxHighGain = 7.943f;
+
+    [NativeName("AL_EQUALIZER_DEFAULT_HIGH_GAIN")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerDefaultHighGain = 1.0f;
+
+    [NativeName("AL_EQUALIZER_MIN_HIGH_CUTOFF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMinHighCutoff = 4000.0f;
+
+    [NativeName("AL_EQUALIZER_MAX_HIGH_CUTOFF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerMaxHighCutoff = 16000.0f;
+
+    [NativeName("AL_EQUALIZER_DEFAULT_HIGH_CUTOFF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float EqualizerDefaultHighCutoff = 6000.0f;
+
+    [NativeName("AL_MIN_AIR_ABSORPTION_FACTOR")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float MinAirAbsorptionFactor = 0.0f;
+
+    [NativeName("AL_MAX_AIR_ABSORPTION_FACTOR")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float MaxAirAbsorptionFactor = 10.0f;
+
+    [NativeName("AL_DEFAULT_AIR_ABSORPTION_FACTOR")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DefaultAirAbsorptionFactor = 0.0f;
+
+    [NativeName("AL_MIN_ROOM_ROLLOFF_FACTOR")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float MinRoomRolloffFactor = 0.0f;
+
+    [NativeName("AL_MAX_ROOM_ROLLOFF_FACTOR")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float MaxRoomRolloffFactor = 10.0f;
+
+    [NativeName("AL_DEFAULT_ROOM_ROLLOFF_FACTOR")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DefaultRoomRolloffFactor = 0.0f;
+
+    [NativeName("AL_MIN_CONE_OUTER_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float MinConeOuterGainhf = 0.0f;
+
+    [NativeName("AL_MAX_CONE_OUTER_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float MaxConeOuterGainhf = 1.0f;
+
+    [NativeName("AL_DEFAULT_CONE_OUTER_GAINHF")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DefaultConeOuterGainhf = 1.0f;
+
+    [NativeName("AL_MIN_METERS_PER_UNIT")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float MinMetersPerUnit = 1.175494351e-38F;
+
+    [NativeName("AL_MAX_METERS_PER_UNIT")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float MaxMetersPerUnit = 3.402823466e+38F;
+
+    [NativeName("AL_DEFAULT_METERS_PER_UNIT")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
+    public const float DefaultMetersPerUnit = 1.0f;
+
     [NativeName("AL_EXT_FOLDBACK_NAME")]
     [SupportedApiProfile("al", ["AL_EXT_FOLDBACK"])]
     public static Utf8String ExtFoldbackName => "AL_EXT_FOLDBACK"u8;

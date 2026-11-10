@@ -37,200 +37,8 @@ public enum ALEnum : uint
     [NativeName("AL_FILTER_NULL")]
     FilterNull = 0,
 
-    [NativeName("AL_LOWPASS_MIN_GAIN")]
-    LowpassMinGain = 0,
-
-    [NativeName("AL_LOWPASS_MIN_GAINHF")]
-    LowpassMinGainhf = 0,
-
-    [NativeName("AL_HIGHPASS_MIN_GAIN")]
-    HighpassMinGain = 0,
-
-    [NativeName("AL_HIGHPASS_MIN_GAINLF")]
-    HighpassMinGainlf = 0,
-
-    [NativeName("AL_BANDPASS_MIN_GAIN")]
-    BandpassMinGain = 0,
-
-    [NativeName("AL_BANDPASS_MIN_GAINHF")]
-    BandpassMinGainhf = 0,
-
-    [NativeName("AL_BANDPASS_MIN_GAINLF")]
-    BandpassMinGainlf = 0,
-
-    [NativeName("AL_REVERB_MIN_DENSITY")]
-    ReverbMinDensity = 0,
-
-    [NativeName("AL_REVERB_MIN_DIFFUSION")]
-    ReverbMinDiffusion = 0,
-
-    [NativeName("AL_REVERB_MIN_GAIN")]
-    ReverbMinGain = 0,
-
-    [NativeName("AL_REVERB_DEFAULT_GAIN")]
-    ReverbDefaultGain = 0,
-
-    [NativeName("AL_REVERB_MIN_GAINHF")]
-    ReverbMinGainhf = 0,
-
-    [NativeName("AL_REVERB_DEFAULT_GAINHF")]
-    ReverbDefaultGainhf = 0,
-
-    [NativeName("AL_REVERB_MIN_DECAY_TIME")]
-    ReverbMinDecayTime = 0,
-
-    [NativeName("AL_REVERB_MIN_DECAY_HFRATIO")]
-    ReverbMinDecayHfratio = 0,
-
-    [NativeName("AL_REVERB_DEFAULT_DECAY_HFRATIO")]
-    ReverbDefaultDecayHfratio = 0,
-
-    [NativeName("AL_REVERB_MIN_REFLECTIONS_GAIN")]
-    ReverbMinReflectionsGain = 0,
-
-    [NativeName("AL_REVERB_DEFAULT_REFLECTIONS_GAIN")]
-    ReverbDefaultReflectionsGain = 0,
-
-    [NativeName("AL_REVERB_MIN_REFLECTIONS_DELAY")]
-    ReverbMinReflectionsDelay = 0,
-
-    [NativeName("AL_REVERB_MAX_REFLECTIONS_DELAY")]
-    ReverbMaxReflectionsDelay = 0,
-
-    [NativeName("AL_REVERB_DEFAULT_REFLECTIONS_DELAY")]
-    ReverbDefaultReflectionsDelay = 0,
-
-    [NativeName("AL_REVERB_MIN_LATE_REVERB_GAIN")]
-    ReverbMinLateReverbGain = 0,
-
-    [NativeName("AL_REVERB_MIN_LATE_REVERB_DELAY")]
-    ReverbMinLateReverbDelay = 0,
-
-    [NativeName("AL_REVERB_MAX_LATE_REVERB_DELAY")]
-    ReverbMaxLateReverbDelay = 0,
-
-    [NativeName("AL_REVERB_DEFAULT_LATE_REVERB_DELAY")]
-    ReverbDefaultLateReverbDelay = 0,
-
-    [NativeName("AL_REVERB_MIN_AIR_ABSORPTION_GAINHF")]
-    ReverbMinAirAbsorptionGainhf = 0,
-
-    [NativeName("AL_REVERB_DEFAULT_AIR_ABSORPTION_GAINHF")]
-    ReverbDefaultAirAbsorptionGainhf = 0,
-
-    [NativeName("AL_REVERB_MIN_ROOM_ROLLOFF_FACTOR")]
-    ReverbMinRoomRolloffFactor = 0,
-
-    [NativeName("AL_REVERB_DEFAULT_ROOM_ROLLOFF_FACTOR")]
-    ReverbDefaultRoomRolloffFactor = 0,
-
     [NativeName("AL_REVERB_MIN_DECAY_HFLIMIT")]
     ReverbMinDecayHflimit = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_DENSITY")]
-    EaxreverbMinDensity = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_DIFFUSION")]
-    EaxreverbMinDiffusion = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_GAIN")]
-    EaxreverbMinGain = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_GAIN")]
-    EaxreverbDefaultGain = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_GAINHF")]
-    EaxreverbMinGainhf = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_GAINHF")]
-    EaxreverbDefaultGainhf = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_GAINLF")]
-    EaxreverbMinGainlf = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_DECAY_TIME")]
-    EaxreverbMinDecayTime = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_DECAY_HFRATIO")]
-    EaxreverbMinDecayHfratio = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_DECAY_HFRATIO")]
-    EaxreverbDefaultDecayHfratio = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_DECAY_LFRATIO")]
-    EaxreverbMinDecayLfratio = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_REFLECTIONS_GAIN")]
-    EaxreverbMinReflectionsGain = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_REFLECTIONS_GAIN")]
-    EaxreverbDefaultReflectionsGain = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_REFLECTIONS_DELAY")]
-    EaxreverbMinReflectionsDelay = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_REFLECTIONS_DELAY")]
-    EaxreverbMaxReflectionsDelay = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_REFLECTIONS_DELAY")]
-    EaxreverbDefaultReflectionsDelay = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_REFLECTIONS_PAN_XYZ")]
-    EaxreverbDefaultReflectionsPanXyz = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_LATE_REVERB_GAIN")]
-    EaxreverbMinLateReverbGain = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_LATE_REVERB_DELAY")]
-    EaxreverbMinLateReverbDelay = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_LATE_REVERB_DELAY")]
-    EaxreverbMaxLateReverbDelay = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_LATE_REVERB_DELAY")]
-    EaxreverbDefaultLateReverbDelay = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_LATE_REVERB_PAN_XYZ")]
-    EaxreverbDefaultLateReverbPanXyz = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_ECHO_TIME")]
-    EaxreverbMinEchoTime = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_ECHO_TIME")]
-    EaxreverbMaxEchoTime = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_ECHO_TIME")]
-    EaxreverbDefaultEchoTime = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_ECHO_DEPTH")]
-    EaxreverbMinEchoDepth = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_ECHO_DEPTH")]
-    EaxreverbDefaultEchoDepth = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_MODULATION_TIME")]
-    EaxreverbMinModulationTime = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_MODULATION_TIME")]
-    EaxreverbDefaultModulationTime = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_MODULATION_DEPTH")]
-    EaxreverbMinModulationDepth = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_MODULATION_DEPTH")]
-    EaxreverbDefaultModulationDepth = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_AIR_ABSORPTION_GAINHF")]
-    EaxreverbMinAirAbsorptionGainhf = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_AIR_ABSORPTION_GAINHF")]
-    EaxreverbDefaultAirAbsorptionGainhf = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_ROOM_ROLLOFF_FACTOR")]
-    EaxreverbMinRoomRolloffFactor = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_ROOM_ROLLOFF_FACTOR")]
-    EaxreverbDefaultRoomRolloffFactor = 0,
 
     [NativeName("AL_EAXREVERB_MIN_DECAY_HFLIMIT")]
     EaxreverbMinDecayHflimit = 0,
@@ -241,81 +49,6 @@ public enum ALEnum : uint
     [NativeName("AL_CHORUS_MIN_WAVEFORM")]
     ChorusMinWaveform = 0,
 
-    [NativeName("AL_CHORUS_MIN_RATE")]
-    ChorusMinRate = 0,
-
-    [NativeName("AL_CHORUS_MIN_DEPTH")]
-    ChorusMinDepth = 0,
-
-    [NativeName("AL_CHORUS_DEFAULT_DEPTH")]
-    ChorusDefaultDepth = 0,
-
-    [NativeName("AL_CHORUS_MIN_FEEDBACK")]
-    ChorusMinFeedback = 0,
-
-    [NativeName("AL_CHORUS_DEFAULT_FEEDBACK")]
-    ChorusDefaultFeedback = 0,
-
-    [NativeName("AL_CHORUS_MIN_DELAY")]
-    ChorusMinDelay = 0,
-
-    [NativeName("AL_CHORUS_MAX_DELAY")]
-    ChorusMaxDelay = 0,
-
-    [NativeName("AL_CHORUS_DEFAULT_DELAY")]
-    ChorusDefaultDelay = 0,
-
-    [NativeName("AL_DISTORTION_MIN_EDGE")]
-    DistortionMinEdge = 0,
-
-    [NativeName("AL_DISTORTION_DEFAULT_EDGE")]
-    DistortionDefaultEdge = 0,
-
-    [NativeName("AL_DISTORTION_MIN_GAIN")]
-    DistortionMinGain = 0,
-
-    [NativeName("AL_DISTORTION_DEFAULT_GAIN")]
-    DistortionDefaultGain = 0,
-
-    [NativeName("AL_ECHO_MIN_DELAY")]
-    EchoMinDelay = 0,
-
-    [NativeName("AL_ECHO_MAX_DELAY")]
-    EchoMaxDelay = 0,
-
-    [NativeName("AL_ECHO_DEFAULT_DELAY")]
-    EchoDefaultDelay = 0,
-
-    [NativeName("AL_ECHO_MIN_LRDELAY")]
-    EchoMinLrdelay = 0,
-
-    [NativeName("AL_ECHO_MAX_LRDELAY")]
-    EchoMaxLrdelay = 0,
-
-    [NativeName("AL_ECHO_DEFAULT_LRDELAY")]
-    EchoDefaultLrdelay = 0,
-
-    [NativeName("AL_ECHO_MIN_DAMPING")]
-    EchoMinDamping = 0,
-
-    [NativeName("AL_ECHO_MAX_DAMPING")]
-    EchoMaxDamping = 0,
-
-    [NativeName("AL_ECHO_DEFAULT_DAMPING")]
-    EchoDefaultDamping = 0,
-
-    [NativeName("AL_ECHO_MIN_FEEDBACK")]
-    EchoMinFeedback = 0,
-
-    [NativeName("AL_ECHO_DEFAULT_FEEDBACK")]
-    EchoDefaultFeedback = 0,
-
-    [NativeName("AL_ECHO_MIN_SPREAD")]
-    EchoMinSpread = 0,
-
-    [NativeName("AL_ECHO_DEFAULT_SPREAD")]
-    EchoDefaultSpread = 0,
-
     [NativeName("AL_FLANGER_WAVEFORM_SINUSOID")]
     FlangerWaveformSinusoid = 0,
 
@@ -324,36 +57,6 @@ public enum ALEnum : uint
 
     [NativeName("AL_FLANGER_DEFAULT_PHASE")]
     FlangerDefaultPhase = 0,
-
-    [NativeName("AL_FLANGER_MIN_RATE")]
-    FlangerMinRate = 0,
-
-    [NativeName("AL_FLANGER_DEFAULT_RATE")]
-    FlangerDefaultRate = 0,
-
-    [NativeName("AL_FLANGER_MIN_DEPTH")]
-    FlangerMinDepth = 0,
-
-    [NativeName("AL_FLANGER_MIN_FEEDBACK")]
-    FlangerMinFeedback = 0,
-
-    [NativeName("AL_FLANGER_DEFAULT_FEEDBACK")]
-    FlangerDefaultFeedback = 0,
-
-    [NativeName("AL_FLANGER_MIN_DELAY")]
-    FlangerMinDelay = 0,
-
-    [NativeName("AL_FLANGER_MAX_DELAY")]
-    FlangerMaxDelay = 0,
-
-    [NativeName("AL_FLANGER_DEFAULT_DELAY")]
-    FlangerDefaultDelay = 0,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_MIN_FREQUENCY")]
-    FrequencyShifterMinFrequency = 0,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_DEFAULT_FREQUENCY")]
-    FrequencyShifterDefaultFrequency = 0,
 
     [NativeName("AL_FREQUENCY_SHIFTER_MIN_LEFT_DIRECTION")]
     FrequencyShifterMinLeftDirection = 0,
@@ -397,17 +100,8 @@ public enum ALEnum : uint
     [NativeName("AL_VOCAL_MORPHER_DEFAULT_WAVEFORM")]
     VocalMorpherDefaultWaveform = 0,
 
-    [NativeName("AL_VOCAL_MORPHER_MIN_RATE")]
-    VocalMorpherMinRate = 0,
-
     [NativeName("AL_PITCH_SHIFTER_DEFAULT_FINE_TUNE")]
     PitchShifterDefaultFineTune = 0,
-
-    [NativeName("AL_RING_MODULATOR_MIN_FREQUENCY")]
-    RingModulatorMinFrequency = 0,
-
-    [NativeName("AL_RING_MODULATOR_MIN_HIGHPASS_CUTOFF")]
-    RingModulatorMinHighpassCutoff = 0,
 
     [NativeName("AL_RING_MODULATOR_SINUSOID")]
     RingModulatorSinusoid = 0,
@@ -418,56 +112,8 @@ public enum ALEnum : uint
     [NativeName("AL_RING_MODULATOR_DEFAULT_WAVEFORM")]
     RingModulatorDefaultWaveform = 0,
 
-    [NativeName("AL_AUTOWAH_MIN_ATTACK_TIME")]
-    AutowahMinAttackTime = 0,
-
-    [NativeName("AL_AUTOWAH_DEFAULT_ATTACK_TIME")]
-    AutowahDefaultAttackTime = 0,
-
-    [NativeName("AL_AUTOWAH_MIN_RELEASE_TIME")]
-    AutowahMinReleaseTime = 0,
-
-    [NativeName("AL_AUTOWAH_DEFAULT_RELEASE_TIME")]
-    AutowahDefaultReleaseTime = 0,
-
-    [NativeName("AL_AUTOWAH_MIN_PEAK_GAIN")]
-    AutowahMinPeakGain = 0,
-
     [NativeName("AL_COMPRESSOR_MIN_ONOFF")]
     CompressorMinOnoff = 0,
-
-    [NativeName("AL_EQUALIZER_MIN_LOW_GAIN")]
-    EqualizerMinLowGain = 0,
-
-    [NativeName("AL_EQUALIZER_MIN_MID1_GAIN")]
-    EqualizerMinMid1Gain = 0,
-
-    [NativeName("AL_EQUALIZER_MIN_MID1_WIDTH")]
-    EqualizerMinMid1Width = 0,
-
-    [NativeName("AL_EQUALIZER_MIN_MID2_GAIN")]
-    EqualizerMinMid2Gain = 0,
-
-    [NativeName("AL_EQUALIZER_MIN_MID2_WIDTH")]
-    EqualizerMinMid2Width = 0,
-
-    [NativeName("AL_EQUALIZER_MIN_HIGH_GAIN")]
-    EqualizerMinHighGain = 0,
-
-    [NativeName("AL_MIN_AIR_ABSORPTION_FACTOR")]
-    MinAirAbsorptionFactor = 0,
-
-    [NativeName("AL_DEFAULT_AIR_ABSORPTION_FACTOR")]
-    DefaultAirAbsorptionFactor = 0,
-
-    [NativeName("AL_MIN_ROOM_ROLLOFF_FACTOR")]
-    MinRoomRolloffFactor = 0,
-
-    [NativeName("AL_DEFAULT_ROOM_ROLLOFF_FACTOR")]
-    DefaultRoomRolloffFactor = 0,
-
-    [NativeName("AL_MIN_CONE_OUTER_GAINHF")]
-    MinConeOuterGainhf = 0,
 
     [NativeName("AL_MIN_DIRECT_FILTER_GAINHF_AUTO")]
     MinDirectFilterGainhfAuto = 0,
@@ -477,12 +123,6 @@ public enum ALEnum : uint
 
     [NativeName("AL_MIN_AUXILIARY_SEND_FILTER_GAINHF_AUTO")]
     MinAuxiliarySendFilterGainhfAuto = 0,
-
-    [NativeName("AL_MIN_METERS_PER_UNIT")]
-    MinMetersPerUnit = 0,
-
-    [NativeName("AL_MAX_METERS_PER_UNIT")]
-    MaxMetersPerUnit = 0,
 
     [NativeName("AL_FUMA_SOFT")]
     FumaSOFT = 0,
@@ -550,122 +190,11 @@ public enum ALEnum : uint
     [NativeName("AL_FILTER_LOWPASS")]
     FilterLowpass = 1,
 
-    [NativeName("AL_LOWPASS_MAX_GAIN")]
-    LowpassMaxGain = 1,
-
-    [NativeName("AL_LOWPASS_DEFAULT_GAIN")]
-    LowpassDefaultGain = 1,
-
-    [NativeName("AL_LOWPASS_MAX_GAINHF")]
-    LowpassMaxGainhf = 1,
-
-    [NativeName("AL_LOWPASS_DEFAULT_GAINHF")]
-    LowpassDefaultGainhf = 1,
-
-    [NativeName("AL_HIGHPASS_MAX_GAIN")]
-    HighpassMaxGain = 1,
-
-    [NativeName("AL_HIGHPASS_DEFAULT_GAIN")]
-    HighpassDefaultGain = 1,
-
-    [NativeName("AL_HIGHPASS_MAX_GAINLF")]
-    HighpassMaxGainlf = 1,
-
-    [NativeName("AL_HIGHPASS_DEFAULT_GAINLF")]
-    HighpassDefaultGainlf = 1,
-
-    [NativeName("AL_BANDPASS_MAX_GAIN")]
-    BandpassMaxGain = 1,
-
-    [NativeName("AL_BANDPASS_DEFAULT_GAIN")]
-    BandpassDefaultGain = 1,
-
-    [NativeName("AL_BANDPASS_MAX_GAINHF")]
-    BandpassMaxGainhf = 1,
-
-    [NativeName("AL_BANDPASS_DEFAULT_GAINHF")]
-    BandpassDefaultGainhf = 1,
-
-    [NativeName("AL_BANDPASS_MAX_GAINLF")]
-    BandpassMaxGainlf = 1,
-
-    [NativeName("AL_BANDPASS_DEFAULT_GAINLF")]
-    BandpassDefaultGainlf = 1,
-
-    [NativeName("AL_REVERB_MAX_DENSITY")]
-    ReverbMaxDensity = 1,
-
-    [NativeName("AL_REVERB_DEFAULT_DENSITY")]
-    ReverbDefaultDensity = 1,
-
-    [NativeName("AL_REVERB_MAX_DIFFUSION")]
-    ReverbMaxDiffusion = 1,
-
-    [NativeName("AL_REVERB_DEFAULT_DIFFUSION")]
-    ReverbDefaultDiffusion = 1,
-
-    [NativeName("AL_REVERB_MAX_GAIN")]
-    ReverbMaxGain = 1,
-
-    [NativeName("AL_REVERB_MAX_GAINHF")]
-    ReverbMaxGainhf = 1,
-
-    [NativeName("AL_REVERB_DEFAULT_DECAY_TIME")]
-    ReverbDefaultDecayTime = 1,
-
-    [NativeName("AL_REVERB_DEFAULT_LATE_REVERB_GAIN")]
-    ReverbDefaultLateReverbGain = 1,
-
-    [NativeName("AL_REVERB_MAX_AIR_ABSORPTION_GAINHF")]
-    ReverbMaxAirAbsorptionGainhf = 1,
-
     [NativeName("AL_REVERB_MAX_DECAY_HFLIMIT")]
     ReverbMaxDecayHflimit = 1,
 
     [NativeName("AL_REVERB_DEFAULT_DECAY_HFLIMIT")]
     ReverbDefaultDecayHflimit = 1,
-
-    [NativeName("AL_EAXREVERB_MAX_DENSITY")]
-    EaxreverbMaxDensity = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_DENSITY")]
-    EaxreverbDefaultDensity = 1,
-
-    [NativeName("AL_EAXREVERB_MAX_DIFFUSION")]
-    EaxreverbMaxDiffusion = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_DIFFUSION")]
-    EaxreverbDefaultDiffusion = 1,
-
-    [NativeName("AL_EAXREVERB_MAX_GAIN")]
-    EaxreverbMaxGain = 1,
-
-    [NativeName("AL_EAXREVERB_MAX_GAINHF")]
-    EaxreverbMaxGainhf = 1,
-
-    [NativeName("AL_EAXREVERB_MAX_GAINLF")]
-    EaxreverbMaxGainlf = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_GAINLF")]
-    EaxreverbDefaultGainlf = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_DECAY_TIME")]
-    EaxreverbDefaultDecayTime = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_DECAY_LFRATIO")]
-    EaxreverbDefaultDecayLfratio = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_LATE_REVERB_GAIN")]
-    EaxreverbDefaultLateReverbGain = 1,
-
-    [NativeName("AL_EAXREVERB_MAX_ECHO_DEPTH")]
-    EaxreverbMaxEchoDepth = 1,
-
-    [NativeName("AL_EAXREVERB_MAX_MODULATION_DEPTH")]
-    EaxreverbMaxModulationDepth = 1,
-
-    [NativeName("AL_EAXREVERB_MAX_AIR_ABSORPTION_GAINHF")]
-    EaxreverbMaxAirAbsorptionGainhf = 1,
 
     [NativeName("AL_EAXREVERB_MAX_DECAY_HFLIMIT")]
     EaxreverbMaxDecayHflimit = 1,
@@ -682,27 +211,6 @@ public enum ALEnum : uint
     [NativeName("AL_CHORUS_DEFAULT_WAVEFORM")]
     ChorusDefaultWaveform = 1,
 
-    [NativeName("AL_CHORUS_DEFAULT_RATE")]
-    ChorusDefaultRate = 1,
-
-    [NativeName("AL_CHORUS_MAX_DEPTH")]
-    ChorusMaxDepth = 1,
-
-    [NativeName("AL_CHORUS_MAX_FEEDBACK")]
-    ChorusMaxFeedback = 1,
-
-    [NativeName("AL_DISTORTION_MAX_EDGE")]
-    DistortionMaxEdge = 1,
-
-    [NativeName("AL_DISTORTION_MAX_GAIN")]
-    DistortionMaxGain = 1,
-
-    [NativeName("AL_ECHO_MAX_FEEDBACK")]
-    EchoMaxFeedback = 1,
-
-    [NativeName("AL_ECHO_MAX_SPREAD")]
-    EchoMaxSpread = 1,
-
     [NativeName("AL_FLANGER_WAVEFORM_TRIANGLE")]
     FlangerWaveformTriangle = 1,
 
@@ -711,15 +219,6 @@ public enum ALEnum : uint
 
     [NativeName("AL_FLANGER_DEFAULT_WAVEFORM")]
     FlangerDefaultWaveform = 1,
-
-    [NativeName("AL_FLANGER_MAX_DEPTH")]
-    FlangerMaxDepth = 1,
-
-    [NativeName("AL_FLANGER_DEFAULT_DEPTH")]
-    FlangerDefaultDepth = 1,
-
-    [NativeName("AL_FLANGER_MAX_FEEDBACK")]
-    FlangerMaxFeedback = 1,
 
     [NativeName("AL_FREQUENCY_SHIFTER_DIRECTION_UP")]
     FrequencyShifterDirectionUp = 1,
@@ -730,53 +229,14 @@ public enum ALEnum : uint
     [NativeName("AL_VOCAL_MORPHER_WAVEFORM_TRIANGLE")]
     VocalMorpherWaveformTriangle = 1,
 
-    [NativeName("AL_VOCAL_MORPHER_DEFAULT_RATE")]
-    VocalMorpherDefaultRate = 1,
-
     [NativeName("AL_RING_MODULATOR_SAWTOOTH")]
     RingModulatorSawtooth = 1,
-
-    [NativeName("AL_AUTOWAH_MAX_ATTACK_TIME")]
-    AutowahMaxAttackTime = 1,
-
-    [NativeName("AL_AUTOWAH_MAX_RELEASE_TIME")]
-    AutowahMaxReleaseTime = 1,
 
     [NativeName("AL_COMPRESSOR_MAX_ONOFF")]
     CompressorMaxOnoff = 1,
 
     [NativeName("AL_COMPRESSOR_DEFAULT_ONOFF")]
     CompressorDefaultOnoff = 1,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_LOW_GAIN")]
-    EqualizerDefaultLowGain = 1,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_MID1_GAIN")]
-    EqualizerDefaultMid1Gain = 1,
-
-    [NativeName("AL_EQUALIZER_MAX_MID1_WIDTH")]
-    EqualizerMaxMid1Width = 1,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_MID1_WIDTH")]
-    EqualizerDefaultMid1Width = 1,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_MID2_GAIN")]
-    EqualizerDefaultMid2Gain = 1,
-
-    [NativeName("AL_EQUALIZER_MAX_MID2_WIDTH")]
-    EqualizerMaxMid2Width = 1,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_MID2_WIDTH")]
-    EqualizerDefaultMid2Width = 1,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_HIGH_GAIN")]
-    EqualizerDefaultHighGain = 1,
-
-    [NativeName("AL_MAX_CONE_OUTER_GAINHF")]
-    MaxConeOuterGainhf = 1,
-
-    [NativeName("AL_DEFAULT_CONE_OUTER_GAINHF")]
-    DefaultConeOuterGainhf = 1,
 
     [NativeName("AL_MAX_DIRECT_FILTER_GAINHF_AUTO")]
     MaxDirectFilterGainhfAuto = 1,
@@ -795,9 +255,6 @@ public enum ALEnum : uint
 
     [NativeName("AL_DEFAULT_AUXILIARY_SEND_FILTER_GAINHF_AUTO")]
     DefaultAuxiliarySendFilterGainhfAuto = 1,
-
-    [NativeName("AL_DEFAULT_METERS_PER_UNIT")]
-    DefaultMetersPerUnit = 1,
 
     [NativeName("AL_DEDICATED_GAIN")]
     DedicatedGain = 1,
@@ -868,15 +325,6 @@ public enum ALEnum : uint
     [NativeName("AL_FILTER_HIGHPASS")]
     FilterHighpass = 2,
 
-    [NativeName("AL_REVERB_MAX_DECAY_HFRATIO")]
-    ReverbMaxDecayHfratio = 2,
-
-    [NativeName("AL_EAXREVERB_MAX_DECAY_HFRATIO")]
-    EaxreverbMaxDecayHfratio = 2,
-
-    [NativeName("AL_EAXREVERB_MAX_DECAY_LFRATIO")]
-    EaxreverbMaxDecayLfratio = 2,
-
     [NativeName("AL_FREQUENCY_SHIFTER_MAX_LEFT_DIRECTION")]
     FrequencyShifterMaxLeftDirection = 2,
 
@@ -900,9 +348,6 @@ public enum ALEnum : uint
 
     [NativeName("AL_RING_MODULATOR_MAX_WAVEFORM")]
     RingModulatorMaxWaveform = 2,
-
-    [NativeName("AL_AUTOWAH_MIN_RESONANCE")]
-    AutowahMinResonance = 2,
 
     [NativeName("AL_AUTO_SOFT")]
     AutoSOFT = 2,
@@ -961,12 +406,6 @@ public enum ALEnum : uint
     [NativeName("AL_FILTER_BANDPASS")]
     FilterBandpass = 3,
 
-    [NativeName("AL_REVERB_MAX_REFLECTIONS_GAIN")]
-    ReverbMaxReflectionsGain = 3,
-
-    [NativeName("AL_EAXREVERB_MAX_REFLECTIONS_GAIN")]
-    EaxreverbMaxReflectionsGain = 3,
-
     [NativeName("AL_VOCAL_MORPHER_PHONEME_O")]
     VocalMorpherPhonemeO = 3,
 
@@ -999,9 +438,6 @@ public enum ALEnum : uint
 
     [NativeName("AL_EFFECT_ECHO")]
     EffectEcho = 4,
-
-    [NativeName("AL_EAXREVERB_MAX_MODULATION_TIME")]
-    EaxreverbMaxModulationTime = 4,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_U")]
     VocalMorpherPhonemeU = 4,
@@ -1075,18 +511,6 @@ public enum ALEnum : uint
     [NativeName("AL_VOCAL_MORPHER_PHONEME_AH")]
     VocalMorpherPhonemeAh = 7,
 
-    [NativeName("AL_EQUALIZER_MAX_LOW_GAIN")]
-    EqualizerMaxLowGain = 7,
-
-    [NativeName("AL_EQUALIZER_MAX_MID1_GAIN")]
-    EqualizerMaxMid1Gain = 7,
-
-    [NativeName("AL_EQUALIZER_MAX_MID2_GAIN")]
-    EqualizerMaxMid2Gain = 7,
-
-    [NativeName("AL_EQUALIZER_MAX_HIGH_GAIN")]
-    EqualizerMaxHighGain = 7,
-
     [NativeName("AL_REVERB_REFLECTIONS_DELAY")]
     ReverbReflectionsDelay = 8,
 
@@ -1129,38 +553,11 @@ public enum ALEnum : uint
     [NativeName("AL_EFFECT_AUTOWAH")]
     EffectAutowah = 10,
 
-    [NativeName("AL_REVERB_MAX_LATE_REVERB_GAIN")]
-    ReverbMaxLateReverbGain = 10,
-
-    [NativeName("AL_REVERB_MAX_ROOM_ROLLOFF_FACTOR")]
-    ReverbMaxRoomRolloffFactor = 10,
-
-    [NativeName("AL_EAXREVERB_MAX_LATE_REVERB_GAIN")]
-    EaxreverbMaxLateReverbGain = 10,
-
-    [NativeName("AL_EAXREVERB_MAX_ROOM_ROLLOFF_FACTOR")]
-    EaxreverbMaxRoomRolloffFactor = 10,
-
-    [NativeName("AL_CHORUS_MAX_RATE")]
-    ChorusMaxRate = 10,
-
-    [NativeName("AL_FLANGER_MAX_RATE")]
-    FlangerMaxRate = 10,
-
     [NativeName("AL_VOCAL_MORPHER_DEFAULT_PHONEMEB")]
     VocalMorpherDefaultPhonemeb = 10,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_ER")]
     VocalMorpherPhonemeEr = 10,
-
-    [NativeName("AL_VOCAL_MORPHER_MAX_RATE")]
-    VocalMorpherMaxRate = 10,
-
-    [NativeName("AL_MAX_AIR_ABSORPTION_FACTOR")]
-    MaxAirAbsorptionFactor = 10,
-
-    [NativeName("AL_MAX_ROOM_ROLLOFF_FACTOR")]
-    MaxRoomRolloffFactor = 10,
 
     [NativeName("AL_REVERB_AIR_ABSORPTION_GAINHF")]
     ReverbAirAbsorptionGainhf = 11,
@@ -1173,9 +570,6 @@ public enum ALEnum : uint
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_IH")]
     VocalMorpherPhonemeIh = 11,
-
-    [NativeName("AL_AUTOWAH_DEFAULT_PEAK_GAIN")]
-    AutowahDefaultPeakGain = 11,
 
     [NativeName("AL_REVERB_ROOM_ROLLOFF_FACTOR")]
     ReverbRoomRolloffFactor = 12,
@@ -1243,15 +637,6 @@ public enum ALEnum : uint
     [NativeName("AL_EAXREVERB_HFREFERENCE")]
     EaxreverbHfreference = 20,
 
-    [NativeName("AL_REVERB_MAX_DECAY_TIME")]
-    ReverbMaxDecayTime = 20,
-
-    [NativeName("AL_EAXREVERB_MAX_DECAY_TIME")]
-    EaxreverbMaxDecayTime = 20,
-
-    [NativeName("AL_EAXREVERB_MIN_LFREFERENCE")]
-    EaxreverbMinLfreference = 20,
-
     [NativeName("AL_VOCAL_MORPHER_PHONEME_K")]
     VocalMorpherPhonemeK = 20,
 
@@ -1306,18 +691,6 @@ public enum ALEnum : uint
     [NativeName("AL_PITCH_SHIFTER_MAX_FINE_TUNE")]
     PitchShifterMaxFineTune = 50,
 
-    [NativeName("AL_EQUALIZER_MIN_LOW_CUTOFF")]
-    EqualizerMinLowCutoff = 50,
-
-    [NativeName("AL_DISTORTION_MIN_LOWPASS_CUTOFF")]
-    DistortionMinLowpassCutoff = 80,
-
-    [NativeName("AL_DISTORTION_MIN_EQCENTER")]
-    DistortionMinEqcenter = 80,
-
-    [NativeName("AL_DISTORTION_MIN_EQBANDWIDTH")]
-    DistortionMinEqbandwidth = 80,
-
     [NativeName("AL_CHORUS_DEFAULT_PHASE")]
     ChorusDefaultPhase = 90,
 
@@ -1327,62 +700,11 @@ public enum ALEnum : uint
     [NativeName("AL_FLANGER_MAX_PHASE")]
     FlangerMaxPhase = 180,
 
-    [NativeName("AL_EQUALIZER_DEFAULT_LOW_CUTOFF")]
-    EqualizerDefaultLowCutoff = 200,
-
-    [NativeName("AL_EQUALIZER_MIN_MID1_CENTER")]
-    EqualizerMinMid1Center = 200,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_LFREFERENCE")]
-    EaxreverbDefaultLfreference = 250,
-
-    [NativeName("AL_RING_MODULATOR_DEFAULT_FREQUENCY")]
-    RingModulatorDefaultFrequency = 440,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_MID1_CENTER")]
-    EqualizerDefaultMid1Center = 500,
-
     [NativeName("AL_SOURCE_DISTANCE_MODEL")]
     SourceDistanceModel = 512,
 
     [NativeName("AL_SOURCE_RELATIVE")]
     SourceRelative = 514,
-
-    [NativeName("AL_RING_MODULATOR_DEFAULT_HIGHPASS_CUTOFF")]
-    RingModulatorDefaultHighpassCutoff = 800,
-
-    [NativeName("AL_EQUALIZER_MAX_LOW_CUTOFF")]
-    EqualizerMaxLowCutoff = 800,
-
-    [NativeName("AL_EAXREVERB_MIN_HFREFERENCE")]
-    EaxreverbMinHfreference = 1000,
-
-    [NativeName("AL_EAXREVERB_MAX_LFREFERENCE")]
-    EaxreverbMaxLfreference = 1000,
-
-    [NativeName("AL_AUTOWAH_MAX_RESONANCE")]
-    AutowahMaxResonance = 1000,
-
-    [NativeName("AL_AUTOWAH_DEFAULT_RESONANCE")]
-    AutowahDefaultResonance = 1000,
-
-    [NativeName("AL_EQUALIZER_MIN_MID2_CENTER")]
-    EqualizerMinMid2Center = 1000,
-
-    [NativeName("AL_EQUALIZER_MAX_MID1_CENTER")]
-    EqualizerMaxMid1Center = 3000,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_MID2_CENTER")]
-    EqualizerDefaultMid2Center = 3000,
-
-    [NativeName("AL_DISTORTION_DEFAULT_EQCENTER")]
-    DistortionDefaultEqcenter = 3600,
-
-    [NativeName("AL_DISTORTION_DEFAULT_EQBANDWIDTH")]
-    DistortionDefaultEqbandwidth = 3600,
-
-    [NativeName("AL_EQUALIZER_MIN_HIGH_CUTOFF")]
-    EqualizerMinHighCutoff = 4000,
 
     [NativeName("AL_CONE_INNER_ANGLE")]
     ConeInnerAngle = 4097,
@@ -1648,9 +970,6 @@ public enum ALEnum : uint
     [NativeName("AL_FORMAT_STEREO_MSADPCM_SOFT")]
     FormatStereoMsadpcmSOFT = 4867,
 
-    [NativeName("AL_EAXREVERB_DEFAULT_HFREFERENCE")]
-    EaxreverbDefaultHfreference = 5000,
-
     [NativeName("AL_BYTE_SOFT")]
     ByteSOFT = 5120,
 
@@ -1701,9 +1020,6 @@ public enum ALEnum : uint
 
     [NativeName("AL_7POINT1_SOFT")]
     X7Point1SOFT = 5382,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_HIGH_CUTOFF")]
-    EqualizerDefaultHighCutoff = 6000,
 
     [NativeName("AL_AMBISONIC_LAYOUT_SOFT")]
     AmbisonicLayoutSOFT = 6551,
@@ -1897,15 +1213,6 @@ public enum ALEnum : uint
     [NativeName("AL_AUXILIARY_EFFECT_SLOT_EXT")]
     AuxiliaryEffectSlotEXT = 6611,
 
-    [NativeName("AL_DISTORTION_DEFAULT_LOWPASS_CUTOFF")]
-    DistortionDefaultLowpassCutoff = 8000,
-
-    [NativeName("AL_RING_MODULATOR_MAX_FREQUENCY")]
-    RingModulatorMaxFrequency = 8000,
-
-    [NativeName("AL_EQUALIZER_MAX_MID2_CENTER")]
-    EqualizerMaxMid2Center = 8000,
-
     [NativeName("AL_FREQUENCY")]
     Frequency = 8193,
 
@@ -1951,9 +1258,6 @@ public enum ALEnum : uint
     [NativeName("AL_LOOP_POINTS_SOFT")]
     LoopPointsSOFT = 8213,
 
-    [NativeName("AL_EQUALIZER_MAX_HIGH_CUTOFF")]
-    EqualizerMaxHighCutoff = 16000,
-
     [NativeName("AL_FOLDBACK_MODE_MONO")]
     FoldbackModeMono = 16641,
 
@@ -1968,27 +1272,6 @@ public enum ALEnum : uint
 
     [NativeName("AL_FOLDBACK_EVENT_STOP")]
     FoldbackEventStop = 16659,
-
-    [NativeName("AL_EAXREVERB_MAX_HFREFERENCE")]
-    EaxreverbMaxHfreference = 20000,
-
-    [NativeName("AL_DISTORTION_MAX_LOWPASS_CUTOFF")]
-    DistortionMaxLowpassCutoff = 24000,
-
-    [NativeName("AL_DISTORTION_MAX_EQCENTER")]
-    DistortionMaxEqcenter = 24000,
-
-    [NativeName("AL_DISTORTION_MAX_EQBANDWIDTH")]
-    DistortionMaxEqbandwidth = 24000,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_MAX_FREQUENCY")]
-    FrequencyShifterMaxFrequency = 24000,
-
-    [NativeName("AL_RING_MODULATOR_MAX_HIGHPASS_CUTOFF")]
-    RingModulatorMaxHighpassCutoff = 24000,
-
-    [NativeName("AL_AUTOWAH_MAX_PEAK_GAIN")]
-    AutowahMaxPeakGain = 31621,
 
     [NativeName("AL_EFFECT_LAST_PARAMETER")]
     EffectLastParameter = 32768,
