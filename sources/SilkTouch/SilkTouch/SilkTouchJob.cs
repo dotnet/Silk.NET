@@ -43,7 +43,6 @@ internal class SilkTouchJob : IDisposable
     /// </summary>
     /// <param name="key">The job key.</param>
     /// <param name="config">The job config.</param>
-    /// <param name="parent">The parent service provider. Should be the one from the <see cref="SilkTouchHost"/>.</param>
     /// <param name="configure">
     /// The action that configures the services used by this job.
     /// You'll want to register SilkTouch mods during this action. See <see cref="SilkTouchRegistrationExtensions"/>.
@@ -51,7 +50,6 @@ internal class SilkTouchJob : IDisposable
     public SilkTouchJob(
         string key,
         SilkTouchConfiguration config,
-        IServiceProvider parent,
         Action<IServiceCollection> configure
     )
     {
@@ -61,11 +59,6 @@ internal class SilkTouchJob : IDisposable
         var services = new ServiceCollection();
         {
             // Register default dependencies
-            services.AddSingleton(parent.GetRequiredService<ILoggerFactory>());
-            services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));
-
-            services.AddSingleton(parent.GetRequiredService<IInputResolver>());
-
             services.AddSingleton<DocumentFactory>();
             services.AddSingleton<FunctionTransformer>();
 
