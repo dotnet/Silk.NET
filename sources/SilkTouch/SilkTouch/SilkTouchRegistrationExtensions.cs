@@ -1,8 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using Autofac;
-using Autofac.Builder;
+using Microsoft.Extensions.DependencyInjection;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Transformation;
@@ -18,8 +17,8 @@ public static class SilkTouchRegistrationExtensions
     /// Entrypoint to the rest of the SilkTouch registration methods.
     /// Begins a <see cref="SilkTouchRegistrationContext"/>.
     /// </summary>
-    public static SilkTouchRegistrationContext SilkTouch(this ContainerBuilder builder) =>
-        new(builder);
+    public static SilkTouchRegistrationContext SilkTouch(this IServiceCollection services) =>
+        new(services);
 
     // Non-mods
     extension(SilkTouchRegistrationContext context)
@@ -42,11 +41,7 @@ public static class SilkTouchRegistrationExtensions
         /// <returns></returns>
         public SilkTouchRegistrationContext WithPtrRefTransformer()
         {
-            context
-                .Builder.RegisterType<PtrRefTransformer>()
-                .AsImplementedInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsInterfaces<PtrRefTransformer>();
             return context;
         }
 
@@ -58,17 +53,9 @@ public static class SilkTouchRegistrationExtensions
             BoolTransformer.Configuration? boolTransformerConfig = null
         )
         {
-            context
-                .Builder.RegisterType<BoolTransformer>()
-                .WithParameter(
-                    new TypedParameter(
-                        typeof(BoolTransformer.Configuration),
-                        boolTransformerConfig ?? new()
-                    )
-                )
-                .AsImplementedInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsInterfaces<BoolTransformer>(
+                boolTransformerConfig ?? new()
+            );
             return context;
         }
 
@@ -78,11 +65,7 @@ public static class SilkTouchRegistrationExtensions
         /// <returns></returns>
         public SilkTouchRegistrationContext WithArrayParameterTransformer()
         {
-            context
-                .Builder.RegisterType<ArrayParameterTransformer>()
-                .AsImplementedInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsInterfaces<ArrayParameterTransformer>();
             return context;
         }
     }
@@ -97,14 +80,7 @@ public static class SilkTouchRegistrationExtensions
             AddApiProfiles.Configuration? config = null
         )
         {
-            context
-                .Builder.RegisterType<AddApiProfiles>()
-                .WithParameter(
-                    new TypedParameter(typeof(AddApiProfiles.Configuration), config ?? new())
-                )
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<AddApiProfiles>(config ?? new());
             return context;
         }
 
@@ -113,12 +89,7 @@ public static class SilkTouchRegistrationExtensions
         /// </summary>
         public SilkTouchRegistrationContext ClangScraper(ClangScraper.Configuration config)
         {
-            context
-                .Builder.RegisterType<ClangScraper>()
-                .WithParameter(new TypedParameter(typeof(ClangScraper.Configuration), config))
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<ClangScraper>(config);
             return context;
         }
 
@@ -127,14 +98,7 @@ public static class SilkTouchRegistrationExtensions
         /// </summary>
         public SilkTouchRegistrationContext AddIncludes(AddIncludes.Configuration? config = null)
         {
-            context
-                .Builder.RegisterType<AddIncludes>()
-                .WithParameter(
-                    new TypedParameter(typeof(AddIncludes.Configuration), config ?? new())
-                )
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<AddIncludes>(config ?? new());
             return context;
         }
 
@@ -143,12 +107,7 @@ public static class SilkTouchRegistrationExtensions
         /// </summary>
         public SilkTouchRegistrationContext AddOpaqueStructs(AddOpaqueStructs.Configuration config)
         {
-            context
-                .Builder.RegisterType<AddOpaqueStructs>()
-                .WithParameter(new TypedParameter(typeof(AddOpaqueStructs.Configuration), config))
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<AddOpaqueStructs>(config);
             return context;
         }
 
@@ -157,14 +116,7 @@ public static class SilkTouchRegistrationExtensions
         /// </summary>
         public SilkTouchRegistrationContext AddVTables(AddVTables.Configuration? config = null)
         {
-            context
-                .Builder.RegisterType<AddVTables>()
-                .WithParameter(
-                    new TypedParameter(typeof(AddVTables.Configuration), config ?? new())
-                )
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<AddVTables>(config ?? new());
             return context;
         }
 
@@ -173,12 +125,7 @@ public static class SilkTouchRegistrationExtensions
         /// </summary>
         public SilkTouchRegistrationContext BakeSourceSets(BakeSourceSets.Configuration config)
         {
-            context
-                .Builder.RegisterType<BakeSourceSets>()
-                .WithParameter(new TypedParameter(typeof(BakeSourceSets.Configuration), config))
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<BakeSourceSets>(config);
             return context;
         }
 
@@ -187,12 +134,7 @@ public static class SilkTouchRegistrationExtensions
         /// </summary>
         public SilkTouchRegistrationContext ChangeNamespace(ChangeNamespace.Configuration config)
         {
-            context
-                .Builder.RegisterType<ChangeNamespace>()
-                .WithParameter(new TypedParameter(typeof(ChangeNamespace.Configuration), config))
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<ChangeNamespace>(config);
             return context;
         }
 
@@ -203,12 +145,7 @@ public static class SilkTouchRegistrationExtensions
             ChangeNativeClass.Configuration config
         )
         {
-            context
-                .Builder.RegisterType<ChangeNativeClass>()
-                .WithParameter(new TypedParameter(typeof(ChangeNativeClass.Configuration), config))
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<ChangeNativeClass>(config);
             return context;
         }
 
@@ -217,11 +154,7 @@ public static class SilkTouchRegistrationExtensions
         /// </summary>
         public SilkTouchRegistrationContext ExtractEnumConstants()
         {
-            context
-                .Builder.RegisterType<ExtractEnumConstants>()
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<ExtractEnumConstants>();
             return context;
         }
 
@@ -230,11 +163,7 @@ public static class SilkTouchRegistrationExtensions
         /// </summary>
         public SilkTouchRegistrationContext ExtractFunctionPointers()
         {
-            context
-                .Builder.RegisterType<ExtractFunctionPointers>()
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<ExtractFunctionPointers>();
             return context;
         }
 
@@ -243,11 +172,7 @@ public static class SilkTouchRegistrationExtensions
         /// </summary>
         public SilkTouchRegistrationContext ExtractHandles()
         {
-            context
-                .Builder.RegisterType<ExtractHandles>()
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<ExtractHandles>();
             return context;
         }
 
@@ -256,11 +181,7 @@ public static class SilkTouchRegistrationExtensions
         /// </summary>
         public SilkTouchRegistrationContext ExtractNestedTypes()
         {
-            context
-                .Builder.RegisterType<ExtractNestedTypes>()
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<ExtractNestedTypes>();
             return context;
         }
 
@@ -271,14 +192,7 @@ public static class SilkTouchRegistrationExtensions
             IdentifySharedPrefixes.Configuration? config = null
         )
         {
-            context
-                .Builder.RegisterType<IdentifySharedPrefixes>()
-                .WithParameter(
-                    new TypedParameter(typeof(IdentifySharedPrefixes.Configuration), config)
-                )
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<IdentifySharedPrefixes>(config);
             return context;
         }
 
@@ -289,14 +203,7 @@ public static class SilkTouchRegistrationExtensions
             InterceptNativeFunctions.Configuration? config = null
         )
         {
-            context
-                .Builder.RegisterType<InterceptNativeFunctions>()
-                .WithParameter(
-                    new TypedParameter(typeof(InterceptNativeFunctions.Configuration), config)
-                )
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<InterceptNativeFunctions>(config);
             return context;
         }
 
@@ -305,11 +212,7 @@ public static class SilkTouchRegistrationExtensions
         /// </summary>
         public SilkTouchRegistrationContext MarkNativeNames()
         {
-            context
-                .Builder.RegisterType<MarkNativeNames>()
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<MarkNativeNames>();
             return context;
         }
 
@@ -320,14 +223,7 @@ public static class SilkTouchRegistrationExtensions
             MixKhronosData.Configuration? config = null
         )
         {
-            context
-                .Builder.RegisterType<MixKhronosData>()
-                .WithParameter(
-                    new TypedParameter(typeof(MixKhronosData.Configuration), config ?? new())
-                )
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<MixKhronosData>(config ?? new());
             return context;
         }
 
@@ -338,14 +234,7 @@ public static class SilkTouchRegistrationExtensions
             PrettifyNames.Configuration? config = null
         )
         {
-            context
-                .Builder.RegisterType<PrettifyNames>()
-                .WithParameter(
-                    new TypedParameter(typeof(PrettifyNames.Configuration), config ?? new())
-                )
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<PrettifyNames>(config ?? new());
             return context;
         }
 
@@ -356,14 +245,7 @@ public static class SilkTouchRegistrationExtensions
             StripAttributes.Configuration? config = null
         )
         {
-            context
-                .Builder.RegisterType<StripAttributes>()
-                .WithParameter(
-                    new TypedParameter(typeof(StripAttributes.Configuration), config ?? new())
-                )
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<StripAttributes>(config ?? new());
             return context;
         }
 
@@ -374,14 +256,7 @@ public static class SilkTouchRegistrationExtensions
             TransformEnums.Configuration? config = null
         )
         {
-            context
-                .Builder.RegisterType<TransformEnums>()
-                .WithParameter(
-                    new TypedParameter(typeof(TransformEnums.Configuration), config ?? new())
-                )
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<TransformEnums>(config ?? new());
             return context;
         }
 
@@ -390,11 +265,7 @@ public static class SilkTouchRegistrationExtensions
         /// </summary>
         public SilkTouchRegistrationContext TransformFunctions()
         {
-            context
-                .Builder.RegisterType<TransformFunctions>()
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<TransformFunctions>();
             return context;
         }
 
@@ -405,14 +276,9 @@ public static class SilkTouchRegistrationExtensions
             TransformHandles.Configuration? config = null
         )
         {
-            context
-                .Builder.RegisterType<TransformHandles>()
-                .WithParameter(
-                    new TypedParameter(typeof(TransformHandles.Configuration), config ?? new())
-                )
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<TransformHandles>(
+                config ?? new()
+            );
             return context;
         }
 
@@ -423,46 +289,58 @@ public static class SilkTouchRegistrationExtensions
             TransformProperties.Configuration? config = null
         )
         {
-            context
-                .Builder.RegisterType<TransformProperties>()
-                .WithParameter(
-                    new TypedParameter(typeof(TransformProperties.Configuration), config)
-                )
-                .AsHierarchyAndInterfaces()
-                .SingleInstance();
-
+            context.Services.AddSingletonAsHierarchyAndInterfaces<TransformProperties>(config);
             return context;
         }
     }
 
-    extension<TLimit, TConcreteActivatorData>(
-        IRegistrationBuilder<TLimit, TConcreteActivatorData, SingleRegistrationStyle> registration
-    )
-        where TConcreteActivatorData : IConcreteActivatorData
+    extension(IServiceCollection services)
     {
-        private IRegistrationBuilder<
-            TLimit,
-            TConcreteActivatorData,
-            SingleRegistrationStyle
-        > AsHierarchyAndInterfaces()
-        {
-            var type = registration.ActivatorData.Activator.LimitType;
-            var typesToRegister = new HashSet<Type>();
-            typesToRegister.UnionWith(type.GetInterfaces());
+        private IServiceCollection AddSingletonAsInterfaces<T>(object? parameter = null)
+            where T : class => services.AddSingletonAs<T>(typeof(T).GetInterfaces(), parameter);
 
-            var current = type;
+        private IServiceCollection AddSingletonAsHierarchyAndInterfaces<T>(object? parameter = null)
+            where T : class
+        {
+            var types = new HashSet<Type>(typeof(T).GetInterfaces());
+            var current = typeof(T);
             while (current != null)
             {
-                typesToRegister.Add(current);
+                types.Add(current);
                 current = current.BaseType;
             }
 
-            return registration.As(typesToRegister.ToArray());
+            return services.AddSingletonAs<T>(types, parameter);
+        }
+
+        private IServiceCollection AddSingletonAs<T>(IEnumerable<Type> types, object? parameter)
+            where T : class
+        {
+            var key = new object();
+            object[] parameters = parameter is null ? [] : [parameter];
+
+            services.AddKeyedSingleton(
+                typeof(T),
+                key,
+                (sp, _) => ActivatorUtilities.CreateInstance<T>(sp, parameters)
+            );
+
+            services.AddSingleton(typeof(T), sp => sp.GetRequiredKeyedService<T>(key));
+
+            foreach (var type in types)
+            {
+                if (type != typeof(T))
+                {
+                    services.AddSingleton(type, sp => sp.GetRequiredKeyedService<T>(key));
+                }
+            }
+
+            return services;
         }
     }
 
     /// <summary>
-    /// Helper for registering SilkTouch to a <see cref="ContainerBuilder"/>
+    /// Helper for registering SilkTouch to a <see cref="IServiceCollection"/>
     /// </summary>
-    public record struct SilkTouchRegistrationContext(ContainerBuilder Builder);
+    public record struct SilkTouchRegistrationContext(IServiceCollection Services);
 }

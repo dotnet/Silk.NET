@@ -2,18 +2,15 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.CommandLine;
-using System.CommandLine.Invocation;
 using System.Diagnostics.CodeAnalysis;
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
 using Microsoft.Build.Locator;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
 using Silk.NET.SilkTouch.Caching;
 using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.CommandLine;
 using Silk.NET.SilkTouch.Mods;
-using Silk.NET.SilkTouch.Mods.Bakery;
 using Silk.NET.SilkTouch.Sources;
 
 namespace Silk.NET.SilkTouch;
@@ -46,17 +43,7 @@ public class SilkTouchHost
             Description = "Maximum number of parallel jobs.",
         };
 
-    private static Option<bool> UseCacheOnlyOption { get; } =
-        new(["--use-cache-only"], () => false)
-        {
-            Description = "Limits the generator to only using the cache.",
-        };
-
-    private static Option<bool> GenerateCacheOnlyOption { get; } =
-        new(["--generate-cache-only"], () => false)
-        {
-            Description = "Limits the generator to only generating the cache.",
-        };
+    private LogLevel _minimumLogLevel = LogLevel.Information;
 
     private readonly Dictionary<string, JobDefinition> _jobDefinitions = [];
 
@@ -85,86 +72,134 @@ public class SilkTouchHost
     /// </summary>
     public async Task RunAsync(string[] args)
     {
-        var rootCommand = new RootCommand
-        {
-            LoggingOption,
-            SkipOption,
-            OnlyOption,
-            JobsOption,
-            UseCacheOnlyOption,
-            GenerateCacheOnlyOption,
-        };
+        // Register MSBuild
+        MSBuildLocator.RegisterDefaults();
 
-        rootCommand.SetHandler(async ctx =>
-        {
-            try
+        // Build service provider
+        var services = new ServiceCollection();
+        Configure(services);
+        var provider = services.BuildServiceProvider();
+
+        // Create all jobs
+        var jobs = _jobDefinitions.ToDictionary(
+            jobKvp => jobKvp.Key,
+            jobKvp =>
             {
-                // Register MSBuild
-                MSBuildLocator.RegisterDefaults();
-
-                // Build container
-                var builder = new ContainerBuilder();
-                Configure(builder, ctx);
-                await using ILifetimeScope container = builder.Build();
-
-                var jobKeysToRun = new HashSet<string>(
-                    ctx.ParseResult.GetValueForOption(OnlyOption) ?? [],
-                    StringComparer.OrdinalIgnoreCase
-                );
-
-                var jobKeysToSkip = new HashSet<string>(
-                    ctx.ParseResult.GetValueForOption(SkipOption) ?? [],
-                    StringComparer.OrdinalIgnoreCase
-                );
-
-                var jobsToRun = _jobDefinitions.Where(job =>
-                {
-                    if (jobKeysToSkip.Contains(job.Key))
+                return new SilkTouchJob(
+                    jobKvp.Key,
+                    jobKvp.Value.Config,
+                    services =>
                     {
-                        return false;
+                        ConfigureForward(provider, services);
+                        jobKvp.Value.Configure.Invoke(services.SilkTouch());
                     }
+                );
+            }
+        );
 
-                    return jobKeysToRun.Count == 0 || jobKeysToRun.Contains(job.Key);
-                });
+        try
+        {
+            // Gather job options
+            var options = new HashSet<Option>();
+            foreach (var job in jobs.Values)
+            {
+                var configurables = job.Provider.GetServices<ICommandLineConfigurable>();
+                foreach (var configurable in configurables)
+                {
+                    configurable.RegisterCommandLineOptions(option =>
+                    {
+                        options.Add(option);
+                    });
+                }
+            }
 
-                var logger = container.Resolve<ILogger<SilkTouchHost>>();
+            var rootCommand = new RootCommand { LoggingOption, SkipOption, OnlyOption, JobsOption };
+
+            foreach (var option in options)
+            {
+                rootCommand.Add(option);
+            }
+
+            rootCommand.SetHandler(async ctx =>
+            {
+                _minimumLogLevel = ctx.ParseResult.GetValueForOption(LoggingOption);
+
+                // Apply job options
+                foreach (var job in jobs.Values)
+                {
+                    var configurables = job.Provider.GetServices<ICommandLineConfigurable>();
+                    foreach (var configurable in configurables)
+                    {
+                        configurable.ReadCommandLineOptions(ctx);
+                    }
+                }
+
                 try
                 {
-                    await Parallel.ForEachAsync(
-                        jobsToRun,
-                        new ParallelOptions
-                        {
-                            MaxDegreeOfParallelism = ctx.ParseResult.GetValueForOption(JobsOption),
-                        },
-                        async (jobKvp, ct) =>
-                        {
-                            using var job = new SilkTouchJob(
-                                jobKvp.Key,
-                                jobKvp.Value.Config,
-                                container,
-                                builder => jobKvp.Value.Configure.Invoke(builder.SilkTouch())
-                            );
-
-                            await job.RunAsync(ct);
-                        }
+                    var jobKeysToRun = new HashSet<string>(
+                        ctx.ParseResult.GetValueForOption(OnlyOption) ?? [],
+                        StringComparer.OrdinalIgnoreCase
                     );
+
+                    var jobKeysToSkip = new HashSet<string>(
+                        ctx.ParseResult.GetValueForOption(SkipOption) ?? [],
+                        StringComparer.OrdinalIgnoreCase
+                    );
+
+                    var jobsToRun = _jobDefinitions.Keys.Where(jobKey =>
+                    {
+                        if (jobKeysToSkip.Contains(jobKey))
+                        {
+                            return false;
+                        }
+
+                        return jobKeysToRun.Count == 0 || jobKeysToRun.Contains(jobKey);
+                    });
+
+                    var logger = provider.GetRequiredService<ILogger<SilkTouchHost>>();
+                    try
+                    {
+                        await Parallel.ForEachAsync(
+                            jobsToRun,
+                            new ParallelOptions
+                            {
+                                MaxDegreeOfParallelism = ctx.ParseResult.GetValueForOption(
+                                    JobsOption
+                                ),
+                            },
+                            async (jobKey, ct) =>
+                            {
+                                var job = jobs[jobKey];
+                                await job.RunAsync(ct);
+                            }
+                        );
+                    }
+                    catch (Exception e)
+                    {
+                        logger.LogError(e, "Error occurred while running SilkTouch");
+                        throw;
+                    }
                 }
                 catch (Exception e)
                 {
-                    logger.LogError(e, "Error occurred while running SilkTouch");
-                    throw;
+                    Console.WriteLine(e);
+                    Exit(1);
                 }
-            }
-            catch (Exception e)
+
+                Exit(0);
+            });
+
+            await rootCommand.InvokeAsync(args);
+        }
+        finally
+        {
+            foreach (var job in jobs.Values)
             {
-                Console.WriteLine(e);
-                Exit(1);
+                job.Dispose();
             }
 
-            Exit(0);
-        });
-
-        await rootCommand.InvokeAsync(args);
+            await provider.DisposeAsync();
+        }
     }
 
     [DoesNotReturn]
@@ -173,11 +208,12 @@ public class SilkTouchHost
         Environment.Exit(exitCode);
 
     /// <summary>
-    /// Dependencies defined here will be shared by all jobs.
+    /// Dependencies defined here are only accessible to the host.
+    /// Make them available to the jobs by using <see cref="ConfigureForward"/>.
     /// </summary>
-    private void Configure(ContainerBuilder builder, InvocationContext ctx)
+    private void Configure(IServiceCollection services)
     {
-        var services = new ServiceCollection()
+        services
             .AddLogging(builder =>
             {
                 builder.AddSimpleConsole(opts =>
@@ -189,72 +225,46 @@ public class SilkTouchHost
                     opts.IncludeScopes = false;
                 });
 
-                builder.SetMinimumLevel(ctx.ParseResult.GetValueForOption(LoggingOption));
+                // This avoids depending on the CLI options during container building
+                builder.AddFilter(IsLogLevelEnabled);
             })
             .AddOptions();
 
-        builder.Populate(services);
+        services.AddSingleton<IModContextFactory, MSBuildModContextFactory>();
+        services.AddSingleton<ICacheProvider, FileSystemCacheProvider>();
+        services.AddSingleton<IInputSource, GitInputSource>();
+        services.AddSingleton<IInputSource, NuGetInputSource>();
+        services.AddSingleton<IInputResolver, UriBasedInputResolver>();
 
+        if (OperatingSystem.IsWindows())
         {
-            // Create config
-            var config = new SilkTouchHostConfiguration()
-            {
-                UseCacheOnly = ctx.ParseResult.GetValueForOption(UseCacheOnlyOption),
-                GenerateCacheOnly = ctx.ParseResult.GetValueForOption(GenerateCacheOnlyOption),
-            };
-
-            if (config.GenerateCacheOnly && config.UseCacheOnly)
-            {
-                throw new InvalidOperationException(
-                    $"{UseCacheOnlyOption.Name} and {GenerateCacheOnlyOption.Name} cannot be enabled at the same time."
-                );
-            }
-
-            builder.RegisterInstance(config).SingleInstance();
-
-            builder
-                .RegisterType<MSBuildModContextFactory>()
-                .As<IModContextFactory>()
-                .SingleInstance();
-
-            builder.RegisterType<ResponseFileHandler>().SingleInstance();
-
-            builder
-                .RegisterType<DefaultBakeStrategy>()
-                .AsSelf()
-                .AsImplementedInterfaces()
-                .SingleInstance();
-
-            builder.RegisterType<FileSystemCacheProvider>().As<ICacheProvider>().SingleInstance();
-
-            builder.RegisterType<GitInputSource>().As<IInputSource>().SingleInstance();
-
-            builder.RegisterType<NuGetInputSource>().As<IInputSource>().SingleInstance();
-
-            builder.RegisterType<UriBasedInputResolver>().As<IInputResolver>().SingleInstance();
-
-            if (OperatingSystem.IsWindows())
-            {
-                builder
-                    .RegisterType<WindowsStdIncludeResolver>()
-                    .As<IStdIncludeResolver>()
-                    .SingleInstance();
-            }
-            else if (OperatingSystem.IsMacOS())
-            {
-                builder
-                    .RegisterType<MacOSStdIncludeResolver>()
-                    .As<IStdIncludeResolver>()
-                    .SingleInstance();
-            }
-            else
-            {
-                builder
-                    .RegisterType<UnixStdIncludeResolver>()
-                    .As<IStdIncludeResolver>()
-                    .SingleInstance();
-            }
+            services.AddSingleton<IStdIncludeResolver, WindowsStdIncludeResolver>();
         }
+        else if (OperatingSystem.IsMacOS())
+        {
+            services.AddSingleton<IStdIncludeResolver, MacOSStdIncludeResolver>();
+        }
+        else
+        {
+            services.AddSingleton<IStdIncludeResolver, UnixStdIncludeResolver>();
+        }
+    }
+
+    private bool IsLogLevelEnabled(LogLevel level) => level >= _minimumLogLevel;
+
+    /// <summary>
+    /// Dependencies defined here will be available to jobs.
+    /// </summary>
+    private void ConfigureForward(IServiceProvider host, IServiceCollection services)
+    {
+        // Prefer to match the registration order above
+        services.AddSingleton(host.GetRequiredService<ILoggerFactory>());
+        services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));
+
+        services.AddSingleton(host.GetRequiredService<IModContextFactory>());
+        services.AddSingleton(host.GetRequiredService<ICacheProvider>());
+        services.AddSingleton(host.GetRequiredService<IInputResolver>());
+        services.AddSingleton(host.GetRequiredService<IStdIncludeResolver>());
     }
 
     private record JobDefinition(

@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Concurrent;
+using System.CommandLine;
+using System.CommandLine.Invocation;
 using System.Diagnostics;
 using ClangSharp;
 using ClangSharp.Interop;
@@ -10,6 +12,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Caching;
+using Silk.NET.SilkTouch.CommandLine;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Sources;
 using static ClangSharp.Interop.CXDiagnosticSeverity;
@@ -25,7 +28,6 @@ namespace Silk.NET.SilkTouch.Clang;
 /// </param>
 /// <param name="documentFactory">The document factory to use.</param>
 /// <param name="config">The configuration to use.</param>
-/// <param name="hostConfig">The host configuration to use.</param>
 /// <param name="logger">The logger to use.</param>
 /// <param name="inputResolver">The input resolver to use.</param>
 /// <param name="responseFileMods">The mods that modify response files before they are fed to ClangSharp.</param>
@@ -34,14 +36,28 @@ public sealed class ClangScraper(
     ResponseFileHandler rspHandler,
     DocumentFactory documentFactory,
     ClangScraper.Configuration config,
-    SilkTouchHostConfiguration hostConfig,
     ILogger<ClangScraper> logger,
     IInputResolver inputResolver,
     ICacheProvider? cacheProvider = null,
     IEnumerable<IResponseFileMod>? responseFileMods = null
-) : IMod
+) : IMod, ICommandLineConfigurable
 {
     // TODO add Windows SDK and Xcode configuration
+
+    private static Option<bool> UseCacheOnlyOption { get; } =
+        new(["--use-cache-only"], () => false)
+        {
+            Description = $"Limits {nameof(ClangScraper)} to only using the cache.",
+        };
+
+    private static Option<bool> GenerateCacheOnlyOption { get; } =
+        new(["--generate-cache-only"], () => false)
+        {
+            Description = $"Limits {nameof(ClangScraper)} to only generating the cache.",
+        };
+
+    private bool _useCacheOnly = false;
+    private bool _generateCacheOnly = false;
 
     /// <summary>
     /// Configuration for the <see cref="ClangScraper"/> mod.
@@ -88,10 +104,23 @@ public sealed class ClangScraper(
         /// Whether this mod should end the generation job after a "generate cache only" run.
         /// </summary>
         /// <remarks>
-        /// A "generate cache only" run is a run where <see cref="SilkTouchHostConfiguration.GenerateCacheOnly"/> is set to true.
         /// The intended use pattern is setting this to true for the last <see cref="ClangScraper"/> mod in a job.
         /// </remarks>
         public bool ExitAfterGenerateCacheOnlyRun { get; init; }
+    }
+
+    /// <inheritdoc />
+    public void RegisterCommandLineOptions(Action<Option> register)
+    {
+        register.Invoke(UseCacheOnlyOption);
+        register.Invoke(GenerateCacheOnlyOption);
+    }
+
+    /// <inheritdoc />
+    public void ReadCommandLineOptions(InvocationContext ctx)
+    {
+        _useCacheOnly = ctx.ParseResult.GetValueForOption(UseCacheOnlyOption);
+        _generateCacheOnly = ctx.ParseResult.GetValueForOption(GenerateCacheOnlyOption);
     }
 
     /// <summary>
@@ -395,7 +424,7 @@ public sealed class ClangScraper(
 
         // Try generating the raw bindings with ClangSharp
         // If scraping needs to be skipped or if the scrape fails, then fall back to a cache if available
-        var shouldScrape = !hostConfig.UseCacheOnly && config.ScrapeIf.Invoke();
+        var shouldScrape = !_useCacheOnly && config.ScrapeIf.Invoke();
 
         var cacheKey =
             resolvedConfig.CacheKey != null
@@ -431,7 +460,7 @@ public sealed class ClangScraper(
             }
         }
 
-        if (hostConfig.GenerateCacheOnly)
+        if (_generateCacheOnly)
         {
             // GenerateCacheOnly is intended to be used when not all caches are available (eg: for multi-platform cache population),
             // so we don't validate whether a cache was generated or not in this branch
