@@ -18,8 +18,6 @@ namespace Silk.NET.SilkTouch;
 /// </summary>
 internal class SilkTouchJob : IDisposable
 {
-    private readonly ServiceProvider _provider;
-
     private readonly ILogger<SilkTouchJob> _logger;
     private readonly IInputResolver _inputResolver;
     private readonly IModContextFactory _modContextFactory;
@@ -36,9 +34,14 @@ internal class SilkTouchJob : IDisposable
     public SilkTouchConfiguration Config { get; private set; }
 
     /// <summary>
-    /// Gets the loaded mods for this generator instance.
+    /// Gets the loaded mods for this job.
     /// </summary>
     public IReadOnlyList<IMod> Mods { get; }
+
+    /// <summary>
+    /// The service provider for this job.
+    /// </summary>
+    public ServiceProvider Provider;
 
     /// <summary>
     /// Creates a new <see cref="SilkTouchJob"/>.
@@ -70,12 +73,12 @@ internal class SilkTouchJob : IDisposable
             configure.Invoke(services);
         }
 
-        _provider = services.BuildServiceProvider();
-        _logger = _provider.GetRequiredService<ILogger<SilkTouchJob>>();
-        _inputResolver = _provider.GetRequiredService<IInputResolver>();
-        _modContextFactory = _provider.GetRequiredService<IModContextFactory>();
-        _documentFactory = _provider.GetRequiredService<DocumentFactory>();
-        Mods = _provider.GetRequiredService<IEnumerable<IMod>>().ToArray();
+        Provider = services.BuildServiceProvider();
+        _logger = Provider.GetRequiredService<ILogger<SilkTouchJob>>();
+        _inputResolver = Provider.GetRequiredService<IInputResolver>();
+        _modContextFactory = Provider.GetRequiredService<IModContextFactory>();
+        _documentFactory = Provider.GetRequiredService<DocumentFactory>();
+        Mods = Provider.GetRequiredService<IEnumerable<IMod>>().ToArray();
     }
 
     /// <summary>
@@ -178,5 +181,5 @@ internal class SilkTouchJob : IDisposable
     }
 
     /// <inheritdoc />
-    public void Dispose() => _provider.Dispose();
+    public void Dispose() => Provider.Dispose();
 }
