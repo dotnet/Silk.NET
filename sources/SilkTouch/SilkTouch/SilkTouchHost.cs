@@ -7,7 +7,6 @@ using Microsoft.Build.Locator;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Caching;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.CommandLine;
@@ -43,6 +42,8 @@ public class SilkTouchHost
         {
             Description = "Maximum number of parallel jobs.",
         };
+
+    private LogLevel _minimumLogLevel = LogLevel.Information;
 
     private readonly Dictionary<string, JobDefinition> _jobDefinitions = [];
 
@@ -120,10 +121,7 @@ public class SilkTouchHost
 
             rootCommand.SetHandler(async ctx =>
             {
-                var loggingFilter = provider
-                    .GetRequiredService<IOptions<LoggerFilterOptions>>()
-                    .Value;
-                loggingFilter.MinLevel = ctx.ParseResult.GetValueForOption(LoggingOption);
+                _minimumLogLevel = ctx.ParseResult.GetValueForOption(LoggingOption);
 
                 try
                 {
@@ -215,6 +213,9 @@ public class SilkTouchHost
                         : LoggerColorBehavior.Default;
                     opts.IncludeScopes = false;
                 });
+
+                // This avoids depending on the CLI options during container building
+                builder.AddFilter(IsLogLevelEnabled);
             })
             .AddOptions();
 
@@ -237,6 +238,8 @@ public class SilkTouchHost
             services.AddSingleton<IStdIncludeResolver, UnixStdIncludeResolver>();
         }
     }
+
+    private bool IsLogLevelEnabled(LogLevel level) => level >= _minimumLogLevel;
 
     /// <summary>
     /// Dependencies defined here will be available to jobs.
