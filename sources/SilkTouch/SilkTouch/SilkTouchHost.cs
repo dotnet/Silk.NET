@@ -99,6 +99,7 @@ public class SilkTouchHost
 
         try
         {
+            // Gather job options
             var options = new HashSet<Option>();
             foreach (var job in jobs.Values)
             {
@@ -122,6 +123,16 @@ public class SilkTouchHost
             rootCommand.SetHandler(async ctx =>
             {
                 _minimumLogLevel = ctx.ParseResult.GetValueForOption(LoggingOption);
+
+                // Apply job options
+                foreach (var job in jobs.Values)
+                {
+                    var configurables = job.Provider.GetServices<ICommandLineConfigurable>();
+                    foreach (var configurable in configurables)
+                    {
+                        configurable.ReadCommandLineOptions(ctx);
+                    }
+                }
 
                 try
                 {
