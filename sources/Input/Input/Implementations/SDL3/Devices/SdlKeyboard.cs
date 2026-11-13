@@ -303,7 +303,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
         public void SetKeyState(KeyName key, byte pressure)
         {
-            var idx = EnumInfo<KeyName>.ValueIndexOf(key);
+            var idx = key.Index();
             if (idx == -1)
                 throw new InvalidOperationException("No key index found?? this is a bug");
 
@@ -333,7 +333,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
         public Button<KeyName> this[int index] => GetButton(EnumInfo<KeyName>.ValueOfIndex(index), index);
 
-        public Button<KeyName> this[KeyName key] => GetButton(key, EnumInfo<KeyName>.ValueIndexOf(key));
+        public Button<KeyName> this[KeyName key] => GetButton(key, key.Index());
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private Button<KeyName> GetButton(KeyName key, int index)

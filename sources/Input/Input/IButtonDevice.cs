@@ -4,8 +4,7 @@ namespace Silk.NET.Input;
 /// Represents an input device that has buttons.
 /// </summary>
 /// <typeparam name="T">The type of buttons the input device has.</typeparam>
-public interface IButtonDevice<T> : IInputDevice
-    where T : unmanaged, Enum
+public interface IButtonDevice<T> : IInputDevice where T : unmanaged, Enum
 {
     /// <summary>
     /// Gets the current button state for this device.

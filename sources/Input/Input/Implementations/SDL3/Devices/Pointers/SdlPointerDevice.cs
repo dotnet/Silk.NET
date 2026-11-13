@@ -52,7 +52,7 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
 
     protected void AddButtonEvent(PointerButton button, long timestamp, bool isDown, float pressure01)
     {
-        var idx = EnumInfo<PointerButton>.ValueIndexOf(button);
+        var idx = button.Index();
 
         while (idx >= _buttons.Count)
         {

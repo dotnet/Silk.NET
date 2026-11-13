@@ -48,9 +48,15 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     protected internal override void Initialize(long timestamp)
     {
         var gamepadHandle = NativeBackend.OpenGamepad((uint)SdlDeviceId);
-        if (gamepadHandle.Handle == null)
+        var nullGamepad = gamepadHandle.Handle == null;
+        if (nullGamepad)
         {
-            InputLog.Error($"Could not open gamepad handle {SdlDeviceId}");
+            // we just continue on to initialize our data,
+            // and if we don't have a handle, we don't use it. we still hold on to the game device, though,
+            // which is likely to be a source of confusion. however at time of writing I choose to assume
+            // this would be an SDL bug, and if not, they would later emit a disconnect event the regular
+            // input flow can handle.
+            InputLog.Error($"Could not open gamepad handle {SdlDeviceId}.");
         }
 
         _gamepadHandle = gamepadHandle;
@@ -69,9 +75,10 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         _axes[JoystickAxis.RightY.Index()] = 0.5f;
         _state = new GamepadState(_buttons, _axes);
 
-        if (gamepadHandle.Handle != null)
+        if (!nullGamepad)
         {
             SyncGamepadState(timestamp);
+            _joystick.ApplyMapping(gamepadHandle, timestamp);
         }
     }
 
