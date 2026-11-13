@@ -334,16 +334,23 @@ internal partial class SdlInputBackend : IInputBackend
             case >= EventType.GamepadAxisMotion and <= EventType.GamepadSteamHandleUpdated:
             {
                 (uint id, InputEventUpdateMethod<SdlGamepad>? updateEvent) gameEvt = type switch {
-                    EventType.GamepadRemapped => (evt.Gdevice.Which, static (g, time, ref readonly _, _) => g.Remap(time)),
-                    EventType.GamepadTouchpadDown => (evt.Gtouchpad.Which, static (g, time, ref readonly e, _) => g.AddTouchpadEvent(e.Gtouchpad, down: true, time)),
-                    EventType.GamepadTouchpadUp => (evt.Gtouchpad.Which, static (g, time, ref readonly e, _) => g.AddTouchpadEvent(e.Gtouchpad, down: false, time)),
-                    EventType.GamepadTouchpadMotion => (evt.Gtouchpad.Which, static(g, time, ref readonly e, _) => g.AddTouchpadEvent(e.Gtouchpad, null, time)),
-                    EventType.GamepadSensorUpdate => (evt.Gsensor.Which, static (g, time, ref readonly e, _) => g.AddSensorEvent(e.Gsensor, time)),
+                    EventType.GamepadRemapped => (evt.Gdevice.Which,
+                        static (g, time, ref readonly _, _) => g.SyncGamepadState(time)),
+                    EventType.GamepadTouchpadDown => (evt.Gtouchpad.Which, static (g, time, ref readonly e, _) =>
+                        g.AddTouchpadEvent(e.Gtouchpad, down: true, time)),
+                    EventType.GamepadTouchpadUp => (evt.Gtouchpad.Which, static (g, time, ref readonly e, _) =>
+                        g.AddTouchpadEvent(e.Gtouchpad, down: false, time)),
+                    EventType.GamepadTouchpadMotion => (evt.Gtouchpad.Which, static (g, time, ref readonly e, _) =>
+                        g.AddTouchpadEvent(e.Gtouchpad, null, time)),
+                    EventType.GamepadSensorUpdate => (evt.Gsensor.Which, static (g, time, ref readonly e, _) =>
+                        g.AddSensorEvent(e.Gsensor, time)),
 
-                    // intentionally null, as they are handled by the joystick implementation
-                    EventType.GamepadAxisMotion => (evt.Gaxis.Which, null),
-                    EventType.GamepadButtonDown => (evt.Gbutton.Which, null),
-                    EventType.GamepadButtonUp => (evt.Gbutton.Which, null),
+                    EventType.GamepadAxisMotion => (evt.Gaxis.Which, static (g, time, ref readonly e, _) =>
+                        g.AddAxisEvent((GamepadAxis)e.Gaxis.Axis, e.Gaxis.Value, time)),
+                    EventType.GamepadButtonDown => (evt.Gbutton.Which, static (g, time, ref readonly e, _) =>
+                        g.AddButtonEvent((GamepadButton)e.Gbutton.Button, e.Gbutton.Down != 0, time)),
+                    EventType.GamepadButtonUp => (evt.Gbutton.Which, static (g, time, ref readonly e, _) =>
+                        g.AddButtonEvent((GamepadButton)e.Gbutton.Button, e.Gbutton.Down != 0, time)),
                     EventType.GamepadUpdateComplete => (evt.Gdevice.Which, null),
 
                     // not sure what to do with this at the moment..

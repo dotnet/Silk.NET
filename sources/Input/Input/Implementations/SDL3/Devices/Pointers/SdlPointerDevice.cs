@@ -19,7 +19,7 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
     /// False otherwise - e.g., a multitouch screen.
     /// </summary>
     protected abstract bool OnePointOnly { get; }
-    private readonly List<Button<PointerButton>> _buttons = new(EnumInfo<PointerButton>.UniqueNamedValues.Count);
+    private readonly List<Button<PointerButton>> _buttons = new(EnumInfo<PointerButton>.DistinctCount);
     protected ButtonReadOnlyList<PointerButton> Buttons => new(_buttons);
     protected InputReadOnlyList<TargetPoint> StatePoints => new(other: _publicPoints);
 
@@ -43,7 +43,7 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
     protected SdlPointerDevice(SdlInputBackend backend, nint silkId,
         ulong sdlDeviceId) : base(backend, silkId, sdlDeviceId)
     {
-        for (var i = 0; i < EnumInfo<PointerButton>.UniqueNamedValues.Count; i++)
+        for (var i = 0; i < EnumInfo<PointerButton>.DistinctCount; i++)
         {
             var button = EnumInfo<PointerButton>.UniqueNamedValues[i];
             _buttons.Add(new Button<PointerButton>(button, false, 0f));

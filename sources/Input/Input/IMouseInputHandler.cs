@@ -1,18 +1,13 @@
-using System.Runtime.CompilerServices;
-
 namespace Silk.NET.Input;
 
 /// <summary>
 /// An <see cref="IInputHandler"/> that receives input from an <see cref="IMouse"/>.
 /// </summary>
-public interface IMouseInputHandler : IButtonInputHandler<PointerButton>, IInputHandler<MouseScrollEvent>
+public interface IMouseInputHandler : IButtonInputHandler<PointerButton>
 {
     /// <summary>
     /// Called when the user scrolls using the scroll wheel.
     /// </summary>
     /// <param name="event">The event details.</param>
     void HandleScroll(MouseScrollEvent @event);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IInputHandler<MouseScrollEvent>.Handle(MouseScrollEvent @event) => HandleScroll(@event);
 }

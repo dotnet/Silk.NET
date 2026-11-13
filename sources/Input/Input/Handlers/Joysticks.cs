@@ -26,8 +26,13 @@ public sealed class Joysticks : InputContextDeviceList<IJoystick>, IJoystickInpu
     public event Action<JoystickHatMoveEvent>? HatMove;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    internal void HandleButtonChanged(ButtonChangedEvent<JoystickButton> @event) =>
-        ButtonChanged?.Invoke(@event);
+    internal void HandleButtonChanged(ButtonChangedEvent<JoystickButton> @event)
+    {
+        if (@event.Device is IJoystick)
+        {
+            ButtonChanged?.Invoke(@event);
+        }
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     void IButtonInputHandler<JoystickButton>.HandleButtonChanged(

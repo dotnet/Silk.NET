@@ -87,60 +87,184 @@ internal sealed class SdlInputEventContext : IDisposable
                 switch (evt.Type)
                 {
                     case SdlEventDiscriminator.PointChanged:
-                        RaiseEvent(in handlers, in evt.Value<PointChangedEvent>());
+                    {
+                        ref readonly var e = ref evt.Value<PointChangedEvent>();
+                        for (var i = 0; i < handlers.Length; ++i)
+                        {
+                            if (handlers[i] is IPointerInputHandler h)
+                            {
+                                try
+                                {
+                                    h.HandlePointChanged(e);
+                                }
+                                catch (Exception ex)
+                                {
+                                    InputLog.Error(ex.ToString());
+                                }
+                            }
+                        }
                         break;
+                    }
 
                     case SdlEventDiscriminator.PointerClick:
-                        RaiseEvent(in handlers, in evt.Value<PointerClickEvent>());
+                        // No handler interface consumes PointerClickEvent; clicks are derived by Pointers.
                         break;
 
                     case SdlEventDiscriminator.PointerButtonChanged:
-                        RaiseEvent(in handlers, in evt.Value<ButtonChangedEvent<PointerButton>>());
+                    {
+                        ref readonly var e = ref evt.Value<ButtonChangedEvent<PointerButton>>();
+                        for (var i = 0; i < handlers.Length; ++i)
+                        {
+                            if (handlers[i] is IButtonInputHandler<PointerButton> h)
+                            {
+                                h.HandleButtonChanged(e);
+                            }
+                        }
                         break;
+                    }
 
                     case SdlEventDiscriminator.PointerGripChanged:
-                        RaiseEvent(in handlers, in evt.Value<PointerGripChangedEvent>());
+                    {
+                        ref readonly var e = ref evt.Value<PointerGripChangedEvent>();
+                        for (var i = 0; i < handlers.Length; ++i)
+                        {
+                            if (handlers[i] is IPointerInputHandler h)
+                            {
+                                h.HandleGripChanged(e);
+                            }
+                        }
                         break;
+                    }
 
                     case SdlEventDiscriminator.PointerTargetChanged:
-                        RaiseEvent(in handlers, in evt.Value<PointerTargetChangedEvent>());
+                    {
+                        ref readonly var e = ref evt.Value<PointerTargetChangedEvent>();
+                        for (var i = 0; i < handlers.Length; ++i)
+                        {
+                            if (handlers[i] is IPointerInputHandler h)
+                            {
+                                h.HandleTargetChanged(e);
+                            }
+                        }
                         break;
+                    }
 
                     case SdlEventDiscriminator.JoystickButtonChanged:
-                        RaiseEvent(in handlers, in evt.Value<ButtonChangedEvent<JoystickButton>>());
+                    {
+                        ref readonly var e = ref evt.Value<ButtonChangedEvent<JoystickButton>>();
+                        for (var i = 0; i < handlers.Length; ++i)
+                        {
+                            if (handlers[i] is IButtonInputHandler<JoystickButton> h)
+                            {
+                                h.HandleButtonChanged(e);
+                            }
+                        }
                         break;
+                    }
 
                     case SdlEventDiscriminator.KeyButtonChanged:
-                        RaiseEvent(in handlers, in evt.Value<ButtonChangedEvent<KeyName>>());
+                    {
+                        ref readonly var e = ref evt.Value<ButtonChangedEvent<KeyName>>();
+                        for (var i = 0; i < handlers.Length; ++i)
+                        {
+                            if (handlers[i] is IButtonInputHandler<KeyName> h)
+                            {
+                                h.HandleButtonChanged(e);
+                            }
+                        }
                         break;
+                    }
 
                     case SdlEventDiscriminator.KeyChanged:
-                        RaiseEvent(in handlers, in evt.Value<KeyChangedEvent>());
+                    {
+                        ref readonly var e = ref evt.Value<KeyChangedEvent>();
+                        for (var i = 0; i < handlers.Length; ++i)
+                        {
+                            if (handlers[i] is IKeyboardInputHandler h)
+                            {
+                                h.HandleKeyChanged(e);
+                            }
+                        }
                         break;
+                    }
 
                     case SdlEventDiscriminator.GamepadThumbstickMove:
-                        RaiseEvent(in handlers, in evt.Value<GamepadThumbstickMoveEvent>());
+                    {
+                        ref readonly var e = ref evt.Value<GamepadThumbstickMoveEvent>();
+                        for (var i = 0; i < handlers.Length; ++i)
+                        {
+                            if (handlers[i] is IGamepadInputHandler h)
+                            {
+                                h.HandleThumbstickMove(e);
+                            }
+                        }
                         break;
+                    }
 
                     case SdlEventDiscriminator.GamepadTriggerMove:
-                        RaiseEvent(in handlers, in evt.Value<GamepadTriggerMoveEvent>());
+                    {
+                        ref readonly var e = ref evt.Value<GamepadTriggerMoveEvent>();
+                        for (var i = 0; i < handlers.Length; ++i)
+                        {
+                            if (handlers[i] is IGamepadInputHandler h)
+                            {
+                                h.HandleTriggerMove(e);
+                            }
+                        }
                         break;
+                    }
 
                     case SdlEventDiscriminator.JoystickAxisMove:
-                        RaiseEvent(in handlers, in evt.Value<JoystickAxisMoveEvent>());
+                    {
+                        ref readonly var e = ref evt.Value<JoystickAxisMoveEvent>();
+                        for (var i = 0; i < handlers.Length; ++i)
+                        {
+                            if (handlers[i] is IJoystickInputHandler h)
+                            {
+                                h.HandleAxisMove(e);
+                            }
+                        }
                         break;
+                    }
 
                     case SdlEventDiscriminator.JoystickHatMove:
-                        RaiseEvent(in handlers, in evt.Value<JoystickHatMoveEvent>());
+                    {
+                        ref readonly var e = ref evt.Value<JoystickHatMoveEvent>();
+                        for (var i = 0; i < handlers.Length; ++i)
+                        {
+                            if (handlers[i] is IJoystickInputHandler h)
+                            {
+                                h.HandleHatMove(e);
+                            }
+                        }
                         break;
+                    }
 
                     case SdlEventDiscriminator.KeyChar:
-                        RaiseEvent(in handlers, in evt.Value<KeyCharEvent>());
+                    {
+                        ref readonly var e = ref evt.Value<KeyCharEvent>();
+                        for (var i = 0; i < handlers.Length; ++i)
+                        {
+                            if (handlers[i] is IKeyboardInputHandler h)
+                            {
+                                h.HandleKeyChar(e);
+                            }
+                        }
                         break;
+                    }
 
                     case SdlEventDiscriminator.MouseScroll:
-                        RaiseEvent(in handlers, in evt.Value<MouseScrollEvent>());
+                    {
+                        ref readonly var e = ref evt.Value<MouseScrollEvent>();
+                        for (var i = 0; i < handlers.Length; ++i)
+                        {
+                            if (handlers[i] is IMouseInputHandler h)
+                            {
+                                h.HandleScroll(e);
+                            }
+                        }
                         break;
+                    }
 
                     case SdlEventDiscriminator.Connection:
                     {
@@ -164,24 +288,6 @@ internal sealed class SdlInputEventContext : IDisposable
         }
 
         return;
-
-        static void RaiseEvent<TItem>(ref readonly Span<IInputHandler> handlers, ref readonly TItem evt)
-            where TItem : struct
-        {
-            for (var index = 0; index < handlers.Length; ++index)
-            {
-                if (handlers[index] is IInputHandler<TItem> appropriateHandler)
-                {
-                    appropriateHandler.Handle(evt);
-                }
-#if DEBUG
-                else
-                {
-                    InputLog.Debug($"Unhandled event type {typeof(TItem).Name} from {handlers[index].GetType().Name}.");
-                }
-#endif
-            }
-        }
     }
 
 

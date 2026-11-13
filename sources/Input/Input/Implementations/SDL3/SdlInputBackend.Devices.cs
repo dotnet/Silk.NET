@@ -3,7 +3,6 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using Silk.NET.Input.SDL3.Devices.Joysticks;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;

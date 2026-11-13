@@ -12,28 +12,22 @@ public partial class InputContext
         IMouseInputHandler,
         IPointerInputHandler,
         IKeyboardInputHandler,
-        IInputHandler<ConnectionEvent>,
         IList<IInputBackend>,
         IReadOnlyList<IInputBackend>
 {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IInputHandler<ConnectionEvent>.Handle(ConnectionEvent e) => HandleDeviceConnectionChanged(e);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IInputHandler<PointerTargetChangedEvent>.Handle(PointerTargetChangedEvent @event) =>
-        _pointers?.HandleTargetChanged(@event);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IInputHandler<PointChangedEvent>.Handle(PointChangedEvent @event) =>
-        _pointers?.HandlePointChanged(@event);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IInputHandler<PointerGripChangedEvent>.Handle(PointerGripChangedEvent @event) =>
-        _pointers?.HandleGripChanged(@event);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IButtonInputHandler<JoystickButton>.HandleButtonChanged(ButtonChangedEvent<JoystickButton> @event) =>
-        _joysticks?.HandleButtonChanged(@event);
+    void IButtonInputHandler<JoystickButton>.HandleButtonChanged(ButtonChangedEvent<JoystickButton> @event)
+    {
+        // Both gamepads and joysticks use ButtonChangedEvent<JoystickButton>; dispatch by the source device.
+        if (@event.Device is IGamepad)
+        {
+            _gamepads?.HandleButtonChanged(@event);
+        }
+        else
+        {
+            _joysticks?.HandleButtonChanged(@event);
+        }
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     void IJoystickInputHandler.HandleAxisMove(JoystickAxisMoveEvent @event) =>

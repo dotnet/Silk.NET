@@ -27,8 +27,13 @@ public sealed class Gamepads : InputContextDeviceList<IGamepad>, IGamepadInputHa
     public event Action<GamepadTriggerMoveEvent>? TriggerMove;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IButtonInputHandler<JoystickButton>.HandleButtonChanged(ButtonChangedEvent<JoystickButton> @event) =>
-        ButtonChanged?.Invoke(@event);
+    public void HandleButtonChanged(ButtonChangedEvent<JoystickButton> @event)
+    {
+        if (@event.Device is IGamepad)
+        {
+            ButtonChanged?.Invoke(@event);
+        }
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     internal void HandleThumbstickMove(GamepadThumbstickMoveEvent @event) =>

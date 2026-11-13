@@ -13,8 +13,8 @@ namespace Silk.NET.Input;
 /// <remarks>
 /// WARNING: If your values come from uninitialized memory, these extension methods may return incorrect results.
 /// </remarks>
-[Experimental(diagnosticId: "ST0006", UrlFormat = "https://dotnet.github.io/Silk.NET/docs/v3/silk.net/diagnostics/{0}")]
-public static class UnsafeNumericValueExtensions
+// [Experimental(diagnosticId: "ST0006", UrlFormat = "https://dotnet.github.io/Silk.NET/docs/v3/silk.net/diagnostics/{0}")]
+internal static class UnsafeNumericValueExtensions
 {
     /// <param name="value"></param>
     /// <typeparam name="T"></typeparam>
@@ -39,8 +39,8 @@ public static class UnsafeNumericValueExtensions
         /// for signed source values.
         /// </remarks>
         /// <throws> <see cref="ArgumentException"/>if the types are based on floating-point values</throws>
-        [Experimental(diagnosticId: "ST0009",
-            UrlFormat = "https://dotnet.github.io/Silk.NET/docs/v3/silk.net/diagnostics/{0}")]
+        //[Experimental(diagnosticId: "ST0009",
+        //    UrlFormat = "https://dotnet.github.io/Silk.NET/docs/v3/silk.net/diagnostics/{0}")]
         public unsafe TTo ConvertBitwiseUnsafe<TTo>() where TTo : unmanaged
         {
 #if DEBUG
@@ -60,7 +60,7 @@ public static class UnsafeNumericValueExtensions
             var dst = (byte*)&result;
             var src = (byte*)&value;
 
-            var minSize = Math.Min(sizeof(TTo), sizeof(T));
+            var minSize = (uint)Math.Min(sizeof(TTo), sizeof(T));
             if (!BitConverter.IsLittleEndian)
             {
                 // big-endian keeps low-order bytes at the end
@@ -68,24 +68,8 @@ public static class UnsafeNumericValueExtensions
                 dst += sizeof(TTo) - minSize;
             }
 
-            Unsafe.CopyBlock(destination: dst, source: src, byteCount: unchecked((uint)minSize));
+            Unsafe.CopyBlock(destination: dst, source: src, byteCount: minSize);
             return result;
         }
-
-
-    }
-
-    extension<T>(T value) where T : unmanaged, IUnsignedNumber<T>, IBinaryInteger<T>
-    {
-        /// <inheritdoc cref="UnsafeNumericValueExtensions.ConvertBitwiseUnsafe{T,TTo}"/>
-        private TTo ConvertUnsafeUnsigned<TTo>() where TTo : unmanaged, IUnsignedNumber<TTo> =>
-            value.ConvertBitwiseUnsafe<T, TTo>();
-    }
-
-    extension<T>(T value) where T : unmanaged, ISignedNumber<T>, IBinaryInteger<T>
-    {
-        /// <inheritdoc cref="UnsafeNumericValueExtensions.ConvertBitwiseUnsafe{T,TTo}"/>
-        private TTo ConvertUnsafeSigned<TTo>() where TTo : unmanaged, ISignedNumber<TTo> =>
-            value.ConvertBitwiseUnsafe<T, TTo>();
     }
 }

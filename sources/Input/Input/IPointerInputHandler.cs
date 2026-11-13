@@ -1,11 +1,9 @@
-using System.Runtime.CompilerServices;
-
 namespace Silk.NET.Input;
 
 /// <summary>
 /// An <see cref="IInputHandler"/> that also receives <see cref="IPointerDevice"/> events.
 /// </summary>
-public interface IPointerInputHandler : IButtonInputHandler<PointerButton>, IInputHandler<PointerTargetChangedEvent>, IInputHandler<PointChangedEvent>, IInputHandler<PointerGripChangedEvent>
+public interface IPointerInputHandler : IButtonInputHandler<PointerButton>
 {
     /// <summary>
     /// Called when the properties of a target at which the user can point using the pointer change. This includes the
@@ -25,14 +23,4 @@ public interface IPointerInputHandler : IButtonInputHandler<PointerButton>, IInp
     /// </summary>
     /// <param name="event">The event details.</param>
     void HandleGripChanged(PointerGripChangedEvent @event);
-
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IInputHandler<PointerTargetChangedEvent>.Handle(PointerTargetChangedEvent @event) => HandleTargetChanged(@event);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IInputHandler<PointChangedEvent>.Handle(PointChangedEvent @event) => HandlePointChanged(@event);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IInputHandler<PointerGripChangedEvent>.Handle(PointerGripChangedEvent @event) => HandleGripChanged(@event);
 }

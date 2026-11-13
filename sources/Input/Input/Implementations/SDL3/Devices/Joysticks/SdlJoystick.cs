@@ -9,11 +9,11 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Joysticks;
 
-internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDevice<SdlJoystick>, IOrderedDevice
+internal sealed unsafe class SdlJoystick : SdlDevice, IJoystick, ISdlDevice<SdlJoystick>, IOrderedDevice
 {
     public JoystickState State { get; private set; }
     private JoystickType _joystickType;
-    internal JoystickHandle JoystickHandle { get; private set; }
+    private JoystickHandle _joystickHandle;
 
     public static SdlJoystick CreateDevice(ulong sdlDeviceId, long timestamp, bool isSimulated, SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
     {
@@ -114,11 +114,6 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
         var previous = hatStateRef;
         hatStateRef = new Vector2(x, y);
 
-        foreach (var device in _devices)
-        {
-            device.UpdateFromJoyHat(hatIdx, hatState, timestamp);
-        }
-
         var delta = hatStateRef - previous;
         if (delta != Vector2.Zero)
         {
@@ -128,10 +123,20 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
     public void AddAxisEvent(int axis, short joystickInput, long timestamp)
     {
-        _rawAxisState[axis] = (float)(joystickInput + short.MaxValue) / ushort.MaxValue;
-        foreach (var device in _devices)
+        if ((uint)axis >= (uint)_rawAxisState.Length)
         {
-            device.UpdateFromJoyAxis(axis, joystickInput, timestamp);
+            InputLog.Error($"Joystick axis {axis} out of bounds with length {_rawAxisState.Length}");
+            return;
+        }
+
+        ref var axisState = ref _rawAxisState[axis];
+        var previous = axisState;
+        axisState = (float)(joystickInput + short.MaxValue) / ushort.MaxValue;
+
+        var delta = axisState - previous;
+        if (delta != 0)
+        {
+            AxisEvents.Enqueue(new JoystickAxisMoveEvent(this, timestamp, axis, axisState, delta));
         }
     }
 
@@ -148,14 +153,18 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
         if (idx >= _rawButtonState.Length)
         {
-            InputLog.Error($"Button index {idx} exceeds button state array length {_rawButtonState.Length} on joystick {Id}");
+            InputLog.Error($"Joystick button {joystickButton} out of bounds with index {idx}");
             return;
         }
 
-        _rawButtonState[idx] = new Button<JoystickButton>(joystickButton, down, down ? 1 : 0);
-        foreach (var device in _devices)
+        ref var buttonState = ref _rawButtonState[idx];
+        var previous = buttonState;
+        buttonState = new Button<JoystickButton>(joystickButton, down, down ? 1 : 0);
+
+        // ReSharper disable once CompareOfFloatsByEqualityOperator
+        if (previous.IsDown != buttonState.IsDown || previous.Pressure != buttonState.Pressure)
         {
-            device.UpdateFromJoyButton(sdlButtonId, down, timestamp);
+            ButtonEvents.Enqueue(new ButtonChangedEvent<JoystickButton>(this, timestamp, buttonState, previous));
         }
     }
 
@@ -195,11 +204,15 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
         // init current joystick state
         var buttonCount = NativeBackend.GetNumJoystickButtons(joystickHandle);
-        var uniqueJoyButtonCount = Math.Max(EnumInfo<JoystickButton>.UniqueNamedValues.Count, (int)GamepadButton.Count);
-        _rawButtonState = new Button<JoystickButton>[uniqueJoyButtonCount + buttonCount];
+
+        _rawButtonState = new Button<JoystickButton>[EnumInfo<JoystickButton>.DistinctCount + buttonCount];
+        for (var i = 0; i < _rawButtonState.Length; i++)
+        {
+            _rawButtonState[i] = new Button<JoystickButton>(EnumInfo<JoystickButton>.ValueOfIndex(i), false, 0);
+        }
 
         var axisCount = NativeBackend.GetNumJoystickAxes(joystickHandle);
-        _rawAxisState = new float[EnumInfo<JoystickAxis>.UniqueNamedValues.Count + axisCount];
+        _rawAxisState = new float[EnumInfo<JoystickAxis>.DistinctCount + axisCount];
 
         var hatCount = NativeBackend.GetNumJoystickHats(joystickHandle);
         _rawHatState = new Vector2[hatCount];
@@ -230,14 +243,27 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
             AddHatEvent(i, hatInput, timestamp);
         }
 
-        JoystickHandle = joystickHandle;
+        _joystickHandle = joystickHandle;
         _joystickType = NativeBackend.GetJoystickType(joystickHandle);
         State = new JoystickState(_rawAxisState, _rawButtonState, _rawHatState);
     }
 
-    protected override void Release() => NativeBackend.CloseJoystick(JoystickHandle);
+    private static void GrowButtonList<T>(List<Button<T>> items, int desiredSize) where T : unmanaged, Enum
+    {
+        if(items.Capacity < desiredSize)
+        {
+            items.Capacity = desiredSize;
+        }
 
-    public void RefreshSdlId() => _sdlDeviceId = NativeBackend.GetJoystickID(JoystickHandle);
+        for(var i = items.Count; i < desiredSize; i++)
+        {
+            items.Add(new Button<T>(EnumInfo<T>.ValueOfIndex(i), false, 0));
+        }
+    }
+
+    protected override void Release() => NativeBackend.CloseJoystick(_joystickHandle);
+
+    public void RefreshSdlId() => _sdlDeviceId = NativeBackend.GetJoystickID(_joystickHandle);
     private ulong _sdlDeviceId;
 
     // State

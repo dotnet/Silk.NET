@@ -12,22 +12,25 @@ namespace Silk.NET.Input;
 /// <summary>
 /// A helper class for quickly converting enum values into indexes, particularly
 /// when there is a possibility of unknown/unnamed enum values. See <see cref="JoystickButton"/> for an example
-/// of an appropriate implementation along with <see cref="ButtonReadOnlyList{JoystickButton}"/>
+/// of an appropriate implementation along with <see cref="ButtonReadOnlyList{JoystickButton}"/>. Note that
+/// this class is incompatible with enums that have a <see cref="FlagsAttribute"/> applied to them, and any
+/// negative enum values.
 /// </summary>
 /// <typeparam name="T"></typeparam>
 internal static class EnumInfo<T> where T : unmanaged, Enum
 {
-    /// <summary>
-    /// All enum values sorted in increasing order (unstable sort)
-    /// </summary>
-    public static IReadOnlyList<T> AllValuesOrdered => _allValuesOrdered;
-
     /// <summary>
     /// All enum values with distinct numerical values sorted in increasing order.
     /// In the case of multiple enum entries with the same numerical value, this makes no guarantees about
     /// which version ends up here.
     /// </summary>
     public static readonly IReadOnlyList<T> UniqueNamedValues;
+
+    /// <summary>
+    /// The number of distinct named enum values in type <typeparamref name="T"/> -
+    /// equal to <see cref="UniqueNamedValues"/> count.
+    /// </summary>
+    public static readonly int DistinctCount;
 
     /// <summary>
     /// The value with the highest numerical value
@@ -39,12 +42,6 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     /// </summary>
     public static readonly T MinValue;
 
-    /// <summary>
-    /// The numerical type of the enum
-    /// </summary>
-    public static readonly Type UnderlyingType = typeof(T).GetEnumUnderlyingType();
-
-    private static readonly T[] _allValuesOrdered;
     private static readonly ConcurrentDictionary<T, int> _numericallyDistinctIndices;
     private static readonly ulong[] _allEnumValuesDistinctRaw;
     private static readonly bool _unnamedAreIndexable;
@@ -53,7 +50,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     private static readonly bool _isSignedBackingType;
 #pragma warning restore CS0414 // Field is assigned but its value is never used
 
-    private const int _maxCapacity = 256;
+    private static readonly int _maxCapacity;
 
     static unsafe EnumInfo()
     {
@@ -74,10 +71,12 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
 
         if (hasFlagsAttribute)
         {
-            throw new InvalidOperationException("Enums with the FlagsAttribute cannot be used with EnumInfo");
+            throw new InvalidOperationException($"Enums with a {nameof(FlagsAttribute)} cannot be used with " +
+                                                $"{nameof(EnumInfo<>)} as they are semantically incompatible with " +
+                                                $"index-based operations.");
         }
 
-        var underlyingType = UnderlyingType;
+        var underlyingType = typeof(T).GetEnumUnderlyingType();
         var all = Enum.GetValues<T>().Where(x => !IsIgnored(x)).ToArray();
         var numericallyDistinct = all.DistinctBy(UnsafeNumericValueExtensions.ConvertBitwiseUnsafe<T, ulong>).ToArray();
         if (underlyingType == typeof(int))
@@ -152,11 +151,12 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
 
         }
 
-        _allValuesOrdered = all;
         UniqueNamedValues = numericallyDistinct;
+        DistinctCount = numericallyDistinct.Length;
+        _maxCapacity = DistinctCount + 256;
         _numericallyDistinctIndices = dict;
-        MinValue = AllValuesOrdered[0];
-        MaxValue = AllValuesOrdered[^1];
+        MinValue = all[0];
+        MaxValue = all[^1];
 
         return;
 
@@ -179,8 +179,13 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
 
 #pragma warning disable ST0006 ST0007 ST0008 ST0009
     /// <summary>
-    /// Gets the ordered index of the unnamed enum value provided. This index is calculated by:
-    /// (the number of named members in this enum type) + (the raw value of the number if unnamed)
+    /// Gets the ordered index of the enum value provided.
+    ///
+    /// If it's a named value, the index is its place in an ordered list of distinct numerical values defined
+    /// by the enum type <typeparamref name="T"/>.
+    ///
+    /// If it is an unnamed value, the index is calculated by:
+    /// (the number of distinct named members in this enum type) + (the raw value of the number if unnamed)
     ///
     /// Negative values or values that are above the lowest enum value will return -1, as they cannot be used for indexing
     /// </summary>
@@ -209,7 +214,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
             return -1;
         }
 
-        var idx = _allValuesOrdered.Length + rawValue;
+        var idx = DistinctCount + rawValue;
         if (_numericallyDistinctIndices.Count < _maxCapacity)
         {
 #if DEBUG
@@ -225,9 +230,31 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
 
 #pragma warning restore ST0006 ST0007 ST0008 ST0009
 
+    /// <summary>
+    /// Returns the enum value at the given index
+    /// </summary>
+    /// <param name="index"></param>
+    /// <returns></returns>
     public static unsafe T ValueOfIndex(int index)
     {
-        var value = _allEnumValuesDistinctRaw[index];
+        if (index < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(index), "Index must be non-negative");
+        }
+
+        ulong value;
+        if(index >= DistinctCount)
+        {
+            unchecked
+            {
+                value = (ulong)(index - DistinctCount);
+            }
+        }
+        else
+        {
+            value = _allEnumValuesDistinctRaw[index];
+        }
+
         return *(T*)&value;
     }
 
