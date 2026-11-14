@@ -76,11 +76,11 @@ jobs:
           minimum_coverage: 0
           pull_request_number: ${{ needs.pr.outputs.prNumber }}
 
-      # TODO: https://github.com/dorny/test-reporter?tab=readme-ov-file#recommended-setup-for-public-repositories
-#      - name: Post test report
-#        uses: dorny/test-reporter@v3
-#        if: ${{ !cancelled() }}
-#        with:
-#          name: .NET Test Report (${{ matrix.rid }})
-#          path: ./coverage/**/*.trx
-#          reporter: dotnet-trx
+      # https://github.com/dorny/test-reporter?tab=readme-ov-file#recommended-setup-for-public-repositories
+      - name: Post test report
+        uses: dorny/test-reporter@v3
+        with:
+          name: .NET Test Report (${{ matrix.rid }})
+          path: ./test/**/*.trx
+          reporter: dotnet-trx
+          use-actions-summary: false
