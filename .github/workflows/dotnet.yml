@@ -98,7 +98,6 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: |
-            9.0.x
             10.0.x
 
       - name: Install Workloads
@@ -110,15 +109,6 @@ jobs:
       - name: Test
         run: dotnet test --results-directory coverage --coverage --coverage-output-format cobertura --report-trx -c Release
 
-      # TODO: https://github.com/dorny/test-reporter?tab=readme-ov-file#recommended-setup-for-public-repositories
-      #- name: Test Report
-      #  uses: dorny/test-reporter@v1
-      #  if: success() || failure()
-      #  with:
-      #    name: .NET Test Report (${{ matrix.rid }})
-      #    path: ./coverage/**/*.trx
-      #    reporter: dotnet-trx
-
       - name: Upload Coverage Results
         uses: actions/upload-artifact@v4
         with:
@@ -126,41 +116,12 @@ jobs:
           path: ./coverage/**/*.cobertura.xml
           if-no-files-found: error
 
-  report-coverage:
-    name: "Report Coverage"
-    runs-on: ubuntu-latest
-
-    needs: [test]
-
-    permissions:
-      pull-requests: write
-      checks: write
-
-    steps:
-
-      - uses: actions/download-artifact@v4
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v4
         with:
-          path: ./coverage
-
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 6.0.300
-
-      - name: Generate Report
-        uses: danielpalme/ReportGenerator-GitHub-Action@5.1.9
-        with:
-          reports: './coverage/**/*.cobertura.xml'
-          targetdir: './coveragereport'
-          reporttypes: 'Cobertura'
-          verbosity: 'Info'
-          tag: '${{ github.run_number }}_${{ github.run_id }}'
-
-      - uses: 5monkeys/cobertura-action@master
-        continue-on-error: true
-        with:
-          path: coveragereport/Cobertura.xml
-          minimum_coverage: 0
+          name: coverage-${{ matrix.name }}
+          path: ./coverage/**/*.trx
+          if-no-files-found: error
 
   release:
     name: Release
