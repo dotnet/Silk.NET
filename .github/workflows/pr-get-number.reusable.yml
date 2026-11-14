@@ -19,7 +19,7 @@ on:
 
 jobs:
   
-  # Privileged - Must not execute untrusted code
+  # Unprivileged - Should not need to execute untrusted code
   get:
     name: Get PR number
     runs-on: ubuntu-latest

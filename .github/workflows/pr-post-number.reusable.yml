@@ -1,0 +1,32 @@
+# This is intended for use alongside pr-get-number.reusable.yml
+name: Post PR number
+
+on:
+  workflow_call:
+    inputs:
+      prNumber:
+        type: number
+        required: true
+
+jobs:
+  
+  # Unprivileged - Should not need to execute untrusted code
+  post:
+    name: Post PR number
+    runs-on: ubuntu-latest
+    
+    permissions:
+      actions: read
+    
+    steps:
+
+      - name: Output PR number
+        shell: pwsh
+        run: ${{ inputs.prNumber }} > pr.txt
+
+      - name: Upload PR number
+        uses: actions/upload-artifact@v7
+        with:
+          name: pr-number
+          path: pr.txt
+          overwrite: true
