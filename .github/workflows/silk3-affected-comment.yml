@@ -113,7 +113,7 @@ jobs:
         id: previous
         uses: peter-evans/find-comment@v4
         with:
-          issue-number: ${{ steps.pr.outputs.number }}
+          issue-number: ${{ needs.pr.outputs.prNumber }}
           comment-author: "github-actions[bot]"
           body-includes: ${{ steps.pattern.outputs.pattern }}
   
@@ -122,6 +122,6 @@ jobs:
         uses: peter-evans/create-or-update-comment@v5
         with:
           comment-id: ${{ steps.previous.outputs.comment-id }}
-          issue-number: ${{ steps.pr.outputs.number }}
+          issue-number: ${{ needs.pr.outputs.prNumber }}
           body: ${{ steps.comment.outputs.content }}
           edit-mode: replace
