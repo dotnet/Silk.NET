@@ -170,3 +170,10 @@ jobs:
           path: "artifacts/**/*nupkg"
           if-no-files-found: warn
           retention-days: 30
+
+  pr:
+    name: Post PR number
+
+    uses: $/.github/workflows/pr-post-number.reusable.yml
+    with:
+      prNumber: ${{ github.event.number }}
