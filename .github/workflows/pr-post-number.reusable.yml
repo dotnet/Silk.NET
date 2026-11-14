@@ -15,9 +15,6 @@ jobs:
     name: Post PR number
     runs-on: ubuntu-latest
 
-    permissions:
-      actions: read
-
     steps:
 
       - name: Output PR number
