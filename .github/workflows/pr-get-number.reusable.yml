@@ -1,4 +1,4 @@
-# This is intended for use alongside pr-post-number.reusable.yml
+# This is intended for use alongside pr-post-number.reusable.yml (see develop/3.0 branch)
 name: Get PR number
 
 on:
