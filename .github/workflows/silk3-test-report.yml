@@ -80,7 +80,8 @@ jobs:
       - name: Post test report
         uses: dorny/test-reporter@v3
         with:
-          name: .NET Test Report (${{ matrix.rid }})
+          name: .NET Test Report ($1)
+          artifact: /^test-(.*)$/
           path: ./test/**/*.trx
           reporter: dotnet-trx
           use-actions-summary: false
