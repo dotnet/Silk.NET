@@ -44,8 +44,8 @@ jobs:
         id: pr
         shell: pwsh
         env:
-          BASE_REPO: ${{ input.repo }}
-          EXPECTED_HEAD_COMMIT: ${{ input.expectedHeadCommit }}
+          BASE_REPO: ${{ inputs.repo }}
+          EXPECTED_HEAD_COMMIT: ${{ inputs.expectedHeadCommit }}
           GH_TOKEN: ${{ github.token }}
         run: |
           $ErrorActionPreference = "Stop"
