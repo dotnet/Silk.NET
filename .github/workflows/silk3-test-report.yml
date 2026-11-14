@@ -14,12 +14,12 @@ jobs:
 
   pr:
     name: Get PR number
-    
+
     if: github.event.workflow_run.conclusion == 'success'
-    
+
     permissions:
       actions: read
-    
+
     uses: $/.github/workflows/pr-get-number.reusable.yml
     with:
       runId: ${{ github.event.workflow_run.id }}
@@ -71,7 +71,7 @@ jobs:
       - name: Post test report
         uses: dorny/test-reporter@v3
         with:
-          name: .NET Test Report ($1)
+          name: .NET test report ($1)
           artifact: /^test-(.*)$/
           path: ./**/*.trx
           reporter: dotnet-trx
