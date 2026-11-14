@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       release:
-        description: "Release to NuGet"
+        description: Release to NuGet
         required: false
         type: boolean
         default: false
@@ -27,16 +27,17 @@ jobs:
 
     steps:
 
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v7
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v5
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: |
             9.0.x
             10.0.x
 
-      - name: Install Workloads
+      - name: Install workloads
         run: dotnet workload restore
 
       # TODO decide whether we want experimental builds to use Debug or Release - using Release for now...
@@ -48,15 +49,15 @@ jobs:
           --msbuild-properties
           ${{ github.event_name == 'workflow_dispatch' && inputs.release && 'ContinuousIntegrationBuild=true' || github.event_name != 'pull_request' && format('ContinuousIntegrationBuild=true VersionSuffix=build{0}.0', github.run_number) || format('ContinuousIntegrationBuild=true VersionSuffix=pr{0}.{1}', github.event.number, github.run_number) }}
 
-      - name: Upload Unsigned Artifacts to Actions
-        uses: actions/upload-artifact@v4
+      - name: Upload unsigned packages
+        uses: actions/upload-artifact@v7
         with:
           name: unsigned_nupkgs
           path: "artifacts/**/*nupkg"
           if-no-files-found: warn
           retention-days: 1
 
-      - name: Determine whether we should push to experimental feed.
+      - name: Determine whether we should push to experimental feed
         id: check_token
         run: |
           if [ -z "${{ secrets.EXP_NUGET_PASSWORD }}" ]; then
@@ -65,7 +66,7 @@ jobs:
             echo "push=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Push to Experimental Feed
+      - name: Push to experimental feed
         if: ${{ steps.check_token.outputs.push == 'true' }}
         run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://dotnet.github.io/Silk.NET/nuget/experimental/index.json --nuget-username ${{ secrets.EXP_NUGET_USERNAME }} --nuget-password ${{ secrets.EXP_NUGET_PASSWORD }} --nuget-api-key ${{ secrets.EXP_NUGET_PASSWORD }}
 
@@ -92,15 +93,17 @@ jobs:
             name: osx-arm64
 
     steps:
-      - uses: actions/checkout@v3
+
+      - name: Checkout repo
+        uses: actions/checkout@v7
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: |
             10.0.x
 
-      - name: Install Workloads
+      - name: Install workloads
         run: dotnet workload restore
 
       - name: Restore
@@ -109,15 +112,15 @@ jobs:
       - name: Test
         run: dotnet test --results-directory coverage --coverage --coverage-output-format cobertura --report-trx -c Release
 
-      - name: Upload Coverage Results
-        uses: actions/upload-artifact@v4
+      - name: Upload coverage results
+        uses: actions/upload-artifact@v7
         with:
           name: coverage-${{ matrix.name }}
           path: ./coverage/**/*.cobertura.xml
           if-no-files-found: error
 
-      - name: Upload Test Results
-        uses: actions/upload-artifact@v4
+      - name: Upload test results
+        uses: actions/upload-artifact@v7
         with:
           name: test-${{ matrix.name }}
           path: ./coverage/**/*.trx
@@ -134,11 +137,13 @@ jobs:
 
     steps:
 
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v7
         with:
           ssh-key: ${{ secrets.SILK_ACTIONS_DEPLOY_KEY }}
 
-      - uses: actions/download-artifact@v4
+      - name: Download packages
+        uses: actions/download-artifact@v8
         with:
           name: unsigned_nupkgs
           path: artifacts
@@ -157,8 +162,8 @@ jobs:
           --akv-vault-url ${{ secrets.AKV_VAULT_URL }}
           --discord-webhook ${{ secrets.DISCORD_ANNOUNCEMENT_WEBHOOK }}
 
-      - name: Upload Signed Artifacts to Actions
-        uses: actions/upload-artifact@v4
+      - name: Upload signed packages
+        uses: actions/upload-artifact@v7
         with:
           name: signed_nupkgs
           path: "artifacts/**/*nupkg"
