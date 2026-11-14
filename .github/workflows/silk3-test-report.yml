@@ -1,0 +1,78 @@
+name: Test Report (3.0)
+
+on:
+  workflow_run:
+    workflows:
+      - .NET
+    types:
+      - completed
+
+permissions:
+  contents: read
+
+jobs:
+
+  pr:
+    name: Get PR number
+
+    if: github.event.workflow_run.conclusion == 'success'
+
+    permissions:
+      actions: read
+
+    uses: $/.github/workflows/pr-get-number.reusable.yml
+    with:
+      runId: ${{ github.event.workflow_run.id }}
+      repo: ${{ github.repository }}
+      expectedHeadCommit: ${{ github.event.workflow_run.head_sha }}
+
+  # Privileged - Must not execute untrusted code
+  post:
+    name: Post test reports
+    runs-on: ubuntu-latest
+
+    needs: [pr]
+    if: needs.pr.outputs.prNumber != ''
+
+    permissions:
+      pull-requests: write
+      checks: write
+      actions: read
+
+    steps:
+
+      - name: Download coverage results
+        uses: actions/download-artifact@v8
+        with:
+          path: coverage
+          pattern: coverage-*
+          merge-multiple: true
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Generate coverage report
+        uses: danielpalme/ReportGenerator-GitHub-Action@5.1.9
+        with:
+          reports: coverage/**/*.cobertura.xml
+          targetdir: coveragereport
+          reporttypes: Cobertura
+          verbosity: Info
+          tag: '${{ github.event.workflow_run.run_number }}_${{ github.event.workflow_run.id }}'
+
+      - name: Post coverage report
+        uses: 5monkeys/cobertura-action@v14
+        continue-on-error: true
+        with:
+          path: coveragereport/Cobertura.xml
+          minimum_coverage: 0
+          pull_request_number: ${{ needs.pr.outputs.prNumber }}
+
+      # https://github.com/dorny/test-reporter?tab=readme-ov-file#recommended-setup-for-public-repositories
+      - name: Post test report
+        uses: dorny/test-reporter@v3
+        with:
+          name: .NET test report ($1)
+          artifact: /^test-(.*)$/
+          path: ./**/*.trx
+          reporter: dotnet-trx
+          use-actions-summary: false
