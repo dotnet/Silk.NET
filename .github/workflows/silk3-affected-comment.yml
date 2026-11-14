@@ -24,7 +24,7 @@ jobs:
     permissions:
       actions: read
     
-    uses: $/.github/workflows/pr-get-info.reusable.yml
+    uses: $/.github/workflows/pr-get-number.reusable.yml
     with:
       runId: ${{ github.event.workflow_run.id }}
       repo: ${{ github.repository }}
