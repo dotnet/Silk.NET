@@ -66,7 +66,7 @@ jobs:
           targetdir: coveragereport
           reporttypes: Cobertura
           verbosity: Info
-          tag: '${{ github.run_number }}_${{ github.run_id }}'
+          tag: '${{ github.event.workflow_run.run_number }}_${{ github.event.workflow_run.id }}'
 
       - name: Post coverage report
         uses: 5monkeys/cobertura-action@v14
