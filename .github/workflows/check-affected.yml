@@ -76,6 +76,6 @@ jobs:
 
     needs: [check]
 
-    uses: ${{ github.repository }}/.github/workflows/pr-post-number.reusable.yml@main
+    uses: $/.github/workflows/pr-post-number.reusable.yml
     with:
       prNumber: ${{ github.event.number }}
