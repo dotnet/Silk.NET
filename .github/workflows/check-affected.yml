@@ -71,21 +71,11 @@ jobs:
           name: ${{ matrix.type }}-reminder-comment
           path: ${{ matrix.type }}.txt
 
-  prNumber:
-    name: Output PR number
-    runs-on: ubuntu-latest
+  pr:
+    name: Post PR number
 
-    needs: [ check ]
+    needs: [check]
 
-    steps:
-
-      - name: Output PR number
-        shell: pwsh
-        run: ${{ github.event.number }} > pr.txt
-
-      - name: Upload PR number
-        uses: actions/upload-artifact@v7
-        with:
-          name: pr-number
-          path: pr.txt
-          overwrite: true
+    uses: $/.github/workflows/pr-get-info.reusable.yml@main
+    with:
+      prNumber: ${{ github.event.number }}
