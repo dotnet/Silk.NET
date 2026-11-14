@@ -58,20 +58,21 @@ jobs:
           retention-days: 1
 
       - name: Determine whether we should push to experimental feed
-        id: check_token
+        id: checkToken
+        shell: pwsh
+        env:
+          EXP_NUGET_PASSWORD: ${{ secrets.EXP_NUGET_PASSWORD }}
         run: |
-          if [ -z "${{ secrets.EXP_NUGET_PASSWORD }}" ]; then
-            echo "push=false" >> $GITHUB_OUTPUT
-          else
-            echo "push=true" >> $GITHUB_OUTPUT
-          fi
+          # This returns true for non-empty
+          $hasToken = [bool]$env:EXP_NUGET_PASSWORD
+          "push=$hasToken" >> $GITHUB_OUTPUT
 
       - name: Push to experimental feed
-        if: ${{ steps.check_token.outputs.push == 'true' }}
+        if: ${{ steps.checkToken.outputs.push == 'true' }}
         run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://dotnet.github.io/Silk.NET/nuget/experimental/index.json --nuget-username ${{ secrets.EXP_NUGET_USERNAME }} --nuget-password ${{ secrets.EXP_NUGET_PASSWORD }} --nuget-api-key ${{ secrets.EXP_NUGET_PASSWORD }}
 
       - name: Push to GitHub Packages
-        if: ${{ steps.check_token.outputs.push == 'true' }}
+        if: ${{ steps.checkToken.outputs.push == 'true' }}
         run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
 
   test:
@@ -116,14 +117,14 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: coverage-${{ matrix.name }}
-          path: ./coverage/**/*.cobertura.xml
+          path: coverage/**/*.cobertura.xml
           if-no-files-found: error
 
       - name: Upload test results
         uses: actions/upload-artifact@v7
         with:
           name: test-${{ matrix.name }}
-          path: ./coverage/**/*.trx
+          path: coverage/**/*.trx
           if-no-files-found: error
 
   release:
