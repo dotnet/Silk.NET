@@ -17,7 +17,7 @@ concurrency:
 jobs:
 
   # Privileged - Must not execute untrusted code
-  check:
+  post:
     name: Post reminder comment
     runs-on: ubuntu-latest
     
