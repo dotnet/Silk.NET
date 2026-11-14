@@ -73,6 +73,6 @@ jobs:
         with:
           name: .NET Test Report ($1)
           artifact: /^test-(.*)$/
-          path: ./test/**/*.trx
+          path: ./**/*.trx
           reporter: dotnet-trx
           use-actions-summary: false
