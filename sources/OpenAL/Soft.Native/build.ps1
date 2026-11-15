@@ -1,3 +1,11 @@
+#!/usr/bin/env pwsh
+$ErrorActionPreference = "Stop"
+$PSNativeCommandUseErrorActionPreference = $true
+Set-StrictMode -Version Latest
+
+# TODO
+exit 1
+
 # build-android-arm64.sh
 #!/usr/bin/env -S bash -eu
 
