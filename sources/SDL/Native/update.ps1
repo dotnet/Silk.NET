@@ -20,7 +20,7 @@ try {
     git fetch --tags
 
     $latest = @(-split (git for-each-ref --sort=-committerdate --count=1 --contains=HEAD "refs/tags/release-3*"))
-    if (($latest.Length -eq 0 -or -not $latest[0]) -and (git describe --tags --exact-match) -like "preview-*") {
+    if (($latest.Count -eq 0 -or -not $latest[0]) -and (git describe --tags --exact-match) -like "preview-*") {
       $latest = @(-split (git for-each-ref --sort=-committerdate --count=1 --contains=HEAD "refs/tags/preview-3*"))
     }
 

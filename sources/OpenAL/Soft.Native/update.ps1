@@ -20,7 +20,7 @@ try {
     git fetch --tags
 
     $latest = @(-split (git for-each-ref --sort=-committerdate --count=1 --contains=HEAD "refs/tags/[0-9]*"))
-    if (($latest.Length -eq 0 -or -not $latest[0]) -and (Get-Content $versionFile -Raw) -like "*-*") {
+    if (($latest.Count -eq 0 -or -not $latest[0]) -and (Get-Content $versionFile -Raw) -like "*-*") {
       git fetch origin master
       $latest = @(-split "FETCH_HEAD")
     }
