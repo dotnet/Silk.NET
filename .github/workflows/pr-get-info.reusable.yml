@@ -60,8 +60,7 @@ jobs:
           
           if ($isSilk3) {
             Write-Host "PR does target Silk 3"
-          }
-          else {
+          } else {
             Write-Host "PR does not target Silk 3"
           }
           
