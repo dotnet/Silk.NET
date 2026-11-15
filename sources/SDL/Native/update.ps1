@@ -10,7 +10,7 @@ try {
   $versionFile = Join-Path $PSScriptRoot "version.txt"
 
   # Submodule
-  if (-not (Test-Path $submodulePath/CMakeLists.txt)) {
+  if (-not (Test-Path (Join-Path $submodulePath "CMakeLists.txt"))) {
     git submodule update --init --recursive --depth 1 $submodulePath
   }
 
