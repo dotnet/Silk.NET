@@ -1,3 +1,4 @@
+# update.sh
 #!/usr/bin/env -S bash -eu
 
 # Submodule
