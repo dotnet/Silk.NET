@@ -141,13 +141,13 @@ try {
     "linux-arm64" {
       # Dependencies
       if ($env:GITHUB_ACTIONS) {
-        if (-not $env:SILKDOTNET_DockerBuild) {
+        if (-not $env:SILKDOTNET_DOCKER) {
           # Enter Debian container for multiarch packages
           $docker = "docker"
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
-          & $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/OpenAL/Soft.Native/build.ps1 linux-arm64'
+          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/OpenAL/Soft.Native/build.ps1 linux-arm64'
           exit
         } else {
           dpkg --add-architecture arm64
@@ -178,13 +178,13 @@ try {
     "linux-arm" {
       # Dependencies
       if ($env:GITHUB_ACTIONS) {
-        if (-not $env:SILKDOTNET_DockerBuild) {
+        if (-not $env:SILKDOTNET_DOCKER) {
           # Enter Debian container for multiarch packages
           $docker = "docker"
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
-          & $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/OpenAL/Soft.Native/build.ps1 linux-arm'
+          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/OpenAL/Soft.Native/build.ps1 linux-arm'
           exit
         } else {
           dpkg --add-architecture armhf
@@ -215,13 +215,13 @@ try {
     "linux-x64" {
       # Dependencies
       if ($env:GITHUB_ACTIONS) {
-        if (-not $env:SILKDOTNET_DockerBuild) {
+        if (-not $env:SILKDOTNET_DOCKER) {
           # Enter Debian container for multiarch packages
           $docker = "docker"
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
-          & $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/OpenAL/Soft.Native/build.ps1 linux-x64'
+          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/OpenAL/Soft.Native/build.ps1 linux-x64'
           exit
         } else {
           apt-get update
