@@ -93,7 +93,7 @@ try {
         } else {
           apt-get update
           apt-get install -y python3
-          $repoRoot/eng/native/buildsystem/download-zig.py
+          & $repoRoot/eng/native/buildsystem/download-zig.py
           $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
 
           # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
@@ -140,7 +140,7 @@ try {
         } else {
           apt-get update
           apt-get install -y python3
-          $repoRoot/eng/native/buildsystem/download-zig.py
+          & $repoRoot/eng/native/buildsystem/download-zig.py
           $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
 
           # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
@@ -187,7 +187,7 @@ try {
         } else {
           apt-get update
           apt-get install -y python3
-          $repoRoot/eng/native/buildsystem/download-zig.py
+          & $repoRoot/eng/native/buildsystem/download-zig.py
           $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
 
           # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
