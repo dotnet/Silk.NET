@@ -21,176 +21,151 @@ matrix<<EOF
     "job": "OpenAL-Soft",
     "os": "ubuntu-latest",
     "runtime": "android-arm64",
-    "dir": "sources/OpenAL/Soft.Native",
-    "exec": "build-android-arm64.sh"
+    "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
     "os": "ubuntu-latest",
     "runtime": "android-arm",
-    "dir": "sources/OpenAL/Soft.Native",
-    "exec": "build-android-arm.sh"
+    "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
     "os": "ubuntu-latest",
     "runtime": "android-x64",
-    "dir": "sources/OpenAL/Soft.Native",
-    "exec": "build-android-x64.sh"
+    "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
     "os": "ubuntu-latest",
     "runtime": "android-x86",
-    "dir": "sources/OpenAL/Soft.Native",
-    "exec": "build-android-x86.sh"
+    "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
     "os": "macos-latest",
     "runtime": "ios",
-    "dir": "sources/OpenAL/Soft.Native",
-    "exec": "build-ios.sh"
+    "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
     "os": "macos-latest",
     "runtime": "iossimulator",
-    "dir": "sources/OpenAL/Soft.Native",
-    "exec": "build-iossimulator.sh"
+    "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
     "os": "ubuntu-latest",
     "runtime": "linux-arm64",
-    "dir": "sources/OpenAL/Soft.Native",
-    "exec": "build-linux-arm64.sh"
+    "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
     "os": "ubuntu-latest",
     "runtime": "linux-arm",
-    "dir": "sources/OpenAL/Soft.Native",
-    "exec": "build-linux-arm.sh"
+    "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
     "os": "ubuntu-latest",
     "runtime": "linux-x64",
-    "dir": "sources/OpenAL/Soft.Native",
-    "exec": "build-linux-x64.sh"
+    "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
     "os": "macos-latest",
     "runtime": "osx",
-    "dir": "sources/OpenAL/Soft.Native",
-    "exec": "build-osx.sh"
+    "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
     "os": "macos-latest",
     "runtime": "tvos",
-    "dir": "sources/OpenAL/Soft.Native",
-    "exec": "build-tvos.sh"
+    "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
     "os": "macos-latest",
     "runtime": "tvossimulator",
-    "dir": "sources/OpenAL/Soft.Native",
-    "exec": "build-tvossimulator.sh"
+    "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
     "os": "windows-latest",
     "runtime": "win-arm64",
-    "dir": "sources/OpenAL/Soft.Native",
-    "exec": "build-win-arm64.cmd"
+    "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
     "os": "windows-latest",
     "runtime": "win-x64",
-    "dir": "sources/OpenAL/Soft.Native",
-    "exec": "build-win-x64.cmd"
+    "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "SDL",
     "os": "ubuntu-latest",
     "runtime": "android",
-    "dir": "sources/SDL/Native",
-    "exec": "build-android.sh"
+    "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
     "os": "macos-latest",
     "runtime": "ios",
-    "dir": "sources/SDL/Native",
-    "exec": "build-ios.sh"
+    "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
     "os": "macos-latest",
     "runtime": "iossimulator",
-    "dir": "sources/SDL/Native",
-    "exec": "build-iossimulator.sh"
+    "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
     "os": "ubuntu-latest",
     "runtime": "linux-arm64",
-    "dir": "sources/SDL/Native",
-    "exec": "build-linux-arm64.sh"
+    "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
     "os": "ubuntu-latest",
     "runtime": "linux-arm",
-    "dir": "sources/SDL/Native",
-    "exec": "build-linux-arm.sh"
+    "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
     "os": "ubuntu-latest",
     "runtime": "linux-x64",
-    "dir": "sources/SDL/Native",
-    "exec": "build-linux-x64.sh"
+    "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
     "os": "macos-latest",
     "runtime": "osx",
-    "dir": "sources/SDL/Native",
-    "exec": "build-osx.sh"
+    "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
     "os": "macos-latest",
     "runtime": "tvos",
-    "dir": "sources/SDL/Native",
-    "exec": "build-tvos.sh"
+    "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
     "os": "macos-latest",
     "runtime": "tvossimulator",
-    "dir": "sources/SDL/Native",
-    "exec": "build-tvossimulator.sh"
+    "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
     "os": "windows-latest",
     "runtime": "win-arm64",
-    "dir": "sources/SDL/Native",
-    "exec": "build-win-arm64.cmd"
+    "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
     "os": "windows-latest",
     "runtime": "win-x64",
-    "dir": "sources/SDL/Native",
-    "exec": "build-win-x64.cmd"
+    "dir": "sources/SDL/Native"
   }
 ]
 EOF

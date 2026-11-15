@@ -22,16 +22,12 @@ foreach ($chosenJob in $chosenJobs) {
 
   $job = $buildsJson.native.jobs.PSObject.Properties[$chosenJob];
   foreach ($build in $job.Value.builds.PSObject.Properties) {
-    # TODO: Unify script extensions
-    $script = Get-ChildItem -Path (Join-Path $repoRoot $job.Value.path) -Filter "build-$($build.Name).*" | Select-Object -First 1
-
     $matrix += [ordered]@{
       job = $job.Name
       os = $build.Value
       runtime = $build.Name
 
       dir = $job.Value.path
-      exec = $script.Name
     }
   }
 }
