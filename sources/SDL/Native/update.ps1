@@ -3,34 +3,35 @@ $ErrorActionPreference = "Stop"
 $PSNativeCommandUseErrorActionPreference = $true
 Set-StrictMode -Version Latest
 
-# TODO
-exit 1
-
-# update.sh
-#!/usr/bin/env -S bash -eu
+# Config
+$submodulePath = Join-Path $PSScriptRoot "../../../eng/submodules/sdl"
+$versionFile = Join-Path $PSScriptRoot "version.txt"
 
 # Submodule
-if [ ! -e ../../../eng/submodules/sdl/CMakeLists.txt ]; then
-    git submodule update --init --recursive --depth 1 ../../../eng/submodules/sdl
-fi
+if (-not (Test-Path $submodulePath/CMakeLists.txt)) {
+  git submodule update --init --recursive --depth 1 $submodulePath
+}
 
 # Update
-verout="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/version.txt"
-(
-    cd ../../../eng/submodules/sdl
-    git fetch --tags
-    IFS=' ' read -a latest <<< "$(git for-each-ref --sort=-committerdate --count=1 --contains=HEAD "refs/tags/release-3*")"
-    if [[ "${latest:-}" == "" && "$(git describe --tags --exact-match)" == "preview-"* ]]; then
-        IFS=' ' read -a latest <<< "$(git for-each-ref --sort=-committerdate --count=1 --contains=HEAD "refs/tags/preview-3*")"
-    fi
-    if [[ "${latest:-}" != "" ]]; then
-        git checkout "${latest[0]}"
-        ver="$(git describe --tags --exact-match)"
-        if [[ "$ver" == "preview-"* ]]; then
-          echo "${ver:8}-preview" > "$verout"
-        else
-          echo "${ver:8}" > "$verout"
-        fi
-    fi
-)
-git add ../../../eng/submodules/sdl version.txt
+Push-Location $submodulePath
+try {
+  git fetch --tags
+
+  $latest = @(-split (git for-each-ref --sort=-committerdate --count=1 --contains=HEAD "refs/tags/release-3*"))
+  if (($latest.Length -eq 0 -or -not $latest[0]) -and (git describe --tags --exact-match) -like "preview-*") {
+    $latest = @(-split (git for-each-ref --sort=-committerdate --count=1 --contains=HEAD "refs/tags/preview-3*"))
+  }
+
+  if ($latest.Count -gt 0 -and $latest[0]) {
+    git checkout $latest[0]
+    $ver = git describe --tags --exact-match
+    if ($ver -like "preview-*") {
+      "$($ver.Substring(8))-preview" > $versionFile
+    } else {
+      $ver.Substring(8) > $versionFile
+    }
+  }
+} finally {
+  Pop-Location
+}
+git add $submodulePath $versionFile

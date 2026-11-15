@@ -3,30 +3,31 @@ $ErrorActionPreference = "Stop"
 $PSNativeCommandUseErrorActionPreference = $true
 Set-StrictMode -Version Latest
 
-# TODO
-exit 1
-
-# update.sh
-#!/usr/bin/env -S bash -eu
+# Config
+$submodulePath = Join-Path $PSScriptRoot "../../../eng/submodules/openal-soft"
+$versionFile = Join-Path $PSScriptRoot "version.txt"
 
 # Submodule
-if [ ! -e ../../../eng/submodules/openal-soft/CMakeLists.txt ]; then
-    git submodule update --init --recursive --depth 1 ../../../eng/submodules/openal-soft
-fi
+if (-not (Test-Path $submodulePath/CMakeLists.txt)) {
+  git submodule update --init --recursive --depth 1 $submodulePath
+}
 
 # Update
-verout="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/version.txt"
-(
-    cd ../../../eng/submodules/openal-soft
-    git fetch --tags
-    IFS=' ' read -a latest <<< "$(git for-each-ref --sort=-committerdate --count=1 --contains=HEAD "refs/tags/[0-9]*")"
-    if [[ "${latest:-}" == "" && "$(cat "${verout}")" == *"-"* ]]; then
-        git fetch origin master
-        IFS=' ' read -a latest <<< "FETCH_HEAD"
-    fi
-    if [[ "${latest:-}" != "" ]]; then
-        git checkout "${latest[0]}"
-        git describe --tags --match "[0-9]*" | sed -r "s/-[0-9]+\-/-/" > "${verout}"
-    fi
-)
-git add ../../../eng/submodules/openal-soft version.txt
+Push-Location $submodulePath
+try {
+  git fetch --tags
+
+  $latest = @(-split (git for-each-ref --sort=-committerdate --count=1 --contains=HEAD "refs/tags/[0-9]*"))
+  if (($latest.Length -eq 0 -or -not $latest[0]) -and (Get-Content $versionFile -Raw) -like "*-*") {
+    git fetch origin master
+    $latest = @(-split "FETCH_HEAD")
+  }
+
+  if ($latest.Count -gt 0 -and $latest[0]) {
+    git checkout $latest[0]
+    (git describe --tags --match "[0-9]*") -replace "-[0-9]+\-", "-" > $versionFile
+  }
+} finally {
+  Pop-Location
+}
+git add $submodulePath $versionFile
