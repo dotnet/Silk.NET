@@ -151,6 +151,7 @@ try {
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
+          # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
           & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "${repoRoot}:/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/OpenAL/Soft.Native/build.ps1 linux-arm64'
           exit
         } else {
@@ -188,6 +189,7 @@ try {
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
+          # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
           & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "${repoRoot}:/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/OpenAL/Soft.Native/build.ps1 linux-arm'
           exit
         } else {
@@ -225,6 +227,7 @@ try {
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
+          # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
           & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "${repoRoot}:/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/OpenAL/Soft.Native/build.ps1 linux-x64'
           exit
         } else {
