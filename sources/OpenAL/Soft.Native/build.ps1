@@ -3,6 +3,15 @@ $ErrorActionPreference = "Stop"
 $PSNativeCommandUseErrorActionPreference = $true
 Set-StrictMode -Version Latest
 
+# Inputs
+$runtime = ($args.Count -gt 0 -and $args[0]) ? $args[0] : $env:CHOSEN_RUNTIME
+if (-not $runtime) {
+  Write-Host "Please choose a runtime by providing it as the first argument or setting the CHOSEN_RUNTIME env var"
+  exit 1
+}
+
+Write-Host "Chosen runtime: $runtime"
+
 # TODO
 exit 1
 
