@@ -84,7 +84,7 @@ try {
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
-          & $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c "cd /data/sources/SDL/Native && ./build-linux-arm64.sh"
+          & $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c 'apt-get update && apt-get install -y dotnet-sdk-10.0 && dotnet tool install --global PowerShell && /data/sources/SDL/Native/build.ps1 linux-arm64'
           exit
         } else {
           apt-get update
@@ -131,7 +131,7 @@ try {
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
-          & $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c "cd /data/sources/SDL/Native && ./build-linux-arm.sh"
+          & $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c 'apt-get update && apt-get install -y dotnet-sdk-10.0 && dotnet tool install --global PowerShell && /data/sources/SDL/Native/build.ps1 linux-arm'
           exit
         } else {
           apt-get update
@@ -178,7 +178,7 @@ try {
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
-          & $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c "cd /data/sources/SDL/Native && ./build-linux-x64.sh"
+          & $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c 'apt-get update && apt-get install -y dotnet-sdk-10.0 && dotnet tool install --global PowerShell && /data/sources/SDL/Native/build.ps1 linux-x64'
           exit
         } else {
           apt-get update
