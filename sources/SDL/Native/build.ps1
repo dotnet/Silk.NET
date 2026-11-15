@@ -5,6 +5,10 @@ Set-StrictMode -Version Latest
 
 Push-Location $PSScriptRoot
 try {
+  # Config
+  $repoRoot = Join-Path $PSScriptRoot "../../.."
+  $submodulePath = Join-Path $repoRoot "eng/submodules/sdl"
+
   # Inputs
   $runtime = ($args.Count -gt 0 -and $args[0]) ? $args[0] : $env:CHOSEN_RUNTIME
   if (-not $runtime) {
@@ -34,13 +38,13 @@ try {
       }
 
       # Build
-      & $python ../../../eng/submodules/sdl/build-scripts/build-release.py --actions android --root ../../../eng/submodules/sdl
+      & $python $submodulePath/build-scripts/build-release.py --actions android --root $submodulePath
       New-Item -ItemType Directory -Force runtimes/android-x86/native, runtimes/android-x64/native, runtimes/android-arm/native, runtimes/android-arm64/native, android
-      Copy-Item ../../../eng/submodules/sdl/install-android/arm64-v8a-install/lib/libSDL3.so runtimes/android-arm64/native
-      Copy-Item ../../../eng/submodules/sdl/install-android/armeabi-v7a-install/lib/libSDL3.so runtimes/android-arm/native
-      Copy-Item ../../../eng/submodules/sdl/install-android/x86-install/lib/libSDL3.so runtimes/android-x86/native
-      Copy-Item ../../../eng/submodules/sdl/install-android/x86_64-install/lib/libSDL3.so runtimes/android-x64/native
-      $jars = @(Get-ChildItem ../../../eng/submodules/sdl/install-android/armeabi-v7a-install/share/java/SDL3/SDL3-*.jar | Sort-Object FullName)
+      Copy-Item $submodulePath/install-android/arm64-v8a-install/lib/libSDL3.so runtimes/android-arm64/native
+      Copy-Item $submodulePath/install-android/armeabi-v7a-install/lib/libSDL3.so runtimes/android-arm/native
+      Copy-Item $submodulePath/install-android/x86-install/lib/libSDL3.so runtimes/android-x86/native
+      Copy-Item $submodulePath/install-android/x86_64-install/lib/libSDL3.so runtimes/android-x64/native
+      $jars = @(Get-ChildItem $submodulePath/install-android/armeabi-v7a-install/share/java/SDL3/SDL3-*.jar | Sort-Object FullName)
       Copy-Item $jars[1].FullName android/SDL3.jar
       Copy-Item "$(Split-Path -Parent $jars[1].FullName)/proguard.txt" android/proguard.txt
     }
@@ -51,7 +55,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/sdl "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphoneos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
+        cmake $submodulePath "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphoneos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -66,7 +70,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/sdl "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphonesimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
+        cmake $submodulePath "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphonesimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -84,13 +88,13 @@ try {
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
-          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/SDL/Native/build.ps1 linux-arm64'
+          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$repoRoot:/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/SDL/Native/build.ps1 linux-arm64'
           exit
         } else {
           apt-get update
           apt-get install -y python3
-          ../../../eng/native/buildsystem/download-zig.py
-          $env:PATH += ":$((Resolve-Path ../../../eng/native/buildsystem/zig).Path)"
+          $repoRoot/eng/native/buildsystem/download-zig.py
+          $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
 
           # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
           dpkg --add-architecture arm64
@@ -113,7 +117,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/sdl "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=../../../../eng/native/cmake/zig-toolchain-aarch64-linux-gnu.2.17.cmake" "-DSDL_TEST_LIBRARY=OFF"
+        cmake $submodulePath "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-aarch64-linux-gnu.2.17.cmake" "-DSDL_TEST_LIBRARY=OFF"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -131,13 +135,13 @@ try {
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
-          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/SDL/Native/build.ps1 linux-arm'
+          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$repoRoot:/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/SDL/Native/build.ps1 linux-arm'
           exit
         } else {
           apt-get update
           apt-get install -y python3
-          ../../../eng/native/buildsystem/download-zig.py
-          $env:PATH += ":$((Resolve-Path ../../../eng/native/buildsystem/zig).Path)"
+          $repoRoot/eng/native/buildsystem/download-zig.py
+          $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
 
           # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
           dpkg --add-architecture armhf
@@ -160,7 +164,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/sdl "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=../../../../eng/native/cmake/zig-toolchain-arm-linux-gnueabihf.2.34.cmake" "-DSDL_TEST_LIBRARY=OFF"
+        cmake $submodulePath "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-arm-linux-gnueabihf.2.34.cmake" "-DSDL_TEST_LIBRARY=OFF"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -178,13 +182,13 @@ try {
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
-          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$(Resolve-Path ../../..):/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/SDL/Native/build.ps1 linux-x64'
+          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$repoRoot:/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/SDL/Native/build.ps1 linux-x64'
           exit
         } else {
           apt-get update
           apt-get install -y python3
-          ../../../eng/native/buildsystem/download-zig.py
-          $env:PATH += ":$((Resolve-Path ../../../eng/native/buildsystem/zig).Path)"
+          $repoRoot/eng/native/buildsystem/download-zig.py
+          $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
 
           # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
           dpkg --add-architecture amd64
@@ -207,7 +211,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/sdl "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=../../../../eng/native/cmake/zig-toolchain-x86_64-linux-gnu.2.17.cmake" "-DSDL_TEST_LIBRARY=OFF"
+        cmake $submodulePath "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-x86_64-linux-gnu.2.17.cmake" "-DSDL_TEST_LIBRARY=OFF"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -222,7 +226,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/sdl "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=10.11" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_TEST_LIBRARY=OFF"
+        cmake $submodulePath "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=10.11" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_TEST_LIBRARY=OFF"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -237,7 +241,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/sdl "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
+        cmake $submodulePath "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -252,7 +256,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/sdl "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvsimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
+        cmake $submodulePath "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvsimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -269,7 +273,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/sdl -G Ninja "-DCMAKE_BUILD_TYPE=Release" "-DSDL_TEST_LIBRARY=OFF"
+        cmake $submodulePath -G Ninja "-DCMAKE_BUILD_TYPE=Release" "-DSDL_TEST_LIBRARY=OFF"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -286,7 +290,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/sdl -G Ninja "-DCMAKE_BUILD_TYPE=Release" "-DSDL_TEST_LIBRARY=OFF"
+        cmake $submodulePath -G Ninja "-DCMAKE_BUILD_TYPE=Release" "-DSDL_TEST_LIBRARY=OFF"
         cmake --build . --parallel
       } finally {
         Pop-Location

@@ -5,6 +5,10 @@ Set-StrictMode -Version Latest
 
 Push-Location $PSScriptRoot
 try {
+  # Config
+  $repoRoot = Join-Path $PSScriptRoot "../../.."
+  $submodulePath = Join-Path $repoRoot "eng/submodules/openal-soft"
+
   # Inputs
   $runtime = ($args.Count -gt 0 -and $args[0]) ? $args[0] : $env:CHOSEN_RUNTIME
   if (-not $runtime) {
@@ -33,7 +37,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/openal-soft "-DANDROID_ABI=arm64-v8a" "-DCMAKE_TOOLCHAIN_FILE=$env:ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake" "-DANDROID_PLATFORM=21" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_EMBED_HRTF_DATA=TRUE" "-DALSOFT_REQUIRE_OPENSL=ON"
+        cmake $submodulePath "-DANDROID_ABI=arm64-v8a" "-DCMAKE_TOOLCHAIN_FILE=$env:ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake" "-DANDROID_PLATFORM=21" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_EMBED_HRTF_DATA=TRUE" "-DALSOFT_REQUIRE_OPENSL=ON"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -55,7 +59,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/openal-soft "-DANDROID_ABI=armeabi-v7a" "-DCMAKE_TOOLCHAIN_FILE=$env:ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake" "-DANDROID_PLATFORM=21" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_EMBED_HRTF_DATA=TRUE" "-DALSOFT_REQUIRE_OPENSL=ON"
+        cmake $submodulePath "-DANDROID_ABI=armeabi-v7a" "-DCMAKE_TOOLCHAIN_FILE=$env:ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake" "-DANDROID_PLATFORM=21" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_EMBED_HRTF_DATA=TRUE" "-DALSOFT_REQUIRE_OPENSL=ON"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -77,7 +81,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/openal-soft "-DANDROID_ABI=x86_64" "-DCMAKE_TOOLCHAIN_FILE=$env:ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake" "-DANDROID_PLATFORM=21" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_EMBED_HRTF_DATA=TRUE" "-DALSOFT_REQUIRE_OPENSL=ON"
+        cmake $submodulePath "-DANDROID_ABI=x86_64" "-DCMAKE_TOOLCHAIN_FILE=$env:ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake" "-DANDROID_PLATFORM=21" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_EMBED_HRTF_DATA=TRUE" "-DALSOFT_REQUIRE_OPENSL=ON"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -99,7 +103,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/openal-soft "-DANDROID_ABI=x86" "-DCMAKE_TOOLCHAIN_FILE=$env:ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake" "-DANDROID_PLATFORM=21" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF"
+        cmake $submodulePath "-DANDROID_ABI=x86" "-DCMAKE_TOOLCHAIN_FILE=$env:ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake" "-DANDROID_PLATFORM=21" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -114,7 +118,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/openal-soft "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphoneos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_COREAUDIO=ON"
+        cmake $submodulePath "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphoneos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_COREAUDIO=ON"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -129,7 +133,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/openal-soft "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphonesimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_COREAUDIO=ON"
+        cmake $submodulePath "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphonesimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_COREAUDIO=ON"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -147,7 +151,7 @@ try {
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
-          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$(Resolve-Path ../../..):/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/OpenAL/Soft.Native/build.ps1 linux-arm64'
+          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$repoRoot:/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/OpenAL/Soft.Native/build.ps1 linux-arm64'
           exit
         } else {
           dpkg --add-architecture arm64
@@ -166,7 +170,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/openal-soft "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=../../../../eng/native/cmake/aarch64-linux-gnu.cmake" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_RTKIT=ON" "-DALSOFT_REQUIRE_ALSA=ON" "-DALSOFT_REQUIRE_OSS=ON" "-DALSOFT_REQUIRE_PORTAUDIO=ON" "-DALSOFT_REQUIRE_PULSEAUDIO=ON" "-DALSOFT_REQUIRE_JACK=ON" "-DALSOFT_REQUIRE_PIPEWIRE=ON"
+        cmake $submodulePath "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/aarch64-linux-gnu.cmake" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_RTKIT=ON" "-DALSOFT_REQUIRE_ALSA=ON" "-DALSOFT_REQUIRE_OSS=ON" "-DALSOFT_REQUIRE_PORTAUDIO=ON" "-DALSOFT_REQUIRE_PULSEAUDIO=ON" "-DALSOFT_REQUIRE_JACK=ON" "-DALSOFT_REQUIRE_PIPEWIRE=ON"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -184,7 +188,7 @@ try {
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
-          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$(Resolve-Path ../../..):/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/OpenAL/Soft.Native/build.ps1 linux-arm'
+          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$repoRoot:/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/OpenAL/Soft.Native/build.ps1 linux-arm'
           exit
         } else {
           dpkg --add-architecture armhf
@@ -203,7 +207,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/openal-soft "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=../../../../eng/native/cmake/arm-linux-gnueabihf.cmake" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_RTKIT=ON" "-DALSOFT_REQUIRE_ALSA=ON" "-DALSOFT_REQUIRE_OSS=ON" "-DALSOFT_REQUIRE_PORTAUDIO=ON" "-DALSOFT_REQUIRE_PULSEAUDIO=ON" "-DALSOFT_REQUIRE_JACK=ON" "-DALSOFT_REQUIRE_PIPEWIRE=ON"
+        cmake $submodulePath "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/arm-linux-gnueabihf.cmake" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_RTKIT=ON" "-DALSOFT_REQUIRE_ALSA=ON" "-DALSOFT_REQUIRE_OSS=ON" "-DALSOFT_REQUIRE_PORTAUDIO=ON" "-DALSOFT_REQUIRE_PULSEAUDIO=ON" "-DALSOFT_REQUIRE_JACK=ON" "-DALSOFT_REQUIRE_PIPEWIRE=ON"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -221,7 +225,7 @@ try {
           if (Get-Command podman -ErrorAction Ignore) {
             $docker = "podman"
           }
-          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$(Resolve-Path ../../..):/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/OpenAL/Soft.Native/build.ps1 linux-x64'
+          & $docker run --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "$repoRoot:/data" debian bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel LTS && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell && /data/sources/OpenAL/Soft.Native/build.ps1 linux-x64'
           exit
         } else {
           apt-get update
@@ -238,7 +242,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/openal-soft "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=../../../../eng/native/cmake/x86_64-linux-gnu.cmake" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_RTKIT=ON" "-DALSOFT_REQUIRE_ALSA=ON" "-DALSOFT_REQUIRE_OSS=ON" "-DALSOFT_REQUIRE_PORTAUDIO=ON" "-DALSOFT_REQUIRE_PULSEAUDIO=ON" "-DALSOFT_REQUIRE_JACK=ON" "-DALSOFT_REQUIRE_PIPEWIRE=ON"
+        cmake $submodulePath "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/x86_64-linux-gnu.cmake" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_RTKIT=ON" "-DALSOFT_REQUIRE_ALSA=ON" "-DALSOFT_REQUIRE_OSS=ON" "-DALSOFT_REQUIRE_PORTAUDIO=ON" "-DALSOFT_REQUIRE_PULSEAUDIO=ON" "-DALSOFT_REQUIRE_JACK=ON" "-DALSOFT_REQUIRE_PIPEWIRE=ON"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -253,7 +257,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/openal-soft "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=13.3" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_COREAUDIO=ON"
+        cmake $submodulePath "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=13.3" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_COREAUDIO=ON"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -268,7 +272,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/openal-soft "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_COREAUDIO=ON"
+        cmake $submodulePath "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_COREAUDIO=ON"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -283,7 +287,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/openal-soft "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvsimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_COREAUDIO=ON"
+        cmake $submodulePath "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvsimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3" "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_REQUIRE_COREAUDIO=ON"
         cmake --build . --parallel
       } finally {
         Pop-Location
@@ -300,7 +304,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/openal-soft "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_BUILD_ROUTER=ON" "-DALSOFT_REQUIRE_WINMM=ON" "-DALSOFT_REQUIRE_DSOUND=ON" "-DALSOFT_REQUIRE_WASAPI=ON" -A arm64
+        cmake $submodulePath "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_BUILD_ROUTER=ON" "-DALSOFT_REQUIRE_WINMM=ON" "-DALSOFT_REQUIRE_DSOUND=ON" "-DALSOFT_REQUIRE_WASAPI=ON" -A arm64
         cmake --build . --parallel --config Release
       } finally {
         Pop-Location
@@ -318,7 +322,7 @@ try {
       New-Item -ItemType Directory build
       Push-Location build
       try {
-        cmake ../../../../eng/submodules/openal-soft "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_BUILD_ROUTER=ON" "-DALSOFT_REQUIRE_WINMM=ON" "-DALSOFT_REQUIRE_DSOUND=ON" "-DALSOFT_REQUIRE_WASAPI=ON" -A x64
+        cmake $submodulePath "-DCMAKE_BUILD_TYPE=Release" "-DALSOFT_UTILS=OFF" "-DALSOFT_EXAMPLES=OFF" "-DALSOFT_BUILD_ROUTER=ON" "-DALSOFT_REQUIRE_WINMM=ON" "-DALSOFT_REQUIRE_DSOUND=ON" "-DALSOFT_REQUIRE_WASAPI=ON" -A x64
         cmake --build . --parallel --config Release
       } finally {
         Pop-Location
