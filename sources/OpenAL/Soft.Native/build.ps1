@@ -282,7 +282,8 @@ switch ($runtime) {
 
   "win-arm64" {
     # Build
-    & "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch arm64 -SkipAutomaticLocation
+    $vsPath = & "${env:ProgramFiles(x86)}/Microsoft Visual Studio/Installer/vswhere.exe" -latest -products "*" -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+    & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch arm64 -SkipAutomaticLocation
     Remove-Item -Recurse -Force build -ErrorAction Ignore
     New-Item -ItemType Directory build
     Push-Location build
@@ -299,7 +300,8 @@ switch ($runtime) {
 
   "win-x64" {
     # Build
-    & "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch amd64 -SkipAutomaticLocation
+    $vsPath = & "${env:ProgramFiles(x86)}/Microsoft Visual Studio/Installer/vswhere.exe" -latest -products "*" -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+    & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch amd64 -SkipAutomaticLocation
     Remove-Item -Recurse -Force build -ErrorAction Ignore
     New-Item -ItemType Directory build
     Push-Location build
