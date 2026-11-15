@@ -228,7 +228,7 @@ Copy-Item build/libSDL3.a runtimes/tvossimulator/native
 
 # build-win-arm64.cmd
 # Build
-& "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvarsall.bat" amd64_arm64
+& "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch arm64 -SkipAutomaticLocation
 Remove-Item -Recurse -Force build -ErrorAction Ignore
 New-Item -ItemType Directory build
 Push-Location build
@@ -243,7 +243,7 @@ Copy-Item build/SDL3.dll runtimes/win-arm64/native
 
 # build-win-x64.cmd
 # Build
-& "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvarsall.bat" x64
+& "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch amd64 -SkipAutomaticLocation
 Remove-Item -Recurse -Force build -ErrorAction Ignore
 New-Item -ItemType Directory build
 Push-Location build
