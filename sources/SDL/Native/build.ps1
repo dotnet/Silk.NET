@@ -170,22 +170,34 @@ switch ($runtime) {
   "linux-x64" {
     # Dependencies
     if ($env:GITHUB_ACTIONS) {
-      ../../../eng/native/buildsystem/download-zig.py
-      $env:PATH += ":$((Resolve-Path ../../../eng/native/buildsystem/zig).Path)"
+      if (-not $env:SILKDOTNET_DockerBuild) {
+        # Enter Debian container for multiarch packages
+        $docker = "docker"
+        if (Get-Command podman -ErrorAction Ignore) {
+          $docker = "podman"
+        }
+        & $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c "cd /data/sources/SDL/Native && ./build-linux-x64.sh"
+        exit
+      } else {
+        apt-get update
+        apt-get install -y python3
+        ../../../eng/native/buildsystem/download-zig.py
+        $env:PATH += ":$((Resolve-Path ../../../eng/native/buildsystem/zig).Path)"
 
-      # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
-      sudo dpkg --add-architecture amd64
-      sudo apt-get update
-      sudo apt-get install -y `
-        git cmake make build-essential `
-        pkg-config ninja-build gnome-desktop-testing `
-        libglib2.0-dev-bin `
-        libasound2-dev:amd64 libpulse-dev:amd64 `
-        libaudio-dev:amd64 libfribidi-dev:amd64 libjack-dev:amd64 libsndio-dev:amd64 libx11-dev:amd64 libxext-dev:amd64 `
-        libxrandr-dev:amd64 libxcursor-dev:amd64 libxfixes-dev:amd64 libxi-dev:amd64 libxss-dev:amd64 libxtst-dev:amd64 `
-        libxkbcommon-dev:amd64 libdrm-dev:amd64 libgbm-dev:amd64 libgl1-mesa-dev:amd64 libgles2-mesa-dev:amd64 `
-        libegl1-mesa-dev:amd64 libdbus-1-dev:amd64 libibus-1.0-dev:amd64 libudev-dev:amd64 libthai-dev:amd64 `
-        libpipewire-0.3-dev:amd64 libwayland-dev:amd64 libdecor-0-dev:amd64 liburing-dev:amd64
+        # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
+        dpkg --add-architecture amd64
+        apt-get update
+        apt-get install -y `
+          git cmake make build-essential `
+          pkg-config ninja-build gnome-desktop-testing `
+          libglib2.0-dev-bin `
+          libasound2-dev:amd64 libpulse-dev:amd64 `
+          libaudio-dev:amd64 libfribidi-dev:amd64 libjack-dev:amd64 libsndio-dev:amd64 libx11-dev:amd64 libxext-dev:amd64 `
+          libxrandr-dev:amd64 libxcursor-dev:amd64 libxfixes-dev:amd64 libxi-dev:amd64 libxss-dev:amd64 libxtst-dev:amd64 `
+          libxkbcommon-dev:amd64 libdrm-dev:amd64 libgbm-dev:amd64 libgl1-mesa-dev:amd64 libgles2-mesa-dev:amd64 `
+          libegl1-mesa-dev:amd64 libdbus-1-dev:amd64 libibus-1.0-dev:amd64 libudev-dev:amd64 libthai-dev:amd64 `
+          libpipewire-0.3-dev:amd64 libwayland-dev:amd64 libdecor-0-dev:amd64 liburing-dev:amd64
+      }
     }
 
     # Build

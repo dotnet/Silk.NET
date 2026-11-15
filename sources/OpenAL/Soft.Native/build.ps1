@@ -213,12 +213,22 @@ switch ($runtime) {
   "linux-x64" {
     # Dependencies
     if ($env:GITHUB_ACTIONS) {
-      sudo apt-get update
-      sudo apt-get install -y `
-        git cmake python3 build-essential `
-        libasound2-dev:amd64 libpulse-dev:amd64 libsoundio-dev:amd64 libsndfile1-dev:amd64 `
-        libmysofa-dev:amd64 qtbase5-dev:amd64 libdbus-1-dev:amd64 libjack-dev:amd64 portaudio19-dev:amd64 `
-        libpipewire-0.3-dev:amd64 qt6-base-dev:amd64 pulseaudio:amd64
+      if (-not $env:SILKDOTNET_DockerBuild) {
+        # Enter Debian container for multiarch packages
+        $docker = "docker"
+        if (Get-Command podman -ErrorAction Ignore) {
+          $docker = "podman"
+        }
+        & $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v "$((Resolve-Path ../../../).Path):/data" debian bash -c "cd /data/sources/OpenAL/Soft.Native && ./build-linux-x64.sh"
+        exit
+      } else {
+        apt-get update
+        apt-get install -y `
+          git cmake python3 build-essential `
+          libasound2-dev:amd64 libpulse-dev:amd64 libsoundio-dev:amd64 libsndfile1-dev:amd64 `
+          libmysofa-dev:amd64 qtbase5-dev:amd64 libdbus-1-dev:amd64 libjack-dev:amd64 portaudio19-dev:amd64 `
+          libpipewire-0.3-dev:amd64 qt6-base-dev:amd64 pulseaudio:amd64
+      }
     }
 
     # Build
