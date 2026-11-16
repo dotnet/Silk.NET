@@ -20,7 +20,7 @@ $androidVersion = android sdk list --all |
 
 $ndkVersion = android sdk list --all |
   Where-Object { $_ -match " (?<id>ndk/(?<version>(?<major>[\d]+)(\.(?<minor>[\d]+))?(\.(?<patch>[\d]+)))) " } |
-  ForEach-Object { @{ id = $matches.id; major = [int]$matches.major; minor = [int]$matches.minor ?? 0; [int]$matches.patch ?? 0; version = $matches.version } } |
+  ForEach-Object { @{ id = $matches.id; major = [int]$matches.major; minor = [int]$matches.minor ?? 0; patch = [int]$matches.patch ?? 0; version = $matches.version } } |
   Sort-Object major, minor, patch |
   Select-Object -last 1
 
