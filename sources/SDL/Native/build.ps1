@@ -141,7 +141,7 @@ try {
       switch ($runtime) {
         "android" {
           # Build
-          & python3 $submodulePath/build-scripts/build-release.py --actions android --root $submodulePath
+          & python3 $submodulePath/build-scripts/build-release.py --actions android --root $submodulePath --android-api $androidVersion.version
           New-Item -ItemType Directory -Force runtimes/android-x86/native, runtimes/android-x64/native, runtimes/android-arm/native, runtimes/android-arm64/native, android
           Copy-Item $submodulePath/install-android/arm64-v8a-install/lib/libSDL3.so runtimes/android-arm64/native
           Copy-Item $submodulePath/install-android/armeabi-v7a-install/lib/libSDL3.so runtimes/android-arm/native
