@@ -94,9 +94,6 @@ try {
         exit 0
       }
 
-      # TODO: Probably move basic dependencies to Dockerfile
-      # TODO: Also dedupe from later
-      # TODO: Replicate to OpenAL
       # Shared dependencies
       apt-get update
       apt-get install -y git cmake make ninja-build python3 unzip build-essential pkg-config ninja-build

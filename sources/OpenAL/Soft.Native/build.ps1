@@ -90,8 +90,8 @@ try {
         # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
         $name = "silk-native-$PID"
         try {
-          & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e CHOSEN_RUNTIME=$runtime -v "${repoRoot}:/data" debian `
-            bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/OpenAL/Soft.Native/build.ps1'
+          & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e CHOSEN_RUNTIME=$runtime -v "${repoRoot}:/data/repo" debian `
+            bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/repo/sources/OpenAL/Soft.Native/build.ps1'
         } finally {
           & $docker rm -f $name
         }
@@ -99,15 +99,43 @@ try {
         exit 0
       }
 
+      # Shared dependencies
+      apt-get update
+      apt-get install -y git cmake make ninja-build python3 unzip build-essential pkg-config ninja-build
+
+      # Git
+      git config --global --add safe.directory "*"
+
+      # NDK
+      if ($runtime -like "android*") {
+        apt-get install -y openjdk-17-jdk ant android-sdk-platform-tools-common
+
+        curl -fsSL https://dl.google.com/android/cli/latest/linux_x86_64/install.sh | bash
+        $env:PATH += ":/root/.local/bin"
+        $env:ANDROID_HOME = "/data/android-sdk"
+
+        android sdk list --all
+
+        $androidVersion = android sdk list --all |
+          Where-Object { $_ -match "platforms/android-(?<version>(?<major>[\d]+)(\.(?<minor>[\d]+)))" } |
+          ForEach-Object { @{ id = $matches.0; major = [int]$matches.major; minor = [int]$matches.minor ?? 0; version = $matches.version } } |
+          Sort-Object major, minor |
+          Select-Object -last 1
+
+        $ndkVersion = android sdk list --all |
+          Where-Object { $_ -match "ndk/(?<version>(?<major>[\d]+)(\.(?<minor>[\d]+))?(\.(?<patch>[\d]+)))" } |
+          ForEach-Object { @{ id = $matches.0; major = [int]$matches.major; minor = [int]$matches.minor ?? 0, [int]$matches.patch ?? 0; version = $matches.version } } |
+          Sort-Object major, minor, patch |
+          Select-Object -last 1
+
+        android sdk install $androidVersion.id
+        android sdk install $ndkVersion.id
+
+        $env:ANDROID_NDK_HOME = (Resolve-Path $env:ANDROID_HOME/ndk/*).Path
+      }
+
       switch ($runtime) {
         "android-arm64" {
-          # Dependencies
-          if ($env:GITHUB_ACTIONS) {
-            # NDK already installed: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md
-            $sdkmanager = @(Get-ChildItem /usr/local/lib/android/sdk/cmdline-tools/*/bin/sdkmanager | Sort-Object FullName)
-            & $sdkmanager[-1].FullName --install "platforms;android-21"
-          }
-
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
@@ -123,13 +151,6 @@ try {
         }
 
         "android-arm" {
-          # Dependencies
-          if ($env:GITHUB_ACTIONS) {
-            # NDK already installed: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md
-            $sdkmanager = @(Get-ChildItem /usr/local/lib/android/sdk/cmdline-tools/*/bin/sdkmanager | Sort-Object FullName)
-            & $sdkmanager[-1].FullName --install "platforms;android-21"
-          }
-
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
@@ -145,13 +166,6 @@ try {
         }
 
         "android-x64" {
-          # Dependencies
-          if ($env:GITHUB_ACTIONS) {
-            # NDK already installed: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md
-            $sdkmanager = @(Get-ChildItem /usr/local/lib/android/sdk/cmdline-tools/*/bin/sdkmanager | Sort-Object FullName)
-            & $sdkmanager[-1].FullName --install "platforms;android-21"
-          }
-
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
@@ -167,13 +181,6 @@ try {
         }
 
         "android-x86" {
-          # Dependencies
-          if ($env:GITHUB_ACTIONS) {
-            # NDK already installed: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md
-            $sdkmanager = @(Get-ChildItem /usr/local/lib/android/sdk/cmdline-tools/*/bin/sdkmanager | Sort-Object FullName)
-            & $sdkmanager[-1].FullName --install "platforms;android-21"
-          }
-
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
