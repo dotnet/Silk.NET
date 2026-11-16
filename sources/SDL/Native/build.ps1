@@ -106,21 +106,30 @@ try {
 
       # NDK
       if ($runtime -like "android*") {
-        apt-get install -y default-jdk-headless sdkmanager
+        apt-get install -y default-jdk-headless
 
-        $androidRepo = "https://dl.google.com/android/repository"
-        $ndkZip = ([xml](Invoke-RestMethod "$androidRepo/repository2-3.xml")).'sdk-repository'.remotePackage |
-          Where-Object path -like "ndk;*" |
-          Sort-Object { [int]$_.revision.major }, { [int]$_.revision.micro } |
-          ForEach-Object { $_.archives.archive.complete.url } |
-          Where-Object { $_ -match '^android-ndk-r\d+[a-z]?-linux\.zip$' } |
-          Select-Object -Last 1
-        Invoke-WebRequest "$androidRepo/$ndkZip" -OutFile /data/ndk.zip
-        unzip -q /data/ndk.zip -d /opt/android-ndk
-        $env:ANDROID_NDK_HOME = (Resolve-Path /opt/android-ndk/*).Path
+        curl -fsSL https://dl.google.com/android/cli/latest/linux_x86_64/install.sh | bash
+        $env:PATH += ":/root/.local/bin"
+        $env:ANDROID_HOME = "/data/android-sdk"
 
-        $env:ANDROID_HOME = "/opt/android-sdk"
-        sdkmanager "platforms;android-21"
+        android sdk list --all
+
+        $androidVersion = android sdk list --all |
+          Where-Object { $_ -match "platforms/android-(?<version>(?<major>[\d]+)(\.(?<minor>[\d]+)))" } |
+          ForEach-Object { @{ id = $matches.0; major = [int]$matches.major; minor = [int]$matches.minor ?? 0; version = $matches.version } } |
+          Sort-Object major, minor |
+          Select-Object -last 1
+
+        $ndkVersion = android sdk list --all |
+          Where-Object { $_ -match "ndk/(?<version>(?<major>[\d]+)(\.(?<minor>[\d]+))?(\.(?<patch>[\d]+)))" } |
+          ForEach-Object { @{ id = $matches.0; major = [int]$matches.major; minor = [int]$matches.minor ?? 0, [int]$matches.patch ?? 0; version = $matches.version } } |
+          Sort-Object major, minor, patch |
+          Select-Object -last 1
+
+        android sdk install $androidVersion.id
+        android sdk install $ndkVersion.id
+
+        $env:ANDROID_NDK_HOME = (Resolve-Path $env:ANDROID_HOME/ndk/*).Path
       }
 
       # Zig
