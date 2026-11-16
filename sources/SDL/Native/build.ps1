@@ -85,8 +85,8 @@ try {
         # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
         $name = "silk-native-$PID"
         try {
-          & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e CHOSEN_RUNTIME=$runtime -v "${repoRoot}:/data" debian `
-            bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/SDL/Native/build.ps1'
+          & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e CHOSEN_RUNTIME=$runtime -v "${repoRoot}:/data/repo" debian `
+            bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/repo/sources/SDL/Native/build.ps1'
         } finally {
           & $docker rm -f $name
         }
@@ -94,22 +94,36 @@ try {
         exit 0
       }
 
+      # TODO: Probably move basic dependencies to Dockerfile
+      # TODO: Also dedupe from later
+      # TODO: Replicate to OpenAL
+      # Shared dependencies
+      apt-get update
+      apt-get install -y git cmake make ninja-build python3 unzip
+
+      # NDK
+      if ($runtime -like "android*") {
+        apt-get install -y default-jdk-headless sdkmanager
+
+        $androidRepo = "https://dl.google.com/android/repository"
+        $ndkZip = ([xml](Invoke-RestMethod "$androidRepo/repository2-3.xml")).'sdk-repository'.remotePackage |
+          Where-Object path -like "ndk;*" |
+          Sort-Object { [int]$_.revision.major }, { [int]$_.revision.micro } |
+          ForEach-Object { $_.archives.archive.complete.url } |
+          Where-Object { $_ -match '^android-ndk-r\d+[a-z]?-linux\.zip$' } |
+          Select-Object -Last 1
+        Invoke-WebRequest "$androidRepo/$ndkZip" -OutFile /data/ndk.zip
+        unzip -q /data/ndk.zip -d /opt/android-ndk
+        $env:ANDROID_NDK_HOME = (Resolve-Path /opt/android-ndk/*).Path
+
+        $env:ANDROID_HOME = "/opt/android-sdk"
+        sdkmanager "platforms;android-21"
+      }
+
       switch ($runtime) {
         "android" {
-          # Dependencies
-          $python = "python"
-          if ($env:GITHUB_ACTIONS) {
-            # NDK already installed: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md
-            $sdkmanager = @(Get-ChildItem /usr/local/lib/android/sdk/cmdline-tools/*/bin/sdkmanager | Sort-Object FullName)
-            & $sdkmanager[-1].FullName --install "platforms;android-19"
-            sudo add-apt-repository ppa:deadsnakes/ppa
-            sudo apt update
-            sudo apt install python3.11 ninja-build
-            $python = "python3.11"
-          }
-
           # Build
-          & $python $submodulePath/build-scripts/build-release.py --actions android --root $submodulePath
+          & python3 $submodulePath/build-scripts/build-release.py --actions android --root $submodulePath
           New-Item -ItemType Directory -Force runtimes/android-x86/native, runtimes/android-x64/native, runtimes/android-arm/native, runtimes/android-arm64/native, android
           Copy-Item $submodulePath/install-android/arm64-v8a-install/lib/libSDL3.so runtimes/android-arm64/native
           Copy-Item $submodulePath/install-android/armeabi-v7a-install/lib/libSDL3.so runtimes/android-arm/native
@@ -122,8 +136,6 @@ try {
 
         "linux-arm64" {
           # Dependencies
-          apt-get update
-          apt-get install -y python3
           & $repoRoot/eng/native/buildsystem/download-zig.py
           $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
 
@@ -157,8 +169,6 @@ try {
 
         "linux-arm" {
           # Dependencies
-          apt-get update
-          apt-get install -y python3
           & $repoRoot/eng/native/buildsystem/download-zig.py
           $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
 
@@ -192,8 +202,6 @@ try {
 
         "linux-x64" {
           # Dependencies
-          apt-get update
-          apt-get install -y python3
           & $repoRoot/eng/native/buildsystem/download-zig.py
           $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
 
