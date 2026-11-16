@@ -10,15 +10,17 @@ $env:PATH += ":/root/.local/bin"
 
 android sdk list --all
 
+# Note the spaces at the start/end of the regexes
+# SDL's build-release.py doesn't support dotted versions (eg: android-37.2), so $androidVersion ignores them for now
 $androidVersion = android sdk list --all |
-  Where-Object { $_ -match "platforms/android-(?<version>(?<major>[\d]+)(\.(?<minor>[\d]+)))" } |
-  ForEach-Object { @{ id = $matches.0; major = [int]$matches.major; minor = [int]$matches.minor ?? 0; version = $matches.version } } |
+  Where-Object { $_ -match " (?<id>platforms/android-(?<version>(?<major>[\d]+))) " } |
+  ForEach-Object { @{ id = $matches.id; major = [int]$matches.major; version = $matches.version } } |
   Sort-Object major, minor |
   Select-Object -last 1
 
 $ndkVersion = android sdk list --all |
-  Where-Object { $_ -match "ndk/(?<version>(?<major>[\d]+)(\.(?<minor>[\d]+))?(\.(?<patch>[\d]+)))" } |
-  ForEach-Object { @{ id = $matches.0; major = [int]$matches.major; minor = [int]$matches.minor ?? 0, [int]$matches.patch ?? 0; version = $matches.version } } |
+  Where-Object { $_ -match " (?<id>ndk/(?<version>(?<major>[\d]+)(\.(?<minor>[\d]+))?(\.(?<patch>[\d]+)))) " } |
+  ForEach-Object { @{ id = $matches.id; major = [int]$matches.major; minor = [int]$matches.minor ?? 0, [int]$matches.patch ?? 0; version = $matches.version } } |
   Sort-Object major, minor, patch |
   Select-Object -last 1
 
