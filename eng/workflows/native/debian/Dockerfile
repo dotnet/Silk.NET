@@ -12,5 +12,8 @@ RUN curl -fsSL https://dot.net/v1/dotnet-install.sh | bash
 # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
 RUN dotnet tool install --global PowerShell --version "7.6.*"
 
+# Git
+RUN git config --global --add safe.directory "*"
+
 WORKDIR /data
 CMD ["pwsh"]

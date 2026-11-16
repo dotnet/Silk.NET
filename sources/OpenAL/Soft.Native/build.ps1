@@ -99,13 +99,6 @@ try {
         exit 0
       }
 
-      # Shared dependencies
-      apt-get update
-      apt-get install -y git cmake make ninja-build python3 unzip build-essential pkg-config ninja-build
-
-      # Git
-      git config --global --add safe.directory "*"
-
       # NDK
       if ($runtime -like "android*") {
         apt-get install -y default-jdk-headless

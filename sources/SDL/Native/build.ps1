@@ -94,9 +94,6 @@ try {
         exit 0
       }
 
-      # Git
-      git config --global --add safe.directory "*"
-
       # NDK
       if ($runtime -like "android*") {
         apt-get install -y default-jdk-headless
