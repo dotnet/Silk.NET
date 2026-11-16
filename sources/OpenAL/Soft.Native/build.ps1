@@ -80,6 +80,25 @@ try {
     }
 
     $IsLinux {
+      # Enter Debian container
+      if (-not $env:SILKDOTNET_DOCKER) {
+        $docker = "docker"
+        if (Get-Command podman -ErrorAction Ignore) {
+          $docker = "podman"
+        }
+
+        # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
+        $name = "silk-native-$PID"
+        try {
+          & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -v "${repoRoot}:/data" debian `
+            bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/OpenAL/Soft.Native/build.ps1 $runtime'
+        } finally {
+          & $docker rm -f $name
+        }
+
+        exit 0
+      }
+
       switch ($runtime) {
         "android-arm64" {
           # Dependencies
@@ -171,32 +190,14 @@ try {
 
         "linux-arm64" {
           # Dependencies
-          if (-not $env:SILKDOTNET_DOCKER) {
-            # Enter Debian container
-            $docker = "docker"
-            if (Get-Command podman -ErrorAction Ignore) {
-              $docker = "podman"
-            }
-
-            # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
-            $name = "silk-native-$PID"
-            try {
-              & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -v "${repoRoot}:/data" debian `
-                bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/OpenAL/Soft.Native/build.ps1 linux-arm64'
-            } finally {
-              & $docker rm -f $name
-            }
-            exit 0
-          } else {
-            dpkg --add-architecture arm64
-            apt-get update
-            apt-get install -y `
-              git cmake python3 `
-              libasound2-dev:arm64 libpulse-dev:arm64 libsoundio-dev:arm64 libsndfile1-dev:arm64 `
-              libmysofa-dev:arm64 qtbase5-dev:arm64 libdbus-1-dev:arm64 libjack-dev:arm64 portaudio19-dev:arm64 `
-              libpipewire-0.3-dev:arm64 qt6-base-dev:arm64 pulseaudio:arm64 `
-              gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
-          }
+          dpkg --add-architecture arm64
+          apt-get update
+          apt-get install -y `
+            git cmake python3 `
+            libasound2-dev:arm64 libpulse-dev:arm64 libsoundio-dev:arm64 libsndfile1-dev:arm64 `
+            libmysofa-dev:arm64 qtbase5-dev:arm64 libdbus-1-dev:arm64 libjack-dev:arm64 portaudio19-dev:arm64 `
+            libpipewire-0.3-dev:arm64 qt6-base-dev:arm64 pulseaudio:arm64 `
+            gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
 
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
@@ -214,32 +215,14 @@ try {
 
         "linux-arm" {
           # Dependencies
-          if (-not $env:SILKDOTNET_DOCKER) {
-            # Enter Debian container
-            $docker = "docker"
-            if (Get-Command podman -ErrorAction Ignore) {
-              $docker = "podman"
-            }
-
-            # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
-            $name = "silk-native-$PID"
-            try {
-              & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -v "${repoRoot}:/data" debian `
-                bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/OpenAL/Soft.Native/build.ps1 linux-arm'
-            } finally {
-              & $docker rm -f $name
-            }
-            exit 0
-          } else {
-            dpkg --add-architecture armhf
-            apt-get update
-            apt-get install -y `
-              git cmake python3 `
-              libasound2-dev:armhf libpulse-dev:armhf libsoundio-dev:armhf libsndfile1-dev:armhf `
-              libmysofa-dev:armhf qtbase5-dev:armhf libdbus-1-dev:armhf libjack-dev:armhf portaudio19-dev:armhf `
-              libpipewire-0.3-dev:armhf qt6-base-dev:armhf pulseaudio:armhf `
-              gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
-          }
+          dpkg --add-architecture armhf
+          apt-get update
+          apt-get install -y `
+            git cmake python3 `
+            libasound2-dev:armhf libpulse-dev:armhf libsoundio-dev:armhf libsndfile1-dev:armhf `
+            libmysofa-dev:armhf qtbase5-dev:armhf libdbus-1-dev:armhf libjack-dev:armhf portaudio19-dev:armhf `
+            libpipewire-0.3-dev:armhf qt6-base-dev:armhf pulseaudio:armhf `
+            gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
 
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
@@ -257,30 +240,12 @@ try {
 
         "linux-x64" {
           # Dependencies
-          if (-not $env:SILKDOTNET_DOCKER) {
-            # Enter Debian container
-            $docker = "docker"
-            if (Get-Command podman -ErrorAction Ignore) {
-              $docker = "podman"
-            }
-
-            # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
-            $name = "silk-native-$PID"
-            try {
-              & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -v "${repoRoot}:/data" debian `
-                bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/OpenAL/Soft.Native/build.ps1 linux-x64'
-            } finally {
-              & $docker rm -f $name
-            }
-            exit 0
-          } else {
-            apt-get update
-            apt-get install -y `
-              git cmake python3 build-essential `
-              libasound2-dev:amd64 libpulse-dev:amd64 libsoundio-dev:amd64 libsndfile1-dev:amd64 `
-              libmysofa-dev:amd64 qtbase5-dev:amd64 libdbus-1-dev:amd64 libjack-dev:amd64 portaudio19-dev:amd64 `
-              libpipewire-0.3-dev:amd64 qt6-base-dev:amd64 pulseaudio:amd64
-          }
+          apt-get update
+          apt-get install -y `
+            git cmake python3 build-essential `
+            libasound2-dev:amd64 libpulse-dev:amd64 libsoundio-dev:amd64 libsndfile1-dev:amd64 `
+            libmysofa-dev:amd64 qtbase5-dev:amd64 libdbus-1-dev:amd64 libjack-dev:amd64 portaudio19-dev:amd64 `
+            libpipewire-0.3-dev:amd64 qt6-base-dev:amd64 pulseaudio:amd64
 
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
