@@ -25,7 +25,7 @@ COPY dependencies/android.ps1 android.ps1
 RUN ./android.ps1
 
 # Zig
-ENV PATH="$PATH/data/setup/zig"
+ENV PATH="$PATH:/data/setup/zig"
 COPY dependencies/download-zig.py download-zig.py
 RUN ./download-zig.py
 
