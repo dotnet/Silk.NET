@@ -26,6 +26,8 @@ try {
   )
 
   # Inputs
+  Write-Host "Supported runtimes: $supportedRuntimes"
+
   $runtime = ($args.Count -gt 0 -and $args[0]) ? $args[0] : $env:CHOSEN_RUNTIME
   if (-not $runtime) {
     Write-Host "Please choose a runtime by providing it as the first argument or setting the CHOSEN_RUNTIME env var"
@@ -35,7 +37,6 @@ try {
   Write-Host "Chosen runtime: $runtime"
   if (-not ($runtime -in $supportedRuntimes)) {
     Write-Host "Unknown runtime: $runtime"
-    Write-Host "Supported runtimes: $supportedRuntimes"
     exit 1
   }
 
