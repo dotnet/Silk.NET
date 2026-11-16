@@ -40,10 +40,11 @@ try {
 
   switch ($true) {
     $IsWindows {
+      $vsPath = & "${env:ProgramFiles(x86)}/Microsoft Visual Studio/Installer/vswhere.exe" -latest -products "*" -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+
       switch ($runtime) {
         "win-arm64" {
           # Build
-          $vsPath = & "${env:ProgramFiles(x86)}/Microsoft Visual Studio/Installer/vswhere.exe" -latest -products "*" -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
           & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch arm64 -SkipAutomaticLocation
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
@@ -61,7 +62,6 @@ try {
 
         "win-x64" {
           # Build
-          $vsPath = & "${env:ProgramFiles(x86)}/Microsoft Visual Studio/Installer/vswhere.exe" -latest -products "*" -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
           & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch amd64 -SkipAutomaticLocation
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
