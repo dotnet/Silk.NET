@@ -1,5 +1,7 @@
 FROM debian:latest
 
+WORKDIR /data/setup
+
 # Shared dependencies
 RUN apt-get update && apt-get install -y curl libicu-dev git cmake make ninja-build python3 unzip build-essential pkg-config ninja-build
 
@@ -14,6 +16,15 @@ RUN dotnet tool install --global PowerShell --version "7.6.*"
 
 # Git
 RUN git config --global --add safe.directory "*"
+
+# Android
+COPY dependencies/android.ps1 android.ps1
+RUN chmod +x android.ps1 && ./android.ps1
+
+# Zig
+COPY dependencies/download-zig.py download-zig.py
+RUN ./download-zig.py
+ENV PATH="/data/setup/zig:$PATH"
 
 WORKDIR /data
 CMD ["pwsh"]
