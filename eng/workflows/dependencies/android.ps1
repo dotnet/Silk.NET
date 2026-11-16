@@ -7,7 +7,6 @@ apt-get install -y default-jdk-headless
 
 curl -fsSL https://dl.google.com/android/cli/latest/linux_x86_64/install.sh | bash
 $env:PATH += ":/root/.local/bin"
-$env:ANDROID_HOME = "/data/android-sdk"
 
 android sdk list --all
 
@@ -25,5 +24,3 @@ $ndkVersion = android sdk list --all |
 
 android sdk install $androidVersion.id
 android sdk install $ndkVersion.id
-
-$env:ANDROID_NDK_HOME = (Resolve-Path $env:ANDROID_HOME/ndk/*).Path

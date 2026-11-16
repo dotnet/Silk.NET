@@ -99,6 +99,8 @@ try {
         exit 0
       }
 
+      . $repoRoot/eng/workflows/dependencies/initialize-env.ps1
+
       switch ($runtime) {
         "android-arm64" {
           # Build
