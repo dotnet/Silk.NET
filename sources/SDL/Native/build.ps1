@@ -123,6 +123,12 @@ try {
         sdkmanager "platforms;android-21"
       }
 
+      # Zig
+      if ($runtime -like "linux*") {
+        & $repoRoot/eng/native/buildsystem/download-zig.py
+        $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
+      }
+
       switch ($runtime) {
         "android" {
           # Build
@@ -139,10 +145,7 @@ try {
 
         "linux-arm64" {
           # Dependencies
-          & $repoRoot/eng/native/buildsystem/download-zig.py
-          $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
-
-          # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
+          # From https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
           dpkg --add-architecture arm64
           apt-get update
           apt-get install -y `
@@ -171,10 +174,7 @@ try {
 
         "linux-arm" {
           # Dependencies
-          & $repoRoot/eng/native/buildsystem/download-zig.py
-          $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
-
-          # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
+          # From https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
           dpkg --add-architecture armhf
           apt-get update
           apt-get install -y `
@@ -203,10 +203,7 @@ try {
 
         "linux-x64" {
           # Dependencies
-          & $repoRoot/eng/native/buildsystem/download-zig.py
-          $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
-
-          # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
+          # From https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
           dpkg --add-architecture amd64
           apt-get update
           apt-get install -y `
