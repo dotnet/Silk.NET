@@ -103,43 +103,41 @@ try {
 
         "linux-arm64" {
           # Dependencies
-          if ($env:GITHUB_ACTIONS) {
-            if (-not $env:SILKDOTNET_DOCKER) {
-              # Enter Debian container for multiarch packages
-              $docker = "docker"
-              if (Get-Command podman -ErrorAction Ignore) {
-                $docker = "podman"
-              }
-
-              # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
-              $name = "silk-native-$PID"
-              try {
-                & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "${repoRoot}:/data" debian `
-                  bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/SDL/Native/build.ps1 linux-arm64'
-              } finally {
-                & $docker rm -f $name
-              }
-              exit 0
-            } else {
-              apt-get update
-              apt-get install -y python3
-              & $repoRoot/eng/native/buildsystem/download-zig.py
-              $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
-
-              # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
-              dpkg --add-architecture arm64
-              apt-get update
-              apt-get install -y `
-                git cmake make build-essential `
-                pkg-config ninja-build gnome-desktop-testing `
-                libglib2.0-dev-bin `
-                libasound2-dev:arm64 libpulse-dev:arm64 `
-                libaudio-dev:arm64 libfribidi-dev:arm64 libjack-dev:arm64 libsndio-dev:arm64 libx11-dev:arm64 libxext-dev:arm64 `
-                libxrandr-dev:arm64 libxcursor-dev:arm64 libxfixes-dev:arm64 libxi-dev:arm64 libxss-dev:arm64 libxtst-dev:arm64 `
-                libxkbcommon-dev:arm64 libdrm-dev:arm64 libgbm-dev:arm64 libgl1-mesa-dev:arm64 libgles2-mesa-dev:arm64 `
-                libegl1-mesa-dev:arm64 libdbus-1-dev:arm64 libibus-1.0-dev:arm64 libudev-dev:arm64 libthai-dev:arm64 `
-                libpipewire-0.3-dev:arm64 libwayland-dev:arm64 libdecor-0-dev:arm64 liburing-dev:arm64
+          if (-not $env:SILKDOTNET_DOCKER) {
+            # Enter Debian container
+            $docker = "docker"
+            if (Get-Command podman -ErrorAction Ignore) {
+              $docker = "podman"
             }
+
+            # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
+            $name = "silk-native-$PID"
+            try {
+              & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -v "${repoRoot}:/data" debian `
+                bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/SDL/Native/build.ps1 linux-arm64'
+            } finally {
+              & $docker rm -f $name
+            }
+            exit 0
+          } else {
+            apt-get update
+            apt-get install -y python3
+            & $repoRoot/eng/native/buildsystem/download-zig.py
+            $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
+
+            # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
+            dpkg --add-architecture arm64
+            apt-get update
+            apt-get install -y `
+              git cmake make build-essential `
+              pkg-config ninja-build gnome-desktop-testing `
+              libglib2.0-dev-bin `
+              libasound2-dev:arm64 libpulse-dev:arm64 `
+              libaudio-dev:arm64 libfribidi-dev:arm64 libjack-dev:arm64 libsndio-dev:arm64 libx11-dev:arm64 libxext-dev:arm64 `
+              libxrandr-dev:arm64 libxcursor-dev:arm64 libxfixes-dev:arm64 libxi-dev:arm64 libxss-dev:arm64 libxtst-dev:arm64 `
+              libxkbcommon-dev:arm64 libdrm-dev:arm64 libgbm-dev:arm64 libgl1-mesa-dev:arm64 libgles2-mesa-dev:arm64 `
+              libegl1-mesa-dev:arm64 libdbus-1-dev:arm64 libibus-1.0-dev:arm64 libudev-dev:arm64 libthai-dev:arm64 `
+              libpipewire-0.3-dev:arm64 libwayland-dev:arm64 libdecor-0-dev:arm64 liburing-dev:arm64
           }
 
           # Build
@@ -158,43 +156,41 @@ try {
 
         "linux-arm" {
           # Dependencies
-          if ($env:GITHUB_ACTIONS) {
-            if (-not $env:SILKDOTNET_DOCKER) {
-              # Enter Debian container for multiarch packages
-              $docker = "docker"
-              if (Get-Command podman -ErrorAction Ignore) {
-                $docker = "podman"
-              }
-
-              # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
-              $name = "silk-native-$PID"
-              try {
-                & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "${repoRoot}:/data" debian `
-                  bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/SDL/Native/build.ps1 linux-arm'
-              } finally {
-                & $docker rm -f $name
-              }
-              exit 0
-            } else {
-              apt-get update
-              apt-get install -y python3
-              & $repoRoot/eng/native/buildsystem/download-zig.py
-              $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
-
-              # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
-              dpkg --add-architecture armhf
-              apt-get update
-              apt-get install -y `
-                git cmake make build-essential `
-                pkg-config ninja-build gnome-desktop-testing `
-                libglib2.0-dev-bin `
-                libasound2-dev:armhf libpulse-dev:armhf `
-                libaudio-dev:armhf libfribidi-dev:armhf libjack-dev:armhf libsndio-dev:armhf libx11-dev:armhf libxext-dev:armhf `
-                libxrandr-dev:armhf libxcursor-dev:armhf libxfixes-dev:armhf libxi-dev:armhf libxss-dev:armhf libxtst-dev:armhf `
-                libxkbcommon-dev:armhf libdrm-dev:armhf libgbm-dev:armhf libgl1-mesa-dev:armhf libgles2-mesa-dev:armhf `
-                libegl1-mesa-dev:armhf libdbus-1-dev:armhf libibus-1.0-dev:armhf libudev-dev:armhf libthai-dev:armhf `
-                libpipewire-0.3-dev:armhf libwayland-dev:armhf libdecor-0-dev:armhf liburing-dev:armhf
+          if (-not $env:SILKDOTNET_DOCKER) {
+            # Enter Debian container
+            $docker = "docker"
+            if (Get-Command podman -ErrorAction Ignore) {
+              $docker = "podman"
             }
+
+            # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
+            $name = "silk-native-$PID"
+            try {
+              & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -v "${repoRoot}:/data" debian `
+                bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/SDL/Native/build.ps1 linux-arm'
+            } finally {
+              & $docker rm -f $name
+            }
+            exit 0
+          } else {
+            apt-get update
+            apt-get install -y python3
+            & $repoRoot/eng/native/buildsystem/download-zig.py
+            $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
+
+            # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
+            dpkg --add-architecture armhf
+            apt-get update
+            apt-get install -y `
+              git cmake make build-essential `
+              pkg-config ninja-build gnome-desktop-testing `
+              libglib2.0-dev-bin `
+              libasound2-dev:armhf libpulse-dev:armhf `
+              libaudio-dev:armhf libfribidi-dev:armhf libjack-dev:armhf libsndio-dev:armhf libx11-dev:armhf libxext-dev:armhf `
+              libxrandr-dev:armhf libxcursor-dev:armhf libxfixes-dev:armhf libxi-dev:armhf libxss-dev:armhf libxtst-dev:armhf `
+              libxkbcommon-dev:armhf libdrm-dev:armhf libgbm-dev:armhf libgl1-mesa-dev:armhf libgles2-mesa-dev:armhf `
+              libegl1-mesa-dev:armhf libdbus-1-dev:armhf libibus-1.0-dev:armhf libudev-dev:armhf libthai-dev:armhf `
+              libpipewire-0.3-dev:armhf libwayland-dev:armhf libdecor-0-dev:armhf liburing-dev:armhf
           }
 
           # Build
@@ -213,43 +209,41 @@ try {
 
         "linux-x64" {
           # Dependencies
-          if ($env:GITHUB_ACTIONS) {
-            if (-not $env:SILKDOTNET_DOCKER) {
-              # Enter Debian container for multiarch packages
-              $docker = "docker"
-              if (Get-Command podman -ErrorAction Ignore) {
-                $docker = "podman"
-              }
-
-              # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
-              $name = "silk-native-$PID"
-              try {
-                & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e GITHUB_ACTIONS=1 -v "${repoRoot}:/data" debian `
-                  bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/SDL/Native/build.ps1 linux-x64'
-              } finally {
-                & $docker rm -f $name
-              }
-              exit 0
-            } else {
-              apt-get update
-              apt-get install -y python3
-              & $repoRoot/eng/native/buildsystem/download-zig.py
-              $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
-
-              # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
-              dpkg --add-architecture amd64
-              apt-get update
-              apt-get install -y `
-                git cmake make build-essential `
-                pkg-config ninja-build gnome-desktop-testing `
-                libglib2.0-dev-bin `
-                libasound2-dev:amd64 libpulse-dev:amd64 `
-                libaudio-dev:amd64 libfribidi-dev:amd64 libjack-dev:amd64 libsndio-dev:amd64 libx11-dev:amd64 libxext-dev:amd64 `
-                libxrandr-dev:amd64 libxcursor-dev:amd64 libxfixes-dev:amd64 libxi-dev:amd64 libxss-dev:amd64 libxtst-dev:amd64 `
-                libxkbcommon-dev:amd64 libdrm-dev:amd64 libgbm-dev:amd64 libgl1-mesa-dev:amd64 libgles2-mesa-dev:amd64 `
-                libegl1-mesa-dev:amd64 libdbus-1-dev:amd64 libibus-1.0-dev:amd64 libudev-dev:amd64 libthai-dev:amd64 `
-                libpipewire-0.3-dev:amd64 libwayland-dev:amd64 libdecor-0-dev:amd64 liburing-dev:amd64
+          if (-not $env:SILKDOTNET_DOCKER) {
+            # Enter Debian container
+            $docker = "docker"
+            if (Get-Command podman -ErrorAction Ignore) {
+              $docker = "podman"
             }
+
+            # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
+            $name = "silk-native-$PID"
+            try {
+              & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -v "${repoRoot}:/data" debian `
+                bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/sources/SDL/Native/build.ps1 linux-x64'
+            } finally {
+              & $docker rm -f $name
+            }
+            exit 0
+          } else {
+            apt-get update
+            apt-get install -y python3
+            & $repoRoot/eng/native/buildsystem/download-zig.py
+            $env:PATH += ":$((Resolve-Path $repoRoot/eng/native/buildsystem/zig).Path)"
+
+            # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
+            dpkg --add-architecture amd64
+            apt-get update
+            apt-get install -y `
+              git cmake make build-essential `
+              pkg-config ninja-build gnome-desktop-testing `
+              libglib2.0-dev-bin `
+              libasound2-dev:amd64 libpulse-dev:amd64 `
+              libaudio-dev:amd64 libfribidi-dev:amd64 libjack-dev:amd64 libsndio-dev:amd64 libx11-dev:amd64 libxext-dev:amd64 `
+              libxrandr-dev:amd64 libxcursor-dev:amd64 libxfixes-dev:amd64 libxi-dev:amd64 libxss-dev:amd64 libxtst-dev:amd64 `
+              libxkbcommon-dev:amd64 libdrm-dev:amd64 libgbm-dev:amd64 libgl1-mesa-dev:amd64 libgles2-mesa-dev:amd64 `
+              libegl1-mesa-dev:amd64 libdbus-1-dev:amd64 libibus-1.0-dev:amd64 libudev-dev:amd64 libthai-dev:amd64 `
+              libpipewire-0.3-dev:amd64 libwayland-dev:amd64 libdecor-0-dev:amd64 liburing-dev:amd64
           }
 
           # Build
