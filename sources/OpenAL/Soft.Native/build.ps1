@@ -109,7 +109,7 @@ try {
 
       # NDK
       if ($runtime -like "android*") {
-        apt-get install -y openjdk-17-jdk ant android-sdk-platform-tools-common
+        apt-get install -y default-jdk-headless
 
         curl -fsSL https://dl.google.com/android/cli/latest/linux_x86_64/install.sh | bash
         $env:PATH += ":/root/.local/bin"
