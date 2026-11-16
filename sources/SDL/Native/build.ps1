@@ -83,21 +83,16 @@ try {
           $docker = "podman"
         }
 
-        # TODO: PowerShell is pinned to `--version "7.6.*"` because of https://github.com/PowerShell/PowerShell/issues/28392
         $name = "silk-native-$PID"
         try {
-          & $docker run --rm --init --name $name --platform linux/amd64 -e SILKDOTNET_DOCKER=1 -e CHOSEN_RUNTIME=$runtime -v "${repoRoot}:/data/repo" debian `
-            bash -c 'apt-get update && apt-get install -y curl libicu-dev && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash -s && export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH" && dotnet tool install --global PowerShell --version "7.6.*" && /data/repo/sources/SDL/Native/build.ps1'
+          & $docker build -t silkdotnet-builder:latest --platform=linux/amd64 $repoRoot/eng/workflows/native/debian
+          & $docker run --rm --init --name $name -e SILKDOTNET_DOCKER=1 -e CHOSEN_RUNTIME=$runtime -v "${repoRoot}:/data/repo" silkdotnet-builder:latest bash -c "/data/repo/sources/SDL/Native/build.ps1"
         } finally {
           & $docker rm -f $name
         }
 
         exit 0
       }
-
-      # Shared dependencies
-      apt-get update
-      apt-get install -y git cmake make ninja-build python3 unzip build-essential pkg-config ninja-build
 
       # Git
       git config --global --add safe.directory "*"
