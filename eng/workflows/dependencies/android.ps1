@@ -15,12 +15,12 @@ android sdk list --all
 $androidVersion = android sdk list --all |
   Where-Object { $_ -match " (?<id>platforms/android-(?<version>(?<major>[\d]+))) " } |
   ForEach-Object { @{ id = $matches.id; major = [int]$matches.major; version = $matches.version } } |
-  Sort-Object major, minor |
+  Sort-Object major |
   Select-Object -last 1
 
 $ndkVersion = android sdk list --all |
   Where-Object { $_ -match " (?<id>ndk/(?<version>(?<major>[\d]+)(\.(?<minor>[\d]+))?(\.(?<patch>[\d]+)))) " } |
-  ForEach-Object { @{ id = $matches.id; major = [int]$matches.major; minor = [int]$matches.minor ?? 0, [int]$matches.patch ?? 0; version = $matches.version } } |
+  ForEach-Object { @{ id = $matches.id; major = [int]$matches.major; minor = [int]$matches.minor ?? 0; [int]$matches.patch ?? 0; version = $matches.version } } |
   Sort-Object major, minor, patch |
   Select-Object -last 1
 
