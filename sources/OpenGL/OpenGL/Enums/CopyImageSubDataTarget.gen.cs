@@ -19,6 +19,9 @@ public enum CopyImageSubDataTarget : uint
     [NativeName("GL_TEXTURE_3D")]
     Texture3D = 32879,
 
+    [NativeName("GL_TEXTURE_RECTANGLE")]
+    TextureRectANGLE = 34037,
+
     [NativeName("GL_TEXTURE_CUBE_MAP")]
     TextureCubeMap = 34067,
 
@@ -31,15 +34,12 @@ public enum CopyImageSubDataTarget : uint
     [NativeName("GL_RENDERBUFFER")]
     Renderbuffer = 36161,
 
-    [NativeName("GL_TEXTURE_RECTANGLE")]
-    TextureRectANGLE = 34037,
+    [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY")]
+    TextureCubeMapArray = 36873,
 
     [NativeName("GL_TEXTURE_2D_MULTISAMPLE")]
     Texture2DMultisample = 37120,
 
     [NativeName("GL_TEXTURE_2D_MULTISAMPLE_ARRAY")]
     Texture2DMultisampleArray = 37122,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY")]
-    TextureCubeMapArray = 36873,
 }

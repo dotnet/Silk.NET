@@ -55,95 +55,95 @@ public enum PixelTransferParameter : uint
     [NativeName("GL_POST_CONVOLUTION_RED_SCALE")]
     PostConvolutionRedScale = 32796,
 
-    [NativeName("GL_POST_CONVOLUTION_GREEN_SCALE")]
-    PostConvolutionGreenScale = 32797,
-
-    [NativeName("GL_POST_CONVOLUTION_BLUE_SCALE")]
-    PostConvolutionBlueScale = 32798,
-
-    [NativeName("GL_POST_CONVOLUTION_ALPHA_SCALE")]
-    PostConvolutionAlphaScale = 32799,
-
-    [NativeName("GL_POST_CONVOLUTION_RED_BIAS")]
-    PostConvolutionRedBias = 32800,
-
-    [NativeName("GL_POST_CONVOLUTION_GREEN_BIAS")]
-    PostConvolutionGreenBias = 32801,
-
-    [NativeName("GL_POST_CONVOLUTION_BLUE_BIAS")]
-    PostConvolutionBlueBias = 32802,
-
-    [NativeName("GL_POST_CONVOLUTION_ALPHA_BIAS")]
-    PostConvolutionAlphaBias = 32803,
-
-    [NativeName("GL_POST_COLOR_MATRIX_RED_SCALE")]
-    PostColorMatrixRedScale = 32948,
-
-    [NativeName("GL_POST_COLOR_MATRIX_GREEN_SCALE")]
-    PostColorMatrixGreenScale = 32949,
-
-    [NativeName("GL_POST_COLOR_MATRIX_BLUE_SCALE")]
-    PostColorMatrixBlueScale = 32950,
-
-    [NativeName("GL_POST_COLOR_MATRIX_ALPHA_SCALE")]
-    PostColorMatrixAlphaScale = 32951,
-
-    [NativeName("GL_POST_COLOR_MATRIX_RED_BIAS")]
-    PostColorMatrixRedBias = 32952,
-
-    [NativeName("GL_POST_COLOR_MATRIX_GREEN_BIAS")]
-    PostColorMatrixGreenBias = 32953,
-
-    [NativeName("GL_POST_COLOR_MATRIX_BLUE_BIAS")]
-    PostColorMatrixBlueBias = 32954,
-
-    [NativeName("GL_POST_COLOR_MATRIX_ALPHA_BIAS")]
-    PostColorMatrixAlphaBias = 32955,
-
     [NativeName("GL_POST_CONVOLUTION_RED_SCALE_EXT")]
     PostConvolutionRedScaleEXT = 32796,
+
+    [NativeName("GL_POST_CONVOLUTION_GREEN_SCALE")]
+    PostConvolutionGreenScale = 32797,
 
     [NativeName("GL_POST_CONVOLUTION_GREEN_SCALE_EXT")]
     PostConvolutionGreenScaleEXT = 32797,
 
+    [NativeName("GL_POST_CONVOLUTION_BLUE_SCALE")]
+    PostConvolutionBlueScale = 32798,
+
     [NativeName("GL_POST_CONVOLUTION_BLUE_SCALE_EXT")]
     PostConvolutionBlueScaleEXT = 32798,
+
+    [NativeName("GL_POST_CONVOLUTION_ALPHA_SCALE")]
+    PostConvolutionAlphaScale = 32799,
 
     [NativeName("GL_POST_CONVOLUTION_ALPHA_SCALE_EXT")]
     PostConvolutionAlphaScaleEXT = 32799,
 
+    [NativeName("GL_POST_CONVOLUTION_RED_BIAS")]
+    PostConvolutionRedBias = 32800,
+
     [NativeName("GL_POST_CONVOLUTION_RED_BIAS_EXT")]
     PostConvolutionRedBiasEXT = 32800,
+
+    [NativeName("GL_POST_CONVOLUTION_GREEN_BIAS")]
+    PostConvolutionGreenBias = 32801,
 
     [NativeName("GL_POST_CONVOLUTION_GREEN_BIAS_EXT")]
     PostConvolutionGreenBiasEXT = 32801,
 
+    [NativeName("GL_POST_CONVOLUTION_BLUE_BIAS")]
+    PostConvolutionBlueBias = 32802,
+
     [NativeName("GL_POST_CONVOLUTION_BLUE_BIAS_EXT")]
     PostConvolutionBlueBiasEXT = 32802,
+
+    [NativeName("GL_POST_CONVOLUTION_ALPHA_BIAS")]
+    PostConvolutionAlphaBias = 32803,
 
     [NativeName("GL_POST_CONVOLUTION_ALPHA_BIAS_EXT")]
     PostConvolutionAlphaBiasEXT = 32803,
 
+    [NativeName("GL_POST_COLOR_MATRIX_RED_SCALE")]
+    PostColorMatrixRedScale = 32948,
+
     [NativeName("GL_POST_COLOR_MATRIX_RED_SCALE_SGI")]
     PostColorMatrixRedScaleSGI = 32948,
+
+    [NativeName("GL_POST_COLOR_MATRIX_GREEN_SCALE")]
+    PostColorMatrixGreenScale = 32949,
 
     [NativeName("GL_POST_COLOR_MATRIX_GREEN_SCALE_SGI")]
     PostColorMatrixGreenScaleSGI = 32949,
 
+    [NativeName("GL_POST_COLOR_MATRIX_BLUE_SCALE")]
+    PostColorMatrixBlueScale = 32950,
+
     [NativeName("GL_POST_COLOR_MATRIX_BLUE_SCALE_SGI")]
     PostColorMatrixBlueScaleSGI = 32950,
+
+    [NativeName("GL_POST_COLOR_MATRIX_ALPHA_SCALE")]
+    PostColorMatrixAlphaScale = 32951,
 
     [NativeName("GL_POST_COLOR_MATRIX_ALPHA_SCALE_SGI")]
     PostColorMatrixAlphaScaleSGI = 32951,
 
+    [NativeName("GL_POST_COLOR_MATRIX_RED_BIAS")]
+    PostColorMatrixRedBias = 32952,
+
     [NativeName("GL_POST_COLOR_MATRIX_RED_BIAS_SGI")]
     PostColorMatrixRedBiasSGI = 32952,
+
+    [NativeName("GL_POST_COLOR_MATRIX_GREEN_BIAS")]
+    PostColorMatrixGreenBias = 32953,
 
     [NativeName("GL_POST_COLOR_MATRIX_GREEN_BIAS_SGI")]
     PostColorMatrixGreenBiasSGI = 32953,
 
+    [NativeName("GL_POST_COLOR_MATRIX_BLUE_BIAS")]
+    PostColorMatrixBlueBias = 32954,
+
     [NativeName("GL_POST_COLOR_MATRIX_BLUE_BIAS_SGI")]
     PostColorMatrixBlueBiasSGI = 32954,
+
+    [NativeName("GL_POST_COLOR_MATRIX_ALPHA_BIAS")]
+    PostColorMatrixAlphaBias = 32955,
 
     [NativeName("GL_POST_COLOR_MATRIX_ALPHA_BIAS_SGI")]
     PostColorMatrixAlphaBiasSGI = 32955,

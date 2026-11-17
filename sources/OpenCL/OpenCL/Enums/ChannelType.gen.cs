@@ -60,6 +60,9 @@ public enum ChannelType : uint
     [NativeName("CL_UNORM_INT_101010_2")]
     UnormInt101010x2 = 4320,
 
+    [NativeName("CL_UNORM_INT10X6_EXT")]
+    UnormInt10x6EXT = 4321,
+
     [NativeName("CL_UNSIGNED_INT_RAW10_EXT")]
     UnsignedIntRaw10EXT = 4323,
 
@@ -77,9 +80,6 @@ public enum ChannelType : uint
 
     [NativeName("CL_UNSIGNED_INT14X2_EXT")]
     UnsignedInt14x2EXT = 4328,
-
-    [NativeName("CL_UNORM_INT10X6_EXT")]
-    UnormInt10x6EXT = 4321,
 
     [NativeName("CL_UNORM_INT12X4_EXT")]
     UnormInt12x4EXT = 4329,

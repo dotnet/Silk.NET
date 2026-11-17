@@ -13,12 +13,6 @@ namespace Silk.NET.OpenAL;
 [NativeName("IntegerPName")]
 public enum IntegerPName : uint
 {
-    [NativeName("AL_DISTANCE_MODEL")]
-    DistanceModel = 53248,
-
-    [NativeName("AL_GAIN_LIMIT_SOFT")]
-    GainLimitSOFT = 8206,
-
     [NativeName("AL_NUM_RESAMPLERS_SOFT")]
     NumResamplersSOFT = 4624,
 
@@ -45,4 +39,10 @@ public enum IntegerPName : uint
 
     [NativeName("AL_CONTEXT_FLAGS_EXT")]
     ContextFlagsEXT = 6607,
+
+    [NativeName("AL_GAIN_LIMIT_SOFT")]
+    GainLimitSOFT = 8206,
+
+    [NativeName("AL_DISTANCE_MODEL")]
+    DistanceModel = 53248,
 }

@@ -23,22 +23,6 @@ public enum PresentGravityFlagsKHR : uint
     )]
     MinBit = 0x1,
 
-    [NativeName("VK_PRESENT_GRAVITY_MAX_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
-    )]
-    MaxBit = 0x2,
-
-    [NativeName("VK_PRESENT_GRAVITY_CENTERED_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
-    )]
-    CenteredBit = 0x4,
-
     [NativeName("VK_PRESENT_GRAVITY_MIN_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -47,6 +31,14 @@ public enum PresentGravityFlagsKHR : uint
     )]
     MinBitEXT = MinBit,
 
+    [NativeName("VK_PRESENT_GRAVITY_MAX_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
+    )]
+    MaxBit = 0x2,
+
     [NativeName("VK_PRESENT_GRAVITY_MAX_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -54,6 +46,14 @@ public enum PresentGravityFlagsKHR : uint
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     MaxBitEXT = MaxBit,
+
+    [NativeName("VK_PRESENT_GRAVITY_CENTERED_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
+    )]
+    CenteredBit = 0x4,
 
     [NativeName("VK_PRESENT_GRAVITY_CENTERED_BIT_EXT")]
     [SupportedApiProfile(

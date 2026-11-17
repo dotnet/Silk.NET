@@ -34,6 +34,17 @@ public enum ResolveModeFlags : uint
     )]
     None = 0x0,
 
+    [NativeName("VK_RESOLVE_MODE_NONE_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_depth_stencil_resolve"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_create_renderpass2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
+        ]
+    )]
+    NoneKHR = None,
+
     [NativeName("VK_RESOLVE_MODE_SAMPLE_ZERO_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -54,6 +65,17 @@ public enum ResolveModeFlags : uint
         MinVersion = "1.2"
     )]
     SampleZeroBit = 0x1,
+
+    [NativeName("VK_RESOLVE_MODE_SAMPLE_ZERO_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_depth_stencil_resolve"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_create_renderpass2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
+        ]
+    )]
+    SampleZeroBitKHR = SampleZeroBit,
 
     [NativeName("VK_RESOLVE_MODE_AVERAGE_BIT")]
     [SupportedApiProfile(
@@ -76,6 +98,17 @@ public enum ResolveModeFlags : uint
     )]
     AverageBit = 0x2,
 
+    [NativeName("VK_RESOLVE_MODE_AVERAGE_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_depth_stencil_resolve"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_create_renderpass2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
+        ]
+    )]
+    AverageBitKHR = AverageBit,
+
     [NativeName("VK_RESOLVE_MODE_MIN_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -96,6 +129,17 @@ public enum ResolveModeFlags : uint
         MinVersion = "1.2"
     )]
     MinBit = 0x4,
+
+    [NativeName("VK_RESOLVE_MODE_MIN_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_depth_stencil_resolve"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_create_renderpass2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
+        ]
+    )]
+    MinBitKHR = MinBit,
 
     [NativeName("VK_RESOLVE_MODE_MAX_BIT")]
     [SupportedApiProfile(
@@ -118,6 +162,17 @@ public enum ResolveModeFlags : uint
     )]
     MaxBit = 0x8,
 
+    [NativeName("VK_RESOLVE_MODE_MAX_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_depth_stencil_resolve"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_create_renderpass2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
+        ]
+    )]
+    MaxBitKHR = MaxBit,
+
     [NativeName("VK_RESOLVE_MODE_EXTERNAL_FORMAT_DOWNSAMPLE_BIT_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
@@ -139,59 +194,4 @@ public enum ResolveModeFlags : uint
         ]
     )]
     CustomBitEXT = 0x20,
-
-    [NativeName("VK_RESOLVE_MODE_NONE_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_depth_stencil_resolve"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_create_renderpass2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
-        ]
-    )]
-    NoneKHR = None,
-
-    [NativeName("VK_RESOLVE_MODE_SAMPLE_ZERO_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_depth_stencil_resolve"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_create_renderpass2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
-        ]
-    )]
-    SampleZeroBitKHR = SampleZeroBit,
-
-    [NativeName("VK_RESOLVE_MODE_AVERAGE_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_depth_stencil_resolve"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_create_renderpass2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
-        ]
-    )]
-    AverageBitKHR = AverageBit,
-
-    [NativeName("VK_RESOLVE_MODE_MIN_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_depth_stencil_resolve"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_create_renderpass2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
-        ]
-    )]
-    MinBitKHR = MinBit,
-
-    [NativeName("VK_RESOLVE_MODE_MAX_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_depth_stencil_resolve"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_create_renderpass2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
-        ]
-    )]
-    MaxBitKHR = MaxBit,
 }

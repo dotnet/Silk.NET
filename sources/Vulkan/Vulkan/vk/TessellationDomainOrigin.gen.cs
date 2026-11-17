@@ -29,6 +29,10 @@ public enum TessellationDomainOrigin : uint
     )]
     UpperLeft = 0,
 
+    [NativeName("VK_TESSELLATION_DOMAIN_ORIGIN_UPPER_LEFT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
+    UpperLeftKHR = UpperLeft,
+
     [NativeName("VK_TESSELLATION_DOMAIN_ORIGIN_LOWER_LEFT")]
     [SupportedApiProfile(
         "vulkan",
@@ -45,10 +49,6 @@ public enum TessellationDomainOrigin : uint
         MinVersion = "1.1"
     )]
     LowerLeft = 1,
-
-    [NativeName("VK_TESSELLATION_DOMAIN_ORIGIN_UPPER_LEFT_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    UpperLeftKHR = UpperLeft,
 
     [NativeName("VK_TESSELLATION_DOMAIN_ORIGIN_LOWER_LEFT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]

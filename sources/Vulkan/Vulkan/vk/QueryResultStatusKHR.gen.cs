@@ -12,6 +12,17 @@ namespace Silk.NET.Vulkan;
 [SupportedApiProfile("vulkan")]
 public enum QueryResultStatusKHR
 {
+    [NativeName("VK_QUERY_RESULT_STATUS_INSUFFICIENT_BITSTREAM_BUFFER_RANGE_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
+    InsufficientBitstreamBufferRange = -1000299000,
+
     [NativeName("VK_QUERY_RESULT_STATUS_ERROR_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35,15 +46,4 @@ public enum QueryResultStatusKHR
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
     Complete = 1,
-
-    [NativeName("VK_QUERY_RESULT_STATUS_INSUFFICIENT_BITSTREAM_BUFFER_RANGE_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_queue"],
-        ImpliesSets = [
-            "VK_KHR_video_queue+VK_KHR_synchronization2",
-            "VK_KHR_video_queue+VK_VERSION_1_3",
-        ]
-    )]
-    InsufficientBitstreamBufferRange = -1000299000,
 }

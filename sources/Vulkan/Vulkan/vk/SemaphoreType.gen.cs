@@ -33,6 +33,17 @@ public enum SemaphoreType : uint
     )]
     Binary = 0,
 
+    [NativeName("VK_SEMAPHORE_TYPE_BINARY_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_timeline_semaphore"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
+        ]
+    )]
+    BinaryKHR = Binary,
+
     [NativeName("VK_SEMAPHORE_TYPE_TIMELINE")]
     [SupportedApiProfile(
         "vulkan",
@@ -53,17 +64,6 @@ public enum SemaphoreType : uint
         MinVersion = "1.2"
     )]
     Timeline = 1,
-
-    [NativeName("VK_SEMAPHORE_TYPE_BINARY_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_timeline_semaphore"],
-        ImpliesSets = [
-            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
-        ]
-    )]
-    BinaryKHR = Binary,
 
     [NativeName("VK_SEMAPHORE_TYPE_TIMELINE_KHR")]
     [SupportedApiProfile(

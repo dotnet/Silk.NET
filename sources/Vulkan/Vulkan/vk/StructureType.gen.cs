@@ -1433,1540 +1433,6 @@ public enum StructureType : uint
     )]
     LoaderDeviceCreateInfo = 48,
 
-    [NativeName("VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    BindBufferMemoryInfo = 1000157000,
-
-    [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    BindImageMemoryInfo = 1000157001,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_DEDICATED_REQUIREMENTS")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    MemoryDedicatedRequirements = 1000127000,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_DEDICATED_ALLOCATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    MemoryDedicatedAllocateInfo = 1000127001,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_FLAGS_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    MemoryAllocateFlagsInfo = 1000060000,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_COMMAND_BUFFER_BEGIN_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    DeviceGroupCommandBufferBeginInfo = 1000060004,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_SUBMIT_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    DeviceGroupSubmitInfo = 1000060005,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_BIND_SPARSE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    DeviceGroupBindSparseInfo = 1000060006,
-
-    [NativeName("VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_DEVICE_GROUP_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    BindBufferMemoryDeviceGroupInfo = 1000060013,
-
-    [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_DEVICE_GROUP_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    BindImageMemoryDeviceGroupInfo = 1000060014,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GROUP_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceGroupProperties = 1000070000,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_DEVICE_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    DeviceGroupDeviceCreateInfo = 1000070001,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_MEMORY_REQUIREMENTS_INFO_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    BufferMemoryRequirementsInfo2 = 1000146000,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_MEMORY_REQUIREMENTS_INFO_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ImageMemoryRequirementsInfo2 = 1000146001,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_SPARSE_MEMORY_REQUIREMENTS_INFO_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ImageSparseMemoryRequirementsInfo2 = 1000146002,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_REQUIREMENTS_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    MemoryRequirements2 = 1000146003,
-
-    [NativeName("VK_STRUCTURE_TYPE_SPARSE_IMAGE_MEMORY_REQUIREMENTS_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    SparseImageMemoryRequirements2 = 1000146004,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FEATURES_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceFeatures2 = 1000059000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PROPERTIES_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceProperties2 = 1000059001,
-
-    [NativeName("VK_STRUCTURE_TYPE_FORMAT_PROPERTIES_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    FormatProperties2 = 1000059002,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_FORMAT_PROPERTIES_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ImageFormatProperties2 = 1000059003,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_FORMAT_INFO_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceImageFormatInfo2 = 1000059004,
-
-    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_PROPERTIES_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    QueueFamilyProperties2 = 1000059005,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_PROPERTIES_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceMemoryProperties2 = 1000059006,
-
-    [NativeName("VK_STRUCTURE_TYPE_SPARSE_IMAGE_FORMAT_PROPERTIES_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    SparseImageFormatProperties2 = 1000059007,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SPARSE_IMAGE_FORMAT_INFO_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceSparseImageFormatInfo2 = 1000059008,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_VIEW_USAGE_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ImageViewUsageCreateInfo = 1000117002,
-
-    [NativeName("VK_STRUCTURE_TYPE_PROTECTED_SUBMIT_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ProtectedSubmitInfo = 1000145000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PROTECTED_MEMORY_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceProtectedMemoryFeatures = 1000145001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PROTECTED_MEMORY_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceProtectedMemoryProperties = 1000145002,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_QUEUE_INFO_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    DeviceQueueInfo2 = 1000145003,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_IMAGE_FORMAT_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceExternalImageFormatInfo = 1000071000,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_IMAGE_FORMAT_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ExternalImageFormatProperties = 1000071001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_BUFFER_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceExternalBufferInfo = 1000071002,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_BUFFER_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ExternalBufferProperties = 1000071003,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ID_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceIdProperties = 1000071004,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_BUFFER_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ExternalMemoryBufferCreateInfo = 1000072000,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_IMAGE_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ExternalMemoryImageCreateInfo = 1000072001,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXPORT_MEMORY_ALLOCATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ExportMemoryAllocateInfo = 1000072002,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_FENCE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceExternalFenceInfo = 1000112000,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_FENCE_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ExternalFenceProperties = 1000112001,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXPORT_FENCE_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ExportFenceCreateInfo = 1000113000,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXPORT_SEMAPHORE_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ExportSemaphoreCreateInfo = 1000077000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_SEMAPHORE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceExternalSemaphoreInfo = 1000076000,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_SEMAPHORE_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ExternalSemaphoreProperties = 1000076001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceSubgroupProperties = 1000094000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_16BIT_STORAGE_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDevice16BitStorageFeatures = 1000083000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VARIABLE_POINTERS_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceVariablePointersFeatures = 1000120000,
-
-    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    DescriptorUpdateTemplateCreateInfo = 1000085000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_3_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceMaintenance3Properties = 1000168000,
-
-    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_SUPPORT")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    DescriptorSetLayoutSupport = 1000168001,
-
-    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    SamplerYcbcrConversionCreateInfo = 1000156000,
-
-    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    SamplerYcbcrConversionInfo = 1000156001,
-
-    [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_PLANE_MEMORY_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    BindImagePlaneMemoryInfo = 1000156002,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_PLANE_MEMORY_REQUIREMENTS_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    ImagePlaneMemoryRequirementsInfo = 1000156003,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SAMPLER_YCBCR_CONVERSION_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceSamplerYcbcrConversionFeatures = 1000156004,
-
-    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_IMAGE_FORMAT_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    SamplerYcbcrConversionImageFormatProperties = 1000156005,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_RENDER_PASS_BEGIN_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    DeviceGroupRenderPassBeginInfo = 1000060003,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_POINT_CLIPPING_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDevicePointClippingProperties = 1000117000,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_INPUT_ATTACHMENT_ASPECT_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    RenderPassInputAttachmentAspectCreateInfo = 1000117001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_TESSELLATION_DOMAIN_ORIGIN_STATE_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PipelineTessellationDomainOriginStateCreateInfo = 1000117003,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_MULTIVIEW_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    RenderPassMultiviewCreateInfo = 1000053000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceMultiviewFeatures = 1000053001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceMultiviewProperties = 1000053002,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_DRAW_PARAMETERS_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceShaderDrawParametersFeatures = 1000063000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DRIVER_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceDriverProperties = 1000196000,
-
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_1_FEATURES")]
     [SupportedApiProfile(
         "vulkan",
@@ -3051,807 +1517,6 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVulkan1x2Properties = 52,
 
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_FORMAT_LIST_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    ImageFormatListCreateInfo = 1000147000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_MEMORY_MODEL_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceVulkanMemoryModelFeatures = 1000211000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_QUERY_RESET_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceHostQueryResetFeatures = 1000261000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TIMELINE_SEMAPHORE_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceTimelineSemaphoreFeatures = 1000207000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TIMELINE_SEMAPHORE_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceTimelineSemaphoreProperties = 1000207001,
-
-    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_TYPE_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    SemaphoreTypeCreateInfo = 1000207002,
-
-    [NativeName("VK_STRUCTURE_TYPE_TIMELINE_SEMAPHORE_SUBMIT_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    TimelineSemaphoreSubmitInfo = 1000207003,
-
-    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_WAIT_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    SemaphoreWaitInfo = 1000207004,
-
-    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_SIGNAL_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    SemaphoreSignalInfo = 1000207005,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BUFFER_DEVICE_ADDRESS_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceBufferDeviceAddressFeatures = 1000257000,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_DEVICE_ADDRESS_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    BufferDeviceAddressInfo = 1000244001,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_OPAQUE_CAPTURE_ADDRESS_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    BufferOpaqueCaptureAddressCreateInfo = 1000257002,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_OPAQUE_CAPTURE_ADDRESS_ALLOCATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    MemoryOpaqueCaptureAddressAllocateInfo = 1000257003,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_MEMORY_OPAQUE_CAPTURE_ADDRESS_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    DeviceMemoryOpaqueCaptureAddressInfo = 1000257004,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_8BIT_STORAGE_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDevice8BitStorageFeatures = 1000177000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_INT64_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceShaderAtomicInt64Features = 1000180000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT16_INT8_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceShaderFloat16Int8Features = 1000082000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FLOAT_CONTROLS_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceFloatControlsProperties = 1000197000,
-
-    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_BINDING_FLAGS_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    DescriptorSetLayoutBindingFlagsCreateInfo = 1000161000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_INDEXING_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceDescriptorIndexingFeatures = 1000161001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_INDEXING_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceDescriptorIndexingProperties = 1000161002,
-
-    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_VARIABLE_DESCRIPTOR_COUNT_ALLOCATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    DescriptorSetVariableDescriptorCountAllocateInfo = 1000161003,
-
-    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_VARIABLE_DESCRIPTOR_COUNT_LAYOUT_SUPPORT")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    DescriptorSetVariableDescriptorCountLayoutSupport = 1000161004,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCALAR_BLOCK_LAYOUT_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceScalarBlockLayoutFeatures = 1000221000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SAMPLER_FILTER_MINMAX_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceSamplerFilterMinmaxProperties = 1000130000,
-
-    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_REDUCTION_MODE_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    SamplerReductionModeCreateInfo = 1000130001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_UNIFORM_BUFFER_STANDARD_LAYOUT_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceUniformBufferStandardLayoutFeatures = 1000253000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_EXTENDED_TYPES_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceShaderSubgroupExtendedTypesFeatures = 1000175000,
-
-    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_DESCRIPTION_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    AttachmentDescription2 = 1000109000,
-
-    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_REFERENCE_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    AttachmentReference2 = 1000109001,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DESCRIPTION_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    SubpassDescription2 = 1000109002,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DEPENDENCY_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    SubpassDependency2 = 1000109003,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    RenderPassCreateInfo2 = 1000109004,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_BEGIN_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    SubpassBeginInfo = 1000109005,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_END_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    SubpassEndInfo = 1000109006,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_STENCIL_RESOLVE_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceDepthStencilResolveProperties = 1000199000,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DESCRIPTION_DEPTH_STENCIL_RESOLVE")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    SubpassDescriptionDepthStencilResolve = 1000199001,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_STENCIL_USAGE_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    ImageStencilUsageCreateInfo = 1000246000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGELESS_FRAMEBUFFER_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceImagelessFramebufferFeatures = 1000108000,
-
-    [NativeName("VK_STRUCTURE_TYPE_FRAMEBUFFER_ATTACHMENTS_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    FramebufferAttachmentsCreateInfo = 1000108001,
-
-    [NativeName("VK_STRUCTURE_TYPE_FRAMEBUFFER_ATTACHMENT_IMAGE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    FramebufferAttachmentImageInfo = 1000108002,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_ATTACHMENT_BEGIN_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    RenderPassAttachmentBeginInfo = 1000108003,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SEPARATE_DEPTH_STENCIL_LAYOUTS_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceSeparateDepthStencilLayoutsFeatures = 1000241000,
-
-    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_REFERENCE_STENCIL_LAYOUT")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    AttachmentReferenceStencilLayout = 1000241001,
-
-    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_DESCRIPTION_STENCIL_LAYOUT")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    AttachmentDescriptionStencilLayout = 1000241002,
-
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_3_FEATURES")]
     [SupportedApiProfile(
         "vulkan",
@@ -3886,743 +1551,6 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVulkan1x3Properties = 54,
 
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TOOL_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceToolProperties = 1000245000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIVATE_DATA_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDevicePrivateDataFeatures = 1000295000,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_PRIVATE_DATA_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    DevicePrivateDataCreateInfo = 1000295001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PRIVATE_DATA_SLOT_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PrivateDataSlotCreateInfo = 1000295002,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_BARRIER_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    MemoryBarrier2 = 1000314000,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    BufferMemoryBarrier2 = 1000314001,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    ImageMemoryBarrier2 = 1000314002,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEPENDENCY_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    DependencyInfo = 1000314003,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBMIT_INFO_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    SubmitInfo2 = 1000314004,
-
-    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_SUBMIT_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    SemaphoreSubmitInfo = 1000314005,
-
-    [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_SUBMIT_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    CommandBufferSubmitInfo = 1000314006,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SYNCHRONIZATION_2_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceSynchronization2Features = 1000314007,
-
-    [NativeName("VK_STRUCTURE_TYPE_COPY_BUFFER_INFO_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    CopyBufferInfo2 = 1000337000,
-
-    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_INFO_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    CopyImageInfo2 = 1000337001,
-
-    [NativeName("VK_STRUCTURE_TYPE_COPY_BUFFER_TO_IMAGE_INFO_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    CopyBufferToImageInfo2 = 1000337002,
-
-    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_BUFFER_INFO_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    CopyImageToBufferInfo2 = 1000337003,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_COPY_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    BufferCopy2 = 1000337006,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_COPY_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    ImageCopy2 = 1000337007,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_IMAGE_COPY_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    BufferImageCopy2 = 1000337009,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXTURE_COMPRESSION_ASTC_HDR_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceTextureCompressionAstcHdrFeatures = 1000066000,
-
-    [NativeName("VK_STRUCTURE_TYPE_FORMAT_PROPERTIES_3")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    FormatProperties3 = 1000360000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_4_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceMaintenance4Features = 1000413000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_4_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceMaintenance4Properties = 1000413001,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_BUFFER_MEMORY_REQUIREMENTS")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    DeviceBufferMemoryRequirements = 1000413002,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_IMAGE_MEMORY_REQUIREMENTS")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    DeviceImageMemoryRequirements = 1000413003,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_CREATION_FEEDBACK_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PipelineCreationFeedbackCreateInfo = 1000192000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_TERMINATE_INVOCATION_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceShaderTerminateInvocationFeatures = 1000215000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_DEMOTE_TO_HELPER_INVOCATION_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceShaderDemoteToHelperInvocationFeatures = 1000276000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CREATION_CACHE_CONTROL_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDevicePipelineCreationCacheControlFeatures = 1000297000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ZERO_INITIALIZE_WORKGROUP_MEMORY_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceZeroInitializeWorkgroupMemoryFeatures = 1000325000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_ROBUSTNESS_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceImageRobustnessFeatures = 1000335000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceSubgroupSizeControlProperties = 1000225000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_REQUIRED_SUBGROUP_SIZE_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PipelineShaderStageRequiredSubgroupSizeCreateInfo = 1000225001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceSubgroupSizeControlFeatures = 1000225002,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INLINE_UNIFORM_BLOCK_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceInlineUniformBlockFeatures = 1000138000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INLINE_UNIFORM_BLOCK_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceInlineUniformBlockProperties = 1000138001,
-
-    [NativeName("VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    WriteDescriptorSetInlineUniformBlock = 1000138002,
-
-    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_INLINE_UNIFORM_BLOCK_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    DescriptorPoolInlineUniformBlockCreateInfo = 1000138003,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INTEGER_DOT_PRODUCT_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceShaderIntegerDotProductFeatures = 1000280000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INTEGER_DOT_PRODUCT_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceShaderIntegerDotProductProperties = 1000280001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXEL_BUFFER_ALIGNMENT_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceTexelBufferAlignmentProperties = 1000281001,
-
-    [NativeName("VK_STRUCTURE_TYPE_BLIT_IMAGE_INFO_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    BlitImageInfo2 = 1000337004,
-
-    [NativeName("VK_STRUCTURE_TYPE_RESOLVE_IMAGE_INFO_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    ResolveImageInfo2 = 1000337005,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_BLIT_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    ImageBlit2 = 1000337008,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_RESOLVE_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    ImageResolve2 = 1000337010,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDERING_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    RenderingInfo = 1000044000,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    RenderingAttachmentInfo = 1000044001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RENDERING_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    PipelineRenderingCreateInfo = 1000044002,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    PhysicalDeviceDynamicRenderingFeatures = 1000044003,
-
-    [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_RENDERING_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.3"
-    )]
-    CommandBufferInheritanceRenderingInfo = 1000044004,
-
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_4_FEATURES")]
     [SupportedApiProfile(
         "vulkan",
@@ -4649,515 +1577,6 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVulkan1x4Properties = 56,
 
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_QUEUE_GLOBAL_PRIORITY_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    DeviceQueueGlobalPriorityCreateInfo = 1000174000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GLOBAL_PRIORITY_QUERY_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceGlobalPriorityQueryFeatures = 1000388000,
-
-    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_GLOBAL_PRIORITY_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    QueueFamilyGlobalPriorityProperties = 1000388001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INDEX_TYPE_UINT8_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceIndexTypeUint8Features = 1000265000,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_MAP_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    MemoryMapInfo = 1000271000,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_UNMAP_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    MemoryUnmapInfo = 1000271001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_5_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceMaintenance5Features = 1000470000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_5_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceMaintenance5Properties = 1000470001,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_IMAGE_SUBRESOURCE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    DeviceImageSubresourceInfo = 1000470004,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBRESOURCE_LAYOUT_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    SubresourceLayout2 = 1000338002,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_SUBRESOURCE_2")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    ImageSubresource2 = 1000338003,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_USAGE_FLAGS_2_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    BufferUsageFlags2CreateInfo = 1000470006,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_6_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceMaintenance6Features = 1000545000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_6_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceMaintenance6Properties = 1000545001,
-
-    [NativeName("VK_STRUCTURE_TYPE_BIND_MEMORY_STATUS")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    BindMemoryStatus = 1000545002,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_IMAGE_COPY_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceHostImageCopyFeatures = 1000270000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_IMAGE_COPY_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceHostImageCopyProperties = 1000270001,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_TO_IMAGE_COPY")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    MemoryToImageCopy = 1000270002,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_TO_MEMORY_COPY")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    ImageToMemoryCopy = 1000270003,
-
-    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_MEMORY_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    CopyImageToMemoryInfo = 1000270004,
-
-    [NativeName("VK_STRUCTURE_TYPE_COPY_MEMORY_TO_IMAGE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    CopyMemoryToImageInfo = 1000270005,
-
-    [NativeName("VK_STRUCTURE_TYPE_HOST_IMAGE_LAYOUT_TRANSITION_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    HostImageLayoutTransitionInfo = 1000270006,
-
-    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_IMAGE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    CopyImageToImageInfo = 1000270007,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBRESOURCE_HOST_MEMCPY_SIZE")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    SubresourceHostMemcpySize = 1000270008,
-
-    [NativeName("VK_STRUCTURE_TYPE_HOST_IMAGE_COPY_DEVICE_PERFORMANCE_QUERY")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    HostImageCopyDevicePerformanceQuery = 1000270009,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_ROTATE_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceShaderSubgroupRotateFeatures = 1000416000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT_CONTROLS_2_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceShaderFloatControls2Features = 1000528000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_EXPECT_ASSUME_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceShaderExpectAssumeFeatures = 1000544000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_CREATE_FLAGS_2_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PipelineCreateFlags2CreateInfo = 1000470005,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PUSH_DESCRIPTOR_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PhysicalDevicePushDescriptorProperties = 1000080000,
-
-    [NativeName("VK_STRUCTURE_TYPE_BIND_DESCRIPTOR_SETS_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    BindDescriptorSetsInfo = 1000545003,
-
-    [NativeName("VK_STRUCTURE_TYPE_PUSH_CONSTANTS_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PushConstantsInfo = 1000545004,
-
-    [NativeName("VK_STRUCTURE_TYPE_PUSH_DESCRIPTOR_SET_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PushDescriptorSetInfo = 1000545005,
-
-    [NativeName("VK_STRUCTURE_TYPE_PUSH_DESCRIPTOR_SET_WITH_TEMPLATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PushDescriptorSetWithTemplateInfo = 1000545006,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_PROTECTED_ACCESS_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PhysicalDevicePipelineProtectedAccessFeatures = 1000466000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_ROBUSTNESS_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PipelineRobustnessCreateInfo = 1000068000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_ROBUSTNESS_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PhysicalDevicePipelineRobustnessFeatures = 1000068001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_ROBUSTNESS_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PhysicalDevicePipelineRobustnessProperties = 1000068002,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceLineRasterizationFeatures = 1000259000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_LINE_STATE_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PipelineRasterizationLineStateCreateInfo = 1000259001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceLineRasterizationProperties = 1000259002,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceVertexAttributeDivisorProperties = 1000525000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_DIVISOR_STATE_CREATE_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PipelineVertexInputDivisorStateCreateInfo = 1000190001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceVertexAttributeDivisorFeatures = 1000190002,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDERING_AREA_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    RenderingAreaInfo = 1000470003,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_LOCAL_READ_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    PhysicalDeviceDynamicRenderingLocalReadFeatures = 1000232000,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_LOCATION_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    RenderingAttachmentLocationInfo = 1000232001,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDERING_INPUT_ATTACHMENT_INDEX_INFO")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    RenderingInputAttachmentIndexInfo = 1000232002,
-
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     SwapchainCreateInfoKHR = 1000001000,
@@ -5165,60 +1584,6 @@ public enum StructureType : uint
     [NativeName("VK_STRUCTURE_TYPE_PRESENT_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     PresentInfoKHR = 1000001001,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_PRESENT_CAPABILITIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
-        ImpliesSets = ["VK_KHR_surface"],
-        RequireAll = true
-    )]
-    DeviceGroupPresentCapabilitiesKHR = 1000060007,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_SWAPCHAIN_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
-        ImpliesSets = ["VK_KHR_surface"],
-        RequireAll = true
-    )]
-    ImageSwapchainCreateInfoKHR = 1000060008,
-
-    [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_SWAPCHAIN_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
-        ImpliesSets = ["VK_KHR_surface"],
-        RequireAll = true
-    )]
-    BindImageMemorySwapchainInfoKHR = 1000060009,
-
-    [NativeName("VK_STRUCTURE_TYPE_ACQUIRE_NEXT_IMAGE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
-        ImpliesSets = ["VK_KHR_surface"],
-        RequireAll = true
-    )]
-    AcquireNextImageInfoKHR = 1000060010,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_PRESENT_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
-        ImpliesSets = ["VK_KHR_surface"],
-        RequireAll = true
-    )]
-    DeviceGroupPresentInfoKHR = 1000060011,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_SWAPCHAIN_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
-        ImpliesSets = ["VK_KHR_surface"],
-        RequireAll = true
-    )]
-    DeviceGroupSwapchainCreateInfoKHR = 1000060012,
 
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_MODE_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
@@ -5797,6 +2162,169 @@ public enum StructureType : uint
     )]
     TextureLodGatherFormatPropertiesAMD = 1000041000,
 
+    [NativeName("VK_STRUCTURE_TYPE_RENDERING_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    RenderingInfo = 1000044000,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDERING_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_dynamic_rendering"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    RenderingInfoKHR = RenderingInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    RenderingAttachmentInfo = 1000044001,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_dynamic_rendering"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    RenderingAttachmentInfoKHR = RenderingAttachmentInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RENDERING_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    PipelineRenderingCreateInfo = 1000044002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RENDERING_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_dynamic_rendering"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    PipelineRenderingCreateInfoKHR = PipelineRenderingCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceDynamicRenderingFeatures = 1000044003,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_dynamic_rendering"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    PhysicalDeviceDynamicRenderingFeaturesKHR = PhysicalDeviceDynamicRenderingFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_RENDERING_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    CommandBufferInheritanceRenderingInfo = 1000044004,
+
+    [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_RENDERING_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_dynamic_rendering"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    CommandBufferInheritanceRenderingInfoKHR = CommandBufferInheritanceRenderingInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDERING_FRAGMENT_SHADING_RATE_ATTACHMENT_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_KHR_fragment_shading_rate+VK_KHR_dynamic_rendering",
+            "VK_KHR_fragment_shading_rate+VK_VERSION_1_3",
+        ],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    RenderingFragmentShadingRateAttachmentInfoKHR = 1000044006,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDERING_FRAGMENT_DENSITY_MAP_ATTACHMENT_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_EXT_fragment_density_map+VK_KHR_dynamic_rendering",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_3",
+        ],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
+        ]
+    )]
+    RenderingFragmentDensityMapAttachmentInfoEXT = 1000044007,
+
+    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_SAMPLE_COUNT_INFO_AMD")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_AMD_mixed_attachment_samples+VK_KHR_dynamic_rendering",
+            "VK_AMD_mixed_attachment_samples+VK_VERSION_1_3",
+        ]
+    )]
+    AttachmentSampleCountInfoAMD = 1000044008,
+
+    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_SAMPLE_COUNT_INFO_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_NV_framebuffer_mixed_samples+VK_KHR_dynamic_rendering",
+            "VK_NV_framebuffer_mixed_samples+VK_VERSION_1_3",
+        ]
+    )]
+    AttachmentSampleCountInfoNV = AttachmentSampleCountInfoAMD,
+
+    [NativeName("VK_STRUCTURE_TYPE_MULTIVIEW_PER_VIEW_ATTRIBUTES_INFO_NVX")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_NVX_multiview_per_view_attributes+VK_KHR_dynamic_rendering",
+            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_3",
+        ],
+        ImpliesSets = [
+            "VK_NVX_multiview_per_view_attributes+VK_KHR_multiview",
+            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
+        ]
+    )]
+    MultiviewPerViewAttributesInfoNVX = 1000044009,
+
     [NativeName("VK_STRUCTURE_TYPE_STREAM_DESCRIPTOR_SURFACE_CREATE_INFO_GGP")]
     [SupportedApiProfile(
         "vulkan",
@@ -5815,6 +2343,90 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceCornerSampledImageFeaturesNV = 1000050000,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_MULTIVIEW_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    RenderPassMultiviewCreateInfo = 1000053000,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_MULTIVIEW_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_multiview"],
+        ImpliesSets = [
+            "VK_KHR_multiview+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_multiview+VK_VERSION_1_1",
+        ]
+    )]
+    RenderPassMultiviewCreateInfoKHR = RenderPassMultiviewCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceMultiviewFeatures = 1000053001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_multiview"],
+        ImpliesSets = [
+            "VK_KHR_multiview+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_multiview+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceMultiviewFeaturesKHR = PhysicalDeviceMultiviewFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceMultiviewProperties = 1000053002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_multiview"],
+        ImpliesSets = [
+            "VK_KHR_multiview+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_multiview+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceMultiviewPropertiesKHR = PhysicalDeviceMultiviewProperties,
 
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_IMAGE_CREATE_INFO_NV")]
     [SupportedApiProfile(
@@ -5856,6 +2468,546 @@ public enum StructureType : uint
     )]
     Win32KeyedMutexAcquireReleaseInfoNV = 1000058000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FEATURES_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceFeatures2 = 1000059000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FEATURES_2_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
+    PhysicalDeviceFeatures2KHR = PhysicalDeviceFeatures2,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PROPERTIES_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceProperties2 = 1000059001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PROPERTIES_2_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
+    PhysicalDeviceProperties2KHR = PhysicalDeviceProperties2,
+
+    [NativeName("VK_STRUCTURE_TYPE_FORMAT_PROPERTIES_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    FormatProperties2 = 1000059002,
+
+    [NativeName("VK_STRUCTURE_TYPE_FORMAT_PROPERTIES_2_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
+    FormatProperties2KHR = FormatProperties2,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_FORMAT_PROPERTIES_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ImageFormatProperties2 = 1000059003,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_FORMAT_PROPERTIES_2_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
+    ImageFormatProperties2KHR = ImageFormatProperties2,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_FORMAT_INFO_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceImageFormatInfo2 = 1000059004,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_FORMAT_INFO_2_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
+    PhysicalDeviceImageFormatInfo2KHR = PhysicalDeviceImageFormatInfo2,
+
+    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_PROPERTIES_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    QueueFamilyProperties2 = 1000059005,
+
+    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_PROPERTIES_2_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
+    QueueFamilyProperties2KHR = QueueFamilyProperties2,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_PROPERTIES_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceMemoryProperties2 = 1000059006,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_PROPERTIES_2_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
+    PhysicalDeviceMemoryProperties2KHR = PhysicalDeviceMemoryProperties2,
+
+    [NativeName("VK_STRUCTURE_TYPE_SPARSE_IMAGE_FORMAT_PROPERTIES_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    SparseImageFormatProperties2 = 1000059007,
+
+    [NativeName("VK_STRUCTURE_TYPE_SPARSE_IMAGE_FORMAT_PROPERTIES_2_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
+    SparseImageFormatProperties2KHR = SparseImageFormatProperties2,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SPARSE_IMAGE_FORMAT_INFO_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceSparseImageFormatInfo2 = 1000059008,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SPARSE_IMAGE_FORMAT_INFO_2_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
+    PhysicalDeviceSparseImageFormatInfo2KHR = PhysicalDeviceSparseImageFormatInfo2,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_FLAGS_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    MemoryAllocateFlagsInfo = 1000060000,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_FLAGS_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_group"],
+        ImpliesSets = ["VK_KHR_device_group_creation"]
+    )]
+    MemoryAllocateFlagsInfoKHR = MemoryAllocateFlagsInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_RENDER_PASS_BEGIN_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    DeviceGroupRenderPassBeginInfo = 1000060003,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_RENDER_PASS_BEGIN_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_group"],
+        ImpliesSets = ["VK_KHR_device_group_creation"]
+    )]
+    DeviceGroupRenderPassBeginInfoKHR = DeviceGroupRenderPassBeginInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_COMMAND_BUFFER_BEGIN_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    DeviceGroupCommandBufferBeginInfo = 1000060004,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_COMMAND_BUFFER_BEGIN_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_group"],
+        ImpliesSets = ["VK_KHR_device_group_creation"]
+    )]
+    DeviceGroupCommandBufferBeginInfoKHR = DeviceGroupCommandBufferBeginInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_SUBMIT_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    DeviceGroupSubmitInfo = 1000060005,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_SUBMIT_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_group"],
+        ImpliesSets = ["VK_KHR_device_group_creation"]
+    )]
+    DeviceGroupSubmitInfoKHR = DeviceGroupSubmitInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_BIND_SPARSE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    DeviceGroupBindSparseInfo = 1000060006,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_BIND_SPARSE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_group"],
+        ImpliesSets = ["VK_KHR_device_group_creation"]
+    )]
+    DeviceGroupBindSparseInfoKHR = DeviceGroupBindSparseInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_PRESENT_CAPABILITIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
+    DeviceGroupPresentCapabilitiesKHR = 1000060007,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_SWAPCHAIN_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
+    ImageSwapchainCreateInfoKHR = 1000060008,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_SWAPCHAIN_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
+    BindImageMemorySwapchainInfoKHR = 1000060009,
+
+    [NativeName("VK_STRUCTURE_TYPE_ACQUIRE_NEXT_IMAGE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
+    AcquireNextImageInfoKHR = 1000060010,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_PRESENT_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
+    DeviceGroupPresentInfoKHR = 1000060011,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_SWAPCHAIN_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
+    DeviceGroupSwapchainCreateInfoKHR = 1000060012,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_DEVICE_GROUP_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    BindBufferMemoryDeviceGroupInfo = 1000060013,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_DEVICE_GROUP_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_bind_memory2", "VK_KHR_device_group"],
+        ImpliesSets = ["VK_KHR_device_group_creation"],
+        RequireAll = true
+    )]
+    BindBufferMemoryDeviceGroupInfoKHR = BindBufferMemoryDeviceGroupInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_DEVICE_GROUP_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    BindImageMemoryDeviceGroupInfo = 1000060014,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_DEVICE_GROUP_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_bind_memory2", "VK_KHR_device_group"],
+        ImpliesSets = ["VK_KHR_device_group_creation"],
+        RequireAll = true
+    )]
+    BindImageMemoryDeviceGroupInfoKHR = BindImageMemoryDeviceGroupInfo,
+
     [NativeName("VK_STRUCTURE_TYPE_VALIDATION_FLAGS_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     ValidationFlagsEXT = 1000061000,
@@ -5863,6 +3015,69 @@ public enum StructureType : uint
     [NativeName("VK_STRUCTURE_TYPE_VI_SURFACE_CREATE_INFO_NN")]
     [SupportedApiProfile("vulkan", ["VK_NN_vi_surface"], ImpliesSets = ["VK_KHR_surface"])]
     ViSurfaceCreateInfoNN = 1000062000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_DRAW_PARAMETERS_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceShaderDrawParametersFeatures = 1000063000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_DRAW_PARAMETER_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceShaderDrawParameterFeatures = PhysicalDeviceShaderDrawParametersFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXTURE_COMPRESSION_ASTC_HDR_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceTextureCompressionAstcHdrFeatures = 1000066000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXTURE_COMPRESSION_ASTC_HDR_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceTextureCompressionAstcHdrFeaturesEXT =
+        PhysicalDeviceTextureCompressionAstcHdrFeatures,
 
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_VIEW_ASTC_DECODE_MODE_EXT")]
     [SupportedApiProfile(
@@ -5885,6 +3100,409 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceAstcDecodeFeaturesEXT = 1000067001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_ROBUSTNESS_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PipelineRobustnessCreateInfo = 1000068000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_ROBUSTNESS_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_robustness"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
+        ]
+    )]
+    PipelineRobustnessCreateInfoEXT = PipelineRobustnessCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_ROBUSTNESS_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PhysicalDevicePipelineRobustnessFeatures = 1000068001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_ROBUSTNESS_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_robustness"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDevicePipelineRobustnessFeaturesEXT = PhysicalDevicePipelineRobustnessFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_ROBUSTNESS_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PhysicalDevicePipelineRobustnessProperties = 1000068002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_ROBUSTNESS_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_robustness"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDevicePipelineRobustnessPropertiesEXT = PhysicalDevicePipelineRobustnessProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GROUP_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceGroupProperties = 1000070000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GROUP_PROPERTIES_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
+    PhysicalDeviceGroupPropertiesKHR = PhysicalDeviceGroupProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_DEVICE_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    DeviceGroupDeviceCreateInfo = 1000070001,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_DEVICE_CREATE_INFO_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
+    DeviceGroupDeviceCreateInfoKHR = DeviceGroupDeviceCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_IMAGE_FORMAT_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceExternalImageFormatInfo = 1000071000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_IMAGE_FORMAT_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceExternalImageFormatInfoKHR = PhysicalDeviceExternalImageFormatInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_IMAGE_FORMAT_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ExternalImageFormatProperties = 1000071001,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_IMAGE_FORMAT_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    ExternalImageFormatPropertiesKHR = ExternalImageFormatProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_BUFFER_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceExternalBufferInfo = 1000071002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_BUFFER_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceExternalBufferInfoKHR = PhysicalDeviceExternalBufferInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_BUFFER_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ExternalBufferProperties = 1000071003,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_BUFFER_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    ExternalBufferPropertiesKHR = ExternalBufferProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ID_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceIdProperties = 1000071004,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ID_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceIdPropertiesKHR = PhysicalDeviceIdProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_BUFFER_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ExternalMemoryBufferCreateInfo = 1000072000,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_BUFFER_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory"],
+        ImpliesSets = [
+            "VK_KHR_external_memory+VK_KHR_external_memory_capabilities",
+            "VK_KHR_external_memory+VK_VERSION_1_1",
+        ]
+    )]
+    ExternalMemoryBufferCreateInfoKHR = ExternalMemoryBufferCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_IMAGE_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ExternalMemoryImageCreateInfo = 1000072001,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_IMAGE_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory"],
+        ImpliesSets = [
+            "VK_KHR_external_memory+VK_KHR_external_memory_capabilities",
+            "VK_KHR_external_memory+VK_VERSION_1_1",
+        ]
+    )]
+    ExternalMemoryImageCreateInfoKHR = ExternalMemoryImageCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXPORT_MEMORY_ALLOCATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ExportMemoryAllocateInfo = 1000072002,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXPORT_MEMORY_ALLOCATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory"],
+        ImpliesSets = [
+            "VK_KHR_external_memory+VK_KHR_external_memory_capabilities",
+            "VK_KHR_external_memory+VK_VERSION_1_1",
+        ]
+    )]
+    ExportMemoryAllocateInfoKHR = ExportMemoryAllocateInfo,
 
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_MEMORY_WIN32_HANDLE_INFO_KHR")]
     [SupportedApiProfile(
@@ -5971,6 +3589,111 @@ public enum StructureType : uint
     )]
     Win32KeyedMutexAcquireReleaseInfoKHR = 1000075000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_SEMAPHORE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceExternalSemaphoreInfo = 1000076000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_SEMAPHORE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_semaphore_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_semaphore_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceExternalSemaphoreInfoKHR = PhysicalDeviceExternalSemaphoreInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_SEMAPHORE_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ExternalSemaphoreProperties = 1000076001,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_SEMAPHORE_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_semaphore_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_semaphore_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    ExternalSemaphorePropertiesKHR = ExternalSemaphoreProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXPORT_SEMAPHORE_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ExportSemaphoreCreateInfo = 1000077000,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXPORT_SEMAPHORE_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore"],
+        ImpliesSets = ["VK_KHR_external_semaphore_capabilities"]
+    )]
+    ExportSemaphoreCreateInfoKHR = ExportSemaphoreCreateInfo,
+
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_SEMAPHORE_WIN32_HANDLE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6025,6 +3748,25 @@ public enum StructureType : uint
     )]
     SemaphoreGetFdInfoKHR = 1000079001,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PUSH_DESCRIPTOR_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PhysicalDevicePushDescriptorProperties = 1000080000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PUSH_DESCRIPTOR_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_push_descriptor"],
+        ImpliesSets = [
+            "VK_KHR_push_descriptor+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_push_descriptor+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDevicePushDescriptorPropertiesKHR = PhysicalDevicePushDescriptorProperties,
+
     [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_CONDITIONAL_RENDERING_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6058,6 +3800,78 @@ public enum StructureType : uint
     )]
     ConditionalRenderingBeginInfoEXT = 1000081002,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT16_INT8_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceShaderFloat16Int8Features = 1000082000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT16_INT8_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_float16_int8"],
+        ImpliesSets = [
+            "VK_KHR_shader_float16_int8+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_float16_int8+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderFloat16Int8FeaturesKHR = PhysicalDeviceShaderFloat16Int8Features,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FLOAT16_INT8_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_float16_int8"],
+        ImpliesSets = [
+            "VK_KHR_shader_float16_int8+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_float16_int8+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceFloat16Int8FeaturesKHR = PhysicalDeviceShaderFloat16Int8Features,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_16BIT_STORAGE_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDevice16BitStorageFeatures = 1000083000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_16BIT_STORAGE_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_16bit_storage"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_storage_buffer_storage_class",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDevice16BitStorageFeaturesKHR = PhysicalDevice16BitStorageFeatures,
+
     [NativeName("VK_STRUCTURE_TYPE_PRESENT_REGIONS_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6065,6 +3879,31 @@ public enum StructureType : uint
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
     PresentRegionsKHR = 1000084000,
+
+    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    DescriptorUpdateTemplateCreateInfo = 1000085000,
+
+    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_CREATE_INFO_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
+    DescriptorUpdateTemplateCreateInfoKHR = DescriptorUpdateTemplateCreateInfo,
 
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_W_SCALING_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
@@ -6118,6 +3957,27 @@ public enum StructureType : uint
     )]
     PresentTimesInfoGOOGLE = 1000092000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceSubgroupProperties = 1000094000,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PER_VIEW_ATTRIBUTES_PROPERTIES_NVX")]
     [SupportedApiProfile(
         "vulkan",
@@ -6128,20 +3988,6 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX = 1000097000,
-
-    [NativeName("VK_STRUCTURE_TYPE_MULTIVIEW_PER_VIEW_ATTRIBUTES_INFO_NVX")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_NVX_multiview_per_view_attributes+VK_KHR_dynamic_rendering",
-            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_3",
-        ],
-        ImpliesSets = [
-            "VK_NVX_multiview_per_view_attributes+VK_KHR_multiview",
-            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
-        ]
-    )]
-    MultiviewPerViewAttributesInfoNVX = 1000044009,
 
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_SWIZZLE_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
@@ -6217,6 +4063,275 @@ public enum StructureType : uint
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
     HdrMetadataEXT = 1000105000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGELESS_FRAMEBUFFER_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceImagelessFramebufferFeatures = 1000108000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGELESS_FRAMEBUFFER_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_imageless_framebuffer"],
+        ImpliesSets = [
+            "VK_KHR_image_format_list+VK_KHR_get_physical_device_properties2+VK_KHR_maintenance2",
+            "VK_KHR_image_format_list+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    PhysicalDeviceImagelessFramebufferFeaturesKHR = PhysicalDeviceImagelessFramebufferFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_FRAMEBUFFER_ATTACHMENTS_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    FramebufferAttachmentsCreateInfo = 1000108001,
+
+    [NativeName("VK_STRUCTURE_TYPE_FRAMEBUFFER_ATTACHMENTS_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_imageless_framebuffer"],
+        ImpliesSets = [
+            "VK_KHR_image_format_list+VK_KHR_get_physical_device_properties2+VK_KHR_maintenance2",
+            "VK_KHR_image_format_list+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    FramebufferAttachmentsCreateInfoKHR = FramebufferAttachmentsCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_FRAMEBUFFER_ATTACHMENT_IMAGE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    FramebufferAttachmentImageInfo = 1000108002,
+
+    [NativeName("VK_STRUCTURE_TYPE_FRAMEBUFFER_ATTACHMENT_IMAGE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_imageless_framebuffer"],
+        ImpliesSets = [
+            "VK_KHR_image_format_list+VK_KHR_get_physical_device_properties2+VK_KHR_maintenance2",
+            "VK_KHR_image_format_list+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    FramebufferAttachmentImageInfoKHR = FramebufferAttachmentImageInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_ATTACHMENT_BEGIN_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    RenderPassAttachmentBeginInfo = 1000108003,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_ATTACHMENT_BEGIN_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_imageless_framebuffer"],
+        ImpliesSets = [
+            "VK_KHR_image_format_list+VK_KHR_get_physical_device_properties2+VK_KHR_maintenance2",
+            "VK_KHR_image_format_list+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    RenderPassAttachmentBeginInfoKHR = RenderPassAttachmentBeginInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_DESCRIPTION_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    AttachmentDescription2 = 1000109000,
+
+    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_DESCRIPTION_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_create_renderpass2"],
+        ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
+    )]
+    AttachmentDescription2KHR = AttachmentDescription2,
+
+    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_REFERENCE_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    AttachmentReference2 = 1000109001,
+
+    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_REFERENCE_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_create_renderpass2"],
+        ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
+    )]
+    AttachmentReference2KHR = AttachmentReference2,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DESCRIPTION_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    SubpassDescription2 = 1000109002,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DESCRIPTION_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_create_renderpass2"],
+        ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
+    )]
+    SubpassDescription2KHR = SubpassDescription2,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DEPENDENCY_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    SubpassDependency2 = 1000109003,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DEPENDENCY_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_create_renderpass2"],
+        ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
+    )]
+    SubpassDependency2KHR = SubpassDependency2,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    RenderPassCreateInfo2 = 1000109004,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_create_renderpass2"],
+        ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
+    )]
+    RenderPassCreateInfo2KHR = RenderPassCreateInfo2,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_BEGIN_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    SubpassBeginInfo = 1000109005,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_BEGIN_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_create_renderpass2"],
+        ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
+    )]
+    SubpassBeginInfoKHR = SubpassBeginInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_END_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    SubpassEndInfo = 1000109006,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_END_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_create_renderpass2"],
+        ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
+    )]
+    SubpassEndInfoKHR = SubpassEndInfo,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RELAXED_LINE_RASTERIZATION_FEATURES_IMG")]
     [SupportedApiProfile(
         "vulkan",
@@ -6238,6 +4353,111 @@ public enum StructureType : uint
         ]
     )]
     SharedPresentSurfaceCapabilitiesKHR = 1000111000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_FENCE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceExternalFenceInfo = 1000112000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_FENCE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceExternalFenceInfoKHR = PhysicalDeviceExternalFenceInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_FENCE_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ExternalFenceProperties = 1000112001,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_FENCE_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    ExternalFencePropertiesKHR = ExternalFenceProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXPORT_FENCE_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ExportFenceCreateInfo = 1000113000,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXPORT_FENCE_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence"],
+        ImpliesSets = ["VK_KHR_external_fence_capabilities"]
+    )]
+    ExportFenceCreateInfoKHR = ExportFenceCreateInfo,
 
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_FENCE_WIN32_HANDLE_INFO_KHR")]
     [SupportedApiProfile(
@@ -6362,6 +4582,99 @@ public enum StructureType : uint
     )]
     PerformanceCounterDescriptionKHR = 1000116006,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_POINT_CLIPPING_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDevicePointClippingProperties = 1000117000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_POINT_CLIPPING_PROPERTIES_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
+    PhysicalDevicePointClippingPropertiesKHR = PhysicalDevicePointClippingProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_INPUT_ATTACHMENT_ASPECT_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    RenderPassInputAttachmentAspectCreateInfo = 1000117001,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_INPUT_ATTACHMENT_ASPECT_CREATE_INFO_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
+    RenderPassInputAttachmentAspectCreateInfoKHR = RenderPassInputAttachmentAspectCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_VIEW_USAGE_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ImageViewUsageCreateInfo = 1000117002,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_VIEW_USAGE_CREATE_INFO_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
+    ImageViewUsageCreateInfoKHR = ImageViewUsageCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_TESSELLATION_DOMAIN_ORIGIN_STATE_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PipelineTessellationDomainOriginStateCreateInfo = 1000117003,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_TESSELLATION_DOMAIN_ORIGIN_STATE_CREATE_INFO_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
+    PipelineTessellationDomainOriginStateCreateInfoKHR =
+        PipelineTessellationDomainOriginStateCreateInfo,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SURFACE_INFO_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6385,6 +4698,70 @@ public enum StructureType : uint
         ImpliesSets = ["VK_KHR_surface"]
     )]
     SurfaceFormat2KHR = 1000119002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VARIABLE_POINTERS_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceVariablePointersFeatures = 1000120000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VARIABLE_POINTER_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceVariablePointerFeatures = PhysicalDeviceVariablePointersFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VARIABLE_POINTERS_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_variable_pointers"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_storage_buffer_storage_class",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceVariablePointersFeaturesKHR = PhysicalDeviceVariablePointersFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VARIABLE_POINTER_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_variable_pointers"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_storage_buffer_storage_class",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceVariablePointerFeaturesKHR = PhysicalDeviceVariablePointersFeaturesKHR,
 
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_PROPERTIES_2_KHR")]
     [SupportedApiProfile(
@@ -6433,6 +4810,78 @@ public enum StructureType : uint
     [NativeName("VK_STRUCTURE_TYPE_MACOS_SURFACE_CREATE_INFO_MVK")]
     [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
     MacosSurfaceCreateInfoMVK = 1000123000,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_DEDICATED_REQUIREMENTS")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    MemoryDedicatedRequirements = 1000127000,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_DEDICATED_REQUIREMENTS_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_dedicated_allocation"],
+        ImpliesSets = [
+            "VK_KHR_dedicated_allocation+VK_KHR_get_memory_requirements2",
+            "VK_KHR_dedicated_allocation+VK_VERSION_1_1",
+        ]
+    )]
+    MemoryDedicatedRequirementsKHR = MemoryDedicatedRequirements,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_DEDICATED_ALLOCATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    MemoryDedicatedAllocateInfo = 1000127001,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_DEDICATED_ALLOCATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_dedicated_allocation"],
+        ImpliesSets = [
+            "VK_KHR_dedicated_allocation+VK_KHR_get_memory_requirements2",
+            "VK_KHR_dedicated_allocation+VK_VERSION_1_1",
+        ]
+    )]
+    MemoryDedicatedAllocateInfoKHR = MemoryDedicatedAllocateInfo,
 
     [NativeName("VK_STRUCTURE_TYPE_DEBUG_UTILS_OBJECT_NAME_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
@@ -6533,6 +4982,64 @@ public enum StructureType : uint
         ]
     )]
     AndroidHardwareBufferFormatProperties2ANDROID = 1000129006,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SAMPLER_FILTER_MINMAX_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceSamplerFilterMinmaxProperties = 1000130000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SAMPLER_FILTER_MINMAX_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sampler_filter_minmax"],
+        ImpliesSets = [
+            "VK_EXT_sampler_filter_minmax+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceSamplerFilterMinmaxPropertiesEXT = PhysicalDeviceSamplerFilterMinmaxProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_REDUCTION_MODE_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    SamplerReductionModeCreateInfo = 1000130001,
+
+    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_REDUCTION_MODE_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sampler_filter_minmax"],
+        ImpliesSets = [
+            "VK_EXT_sampler_filter_minmax+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
+        ]
+    )]
+    SamplerReductionModeCreateInfoEXT = SamplerReductionModeCreateInfo,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GPA_FEATURES_AMD")]
     [SupportedApiProfile(
@@ -6880,15 +5387,109 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDescriptorHeapTensorPropertiesARM = 1000135014,
 
-    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_SAMPLE_COUNT_INFO_AMD")]
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INLINE_UNIFORM_BLOCK_FEATURES")]
     [SupportedApiProfile(
         "vulkan",
         [
-            "VK_AMD_mixed_attachment_samples+VK_KHR_dynamic_rendering",
-            "VK_AMD_mixed_attachment_samples+VK_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceInlineUniformBlockFeatures = 1000138000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INLINE_UNIFORM_BLOCK_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_inline_uniform_block"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance1",
+            "VK_VERSION_1_1",
         ]
     )]
-    AttachmentSampleCountInfoAMD = 1000044008,
+    PhysicalDeviceInlineUniformBlockFeaturesEXT = PhysicalDeviceInlineUniformBlockFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INLINE_UNIFORM_BLOCK_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceInlineUniformBlockProperties = 1000138001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INLINE_UNIFORM_BLOCK_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_inline_uniform_block"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance1",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceInlineUniformBlockPropertiesEXT = PhysicalDeviceInlineUniformBlockProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    WriteDescriptorSetInlineUniformBlock = 1000138002,
+
+    [NativeName("VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_inline_uniform_block"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance1",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    WriteDescriptorSetInlineUniformBlockEXT = WriteDescriptorSetInlineUniformBlock,
+
+    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_INLINE_UNIFORM_BLOCK_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    DescriptorPoolInlineUniformBlockCreateInfo = 1000138003,
+
+    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_INLINE_UNIFORM_BLOCK_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_inline_uniform_block"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance1",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    DescriptorPoolInlineUniformBlockCreateInfoEXT = DescriptorPoolInlineUniformBlockCreateInfo,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_BFLOAT16_FEATURES_KHR")]
     [SupportedApiProfile(
@@ -6956,6 +5557,276 @@ public enum StructureType : uint
     )]
     MultisamplePropertiesEXT = 1000143004,
 
+    [NativeName("VK_STRUCTURE_TYPE_PROTECTED_SUBMIT_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ProtectedSubmitInfo = 1000145000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PROTECTED_MEMORY_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceProtectedMemoryFeatures = 1000145001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PROTECTED_MEMORY_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceProtectedMemoryProperties = 1000145002,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_QUEUE_INFO_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    DeviceQueueInfo2 = 1000145003,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_MEMORY_REQUIREMENTS_INFO_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    BufferMemoryRequirementsInfo2 = 1000146000,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_MEMORY_REQUIREMENTS_INFO_2_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
+    BufferMemoryRequirementsInfo2KHR = BufferMemoryRequirementsInfo2,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_MEMORY_REQUIREMENTS_INFO_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ImageMemoryRequirementsInfo2 = 1000146001,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_MEMORY_REQUIREMENTS_INFO_2_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
+    ImageMemoryRequirementsInfo2KHR = ImageMemoryRequirementsInfo2,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_SPARSE_MEMORY_REQUIREMENTS_INFO_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ImageSparseMemoryRequirementsInfo2 = 1000146002,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_SPARSE_MEMORY_REQUIREMENTS_INFO_2_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
+    ImageSparseMemoryRequirementsInfo2KHR = ImageSparseMemoryRequirementsInfo2,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_REQUIREMENTS_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    MemoryRequirements2 = 1000146003,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_REQUIREMENTS_2_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
+    MemoryRequirements2KHR = MemoryRequirements2,
+
+    [NativeName("VK_STRUCTURE_TYPE_SPARSE_IMAGE_MEMORY_REQUIREMENTS_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    SparseImageMemoryRequirements2 = 1000146004,
+
+    [NativeName("VK_STRUCTURE_TYPE_SPARSE_IMAGE_MEMORY_REQUIREMENTS_2_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
+    SparseImageMemoryRequirements2KHR = SparseImageMemoryRequirements2,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_FORMAT_LIST_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    ImageFormatListCreateInfo = 1000147000,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_FORMAT_LIST_CREATE_INFO_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_image_format_list"])]
+    ImageFormatListCreateInfoKHR = ImageFormatListCreateInfo,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BLEND_OPERATION_ADVANCED_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6992,17 +5863,6 @@ public enum StructureType : uint
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_COVERAGE_TO_COLOR_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]
     PipelineCoverageToColorStateCreateInfoNV = 1000149000,
-
-    [NativeName("VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET_ACCELERATION_STRUCTURE_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_acceleration_structure"],
-        ImpliesSets = [
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
-        ]
-    )]
-    WriteDescriptorSetAccelerationStructureKHR = 1000150007,
 
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_BUILD_GEOMETRY_INFO_KHR")]
     [SupportedApiProfile(
@@ -7070,6 +5930,17 @@ public enum StructureType : uint
     )]
     AccelerationStructureGeometryKHR = 1000150006,
 
+    [NativeName("VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET_ACCELERATION_STRUCTURE_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
+    WriteDescriptorSetAccelerationStructureKHR = 1000150007,
+
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_VERSION_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7136,50 +6007,6 @@ public enum StructureType : uint
     )]
     PhysicalDeviceAccelerationStructurePropertiesKHR = 1000150014,
 
-    [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_acceleration_structure"],
-        ImpliesSets = [
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
-        ]
-    )]
-    AccelerationStructureCreateInfoKHR = 1000150017,
-
-    [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_BUILD_SIZES_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_acceleration_structure"],
-        ImpliesSets = [
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
-        ]
-    )]
-    AccelerationStructureBuildSizesInfoKHR = 1000150020,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_PIPELINE_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_ray_tracing_pipeline"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
-        ]
-    )]
-    PhysicalDeviceRayTracingPipelineFeaturesKHR = 1000347000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_PIPELINE_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_ray_tracing_pipeline"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
-        ]
-    )]
-    PhysicalDeviceRayTracingPipelinePropertiesKHR = 1000347001,
-
     [NativeName("VK_STRUCTURE_TYPE_RAY_TRACING_PIPELINE_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7202,6 +6029,17 @@ public enum StructureType : uint
     )]
     RayTracingShaderGroupCreateInfoKHR = 1000150016,
 
+    [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
+    AccelerationStructureCreateInfoKHR = 1000150017,
+
     [NativeName("VK_STRUCTURE_TYPE_RAY_TRACING_PIPELINE_INTERFACE_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7213,16 +6051,16 @@ public enum StructureType : uint
     )]
     RayTracingPipelineInterfaceCreateInfoKHR = 1000150018,
 
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_QUERY_FEATURES_KHR")]
+    [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_BUILD_SIZES_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_ray_query"],
+        ["VK_KHR_acceleration_structure"],
         ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    PhysicalDeviceRayQueryFeaturesKHR = 1000348013,
+    AccelerationStructureBuildSizesInfoKHR = 1000150020,
 
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_COVERAGE_MODULATION_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
@@ -7235,6 +6073,256 @@ public enum StructureType : uint
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SM_BUILTINS_PROPERTIES_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_shader_sm_builtins"], ImpliesSets = ["VK_VERSION_1_1"])]
     PhysicalDeviceShaderSmBuiltinsPropertiesNV = 1000154001,
+
+    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    SamplerYcbcrConversionCreateInfo = 1000156000,
+
+    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    SamplerYcbcrConversionCreateInfoKHR = SamplerYcbcrConversionCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    SamplerYcbcrConversionInfo = 1000156001,
+
+    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    SamplerYcbcrConversionInfoKHR = SamplerYcbcrConversionInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_PLANE_MEMORY_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    BindImagePlaneMemoryInfo = 1000156002,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_PLANE_MEMORY_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    BindImagePlaneMemoryInfoKHR = BindImagePlaneMemoryInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_PLANE_MEMORY_REQUIREMENTS_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ImagePlaneMemoryRequirementsInfo = 1000156003,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_PLANE_MEMORY_REQUIREMENTS_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    ImagePlaneMemoryRequirementsInfoKHR = ImagePlaneMemoryRequirementsInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SAMPLER_YCBCR_CONVERSION_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceSamplerYcbcrConversionFeatures = 1000156004,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SAMPLER_YCBCR_CONVERSION_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceSamplerYcbcrConversionFeaturesKHR = PhysicalDeviceSamplerYcbcrConversionFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_IMAGE_FORMAT_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    SamplerYcbcrConversionImageFormatProperties = 1000156005,
+
+    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_IMAGE_FORMAT_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    SamplerYcbcrConversionImageFormatPropertiesKHR = SamplerYcbcrConversionImageFormatProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    BindBufferMemoryInfo = 1000157000,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
+    BindBufferMemoryInfoKHR = BindBufferMemoryInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    BindImageMemoryInfo = 1000157001,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_INFO_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
+    BindImageMemoryInfoKHR = BindImageMemoryInfo,
 
     [NativeName("VK_STRUCTURE_TYPE_DRM_FORMAT_MODIFIER_PROPERTIES_LIST_EXT")]
     [SupportedApiProfile(
@@ -7318,6 +6406,153 @@ public enum StructureType : uint
     [NativeName("VK_STRUCTURE_TYPE_SHADER_MODULE_VALIDATION_CACHE_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     ShaderModuleValidationCacheCreateInfoEXT = 1000160001,
+
+    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_BINDING_FLAGS_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    DescriptorSetLayoutBindingFlagsCreateInfo = 1000161000,
+
+    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_BINDING_FLAGS_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_indexing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    DescriptorSetLayoutBindingFlagsCreateInfoEXT = DescriptorSetLayoutBindingFlagsCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_INDEXING_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceDescriptorIndexingFeatures = 1000161001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_INDEXING_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_indexing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceDescriptorIndexingFeaturesEXT = PhysicalDeviceDescriptorIndexingFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_INDEXING_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceDescriptorIndexingProperties = 1000161002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_INDEXING_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_indexing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceDescriptorIndexingPropertiesEXT = PhysicalDeviceDescriptorIndexingProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_VARIABLE_DESCRIPTOR_COUNT_ALLOCATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    DescriptorSetVariableDescriptorCountAllocateInfo = 1000161003,
+
+    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_VARIABLE_DESCRIPTOR_COUNT_ALLOCATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_indexing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    DescriptorSetVariableDescriptorCountAllocateInfoEXT =
+        DescriptorSetVariableDescriptorCountAllocateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_VARIABLE_DESCRIPTOR_COUNT_LAYOUT_SUPPORT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    DescriptorSetVariableDescriptorCountLayoutSupport = 1000161004,
+
+    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_VARIABLE_DESCRIPTOR_COUNT_LAYOUT_SUPPORT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_indexing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    DescriptorSetVariableDescriptorCountLayoutSupportEXT =
+        DescriptorSetVariableDescriptorCountLayoutSupport,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PORTABILITY_SUBSET_FEATURES_KHR")]
     [SupportedApiProfile(
@@ -7528,6 +6763,70 @@ public enum StructureType : uint
     )]
     PipelineRepresentativeFragmentTestStateCreateInfoNV = 1000166001,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_3_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    PhysicalDeviceMaintenance3Properties = 1000168000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_3_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance3"],
+        ImpliesSets = [
+            "VK_KHR_maintenance3+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance3+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceMaintenance3PropertiesKHR = PhysicalDeviceMaintenance3Properties,
+
+    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_SUPPORT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    DescriptorSetLayoutSupport = 1000168001,
+
+    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_SUPPORT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance3"],
+        ImpliesSets = [
+            "VK_KHR_maintenance3+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance3+VK_VERSION_1_1",
+        ]
+    )]
+    DescriptorSetLayoutSupportKHR = DescriptorSetLayoutSupport,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_VIEW_IMAGE_FORMAT_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     PhysicalDeviceImageViewImageFormatInfoEXT = 1000170000,
@@ -7554,6 +6853,90 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceElapsedTimerQueryFeaturesQCOM = 1000173000,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_QUEUE_GLOBAL_PRIORITY_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    DeviceQueueGlobalPriorityCreateInfo = 1000174000,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_QUEUE_GLOBAL_PRIORITY_CREATE_INFO_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
+    DeviceQueueGlobalPriorityCreateInfoEXT = DeviceQueueGlobalPriorityCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_QUEUE_GLOBAL_PRIORITY_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_global_priority"],
+        ImpliesSets = [
+            "VK_KHR_global_priority+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_global_priority+VK_VERSION_1_1",
+        ]
+    )]
+    DeviceQueueGlobalPriorityCreateInfoKHR = DeviceQueueGlobalPriorityCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_EXTENDED_TYPES_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceShaderSubgroupExtendedTypesFeatures = 1000175000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_EXTENDED_TYPES_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_subgroup_extended_types"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
+    PhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR =
+        PhysicalDeviceShaderSubgroupExtendedTypesFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_8BIT_STORAGE_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDevice8BitStorageFeatures = 1000177000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_8BIT_STORAGE_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_8bit_storage"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_storage_buffer_storage_class",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDevice8BitStorageFeaturesKHR = PhysicalDevice8BitStorageFeatures,
 
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_MEMORY_HOST_POINTER_INFO_EXT")]
     [SupportedApiProfile(
@@ -7588,6 +6971,35 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExternalMemoryHostPropertiesEXT = 1000178002,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_INT64_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceShaderAtomicInt64Features = 1000180000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_INT64_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_atomic_int64"],
+        ImpliesSets = [
+            "VK_KHR_shader_atomic_int64+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_atomic_int64+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderAtomicInt64FeaturesKHR = PhysicalDeviceShaderAtomicInt64Features,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CLOCK_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7602,6 +7014,28 @@ public enum StructureType : uint
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_COMPILER_CONTROL_CREATE_INFO_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_pipeline_compiler_control"])]
     PipelineCompilerControlCreateInfoAMD = 1000183000,
+
+    [NativeName("VK_STRUCTURE_TYPE_CALIBRATED_TIMESTAMP_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_calibrated_timestamps"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
+        ]
+    )]
+    CalibratedTimestampInfoKHR = 1000184000,
+
+    [NativeName("VK_STRUCTURE_TYPE_CALIBRATED_TIMESTAMP_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_calibrated_timestamps"],
+        ImpliesSets = [
+            "VK_EXT_calibrated_timestamps+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
+        ]
+    )]
+    CalibratedTimestampInfoEXT = CalibratedTimestampInfoKHR,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_PROPERTIES_AMD")]
     [SupportedApiProfile(
@@ -7677,6 +7111,66 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVertexAttributeDivisorPropertiesEXT = 1000190000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_DIVISOR_STATE_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PipelineVertexInputDivisorStateCreateInfo = 1000190001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_DIVISOR_STATE_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_vertex_attribute_divisor"],
+        ImpliesSets = [
+            "VK_EXT_vertex_attribute_divisor+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_vertex_attribute_divisor+VK_VERSION_1_1",
+        ]
+    )]
+    PipelineVertexInputDivisorStateCreateInfoEXT = PipelineVertexInputDivisorStateCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_DIVISOR_STATE_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_vertex_attribute_divisor"],
+        ImpliesSets = [
+            "VK_KHR_vertex_attribute_divisor+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_vertex_attribute_divisor+VK_VERSION_1_1",
+        ]
+    )]
+    PipelineVertexInputDivisorStateCreateInfoKHR = PipelineVertexInputDivisorStateCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceVertexAttributeDivisorFeatures = 1000190002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_vertex_attribute_divisor"],
+        ImpliesSets = [
+            "VK_EXT_vertex_attribute_divisor+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_vertex_attribute_divisor+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceVertexAttributeDivisorFeaturesEXT = PhysicalDeviceVertexAttributeDivisorFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_vertex_attribute_divisor"],
+        ImpliesSets = [
+            "VK_KHR_vertex_attribute_divisor+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_vertex_attribute_divisor+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceVertexAttributeDivisorFeaturesKHR = PhysicalDeviceVertexAttributeDivisorFeatures,
+
     [NativeName("VK_STRUCTURE_TYPE_PRESENT_FRAME_TOKEN_GGP")]
     [SupportedApiProfile(
         "vulkan",
@@ -7684,6 +7178,161 @@ public enum StructureType : uint
         ImpliesSets = ["VK_GGP_stream_descriptor_surface", "VK_KHR_swapchain"]
     )]
     PresentFrameTokenGGP = 1000191000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_CREATION_FEEDBACK_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PipelineCreationFeedbackCreateInfo = 1000192000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_CREATION_FEEDBACK_CREATE_INFO_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_pipeline_creation_feedback"])]
+    PipelineCreationFeedbackCreateInfoEXT = PipelineCreationFeedbackCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DRIVER_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceDriverProperties = 1000196000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DRIVER_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_driver_properties"],
+        ImpliesSets = [
+            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_driver_properties+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceDriverPropertiesKHR = PhysicalDeviceDriverProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FLOAT_CONTROLS_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceFloatControlsProperties = 1000197000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FLOAT_CONTROLS_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_float_controls"],
+        ImpliesSets = [
+            "VK_KHR_shader_float_controls+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_float_controls+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceFloatControlsPropertiesKHR = PhysicalDeviceFloatControlsProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_STENCIL_RESOLVE_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceDepthStencilResolveProperties = 1000199000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_STENCIL_RESOLVE_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_depth_stencil_resolve"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_create_renderpass2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
+        ]
+    )]
+    PhysicalDeviceDepthStencilResolvePropertiesKHR = PhysicalDeviceDepthStencilResolveProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DESCRIPTION_DEPTH_STENCIL_RESOLVE")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    SubpassDescriptionDepthStencilResolve = 1000199001,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DESCRIPTION_DEPTH_STENCIL_RESOLVE_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_depth_stencil_resolve"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_create_renderpass2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
+        ]
+    )]
+    SubpassDescriptionDepthStencilResolveKHR = SubpassDescriptionDepthStencilResolve,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COMPUTE_SHADER_DERIVATIVES_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_compute_shader_derivatives"],
+        ImpliesSets = [
+            "VK_KHR_compute_shader_derivatives+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_compute_shader_derivatives+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceComputeShaderDerivativesFeaturesKHR = 1000201000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COMPUTE_SHADER_DERIVATIVES_FEATURES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_compute_shader_derivatives"],
+        ImpliesSets = [
+            "VK_NV_compute_shader_derivatives+VK_KHR_get_physical_device_properties2",
+            "VK_NV_compute_shader_derivatives+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceComputeShaderDerivativesFeaturesNV =
+        PhysicalDeviceComputeShaderDerivativesFeaturesKHR,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MESH_SHADER_FEATURES_NV")]
     [SupportedApiProfile(
@@ -7706,6 +7355,29 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceMeshShaderPropertiesNV = 1000202001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_BARYCENTRIC_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_fragment_shader_barycentric"],
+        ImpliesSets = [
+            "VK_KHR_fragment_shader_barycentric+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_fragment_shader_barycentric+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceFragmentShaderBarycentricFeaturesKHR = 1000203000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_BARYCENTRIC_FEATURES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_fragment_shader_barycentric"],
+        ImpliesSets = [
+            "VK_NV_fragment_shader_barycentric+VK_KHR_get_physical_device_properties2",
+            "VK_NV_fragment_shader_barycentric+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceFragmentShaderBarycentricFeaturesNV =
+        PhysicalDeviceFragmentShaderBarycentricFeaturesKHR,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_IMAGE_FOOTPRINT_FEATURES_NV")]
     [SupportedApiProfile(
@@ -7762,33 +7434,197 @@ public enum StructureType : uint
     )]
     QueueFamilyCheckpointPropertiesNV = 1000206001,
 
-    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_CHECKPOINT_PROPERTIES_2_NV")]
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TIMELINE_SEMAPHORE_FEATURES")]
     [SupportedApiProfile(
         "vulkan",
         [
-            "VK_NV_device_diagnostic_checkpoints+VK_KHR_synchronization2",
-            "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_3",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
         ],
-        ImpliesSets = [
-            "VK_NV_device_diagnostic_checkpoints+VK_KHR_get_physical_device_properties2",
-            "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_1",
-        ]
+        MinVersion = "1.2"
     )]
-    QueueFamilyCheckpointProperties2NV = 1000314008,
+    PhysicalDeviceTimelineSemaphoreFeatures = 1000207000,
 
-    [NativeName("VK_STRUCTURE_TYPE_CHECKPOINT_DATA_2_NV")]
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TIMELINE_SEMAPHORE_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_timeline_semaphore"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceTimelineSemaphoreFeaturesKHR = PhysicalDeviceTimelineSemaphoreFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TIMELINE_SEMAPHORE_PROPERTIES")]
     [SupportedApiProfile(
         "vulkan",
         [
-            "VK_NV_device_diagnostic_checkpoints+VK_KHR_synchronization2",
-            "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_3",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
         ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceTimelineSemaphoreProperties = 1000207001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TIMELINE_SEMAPHORE_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_timeline_semaphore"],
         ImpliesSets = [
-            "VK_NV_device_diagnostic_checkpoints+VK_KHR_get_physical_device_properties2",
-            "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_1",
+            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
         ]
     )]
-    CheckpointData2NV = 1000314009,
+    PhysicalDeviceTimelineSemaphorePropertiesKHR = PhysicalDeviceTimelineSemaphoreProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_TYPE_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    SemaphoreTypeCreateInfo = 1000207002,
+
+    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_TYPE_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_timeline_semaphore"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
+        ]
+    )]
+    SemaphoreTypeCreateInfoKHR = SemaphoreTypeCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_TIMELINE_SEMAPHORE_SUBMIT_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    TimelineSemaphoreSubmitInfo = 1000207003,
+
+    [NativeName("VK_STRUCTURE_TYPE_TIMELINE_SEMAPHORE_SUBMIT_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_timeline_semaphore"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
+        ]
+    )]
+    TimelineSemaphoreSubmitInfoKHR = TimelineSemaphoreSubmitInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_WAIT_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    SemaphoreWaitInfo = 1000207004,
+
+    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_WAIT_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_timeline_semaphore"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
+        ]
+    )]
+    SemaphoreWaitInfoKHR = SemaphoreWaitInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_SIGNAL_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    SemaphoreSignalInfo = 1000207005,
+
+    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_SIGNAL_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_timeline_semaphore"],
+        ImpliesSets = [
+            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
+        ]
+    )]
+    SemaphoreSignalInfoKHR = SemaphoreSignalInfo,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_TIMING_FEATURES_EXT")]
     [SupportedApiProfile(
@@ -7955,6 +7791,38 @@ public enum StructureType : uint
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     PerformanceConfigurationAcquireInfoINTEL = 1000210005,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_MEMORY_MODEL_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceVulkanMemoryModelFeatures = 1000211000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_MEMORY_MODEL_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_vulkan_memory_model"],
+        ImpliesSets = [
+            "VK_KHR_vulkan_memory_model+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_vulkan_memory_model+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceVulkanMemoryModelFeaturesKHR = PhysicalDeviceVulkanMemoryModelFeatures,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PCI_BUS_INFO_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7996,6 +7864,33 @@ public enum StructureType : uint
     )]
     ImagepipeSurfaceCreateInfoFUCHSIA = 1000214000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_TERMINATE_INVOCATION_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceShaderTerminateInvocationFeatures = 1000215000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_TERMINATE_INVOCATION_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_terminate_invocation"],
+        ImpliesSets = [
+            "VK_KHR_shader_terminate_invocation+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_terminate_invocation+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderTerminateInvocationFeaturesKHR =
+        PhysicalDeviceShaderTerminateInvocationFeatures,
+
     [NativeName("VK_STRUCTURE_TYPE_METAL_SURFACE_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
     MetalSurfaceCreateInfoEXT = 1000217000,
@@ -8033,19 +7928,116 @@ public enum StructureType : uint
     )]
     RenderPassFragmentDensityMapCreateInfoEXT = 1000218002,
 
-    [NativeName("VK_STRUCTURE_TYPE_RENDERING_FRAGMENT_DENSITY_MAP_ATTACHMENT_INFO_EXT")]
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCALAR_BLOCK_LAYOUT_FEATURES")]
     [SupportedApiProfile(
         "vulkan",
         [
-            "VK_EXT_fragment_density_map+VK_KHR_dynamic_rendering",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
         ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceScalarBlockLayoutFeatures = 1000221000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCALAR_BLOCK_LAYOUT_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_scalar_block_layout"],
         ImpliesSets = [
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
+            "VK_EXT_scalar_block_layout+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_scalar_block_layout+VK_VERSION_1_1",
         ]
     )]
-    RenderingFragmentDensityMapAttachmentInfoEXT = 1000044007,
+    PhysicalDeviceScalarBlockLayoutFeaturesEXT = PhysicalDeviceScalarBlockLayoutFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceSubgroupSizeControlProperties = 1000225000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_subgroup_size_control"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
+    PhysicalDeviceSubgroupSizeControlPropertiesEXT = PhysicalDeviceSubgroupSizeControlProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_REQUIRED_SUBGROUP_SIZE_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PipelineShaderStageRequiredSubgroupSizeCreateInfo = 1000225001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_REQUIRED_SUBGROUP_SIZE_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_subgroup_size_control"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
+    PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT =
+        PipelineShaderStageRequiredSubgroupSizeCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_SHADER_REQUIRED_SUBGROUP_SIZE_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_object"],
+        ImpliesSets = [
+            "VK_KHR_dynamic_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_dynamic_rendering+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    ShaderRequiredSubgroupSizeCreateInfoEXT = PipelineShaderStageRequiredSubgroupSizeCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceSubgroupSizeControlFeatures = 1000225002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_subgroup_size_control"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
+    PhysicalDeviceSubgroupSizeControlFeaturesEXT = PhysicalDeviceSubgroupSizeControlFeatures,
 
     [NativeName("VK_STRUCTURE_TYPE_FRAGMENT_SHADING_RATE_ATTACHMENT_INFO_KHR")]
     [SupportedApiProfile(
@@ -8107,21 +8099,6 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentShadingRateKHR = 1000226004,
 
-    [NativeName("VK_STRUCTURE_TYPE_RENDERING_FRAGMENT_SHADING_RATE_ATTACHMENT_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_KHR_fragment_shading_rate+VK_KHR_dynamic_rendering",
-            "VK_KHR_fragment_shading_rate+VK_VERSION_1_3",
-        ],
-        ImpliesSets = [
-            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    RenderingFragmentShadingRateAttachmentInfoKHR = 1000044006,
-
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_PROPERTIES_2_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -8151,6 +8128,64 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceShaderConstantDataFeaturesKHR = 1000231000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_LOCAL_READ_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceDynamicRenderingLocalReadFeatures = 1000232000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_LOCAL_READ_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_dynamic_rendering_local_read"],
+        ImpliesSets = [
+            "VK_KHR_dynamic_rendering_local_read+VK_KHR_dynamic_rendering",
+            "VK_KHR_dynamic_rendering_local_read+VK_VERSION_1_3",
+        ]
+    )]
+    PhysicalDeviceDynamicRenderingLocalReadFeaturesKHR =
+        PhysicalDeviceDynamicRenderingLocalReadFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_LOCATION_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    RenderingAttachmentLocationInfo = 1000232001,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_LOCATION_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_dynamic_rendering_local_read"],
+        ImpliesSets = [
+            "VK_KHR_dynamic_rendering_local_read+VK_KHR_dynamic_rendering",
+            "VK_KHR_dynamic_rendering_local_read+VK_VERSION_1_3",
+        ]
+    )]
+    RenderingAttachmentLocationInfoKHR = RenderingAttachmentLocationInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDERING_INPUT_ATTACHMENT_INDEX_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    RenderingInputAttachmentIndexInfo = 1000232002,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDERING_INPUT_ATTACHMENT_INDEX_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_dynamic_rendering_local_read"],
+        ImpliesSets = [
+            "VK_KHR_dynamic_rendering_local_read+VK_KHR_dynamic_rendering",
+            "VK_KHR_dynamic_rendering_local_read+VK_VERSION_1_3",
+        ]
+    )]
+    RenderingInputAttachmentIndexInfoKHR = RenderingInputAttachmentIndexInfo,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ABORT_FEATURES_KHR")]
     [SupportedApiProfile(
@@ -8252,6 +8287,88 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV = 1000240000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SEPARATE_DEPTH_STENCIL_LAYOUTS_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceSeparateDepthStencilLayoutsFeatures = 1000241000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SEPARATE_DEPTH_STENCIL_LAYOUTS_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_separate_depth_stencil_layouts"],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    PhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR =
+        PhysicalDeviceSeparateDepthStencilLayoutsFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_REFERENCE_STENCIL_LAYOUT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    AttachmentReferenceStencilLayout = 1000241001,
+
+    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_REFERENCE_STENCIL_LAYOUT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_separate_depth_stencil_layouts"],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    AttachmentReferenceStencilLayoutKHR = AttachmentReferenceStencilLayout,
+
+    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_DESCRIPTION_STENCIL_LAYOUT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    AttachmentDescriptionStencilLayout = 1000241002,
+
+    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_DESCRIPTION_STENCIL_LAYOUT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_separate_depth_stencil_layouts"],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    AttachmentDescriptionStencilLayoutKHR = AttachmentDescriptionStencilLayout,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BUFFER_DEVICE_ADDRESS_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8263,6 +8380,60 @@ public enum StructureType : uint
     )]
     PhysicalDeviceBufferDeviceAddressFeaturesEXT = 1000244000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BUFFER_ADDRESS_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_buffer_device_address"],
+        ImpliesSets = [
+            "VK_EXT_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_buffer_device_address+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceBufferAddressFeaturesEXT = PhysicalDeviceBufferDeviceAddressFeaturesEXT,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_DEVICE_ADDRESS_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    BufferDeviceAddressInfo = 1000244001,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_DEVICE_ADDRESS_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_buffer_device_address"],
+        ImpliesSets = [
+            "VK_EXT_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_buffer_device_address+VK_VERSION_1_1",
+        ]
+    )]
+    BufferDeviceAddressInfoEXT = BufferDeviceAddressInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_DEVICE_ADDRESS_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_buffer_device_address"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_device_group",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    BufferDeviceAddressInfoKHR = BufferDeviceAddressInfo,
+
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_DEVICE_ADDRESS_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8273,6 +8444,46 @@ public enum StructureType : uint
         ]
     )]
     BufferDeviceAddressCreateInfoEXT = 1000244002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TOOL_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceToolProperties = 1000245000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TOOL_PROPERTIES_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
+    PhysicalDeviceToolPropertiesEXT = PhysicalDeviceToolProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_STENCIL_USAGE_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    ImageStencilUsageCreateInfo = 1000246000,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_STENCIL_USAGE_CREATE_INFO_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_separate_stencil_usage"])]
+    ImageStencilUsageCreateInfoEXT = ImageStencilUsageCreateInfo,
 
     [NativeName("VK_STRUCTURE_TYPE_VALIDATION_FEATURES_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
@@ -8374,6 +8585,36 @@ public enum StructureType : uint
     )]
     PhysicalDeviceYcbcrImageArraysFeaturesEXT = 1000252000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_UNIFORM_BUFFER_STANDARD_LAYOUT_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceUniformBufferStandardLayoutFeatures = 1000253000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_UNIFORM_BUFFER_STANDARD_LAYOUT_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_uniform_buffer_standard_layout"],
+        ImpliesSets = [
+            "VK_KHR_uniform_buffer_standard_layout+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_uniform_buffer_standard_layout+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceUniformBufferStandardLayoutFeaturesKHR =
+        PhysicalDeviceUniformBufferStandardLayoutFeatures,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PROVOKING_VERTEX_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8418,17 +8659,6 @@ public enum StructureType : uint
     )]
     SurfaceFullScreenExclusiveInfoEXT = 1000255000,
 
-    [NativeName("VK_STRUCTURE_TYPE_SURFACE_CAPABILITIES_FULL_SCREEN_EXCLUSIVE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_full_screen_exclusive"],
-        ImpliesSets = [
-            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
-        ]
-    )]
-    SurfaceCapabilitiesFullScreenExclusiveEXT = 1000255002,
-
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_FULL_SCREEN_EXCLUSIVE_WIN32_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8441,9 +8671,238 @@ public enum StructureType : uint
     )]
     SurfaceFullScreenExclusiveWin32InfoEXT = 1000255001,
 
+    [NativeName("VK_STRUCTURE_TYPE_SURFACE_CAPABILITIES_FULL_SCREEN_EXCLUSIVE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    SurfaceCapabilitiesFullScreenExclusiveEXT = 1000255002,
+
     [NativeName("VK_STRUCTURE_TYPE_HEADLESS_SURFACE_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_headless_surface"], ImpliesSets = ["VK_KHR_surface"])]
     HeadlessSurfaceCreateInfoEXT = 1000256000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BUFFER_DEVICE_ADDRESS_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceBufferDeviceAddressFeatures = 1000257000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BUFFER_DEVICE_ADDRESS_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_buffer_device_address"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_device_group",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceBufferDeviceAddressFeaturesKHR = PhysicalDeviceBufferDeviceAddressFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_OPAQUE_CAPTURE_ADDRESS_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    BufferOpaqueCaptureAddressCreateInfo = 1000257002,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_OPAQUE_CAPTURE_ADDRESS_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_buffer_device_address"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_device_group",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    BufferOpaqueCaptureAddressCreateInfoKHR = BufferOpaqueCaptureAddressCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_OPAQUE_CAPTURE_ADDRESS_ALLOCATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    MemoryOpaqueCaptureAddressAllocateInfo = 1000257003,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_OPAQUE_CAPTURE_ADDRESS_ALLOCATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_buffer_device_address"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_device_group",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    MemoryOpaqueCaptureAddressAllocateInfoKHR = MemoryOpaqueCaptureAddressAllocateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_MEMORY_OPAQUE_CAPTURE_ADDRESS_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    DeviceMemoryOpaqueCaptureAddressInfo = 1000257004,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_MEMORY_OPAQUE_CAPTURE_ADDRESS_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_buffer_device_address"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_device_group",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    DeviceMemoryOpaqueCaptureAddressInfoKHR = DeviceMemoryOpaqueCaptureAddressInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceLineRasterizationFeatures = 1000259000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_line_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_line_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_line_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceLineRasterizationFeaturesEXT = PhysicalDeviceLineRasterizationFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_line_rasterization"],
+        ImpliesSets = [
+            "VK_KHR_line_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_line_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceLineRasterizationFeaturesKHR = PhysicalDeviceLineRasterizationFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_LINE_STATE_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PipelineRasterizationLineStateCreateInfo = 1000259001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_LINE_STATE_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_line_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_line_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_line_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    PipelineRasterizationLineStateCreateInfoEXT = PipelineRasterizationLineStateCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_LINE_STATE_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_line_rasterization"],
+        ImpliesSets = [
+            "VK_KHR_line_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_line_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    PipelineRasterizationLineStateCreateInfoKHR = PipelineRasterizationLineStateCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceLineRasterizationProperties = 1000259002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_line_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_line_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_line_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceLineRasterizationPropertiesEXT = PhysicalDeviceLineRasterizationProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_line_rasterization"],
+        ImpliesSets = [
+            "VK_KHR_line_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_line_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceLineRasterizationPropertiesKHR = PhysicalDeviceLineRasterizationProperties,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_FLOAT_FEATURES_EXT")]
     [SupportedApiProfile(
@@ -8455,6 +8914,73 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceShaderAtomicFloatFeaturesEXT = 1000260000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_QUERY_RESET_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceHostQueryResetFeatures = 1000261000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_QUERY_RESET_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_host_query_reset"],
+        ImpliesSets = [
+            "VK_EXT_host_query_reset+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_host_query_reset+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceHostQueryResetFeaturesEXT = PhysicalDeviceHostQueryResetFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INDEX_TYPE_UINT8_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceIndexTypeUint8Features = 1000265000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INDEX_TYPE_UINT8_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_index_type_uint8"],
+        ImpliesSets = [
+            "VK_EXT_index_type_uint8+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_index_type_uint8+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceIndexTypeUint8FeaturesEXT = PhysicalDeviceIndexTypeUint8Features,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INDEX_TYPE_UINT8_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_index_type_uint8"],
+        ImpliesSets = [
+            "VK_KHR_index_type_uint8+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_index_type_uint8+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceIndexTypeUint8FeaturesKHR = PhysicalDeviceIndexTypeUint8Features,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_FEATURES_EXT")]
     [SupportedApiProfile(
@@ -8488,6 +9014,17 @@ public enum StructureType : uint
         ]
     )]
     PipelineInfoKHR = 1000269001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_properties"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_properties+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_properties+VK_VERSION_1_1",
+        ]
+    )]
+    PipelineInfoEXT = PipelineInfoKHR,
 
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_PROPERTIES_KHR")]
     [SupportedApiProfile(
@@ -8533,6 +9070,290 @@ public enum StructureType : uint
     )]
     PipelineExecutableInternalRepresentationKHR = 1000269005,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_IMAGE_COPY_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceHostImageCopyFeatures = 1000270000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_IMAGE_COPY_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_host_image_copy"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    PhysicalDeviceHostImageCopyFeaturesEXT = PhysicalDeviceHostImageCopyFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_IMAGE_COPY_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceHostImageCopyProperties = 1000270001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_IMAGE_COPY_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_host_image_copy"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    PhysicalDeviceHostImageCopyPropertiesEXT = PhysicalDeviceHostImageCopyProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_TO_IMAGE_COPY")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    MemoryToImageCopy = 1000270002,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_TO_IMAGE_COPY_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_host_image_copy"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    MemoryToImageCopyEXT = MemoryToImageCopy,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_TO_MEMORY_COPY")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    ImageToMemoryCopy = 1000270003,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_TO_MEMORY_COPY_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_host_image_copy"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    ImageToMemoryCopyEXT = ImageToMemoryCopy,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_MEMORY_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    CopyImageToMemoryInfo = 1000270004,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_MEMORY_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_host_image_copy"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    CopyImageToMemoryInfoEXT = CopyImageToMemoryInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_MEMORY_TO_IMAGE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    CopyMemoryToImageInfo = 1000270005,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_MEMORY_TO_IMAGE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_host_image_copy"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    CopyMemoryToImageInfoEXT = CopyMemoryToImageInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_HOST_IMAGE_LAYOUT_TRANSITION_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    HostImageLayoutTransitionInfo = 1000270006,
+
+    [NativeName("VK_STRUCTURE_TYPE_HOST_IMAGE_LAYOUT_TRANSITION_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_host_image_copy"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    HostImageLayoutTransitionInfoEXT = HostImageLayoutTransitionInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_IMAGE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    CopyImageToImageInfo = 1000270007,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_IMAGE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_host_image_copy"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    CopyImageToImageInfoEXT = CopyImageToImageInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBRESOURCE_HOST_MEMCPY_SIZE")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    SubresourceHostMemcpySize = 1000270008,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBRESOURCE_HOST_MEMCPY_SIZE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_host_image_copy"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    SubresourceHostMemcpySizeEXT = SubresourceHostMemcpySize,
+
+    [NativeName("VK_STRUCTURE_TYPE_HOST_IMAGE_COPY_DEVICE_PERFORMANCE_QUERY")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    HostImageCopyDevicePerformanceQuery = 1000270009,
+
+    [NativeName("VK_STRUCTURE_TYPE_HOST_IMAGE_COPY_DEVICE_PERFORMANCE_QUERY_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_host_image_copy"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    HostImageCopyDevicePerformanceQueryEXT = HostImageCopyDevicePerformanceQuery,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_MAP_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    MemoryMapInfo = 1000271000,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_MAP_INFO_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
+    MemoryMapInfoKHR = MemoryMapInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_UNMAP_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    MemoryUnmapInfo = 1000271001,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_UNMAP_INFO_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
+    MemoryUnmapInfoKHR = MemoryUnmapInfo,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAP_MEMORY_PLACED_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8573,6 +9394,215 @@ public enum StructureType : uint
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
     PhysicalDeviceShaderAtomicFloat2FeaturesEXT = 1000273000,
+
+    [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
+    )]
+    SurfacePresentModeKHR = 1000274000,
+
+    [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_surface_maintenance1"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
+    )]
+    SurfacePresentModeEXT = SurfacePresentModeKHR,
+
+    [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_SCALING_CAPABILITIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
+    )]
+    SurfacePresentScalingCapabilitiesKHR = 1000274001,
+
+    [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_SCALING_CAPABILITIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_surface_maintenance1"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
+    )]
+    SurfacePresentScalingCapabilitiesEXT = SurfacePresentScalingCapabilitiesKHR,
+
+    [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_COMPATIBILITY_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
+    )]
+    SurfacePresentModeCompatibilityKHR = 1000274002,
+
+    [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_COMPATIBILITY_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_surface_maintenance1"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
+    )]
+    SurfacePresentModeCompatibilityEXT = SurfacePresentModeCompatibilityKHR,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SWAPCHAIN_MAINTENANCE_1_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceSwapchainMaintenance1FeaturesKHR = 1000275000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SWAPCHAIN_MAINTENANCE_1_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceSwapchainMaintenance1FeaturesEXT = PhysicalDeviceSwapchainMaintenance1FeaturesKHR,
+
+    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_FENCE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
+    SwapchainPresentFenceInfoKHR = 1000275001,
+
+    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_FENCE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
+    SwapchainPresentFenceInfoEXT = SwapchainPresentFenceInfoKHR,
+
+    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODES_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
+    SwapchainPresentModesCreateInfoKHR = 1000275002,
+
+    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODES_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
+    SwapchainPresentModesCreateInfoEXT = SwapchainPresentModesCreateInfoKHR,
+
+    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
+    SwapchainPresentModeInfoKHR = 1000275003,
+
+    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
+    SwapchainPresentModeInfoEXT = SwapchainPresentModeInfoKHR,
+
+    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_SCALING_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
+    SwapchainPresentScalingCreateInfoKHR = 1000275004,
+
+    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_SCALING_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
+    SwapchainPresentScalingCreateInfoEXT = SwapchainPresentScalingCreateInfoKHR,
+
+    [NativeName("VK_STRUCTURE_TYPE_RELEASE_SWAPCHAIN_IMAGES_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
+    ReleaseSwapchainImagesInfoKHR = 1000275005,
+
+    [NativeName("VK_STRUCTURE_TYPE_RELEASE_SWAPCHAIN_IMAGES_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
+        ]
+    )]
+    ReleaseSwapchainImagesInfoEXT = ReleaseSwapchainImagesInfoKHR,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_DEMOTE_TO_HELPER_INVOCATION_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceShaderDemoteToHelperInvocationFeatures = 1000276000,
+
+    [NativeName(
+        "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_DEMOTE_TO_HELPER_INVOCATION_FEATURES_EXT"
+    )]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_demote_to_helper_invocation"],
+        ImpliesSets = [
+            "VK_EXT_shader_demote_to_helper_invocation+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_demote_to_helper_invocation+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT =
+        PhysicalDeviceShaderDemoteToHelperInvocationFeatures,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_GENERATED_COMMANDS_PROPERTIES_NV")]
     [SupportedApiProfile(
@@ -8660,6 +9690,60 @@ public enum StructureType : uint
     )]
     CommandBufferInheritanceViewportScissorInfoNV = 1000278001,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INTEGER_DOT_PRODUCT_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceShaderIntegerDotProductFeatures = 1000280000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INTEGER_DOT_PRODUCT_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_integer_dot_product"],
+        ImpliesSets = [
+            "VK_KHR_shader_integer_dot_product+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_integer_dot_product+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderIntegerDotProductFeaturesKHR =
+        PhysicalDeviceShaderIntegerDotProductFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INTEGER_DOT_PRODUCT_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceShaderIntegerDotProductProperties = 1000280001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INTEGER_DOT_PRODUCT_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_integer_dot_product"],
+        ImpliesSets = [
+            "VK_KHR_shader_integer_dot_product+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_integer_dot_product+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderIntegerDotProductPropertiesKHR =
+        PhysicalDeviceShaderIntegerDotProductProperties,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXEL_BUFFER_ALIGNMENT_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8670,6 +9754,32 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceTexelBufferAlignmentFeaturesEXT = 1000281000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXEL_BUFFER_ALIGNMENT_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceTexelBufferAlignmentProperties = 1000281001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXEL_BUFFER_ALIGNMENT_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texel_buffer_alignment"],
+        ImpliesSets = [
+            "VK_EXT_texel_buffer_alignment+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texel_buffer_alignment+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceTexelBufferAlignmentPropertiesEXT = PhysicalDeviceTexelBufferAlignmentProperties,
 
     [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_RENDER_PASS_TRANSFORM_INFO_QCOM")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
@@ -8744,6 +9854,50 @@ public enum StructureType : uint
         ]
     )]
     DeviceMemoryReportCallbackDataEXT = 1000284002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_robustness2"],
+        ImpliesSets = [
+            "VK_KHR_robustness2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_robustness2+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceRobustness2FeaturesKHR = 1000286000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_robustness2"],
+        ImpliesSets = [
+            "VK_EXT_robustness2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_robustness2+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceRobustness2FeaturesEXT = PhysicalDeviceRobustness2FeaturesKHR,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_robustness2"],
+        ImpliesSets = [
+            "VK_KHR_robustness2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_robustness2+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceRobustness2PropertiesKHR = 1000286001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_robustness2"],
+        ImpliesSets = [
+            "VK_EXT_robustness2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_robustness2+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceRobustness2PropertiesEXT = PhysicalDeviceRobustness2PropertiesKHR,
 
     [NativeName("VK_STRUCTURE_TYPE_SAMPLER_CUSTOM_BORDER_COLOR_CREATE_INFO_EXT")]
     [SupportedApiProfile(
@@ -8847,6 +10001,117 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDevicePresentIdFeaturesKHR = 1000294001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIVATE_DATA_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDevicePrivateDataFeatures = 1000295000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIVATE_DATA_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_private_data"],
+        ImpliesSets = [
+            "VK_EXT_private_data+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_private_data+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDevicePrivateDataFeaturesEXT = PhysicalDevicePrivateDataFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_PRIVATE_DATA_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    DevicePrivateDataCreateInfo = 1000295001,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_PRIVATE_DATA_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_private_data"],
+        ImpliesSets = [
+            "VK_EXT_private_data+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_private_data+VK_VERSION_1_1",
+        ]
+    )]
+    DevicePrivateDataCreateInfoEXT = DevicePrivateDataCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PRIVATE_DATA_SLOT_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PrivateDataSlotCreateInfo = 1000295002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PRIVATE_DATA_SLOT_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_private_data"],
+        ImpliesSets = [
+            "VK_EXT_private_data+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_private_data+VK_VERSION_1_1",
+        ]
+    )]
+    PrivateDataSlotCreateInfoEXT = PrivateDataSlotCreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CREATION_CACHE_CONTROL_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDevicePipelineCreationCacheControlFeatures = 1000297000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CREATION_CACHE_CONTROL_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_creation_cache_control"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_creation_cache_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_creation_cache_control+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDevicePipelineCreationCacheControlFeaturesEXT =
+        PhysicalDevicePipelineCreationCacheControlFeatures,
 
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_INFO_KHR")]
     [SupportedApiProfile(
@@ -9234,6 +10499,258 @@ public enum StructureType : uint
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
     ImportMetalSharedEventInfoEXT = 1000311011,
 
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_BARRIER_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    MemoryBarrier2 = 1000314000,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_BARRIER_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_synchronization2"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+        ]
+    )]
+    MemoryBarrier2KHR = MemoryBarrier2,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    BufferMemoryBarrier2 = 1000314001,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_synchronization2"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+        ]
+    )]
+    BufferMemoryBarrier2KHR = BufferMemoryBarrier2,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    ImageMemoryBarrier2 = 1000314002,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_synchronization2"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+        ]
+    )]
+    ImageMemoryBarrier2KHR = ImageMemoryBarrier2,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEPENDENCY_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    DependencyInfo = 1000314003,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEPENDENCY_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_synchronization2"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+        ]
+    )]
+    DependencyInfoKHR = DependencyInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBMIT_INFO_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    SubmitInfo2 = 1000314004,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBMIT_INFO_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_synchronization2"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+        ]
+    )]
+    SubmitInfo2KHR = SubmitInfo2,
+
+    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_SUBMIT_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    SemaphoreSubmitInfo = 1000314005,
+
+    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_SUBMIT_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_synchronization2"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+        ]
+    )]
+    SemaphoreSubmitInfoKHR = SemaphoreSubmitInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_SUBMIT_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    CommandBufferSubmitInfo = 1000314006,
+
+    [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_SUBMIT_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_synchronization2"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+        ]
+    )]
+    CommandBufferSubmitInfoKHR = CommandBufferSubmitInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SYNCHRONIZATION_2_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceSynchronization2Features = 1000314007,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SYNCHRONIZATION_2_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_synchronization2"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceSynchronization2FeaturesKHR = PhysicalDeviceSynchronization2Features,
+
+    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_CHECKPOINT_PROPERTIES_2_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_NV_device_diagnostic_checkpoints+VK_KHR_synchronization2",
+            "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_3",
+        ],
+        ImpliesSets = [
+            "VK_NV_device_diagnostic_checkpoints+VK_KHR_get_physical_device_properties2",
+            "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_1",
+        ]
+    )]
+    QueueFamilyCheckpointProperties2NV = 1000314008,
+
+    [NativeName("VK_STRUCTURE_TYPE_CHECKPOINT_DATA_2_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_NV_device_diagnostic_checkpoints+VK_KHR_synchronization2",
+            "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_3",
+        ],
+        ImpliesSets = [
+            "VK_NV_device_diagnostic_checkpoints+VK_KHR_get_physical_device_properties2",
+            "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_1",
+        ]
+    )]
+    CheckpointData2NV = 1000314009,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_BUFFER_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9351,6 +10868,22 @@ public enum StructureType : uint
     )]
     SamplerCaptureDescriptorDataInfoEXT = 1000316008,
 
+    [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_CAPTURE_DESCRIPTOR_DATA_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_EXT_descriptor_buffer+VK_KHR_acceleration_structure",
+            "VK_EXT_descriptor_buffer+VK_NV_ray_tracing",
+        ],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    AccelerationStructureCaptureDescriptorDataInfoEXT = 1000316009,
+
     [NativeName("VK_STRUCTURE_TYPE_OPAQUE_CAPTURE_DESCRIPTOR_DATA_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9389,22 +10922,6 @@ public enum StructureType : uint
         ]
     )]
     DescriptorBufferBindingPushDescriptorBufferHandleEXT = 1000316012,
-
-    [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_CAPTURE_DESCRIPTOR_DATA_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_EXT_descriptor_buffer+VK_KHR_acceleration_structure",
-            "VK_EXT_descriptor_buffer+VK_NV_ray_tracing",
-        ],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
-            "VK_KHR_synchronization2+VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    AccelerationStructureCaptureDescriptorDataInfoEXT = 1000316009,
 
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_MEMORY_COPY_KHR")]
     [SupportedApiProfile(
@@ -9664,17 +11181,6 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD = 1000321000,
 
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_BARYCENTRIC_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_fragment_shader_barycentric"],
-        ImpliesSets = [
-            "VK_KHR_fragment_shader_barycentric+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_fragment_shader_barycentric+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceFragmentShaderBarycentricFeaturesKHR = 1000203000,
-
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_BARYCENTRIC_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -9696,6 +11202,33 @@ public enum StructureType : uint
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
     PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR = 1000323000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ZERO_INITIALIZE_WORKGROUP_MEMORY_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceZeroInitializeWorkgroupMemoryFeatures = 1000325000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ZERO_INITIALIZE_WORKGROUP_MEMORY_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_zero_initialize_workgroup_memory"],
+        ImpliesSets = [
+            "VK_KHR_zero_initialize_workgroup_memory+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_zero_initialize_workgroup_memory+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR =
+        PhysicalDeviceZeroInitializeWorkgroupMemoryFeatures,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADING_RATE_ENUMS_PROPERTIES_NV")]
     [SupportedApiProfile(
@@ -9799,6 +11332,32 @@ public enum StructureType : uint
     )]
     CopyCommandTransformInfoQCOM = 1000333000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_ROBUSTNESS_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceImageRobustnessFeatures = 1000335000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_ROBUSTNESS_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_robustness"],
+        ImpliesSets = [
+            "VK_EXT_image_robustness+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_robustness+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceImageRobustnessFeaturesEXT = PhysicalDeviceImageRobustnessFeatures,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_WORKGROUP_MEMORY_EXPLICIT_LAYOUT_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -9809,6 +11368,278 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR = 1000336000,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_BUFFER_INFO_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    CopyBufferInfo2 = 1000337000,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_BUFFER_INFO_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_commands2"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_VERSION_1_1",
+        ]
+    )]
+    CopyBufferInfo2KHR = CopyBufferInfo2,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_INFO_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    CopyImageInfo2 = 1000337001,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_INFO_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_commands2"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_VERSION_1_1",
+        ]
+    )]
+    CopyImageInfo2KHR = CopyImageInfo2,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_BUFFER_TO_IMAGE_INFO_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    CopyBufferToImageInfo2 = 1000337002,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_BUFFER_TO_IMAGE_INFO_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_commands2"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_VERSION_1_1",
+        ]
+    )]
+    CopyBufferToImageInfo2KHR = CopyBufferToImageInfo2,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_BUFFER_INFO_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    CopyImageToBufferInfo2 = 1000337003,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_BUFFER_INFO_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_commands2"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_VERSION_1_1",
+        ]
+    )]
+    CopyImageToBufferInfo2KHR = CopyImageToBufferInfo2,
+
+    [NativeName("VK_STRUCTURE_TYPE_BLIT_IMAGE_INFO_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    BlitImageInfo2 = 1000337004,
+
+    [NativeName("VK_STRUCTURE_TYPE_BLIT_IMAGE_INFO_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_commands2"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_VERSION_1_1",
+        ]
+    )]
+    BlitImageInfo2KHR = BlitImageInfo2,
+
+    [NativeName("VK_STRUCTURE_TYPE_RESOLVE_IMAGE_INFO_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    ResolveImageInfo2 = 1000337005,
+
+    [NativeName("VK_STRUCTURE_TYPE_RESOLVE_IMAGE_INFO_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_commands2"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_VERSION_1_1",
+        ]
+    )]
+    ResolveImageInfo2KHR = ResolveImageInfo2,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_COPY_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    BufferCopy2 = 1000337006,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_COPY_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_commands2"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_VERSION_1_1",
+        ]
+    )]
+    BufferCopy2KHR = BufferCopy2,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_COPY_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    ImageCopy2 = 1000337007,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_COPY_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_commands2"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_VERSION_1_1",
+        ]
+    )]
+    ImageCopy2KHR = ImageCopy2,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_BLIT_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    ImageBlit2 = 1000337008,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_BLIT_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_commands2"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_VERSION_1_1",
+        ]
+    )]
+    ImageBlit2KHR = ImageBlit2,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_IMAGE_COPY_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    BufferImageCopy2 = 1000337009,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_IMAGE_COPY_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_commands2"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_VERSION_1_1",
+        ]
+    )]
+    BufferImageCopy2KHR = BufferImageCopy2,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_RESOLVE_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    ImageResolve2 = 1000337010,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_RESOLVE_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_commands2"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_VERSION_1_1",
+        ]
+    )]
+    ImageResolve2KHR = ImageResolve2,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_COMPRESSION_CONTROL_FEATURES_EXT")]
     [SupportedApiProfile(
@@ -9831,6 +11662,70 @@ public enum StructureType : uint
         ]
     )]
     ImageCompressionControlEXT = 1000338001,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBRESOURCE_LAYOUT_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    SubresourceLayout2 = 1000338002,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBRESOURCE_LAYOUT_2_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control"],
+        ImpliesSets = [
+            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_compression_control+VK_VERSION_1_1",
+        ]
+    )]
+    SubresourceLayout2EXT = SubresourceLayout2,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBRESOURCE_LAYOUT_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance5"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
+    )]
+    SubresourceLayout2KHR = SubresourceLayout2,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_SUBRESOURCE_2")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    ImageSubresource2 = 1000338003,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_SUBRESOURCE_2_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control"],
+        ImpliesSets = [
+            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_compression_control+VK_VERSION_1_1",
+        ]
+    )]
+    ImageSubresource2EXT = ImageSubresource2,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_SUBRESOURCE_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance5"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
+    )]
+    ImageSubresource2KHR = ImageSubresource2,
 
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_COMPRESSION_PROPERTIES_EXT")]
     [SupportedApiProfile(
@@ -9898,6 +11793,33 @@ public enum StructureType : uint
     )]
     DeviceFaultInfoEXT = 1000341002,
 
+    [NativeName(
+        "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_FEATURES_EXT"
+    )]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_rasterization_order_attachment_access"],
+        ImpliesSets = [
+            "VK_EXT_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT = 1000342000,
+
+    [NativeName(
+        "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_FEATURES_ARM"
+    )]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_rasterization_order_attachment_access"],
+        ImpliesSets = [
+            "VK_ARM_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_rasterization_order_attachment_access+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesARM =
+        PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RGBA10X6_FORMATS_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9912,6 +11834,78 @@ public enum StructureType : uint
     [NativeName("VK_STRUCTURE_TYPE_DIRECTFB_SURFACE_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_directfb_surface"], ImpliesSets = ["VK_KHR_surface"])]
     DirectfbSurfaceCreateInfoEXT = 1000346000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_PIPELINE_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_ray_tracing_pipeline"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
+        ]
+    )]
+    PhysicalDeviceRayTracingPipelineFeaturesKHR = 1000347000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_PIPELINE_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_ray_tracing_pipeline"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
+        ]
+    )]
+    PhysicalDeviceRayTracingPipelinePropertiesKHR = 1000347001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_QUERY_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_ray_query"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
+        ]
+    )]
+    PhysicalDeviceRayQueryFeaturesKHR = 1000348013,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MUTABLE_DESCRIPTOR_TYPE_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mutable_descriptor_type"],
+        ImpliesSets = [
+            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
+            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceMutableDescriptorTypeFeaturesEXT = 1000351000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MUTABLE_DESCRIPTOR_TYPE_FEATURES_VALVE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_mutable_descriptor_type"],
+        ImpliesSets = ["VK_KHR_maintenance3"]
+    )]
+    PhysicalDeviceMutableDescriptorTypeFeaturesVALVE =
+        PhysicalDeviceMutableDescriptorTypeFeaturesEXT,
+
+    [NativeName("VK_STRUCTURE_TYPE_MUTABLE_DESCRIPTOR_TYPE_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mutable_descriptor_type"],
+        ImpliesSets = [
+            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
+            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
+        ]
+    )]
+    MutableDescriptorTypeCreateInfoEXT = 1000351002,
+
+    [NativeName("VK_STRUCTURE_TYPE_MUTABLE_DESCRIPTOR_TYPE_CREATE_INFO_VALVE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_mutable_descriptor_type"],
+        ImpliesSets = ["VK_KHR_maintenance3"]
+    )]
+    MutableDescriptorTypeCreateInfoVALVE = MutableDescriptorTypeCreateInfoEXT,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_INPUT_DYNAMIC_STATE_FEATURES_EXT")]
     [SupportedApiProfile(
@@ -10011,6 +12005,51 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT = 1000356000,
+
+    [NativeName("VK_STRUCTURE_TYPE_FORMAT_PROPERTIES_3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    FormatProperties3 = 1000360000,
+
+    [NativeName("VK_STRUCTURE_TYPE_FORMAT_PROPERTIES_3_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_format_feature_flags2"],
+        ImpliesSets = [
+            "VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_format_feature_flags2+VK_VERSION_1_1",
+        ]
+    )]
+    FormatProperties3KHR = FormatProperties3,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_MODE_FIFO_LATEST_READY_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_mode_fifo_latest_ready"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
+    PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR = 1000361000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_MODE_FIFO_LATEST_READY_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_mode_fifo_latest_ready"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
+    PhysicalDevicePresentModeFifoLatestReadyFeaturesEXT =
+        PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR,
 
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_MEMORY_ZIRCON_HANDLE_INFO_FUCHSIA")]
     [SupportedApiProfile(
@@ -10371,6 +12410,76 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderUntypedPointersFeaturesKHR = 1000387000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GLOBAL_PRIORITY_QUERY_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceGlobalPriorityQueryFeatures = 1000388000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GLOBAL_PRIORITY_QUERY_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_global_priority"],
+        ImpliesSets = [
+            "VK_KHR_global_priority+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_global_priority+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceGlobalPriorityQueryFeaturesKHR = PhysicalDeviceGlobalPriorityQueryFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GLOBAL_PRIORITY_QUERY_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_global_priority_query"],
+        ImpliesSets = [
+            "VK_EXT_global_priority+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_global_priority+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceGlobalPriorityQueryFeaturesEXT = PhysicalDeviceGlobalPriorityQueryFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_GLOBAL_PRIORITY_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    QueueFamilyGlobalPriorityProperties = 1000388001,
+
+    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_GLOBAL_PRIORITY_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_global_priority"],
+        ImpliesSets = [
+            "VK_KHR_global_priority+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_global_priority+VK_VERSION_1_1",
+        ]
+    )]
+    QueueFamilyGlobalPriorityPropertiesKHR = QueueFamilyGlobalPriorityProperties,
+
+    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_GLOBAL_PRIORITY_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_global_priority_query"],
+        ImpliesSets = [
+            "VK_EXT_global_priority+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_global_priority+VK_VERSION_1_1",
+        ]
+    )]
+    QueueFamilyGlobalPriorityPropertiesEXT = QueueFamilyGlobalPriorityProperties,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_ENCODE_RGB_CONVERSION_FEATURES_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -10669,6 +12778,90 @@ public enum StructureType : uint
     )]
     PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT = 1000412000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_4_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceMaintenance4Features = 1000413000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_4_FEATURES_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
+    PhysicalDeviceMaintenance4FeaturesKHR = PhysicalDeviceMaintenance4Features,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_4_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    PhysicalDeviceMaintenance4Properties = 1000413001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_4_PROPERTIES_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
+    PhysicalDeviceMaintenance4PropertiesKHR = PhysicalDeviceMaintenance4Properties,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_BUFFER_MEMORY_REQUIREMENTS")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    DeviceBufferMemoryRequirements = 1000413002,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_BUFFER_MEMORY_REQUIREMENTS_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
+    DeviceBufferMemoryRequirementsKHR = DeviceBufferMemoryRequirements,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_IMAGE_MEMORY_REQUIREMENTS")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    DeviceImageMemoryRequirements = 1000413003,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_IMAGE_MEMORY_REQUIREMENTS_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
+    DeviceImageMemoryRequirementsKHR = DeviceImageMemoryRequirements,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_PROPERTIES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10676,6 +12869,25 @@ public enum StructureType : uint
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
     PhysicalDeviceShaderCorePropertiesARM = 1000415000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_ROTATE_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceShaderSubgroupRotateFeatures = 1000416000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_ROTATE_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_subgroup_rotate"],
+        ImpliesSets = [
+            "VK_KHR_shader_subgroup_rotate+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_subgroup_rotate+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderSubgroupRotateFeaturesKHR = PhysicalDeviceShaderSubgroupRotateFeatures,
 
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_QUEUE_SHADER_CORE_CONTROL_CREATE_INFO_ARM")]
     [SupportedApiProfile(
@@ -10774,6 +12986,28 @@ public enum StructureType : uint
     )]
     DescriptorSetLayoutHostMappingInfoVALVE = 1000420002,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLAMP_ZERO_ONE_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_depth_clamp_zero_one"],
+        ImpliesSets = [
+            "VK_KHR_depth_clamp_zero_one+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_depth_clamp_zero_one+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceDepthClampZeroOneFeaturesKHR = 1000421000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLAMP_ZERO_ONE_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_clamp_zero_one"],
+        ImpliesSets = [
+            "VK_EXT_depth_clamp_zero_one+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_clamp_zero_one+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceDepthClampZeroOneFeaturesEXT = PhysicalDeviceDepthClampZeroOneFeaturesKHR,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_NON_SEAMLESS_CUBE_MAP_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10845,6 +13079,92 @@ public enum StructureType : uint
     )]
     RenderPassStripeSubmitInfoARM = 1000424004,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map_offset"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_KHR_create_renderpass2+VK_KHR_dynamic_rendering",
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_KHR_create_renderpass2+VK_VERSION_1_3",
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_VERSION_1_2+VK_KHR_dynamic_rendering",
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_VERSION_1_2+VK_VERSION_1_3",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_KHR_create_renderpass2+VK_KHR_dynamic_rendering",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_KHR_create_renderpass2+VK_VERSION_1_3",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_KHR_dynamic_rendering",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_VERSION_1_3",
+        ]
+    )]
+    PhysicalDeviceFragmentDensityMapOffsetFeaturesEXT = 1000425000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_FEATURES_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_fragment_density_map_offset"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceFragmentDensityMapOffsetFeaturesQCOM =
+        PhysicalDeviceFragmentDensityMapOffsetFeaturesEXT,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map_offset"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_KHR_create_renderpass2+VK_KHR_dynamic_rendering",
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_KHR_create_renderpass2+VK_VERSION_1_3",
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_VERSION_1_2+VK_KHR_dynamic_rendering",
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_VERSION_1_2+VK_VERSION_1_3",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_KHR_create_renderpass2+VK_KHR_dynamic_rendering",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_KHR_create_renderpass2+VK_VERSION_1_3",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_KHR_dynamic_rendering",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_VERSION_1_3",
+        ]
+    )]
+    PhysicalDeviceFragmentDensityMapOffsetPropertiesEXT = 1000425001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_PROPERTIES_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_fragment_density_map_offset"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM =
+        PhysicalDeviceFragmentDensityMapOffsetPropertiesEXT,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_FRAGMENT_DENSITY_MAP_OFFSET_END_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map_offset"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_KHR_create_renderpass2+VK_KHR_dynamic_rendering",
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_KHR_create_renderpass2+VK_VERSION_1_3",
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_VERSION_1_2+VK_KHR_dynamic_rendering",
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_VERSION_1_2+VK_VERSION_1_3",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_KHR_create_renderpass2+VK_KHR_dynamic_rendering",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_KHR_create_renderpass2+VK_VERSION_1_3",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_KHR_dynamic_rendering",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_VERSION_1_3",
+        ]
+    )]
+    RenderPassFragmentDensityMapOffsetEndInfoEXT = 1000425002,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_FRAGMENT_DENSITY_MAP_OFFSET_END_INFO_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_fragment_density_map_offset"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
+        ]
+    )]
+    SubpassFragmentDensityMapOffsetEndInfoQCOM = RenderPassFragmentDensityMapOffsetEndInfoEXT,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -10856,6 +13176,69 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceCopyMemoryIndirectFeaturesNV = 1000426000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_memory_indirect"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    PhysicalDeviceCopyMemoryIndirectPropertiesKHR = 1000426001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_PROPERTIES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_copy_memory_indirect"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    PhysicalDeviceCopyMemoryIndirectPropertiesNV = PhysicalDeviceCopyMemoryIndirectPropertiesKHR,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_memory_decompression"],
+        ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
+    )]
+    PhysicalDeviceMemoryDecompressionFeaturesEXT = 1000427000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_FEATURES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_memory_decompression"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    PhysicalDeviceMemoryDecompressionFeaturesNV = PhysicalDeviceMemoryDecompressionFeaturesEXT,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_memory_decompression"],
+        ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
+    )]
+    PhysicalDeviceMemoryDecompressionPropertiesEXT = 1000427001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_PROPERTIES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_memory_decompression"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    PhysicalDeviceMemoryDecompressionPropertiesNV = PhysicalDeviceMemoryDecompressionPropertiesEXT,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_GENERATED_COMMANDS_COMPUTE_FEATURES_NV")]
     [SupportedApiProfile(
@@ -11314,19 +13697,6 @@ public enum StructureType : uint
     )]
     ShaderModuleIdentifierEXT = 1000462003,
 
-    [NativeName(
-        "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_FEATURES_EXT"
-    )]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_rasterization_order_attachment_access"],
-        ImpliesSets = [
-            "VK_EXT_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT = 1000342000,
-
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_OPTICAL_FLOW_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11422,6 +13792,26 @@ public enum StructureType : uint
     )]
     PhysicalDeviceLegacyDitheringFeaturesEXT = 1000465000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_PROTECTED_ACCESS_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PhysicalDevicePipelineProtectedAccessFeatures = 1000466000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_PROTECTED_ACCESS_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_protected_access"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_protected_access+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_protected_access+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDevicePipelineProtectedAccessFeaturesEXT =
+        PhysicalDevicePipelineProtectedAccessFeatures,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_FORMAT_RESOLVE_FEATURES_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
@@ -11445,6 +13835,122 @@ public enum StructureType : uint
         ImpliesSets = ["VK_ANDROID_external_memory_android_hardware_buffer"]
     )]
     AndroidHardwareBufferFormatResolvePropertiesANDROID = 1000468002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_5_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceMaintenance5Features = 1000470000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_5_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance5"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
+    )]
+    PhysicalDeviceMaintenance5FeaturesKHR = PhysicalDeviceMaintenance5Features,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_5_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceMaintenance5Properties = 1000470001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_5_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance5"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
+    )]
+    PhysicalDeviceMaintenance5PropertiesKHR = PhysicalDeviceMaintenance5Properties,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDERING_AREA_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    RenderingAreaInfo = 1000470003,
+
+    [NativeName("VK_STRUCTURE_TYPE_RENDERING_AREA_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance5"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
+    )]
+    RenderingAreaInfoKHR = RenderingAreaInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_IMAGE_SUBRESOURCE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    DeviceImageSubresourceInfo = 1000470004,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_IMAGE_SUBRESOURCE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance5"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
+    )]
+    DeviceImageSubresourceInfoKHR = DeviceImageSubresourceInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_CREATE_FLAGS_2_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PipelineCreateFlags2CreateInfo = 1000470005,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_CREATE_FLAGS_2_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance5"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
+    )]
+    PipelineCreateFlags2CreateInfoKHR = PipelineCreateFlags2CreateInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_USAGE_FLAGS_2_CREATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    BufferUsageFlags2CreateInfo = 1000470006,
+
+    [NativeName("VK_STRUCTURE_TYPE_BUFFER_USAGE_FLAGS_2_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance5"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
+    )]
+    BufferUsageFlags2CreateInfoKHR = BufferUsageFlags2CreateInfo,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ANTI_LAG_FEATURES_AMD")]
     [SupportedApiProfile(
@@ -11776,96 +14282,6 @@ public enum StructureType : uint
     )]
     AmigoProfilingSubmitInfoSEC = 1000485001,
 
-    [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
-    )]
-    SurfacePresentModeKHR = 1000274000,
-
-    [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_SCALING_CAPABILITIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
-    )]
-    SurfacePresentScalingCapabilitiesKHR = 1000274001,
-
-    [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_COMPATIBILITY_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
-    )]
-    SurfacePresentModeCompatibilityKHR = 1000274002,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SWAPCHAIN_MAINTENANCE_1_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_swapchain_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceSwapchainMaintenance1FeaturesKHR = 1000275000,
-
-    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_FENCE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_swapchain_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
-        ]
-    )]
-    SwapchainPresentFenceInfoKHR = 1000275001,
-
-    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODES_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_swapchain_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
-        ]
-    )]
-    SwapchainPresentModesCreateInfoKHR = 1000275002,
-
-    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_swapchain_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
-        ]
-    )]
-    SwapchainPresentModeInfoKHR = 1000275003,
-
-    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_SCALING_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_swapchain_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
-        ]
-    )]
-    SwapchainPresentScalingCreateInfoKHR = 1000275004,
-
-    [NativeName("VK_STRUCTURE_TYPE_RELEASE_SWAPCHAIN_IMAGES_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_swapchain_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
-        ]
-    )]
-    ReleaseSwapchainImagesInfoKHR = 1000275005,
-
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PER_VIEW_VIEWPORTS_FEATURES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11958,28 +14374,6 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceExtendedSparseAddressSpacePropertiesNV = 1000492001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MUTABLE_DESCRIPTOR_TYPE_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_mutable_descriptor_type"],
-        ImpliesSets = [
-            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
-            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceMutableDescriptorTypeFeaturesEXT = 1000351000,
-
-    [NativeName("VK_STRUCTURE_TYPE_MUTABLE_DESCRIPTOR_TYPE_CREATE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_mutable_descriptor_type"],
-        ImpliesSets = [
-            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
-            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
-        ]
-    )]
-    MutableDescriptorTypeCreateInfoEXT = 1000351002,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LEGACY_VERTEX_ATTRIBUTES_FEATURES_EXT")]
     [SupportedApiProfile(
@@ -12368,6 +14762,20 @@ public enum StructureType : uint
     )]
     DataGraphPipelineDispatchInfoARM = 1000507014,
 
+    [NativeName(
+        "VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_CONSTANT_TENSOR_SEMI_STRUCTURED_SPARSITY_INFO_ARM"
+    )]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph", "VK_ARM_tensors"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ],
+        RequireAll = true
+    )]
+    DataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM = 1000507015,
+
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PROCESSING_ENGINE_CREATE_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12414,20 +14822,6 @@ public enum StructureType : uint
     )]
     PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM = 1000507019,
 
-    [NativeName(
-        "VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_CONSTANT_TENSOR_SEMI_STRUCTURED_SPARSITY_INFO_ARM"
-    )]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_ARM_data_graph", "VK_ARM_tensors"],
-        ImpliesSets = [
-            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
-            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
-        ],
-        RequireAll = true
-    )]
-    DataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM = 1000507015,
-
     [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_DATA_GRAPH_TOSA_PROPERTIES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12457,17 +14851,6 @@ public enum StructureType : uint
         ]
     )]
     MultiviewPerViewRenderAreasRenderPassBeginInfoQCOM = 1000510001,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COMPUTE_SHADER_DERIVATIVES_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_compute_shader_derivatives"],
-        ImpliesSets = [
-            "VK_KHR_compute_shader_derivatives+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_compute_shader_derivatives+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceComputeShaderDerivativesFeaturesKHR = 1000201000,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COMPUTE_SHADER_DERIVATIVES_PROPERTIES_KHR")]
     [SupportedApiProfile(
@@ -12761,6 +15144,26 @@ public enum StructureType : uint
     )]
     PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT = 1000524000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceVertexAttributeDivisorProperties = 1000525000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_vertex_attribute_divisor"],
+        ImpliesSets = [
+            "VK_KHR_vertex_attribute_divisor+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_vertex_attribute_divisor+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceVertexAttributeDivisorPropertiesKHR =
+        PhysicalDeviceVertexAttributeDivisorProperties,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_UNIFIED_IMAGE_LAYOUTS_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12785,6 +15188,22 @@ public enum StructureType : uint
         ]
     )]
     AttachmentFeedbackLoopInfoEXT = 1000527001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT_CONTROLS_2_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceShaderFloatControls2Features = 1000528000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT_CONTROLS_2_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_float_controls2"],
+        ImpliesSets = ["VK_KHR_shader_float_controls", "VK_VERSION_1_1"]
+    )]
+    PhysicalDeviceShaderFloatControls2FeaturesKHR = PhysicalDeviceShaderFloatControls2Features,
 
     [NativeName("VK_STRUCTURE_TYPE_SCREEN_BUFFER_PROPERTIES_QNX")]
     [SupportedApiProfile(
@@ -12852,16 +15271,133 @@ public enum StructureType : uint
     )]
     PhysicalDeviceLayeredDriverPropertiesMSFT = 1000530000,
 
-    [NativeName("VK_STRUCTURE_TYPE_CALIBRATED_TIMESTAMP_INFO_KHR")]
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_EXPECT_ASSUME_FEATURES")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_calibrated_timestamps"],
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceShaderExpectAssumeFeatures = 1000544000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_EXPECT_ASSUME_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_expect_assume"],
         ImpliesSets = [
-            "VK_KHR_calibrated_timestamps+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
+            "VK_KHR_shader_expect_assume+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_expect_assume+VK_VERSION_1_1",
         ]
     )]
-    CalibratedTimestampInfoKHR = 1000184000,
+    PhysicalDeviceShaderExpectAssumeFeaturesKHR = PhysicalDeviceShaderExpectAssumeFeatures,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_6_FEATURES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceMaintenance6Features = 1000545000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_6_FEATURES_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
+    PhysicalDeviceMaintenance6FeaturesKHR = PhysicalDeviceMaintenance6Features,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_6_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    PhysicalDeviceMaintenance6Properties = 1000545001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_6_PROPERTIES_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
+    PhysicalDeviceMaintenance6PropertiesKHR = PhysicalDeviceMaintenance6Properties,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_MEMORY_STATUS")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    BindMemoryStatus = 1000545002,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_MEMORY_STATUS_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
+    BindMemoryStatusKHR = BindMemoryStatus,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_DESCRIPTOR_SETS_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    BindDescriptorSetsInfo = 1000545003,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_DESCRIPTOR_SETS_INFO_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
+    BindDescriptorSetsInfoKHR = BindDescriptorSetsInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PUSH_CONSTANTS_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PushConstantsInfo = 1000545004,
+
+    [NativeName("VK_STRUCTURE_TYPE_PUSH_CONSTANTS_INFO_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
+    PushConstantsInfoKHR = PushConstantsInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PUSH_DESCRIPTOR_SET_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PushDescriptorSetInfo = 1000545005,
+
+    [NativeName("VK_STRUCTURE_TYPE_PUSH_DESCRIPTOR_SET_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance6", "VK_KHR_push_descriptor"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
+    PushDescriptorSetInfoKHR = PushDescriptorSetInfo,
+
+    [NativeName("VK_STRUCTURE_TYPE_PUSH_DESCRIPTOR_SET_WITH_TEMPLATE_INFO")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    PushDescriptorSetWithTemplateInfo = 1000545006,
+
+    [NativeName("VK_STRUCTURE_TYPE_PUSH_DESCRIPTOR_SET_WITH_TEMPLATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance6", "VK_KHR_push_descriptor"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
+    PushDescriptorSetWithTemplateInfoKHR = PushDescriptorSetWithTemplateInfo,
 
     [NativeName("VK_STRUCTURE_TYPE_SET_DESCRIPTOR_BUFFER_OFFSETS_INFO_EXT")]
     [SupportedApiProfile(
@@ -12956,17 +15492,6 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCopyMemoryIndirectFeaturesKHR = 1000549000,
 
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_copy_memory_indirect"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    PhysicalDeviceCopyMemoryIndirectPropertiesKHR = 1000426001,
-
     [NativeName("VK_STRUCTURE_TYPE_COPY_MEMORY_INDIRECT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12988,22 +15513,6 @@ public enum StructureType : uint
         ]
     )]
     CopyMemoryToImageIndirectInfoKHR = 1000549003,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_memory_decompression"],
-        ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
-    )]
-    PhysicalDeviceMemoryDecompressionFeaturesEXT = 1000427000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_PROPERTIES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_memory_decompression"],
-        ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
-    )]
-    PhysicalDeviceMemoryDecompressionPropertiesEXT = 1000427001,
 
     [NativeName("VK_STRUCTURE_TYPE_DECOMPRESS_MEMORY_INFO_EXT")]
     [SupportedApiProfile(
@@ -13102,30 +15611,6 @@ public enum StructureType : uint
     )]
     VideoEncodeQuantizationMapInfoKHR = 1000553002,
 
-    [NativeName(
-        "VK_STRUCTURE_TYPE_VIDEO_ENCODE_QUANTIZATION_MAP_SESSION_PARAMETERS_CREATE_INFO_KHR"
-    )]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_quantization_map"],
-        ImpliesSets = [
-            "VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2",
-            "VK_KHR_video_encode_queue+VK_VERSION_1_3",
-        ]
-    )]
-    VideoEncodeQuantizationMapSessionParametersCreateInfoKHR = 1000553005,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_ENCODE_QUANTIZATION_MAP_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_quantization_map"],
-        ImpliesSets = [
-            "VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2",
-            "VK_KHR_video_encode_queue+VK_VERSION_1_3",
-        ]
-    )]
-    PhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR = 1000553009,
-
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_QUANTIZATION_MAP_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13149,6 +15634,19 @@ public enum StructureType : uint
         RequireAll = true
     )]
     VideoEncodeH265QuantizationMapCapabilitiesKHR = 1000553004,
+
+    [NativeName(
+        "VK_STRUCTURE_TYPE_VIDEO_ENCODE_QUANTIZATION_MAP_SESSION_PARAMETERS_CREATE_INFO_KHR"
+    )]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_quantization_map"],
+        ImpliesSets = [
+            "VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2",
+            "VK_KHR_video_encode_queue+VK_VERSION_1_3",
+        ]
+    )]
+    VideoEncodeQuantizationMapSessionParametersCreateInfoKHR = 1000553005,
 
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_FORMAT_H265_QUANTIZATION_MAP_PROPERTIES_KHR")]
     [SupportedApiProfile(
@@ -13185,6 +15683,17 @@ public enum StructureType : uint
         RequireAll = true
     )]
     VideoFormatAv1QuantizationMapPropertiesKHR = 1000553008,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_ENCODE_QUANTIZATION_MAP_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_quantization_map"],
+        ImpliesSets = [
+            "VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2",
+            "VK_KHR_video_encode_queue+VK_VERSION_1_3",
+        ]
+    )]
+    PhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR = 1000553009,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAW_ACCESS_CHAINS_FEATURES_NV")]
     [SupportedApiProfile(
@@ -13827,10 +16336,6 @@ public enum StructureType : uint
     )]
     VideoDecodeAv1InlineSessionParametersInfoKHR = 1000586003,
 
-    [NativeName("VK_STRUCTURE_TYPE_SURFACE_CREATE_INFO_OHOS")]
-    [SupportedApiProfile("vulkan", ["VK_OHOS_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    SurfaceCreateInfoOHOS = 1000685000,
-
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HDR_VIVID_FEATURES_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -13941,17 +16446,6 @@ public enum StructureType : uint
         ]
     )]
     MemoryGetMetalHandleInfoEXT = 1000602002,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLAMP_ZERO_ONE_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_depth_clamp_zero_one"],
-        ImpliesSets = [
-            "VK_KHR_depth_clamp_zero_one+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_depth_clamp_zero_one+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceDepthClampZeroOneFeaturesKHR = 1000421000,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PERFORMANCE_COUNTERS_BY_REGION_FEATURES_ARM")]
     [SupportedApiProfile(
@@ -14110,28 +16604,6 @@ public enum StructureType : uint
     )]
     PipelineFragmentDensityMapLayeredCreateInfoVALVE = 1000611002,
 
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_robustness2"],
-        ImpliesSets = [
-            "VK_KHR_robustness2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_robustness2+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceRobustness2FeaturesKHR = 1000286000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_robustness2"],
-        ImpliesSets = [
-            "VK_KHR_robustness2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_robustness2+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceRobustness2PropertiesKHR = 1000286001,
-
     [NativeName("VK_STRUCTURE_TYPE_SET_PRESENT_CONFIG_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -14170,24 +16642,18 @@ public enum StructureType : uint
     )]
     SwapchainFlagsSurfaceCapabilitiesEXT = 1000616001,
 
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_FEATURES_EXT")]
+    [NativeName("VK_STRUCTURE_TYPE_RENDERING_END_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_fragment_density_map_offset"],
+        ["VK_KHR_maintenance10"],
         ImpliesSets = [
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_KHR_create_renderpass2+VK_KHR_dynamic_rendering",
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_KHR_create_renderpass2+VK_VERSION_1_3",
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_VERSION_1_2+VK_KHR_dynamic_rendering",
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_VERSION_1_2+VK_VERSION_1_3",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_KHR_create_renderpass2+VK_KHR_dynamic_rendering",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_KHR_create_renderpass2+VK_VERSION_1_3",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_KHR_dynamic_rendering",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_VERSION_1_3",
+            "VK_KHR_maintenance10+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    PhysicalDeviceFragmentDensityMapOffsetFeaturesEXT = 1000425000,
+    RenderingEndInfoKHR = 1000619003,
 
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_PROPERTIES_EXT")]
+    [NativeName("VK_STRUCTURE_TYPE_RENDERING_END_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map_offset"],
@@ -14202,24 +16668,7 @@ public enum StructureType : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_VERSION_1_3",
         ]
     )]
-    PhysicalDeviceFragmentDensityMapOffsetPropertiesEXT = 1000425001,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_FRAGMENT_DENSITY_MAP_OFFSET_END_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_fragment_density_map_offset"],
-        ImpliesSets = [
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_KHR_create_renderpass2+VK_KHR_dynamic_rendering",
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_KHR_create_renderpass2+VK_VERSION_1_3",
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_VERSION_1_2+VK_KHR_dynamic_rendering",
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_VERSION_1_2+VK_VERSION_1_3",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_KHR_create_renderpass2+VK_KHR_dynamic_rendering",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_KHR_create_renderpass2+VK_VERSION_1_3",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_KHR_dynamic_rendering",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_VERSION_1_3",
-        ]
-    )]
-    RenderPassFragmentDensityMapOffsetEndInfoEXT = 1000425002,
+    RenderingEndInfoEXT = RenderingEndInfoKHR,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ZERO_INITIALIZE_DEVICE_MEMORY_FEATURES_EXT")]
     [SupportedApiProfile(
@@ -14231,14 +16680,6 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT = 1000620000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_MODE_FIFO_LATEST_READY_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_present_mode_fifo_latest_ready"],
-        ImpliesSets = ["VK_KHR_swapchain"]
-    )]
-    PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR = 1000361000,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_OPACITY_MICROMAP_FEATURES_KHR")]
     [SupportedApiProfile(
@@ -14365,17 +16806,6 @@ public enum StructureType : uint
     )]
     RenderingAttachmentFlagsInfoKHR = 1000630002,
 
-    [NativeName("VK_STRUCTURE_TYPE_RENDERING_END_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance10"],
-        ImpliesSets = [
-            "VK_KHR_maintenance10+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_maintenance10+VK_VERSION_1_1",
-        ]
-    )]
-    RenderingEndInfoKHR = 1000619003,
-
     [NativeName("VK_STRUCTURE_TYPE_RESOLVE_IMAGE_MODE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14403,6 +16833,14 @@ public enum StructureType : uint
     )]
     QueueFamilyDataGraphOpticalFlowPropertiesARM = 1000631001,
 
+    [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_OPTICAL_FLOW_CREATE_INFO_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
+    DataGraphPipelineOpticalFlowCreateInfoARM = 1000631002,
+
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_OPTICAL_FLOW_IMAGE_FORMAT_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -14426,14 +16864,6 @@ public enum StructureType : uint
         ImpliesSets = ["VK_ARM_data_graph"]
     )]
     DataGraphPipelineOpticalFlowDispatchInfoARM = 1000631005,
-
-    [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_OPTICAL_FLOW_CREATE_INFO_ARM")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_ARM_data_graph_optical_flow"],
-        ImpliesSets = ["VK_ARM_data_graph"]
-    )]
-    DataGraphPipelineOpticalFlowCreateInfoARM = 1000631002,
 
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_RESOURCE_INFO_IMAGE_LAYOUT_ARM")]
     [SupportedApiProfile(
@@ -14677,6 +17107,10 @@ public enum StructureType : uint
     )]
     PhysicalDevicePrimitiveRestartIndexFeaturesEXT = 1000678000,
 
+    [NativeName("VK_STRUCTURE_TYPE_SURFACE_CREATE_INFO_OHOS")]
+    [SupportedApiProfile("vulkan", ["VK_OHOS_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    SurfaceCreateInfoOHOS = 1000685000,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_DECODE_VECTOR_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -14684,2438 +17118,4 @@ public enum StructureType : uint
         ImpliesSets = ["VK_NV_cooperative_matrix2"]
     )]
     PhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV = 1000689000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VARIABLE_POINTER_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceVariablePointerFeatures = PhysicalDeviceVariablePointersFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_DRAW_PARAMETER_FEATURES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    PhysicalDeviceShaderDrawParameterFeatures = PhysicalDeviceShaderDrawParametersFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDERING_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_dynamic_rendering"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    RenderingInfoKHR = RenderingInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_dynamic_rendering"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    RenderingAttachmentInfoKHR = RenderingAttachmentInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RENDERING_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_dynamic_rendering"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    PipelineRenderingCreateInfoKHR = PipelineRenderingCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_dynamic_rendering"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    PhysicalDeviceDynamicRenderingFeaturesKHR = PhysicalDeviceDynamicRenderingFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_RENDERING_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_dynamic_rendering"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    CommandBufferInheritanceRenderingInfoKHR = CommandBufferInheritanceRenderingInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_MULTIVIEW_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_multiview"],
-        ImpliesSets = [
-            "VK_KHR_multiview+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_multiview+VK_VERSION_1_1",
-        ]
-    )]
-    RenderPassMultiviewCreateInfoKHR = RenderPassMultiviewCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_multiview"],
-        ImpliesSets = [
-            "VK_KHR_multiview+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_multiview+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceMultiviewFeaturesKHR = PhysicalDeviceMultiviewFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_multiview"],
-        ImpliesSets = [
-            "VK_KHR_multiview+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_multiview+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceMultiviewPropertiesKHR = PhysicalDeviceMultiviewProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FEATURES_2_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
-    PhysicalDeviceFeatures2KHR = PhysicalDeviceFeatures2,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PROPERTIES_2_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
-    PhysicalDeviceProperties2KHR = PhysicalDeviceProperties2,
-
-    [NativeName("VK_STRUCTURE_TYPE_FORMAT_PROPERTIES_2_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
-    FormatProperties2KHR = FormatProperties2,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_FORMAT_PROPERTIES_2_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
-    ImageFormatProperties2KHR = ImageFormatProperties2,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_FORMAT_INFO_2_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
-    PhysicalDeviceImageFormatInfo2KHR = PhysicalDeviceImageFormatInfo2,
-
-    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_PROPERTIES_2_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
-    QueueFamilyProperties2KHR = QueueFamilyProperties2,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_PROPERTIES_2_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
-    PhysicalDeviceMemoryProperties2KHR = PhysicalDeviceMemoryProperties2,
-
-    [NativeName("VK_STRUCTURE_TYPE_SPARSE_IMAGE_FORMAT_PROPERTIES_2_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
-    SparseImageFormatProperties2KHR = SparseImageFormatProperties2,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SPARSE_IMAGE_FORMAT_INFO_2_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
-    PhysicalDeviceSparseImageFormatInfo2KHR = PhysicalDeviceSparseImageFormatInfo2,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_FLAGS_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_device_group"],
-        ImpliesSets = ["VK_KHR_device_group_creation"]
-    )]
-    MemoryAllocateFlagsInfoKHR = MemoryAllocateFlagsInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_RENDER_PASS_BEGIN_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_device_group"],
-        ImpliesSets = ["VK_KHR_device_group_creation"]
-    )]
-    DeviceGroupRenderPassBeginInfoKHR = DeviceGroupRenderPassBeginInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_COMMAND_BUFFER_BEGIN_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_device_group"],
-        ImpliesSets = ["VK_KHR_device_group_creation"]
-    )]
-    DeviceGroupCommandBufferBeginInfoKHR = DeviceGroupCommandBufferBeginInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_SUBMIT_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_device_group"],
-        ImpliesSets = ["VK_KHR_device_group_creation"]
-    )]
-    DeviceGroupSubmitInfoKHR = DeviceGroupSubmitInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_BIND_SPARSE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_device_group"],
-        ImpliesSets = ["VK_KHR_device_group_creation"]
-    )]
-    DeviceGroupBindSparseInfoKHR = DeviceGroupBindSparseInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_DEVICE_GROUP_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_bind_memory2", "VK_KHR_device_group"],
-        ImpliesSets = ["VK_KHR_device_group_creation"],
-        RequireAll = true
-    )]
-    BindBufferMemoryDeviceGroupInfoKHR = BindBufferMemoryDeviceGroupInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_DEVICE_GROUP_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_bind_memory2", "VK_KHR_device_group"],
-        ImpliesSets = ["VK_KHR_device_group_creation"],
-        RequireAll = true
-    )]
-    BindImageMemoryDeviceGroupInfoKHR = BindImageMemoryDeviceGroupInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXTURE_COMPRESSION_ASTC_HDR_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceTextureCompressionAstcHdrFeaturesEXT =
-        PhysicalDeviceTextureCompressionAstcHdrFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_ROBUSTNESS_CREATE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_pipeline_robustness"],
-        ImpliesSets = [
-            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
-        ]
-    )]
-    PipelineRobustnessCreateInfoEXT = PipelineRobustnessCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_ROBUSTNESS_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_pipeline_robustness"],
-        ImpliesSets = [
-            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDevicePipelineRobustnessFeaturesEXT = PhysicalDevicePipelineRobustnessFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_ROBUSTNESS_PROPERTIES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_pipeline_robustness"],
-        ImpliesSets = [
-            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDevicePipelineRobustnessPropertiesEXT = PhysicalDevicePipelineRobustnessProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GROUP_PROPERTIES_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
-    PhysicalDeviceGroupPropertiesKHR = PhysicalDeviceGroupProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_DEVICE_CREATE_INFO_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
-    DeviceGroupDeviceCreateInfoKHR = DeviceGroupDeviceCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_IMAGE_FORMAT_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceExternalImageFormatInfoKHR = PhysicalDeviceExternalImageFormatInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_IMAGE_FORMAT_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    ExternalImageFormatPropertiesKHR = ExternalImageFormatProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_BUFFER_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceExternalBufferInfoKHR = PhysicalDeviceExternalBufferInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_BUFFER_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    ExternalBufferPropertiesKHR = ExternalBufferProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ID_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_memory_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceIdPropertiesKHR = PhysicalDeviceIdProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_BUFFER_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory"],
-        ImpliesSets = [
-            "VK_KHR_external_memory+VK_KHR_external_memory_capabilities",
-            "VK_KHR_external_memory+VK_VERSION_1_1",
-        ]
-    )]
-    ExternalMemoryBufferCreateInfoKHR = ExternalMemoryBufferCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_IMAGE_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory"],
-        ImpliesSets = [
-            "VK_KHR_external_memory+VK_KHR_external_memory_capabilities",
-            "VK_KHR_external_memory+VK_VERSION_1_1",
-        ]
-    )]
-    ExternalMemoryImageCreateInfoKHR = ExternalMemoryImageCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXPORT_MEMORY_ALLOCATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_memory"],
-        ImpliesSets = [
-            "VK_KHR_external_memory+VK_KHR_external_memory_capabilities",
-            "VK_KHR_external_memory+VK_VERSION_1_1",
-        ]
-    )]
-    ExportMemoryAllocateInfoKHR = ExportMemoryAllocateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_SEMAPHORE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_semaphore_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_semaphore_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_semaphore_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceExternalSemaphoreInfoKHR = PhysicalDeviceExternalSemaphoreInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_SEMAPHORE_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_semaphore_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_semaphore_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_semaphore_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    ExternalSemaphorePropertiesKHR = ExternalSemaphoreProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXPORT_SEMAPHORE_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_semaphore"],
-        ImpliesSets = ["VK_KHR_external_semaphore_capabilities"]
-    )]
-    ExportSemaphoreCreateInfoKHR = ExportSemaphoreCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PUSH_DESCRIPTOR_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_push_descriptor"],
-        ImpliesSets = [
-            "VK_KHR_push_descriptor+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_push_descriptor+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDevicePushDescriptorPropertiesKHR = PhysicalDevicePushDescriptorProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT16_INT8_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_shader_float16_int8"],
-        ImpliesSets = [
-            "VK_KHR_shader_float16_int8+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_shader_float16_int8+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceShaderFloat16Int8FeaturesKHR = PhysicalDeviceShaderFloat16Int8Features,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FLOAT16_INT8_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_shader_float16_int8"],
-        ImpliesSets = [
-            "VK_KHR_shader_float16_int8+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_shader_float16_int8+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceFloat16Int8FeaturesKHR = PhysicalDeviceShaderFloat16Int8Features,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_16BIT_STORAGE_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_16bit_storage"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_storage_buffer_storage_class",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDevice16BitStorageFeaturesKHR = PhysicalDevice16BitStorageFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_CREATE_INFO_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
-    DescriptorUpdateTemplateCreateInfoKHR = DescriptorUpdateTemplateCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGELESS_FRAMEBUFFER_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_imageless_framebuffer"],
-        ImpliesSets = [
-            "VK_KHR_image_format_list+VK_KHR_get_physical_device_properties2+VK_KHR_maintenance2",
-            "VK_KHR_image_format_list+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    PhysicalDeviceImagelessFramebufferFeaturesKHR = PhysicalDeviceImagelessFramebufferFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_FRAMEBUFFER_ATTACHMENTS_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_imageless_framebuffer"],
-        ImpliesSets = [
-            "VK_KHR_image_format_list+VK_KHR_get_physical_device_properties2+VK_KHR_maintenance2",
-            "VK_KHR_image_format_list+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    FramebufferAttachmentsCreateInfoKHR = FramebufferAttachmentsCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_FRAMEBUFFER_ATTACHMENT_IMAGE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_imageless_framebuffer"],
-        ImpliesSets = [
-            "VK_KHR_image_format_list+VK_KHR_get_physical_device_properties2+VK_KHR_maintenance2",
-            "VK_KHR_image_format_list+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    FramebufferAttachmentImageInfoKHR = FramebufferAttachmentImageInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_ATTACHMENT_BEGIN_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_imageless_framebuffer"],
-        ImpliesSets = [
-            "VK_KHR_image_format_list+VK_KHR_get_physical_device_properties2+VK_KHR_maintenance2",
-            "VK_KHR_image_format_list+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    RenderPassAttachmentBeginInfoKHR = RenderPassAttachmentBeginInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_DESCRIPTION_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_create_renderpass2"],
-        ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
-    )]
-    AttachmentDescription2KHR = AttachmentDescription2,
-
-    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_REFERENCE_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_create_renderpass2"],
-        ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
-    )]
-    AttachmentReference2KHR = AttachmentReference2,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DESCRIPTION_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_create_renderpass2"],
-        ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
-    )]
-    SubpassDescription2KHR = SubpassDescription2,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DEPENDENCY_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_create_renderpass2"],
-        ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
-    )]
-    SubpassDependency2KHR = SubpassDependency2,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_create_renderpass2"],
-        ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
-    )]
-    RenderPassCreateInfo2KHR = RenderPassCreateInfo2,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_BEGIN_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_create_renderpass2"],
-        ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
-    )]
-    SubpassBeginInfoKHR = SubpassBeginInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_END_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_create_renderpass2"],
-        ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
-    )]
-    SubpassEndInfoKHR = SubpassEndInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_FENCE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_fence_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_fence_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceExternalFenceInfoKHR = PhysicalDeviceExternalFenceInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_FENCE_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_fence_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_fence_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    ExternalFencePropertiesKHR = ExternalFenceProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_EXPORT_FENCE_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_fence"],
-        ImpliesSets = ["VK_KHR_external_fence_capabilities"]
-    )]
-    ExportFenceCreateInfoKHR = ExportFenceCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_POINT_CLIPPING_PROPERTIES_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    PhysicalDevicePointClippingPropertiesKHR = PhysicalDevicePointClippingProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_INPUT_ATTACHMENT_ASPECT_CREATE_INFO_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    RenderPassInputAttachmentAspectCreateInfoKHR = RenderPassInputAttachmentAspectCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_VIEW_USAGE_CREATE_INFO_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    ImageViewUsageCreateInfoKHR = ImageViewUsageCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_TESSELLATION_DOMAIN_ORIGIN_STATE_CREATE_INFO_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    PipelineTessellationDomainOriginStateCreateInfoKHR =
-        PipelineTessellationDomainOriginStateCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VARIABLE_POINTERS_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_variable_pointers"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_storage_buffer_storage_class",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceVariablePointersFeaturesKHR = PhysicalDeviceVariablePointersFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VARIABLE_POINTER_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_variable_pointers"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_storage_buffer_storage_class",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceVariablePointerFeaturesKHR = PhysicalDeviceVariablePointersFeaturesKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_DEDICATED_REQUIREMENTS_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_dedicated_allocation"],
-        ImpliesSets = [
-            "VK_KHR_dedicated_allocation+VK_KHR_get_memory_requirements2",
-            "VK_KHR_dedicated_allocation+VK_VERSION_1_1",
-        ]
-    )]
-    MemoryDedicatedRequirementsKHR = MemoryDedicatedRequirements,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_DEDICATED_ALLOCATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_dedicated_allocation"],
-        ImpliesSets = [
-            "VK_KHR_dedicated_allocation+VK_KHR_get_memory_requirements2",
-            "VK_KHR_dedicated_allocation+VK_VERSION_1_1",
-        ]
-    )]
-    MemoryDedicatedAllocateInfoKHR = MemoryDedicatedAllocateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SAMPLER_FILTER_MINMAX_PROPERTIES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_sampler_filter_minmax"],
-        ImpliesSets = [
-            "VK_EXT_sampler_filter_minmax+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceSamplerFilterMinmaxPropertiesEXT = PhysicalDeviceSamplerFilterMinmaxProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_REDUCTION_MODE_CREATE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_sampler_filter_minmax"],
-        ImpliesSets = [
-            "VK_EXT_sampler_filter_minmax+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
-        ]
-    )]
-    SamplerReductionModeCreateInfoEXT = SamplerReductionModeCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INLINE_UNIFORM_BLOCK_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_inline_uniform_block"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance1",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceInlineUniformBlockFeaturesEXT = PhysicalDeviceInlineUniformBlockFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INLINE_UNIFORM_BLOCK_PROPERTIES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_inline_uniform_block"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance1",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceInlineUniformBlockPropertiesEXT = PhysicalDeviceInlineUniformBlockProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_inline_uniform_block"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance1",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    WriteDescriptorSetInlineUniformBlockEXT = WriteDescriptorSetInlineUniformBlock,
-
-    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_INLINE_UNIFORM_BLOCK_CREATE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_inline_uniform_block"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance1",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    DescriptorPoolInlineUniformBlockCreateInfoEXT = DescriptorPoolInlineUniformBlockCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_MEMORY_REQUIREMENTS_INFO_2_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
-    BufferMemoryRequirementsInfo2KHR = BufferMemoryRequirementsInfo2,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_MEMORY_REQUIREMENTS_INFO_2_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
-    ImageMemoryRequirementsInfo2KHR = ImageMemoryRequirementsInfo2,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_SPARSE_MEMORY_REQUIREMENTS_INFO_2_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
-    ImageSparseMemoryRequirementsInfo2KHR = ImageSparseMemoryRequirementsInfo2,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_REQUIREMENTS_2_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
-    MemoryRequirements2KHR = MemoryRequirements2,
-
-    [NativeName("VK_STRUCTURE_TYPE_SPARSE_IMAGE_MEMORY_REQUIREMENTS_2_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
-    SparseImageMemoryRequirements2KHR = SparseImageMemoryRequirements2,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_FORMAT_LIST_CREATE_INFO_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_image_format_list"])]
-    ImageFormatListCreateInfoKHR = ImageFormatListCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_SAMPLE_COUNT_INFO_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_NV_framebuffer_mixed_samples+VK_KHR_dynamic_rendering",
-            "VK_NV_framebuffer_mixed_samples+VK_VERSION_1_3",
-        ]
-    )]
-    AttachmentSampleCountInfoNV = AttachmentSampleCountInfoAMD,
-
-    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    SamplerYcbcrConversionCreateInfoKHR = SamplerYcbcrConversionCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    SamplerYcbcrConversionInfoKHR = SamplerYcbcrConversionInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_PLANE_MEMORY_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    BindImagePlaneMemoryInfoKHR = BindImagePlaneMemoryInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_PLANE_MEMORY_REQUIREMENTS_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    ImagePlaneMemoryRequirementsInfoKHR = ImagePlaneMemoryRequirementsInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SAMPLER_YCBCR_CONVERSION_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceSamplerYcbcrConversionFeaturesKHR = PhysicalDeviceSamplerYcbcrConversionFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_IMAGE_FORMAT_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    SamplerYcbcrConversionImageFormatPropertiesKHR = SamplerYcbcrConversionImageFormatProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
-    BindBufferMemoryInfoKHR = BindBufferMemoryInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_INFO_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
-    BindImageMemoryInfoKHR = BindImageMemoryInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_BINDING_FLAGS_CREATE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_indexing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    DescriptorSetLayoutBindingFlagsCreateInfoEXT = DescriptorSetLayoutBindingFlagsCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_INDEXING_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_indexing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceDescriptorIndexingFeaturesEXT = PhysicalDeviceDescriptorIndexingFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_INDEXING_PROPERTIES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_indexing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceDescriptorIndexingPropertiesEXT = PhysicalDeviceDescriptorIndexingProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_VARIABLE_DESCRIPTOR_COUNT_ALLOCATE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_indexing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    DescriptorSetVariableDescriptorCountAllocateInfoEXT =
-        DescriptorSetVariableDescriptorCountAllocateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_VARIABLE_DESCRIPTOR_COUNT_LAYOUT_SUPPORT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_indexing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_maintenance3",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    DescriptorSetVariableDescriptorCountLayoutSupportEXT =
-        DescriptorSetVariableDescriptorCountLayoutSupport,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_3_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance3"],
-        ImpliesSets = [
-            "VK_KHR_maintenance3+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_maintenance3+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceMaintenance3PropertiesKHR = PhysicalDeviceMaintenance3Properties,
-
-    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_SUPPORT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance3"],
-        ImpliesSets = [
-            "VK_KHR_maintenance3+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_maintenance3+VK_VERSION_1_1",
-        ]
-    )]
-    DescriptorSetLayoutSupportKHR = DescriptorSetLayoutSupport,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_QUEUE_GLOBAL_PRIORITY_CREATE_INFO_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
-    DeviceQueueGlobalPriorityCreateInfoEXT = DeviceQueueGlobalPriorityCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_EXTENDED_TYPES_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_shader_subgroup_extended_types"],
-        ImpliesSets = ["VK_VERSION_1_1"]
-    )]
-    PhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR =
-        PhysicalDeviceShaderSubgroupExtendedTypesFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_8BIT_STORAGE_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_8bit_storage"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_storage_buffer_storage_class",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDevice8BitStorageFeaturesKHR = PhysicalDevice8BitStorageFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_INT64_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_shader_atomic_int64"],
-        ImpliesSets = [
-            "VK_KHR_shader_atomic_int64+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_shader_atomic_int64+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceShaderAtomicInt64FeaturesKHR = PhysicalDeviceShaderAtomicInt64Features,
-
-    [NativeName("VK_STRUCTURE_TYPE_CALIBRATED_TIMESTAMP_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_calibrated_timestamps"],
-        ImpliesSets = [
-            "VK_EXT_calibrated_timestamps+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
-        ]
-    )]
-    CalibratedTimestampInfoEXT = CalibratedTimestampInfoKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_QUEUE_GLOBAL_PRIORITY_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_global_priority"],
-        ImpliesSets = [
-            "VK_KHR_global_priority+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_global_priority+VK_VERSION_1_1",
-        ]
-    )]
-    DeviceQueueGlobalPriorityCreateInfoKHR = DeviceQueueGlobalPriorityCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GLOBAL_PRIORITY_QUERY_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_global_priority"],
-        ImpliesSets = [
-            "VK_KHR_global_priority+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_global_priority+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceGlobalPriorityQueryFeaturesKHR = PhysicalDeviceGlobalPriorityQueryFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_GLOBAL_PRIORITY_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_global_priority"],
-        ImpliesSets = [
-            "VK_KHR_global_priority+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_global_priority+VK_VERSION_1_1",
-        ]
-    )]
-    QueueFamilyGlobalPriorityPropertiesKHR = QueueFamilyGlobalPriorityProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_DIVISOR_STATE_CREATE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_vertex_attribute_divisor"],
-        ImpliesSets = [
-            "VK_EXT_vertex_attribute_divisor+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_vertex_attribute_divisor+VK_VERSION_1_1",
-        ]
-    )]
-    PipelineVertexInputDivisorStateCreateInfoEXT = PipelineVertexInputDivisorStateCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_vertex_attribute_divisor"],
-        ImpliesSets = [
-            "VK_EXT_vertex_attribute_divisor+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_vertex_attribute_divisor+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceVertexAttributeDivisorFeaturesEXT = PhysicalDeviceVertexAttributeDivisorFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_CREATION_FEEDBACK_CREATE_INFO_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_pipeline_creation_feedback"])]
-    PipelineCreationFeedbackCreateInfoEXT = PipelineCreationFeedbackCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DRIVER_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_driver_properties"],
-        ImpliesSets = [
-            "VK_KHR_driver_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_driver_properties+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceDriverPropertiesKHR = PhysicalDeviceDriverProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FLOAT_CONTROLS_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_shader_float_controls"],
-        ImpliesSets = [
-            "VK_KHR_shader_float_controls+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_shader_float_controls+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceFloatControlsPropertiesKHR = PhysicalDeviceFloatControlsProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_STENCIL_RESOLVE_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_depth_stencil_resolve"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_create_renderpass2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
-        ]
-    )]
-    PhysicalDeviceDepthStencilResolvePropertiesKHR = PhysicalDeviceDepthStencilResolveProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DESCRIPTION_DEPTH_STENCIL_RESOLVE_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_depth_stencil_resolve"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_create_renderpass2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
-        ]
-    )]
-    SubpassDescriptionDepthStencilResolveKHR = SubpassDescriptionDepthStencilResolve,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COMPUTE_SHADER_DERIVATIVES_FEATURES_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_compute_shader_derivatives"],
-        ImpliesSets = [
-            "VK_NV_compute_shader_derivatives+VK_KHR_get_physical_device_properties2",
-            "VK_NV_compute_shader_derivatives+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceComputeShaderDerivativesFeaturesNV =
-        PhysicalDeviceComputeShaderDerivativesFeaturesKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_BARYCENTRIC_FEATURES_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_fragment_shader_barycentric"],
-        ImpliesSets = [
-            "VK_NV_fragment_shader_barycentric+VK_KHR_get_physical_device_properties2",
-            "VK_NV_fragment_shader_barycentric+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceFragmentShaderBarycentricFeaturesNV =
-        PhysicalDeviceFragmentShaderBarycentricFeaturesKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TIMELINE_SEMAPHORE_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_timeline_semaphore"],
-        ImpliesSets = [
-            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceTimelineSemaphoreFeaturesKHR = PhysicalDeviceTimelineSemaphoreFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TIMELINE_SEMAPHORE_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_timeline_semaphore"],
-        ImpliesSets = [
-            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceTimelineSemaphorePropertiesKHR = PhysicalDeviceTimelineSemaphoreProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_TYPE_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_timeline_semaphore"],
-        ImpliesSets = [
-            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
-        ]
-    )]
-    SemaphoreTypeCreateInfoKHR = SemaphoreTypeCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_TIMELINE_SEMAPHORE_SUBMIT_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_timeline_semaphore"],
-        ImpliesSets = [
-            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
-        ]
-    )]
-    TimelineSemaphoreSubmitInfoKHR = TimelineSemaphoreSubmitInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_WAIT_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_timeline_semaphore"],
-        ImpliesSets = [
-            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
-        ]
-    )]
-    SemaphoreWaitInfoKHR = SemaphoreWaitInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_SIGNAL_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_timeline_semaphore"],
-        ImpliesSets = [
-            "VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
-        ]
-    )]
-    SemaphoreSignalInfoKHR = SemaphoreSignalInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_MEMORY_MODEL_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_vulkan_memory_model"],
-        ImpliesSets = [
-            "VK_KHR_vulkan_memory_model+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_vulkan_memory_model+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceVulkanMemoryModelFeaturesKHR = PhysicalDeviceVulkanMemoryModelFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_TERMINATE_INVOCATION_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_shader_terminate_invocation"],
-        ImpliesSets = [
-            "VK_KHR_shader_terminate_invocation+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_shader_terminate_invocation+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceShaderTerminateInvocationFeaturesKHR =
-        PhysicalDeviceShaderTerminateInvocationFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCALAR_BLOCK_LAYOUT_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_scalar_block_layout"],
-        ImpliesSets = [
-            "VK_EXT_scalar_block_layout+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_scalar_block_layout+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceScalarBlockLayoutFeaturesEXT = PhysicalDeviceScalarBlockLayoutFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_PROPERTIES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_subgroup_size_control"],
-        ImpliesSets = ["VK_VERSION_1_1"]
-    )]
-    PhysicalDeviceSubgroupSizeControlPropertiesEXT = PhysicalDeviceSubgroupSizeControlProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_REQUIRED_SUBGROUP_SIZE_CREATE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_subgroup_size_control"],
-        ImpliesSets = ["VK_VERSION_1_1"]
-    )]
-    PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT =
-        PipelineShaderStageRequiredSubgroupSizeCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_subgroup_size_control"],
-        ImpliesSets = ["VK_VERSION_1_1"]
-    )]
-    PhysicalDeviceSubgroupSizeControlFeaturesEXT = PhysicalDeviceSubgroupSizeControlFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_LOCAL_READ_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_dynamic_rendering_local_read"],
-        ImpliesSets = [
-            "VK_KHR_dynamic_rendering_local_read+VK_KHR_dynamic_rendering",
-            "VK_KHR_dynamic_rendering_local_read+VK_VERSION_1_3",
-        ]
-    )]
-    PhysicalDeviceDynamicRenderingLocalReadFeaturesKHR =
-        PhysicalDeviceDynamicRenderingLocalReadFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_LOCATION_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_dynamic_rendering_local_read"],
-        ImpliesSets = [
-            "VK_KHR_dynamic_rendering_local_read+VK_KHR_dynamic_rendering",
-            "VK_KHR_dynamic_rendering_local_read+VK_VERSION_1_3",
-        ]
-    )]
-    RenderingAttachmentLocationInfoKHR = RenderingAttachmentLocationInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDERING_INPUT_ATTACHMENT_INDEX_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_dynamic_rendering_local_read"],
-        ImpliesSets = [
-            "VK_KHR_dynamic_rendering_local_read+VK_KHR_dynamic_rendering",
-            "VK_KHR_dynamic_rendering_local_read+VK_VERSION_1_3",
-        ]
-    )]
-    RenderingInputAttachmentIndexInfoKHR = RenderingInputAttachmentIndexInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SEPARATE_DEPTH_STENCIL_LAYOUTS_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_separate_depth_stencil_layouts"],
-        ImpliesSets = [
-            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    PhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR =
-        PhysicalDeviceSeparateDepthStencilLayoutsFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_REFERENCE_STENCIL_LAYOUT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_separate_depth_stencil_layouts"],
-        ImpliesSets = [
-            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    AttachmentReferenceStencilLayoutKHR = AttachmentReferenceStencilLayout,
-
-    [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_DESCRIPTION_STENCIL_LAYOUT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_separate_depth_stencil_layouts"],
-        ImpliesSets = [
-            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    AttachmentDescriptionStencilLayoutKHR = AttachmentDescriptionStencilLayout,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BUFFER_ADDRESS_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_buffer_device_address"],
-        ImpliesSets = [
-            "VK_EXT_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_buffer_device_address+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceBufferAddressFeaturesEXT = PhysicalDeviceBufferDeviceAddressFeaturesEXT,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_DEVICE_ADDRESS_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_buffer_device_address"],
-        ImpliesSets = [
-            "VK_EXT_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_buffer_device_address+VK_VERSION_1_1",
-        ]
-    )]
-    BufferDeviceAddressInfoEXT = BufferDeviceAddressInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TOOL_PROPERTIES_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
-    PhysicalDeviceToolPropertiesEXT = PhysicalDeviceToolProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_STENCIL_USAGE_CREATE_INFO_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_separate_stencil_usage"])]
-    ImageStencilUsageCreateInfoEXT = ImageStencilUsageCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_UNIFORM_BUFFER_STANDARD_LAYOUT_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_uniform_buffer_standard_layout"],
-        ImpliesSets = [
-            "VK_KHR_uniform_buffer_standard_layout+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_uniform_buffer_standard_layout+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceUniformBufferStandardLayoutFeaturesKHR =
-        PhysicalDeviceUniformBufferStandardLayoutFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BUFFER_DEVICE_ADDRESS_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_buffer_device_address"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_device_group",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceBufferDeviceAddressFeaturesKHR = PhysicalDeviceBufferDeviceAddressFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_DEVICE_ADDRESS_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_buffer_device_address"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_device_group",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    BufferDeviceAddressInfoKHR = BufferDeviceAddressInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_OPAQUE_CAPTURE_ADDRESS_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_buffer_device_address"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_device_group",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    BufferOpaqueCaptureAddressCreateInfoKHR = BufferOpaqueCaptureAddressCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_OPAQUE_CAPTURE_ADDRESS_ALLOCATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_buffer_device_address"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_device_group",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    MemoryOpaqueCaptureAddressAllocateInfoKHR = MemoryOpaqueCaptureAddressAllocateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_MEMORY_OPAQUE_CAPTURE_ADDRESS_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_buffer_device_address"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_device_group",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    DeviceMemoryOpaqueCaptureAddressInfoKHR = DeviceMemoryOpaqueCaptureAddressInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_line_rasterization"],
-        ImpliesSets = [
-            "VK_EXT_line_rasterization+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_line_rasterization+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceLineRasterizationFeaturesEXT = PhysicalDeviceLineRasterizationFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_LINE_STATE_CREATE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_line_rasterization"],
-        ImpliesSets = [
-            "VK_EXT_line_rasterization+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_line_rasterization+VK_VERSION_1_1",
-        ]
-    )]
-    PipelineRasterizationLineStateCreateInfoEXT = PipelineRasterizationLineStateCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_PROPERTIES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_line_rasterization"],
-        ImpliesSets = [
-            "VK_EXT_line_rasterization+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_line_rasterization+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceLineRasterizationPropertiesEXT = PhysicalDeviceLineRasterizationProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_QUERY_RESET_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_host_query_reset"],
-        ImpliesSets = [
-            "VK_EXT_host_query_reset+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_host_query_reset+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceHostQueryResetFeaturesEXT = PhysicalDeviceHostQueryResetFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INDEX_TYPE_UINT8_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_index_type_uint8"],
-        ImpliesSets = [
-            "VK_EXT_index_type_uint8+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_index_type_uint8+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceIndexTypeUint8FeaturesEXT = PhysicalDeviceIndexTypeUint8Features,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_IMAGE_COPY_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_host_image_copy"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    PhysicalDeviceHostImageCopyFeaturesEXT = PhysicalDeviceHostImageCopyFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_IMAGE_COPY_PROPERTIES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_host_image_copy"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    PhysicalDeviceHostImageCopyPropertiesEXT = PhysicalDeviceHostImageCopyProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_TO_IMAGE_COPY_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_host_image_copy"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    MemoryToImageCopyEXT = MemoryToImageCopy,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_TO_MEMORY_COPY_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_host_image_copy"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    ImageToMemoryCopyEXT = ImageToMemoryCopy,
-
-    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_MEMORY_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_host_image_copy"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    CopyImageToMemoryInfoEXT = CopyImageToMemoryInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_COPY_MEMORY_TO_IMAGE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_host_image_copy"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    CopyMemoryToImageInfoEXT = CopyMemoryToImageInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_HOST_IMAGE_LAYOUT_TRANSITION_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_host_image_copy"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    HostImageLayoutTransitionInfoEXT = HostImageLayoutTransitionInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_IMAGE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_host_image_copy"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    CopyImageToImageInfoEXT = CopyImageToImageInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBRESOURCE_HOST_MEMCPY_SIZE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_host_image_copy"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    SubresourceHostMemcpySizeEXT = SubresourceHostMemcpySize,
-
-    [NativeName("VK_STRUCTURE_TYPE_HOST_IMAGE_COPY_DEVICE_PERFORMANCE_QUERY_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_host_image_copy"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    HostImageCopyDevicePerformanceQueryEXT = HostImageCopyDevicePerformanceQuery,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_MAP_INFO_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
-    MemoryMapInfoKHR = MemoryMapInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_UNMAP_INFO_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
-    MemoryUnmapInfoKHR = MemoryUnmapInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_surface_maintenance1"],
-        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
-    )]
-    SurfacePresentModeEXT = SurfacePresentModeKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_SCALING_CAPABILITIES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_surface_maintenance1"],
-        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
-    )]
-    SurfacePresentScalingCapabilitiesEXT = SurfacePresentScalingCapabilitiesKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_COMPATIBILITY_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_surface_maintenance1"],
-        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
-    )]
-    SurfacePresentModeCompatibilityEXT = SurfacePresentModeCompatibilityKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SWAPCHAIN_MAINTENANCE_1_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_swapchain_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceSwapchainMaintenance1FeaturesEXT = PhysicalDeviceSwapchainMaintenance1FeaturesKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_FENCE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_swapchain_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
-        ]
-    )]
-    SwapchainPresentFenceInfoEXT = SwapchainPresentFenceInfoKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODES_CREATE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_swapchain_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
-        ]
-    )]
-    SwapchainPresentModesCreateInfoEXT = SwapchainPresentModesCreateInfoKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_swapchain_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
-        ]
-    )]
-    SwapchainPresentModeInfoEXT = SwapchainPresentModeInfoKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_SCALING_CREATE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_swapchain_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
-        ]
-    )]
-    SwapchainPresentScalingCreateInfoEXT = SwapchainPresentScalingCreateInfoKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_RELEASE_SWAPCHAIN_IMAGES_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_swapchain_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
-        ]
-    )]
-    ReleaseSwapchainImagesInfoEXT = ReleaseSwapchainImagesInfoKHR,
-
-    [NativeName(
-        "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_DEMOTE_TO_HELPER_INVOCATION_FEATURES_EXT"
-    )]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_shader_demote_to_helper_invocation"],
-        ImpliesSets = [
-            "VK_EXT_shader_demote_to_helper_invocation+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_shader_demote_to_helper_invocation+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT =
-        PhysicalDeviceShaderDemoteToHelperInvocationFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INTEGER_DOT_PRODUCT_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_shader_integer_dot_product"],
-        ImpliesSets = [
-            "VK_KHR_shader_integer_dot_product+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_shader_integer_dot_product+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceShaderIntegerDotProductFeaturesKHR =
-        PhysicalDeviceShaderIntegerDotProductFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INTEGER_DOT_PRODUCT_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_shader_integer_dot_product"],
-        ImpliesSets = [
-            "VK_KHR_shader_integer_dot_product+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_shader_integer_dot_product+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceShaderIntegerDotProductPropertiesKHR =
-        PhysicalDeviceShaderIntegerDotProductProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXEL_BUFFER_ALIGNMENT_PROPERTIES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texel_buffer_alignment"],
-        ImpliesSets = [
-            "VK_EXT_texel_buffer_alignment+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texel_buffer_alignment+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceTexelBufferAlignmentPropertiesEXT = PhysicalDeviceTexelBufferAlignmentProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_robustness2"],
-        ImpliesSets = [
-            "VK_EXT_robustness2+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_robustness2+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceRobustness2FeaturesEXT = PhysicalDeviceRobustness2FeaturesKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_PROPERTIES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_robustness2"],
-        ImpliesSets = [
-            "VK_EXT_robustness2+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_robustness2+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceRobustness2PropertiesEXT = PhysicalDeviceRobustness2PropertiesKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIVATE_DATA_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_private_data"],
-        ImpliesSets = [
-            "VK_EXT_private_data+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_private_data+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDevicePrivateDataFeaturesEXT = PhysicalDevicePrivateDataFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_PRIVATE_DATA_CREATE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_private_data"],
-        ImpliesSets = [
-            "VK_EXT_private_data+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_private_data+VK_VERSION_1_1",
-        ]
-    )]
-    DevicePrivateDataCreateInfoEXT = DevicePrivateDataCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PRIVATE_DATA_SLOT_CREATE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_private_data"],
-        ImpliesSets = [
-            "VK_EXT_private_data+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_private_data+VK_VERSION_1_1",
-        ]
-    )]
-    PrivateDataSlotCreateInfoEXT = PrivateDataSlotCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CREATION_CACHE_CONTROL_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_pipeline_creation_cache_control"],
-        ImpliesSets = [
-            "VK_EXT_pipeline_creation_cache_control+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_pipeline_creation_cache_control+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDevicePipelineCreationCacheControlFeaturesEXT =
-        PhysicalDevicePipelineCreationCacheControlFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_MEMORY_BARRIER_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_synchronization2"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_VERSION_1_1",
-        ]
-    )]
-    MemoryBarrier2KHR = MemoryBarrier2,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_synchronization2"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_VERSION_1_1",
-        ]
-    )]
-    BufferMemoryBarrier2KHR = BufferMemoryBarrier2,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_synchronization2"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_VERSION_1_1",
-        ]
-    )]
-    ImageMemoryBarrier2KHR = ImageMemoryBarrier2,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEPENDENCY_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_synchronization2"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_VERSION_1_1",
-        ]
-    )]
-    DependencyInfoKHR = DependencyInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBMIT_INFO_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_synchronization2"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_VERSION_1_1",
-        ]
-    )]
-    SubmitInfo2KHR = SubmitInfo2,
-
-    [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_SUBMIT_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_synchronization2"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_VERSION_1_1",
-        ]
-    )]
-    SemaphoreSubmitInfoKHR = SemaphoreSubmitInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_SUBMIT_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_synchronization2"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_VERSION_1_1",
-        ]
-    )]
-    CommandBufferSubmitInfoKHR = CommandBufferSubmitInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SYNCHRONIZATION_2_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_synchronization2"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceSynchronization2FeaturesKHR = PhysicalDeviceSynchronization2Features,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ZERO_INITIALIZE_WORKGROUP_MEMORY_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_zero_initialize_workgroup_memory"],
-        ImpliesSets = [
-            "VK_KHR_zero_initialize_workgroup_memory+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_zero_initialize_workgroup_memory+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR =
-        PhysicalDeviceZeroInitializeWorkgroupMemoryFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_ROBUSTNESS_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_image_robustness"],
-        ImpliesSets = [
-            "VK_EXT_image_robustness+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_image_robustness+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceImageRobustnessFeaturesEXT = PhysicalDeviceImageRobustnessFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_COPY_BUFFER_INFO_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_copy_commands2"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_VERSION_1_1",
-        ]
-    )]
-    CopyBufferInfo2KHR = CopyBufferInfo2,
-
-    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_INFO_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_copy_commands2"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_VERSION_1_1",
-        ]
-    )]
-    CopyImageInfo2KHR = CopyImageInfo2,
-
-    [NativeName("VK_STRUCTURE_TYPE_COPY_BUFFER_TO_IMAGE_INFO_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_copy_commands2"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_VERSION_1_1",
-        ]
-    )]
-    CopyBufferToImageInfo2KHR = CopyBufferToImageInfo2,
-
-    [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_BUFFER_INFO_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_copy_commands2"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_VERSION_1_1",
-        ]
-    )]
-    CopyImageToBufferInfo2KHR = CopyImageToBufferInfo2,
-
-    [NativeName("VK_STRUCTURE_TYPE_BLIT_IMAGE_INFO_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_copy_commands2"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_VERSION_1_1",
-        ]
-    )]
-    BlitImageInfo2KHR = BlitImageInfo2,
-
-    [NativeName("VK_STRUCTURE_TYPE_RESOLVE_IMAGE_INFO_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_copy_commands2"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_VERSION_1_1",
-        ]
-    )]
-    ResolveImageInfo2KHR = ResolveImageInfo2,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_COPY_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_copy_commands2"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_VERSION_1_1",
-        ]
-    )]
-    BufferCopy2KHR = BufferCopy2,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_COPY_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_copy_commands2"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_VERSION_1_1",
-        ]
-    )]
-    ImageCopy2KHR = ImageCopy2,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_BLIT_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_copy_commands2"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_VERSION_1_1",
-        ]
-    )]
-    ImageBlit2KHR = ImageBlit2,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_IMAGE_COPY_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_copy_commands2"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_VERSION_1_1",
-        ]
-    )]
-    BufferImageCopy2KHR = BufferImageCopy2,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_RESOLVE_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_copy_commands2"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_VERSION_1_1",
-        ]
-    )]
-    ImageResolve2KHR = ImageResolve2,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBRESOURCE_LAYOUT_2_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_image_compression_control"],
-        ImpliesSets = [
-            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_image_compression_control+VK_VERSION_1_1",
-        ]
-    )]
-    SubresourceLayout2EXT = SubresourceLayout2,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_SUBRESOURCE_2_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_image_compression_control"],
-        ImpliesSets = [
-            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_image_compression_control+VK_VERSION_1_1",
-        ]
-    )]
-    ImageSubresource2EXT = ImageSubresource2,
-
-    [NativeName(
-        "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_FEATURES_ARM"
-    )]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_ARM_rasterization_order_attachment_access"],
-        ImpliesSets = [
-            "VK_ARM_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
-            "VK_ARM_rasterization_order_attachment_access+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesARM =
-        PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MUTABLE_DESCRIPTOR_TYPE_FEATURES_VALVE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VALVE_mutable_descriptor_type"],
-        ImpliesSets = ["VK_KHR_maintenance3"]
-    )]
-    PhysicalDeviceMutableDescriptorTypeFeaturesVALVE =
-        PhysicalDeviceMutableDescriptorTypeFeaturesEXT,
-
-    [NativeName("VK_STRUCTURE_TYPE_MUTABLE_DESCRIPTOR_TYPE_CREATE_INFO_VALVE")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VALVE_mutable_descriptor_type"],
-        ImpliesSets = ["VK_KHR_maintenance3"]
-    )]
-    MutableDescriptorTypeCreateInfoVALVE = MutableDescriptorTypeCreateInfoEXT,
-
-    [NativeName("VK_STRUCTURE_TYPE_FORMAT_PROPERTIES_3_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_format_feature_flags2"],
-        ImpliesSets = [
-            "VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_format_feature_flags2+VK_VERSION_1_1",
-        ]
-    )]
-    FormatProperties3KHR = FormatProperties3,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_MODE_FIFO_LATEST_READY_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_present_mode_fifo_latest_ready"],
-        ImpliesSets = ["VK_KHR_swapchain"]
-    )]
-    PhysicalDevicePresentModeFifoLatestReadyFeaturesEXT =
-        PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_pipeline_properties"],
-        ImpliesSets = [
-            "VK_EXT_pipeline_properties+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_pipeline_properties+VK_VERSION_1_1",
-        ]
-    )]
-    PipelineInfoEXT = PipelineInfoKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GLOBAL_PRIORITY_QUERY_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_global_priority_query"],
-        ImpliesSets = [
-            "VK_EXT_global_priority+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_global_priority+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceGlobalPriorityQueryFeaturesEXT = PhysicalDeviceGlobalPriorityQueryFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_GLOBAL_PRIORITY_PROPERTIES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_global_priority_query"],
-        ImpliesSets = [
-            "VK_EXT_global_priority+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_global_priority+VK_VERSION_1_1",
-        ]
-    )]
-    QueueFamilyGlobalPriorityPropertiesEXT = QueueFamilyGlobalPriorityProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_4_FEATURES_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
-    PhysicalDeviceMaintenance4FeaturesKHR = PhysicalDeviceMaintenance4Features,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_4_PROPERTIES_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
-    PhysicalDeviceMaintenance4PropertiesKHR = PhysicalDeviceMaintenance4Properties,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_BUFFER_MEMORY_REQUIREMENTS_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
-    DeviceBufferMemoryRequirementsKHR = DeviceBufferMemoryRequirements,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_IMAGE_MEMORY_REQUIREMENTS_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
-    DeviceImageMemoryRequirementsKHR = DeviceImageMemoryRequirements,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_ROTATE_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_shader_subgroup_rotate"],
-        ImpliesSets = [
-            "VK_KHR_shader_subgroup_rotate+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_shader_subgroup_rotate+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceShaderSubgroupRotateFeaturesKHR = PhysicalDeviceShaderSubgroupRotateFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLAMP_ZERO_ONE_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_depth_clamp_zero_one"],
-        ImpliesSets = [
-            "VK_EXT_depth_clamp_zero_one+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_depth_clamp_zero_one+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceDepthClampZeroOneFeaturesEXT = PhysicalDeviceDepthClampZeroOneFeaturesKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_FEATURES_QCOM")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_QCOM_fragment_density_map_offset"],
-        ImpliesSets = [
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceFragmentDensityMapOffsetFeaturesQCOM =
-        PhysicalDeviceFragmentDensityMapOffsetFeaturesEXT,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_PROPERTIES_QCOM")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_QCOM_fragment_density_map_offset"],
-        ImpliesSets = [
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM =
-        PhysicalDeviceFragmentDensityMapOffsetPropertiesEXT,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBPASS_FRAGMENT_DENSITY_MAP_OFFSET_END_INFO_QCOM")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_QCOM_fragment_density_map_offset"],
-        ImpliesSets = [
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
-        ]
-    )]
-    SubpassFragmentDensityMapOffsetEndInfoQCOM = RenderPassFragmentDensityMapOffsetEndInfoEXT,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_PROPERTIES_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_copy_memory_indirect"],
-        ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    PhysicalDeviceCopyMemoryIndirectPropertiesNV = PhysicalDeviceCopyMemoryIndirectPropertiesKHR,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_FEATURES_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_memory_decompression"],
-        ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    PhysicalDeviceMemoryDecompressionFeaturesNV = PhysicalDeviceMemoryDecompressionFeaturesEXT,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_PROPERTIES_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_memory_decompression"],
-        ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    PhysicalDeviceMemoryDecompressionPropertiesNV = PhysicalDeviceMemoryDecompressionPropertiesEXT,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_PROTECTED_ACCESS_FEATURES_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_pipeline_protected_access"],
-        ImpliesSets = [
-            "VK_EXT_pipeline_protected_access+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_pipeline_protected_access+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDevicePipelineProtectedAccessFeaturesEXT =
-        PhysicalDevicePipelineProtectedAccessFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_5_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance5"],
-        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
-    )]
-    PhysicalDeviceMaintenance5FeaturesKHR = PhysicalDeviceMaintenance5Features,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_5_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance5"],
-        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
-    )]
-    PhysicalDeviceMaintenance5PropertiesKHR = PhysicalDeviceMaintenance5Properties,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDERING_AREA_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance5"],
-        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
-    )]
-    RenderingAreaInfoKHR = RenderingAreaInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_DEVICE_IMAGE_SUBRESOURCE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance5"],
-        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
-    )]
-    DeviceImageSubresourceInfoKHR = DeviceImageSubresourceInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_SUBRESOURCE_LAYOUT_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance5"],
-        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
-    )]
-    SubresourceLayout2KHR = SubresourceLayout2,
-
-    [NativeName("VK_STRUCTURE_TYPE_IMAGE_SUBRESOURCE_2_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance5"],
-        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
-    )]
-    ImageSubresource2KHR = ImageSubresource2,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_CREATE_FLAGS_2_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance5"],
-        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
-    )]
-    PipelineCreateFlags2CreateInfoKHR = PipelineCreateFlags2CreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_BUFFER_USAGE_FLAGS_2_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance5"],
-        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
-    )]
-    BufferUsageFlags2CreateInfoKHR = BufferUsageFlags2CreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_SHADER_REQUIRED_SUBGROUP_SIZE_CREATE_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_shader_object"],
-        ImpliesSets = [
-            "VK_KHR_dynamic_rendering+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_dynamic_rendering+VK_VERSION_1_1",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    ShaderRequiredSubgroupSizeCreateInfoEXT = PipelineShaderStageRequiredSubgroupSizeCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_vertex_attribute_divisor"],
-        ImpliesSets = [
-            "VK_KHR_vertex_attribute_divisor+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_vertex_attribute_divisor+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceVertexAttributeDivisorPropertiesKHR =
-        PhysicalDeviceVertexAttributeDivisorProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_DIVISOR_STATE_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_vertex_attribute_divisor"],
-        ImpliesSets = [
-            "VK_KHR_vertex_attribute_divisor+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_vertex_attribute_divisor+VK_VERSION_1_1",
-        ]
-    )]
-    PipelineVertexInputDivisorStateCreateInfoKHR = PipelineVertexInputDivisorStateCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_vertex_attribute_divisor"],
-        ImpliesSets = [
-            "VK_KHR_vertex_attribute_divisor+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_vertex_attribute_divisor+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceVertexAttributeDivisorFeaturesKHR = PhysicalDeviceVertexAttributeDivisorFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT_CONTROLS_2_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_shader_float_controls2"],
-        ImpliesSets = ["VK_KHR_shader_float_controls", "VK_VERSION_1_1"]
-    )]
-    PhysicalDeviceShaderFloatControls2FeaturesKHR = PhysicalDeviceShaderFloatControls2Features,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INDEX_TYPE_UINT8_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_index_type_uint8"],
-        ImpliesSets = [
-            "VK_KHR_index_type_uint8+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_index_type_uint8+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceIndexTypeUint8FeaturesKHR = PhysicalDeviceIndexTypeUint8Features,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_line_rasterization"],
-        ImpliesSets = [
-            "VK_KHR_line_rasterization+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_line_rasterization+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceLineRasterizationFeaturesKHR = PhysicalDeviceLineRasterizationFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_LINE_STATE_CREATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_line_rasterization"],
-        ImpliesSets = [
-            "VK_KHR_line_rasterization+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_line_rasterization+VK_VERSION_1_1",
-        ]
-    )]
-    PipelineRasterizationLineStateCreateInfoKHR = PipelineRasterizationLineStateCreateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_PROPERTIES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_line_rasterization"],
-        ImpliesSets = [
-            "VK_KHR_line_rasterization+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_line_rasterization+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceLineRasterizationPropertiesKHR = PhysicalDeviceLineRasterizationProperties,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_EXPECT_ASSUME_FEATURES_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_shader_expect_assume"],
-        ImpliesSets = [
-            "VK_KHR_shader_expect_assume+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_shader_expect_assume+VK_VERSION_1_1",
-        ]
-    )]
-    PhysicalDeviceShaderExpectAssumeFeaturesKHR = PhysicalDeviceShaderExpectAssumeFeatures,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_6_FEATURES_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
-    PhysicalDeviceMaintenance6FeaturesKHR = PhysicalDeviceMaintenance6Features,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_6_PROPERTIES_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
-    PhysicalDeviceMaintenance6PropertiesKHR = PhysicalDeviceMaintenance6Properties,
-
-    [NativeName("VK_STRUCTURE_TYPE_BIND_MEMORY_STATUS_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
-    BindMemoryStatusKHR = BindMemoryStatus,
-
-    [NativeName("VK_STRUCTURE_TYPE_BIND_DESCRIPTOR_SETS_INFO_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
-    BindDescriptorSetsInfoKHR = BindDescriptorSetsInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PUSH_CONSTANTS_INFO_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
-    PushConstantsInfoKHR = PushConstantsInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PUSH_DESCRIPTOR_SET_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance6", "VK_KHR_push_descriptor"],
-        ImpliesSets = ["VK_VERSION_1_1"],
-        RequireAll = true
-    )]
-    PushDescriptorSetInfoKHR = PushDescriptorSetInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_PUSH_DESCRIPTOR_SET_WITH_TEMPLATE_INFO_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance6", "VK_KHR_push_descriptor"],
-        ImpliesSets = ["VK_VERSION_1_1"],
-        RequireAll = true
-    )]
-    PushDescriptorSetWithTemplateInfoKHR = PushDescriptorSetWithTemplateInfo,
-
-    [NativeName("VK_STRUCTURE_TYPE_RENDERING_END_INFO_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_fragment_density_map_offset"],
-        ImpliesSets = [
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_KHR_create_renderpass2+VK_KHR_dynamic_rendering",
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_KHR_create_renderpass2+VK_VERSION_1_3",
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_VERSION_1_2+VK_KHR_dynamic_rendering",
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2+VK_VERSION_1_2+VK_VERSION_1_3",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_KHR_create_renderpass2+VK_KHR_dynamic_rendering",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_KHR_create_renderpass2+VK_VERSION_1_3",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_KHR_dynamic_rendering",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_VERSION_1_3",
-        ]
-    )]
-    RenderingEndInfoEXT = RenderingEndInfoKHR,
 }

@@ -64,17 +64,33 @@ public enum LipExpressionHTC : uint
     [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
     MouthRaiserRight = 12,
 
+    [NativeName("XR_LIP_EXPRESSION_MOUTH_SMILE_RIGHT_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
+    MouthSmileRight = MouthRaiserRight,
+
     [NativeName("XR_LIP_EXPRESSION_MOUTH_RAISER_LEFT_HTC")]
     [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
     MouthRaiserLeft = 13,
+
+    [NativeName("XR_LIP_EXPRESSION_MOUTH_SMILE_LEFT_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
+    MouthSmileLeft = MouthRaiserLeft,
 
     [NativeName("XR_LIP_EXPRESSION_MOUTH_STRETCHER_RIGHT_HTC")]
     [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
     MouthStretcherRight = 14,
 
+    [NativeName("XR_LIP_EXPRESSION_MOUTH_SAD_RIGHT_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
+    MouthSadRight = MouthStretcherRight,
+
     [NativeName("XR_LIP_EXPRESSION_MOUTH_STRETCHER_LEFT_HTC")]
     [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
     MouthStretcherLeft = 15,
+
+    [NativeName("XR_LIP_EXPRESSION_MOUTH_SAD_LEFT_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
+    MouthSadLeft = MouthStretcherLeft,
 
     [NativeName("XR_LIP_EXPRESSION_CHEEK_PUFF_RIGHT_HTC")]
     [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
@@ -159,20 +175,4 @@ public enum LipExpressionHTC : uint
     [NativeName("XR_LIP_EXPRESSION_TONGUE_DOWNLEFT_MORPH_HTC")]
     [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
     TongueDownleftMorph = 36,
-
-    [NativeName("XR_LIP_EXPRESSION_MOUTH_SMILE_RIGHT_HTC")]
-    [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
-    MouthSmileRight = MouthRaiserRight,
-
-    [NativeName("XR_LIP_EXPRESSION_MOUTH_SMILE_LEFT_HTC")]
-    [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
-    MouthSmileLeft = MouthRaiserLeft,
-
-    [NativeName("XR_LIP_EXPRESSION_MOUTH_SAD_RIGHT_HTC")]
-    [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
-    MouthSadRight = MouthStretcherRight,
-
-    [NativeName("XR_LIP_EXPRESSION_MOUTH_SAD_LEFT_HTC")]
-    [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
-    MouthSadLeft = MouthStretcherLeft,
 }

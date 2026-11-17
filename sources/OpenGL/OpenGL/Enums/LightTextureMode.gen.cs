@@ -10,12 +10,6 @@ namespace Silk.NET.OpenGL;
 [NativeName("LightTextureModeEXT")]
 public enum LightTextureMode : uint
 {
-    [NativeName("GL_FRAGMENT_DEPTH")]
-    Depth = 33874,
-
-    [NativeName("GL_FRAGMENT_DEPTH_EXT")]
-    DepthEXT = 33874,
-
     [NativeName("GL_FRAGMENT_MATERIAL_EXT")]
     MaterialEXT = 33609,
 
@@ -24,4 +18,10 @@ public enum LightTextureMode : uint
 
     [NativeName("GL_FRAGMENT_COLOR_EXT")]
     ColorEXT = 33612,
+
+    [NativeName("GL_FRAGMENT_DEPTH")]
+    Depth = 33874,
+
+    [NativeName("GL_FRAGMENT_DEPTH_EXT")]
+    DepthEXT = 33874,
 }

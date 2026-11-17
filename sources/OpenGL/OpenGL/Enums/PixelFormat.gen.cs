@@ -10,23 +10,23 @@ namespace Silk.NET.OpenGL;
 [NativeName("PixelFormat")]
 public enum PixelFormat : uint
 {
-    [NativeName("GL_BGRA_IMG")]
-    BgraIMG = 32993,
-
-    [NativeName("GL_RED_EXT")]
-    RedEXT = 6403,
-
     [NativeName("GL_UNSIGNED_SHORT")]
     UnsignedShort = 5123,
 
     [NativeName("GL_UNSIGNED_INT")]
     UnsignedInt = 5125,
 
+    [NativeName("GL_COLOR_INDEX")]
+    ColorIndex = 6400,
+
     [NativeName("GL_STENCIL_INDEX")]
     StencilIndex = 6401,
 
     [NativeName("GL_DEPTH_COMPONENT")]
     DepthComponent = 6402,
+
+    [NativeName("GL_RED_EXT")]
+    RedEXT = 6403,
 
     [NativeName("GL_RED")]
     Red = 6403,
@@ -46,20 +46,50 @@ public enum PixelFormat : uint
     [NativeName("GL_RGBA")]
     Rgba = 6408,
 
-    [NativeName("GL_COLOR_INDEX")]
-    ColorIndex = 6400,
-
     [NativeName("GL_LUMINANCE")]
     Luminance = 6409,
 
     [NativeName("GL_LUMINANCE_ALPHA")]
     LuminanceAlpha = 6410,
 
+    [NativeName("GL_ABGR_EXT")]
+    AbgrEXT = 32768,
+
+    [NativeName("GL_CMYK_EXT")]
+    CmykEXT = 32780,
+
+    [NativeName("GL_CMYKA_EXT")]
+    CmykaEXT = 32781,
+
     [NativeName("GL_BGR")]
     Bgr = 32992,
 
+    [NativeName("GL_BGR_EXT")]
+    BgrEXT = 32992,
+
+    [NativeName("GL_BGRA_IMG")]
+    BgraIMG = 32993,
+
     [NativeName("GL_BGRA")]
     Bgra = 32993,
+
+    [NativeName("GL_BGRA_EXT")]
+    BgraEXT = 32993,
+
+    [NativeName("GL_YCRCB_422_SGIX")]
+    Ycrcb422SGIX = 33211,
+
+    [NativeName("GL_YCRCB_444_SGIX")]
+    Ycrcb444SGIX = 33212,
+
+    [NativeName("GL_RG")]
+    Rg = 33319,
+
+    [NativeName("GL_RG_INTEGER")]
+    RgInteger = 33320,
+
+    [NativeName("GL_DEPTH_STENCIL")]
+    DepthStencil = 34041,
 
     [NativeName("GL_RED_INTEGER")]
     RedInteger = 36244,
@@ -81,34 +111,4 @@ public enum PixelFormat : uint
 
     [NativeName("GL_BGRA_INTEGER")]
     BgraInteger = 36251,
-
-    [NativeName("GL_DEPTH_STENCIL")]
-    DepthStencil = 34041,
-
-    [NativeName("GL_RG")]
-    Rg = 33319,
-
-    [NativeName("GL_RG_INTEGER")]
-    RgInteger = 33320,
-
-    [NativeName("GL_ABGR_EXT")]
-    AbgrEXT = 32768,
-
-    [NativeName("GL_BGR_EXT")]
-    BgrEXT = 32992,
-
-    [NativeName("GL_BGRA_EXT")]
-    BgraEXT = 32993,
-
-    [NativeName("GL_CMYK_EXT")]
-    CmykEXT = 32780,
-
-    [NativeName("GL_CMYKA_EXT")]
-    CmykaEXT = 32781,
-
-    [NativeName("GL_YCRCB_422_SGIX")]
-    Ycrcb422SGIX = 33211,
-
-    [NativeName("GL_YCRCB_444_SGIX")]
-    Ycrcb444SGIX = 33212,
 }

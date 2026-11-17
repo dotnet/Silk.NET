@@ -15,20 +15,6 @@ public enum SpirvResourceTypeFlagsEXT : uint
 {
     None = 0x0,
 
-    [NativeName("VK_SPIRV_RESOURCE_TYPE_ALL_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_heap"],
-        ImpliesSets = [
-            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
-            "VK_KHR_extended_flags+VK_VERSION_1_2",
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
-            "VK_VERSION_1_4",
-        ]
-    )]
-    All = 0x7FFFFFFF,
-
     [NativeName("VK_SPIRV_RESOURCE_TYPE_SAMPLER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -172,4 +158,18 @@ public enum SpirvResourceTypeFlagsEXT : uint
         RequireAll = true
     )]
     TensorBitARM = 0x200,
+
+    [NativeName("VK_SPIRV_RESOURCE_TYPE_ALL_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
+    All = 0x7FFFFFFF,
 }

@@ -26,6 +26,17 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     TriangleFacingCullDisableBit = 0x1,
 
+    [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_CULL_DISABLE_BIT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    TriangleCullDisableBitNV = TriangleFacingCullDisableBit,
+
     [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_FLIP_FACING_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -36,44 +47,6 @@ public enum GeometryInstanceFlagsKHR : uint
         ]
     )]
     TriangleFlipFacingBit = 0x2,
-
-    [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_acceleration_structure"],
-        ImpliesSets = [
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
-        ]
-    )]
-    ForceOpaqueBit = 0x4,
-
-    [NativeName("VK_GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_acceleration_structure"],
-        ImpliesSets = [
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
-        ]
-    )]
-    ForceNoOpaqueBit = 0x8,
-
-    [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPACITY_MICROMAP_2_STATE_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_opacity_micromap"],
-        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
-    )]
-    ForceOpacityMicromap2StateBit = 0x10,
-
-    [NativeName("VK_GEOMETRY_INSTANCE_DISABLE_OPACITY_MICROMAPS_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_opacity_micromap"],
-        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
-    )]
-    DisableOpacityMicromapsBit = 0x20,
 
     [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_KHR")]
     [SupportedApiProfile(
@@ -86,17 +59,6 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     TriangleFrontCounterclockwiseBit = TriangleFlipFacingBit,
 
-    [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_CULL_DISABLE_BIT_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_ray_tracing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    TriangleCullDisableBitNV = TriangleFacingCullDisableBit,
-
     [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -107,6 +69,17 @@ public enum GeometryInstanceFlagsKHR : uint
         ]
     )]
     TriangleFrontCounterclockwiseBitNV = TriangleFrontCounterclockwiseBit,
+
+    [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
+    ForceOpaqueBit = 0x4,
 
     [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_NV")]
     [SupportedApiProfile(
@@ -119,6 +92,17 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     ForceOpaqueBitNV = ForceOpaqueBit,
 
+    [NativeName("VK_GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
+    ForceNoOpaqueBit = 0x8,
+
     [NativeName("VK_GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -130,6 +114,14 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     ForceNoOpaqueBitNV = ForceNoOpaqueBit,
 
+    [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPACITY_MICROMAP_2_STATE_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    ForceOpacityMicromap2StateBit = 0x10,
+
     [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPACITY_MICROMAP_2_STATE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -140,6 +132,14 @@ public enum GeometryInstanceFlagsKHR : uint
         ]
     )]
     ForceOpacityMicromap2StateBitEXT = ForceOpacityMicromap2StateBit,
+
+    [NativeName("VK_GEOMETRY_INSTANCE_DISABLE_OPACITY_MICROMAPS_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    DisableOpacityMicromapsBit = 0x20,
 
     [NativeName("VK_GEOMETRY_INSTANCE_DISABLE_OPACITY_MICROMAPS_BIT_EXT")]
     [SupportedApiProfile(
