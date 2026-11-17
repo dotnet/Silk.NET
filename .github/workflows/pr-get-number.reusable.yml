@@ -1,0 +1,74 @@
+# This is intended for use alongside pr-post-number.reusable.yml (see develop/3.0 branch)
+name: Get PR number
+
+on:
+  workflow_call:
+    inputs:
+      runId:
+        type: number
+        required: true
+      repo:
+        type: string
+        required: true
+      expectedHeadCommit:
+        type: string
+        required: true
+    outputs:
+      prNumber:
+        value: ${{ jobs.get.outputs.prNumber }}
+
+jobs:
+  
+  # Unprivileged - Should not need to execute untrusted code
+  get:
+    name: Get PR number
+    runs-on: ubuntu-latest
+    
+    permissions:
+      actions: read
+    
+    steps:
+
+      # Workaround since `github.event.workflow_run.pull_requests[0].number` doesn't work
+      # Note that this artifact is untrusted
+      - name: Download PR number
+        uses: actions/download-artifact@v8.0.1
+        continue-on-error: true
+        with:
+          path: pr-number
+          name: pr-number
+          run-id: ${{ inputs.runId }}
+          github-token: ${{ github.token }}
+
+      - name: Read PR number
+        id: pr
+        shell: pwsh
+        env:
+          BASE_REPO: ${{ inputs.repo }}
+          EXPECTED_HEAD_COMMIT: ${{ inputs.expectedHeadCommit }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+          
+          if (-not (Test-Path pr-number/pr.txt)) {
+            Write-Host "No PR number found, assuming no reminder needed"
+            exit 0
+          }
+          
+          # Read and parse as int
+          $number = [int](Get-Content pr-number/pr.txt -Raw)
+          
+          # Validate that the PR's head commit matches the expected hash
+          $actualHeadCommit = gh api "repos/$env:BASE_REPO/pulls/$number" --jq .head.sha
+          if (-not ($actualHeadCommit -eq $env:EXPECTED_HEAD_COMMIT)) {
+            Write-Host "Actual PR head commit does not match expected (Actual: $actualHeadCommit, Expected: $env:EXPECTED_HEAD_COMMIT)"
+            Write-Host "If this was because this workflow run had stale information, the next run should already be queued"
+            exit 0
+          }
+
+          "number=$number" >> $env:GITHUB_OUTPUT
+
+    outputs:
+      prNumber: ${{ steps.pr.outputs.number }}

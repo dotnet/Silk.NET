@@ -16,12 +16,27 @@ concurrency:
 
 jobs:
 
+  pr:
+    name: Get PR number
+    
+    if: github.event.workflow_run.conclusion == 'success'
+    
+    permissions:
+      actions: read
+    
+    uses: $/.github/workflows/pr-get-number.reusable.yml
+    with:
+      runId: ${{ github.event.workflow_run.id }}
+      repo: ${{ github.repository }}
+      expectedHeadCommit: ${{ github.event.workflow_run.head_sha }}
+
   # Privileged - Must not execute untrusted code
-  check:
+  post:
     name: Post reminder comment
     runs-on: ubuntu-latest
     
-    if: github.event.workflow_run.conclusion == 'success'
+    needs: [pr]
+    if: needs.pr.outputs.prNumber != ''
     
     permissions:
       pull-requests: write
@@ -42,49 +57,7 @@ jobs:
 
     steps:
 
-      # Workaround since `github.event.workflow_run.pull_requests[0].number` doesn't work
-      # Note that this artifact is untrusted
-      - name: Download PR number
-        uses: actions/download-artifact@v8.0.1
-        continue-on-error: true
-        with:
-          path: pr-number
-          name: pr-number
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ github.token }}
-
-      - name: Read PR number
-        id: pr
-        shell: pwsh
-        env:
-          BASE_REPO: ${{ github.repository }}
-          EXPECTED_HEAD_COMMIT: ${{ github.event.workflow_run.head_sha }}
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          $ErrorActionPreference = "Stop"
-          $PSNativeCommandUseErrorActionPreference = $true
-          Set-StrictMode -Version Latest
-          
-          if (-not (Test-Path pr-number/pr.txt)) {
-            Write-Host "No PR number found, assuming no reminder needed"
-            exit 0
-          }
-          
-          # Read and parse as int
-          $number = [int](Get-Content pr-number/pr.txt -Raw)
-          
-          # Validate that the PR's head commit matches the expected hash
-          $actualHeadCommit = gh api "repos/$env:BASE_REPO/pulls/$number" --jq .head.sha
-          if (-not ($actualHeadCommit -eq $env:EXPECTED_HEAD_COMMIT)) {
-            Write-Host "Actual PR head commit does not match expected (Actual: $actualHeadCommit, Expected: $env:EXPECTED_HEAD_COMMIT)"
-            Write-Host "If this was because this workflow run had stale information, the next run should already be queued"
-            exit 0
-          }
-
-          "number=$number" >> $env:GITHUB_OUTPUT
-
       - name: Download reminder comment
-        if: steps.pr.outputs.number != ''
         uses: actions/download-artifact@v8.0.1
         continue-on-error: true
         with:
@@ -93,7 +66,6 @@ jobs:
           github-token: ${{ github.token }}
           
       - name: Get reminder comment pattern
-        if: steps.pr.outputs.number != ''
         id: pattern
         shell: pwsh
         env:
@@ -110,7 +82,6 @@ jobs:
           }
 
       - name: Read reminder comment
-        if: steps.pr.outputs.number != ''
         id: comment
         shell: pwsh
         env:
@@ -138,19 +109,19 @@ jobs:
           "$delimiter" >> $env:GITHUB_OUTPUT
 
       - name: Find previous reminder comment
-        if: steps.pr.outputs.number != '' && steps.comment.outputs.content != ''
+        if: steps.comment.outputs.content != ''
         id: previous
         uses: peter-evans/find-comment@v4
         with:
-          issue-number: ${{ steps.pr.outputs.number }}
+          issue-number: ${{ needs.pr.outputs.prNumber }}
           comment-author: "github-actions[bot]"
           body-includes: ${{ steps.pattern.outputs.pattern }}
   
       - name: Update reminder comment
-        if: steps.pr.outputs.number != '' && steps.comment.outputs.content != ''
+        if: steps.comment.outputs.content != ''
         uses: peter-evans/create-or-update-comment@v5
         with:
           comment-id: ${{ steps.previous.outputs.comment-id }}
-          issue-number: ${{ steps.pr.outputs.number }}
+          issue-number: ${{ needs.pr.outputs.prNumber }}
           body: ${{ steps.comment.outputs.content }}
           edit-mode: replace
