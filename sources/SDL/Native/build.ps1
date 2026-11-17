@@ -47,13 +47,8 @@ try {
           & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch arm64 -SkipAutomaticLocation
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
-          Push-Location build
-          try {
-            cmake $submodulePath -G Ninja "-DCMAKE_BUILD_TYPE=Release" "-DSDL_TEST_LIBRARY=OFF"
-            cmake --build . --parallel
-          } finally {
-            Pop-Location
-          }
+          cmake $submodulePath -B build -G Ninja "-DCMAKE_BUILD_TYPE=Release" "-DSDL_TEST_LIBRARY=OFF"
+          cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/win-arm64/native
           Copy-Item build/SDL3.dll runtimes/win-arm64/native
         }
@@ -63,13 +58,8 @@ try {
           & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch amd64 -SkipAutomaticLocation
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
-          Push-Location build
-          try {
-            cmake $submodulePath -G Ninja "-DCMAKE_BUILD_TYPE=Release" "-DSDL_TEST_LIBRARY=OFF"
-            cmake --build . --parallel
-          } finally {
-            Pop-Location
-          }
+          cmake $submodulePath -B build -G Ninja "-DCMAKE_BUILD_TYPE=Release" "-DSDL_TEST_LIBRARY=OFF"
+          cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/win-x64/native
           Copy-Item build/SDL3.dll runtimes/win-x64/native
         }
@@ -141,13 +131,8 @@ try {
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
-          Push-Location build
-          try {
-            cmake $submodulePath "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-aarch64-linux-gnu.2.17.cmake" "-DSDL_TEST_LIBRARY=OFF"
-            cmake --build . --parallel
-          } finally {
-            Pop-Location
-          }
+          cmake $submodulePath -B build "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-aarch64-linux-gnu.2.17.cmake" "-DSDL_TEST_LIBRARY=OFF"
+          cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/linux-arm64/native
           Copy-Item build/libSDL3.so runtimes/linux-arm64/native
         }
@@ -156,13 +141,8 @@ try {
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
-          Push-Location build
-          try {
-            cmake $submodulePath "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-arm-linux-gnueabihf.2.34.cmake" "-DSDL_TEST_LIBRARY=OFF"
-            cmake --build . --parallel
-          } finally {
-            Pop-Location
-          }
+          cmake $submodulePath -B build "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-arm-linux-gnueabihf.2.34.cmake" "-DSDL_TEST_LIBRARY=OFF"
+          cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/linux-arm/native
           Copy-Item build/libSDL3.so runtimes/linux-arm/native
         }
@@ -171,13 +151,8 @@ try {
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
-          Push-Location build
-          try {
-            cmake $submodulePath "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-x86_64-linux-gnu.2.17.cmake" "-DSDL_TEST_LIBRARY=OFF"
-            cmake --build . --parallel
-          } finally {
-            Pop-Location
-          }
+          cmake $submodulePath -B build "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-x86_64-linux-gnu.2.17.cmake" "-DSDL_TEST_LIBRARY=OFF"
+          cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/linux-x64/native
           Copy-Item build/libSDL3.so runtimes/linux-x64/native
         }
@@ -190,13 +165,8 @@ try {
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
-          Push-Location build
-          try {
-            cmake $submodulePath "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphoneos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
-            cmake --build . --parallel
-          } finally {
-            Pop-Location
-          }
+          cmake $submodulePath -B build "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphoneos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
+          cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/ios/native
           Copy-Item build/libSDL3.a runtimes/ios/native
         }
@@ -205,13 +175,8 @@ try {
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
-          Push-Location build
-          try {
-            cmake $submodulePath "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphonesimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
-            cmake --build . --parallel
-          } finally {
-            Pop-Location
-          }
+          cmake $submodulePath -B build "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphonesimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
+          cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/iossimulator/native
           Copy-Item build/libSDL3.a runtimes/iossimulator/native
         }
@@ -220,13 +185,8 @@ try {
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
-          Push-Location build
-          try {
-            cmake $submodulePath "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=10.11" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_TEST_LIBRARY=OFF"
-            cmake --build . --parallel
-          } finally {
-            Pop-Location
-          }
+          cmake $submodulePath -B build "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=10.11" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_TEST_LIBRARY=OFF"
+          cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/osx/native
           Copy-Item build/libSDL3.dylib runtimes/osx/native
         }
@@ -235,13 +195,8 @@ try {
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
-          Push-Location build
-          try {
-            cmake $submodulePath "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
-            cmake --build . --parallel
-          } finally {
-            Pop-Location
-          }
+          cmake $submodulePath -B build "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
+          cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/tvos/native
           Copy-Item build/libSDL3.a runtimes/tvos/native
         }
@@ -250,13 +205,8 @@ try {
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
-          Push-Location build
-          try {
-            cmake $submodulePath "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvsimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
-            cmake --build . --parallel
-          } finally {
-            Pop-Location
-          }
+          cmake $submodulePath -B build "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvsimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DCMAKE_BUILD_TYPE=Release" "-DSDL_STATIC=ON" "-DSDL_TEST_LIBRARY=OFF"
+          cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/tvossimulator/native
           Copy-Item build/libSDL3.a runtimes/tvossimulator/native
         }
