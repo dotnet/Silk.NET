@@ -86,7 +86,8 @@ namespace Silk.NET.Maths
         {
             var distanceSquared = Vector2D.DistanceSquared(Center, other.Center);
             var radiusDiff = Scalar.Subtract(Radius, other.Radius);
-            return Scalar.LessThanOrEqual(distanceSquared, Scalar.Multiply(radiusDiff, radiusDiff));
+            return Scalar.GreaterThanOrEqual(Radius, other.Radius)
+                && Scalar.LessThanOrEqual(distanceSquared, Scalar.Multiply(radiusDiff, radiusDiff));
         }
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Silk.NET.Maths
         /// Calculates a new circle translated by a given distance.
         /// </summary>
         /// <param name="distance">The distance.</param>
-        /// <returns>The calculated cube.</returns>
+        /// <returns>The calculated circle.</returns>
         public Circle<T> GetTranslated(Vector2D<T> distance)
         {
             return new(Center + distance, Radius);

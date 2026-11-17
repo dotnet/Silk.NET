@@ -89,3 +89,8 @@ tab_width = 4
 # License header + warning generated if missing
 file_header_template=Licensed to the .NET Foundation under one or more agreements.\nThe .NET Foundation licenses this file to you under the MIT license.
 dotnet_diagnostic.IDE0073.severity = warning
+
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+tab_width = 2

@@ -1,0 +1,226 @@
+# This workflow has a lot of duplicated code shared with silk3-bindings-regeneration.yml
+name: Native Builds (3.0)
+
+on:
+  issue_comment:
+    types:
+      - created
+
+permissions:
+  contents: read
+
+concurrency:
+  # Only share a concurrency group if the comment contains /native
+  # This is to prevent ordinary comments from replacing pending /native runs
+  # GitHub only runs the last pending run
+  group: ${{ contains(github.event.comment.body, '/native') && format('{0}-{1}', github.workflow, github.event.issue.number) || github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  
+  check:
+    name: Check PR and gather info
+    
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '/native')
+    
+    uses: $/.github/workflows/pr-get-info.reusable.yml
+    with:
+      prNumber: ${{ github.event.issue.number }}
+      baseRepo: ${{ github.repository }}
+  
+  checkPushPermissions:
+    name: Check PR push permissions
+    
+    needs: [check]
+    if: needs.check.outputs.isSilk3 == 'true'
+    
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    uses: $/.github/workflows/pr-push-permissions.reusable.yml
+    with:
+      prNumber: ${{ github.event.issue.number }}
+      baseRepo: ${{ github.repository }}
+      headRepo: ${{ needs.check.outputs.headRepo }}
+      headBranch: ${{ needs.check.outputs.headBranch }}
+      headCommit: ${{ needs.check.outputs.headCommit }}
+
+  # Unprivileged - Executes untrusted code
+  # dispatch here is very similar to dispatch in silk3-bindings-regeneration.yml
+  dispatch:
+    name: Dispatch selected jobs
+    runs-on: ubuntu-latest
+
+    needs: [check]
+    if: needs.check.outputs.isSilk3 == 'true'
+
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ needs.check.outputs.headRepo }}
+          ref: ${{ needs.check.outputs.headCommit }}
+          submodules: false
+
+      - name: Parse comment as command
+        id: command
+        shell: pwsh
+        working-directory: eng/workflows/native
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        run: ./parse.ps1 >> $env:GITHUB_OUTPUT
+
+      - name: Generate matrix
+        id: matrix
+        shell: pwsh
+        working-directory: eng/workflows/native
+        env:
+          CHOSEN_JOBS: ${{ steps.command.outputs.jobs }}
+        run: ./matrix.ps1 >> $env:GITHUB_OUTPUT
+
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+
+  # Unprivileged - Executes untrusted code
+  build:
+    name: Build ${{ matrix.job }} for ${{ matrix.runtime }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    needs: [check, dispatch]
+    if: join(fromJSON(needs.dispatch.outputs.matrix), ',') != ''
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.dispatch.outputs.matrix) }}
+
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v7
+        with:
+          submodules: false
+          repository: ${{ needs.check.outputs.headRepo }}
+          ref: ${{ needs.check.outputs.headCommit }}
+
+      - name: Ensure prerequisites
+        shell: pwsh
+        working-directory: eng/workflows/native
+        env:
+          JOB: ${{ matrix.job }}
+        run: ./prerequisites.ps1 --apply
+
+      # It's not a good idea to use ${{}} within run with untrusted inputs due to potential code injection,
+      # but this is copied from the original native workflow implementation and everything in this job already comes from an untrusted source
+      - name: Build
+        shell: pwsh
+        working-directory: ${{ matrix.dir }}
+        run: |
+          "https://github.com/actions/upload-artifact/issues/174" > .workaround-${{ matrix.job }}-${{ matrix.runtime }}.txt
+          ${{ format('.{0}{1}', startsWith(matrix.runtime, 'win') && '\' || '/', matrix.exec) }}
+
+      - name: Upload
+        uses: actions/upload-artifact@v7
+        with:
+          name: natives-${{ matrix.job }}-${{ matrix.runtime }}
+          path: |
+            ./.workaround-*.txt
+            ./${{ matrix.dir }}/runtimes/${{ format('{0}{1}', matrix.runtime, !contains(matrix.runtime, '-') && '*' || '') }}/**/*
+            ./${{ matrix.dir }}/lib/*${{ matrix.runtime }}*/**/*
+            ./${{ matrix.dir }}/*${{ matrix.runtime }}*/**/*
+  
+  # Unprivileged - Executes untrusted code
+  # bundle here is very similar to bundle in silk3-bindings-regeneration.yml
+  bundle:
+    name: Generate bundle
+    runs-on: ubuntu-latest
+
+    needs: [check, build]
+
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v7
+        with:
+          submodules: false
+          fetch-depth: 0
+          repository: ${{ needs.check.outputs.headRepo }}
+          ref: ${{ needs.check.outputs.headCommit }}
+
+      - name: Download natives
+        uses: actions/download-artifact@v8
+        with:
+          pattern: natives-*
+          merge-multiple: true
+
+      - name: Create bundle
+        id: bundle
+        shell: pwsh
+        env:
+          HEAD_COMMIT: ${{ needs.check.outputs.headCommit }}
+          HEAD_BRANCH: ${{ needs.check.outputs.headBranch }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+
+          git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+          git config --local user.name "The Silk.NET Automaton"
+
+          git switch -c ci/bundle
+
+          git status
+
+          # Cache
+          git add .
+          if (git status --porcelain --untracked-files=no) {
+            git commit -m "Update native binaries for $env:HEAD_COMMIT"
+          }
+
+          git status
+
+          # Pull in case there were commits pushed since the start of the workflow
+          Write-Host "Pulling any new changes"
+          git pull --rebase origin $env:HEAD_BRANCH
+          
+          $newHeadCommit = git rev-parse FETCH_HEAD
+          if ((git rev-parse HEAD) -eq $newHeadCommit) {
+            Write-Host "No commits to bundle"
+            "changed=false" >> $env:GITHUB_OUTPUT
+            exit 0
+          }
+          
+          Write-Host "Creating bundle"
+          git bundle create git.bundle "$newHeadCommit..ci/bundle"
+          "newHeadCommit=$newHeadCommit" >> $env:GITHUB_OUTPUT
+          "changed=true" >> $env:GITHUB_OUTPUT
+
+      - name: Upload bundle
+        if: steps.bundle.outputs.changed == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: git-bundle
+          path: git.bundle
+
+    outputs:
+      changed: ${{ steps.bundle.outputs.changed }}
+      newHeadCommit: ${{ steps.bundle.outputs.newHeadCommit }}
+
+  push:
+    name: Push
+    
+    needs: [check, bundle]
+    if: needs.bundle.outputs.changed == 'true'
+
+    permissions:
+      contents: write
+
+    uses: $/.github/workflows/pr-push-bundle.reusable.yml
+    with:
+      headRepo: ${{ needs.check.outputs.headRepo }}
+      headBranch: ${{ needs.check.outputs.headBranch }}
+      headCommit: ${{ needs.bundle.outputs.newHeadCommit }}
+      bundleArtifact: git-bundle
+      bundlePath: git.bundle

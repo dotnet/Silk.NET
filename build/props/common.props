@@ -8,6 +8,7 @@
     </PropertyGroup>
     <!-- Core properties -->
     <PropertyGroup>
+        <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <LangVersion>preview</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>

@@ -82,7 +82,8 @@ namespace Silk.NET.Maths
         {
             var distanceSquared = Vector3D.DistanceSquared(Center, other.Center);
             var radiusDiff = Scalar.Subtract(Radius, other.Radius);
-            return Scalar.LessThanOrEqual(distanceSquared, Scalar.Multiply(radiusDiff, radiusDiff));
+            return Scalar.GreaterThanOrEqual(Radius, other.Radius)
+                && Scalar.LessThanOrEqual(distanceSquared, Scalar.Multiply(radiusDiff, radiusDiff));
         }
 
         /// <summary>
