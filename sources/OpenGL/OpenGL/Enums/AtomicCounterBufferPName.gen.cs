@@ -10,6 +10,9 @@ namespace Silk.NET.OpenGL;
 [NativeName("AtomicCounterBufferPName")]
 public enum AtomicCounterBufferPName : uint
 {
+    [NativeName("GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER")]
+    ReferencedByComputeShader = 37101,
+
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_BINDING")]
     Binding = 37569,
 
@@ -36,7 +39,4 @@ public enum AtomicCounterBufferPName : uint
 
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_FRAGMENT_SHADER")]
     ReferencedByFragmentShader = 37579,
-
-    [NativeName("GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER")]
-    ReferencedByComputeShader = 37101,
 }

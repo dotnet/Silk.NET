@@ -68,7 +68,8 @@ public static class AttributeUtils
                                 && (
                                     y.ArgumentList?.Arguments.All(z =>
                                         z.NameEquals?.Name.ToString() != "EntryPoint"
-                                    ) ?? true
+                                    )
+                                    ?? true
                                 )
                                     ? y.AddArgumentListArguments(
                                         AttributeArgument(
@@ -265,6 +266,48 @@ public static class AttributeUtils
     }
 
     /// <summary>
+    /// Ensures the attribute list contains the [Flags] attribute.
+    /// </summary>
+    public static SyntaxList<AttributeListSyntax> WithFlags(
+        this IEnumerable<AttributeListSyntax> attributeLists,
+        bool add = true
+    )
+    {
+        if (add)
+        {
+            var list = List([.. attributeLists]);
+            if (list.ContainsAttribute("System.Flags"))
+            {
+                return list;
+            }
+
+            return list.Add(
+                AttributeList(SingletonSeparatedList(Attribute(IdentifierName("Flags"))))
+            );
+        }
+        else
+        {
+            return List(
+                attributeLists
+                    .Select(list =>
+                    {
+                        var attributes = list.Attributes;
+                        attributes =
+                        [
+                            .. attributes.Where(attribute =>
+                                !attribute.IsAttribute("System.Flags")
+                            ),
+                        ];
+
+                        return attributes.Count == 0 ? null : list.WithAttributes(attributes);
+                    })
+                    .Where(list => list != null)
+                    .Cast<AttributeListSyntax>()
+            );
+        }
+    }
+
+    /// <summary>
     /// Sets or replaces the native name attribute in the given attribute list.
     /// </summary>
     public static SyntaxList<AttributeListSyntax> WithNativeName(
@@ -272,23 +315,19 @@ public static class AttributeUtils
         string nativeName
     )
     {
-        var nativeNameAttribute = AttributeList(
-            [
-                Attribute(
-                    IdentifierName("NativeName"),
-                    AttributeArgumentList(
-                        [
-                            AttributeArgument(
-                                LiteralExpression(
-                                    SyntaxKind.StringLiteralExpression,
-                                    Literal($"\"{nativeName}\"", nativeName)
-                                )
-                            ),
-                        ]
-                    )
-                ),
-            ]
-        );
+        var nativeNameAttribute = AttributeList([
+            Attribute(
+                IdentifierName("NativeName"),
+                AttributeArgumentList([
+                    AttributeArgument(
+                        LiteralExpression(
+                            SyntaxKind.StringLiteralExpression,
+                            Literal($"\"{nativeName}\"", nativeName)
+                        )
+                    ),
+                ])
+            ),
+        ]);
 
         return List(
             attributeLists

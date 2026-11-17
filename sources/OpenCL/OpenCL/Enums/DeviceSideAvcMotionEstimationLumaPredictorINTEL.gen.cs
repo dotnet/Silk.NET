@@ -15,14 +15,26 @@ public enum DeviceSideAvcMotionEstimationLumaPredictorINTEL : uint
     [NativeName("CL_AVC_ME_LUMA_PREDICTOR_MODE_VERTICAL_INTEL")]
     LumaPredictorModeVertical = 0,
 
+    [NativeName("CL_AVC_ME_CHROMA_PREDICTOR_MODE_DC_INTEL")]
+    ChromaPredictorModeDc = 0,
+
     [NativeName("CL_AVC_ME_LUMA_PREDICTOR_MODE_HORIZONTAL_INTEL")]
     LumaPredictorModeHorizontal = 1,
+
+    [NativeName("CL_AVC_ME_CHROMA_PREDICTOR_MODE_HORIZONTAL_INTEL")]
+    ChromaPredictorModeHorizontal = 1,
 
     [NativeName("CL_AVC_ME_LUMA_PREDICTOR_MODE_DC_INTEL")]
     LumaPredictorModeDc = 2,
 
+    [NativeName("CL_AVC_ME_CHROMA_PREDICTOR_MODE_VERTICAL_INTEL")]
+    ChromaPredictorModeVertical = 2,
+
     [NativeName("CL_AVC_ME_LUMA_PREDICTOR_MODE_DIAGONAL_DOWN_LEFT_INTEL")]
     LumaPredictorModeDiagonalDownLeft = 3,
+
+    [NativeName("CL_AVC_ME_CHROMA_PREDICTOR_MODE_PLANE_INTEL")]
+    ChromaPredictorModePlane = 3,
 
     [NativeName("CL_AVC_ME_LUMA_PREDICTOR_MODE_DIAGONAL_DOWN_RIGHT_INTEL")]
     LumaPredictorModeDiagonalDownRight = 4,
@@ -41,16 +53,4 @@ public enum DeviceSideAvcMotionEstimationLumaPredictorINTEL : uint
 
     [NativeName("CL_AVC_ME_LUMA_PREDICTOR_MODE_HORIZONTAL_UP_INTEL")]
     LumaPredictorModeHorizontalUp = 8,
-
-    [NativeName("CL_AVC_ME_CHROMA_PREDICTOR_MODE_DC_INTEL")]
-    ChromaPredictorModeDc = 0,
-
-    [NativeName("CL_AVC_ME_CHROMA_PREDICTOR_MODE_HORIZONTAL_INTEL")]
-    ChromaPredictorModeHorizontal = 1,
-
-    [NativeName("CL_AVC_ME_CHROMA_PREDICTOR_MODE_VERTICAL_INTEL")]
-    ChromaPredictorModeVertical = 2,
-
-    [NativeName("CL_AVC_ME_CHROMA_PREDICTOR_MODE_PLANE_INTEL")]
-    ChromaPredictorModePlane = 3,
 }

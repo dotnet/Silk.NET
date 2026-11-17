@@ -95,15 +95,6 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
     )]
     MultipleSliceSegmentsPerTileBit = 0x200,
 
-    [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_B_PICTURE_INTRA_REFRESH_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_h265", "VK_KHR_video_encode_intra_refresh"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"],
-        RequireAll = true
-    )]
-    BPictureIntraRefreshBit = 0x800,
-
     [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_CU_QP_DIFF_WRAPAROUND_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -115,4 +106,13 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
         RequireAll = true
     )]
     CuQpDiffWraparoundBit = 0x400,
+
+    [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_B_PICTURE_INTRA_REFRESH_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h265", "VK_KHR_video_encode_intra_refresh"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"],
+        RequireAll = true
+    )]
+    BPictureIntraRefreshBit = 0x800,
 }

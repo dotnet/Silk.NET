@@ -273,142 +273,6 @@ public enum ImageLayout : uint
     )]
     Preinitialized = 8,
 
-    [NativeName("VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    DepthReadOnlyStencilAttachmentOptimal = 1000117000,
-
-    [NativeName("VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    DepthAttachmentStencilReadOnlyOptimal = 1000117001,
-
-    [NativeName("VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    DepthAttachmentOptimal = 1000241000,
-
-    [NativeName("VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_OPTIMAL")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    DepthReadOnlyOptimal = 1000241001,
-
-    [NativeName("VK_IMAGE_LAYOUT_STENCIL_ATTACHMENT_OPTIMAL")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    StencilAttachmentOptimal = 1000241002,
-
-    [NativeName("VK_IMAGE_LAYOUT_STENCIL_READ_ONLY_OPTIMAL")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    StencilReadOnlyOptimal = 1000241003,
-
-    [NativeName("VK_IMAGE_LAYOUT_READ_ONLY_OPTIMAL")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    ReadOnlyOptimal = 1000314000,
-
-    [NativeName("VK_IMAGE_LAYOUT_ATTACHMENT_OPTIMAL")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    AttachmentOptimal = 1000314001,
-
-    [NativeName("VK_IMAGE_LAYOUT_RENDERING_LOCAL_READ")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    RenderingLocalRead = 1000232000,
-
     [NativeName("VK_IMAGE_LAYOUT_PRESENT_SRC_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     PresentSrcKHR = 1000001002,
@@ -457,16 +321,47 @@ public enum ImageLayout : uint
     )]
     SharedPresentKHR = 1000111000,
 
-    [NativeName("VK_IMAGE_LAYOUT_FRAGMENT_DENSITY_MAP_OPTIMAL_EXT")]
+    [NativeName("VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_fragment_density_map"],
-        ImpliesSets = [
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
-        ]
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
     )]
-    FragmentDensityMapOptimalEXT = 1000218000,
+    DepthReadOnlyStencilAttachmentOptimal = 1000117000,
+
+    [NativeName("VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
+    DepthReadOnlyStencilAttachmentOptimalKHR = DepthReadOnlyStencilAttachmentOptimal,
+
+    [NativeName("VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    DepthAttachmentStencilReadOnlyOptimal = 1000117001,
+
+    [NativeName("VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
+    DepthAttachmentStencilReadOnlyOptimalKHR = DepthAttachmentStencilReadOnlyOptimal,
 
     [NativeName("VK_IMAGE_LAYOUT_FRAGMENT_SHADING_RATE_ATTACHMENT_OPTIMAL_KHR")]
     [SupportedApiProfile(
@@ -479,6 +374,155 @@ public enum ImageLayout : uint
         ]
     )]
     FragmentShadingRateAttachmentOptimalKHR = 1000164003,
+
+    [NativeName("VK_IMAGE_LAYOUT_SHADING_RATE_OPTIMAL_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
+    ShadingRateOptimalNV = FragmentShadingRateAttachmentOptimalKHR,
+
+    [NativeName("VK_IMAGE_LAYOUT_FRAGMENT_DENSITY_MAP_OPTIMAL_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
+        ]
+    )]
+    FragmentDensityMapOptimalEXT = 1000218000,
+
+    [NativeName("VK_IMAGE_LAYOUT_RENDERING_LOCAL_READ")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    RenderingLocalRead = 1000232000,
+
+    [NativeName("VK_IMAGE_LAYOUT_RENDERING_LOCAL_READ_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_dynamic_rendering_local_read"],
+        ImpliesSets = [
+            "VK_KHR_dynamic_rendering_local_read+VK_KHR_dynamic_rendering",
+            "VK_KHR_dynamic_rendering_local_read+VK_VERSION_1_3",
+        ]
+    )]
+    RenderingLocalReadKHR = RenderingLocalRead,
+
+    [NativeName("VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    DepthAttachmentOptimal = 1000241000,
+
+    [NativeName("VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_separate_depth_stencil_layouts"],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    DepthAttachmentOptimalKHR = DepthAttachmentOptimal,
+
+    [NativeName("VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_OPTIMAL")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    DepthReadOnlyOptimal = 1000241001,
+
+    [NativeName("VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_OPTIMAL_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_separate_depth_stencil_layouts"],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    DepthReadOnlyOptimalKHR = DepthReadOnlyOptimal,
+
+    [NativeName("VK_IMAGE_LAYOUT_STENCIL_ATTACHMENT_OPTIMAL")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    StencilAttachmentOptimal = 1000241002,
+
+    [NativeName("VK_IMAGE_LAYOUT_STENCIL_ATTACHMENT_OPTIMAL_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_separate_depth_stencil_layouts"],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    StencilAttachmentOptimalKHR = StencilAttachmentOptimal,
+
+    [NativeName("VK_IMAGE_LAYOUT_STENCIL_READ_ONLY_OPTIMAL")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    StencilReadOnlyOptimal = 1000241003,
+
+    [NativeName("VK_IMAGE_LAYOUT_STENCIL_READ_ONLY_OPTIMAL_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_separate_depth_stencil_layouts"],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    StencilReadOnlyOptimalKHR = StencilReadOnlyOptimal,
 
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_ENCODE_DST_KHR")]
     [SupportedApiProfile(
@@ -512,6 +556,62 @@ public enum ImageLayout : uint
         ]
     )]
     VideoEncodeDpbKHR = 1000299002,
+
+    [NativeName("VK_IMAGE_LAYOUT_READ_ONLY_OPTIMAL")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    ReadOnlyOptimal = 1000314000,
+
+    [NativeName("VK_IMAGE_LAYOUT_READ_ONLY_OPTIMAL_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_synchronization2"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+        ]
+    )]
+    ReadOnlyOptimalKHR = ReadOnlyOptimal,
+
+    [NativeName("VK_IMAGE_LAYOUT_ATTACHMENT_OPTIMAL")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    AttachmentOptimal = 1000314001,
+
+    [NativeName("VK_IMAGE_LAYOUT_ATTACHMENT_OPTIMAL_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_synchronization2"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+        ]
+    )]
+    AttachmentOptimalKHR = AttachmentOptimal,
 
     [NativeName("VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT")]
     [SupportedApiProfile(
@@ -549,104 +649,4 @@ public enum ImageLayout : uint
         ]
     )]
     ZeroInitializedEXT = 1000620000,
-
-    [NativeName("VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    DepthReadOnlyStencilAttachmentOptimalKHR = DepthReadOnlyStencilAttachmentOptimal,
-
-    [NativeName("VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    DepthAttachmentStencilReadOnlyOptimalKHR = DepthAttachmentStencilReadOnlyOptimal,
-
-    [NativeName("VK_IMAGE_LAYOUT_SHADING_RATE_OPTIMAL_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_shading_rate_image"],
-        ImpliesSets = [
-            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
-            "VK_NV_shading_rate_image+VK_VERSION_1_1",
-        ]
-    )]
-    ShadingRateOptimalNV = FragmentShadingRateAttachmentOptimalKHR,
-
-    [NativeName("VK_IMAGE_LAYOUT_RENDERING_LOCAL_READ_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_dynamic_rendering_local_read"],
-        ImpliesSets = [
-            "VK_KHR_dynamic_rendering_local_read+VK_KHR_dynamic_rendering",
-            "VK_KHR_dynamic_rendering_local_read+VK_VERSION_1_3",
-        ]
-    )]
-    RenderingLocalReadKHR = RenderingLocalRead,
-
-    [NativeName("VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_separate_depth_stencil_layouts"],
-        ImpliesSets = [
-            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    DepthAttachmentOptimalKHR = DepthAttachmentOptimal,
-
-    [NativeName("VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_OPTIMAL_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_separate_depth_stencil_layouts"],
-        ImpliesSets = [
-            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    DepthReadOnlyOptimalKHR = DepthReadOnlyOptimal,
-
-    [NativeName("VK_IMAGE_LAYOUT_STENCIL_ATTACHMENT_OPTIMAL_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_separate_depth_stencil_layouts"],
-        ImpliesSets = [
-            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    StencilAttachmentOptimalKHR = StencilAttachmentOptimal,
-
-    [NativeName("VK_IMAGE_LAYOUT_STENCIL_READ_ONLY_OPTIMAL_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_separate_depth_stencil_layouts"],
-        ImpliesSets = [
-            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    StencilReadOnlyOptimalKHR = StencilReadOnlyOptimal,
-
-    [NativeName("VK_IMAGE_LAYOUT_READ_ONLY_OPTIMAL_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_synchronization2"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_VERSION_1_1",
-        ]
-    )]
-    ReadOnlyOptimalKHR = ReadOnlyOptimal,
-
-    [NativeName("VK_IMAGE_LAYOUT_ATTACHMENT_OPTIMAL_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_synchronization2"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_VERSION_1_1",
-        ]
-    )]
-    AttachmentOptimalKHR = AttachmentOptimal,
 }

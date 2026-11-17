@@ -10,23 +10,11 @@ namespace Silk.NET.OpenGL;
 [NativeName("InternalFormatPName")]
 public enum InternalFormatPName : uint
 {
-    [NativeName("GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT")]
-    NumSurfaceCompressionFixedRatesEXT = 36718,
-
     [NativeName("GL_SAMPLES")]
     Samples = 32937,
 
-    [NativeName("GL_TEXTURE_COMPRESSED")]
-    TextureCompressed = 34465,
-
     [NativeName("GL_GENERATE_MIPMAP")]
     GenerateMipmap = 33169,
-
-    [NativeName("GL_NUM_SAMPLE_COUNTS")]
-    NumSampleCounts = 37760,
-
-    [NativeName("GL_IMAGE_FORMAT_COMPATIBILITY_TYPE")]
-    ImageFormatCompatibilityType = 37063,
 
     [NativeName("GL_INTERNALFORMAT_SUPPORTED")]
     InternalformatSupported = 33391,
@@ -223,6 +211,18 @@ public enum InternalFormatPName : uint
     [NativeName("GL_VIEW_COMPATIBILITY_CLASS")]
     ViewCompatibilityClass = 33462,
 
+    [NativeName("GL_TEXTURE_COMPRESSED")]
+    TextureCompressed = 34465,
+
+    [NativeName("GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT")]
+    NumSurfaceCompressionFixedRatesEXT = 36718,
+
+    [NativeName("GL_IMAGE_FORMAT_COMPATIBILITY_TYPE")]
+    ImageFormatCompatibilityType = 37063,
+
     [NativeName("GL_CLEAR_TEXTURE")]
     ClearTexture = 37733,
+
+    [NativeName("GL_NUM_SAMPLE_COUNTS")]
+    NumSampleCounts = 37760,
 }

@@ -10,59 +10,23 @@ namespace Silk.NET.OpenGL;
 [NativeName("EnableCap")]
 public enum EnableCap : uint
 {
-    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
-    TextureCubeMapOES = 34067,
-
-    [NativeName("GL_TEXTURE_GEN_STR_OES")]
-    TextureGenStrOES = 36192,
-
-    [NativeName("GL_FETCH_PER_SAMPLE_ARM")]
-    FetchPerSampleARM = 36709,
-
-    [NativeName("GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
-    FramebufferFetchNoncoherentQCOM = 38562,
-
-    [NativeName("GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM")]
-    ShadingRatePreserveAspectRatioQCOM = 38565,
+    [NativeName("GL_POINT_SMOOTH")]
+    PointSmooth = 2832,
 
     [NativeName("GL_LINE_SMOOTH")]
     LineSmooth = 2848,
 
-    [NativeName("GL_POLYGON_SMOOTH")]
-    PolygonSmooth = 2881,
-
-    [NativeName("GL_CULL_FACE")]
-    CullFace = 2884,
-
-    [NativeName("GL_DEPTH_TEST")]
-    DepthTest = 2929,
-
-    [NativeName("GL_STENCIL_TEST")]
-    StencilTest = 2960,
-
-    [NativeName("GL_DITHER")]
-    Dither = 3024,
-
-    [NativeName("GL_BLEND")]
-    Blend = 3042,
-
-    [NativeName("GL_SCISSOR_TEST")]
-    ScissorTest = 3089,
-
-    [NativeName("GL_TEXTURE_1D")]
-    Texture1D = 3552,
-
-    [NativeName("GL_TEXTURE_2D")]
-    Texture2D = 3553,
-
-    [NativeName("GL_POINT_SMOOTH")]
-    PointSmooth = 2832,
-
     [NativeName("GL_LINE_STIPPLE")]
     LineStipple = 2852,
 
+    [NativeName("GL_POLYGON_SMOOTH")]
+    PolygonSmooth = 2881,
+
     [NativeName("GL_POLYGON_STIPPLE")]
     PolygonStipple = 2882,
+
+    [NativeName("GL_CULL_FACE")]
+    CullFace = 2884,
 
     [NativeName("GL_LIGHTING")]
     Lighting = 2896,
@@ -73,11 +37,32 @@ public enum EnableCap : uint
     [NativeName("GL_FOG")]
     Fog = 2912,
 
+    [NativeName("GL_DEPTH_TEST")]
+    DepthTest = 2929,
+
+    [NativeName("GL_STENCIL_TEST")]
+    StencilTest = 2960,
+
     [NativeName("GL_NORMALIZE")]
     Normalize = 2977,
 
     [NativeName("GL_ALPHA_TEST")]
     AlphaTest = 3008,
+
+    [NativeName("GL_DITHER")]
+    Dither = 3024,
+
+    [NativeName("GL_BLEND")]
+    Blend = 3042,
+
+    [NativeName("GL_INDEX_LOGIC_OP")]
+    IndexLogicOp = 3057,
+
+    [NativeName("GL_COLOR_LOGIC_OP")]
+    ColorLogicOp = 3058,
+
+    [NativeName("GL_SCISSOR_TEST")]
+    ScissorTest = 3089,
 
     [NativeName("GL_TEXTURE_GEN_S")]
     TextureGenS = 3168,
@@ -148,23 +133,59 @@ public enum EnableCap : uint
     [NativeName("GL_MAP2_VERTEX_4")]
     Map2Vertex4 = 3512,
 
+    [NativeName("GL_TEXTURE_1D")]
+    Texture1D = 3552,
+
+    [NativeName("GL_TEXTURE_2D")]
+    Texture2D = 3553,
+
+    [NativeName("GL_POLYGON_OFFSET_POINT")]
+    PolygonOffsetPoint = 10753,
+
+    [NativeName("GL_POLYGON_OFFSET_LINE")]
+    PolygonOffsetLine = 10754,
+
     [NativeName("GL_CLIP_PLANE0")]
     ClipPlane0 = 12288,
+
+    [NativeName("GL_CLIP_DISTANCE0")]
+    ClipDistance0 = 12288,
 
     [NativeName("GL_CLIP_PLANE1")]
     ClipPlane1 = 12289,
 
+    [NativeName("GL_CLIP_DISTANCE1")]
+    ClipDistance1 = 12289,
+
     [NativeName("GL_CLIP_PLANE2")]
     ClipPlane2 = 12290,
+
+    [NativeName("GL_CLIP_DISTANCE2")]
+    ClipDistance2 = 12290,
 
     [NativeName("GL_CLIP_PLANE3")]
     ClipPlane3 = 12291,
 
+    [NativeName("GL_CLIP_DISTANCE3")]
+    ClipDistance3 = 12291,
+
     [NativeName("GL_CLIP_PLANE4")]
     ClipPlane4 = 12292,
 
+    [NativeName("GL_CLIP_DISTANCE4")]
+    ClipDistance4 = 12292,
+
     [NativeName("GL_CLIP_PLANE5")]
     ClipPlane5 = 12293,
+
+    [NativeName("GL_CLIP_DISTANCE5")]
+    ClipDistance5 = 12293,
+
+    [NativeName("GL_CLIP_DISTANCE6")]
+    ClipDistance6 = 12294,
+
+    [NativeName("GL_CLIP_DISTANCE7")]
+    ClipDistance7 = 12295,
 
     [NativeName("GL_LIGHT0")]
     Light0 = 16384,
@@ -190,20 +211,29 @@ public enum EnableCap : uint
     [NativeName("GL_LIGHT7")]
     Light7 = 16391,
 
-    [NativeName("GL_COLOR_LOGIC_OP")]
-    ColorLogicOp = 3058,
+    [NativeName("GL_CONVOLUTION_1D_EXT")]
+    Convolution1DEXT = 32784,
 
-    [NativeName("GL_POLYGON_OFFSET_POINT")]
-    PolygonOffsetPoint = 10753,
+    [NativeName("GL_CONVOLUTION_2D_EXT")]
+    Convolution2DEXT = 32785,
 
-    [NativeName("GL_POLYGON_OFFSET_LINE")]
-    PolygonOffsetLine = 10754,
+    [NativeName("GL_SEPARABLE_2D_EXT")]
+    Separable2DEXT = 32786,
+
+    [NativeName("GL_HISTOGRAM_EXT")]
+    HistogramEXT = 32804,
+
+    [NativeName("GL_MINMAX_EXT")]
+    MinmaxEXT = 32814,
 
     [NativeName("GL_POLYGON_OFFSET_FILL")]
     PolygonOffsetFill = 32823,
 
-    [NativeName("GL_INDEX_LOGIC_OP")]
-    IndexLogicOp = 3057,
+    [NativeName("GL_RESCALE_NORMAL_EXT")]
+    RescaleNormalEXT = 32826,
+
+    [NativeName("GL_TEXTURE_3D_EXT")]
+    Texture3DEXT = 32879,
 
     [NativeName("GL_VERTEX_ARRAY")]
     VertexArray = 32884,
@@ -223,149 +253,89 @@ public enum EnableCap : uint
     [NativeName("GL_EDGE_FLAG_ARRAY")]
     EdgeFlagArray = 32889,
 
+    [NativeName("GL_INTERLACE_SGIX")]
+    InterlaceSGIX = 32916,
+
     [NativeName("GL_MULTISAMPLE")]
     Multisample = 32925,
-
-    [NativeName("GL_SAMPLE_ALPHA_TO_COVERAGE")]
-    SampleAlphaToCoverage = 32926,
-
-    [NativeName("GL_SAMPLE_ALPHA_TO_ONE")]
-    SampleAlphaToOne = 32927,
-
-    [NativeName("GL_SAMPLE_COVERAGE")]
-    SampleCoverage = 32928,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP")]
-    TextureCubeMap = 34067,
-
-    [NativeName("GL_CLIP_DISTANCE0")]
-    ClipDistance0 = 12288,
-
-    [NativeName("GL_CLIP_DISTANCE1")]
-    ClipDistance1 = 12289,
-
-    [NativeName("GL_CLIP_DISTANCE2")]
-    ClipDistance2 = 12290,
-
-    [NativeName("GL_CLIP_DISTANCE3")]
-    ClipDistance3 = 12291,
-
-    [NativeName("GL_CLIP_DISTANCE4")]
-    ClipDistance4 = 12292,
-
-    [NativeName("GL_CLIP_DISTANCE5")]
-    ClipDistance5 = 12293,
-
-    [NativeName("GL_CLIP_DISTANCE6")]
-    ClipDistance6 = 12294,
-
-    [NativeName("GL_CLIP_DISTANCE7")]
-    ClipDistance7 = 12295,
-
-    [NativeName("GL_RASTERIZER_DISCARD")]
-    RasterizerDiscard = 35977,
-
-    [NativeName("GL_FRAMEBUFFER_SRGB")]
-    FramebufferSrgb = 36281,
-
-    [NativeName("GL_TEXTURE_RECTANGLE")]
-    TextureRectANGLE = 34037,
-
-    [NativeName("GL_PRIMITIVE_RESTART")]
-    PrimitiveRestart = 36765,
-
-    [NativeName("GL_PROGRAM_POINT_SIZE")]
-    ProgramPointSize = 34370,
-
-    [NativeName("GL_DEPTH_CLAMP")]
-    DepthClamp = 34383,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_SEAMLESS")]
-    TextureCubeMapSeamless = 34895,
-
-    [NativeName("GL_SAMPLE_MASK")]
-    SampleMask = 36433,
-
-    [NativeName("GL_SAMPLE_SHADING")]
-    SampleShading = 35894,
-
-    [NativeName("GL_PRIMITIVE_RESTART_FIXED_INDEX")]
-    PrimitiveRestartFixedIndex = 36201,
-
-    [NativeName("GL_DEBUG_OUTPUT_SYNCHRONOUS")]
-    DebugOutputSynchronous = 33346,
-
-    [NativeName("GL_DEBUG_OUTPUT")]
-    DebugOutput = 37600,
-
-    [NativeName("GL_COLOR_TABLE")]
-    ColorTable = 32976,
-
-    [NativeName("GL_POST_CONVOLUTION_COLOR_TABLE")]
-    PostConvolutionColorTable = 32977,
-
-    [NativeName("GL_POST_COLOR_MATRIX_COLOR_TABLE")]
-    PostColorMatrixColorTable = 32978,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_ARB")]
-    TextureCubeMapARB = 34067,
-
-    [NativeName("GL_TEXTURE_RECTANGLE_ARB")]
-    TextureRectangleARB = 34037,
-
-    [NativeName("GL_CONVOLUTION_1D_EXT")]
-    Convolution1DEXT = 32784,
-
-    [NativeName("GL_CONVOLUTION_2D_EXT")]
-    Convolution2DEXT = 32785,
-
-    [NativeName("GL_SEPARABLE_2D_EXT")]
-    Separable2DEXT = 32786,
-
-    [NativeName("GL_HISTOGRAM_EXT")]
-    HistogramEXT = 32804,
-
-    [NativeName("GL_MINMAX_EXT")]
-    MinmaxEXT = 32814,
-
-    [NativeName("GL_RESCALE_NORMAL_EXT")]
-    RescaleNormalEXT = 32826,
-
-    [NativeName("GL_SHARED_TEXTURE_PALETTE_EXT")]
-    SharedTexturePaletteEXT = 33275,
-
-    [NativeName("GL_TEXTURE_3D_EXT")]
-    Texture3DEXT = 32879,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_EXT")]
-    TextureCubeMapEXT = 34067,
-
-    [NativeName("GL_SHADING_RATE_IMAGE_PER_PRIMITIVE_NV")]
-    ShadingRateImagePerPrimitiveNV = 38321,
-
-    [NativeName("GL_TEXTURE_RECTANGLE_NV")]
-    TextureRectangleNV = 34037,
 
     [NativeName("GL_MULTISAMPLE_SGIS")]
     MultisampleSGIS = 32925,
 
+    [NativeName("GL_SAMPLE_ALPHA_TO_COVERAGE")]
+    SampleAlphaToCoverage = 32926,
+
     [NativeName("GL_SAMPLE_ALPHA_TO_MASK_SGIS")]
     SampleAlphaToMaskSGIS = 32926,
+
+    [NativeName("GL_SAMPLE_ALPHA_TO_ONE")]
+    SampleAlphaToOne = 32927,
 
     [NativeName("GL_SAMPLE_ALPHA_TO_ONE_SGIS")]
     SampleAlphaToOneSGIS = 32927,
 
+    [NativeName("GL_SAMPLE_COVERAGE")]
+    SampleCoverage = 32928,
+
     [NativeName("GL_SAMPLE_MASK_SGIS")]
     SampleMaskSGIS = 32928,
 
-    [NativeName("GL_PIXEL_TEXTURE_SGIS")]
-    PixelTextureSGIS = 33619,
+    [NativeName("GL_TEXTURE_COLOR_TABLE_SGI")]
+    TextureColorTableSGI = 32956,
+
+    [NativeName("GL_COLOR_TABLE")]
+    ColorTable = 32976,
+
+    [NativeName("GL_COLOR_TABLE_SGI")]
+    ColorTableSGI = 32976,
+
+    [NativeName("GL_POST_CONVOLUTION_COLOR_TABLE")]
+    PostConvolutionColorTable = 32977,
+
+    [NativeName("GL_POST_CONVOLUTION_COLOR_TABLE_SGI")]
+    PostConvolutionColorTableSGI = 32977,
+
+    [NativeName("GL_POST_COLOR_MATRIX_COLOR_TABLE")]
+    PostColorMatrixColorTable = 32978,
+
+    [NativeName("GL_POST_COLOR_MATRIX_COLOR_TABLE_SGI")]
+    PostColorMatrixColorTableSGI = 32978,
 
     [NativeName("GL_TEXTURE_4D_SGIS")]
     Texture4DSGIS = 33076,
 
+    [NativeName("GL_PIXEL_TEX_GEN_SGIX")]
+    PixelTexGenSGIX = 33081,
+
+    [NativeName("GL_SPRITE_SGIX")]
+    SpriteSGIX = 33096,
+
+    [NativeName("GL_REFERENCE_PLANE_SGIX")]
+    ReferencePlaneSGIX = 33149,
+
+    [NativeName("GL_IR_INSTRUMENT1_SGIX")]
+    IrInstrument1SGIX = 33151,
+
+    [NativeName("GL_CALLIGRAPHIC_FRAGMENT_SGIX")]
+    CalligraphicFragmentSGIX = 33155,
+
+    [NativeName("GL_FRAMEZOOM_SGIX")]
+    FramezoomSGIX = 33163,
+
+    [NativeName("GL_FOG_OFFSET_SGIX")]
+    FogOffsetSGIX = 33176,
+
+    [NativeName("GL_SHARED_TEXTURE_PALETTE_EXT")]
+    SharedTexturePaletteEXT = 33275,
+
+    [NativeName("GL_DEBUG_OUTPUT_SYNCHRONOUS")]
+    DebugOutputSynchronous = 33346,
+
     [NativeName("GL_ASYNC_HISTOGRAM_SGIX")]
     AsyncHistogramSGIX = 33580,
+
+    [NativeName("GL_PIXEL_TEXTURE_SGIS")]
+    PixelTextureSGIS = 33619,
 
     [NativeName("GL_ASYNC_TEX_IMAGE_SGIX")]
     AsyncTexImageSGIX = 33628,
@@ -375,12 +345,6 @@ public enum EnableCap : uint
 
     [NativeName("GL_ASYNC_READ_PIXELS_SGIX")]
     AsyncReadPixelsSGIX = 33630,
-
-    [NativeName("GL_CALLIGRAPHIC_FRAGMENT_SGIX")]
-    CalligraphicFragmentSGIX = 33155,
-
-    [NativeName("GL_FOG_OFFSET_SGIX")]
-    FogOffsetSGIX = 33176,
 
     [NativeName("GL_FRAGMENT_LIGHTING_SGIX")]
     FragmentLightingSGIX = 33792,
@@ -412,33 +376,69 @@ public enum EnableCap : uint
     [NativeName("GL_FRAGMENT_LIGHT7_SGIX")]
     FragmentLight7SGIX = 33811,
 
-    [NativeName("GL_FRAMEZOOM_SGIX")]
-    FramezoomSGIX = 33163,
+    [NativeName("GL_TEXTURE_RECTANGLE")]
+    TextureRectANGLE = 34037,
 
-    [NativeName("GL_INTERLACE_SGIX")]
-    InterlaceSGIX = 32916,
+    [NativeName("GL_TEXTURE_RECTANGLE_ARB")]
+    TextureRectangleARB = 34037,
 
-    [NativeName("GL_IR_INSTRUMENT1_SGIX")]
-    IrInstrument1SGIX = 33151,
+    [NativeName("GL_TEXTURE_RECTANGLE_NV")]
+    TextureRectangleNV = 34037,
 
-    [NativeName("GL_PIXEL_TEX_GEN_SGIX")]
-    PixelTexGenSGIX = 33081,
+    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
+    TextureCubeMapOES = 34067,
 
-    [NativeName("GL_REFERENCE_PLANE_SGIX")]
-    ReferencePlaneSGIX = 33149,
+    [NativeName("GL_TEXTURE_CUBE_MAP")]
+    TextureCubeMap = 34067,
 
-    [NativeName("GL_SPRITE_SGIX")]
-    SpriteSGIX = 33096,
+    [NativeName("GL_TEXTURE_CUBE_MAP_ARB")]
+    TextureCubeMapARB = 34067,
 
-    [NativeName("GL_COLOR_TABLE_SGI")]
-    ColorTableSGI = 32976,
+    [NativeName("GL_TEXTURE_CUBE_MAP_EXT")]
+    TextureCubeMapEXT = 34067,
 
-    [NativeName("GL_POST_CONVOLUTION_COLOR_TABLE_SGI")]
-    PostConvolutionColorTableSGI = 32977,
+    [NativeName("GL_PROGRAM_POINT_SIZE")]
+    ProgramPointSize = 34370,
 
-    [NativeName("GL_POST_COLOR_MATRIX_COLOR_TABLE_SGI")]
-    PostColorMatrixColorTableSGI = 32978,
+    [NativeName("GL_DEPTH_CLAMP")]
+    DepthClamp = 34383,
 
-    [NativeName("GL_TEXTURE_COLOR_TABLE_SGI")]
-    TextureColorTableSGI = 32956,
+    [NativeName("GL_TEXTURE_CUBE_MAP_SEAMLESS")]
+    TextureCubeMapSeamless = 34895,
+
+    [NativeName("GL_SAMPLE_SHADING")]
+    SampleShading = 35894,
+
+    [NativeName("GL_RASTERIZER_DISCARD")]
+    RasterizerDiscard = 35977,
+
+    [NativeName("GL_TEXTURE_GEN_STR_OES")]
+    TextureGenStrOES = 36192,
+
+    [NativeName("GL_PRIMITIVE_RESTART_FIXED_INDEX")]
+    PrimitiveRestartFixedIndex = 36201,
+
+    [NativeName("GL_FRAMEBUFFER_SRGB")]
+    FramebufferSrgb = 36281,
+
+    [NativeName("GL_SAMPLE_MASK")]
+    SampleMask = 36433,
+
+    [NativeName("GL_FETCH_PER_SAMPLE_ARM")]
+    FetchPerSampleARM = 36709,
+
+    [NativeName("GL_PRIMITIVE_RESTART")]
+    PrimitiveRestart = 36765,
+
+    [NativeName("GL_DEBUG_OUTPUT")]
+    DebugOutput = 37600,
+
+    [NativeName("GL_SHADING_RATE_IMAGE_PER_PRIMITIVE_NV")]
+    ShadingRateImagePerPrimitiveNV = 38321,
+
+    [NativeName("GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
+    FramebufferFetchNoncoherentQCOM = 38562,
+
+    [NativeName("GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM")]
+    ShadingRatePreserveAspectRatioQCOM = 38565,
 }

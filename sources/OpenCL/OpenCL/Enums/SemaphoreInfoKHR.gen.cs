@@ -12,9 +12,6 @@ namespace Silk.NET.OpenCL;
 [NativeName("cl_semaphore_info_khr")]
 public enum SemaphoreInfoKHR : uint
 {
-    [NativeName("CL_SEMAPHORE_EXPORTABLE_KHR")]
-    Exportable = 8276,
-
     [NativeName("CL_SEMAPHORE_CONTEXT_KHR")]
     Context = 8249,
 
@@ -26,4 +23,7 @@ public enum SemaphoreInfoKHR : uint
 
     [NativeName("CL_SEMAPHORE_PAYLOAD_KHR")]
     Payload = 8252,
+
+    [NativeName("CL_SEMAPHORE_EXPORTABLE_KHR")]
+    Exportable = 8276,
 }

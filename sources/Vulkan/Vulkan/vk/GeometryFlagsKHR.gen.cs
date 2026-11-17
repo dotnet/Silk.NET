@@ -26,17 +26,6 @@ public enum GeometryFlagsKHR : uint
     )]
     OpaqueBit = 0x1,
 
-    [NativeName("VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_acceleration_structure"],
-        ImpliesSets = [
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
-        ]
-    )]
-    NoDuplicateAnyHitInvocationBit = 0x2,
-
     [NativeName("VK_GEOMETRY_OPAQUE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -47,6 +36,17 @@ public enum GeometryFlagsKHR : uint
         ]
     )]
     OpaqueBitNV = OpaqueBit,
+
+    [NativeName("VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
+    NoDuplicateAnyHitInvocationBit = 0x2,
 
     [NativeName("VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_NV")]
     [SupportedApiProfile(

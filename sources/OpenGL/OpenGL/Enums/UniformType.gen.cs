@@ -79,6 +79,12 @@ public enum UniformType : uint
     [NativeName("GL_SAMPLER_2D_SHADOW")]
     Sampler2DShadow = 35682,
 
+    [NativeName("GL_SAMPLER_2D_RECT")]
+    Sampler2DRect = 35683,
+
+    [NativeName("GL_SAMPLER_2D_RECT_SHADOW")]
+    Sampler2DRectShadow = 35684,
+
     [NativeName("GL_FLOAT_MAT2x3")]
     FloatMat2x3 = 35685,
 
@@ -102,6 +108,9 @@ public enum UniformType : uint
 
     [NativeName("GL_SAMPLER_2D_ARRAY")]
     Sampler2DArray = 36289,
+
+    [NativeName("GL_SAMPLER_BUFFER")]
+    SamplerBuffer = 36290,
 
     [NativeName("GL_SAMPLER_1D_ARRAY_SHADOW")]
     Sampler1DArrayShadow = 36291,
@@ -133,11 +142,17 @@ public enum UniformType : uint
     [NativeName("GL_INT_SAMPLER_CUBE")]
     IntSamplerCube = 36300,
 
+    [NativeName("GL_INT_SAMPLER_2D_RECT")]
+    IntSampler2DRect = 36301,
+
     [NativeName("GL_INT_SAMPLER_1D_ARRAY")]
     IntSampler1DArray = 36302,
 
     [NativeName("GL_INT_SAMPLER_2D_ARRAY")]
     IntSampler2DArray = 36303,
+
+    [NativeName("GL_INT_SAMPLER_BUFFER")]
+    IntSamplerBuffer = 36304,
 
     [NativeName("GL_UNSIGNED_INT_SAMPLER_1D")]
     UnsignedIntSampler1D = 36305,
@@ -151,71 +166,17 @@ public enum UniformType : uint
     [NativeName("GL_UNSIGNED_INT_SAMPLER_CUBE")]
     UnsignedIntSamplerCube = 36308,
 
+    [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_RECT")]
+    UnsignedIntSampler2DRect = 36309,
+
     [NativeName("GL_UNSIGNED_INT_SAMPLER_1D_ARRAY")]
     UnsignedIntSampler1DArray = 36310,
 
     [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_ARRAY")]
     UnsignedIntSampler2DArray = 36311,
 
-    [NativeName("GL_SAMPLER_2D_RECT")]
-    Sampler2DRect = 35683,
-
-    [NativeName("GL_SAMPLER_2D_RECT_SHADOW")]
-    Sampler2DRectShadow = 35684,
-
-    [NativeName("GL_SAMPLER_BUFFER")]
-    SamplerBuffer = 36290,
-
-    [NativeName("GL_INT_SAMPLER_2D_RECT")]
-    IntSampler2DRect = 36301,
-
-    [NativeName("GL_INT_SAMPLER_BUFFER")]
-    IntSamplerBuffer = 36304,
-
-    [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_RECT")]
-    UnsignedIntSampler2DRect = 36309,
-
     [NativeName("GL_UNSIGNED_INT_SAMPLER_BUFFER")]
     UnsignedIntSamplerBuffer = 36312,
-
-    [NativeName("GL_SAMPLER_2D_MULTISAMPLE")]
-    Sampler2DMultisample = 37128,
-
-    [NativeName("GL_INT_SAMPLER_2D_MULTISAMPLE")]
-    IntSampler2DMultisample = 37129,
-
-    [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE")]
-    UnsignedIntSampler2DMultisample = 37130,
-
-    [NativeName("GL_SAMPLER_2D_MULTISAMPLE_ARRAY")]
-    Sampler2DMultisampleArray = 37131,
-
-    [NativeName("GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY")]
-    IntSampler2DMultisampleArray = 37132,
-
-    [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY")]
-    UnsignedIntSampler2DMultisampleArray = 37133,
-
-    [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY")]
-    SamplerCubeMapArray = 36876,
-
-    [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW")]
-    SamplerCubeMapArrayShadow = 36877,
-
-    [NativeName("GL_INT_SAMPLER_CUBE_MAP_ARRAY")]
-    IntSamplerCubeMapArray = 36878,
-
-    [NativeName("GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY")]
-    UnsignedIntSamplerCubeMapArray = 36879,
-
-    [NativeName("GL_DOUBLE_VEC2")]
-    DoubleVec2 = 36860,
-
-    [NativeName("GL_DOUBLE_VEC3")]
-    DoubleVec3 = 36861,
-
-    [NativeName("GL_DOUBLE_VEC4")]
-    DoubleVec4 = 36862,
 
     [NativeName("GL_DOUBLE_MAT2")]
     DoubleMat2 = 36678,
@@ -243,4 +204,43 @@ public enum UniformType : uint
 
     [NativeName("GL_DOUBLE_MAT4x3")]
     DoubleMat4x3 = 36686,
+
+    [NativeName("GL_DOUBLE_VEC2")]
+    DoubleVec2 = 36860,
+
+    [NativeName("GL_DOUBLE_VEC3")]
+    DoubleVec3 = 36861,
+
+    [NativeName("GL_DOUBLE_VEC4")]
+    DoubleVec4 = 36862,
+
+    [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY")]
+    SamplerCubeMapArray = 36876,
+
+    [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW")]
+    SamplerCubeMapArrayShadow = 36877,
+
+    [NativeName("GL_INT_SAMPLER_CUBE_MAP_ARRAY")]
+    IntSamplerCubeMapArray = 36878,
+
+    [NativeName("GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY")]
+    UnsignedIntSamplerCubeMapArray = 36879,
+
+    [NativeName("GL_SAMPLER_2D_MULTISAMPLE")]
+    Sampler2DMultisample = 37128,
+
+    [NativeName("GL_INT_SAMPLER_2D_MULTISAMPLE")]
+    IntSampler2DMultisample = 37129,
+
+    [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE")]
+    UnsignedIntSampler2DMultisample = 37130,
+
+    [NativeName("GL_SAMPLER_2D_MULTISAMPLE_ARRAY")]
+    Sampler2DMultisampleArray = 37131,
+
+    [NativeName("GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY")]
+    IntSampler2DMultisampleArray = 37132,
+
+    [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY")]
+    UnsignedIntSampler2DMultisampleArray = 37133,
 }

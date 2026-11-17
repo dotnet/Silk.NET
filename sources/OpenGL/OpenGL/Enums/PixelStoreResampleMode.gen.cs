@@ -10,12 +10,12 @@ namespace Silk.NET.OpenGL;
 [NativeName("PixelStoreResampleMode")]
 public enum PixelStoreResampleMode : uint
 {
+    [NativeName("GL_RESAMPLE_DECIMATE_SGIX")]
+    DecimateSGIX = 33840,
+
     [NativeName("GL_RESAMPLE_REPLICATE_SGIX")]
     ReplicateSGIX = 33843,
 
     [NativeName("GL_RESAMPLE_ZERO_FILL_SGIX")]
     ZeroFillSGIX = 33844,
-
-    [NativeName("GL_RESAMPLE_DECIMATE_SGIX")]
-    DecimateSGIX = 33840,
 }

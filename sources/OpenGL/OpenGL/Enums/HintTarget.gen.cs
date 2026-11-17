@@ -10,11 +10,11 @@ namespace Silk.NET.OpenGL;
 [NativeName("HintTarget")]
 public enum HintTarget : uint
 {
-    [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES")]
-    FragmentShaderDerivativeHintOES = 35723,
+    [NativeName("GL_PERSPECTIVE_CORRECTION_HINT")]
+    PerspectiveCorrectionHint = 3152,
 
-    [NativeName("GL_BINNING_CONTROL_HINT_QCOM")]
-    BinningControlHintQCOM = 36784,
+    [NativeName("GL_POINT_SMOOTH_HINT")]
+    PointSmoothHint = 3153,
 
     [NativeName("GL_LINE_SMOOTH_HINT")]
     LineSmoothHint = 3154,
@@ -22,44 +22,8 @@ public enum HintTarget : uint
     [NativeName("GL_POLYGON_SMOOTH_HINT")]
     PolygonSmoothHint = 3155,
 
-    [NativeName("GL_PERSPECTIVE_CORRECTION_HINT")]
-    PerspectiveCorrectionHint = 3152,
-
-    [NativeName("GL_POINT_SMOOTH_HINT")]
-    PointSmoothHint = 3153,
-
     [NativeName("GL_FOG_HINT")]
     FogHint = 3156,
-
-    [NativeName("GL_TEXTURE_COMPRESSION_HINT")]
-    TextureCompressionHint = 34031,
-
-    [NativeName("GL_GENERATE_MIPMAP_HINT")]
-    GenerateMipmapHint = 33170,
-
-    [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT")]
-    FragmentShaderDerivativeHint = 35723,
-
-    [NativeName("GL_PROGRAM_BINARY_RETRIEVABLE_HINT")]
-    ProgramBinaryRetrievableHint = 33367,
-
-    [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT_ARB")]
-    FragmentShaderDerivativeHintARB = 35723,
-
-    [NativeName("GL_TEXTURE_COMPRESSION_HINT_ARB")]
-    TextureCompressionHintARB = 34031,
-
-    [NativeName("GL_TEXTURE_STORAGE_HINT_APPLE")]
-    TextureStorageHintAPPLE = 34236,
-
-    [NativeName("GL_TRANSFORM_HINT_APPLE")]
-    TransformHintAPPLE = 34225,
-
-    [NativeName("GL_VERTEX_ARRAY_STORAGE_HINT_APPLE")]
-    VertexArrayStorageHintAPPLE = 34079,
-
-    [NativeName("GL_CLIP_VOLUME_CLIPPING_HINT_EXT")]
-    ClipVolumeClippingHintEXT = 33008,
 
     [NativeName("GL_PACK_CMYK_HINT_EXT")]
     PackCmykHintEXT = 32782,
@@ -67,8 +31,65 @@ public enum HintTarget : uint
     [NativeName("GL_UNPACK_CMYK_HINT_EXT")]
     UnpackCmykHintEXT = 32783,
 
+    [NativeName("GL_PHONG_HINT_WIN")]
+    PhongHintWIN = 33003,
+
+    [NativeName("GL_CLIP_VOLUME_CLIPPING_HINT_EXT")]
+    ClipVolumeClippingHintEXT = 33008,
+
+    [NativeName("GL_TEXTURE_MULTI_BUFFER_HINT_SGIX")]
+    TextureMultiBufferHintSGIX = 33070,
+
+    [NativeName("GL_GENERATE_MIPMAP_HINT")]
+    GenerateMipmapHint = 33170,
+
+    [NativeName("GL_GENERATE_MIPMAP_HINT_SGIS")]
+    GenerateMipmapHintSGIS = 33170,
+
+    [NativeName("GL_PROGRAM_BINARY_RETRIEVABLE_HINT")]
+    ProgramBinaryRetrievableHint = 33367,
+
+    [NativeName("GL_CONVOLUTION_HINT_SGIX")]
+    ConvolutionHintSGIX = 33558,
+
+    [NativeName("GL_SCALEBIAS_HINT_SGIX")]
+    ScalebiasHintSGIX = 33570,
+
+    [NativeName("GL_VERTEX_PRECLIP_SGIX")]
+    VertexPreclipSGIX = 33774,
+
+    [NativeName("GL_VERTEX_PRECLIP_HINT_SGIX")]
+    VertexPreclipHintSGIX = 33775,
+
+    [NativeName("GL_TEXTURE_COMPRESSION_HINT")]
+    TextureCompressionHint = 34031,
+
+    [NativeName("GL_TEXTURE_COMPRESSION_HINT_ARB")]
+    TextureCompressionHintARB = 34031,
+
+    [NativeName("GL_VERTEX_ARRAY_STORAGE_HINT_APPLE")]
+    VertexArrayStorageHintAPPLE = 34079,
+
     [NativeName("GL_MULTISAMPLE_FILTER_HINT_NV")]
     MultisampleFilterHintNV = 34100,
+
+    [NativeName("GL_TRANSFORM_HINT_APPLE")]
+    TransformHintAPPLE = 34225,
+
+    [NativeName("GL_TEXTURE_STORAGE_HINT_APPLE")]
+    TextureStorageHintAPPLE = 34236,
+
+    [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES")]
+    FragmentShaderDerivativeHintOES = 35723,
+
+    [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT")]
+    FragmentShaderDerivativeHint = 35723,
+
+    [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT_ARB")]
+    FragmentShaderDerivativeHintARB = 35723,
+
+    [NativeName("GL_BINNING_CONTROL_HINT_QCOM")]
+    BinningControlHintQCOM = 36784,
 
     [NativeName("GL_PREFER_DOUBLEBUFFER_HINT_PGI")]
     PreferDoublebufferHintPGI = 107000,
@@ -138,25 +159,4 @@ public enum HintTarget : uint
 
     [NativeName("GL_MAX_VERTEX_HINT_PGI")]
     MaxVertexHintPGI = 107053,
-
-    [NativeName("GL_GENERATE_MIPMAP_HINT_SGIS")]
-    GenerateMipmapHintSGIS = 33170,
-
-    [NativeName("GL_CONVOLUTION_HINT_SGIX")]
-    ConvolutionHintSGIX = 33558,
-
-    [NativeName("GL_SCALEBIAS_HINT_SGIX")]
-    ScalebiasHintSGIX = 33570,
-
-    [NativeName("GL_TEXTURE_MULTI_BUFFER_HINT_SGIX")]
-    TextureMultiBufferHintSGIX = 33070,
-
-    [NativeName("GL_VERTEX_PRECLIP_SGIX")]
-    VertexPreclipSGIX = 33774,
-
-    [NativeName("GL_VERTEX_PRECLIP_HINT_SGIX")]
-    VertexPreclipHintSGIX = 33775,
-
-    [NativeName("GL_PHONG_HINT_WIN")]
-    PhongHintWIN = 33003,
 }

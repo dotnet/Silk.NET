@@ -32,6 +32,10 @@ public enum ToolPurposeFlags : uint
     )]
     ValidationBit = 0x1,
 
+    [NativeName("VK_TOOL_PURPOSE_VALIDATION_BIT_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
+    ValidationBitEXT = ValidationBit,
+
     [NativeName("VK_TOOL_PURPOSE_PROFILING_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48,6 +52,10 @@ public enum ToolPurposeFlags : uint
         MinVersion = "1.3"
     )]
     ProfilingBit = 0x2,
+
+    [NativeName("VK_TOOL_PURPOSE_PROFILING_BIT_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
+    ProfilingBitEXT = ProfilingBit,
 
     [NativeName("VK_TOOL_PURPOSE_TRACING_BIT")]
     [SupportedApiProfile(
@@ -66,6 +74,10 @@ public enum ToolPurposeFlags : uint
     )]
     TracingBit = 0x4,
 
+    [NativeName("VK_TOOL_PURPOSE_TRACING_BIT_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
+    TracingBitEXT = TracingBit,
+
     [NativeName("VK_TOOL_PURPOSE_ADDITIONAL_FEATURES_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -82,6 +94,10 @@ public enum ToolPurposeFlags : uint
         MinVersion = "1.3"
     )]
     AdditionalFeaturesBit = 0x8,
+
+    [NativeName("VK_TOOL_PURPOSE_ADDITIONAL_FEATURES_BIT_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
+    AdditionalFeaturesBitEXT = AdditionalFeaturesBit,
 
     [NativeName("VK_TOOL_PURPOSE_MODIFYING_FEATURES_BIT")]
     [SupportedApiProfile(
@@ -100,6 +116,10 @@ public enum ToolPurposeFlags : uint
     )]
     ModifyingFeaturesBit = 0x10,
 
+    [NativeName("VK_TOOL_PURPOSE_MODIFYING_FEATURES_BIT_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
+    ModifyingFeaturesBitEXT = ModifyingFeaturesBit,
+
     [NativeName("VK_TOOL_PURPOSE_DEBUG_REPORTING_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -115,24 +135,4 @@ public enum ToolPurposeFlags : uint
         RequireAll = true
     )]
     DebugMarkersBitEXT = 0x40,
-
-    [NativeName("VK_TOOL_PURPOSE_VALIDATION_BIT_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
-    ValidationBitEXT = ValidationBit,
-
-    [NativeName("VK_TOOL_PURPOSE_PROFILING_BIT_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
-    ProfilingBitEXT = ProfilingBit,
-
-    [NativeName("VK_TOOL_PURPOSE_TRACING_BIT_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
-    TracingBitEXT = TracingBit,
-
-    [NativeName("VK_TOOL_PURPOSE_ADDITIONAL_FEATURES_BIT_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
-    AdditionalFeaturesBitEXT = AdditionalFeaturesBit,
-
-    [NativeName("VK_TOOL_PURPOSE_MODIFYING_FEATURES_BIT_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
-    ModifyingFeaturesBitEXT = ModifyingFeaturesBit,
 }

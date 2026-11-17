@@ -171,6 +171,9 @@ public enum DeviceInfo : uint
     [NativeName("CL_DEVICE_DOUBLE_FP_CONFIG")]
     DoubleFpConfig = 4146,
 
+    [NativeName("CL_DEVICE_HALF_FP_CONFIG")]
+    HalfFpConfig = 4147,
+
     [NativeName("CL_DEVICE_PREFERRED_VECTOR_WIDTH_HALF")]
     PreferredVectorWidthHalf = 4148,
 
@@ -240,8 +243,14 @@ public enum DeviceInfo : uint
     [NativeName("CL_DEVICE_IMAGE_PITCH_ALIGNMENT")]
     ImagePitchAlignment = 4170,
 
+    [NativeName("CL_DEVICE_IMAGE_PITCH_ALIGNMENT_KHR")]
+    ImagePitchAlignmentKHR = 4170,
+
     [NativeName("CL_DEVICE_IMAGE_BASE_ADDRESS_ALIGNMENT")]
     ImageBaseAddressAlignment = 4171,
+
+    [NativeName("CL_DEVICE_IMAGE_BASE_ADDRESS_ALIGNMENT_KHR")]
+    ImageBaseAddressAlignmentKHR = 4171,
 
     [NativeName("CL_DEVICE_MAX_READ_WRITE_IMAGE_ARGS")]
     MaxReadWriteImageArgs = 4172,
@@ -291,6 +300,9 @@ public enum DeviceInfo : uint
     [NativeName("CL_DEVICE_IL_VERSION")]
     IlVersion = 4187,
 
+    [NativeName("CL_DEVICE_IL_VERSION_KHR")]
+    IlVersionKHR = 4187,
+
     [NativeName("CL_DEVICE_MAX_NUM_SUB_GROUPS")]
     MaxNumSubGroups = 4188,
 
@@ -300,14 +312,29 @@ public enum DeviceInfo : uint
     [NativeName("CL_DEVICE_NUMERIC_VERSION")]
     NumericVersion = 4190,
 
+    [NativeName("CL_DEVICE_NUMERIC_VERSION_KHR")]
+    NumericVersionKHR = 4190,
+
+    [NativeName("CL_DEVICE_OPENCL_C_NUMERIC_VERSION_KHR")]
+    OpenclCNumericVersionKHR = 4191,
+
     [NativeName("CL_DEVICE_EXTENSIONS_WITH_VERSION")]
     ExtensionsWithVersion = 4192,
+
+    [NativeName("CL_DEVICE_EXTENSIONS_WITH_VERSION_KHR")]
+    ExtensionsWithVersionKHR = 4192,
 
     [NativeName("CL_DEVICE_ILS_WITH_VERSION")]
     IlsWithVersion = 4193,
 
+    [NativeName("CL_DEVICE_ILS_WITH_VERSION_KHR")]
+    IlsWithVersionKHR = 4193,
+
     [NativeName("CL_DEVICE_BUILT_IN_KERNELS_WITH_VERSION")]
     BuiltInKernelsWithVersion = 4194,
+
+    [NativeName("CL_DEVICE_BUILT_IN_KERNELS_WITH_VERSION_KHR")]
+    BuiltInKernelsWithVersionKHR = 4194,
 
     [NativeName("CL_DEVICE_ATOMIC_MEMORY_CAPABILITIES")]
     AtomicMemoryCapabilities = 4195,
@@ -333,17 +360,32 @@ public enum DeviceInfo : uint
     [NativeName("CL_DEVICE_UUID")]
     Uuid = 4202,
 
+    [NativeName("CL_DEVICE_UUID_KHR")]
+    UuidKHR = 4202,
+
     [NativeName("CL_DRIVER_UUID")]
     DriverUuid = 4203,
+
+    [NativeName("CL_DRIVER_UUID_KHR")]
+    DriverUuidKHR = 4203,
 
     [NativeName("CL_DEVICE_LUID_VALID")]
     LuidValid = 4204,
 
+    [NativeName("CL_DEVICE_LUID_VALID_KHR")]
+    LuidValidKHR = 4204,
+
     [NativeName("CL_DEVICE_LUID")]
     Luid = 4205,
 
+    [NativeName("CL_DEVICE_LUID_KHR")]
+    LuidKHR = 4205,
+
     [NativeName("CL_DEVICE_NODE_MASK")]
     NodeMask = 4206,
+
+    [NativeName("CL_DEVICE_NODE_MASK_KHR")]
+    NodeMaskKHR = 4206,
 
     [NativeName("CL_DEVICE_OPENCL_C_FEATURES")]
     OpenclCFeatures = 4207,
@@ -360,38 +402,62 @@ public enum DeviceInfo : uint
     [NativeName("CL_DEVICE_INTEGER_DOT_PRODUCT_CAPABILITIES")]
     IntegerDotProductCapabilities = 4211,
 
+    [NativeName("CL_DEVICE_INTEGER_DOT_PRODUCT_CAPABILITIES_KHR")]
+    IntegerDotProductCapabilitiesKHR = 4211,
+
     [NativeName("CL_DEVICE_INTEGER_DOT_PRODUCT_ACCELERATION_PROPERTIES_8BIT")]
     IntegerDotProductAccelerationProperties8Bit = 4212,
+
+    [NativeName("CL_DEVICE_INTEGER_DOT_PRODUCT_ACCELERATION_PROPERTIES_8BIT_KHR")]
+    IntegerDotProductAccelerationProperties8BitKHR = 4212,
 
     [NativeName("CL_DEVICE_INTEGER_DOT_PRODUCT_ACCELERATION_PROPERTIES_4x8BIT_PACKED")]
     IntegerDotProductAccelerationProperties4x8BitPacked = 4213,
 
+    [NativeName("CL_DEVICE_INTEGER_DOT_PRODUCT_ACCELERATION_PROPERTIES_4x8BIT_PACKED_KHR")]
+    IntegerDotProductAccelerationProperties4x8BitPackedKHR = 4213,
+
+    [NativeName("CL_DEVICE_KERNEL_CLOCK_CAPABILITIES_KHR")]
+    KernelClockCapabilitiesKHR = 4214,
+
     [NativeName("CL_DEVICE_SPIRV_EXTENDED_INSTRUCTION_SETS")]
     SpirvExtendedInstructionSets = 4793,
+
+    [NativeName("CL_DEVICE_SPIRV_EXTENDED_INSTRUCTION_SETS_KHR")]
+    SpirvExtendedInstructionSetsKHR = 4793,
 
     [NativeName("CL_DEVICE_SPIRV_EXTENSIONS")]
     SpirvExtensions = 4794,
 
+    [NativeName("CL_DEVICE_SPIRV_EXTENSIONS_KHR")]
+    SpirvExtensionsKHR = 4794,
+
     [NativeName("CL_DEVICE_SPIRV_CAPABILITIES")]
     SpirvCapabilities = 4795,
 
-    [NativeName("CL_DEVICE_HALF_FP_CONFIG")]
-    HalfFpConfig = 4147,
-
-    [NativeName("CL_DEVICE_IL_VERSION_KHR")]
-    IlVersionKHR = 4187,
-
-    [NativeName("CL_DEVICE_IMAGE_PITCH_ALIGNMENT_KHR")]
-    ImagePitchAlignmentKHR = 4170,
-
-    [NativeName("CL_DEVICE_IMAGE_BASE_ADDRESS_ALIGNMENT_KHR")]
-    ImageBaseAddressAlignmentKHR = 4171,
+    [NativeName("CL_DEVICE_SPIRV_CAPABILITIES_KHR")]
+    SpirvCapabilitiesKHR = 4795,
 
     [NativeName("CL_DEVICE_TERMINATE_CAPABILITY_KHR")]
     TerminateCapabilityKHR = 8241,
 
-    [NativeName("CL_DEVICE_SPIR_VERSIONS")]
-    SpirVersions = 16608,
+    [NativeName("CL_DEVICE_MAX_NAMED_BARRIER_COUNT_KHR")]
+    MaxNamedBarrierCountKHR = 8245,
+
+    [NativeName("CL_DEVICE_SEMAPHORE_TYPES_KHR")]
+    SemaphoreTypesKHR = 8268,
+
+    [NativeName("CL_DEVICE_SEMAPHORE_IMPORT_HANDLE_TYPES_KHR")]
+    SemaphoreImportHandleTypesKHR = 8269,
+
+    [NativeName("CL_DEVICE_SEMAPHORE_EXPORT_HANDLE_TYPES_KHR")]
+    SemaphoreExportHandleTypesKHR = 8270,
+
+    [NativeName("CL_DEVICE_EXTERNAL_MEMORY_IMPORT_HANDLE_TYPES_KHR")]
+    ExternalMemoryImportHandleTypesKHR = 8271,
+
+    [NativeName("CL_DEVICE_EXTERNAL_MEMORY_IMPORT_ASSUME_LINEAR_IMAGES_HANDLE_TYPES_KHR")]
+    ExternalMemoryImportAssumeLinearImagesHandleTypesKHR = 8274,
 
     [NativeName("CL_DEVICE_COMPUTE_CAPABILITY_MAJOR_NV")]
     ComputeCapabilityMajorNV = 16384,
@@ -413,6 +479,18 @@ public enum DeviceInfo : uint
 
     [NativeName("CL_DEVICE_INTEGRATED_MEMORY_NV")]
     IntegratedMemoryNV = 16390,
+
+    [NativeName("CL_DEVICE_PREFERRED_WORK_GROUP_SIZE_AMD")]
+    PreferredWorkGroupSizeAMD = 16432,
+
+    [NativeName("CL_DEVICE_MAX_WORK_GROUP_SIZE_AMD")]
+    MaxWorkGroupSizeAMD = 16433,
+
+    [NativeName("CL_DEVICE_PREFERRED_CONSTANT_BUFFER_SIZE_AMD")]
+    PreferredConstantBufferSizeAMD = 16435,
+
+    [NativeName("CL_DEVICE_PCIE_ID_AMD")]
+    PcieIdAMD = 16436,
 
     [NativeName("CL_DEVICE_PROFILING_TIMER_OFFSET_AMD")]
     ProfilingTimerOffsetAMD = 16438,
@@ -465,18 +543,6 @@ public enum DeviceInfo : uint
     [NativeName("CL_DEVICE_AVAILABLE_ASYNC_QUEUES_AMD")]
     AvailableAsyncQueuesAMD = 16460,
 
-    [NativeName("CL_DEVICE_PREFERRED_WORK_GROUP_SIZE_AMD")]
-    PreferredWorkGroupSizeAMD = 16432,
-
-    [NativeName("CL_DEVICE_MAX_WORK_GROUP_SIZE_AMD")]
-    MaxWorkGroupSizeAMD = 16433,
-
-    [NativeName("CL_DEVICE_PREFERRED_CONSTANT_BUFFER_SIZE_AMD")]
-    PreferredConstantBufferSizeAMD = 16435,
-
-    [NativeName("CL_DEVICE_PCIE_ID_AMD")]
-    PcieIdAMD = 16436,
-
     [NativeName("CL_DEVICE_PARENT_DEVICE_EXT")]
     ParentDeviceEXT = 16468,
 
@@ -492,8 +558,8 @@ public enum DeviceInfo : uint
     [NativeName("CL_DEVICE_PARTITION_STYLE_EXT")]
     PartitionStyleEXT = 16472,
 
-    [NativeName("CL_DEVICE_CXX_FOR_OPENCL_NUMERIC_VERSION_EXT")]
-    CxxForOpenclNumericVersionEXT = 16944,
+    [NativeName("CL_DEVICE_ME_VERSION_INTEL")]
+    MeVersionINTEL = 16510,
 
     [NativeName("CL_DEVICE_EXT_MEM_PADDING_IN_BYTES_QCOM")]
     ExtMemPaddingInBytesQCOM = 16544,
@@ -501,74 +567,71 @@ public enum DeviceInfo : uint
     [NativeName("CL_DEVICE_PAGE_SIZE_QCOM")]
     PageSizeQCOM = 16545,
 
-    [NativeName("CL_DEVICE_MEMORY_CAPABILITIES_IMG")]
-    MemoryCapabilitiesIMG = 16600,
-
-    [NativeName("CL_DEVICE_MAX_NAMED_BARRIER_COUNT_KHR")]
-    MaxNamedBarrierCountKHR = 8245,
-
-    [NativeName("CL_DEVICE_NUMERIC_VERSION_KHR")]
-    NumericVersionKHR = 4190,
-
-    [NativeName("CL_DEVICE_OPENCL_C_NUMERIC_VERSION_KHR")]
-    OpenclCNumericVersionKHR = 4191,
-
-    [NativeName("CL_DEVICE_EXTENSIONS_WITH_VERSION_KHR")]
-    ExtensionsWithVersionKHR = 4192,
-
-    [NativeName("CL_DEVICE_ILS_WITH_VERSION_KHR")]
-    IlsWithVersionKHR = 4193,
-
-    [NativeName("CL_DEVICE_BUILT_IN_KERNELS_WITH_VERSION_KHR")]
-    BuiltInKernelsWithVersionKHR = 4194,
-
-    [NativeName("CL_DEVICE_UUID_KHR")]
-    UuidKHR = 4202,
-
-    [NativeName("CL_DRIVER_UUID_KHR")]
-    DriverUuidKHR = 4203,
-
-    [NativeName("CL_DEVICE_LUID_VALID_KHR")]
-    LuidValidKHR = 4204,
-
-    [NativeName("CL_DEVICE_LUID_KHR")]
-    LuidKHR = 4205,
-
-    [NativeName("CL_DEVICE_NODE_MASK_KHR")]
-    NodeMaskKHR = 4206,
-
-    [NativeName("CL_DEVICE_PCI_BUS_INFO_KHR")]
-    PciBusInfoKHR = 16655,
-
-    [NativeName("CL_DEVICE_INTEGER_DOT_PRODUCT_CAPABILITIES_KHR")]
-    IntegerDotProductCapabilitiesKHR = 4211,
-
-    [NativeName("CL_DEVICE_INTEGER_DOT_PRODUCT_ACCELERATION_PROPERTIES_8BIT_KHR")]
-    IntegerDotProductAccelerationProperties8BitKHR = 4212,
-
-    [NativeName("CL_DEVICE_INTEGER_DOT_PRODUCT_ACCELERATION_PROPERTIES_4x8BIT_PACKED_KHR")]
-    IntegerDotProductAccelerationProperties4x8BitPackedKHR = 4213,
-
-    [NativeName("CL_DEVICE_EXTERNAL_MEMORY_IMPORT_HANDLE_TYPES_KHR")]
-    ExternalMemoryImportHandleTypesKHR = 8271,
-
-    [NativeName("CL_DEVICE_EXTERNAL_MEMORY_IMPORT_ASSUME_LINEAR_IMAGES_HANDLE_TYPES_KHR")]
-    ExternalMemoryImportAssumeLinearImagesHandleTypesKHR = 8274,
-
-    [NativeName("CL_DEVICE_SEMAPHORE_IMPORT_HANDLE_TYPES_KHR")]
-    SemaphoreImportHandleTypesKHR = 8269,
-
-    [NativeName("CL_DEVICE_SEMAPHORE_EXPORT_HANDLE_TYPES_KHR")]
-    SemaphoreExportHandleTypesKHR = 8270,
-
-    [NativeName("CL_DEVICE_SEMAPHORE_TYPES_KHR")]
-    SemaphoreTypesKHR = 8268,
-
     [NativeName("CL_DEVICE_SVM_CAPABILITIES_ARM")]
     SvmCapabilitiesARM = 16566,
 
     [NativeName("CL_DEVICE_COMPUTE_UNITS_BITFIELD_ARM")]
     ComputeUnitsBitfieldARM = 16575,
+
+    [NativeName("CL_DEVICE_MEMORY_CAPABILITIES_IMG")]
+    MemoryCapabilitiesIMG = 16600,
+
+    [NativeName("CL_DEVICE_WORKGROUP_PROTECTION_SVM_CAPABILITIES_IMG")]
+    WorkgroupProtectionSvmCapabilitiesIMG = 16602,
+
+    [NativeName("CL_DEVICE_WORKGROUP_PROTECTION_DEVICE_ENQUEUE_CAPABILITIES_IMG")]
+    WorkgroupProtectionDeviceEnqueueCapabilitiesIMG = 16603,
+
+    [NativeName("CL_DEVICE_SAFETY_MEM_SIZE_IMG")]
+    SafetyMemSizeIMG = 16604,
+
+    [NativeName("CL_DEVICE_SPIR_VERSIONS")]
+    SpirVersions = 16608,
+
+    [NativeName("CL_DEVICE_SIMULTANEOUS_INTEROPS_INTEL")]
+    SimultaneousInteropsINTEL = 16644,
+
+    [NativeName("CL_DEVICE_NUM_SIMULTANEOUS_INTEROPS_INTEL")]
+    NumSimultaneousInteropsINTEL = 16645,
+
+    [NativeName("CL_DEVICE_SUB_GROUP_SIZES_INTEL")]
+    SubGroupSizesINTEL = 16648,
+
+    [NativeName("CL_DEVICE_AVC_ME_VERSION_INTEL")]
+    AvcMeVersionINTEL = 16651,
+
+    [NativeName("CL_DEVICE_AVC_ME_SUPPORTS_TEXTURE_SAMPLER_USE_INTEL")]
+    AvcMeSupportsTextureSamplerUseINTEL = 16652,
+
+    [NativeName("CL_DEVICE_AVC_ME_SUPPORTS_PREEMPTION_INTEL")]
+    AvcMeSupportsPreemptionINTEL = 16653,
+
+    [NativeName("CL_DEVICE_PCI_BUS_INFO_KHR")]
+    PciBusInfoKHR = 16655,
+
+    [NativeName("CL_DEVICE_PLANAR_YUV_MAX_WIDTH_INTEL")]
+    PlanarYuvMaxWidthINTEL = 16766,
+
+    [NativeName("CL_DEVICE_PLANAR_YUV_MAX_HEIGHT_INTEL")]
+    PlanarYuvMaxHeightINTEL = 16767,
+
+    [NativeName("CL_DEVICE_QUEUE_FAMILY_PROPERTIES_INTEL")]
+    QueueFamilyPropertiesINTEL = 16779,
+
+    [NativeName("CL_DEVICE_HOST_MEM_CAPABILITIES_INTEL")]
+    HostMemCapabilitiesINTEL = 16784,
+
+    [NativeName("CL_DEVICE_DEVICE_MEM_CAPABILITIES_INTEL")]
+    DeviceMemCapabilitiesINTEL = 16785,
+
+    [NativeName("CL_DEVICE_SINGLE_DEVICE_SHARED_MEM_CAPABILITIES_INTEL")]
+    SingleDeviceSharedMemCapabilitiesINTEL = 16786,
+
+    [NativeName("CL_DEVICE_CROSS_DEVICE_SHARED_MEM_CAPABILITIES_INTEL")]
+    CrossDeviceSharedMemCapabilitiesINTEL = 16787,
+
+    [NativeName("CL_DEVICE_SHARED_SYSTEM_MEM_CAPABILITIES_INTEL")]
+    SharedSystemMemCapabilitiesINTEL = 16788,
 
     [NativeName("CL_DEVICE_JOB_SLOTS_ARM")]
     JobSlotsARM = 16864,
@@ -576,14 +639,26 @@ public enum DeviceInfo : uint
     [NativeName("CL_DEVICE_SCHEDULING_CONTROLS_CAPABILITIES_ARM")]
     SchedulingControlsCapabilitiesARM = 16868,
 
-    [NativeName("CL_DEVICE_SUPPORTED_REGISTER_ALLOCATIONS_ARM")]
-    SupportedRegisterAllocationsARM = 16875,
-
     [NativeName("CL_DEVICE_MAX_WARP_COUNT_ARM")]
     MaxWarpCountARM = 16874,
 
+    [NativeName("CL_DEVICE_SUPPORTED_REGISTER_ALLOCATIONS_ARM")]
+    SupportedRegisterAllocationsARM = 16875,
+
     [NativeName("CL_DEVICE_CONTROLLED_TERMINATION_CAPABILITIES_ARM")]
     ControlledTerminationCapabilitiesARM = 16878,
+
+    [NativeName("CL_DEVICE_CXX_FOR_OPENCL_NUMERIC_VERSION_EXT")]
+    CxxForOpenclNumericVersionEXT = 16944,
+
+    [NativeName("CL_DEVICE_SINGLE_FP_ATOMIC_CAPABILITIES_EXT")]
+    SingleFpAtomicCapabilitiesEXT = 16945,
+
+    [NativeName("CL_DEVICE_DOUBLE_FP_ATOMIC_CAPABILITIES_EXT")]
+    DoubleFpAtomicCapabilitiesEXT = 16946,
+
+    [NativeName("CL_DEVICE_HALF_FP_ATOMIC_CAPABILITIES_EXT")]
+    HalfFpAtomicCapabilitiesEXT = 16947,
 
     [NativeName("CL_DEVICE_IP_VERSION_INTEL")]
     IpVersionINTEL = 16976,
@@ -605,79 +680,4 @@ public enum DeviceInfo : uint
 
     [NativeName("CL_DEVICE_FEATURE_CAPABILITIES_INTEL")]
     FeatureCapabilitiesINTEL = 16982,
-
-    [NativeName("CL_DEVICE_ME_VERSION_INTEL")]
-    MeVersionINTEL = 16510,
-
-    [NativeName("CL_DEVICE_SIMULTANEOUS_INTEROPS_INTEL")]
-    SimultaneousInteropsINTEL = 16644,
-
-    [NativeName("CL_DEVICE_NUM_SIMULTANEOUS_INTEROPS_INTEL")]
-    NumSimultaneousInteropsINTEL = 16645,
-
-    [NativeName("CL_DEVICE_SUB_GROUP_SIZES_INTEL")]
-    SubGroupSizesINTEL = 16648,
-
-    [NativeName("CL_DEVICE_PLANAR_YUV_MAX_WIDTH_INTEL")]
-    PlanarYuvMaxWidthINTEL = 16766,
-
-    [NativeName("CL_DEVICE_PLANAR_YUV_MAX_HEIGHT_INTEL")]
-    PlanarYuvMaxHeightINTEL = 16767,
-
-    [NativeName("CL_DEVICE_AVC_ME_VERSION_INTEL")]
-    AvcMeVersionINTEL = 16651,
-
-    [NativeName("CL_DEVICE_AVC_ME_SUPPORTS_TEXTURE_SAMPLER_USE_INTEL")]
-    AvcMeSupportsTextureSamplerUseINTEL = 16652,
-
-    [NativeName("CL_DEVICE_AVC_ME_SUPPORTS_PREEMPTION_INTEL")]
-    AvcMeSupportsPreemptionINTEL = 16653,
-
-    [NativeName("CL_DEVICE_HOST_MEM_CAPABILITIES_INTEL")]
-    HostMemCapabilitiesINTEL = 16784,
-
-    [NativeName("CL_DEVICE_DEVICE_MEM_CAPABILITIES_INTEL")]
-    DeviceMemCapabilitiesINTEL = 16785,
-
-    [NativeName("CL_DEVICE_SINGLE_DEVICE_SHARED_MEM_CAPABILITIES_INTEL")]
-    SingleDeviceSharedMemCapabilitiesINTEL = 16786,
-
-    [NativeName("CL_DEVICE_CROSS_DEVICE_SHARED_MEM_CAPABILITIES_INTEL")]
-    CrossDeviceSharedMemCapabilitiesINTEL = 16787,
-
-    [NativeName("CL_DEVICE_SHARED_SYSTEM_MEM_CAPABILITIES_INTEL")]
-    SharedSystemMemCapabilitiesINTEL = 16788,
-
-    [NativeName("CL_DEVICE_QUEUE_FAMILY_PROPERTIES_INTEL")]
-    QueueFamilyPropertiesINTEL = 16779,
-
-    [NativeName("CL_DEVICE_SINGLE_FP_ATOMIC_CAPABILITIES_EXT")]
-    SingleFpAtomicCapabilitiesEXT = 16945,
-
-    [NativeName("CL_DEVICE_DOUBLE_FP_ATOMIC_CAPABILITIES_EXT")]
-    DoubleFpAtomicCapabilitiesEXT = 16946,
-
-    [NativeName("CL_DEVICE_HALF_FP_ATOMIC_CAPABILITIES_EXT")]
-    HalfFpAtomicCapabilitiesEXT = 16947,
-
-    [NativeName("CL_DEVICE_KERNEL_CLOCK_CAPABILITIES_KHR")]
-    KernelClockCapabilitiesKHR = 4214,
-
-    [NativeName("CL_DEVICE_SPIRV_EXTENDED_INSTRUCTION_SETS_KHR")]
-    SpirvExtendedInstructionSetsKHR = 4793,
-
-    [NativeName("CL_DEVICE_SPIRV_EXTENSIONS_KHR")]
-    SpirvExtensionsKHR = 4794,
-
-    [NativeName("CL_DEVICE_SPIRV_CAPABILITIES_KHR")]
-    SpirvCapabilitiesKHR = 4795,
-
-    [NativeName("CL_DEVICE_WORKGROUP_PROTECTION_SVM_CAPABILITIES_IMG")]
-    WorkgroupProtectionSvmCapabilitiesIMG = 16602,
-
-    [NativeName("CL_DEVICE_WORKGROUP_PROTECTION_DEVICE_ENQUEUE_CAPABILITIES_IMG")]
-    WorkgroupProtectionDeviceEnqueueCapabilitiesIMG = 16603,
-
-    [NativeName("CL_DEVICE_SAFETY_MEM_SIZE_IMG")]
-    SafetyMemSizeIMG = 16604,
 }
