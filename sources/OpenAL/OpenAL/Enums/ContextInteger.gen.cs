@@ -13,11 +13,8 @@ namespace Silk.NET.OpenAL;
 [NativeName("ContextInteger")]
 public enum ContextInteger : uint
 {
-    [NativeName("ALC_FREQUENCY")]
-    Frequency = 4103,
-
-    [NativeName("ALC_REFRESH")]
-    Refresh = 4104,
+    [NativeName("ALC_CAPTURE_SAMPLES")]
+    CaptureSamples = 786,
 
     [NativeName("ALC_MAJOR_VERSION")]
     MajorVersion = 4096,
@@ -31,17 +28,29 @@ public enum ContextInteger : uint
     [NativeName("ALC_ALL_ATTRIBUTES")]
     AllAttributes = 4099,
 
+    [NativeName("ALC_FREQUENCY")]
+    Frequency = 4103,
+
+    [NativeName("ALC_REFRESH")]
+    Refresh = 4104,
+
     [NativeName("ALC_MONO_SOURCES")]
     MonoSources = 4112,
 
     [NativeName("ALC_STEREO_SOURCES")]
     StereoSources = 4113,
 
-    [NativeName("ALC_CAPTURE_SAMPLES")]
-    CaptureSamples = 786,
-
     [NativeName("ALC_DEFAULT_FILTER_ORDER")]
     DefaultFilterOrder = 4352,
+
+    [NativeName("ALC_DEVICE_CLOCK_SOFT")]
+    DeviceClockSOFT = 5632,
+
+    [NativeName("ALC_DEVICE_LATENCY_SOFT")]
+    DeviceLatencySOFT = 5633,
+
+    [NativeName("ALC_DEVICE_CLOCK_LATENCY_SOFT")]
+    DeviceClockLatencySOFT = 5634,
 
     [NativeName("ALC_HRTF_SOFT")]
     HrtfSOFT = 6546,
@@ -54,15 +63,6 @@ public enum ContextInteger : uint
 
     [NativeName("ALC_OUTPUT_LIMITER_SOFT")]
     OutputLimiterSOFT = 6554,
-
-    [NativeName("ALC_DEVICE_CLOCK_SOFT")]
-    DeviceClockSOFT = 5632,
-
-    [NativeName("ALC_DEVICE_LATENCY_SOFT")]
-    DeviceLatencySOFT = 5633,
-
-    [NativeName("ALC_DEVICE_CLOCK_LATENCY_SOFT")]
-    DeviceClockLatencySOFT = 5634,
 
     [NativeName("ALC_MAX_AMBISONIC_ORDER_SOFT")]
     MaxAmbisonicOrderSOFT = 6555,

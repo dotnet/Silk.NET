@@ -10,29 +10,26 @@ namespace Silk.NET.OpenGL;
 [NativeName("GetTextureParameter")]
 public enum GetTextureParameter : uint
 {
-    [NativeName("GL_NORMAL_MAP_OES")]
-    NormalMapOES = 34065,
-
-    [NativeName("GL_REFLECTION_MAP_OES")]
-    ReflectionMapOES = 34066,
-
-    [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
-    TextureUnnormalizedCoordinatesARM = 36714,
-
-    [NativeName("GL_SURFACE_COMPRESSION_EXT")]
-    SurfaceCompressionEXT = 38592,
-
-    [NativeName("GL_TEXTURE_BORDER_COLOR_NV")]
-    TextureBorderColorNV = 4100,
-
     [NativeName("GL_TEXTURE_WIDTH")]
     TextureWidth = 4096,
 
     [NativeName("GL_TEXTURE_HEIGHT")]
     TextureHeight = 4097,
 
+    [NativeName("GL_TEXTURE_COMPONENTS")]
+    TextureComponents = 4099,
+
+    [NativeName("GL_TEXTURE_INTERNAL_FORMAT")]
+    TextureInternalFormat = 4099,
+
+    [NativeName("GL_TEXTURE_BORDER_COLOR_NV")]
+    TextureBorderColorNV = 4100,
+
     [NativeName("GL_TEXTURE_BORDER_COLOR")]
     TextureBorderColor = 4100,
+
+    [NativeName("GL_TEXTURE_BORDER")]
+    TextureBorder = 4101,
 
     [NativeName("GL_TEXTURE_MAG_FILTER")]
     TextureMagFilter = 10240,
@@ -45,15 +42,6 @@ public enum GetTextureParameter : uint
 
     [NativeName("GL_TEXTURE_WRAP_T")]
     TextureWrapT = 10243,
-
-    [NativeName("GL_TEXTURE_COMPONENTS")]
-    TextureComponents = 4099,
-
-    [NativeName("GL_TEXTURE_BORDER")]
-    TextureBorder = 4101,
-
-    [NativeName("GL_TEXTURE_INTERNAL_FORMAT")]
-    TextureInternalFormat = 4099,
 
     [NativeName("GL_TEXTURE_RED_SIZE")]
     TextureRedSize = 32860,
@@ -79,35 +67,11 @@ public enum GetTextureParameter : uint
     [NativeName("GL_TEXTURE_RESIDENT")]
     TextureResident = 32871,
 
-    [NativeName("GL_NORMAL_MAP")]
-    NormalMap = 34065,
-
-    [NativeName("GL_REFLECTION_MAP")]
-    ReflectionMap = 34066,
-
-    [NativeName("GL_NORMAL_MAP_ARB")]
-    NormalMapARB = 34065,
-
-    [NativeName("GL_REFLECTION_MAP_ARB")]
-    ReflectionMapARB = 34066,
-
     [NativeName("GL_TEXTURE_DEPTH_EXT")]
     TextureDepthEXT = 32881,
 
     [NativeName("GL_TEXTURE_WRAP_R_EXT")]
     TextureWrapREXT = 32882,
-
-    [NativeName("GL_NORMAL_MAP_EXT")]
-    NormalMapEXT = 34065,
-
-    [NativeName("GL_REFLECTION_MAP_EXT")]
-    ReflectionMapEXT = 34066,
-
-    [NativeName("GL_NORMAL_MAP_NV")]
-    NormalMapNV = 34065,
-
-    [NativeName("GL_REFLECTION_MAP_NV")]
-    ReflectionMapNV = 34066,
 
     [NativeName("GL_DETAIL_TEXTURE_LEVEL_SGIS")]
     DetailTextureLevelSGIS = 32922,
@@ -118,20 +82,23 @@ public enum GetTextureParameter : uint
     [NativeName("GL_DETAIL_TEXTURE_FUNC_POINTS_SGIS")]
     DetailTextureFuncPointsSGIS = 32924,
 
-    [NativeName("GL_GENERATE_MIPMAP_SGIS")]
-    GenerateMipmapSGIS = 33169,
-
     [NativeName("GL_SHARPEN_TEXTURE_FUNC_POINTS_SGIS")]
     SharpenTextureFuncPointsSGIS = 32944,
+
+    [NativeName("GL_SHADOW_AMBIENT_SGIX")]
+    ShadowAmbientSGIX = 32959,
+
+    [NativeName("GL_DUAL_TEXTURE_SELECT_SGIS")]
+    DualTextureSelectSGIS = 33060,
+
+    [NativeName("GL_QUAD_TEXTURE_SELECT_SGIS")]
+    QuadTextureSelectSGIS = 33061,
 
     [NativeName("GL_TEXTURE_4DSIZE_SGIS")]
     Texture4DsizeSGIS = 33078,
 
     [NativeName("GL_TEXTURE_WRAP_Q_SGIS")]
     TextureWrapQSGIS = 33079,
-
-    [NativeName("GL_TEXTURE_FILTER4_SIZE_SGIS")]
-    TextureFilter4SizeSGIS = 33095,
 
     [NativeName("GL_TEXTURE_MIN_LOD_SGIS")]
     TextureMinLodSGIS = 33082,
@@ -145,11 +112,8 @@ public enum GetTextureParameter : uint
     [NativeName("GL_TEXTURE_MAX_LEVEL_SGIS")]
     TextureMaxLevelSGIS = 33085,
 
-    [NativeName("GL_DUAL_TEXTURE_SELECT_SGIS")]
-    DualTextureSelectSGIS = 33060,
-
-    [NativeName("GL_QUAD_TEXTURE_SELECT_SGIS")]
-    QuadTextureSelectSGIS = 33061,
+    [NativeName("GL_TEXTURE_FILTER4_SIZE_SGIS")]
+    TextureFilter4SizeSGIS = 33095,
 
     [NativeName("GL_TEXTURE_CLIPMAP_CENTER_SGIX")]
     TextureClipmapCenterSGIX = 33137,
@@ -169,6 +133,24 @@ public enum GetTextureParameter : uint
     [NativeName("GL_TEXTURE_CLIPMAP_DEPTH_SGIX")]
     TextureClipmapDepthSGIX = 33142,
 
+    [NativeName("GL_POST_TEXTURE_FILTER_BIAS_SGIX")]
+    PostTextureFilterBiasSGIX = 33145,
+
+    [NativeName("GL_POST_TEXTURE_FILTER_SCALE_SGIX")]
+    PostTextureFilterScaleSGIX = 33146,
+
+    [NativeName("GL_TEXTURE_LOD_BIAS_S_SGIX")]
+    TextureLodBiasSSGIX = 33166,
+
+    [NativeName("GL_TEXTURE_LOD_BIAS_T_SGIX")]
+    TextureLodBiasTSGIX = 33167,
+
+    [NativeName("GL_TEXTURE_LOD_BIAS_R_SGIX")]
+    TextureLodBiasRSGIX = 33168,
+
+    [NativeName("GL_GENERATE_MIPMAP_SGIS")]
+    GenerateMipmapSGIS = 33169,
+
     [NativeName("GL_TEXTURE_COMPARE_SGIX")]
     TextureCompareSGIX = 33178,
 
@@ -181,9 +163,6 @@ public enum GetTextureParameter : uint
     [NativeName("GL_TEXTURE_GEQUAL_R_SGIX")]
     TextureGequalRSGIX = 33181,
 
-    [NativeName("GL_SHADOW_AMBIENT_SGIX")]
-    ShadowAmbientSGIX = 32959,
-
     [NativeName("GL_TEXTURE_MAX_CLAMP_S_SGIX")]
     TextureMaxClampSSGIX = 33641,
 
@@ -193,18 +172,39 @@ public enum GetTextureParameter : uint
     [NativeName("GL_TEXTURE_MAX_CLAMP_R_SGIX")]
     TextureMaxClampRSGIX = 33643,
 
-    [NativeName("GL_TEXTURE_LOD_BIAS_S_SGIX")]
-    TextureLodBiasSSGIX = 33166,
+    [NativeName("GL_NORMAL_MAP_OES")]
+    NormalMapOES = 34065,
 
-    [NativeName("GL_TEXTURE_LOD_BIAS_T_SGIX")]
-    TextureLodBiasTSGIX = 33167,
+    [NativeName("GL_NORMAL_MAP")]
+    NormalMap = 34065,
 
-    [NativeName("GL_TEXTURE_LOD_BIAS_R_SGIX")]
-    TextureLodBiasRSGIX = 33168,
+    [NativeName("GL_NORMAL_MAP_ARB")]
+    NormalMapARB = 34065,
 
-    [NativeName("GL_POST_TEXTURE_FILTER_BIAS_SGIX")]
-    PostTextureFilterBiasSGIX = 33145,
+    [NativeName("GL_NORMAL_MAP_EXT")]
+    NormalMapEXT = 34065,
 
-    [NativeName("GL_POST_TEXTURE_FILTER_SCALE_SGIX")]
-    PostTextureFilterScaleSGIX = 33146,
+    [NativeName("GL_NORMAL_MAP_NV")]
+    NormalMapNV = 34065,
+
+    [NativeName("GL_REFLECTION_MAP_OES")]
+    ReflectionMapOES = 34066,
+
+    [NativeName("GL_REFLECTION_MAP")]
+    ReflectionMap = 34066,
+
+    [NativeName("GL_REFLECTION_MAP_ARB")]
+    ReflectionMapARB = 34066,
+
+    [NativeName("GL_REFLECTION_MAP_EXT")]
+    ReflectionMapEXT = 34066,
+
+    [NativeName("GL_REFLECTION_MAP_NV")]
+    ReflectionMapNV = 34066,
+
+    [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
+    TextureUnnormalizedCoordinatesARM = 36714,
+
+    [NativeName("GL_SURFACE_COMPRESSION_EXT")]
+    SurfaceCompressionEXT = 38592,
 }

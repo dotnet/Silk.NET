@@ -25,48 +25,6 @@ public enum Format : uint
     [NativeName("AL_FORMAT_STEREO16")]
     FormatStereo16 = 4355,
 
-    [NativeName("AL_FORMAT_IMA_ADPCM_MONO16_EXT")]
-    FormatImaAdpcmMono16EXT = 65536,
-
-    [NativeName("AL_FORMAT_IMA_ADPCM_STEREO16_EXT")]
-    FormatImaAdpcmStereo16EXT = 65537,
-
-    [NativeName("AL_FORMAT_WAVE_EXT")]
-    FormatWaveEXT = 65538,
-
-    [NativeName("AL_FORMAT_VORBIS_EXT")]
-    FormatVorbisEXT = 65539,
-
-    [NativeName("AL_FORMAT_QUAD8_LOKI")]
-    FormatQuad8LOKI = 65540,
-
-    [NativeName("AL_FORMAT_QUAD16_LOKI")]
-    FormatQuad16LOKI = 65541,
-
-    [NativeName("AL_FORMAT_MONO_FLOAT32")]
-    FormatMonoFloat32 = 65552,
-
-    [NativeName("AL_FORMAT_STEREO_FLOAT32")]
-    FormatStereoFloat32 = 65553,
-
-    [NativeName("AL_FORMAT_MONO_DOUBLE_EXT")]
-    FormatMonoDoubleEXT = 65554,
-
-    [NativeName("AL_FORMAT_STEREO_DOUBLE_EXT")]
-    FormatStereoDoubleEXT = 65555,
-
-    [NativeName("AL_FORMAT_MONO_MULAW_EXT")]
-    FormatMonoMulawEXT = 65556,
-
-    [NativeName("AL_FORMAT_STEREO_MULAW_EXT")]
-    FormatStereoMulawEXT = 65557,
-
-    [NativeName("AL_FORMAT_MONO_ALAW_EXT")]
-    FormatMonoAlawEXT = 65558,
-
-    [NativeName("AL_FORMAT_STEREO_ALAW_EXT")]
-    FormatStereoAlawEXT = 65559,
-
     [NativeName("AL_FORMAT_QUAD8")]
     FormatQuad8 = 4612,
 
@@ -112,27 +70,6 @@ public enum Format : uint
     [NativeName("AL_FORMAT_71CHN32")]
     Format71Chn32 = 4626,
 
-    [NativeName("AL_FORMAT_MONO_MULAW")]
-    FormatMonoMulaw = 65556,
-
-    [NativeName("AL_FORMAT_STEREO_MULAW")]
-    FormatStereoMulaw = 65557,
-
-    [NativeName("AL_FORMAT_QUAD_MULAW")]
-    FormatQuadMulaw = 65569,
-
-    [NativeName("AL_FORMAT_REAR_MULAW")]
-    FormatRearMulaw = 65570,
-
-    [NativeName("AL_FORMAT_51CHN_MULAW")]
-    Format51ChnMulaw = 65571,
-
-    [NativeName("AL_FORMAT_61CHN_MULAW")]
-    Format61ChnMulaw = 65572,
-
-    [NativeName("AL_FORMAT_71CHN_MULAW")]
-    Format71ChnMulaw = 65573,
-
     [NativeName("AL_FORMAT_MONO_IMA4")]
     FormatMonoIma4 = 4864,
 
@@ -144,30 +81,6 @@ public enum Format : uint
 
     [NativeName("AL_FORMAT_STEREO_MSADPCM_SOFT")]
     FormatStereoMsadpcmSOFT = 4867,
-
-    [NativeName("AL_FORMAT_BFORMAT2D_8")]
-    FormatBformat2D8 = 131105,
-
-    [NativeName("AL_FORMAT_BFORMAT2D_16")]
-    FormatBformat2D16 = 131106,
-
-    [NativeName("AL_FORMAT_BFORMAT2D_FLOAT32")]
-    FormatBformat2DFloat32 = 131107,
-
-    [NativeName("AL_FORMAT_BFORMAT3D_8")]
-    FormatBformat3D8 = 131121,
-
-    [NativeName("AL_FORMAT_BFORMAT3D_16")]
-    FormatBformat3D16 = 131122,
-
-    [NativeName("AL_FORMAT_BFORMAT3D_FLOAT32")]
-    FormatBformat3DFloat32 = 131123,
-
-    [NativeName("AL_FORMAT_BFORMAT2D_MULAW")]
-    FormatBformat2DMulaw = 65585,
-
-    [NativeName("AL_FORMAT_BFORMAT3D_MULAW")]
-    FormatBformat3DMulaw = 65586,
 
     [NativeName("AL_FORMAT_UHJ2CHN8_SOFT")]
     FormatUhj2Chn8SOFT = 6562,
@@ -219,4 +132,91 @@ public enum Format : uint
 
     [NativeName("AL_FORMAT_UHJ4CHN_ALAW_SOFT")]
     FormatUhj4ChnAlawSOFT = 6586,
+
+    [NativeName("AL_FORMAT_IMA_ADPCM_MONO16_EXT")]
+    FormatImaAdpcmMono16EXT = 65536,
+
+    [NativeName("AL_FORMAT_IMA_ADPCM_STEREO16_EXT")]
+    FormatImaAdpcmStereo16EXT = 65537,
+
+    [NativeName("AL_FORMAT_WAVE_EXT")]
+    FormatWaveEXT = 65538,
+
+    [NativeName("AL_FORMAT_VORBIS_EXT")]
+    FormatVorbisEXT = 65539,
+
+    [NativeName("AL_FORMAT_QUAD8_LOKI")]
+    FormatQuad8LOKI = 65540,
+
+    [NativeName("AL_FORMAT_QUAD16_LOKI")]
+    FormatQuad16LOKI = 65541,
+
+    [NativeName("AL_FORMAT_MONO_FLOAT32")]
+    FormatMonoFloat32 = 65552,
+
+    [NativeName("AL_FORMAT_STEREO_FLOAT32")]
+    FormatStereoFloat32 = 65553,
+
+    [NativeName("AL_FORMAT_MONO_DOUBLE_EXT")]
+    FormatMonoDoubleEXT = 65554,
+
+    [NativeName("AL_FORMAT_STEREO_DOUBLE_EXT")]
+    FormatStereoDoubleEXT = 65555,
+
+    [NativeName("AL_FORMAT_MONO_MULAW_EXT")]
+    FormatMonoMulawEXT = 65556,
+
+    [NativeName("AL_FORMAT_MONO_MULAW")]
+    FormatMonoMulaw = 65556,
+
+    [NativeName("AL_FORMAT_STEREO_MULAW_EXT")]
+    FormatStereoMulawEXT = 65557,
+
+    [NativeName("AL_FORMAT_STEREO_MULAW")]
+    FormatStereoMulaw = 65557,
+
+    [NativeName("AL_FORMAT_MONO_ALAW_EXT")]
+    FormatMonoAlawEXT = 65558,
+
+    [NativeName("AL_FORMAT_STEREO_ALAW_EXT")]
+    FormatStereoAlawEXT = 65559,
+
+    [NativeName("AL_FORMAT_QUAD_MULAW")]
+    FormatQuadMulaw = 65569,
+
+    [NativeName("AL_FORMAT_REAR_MULAW")]
+    FormatRearMulaw = 65570,
+
+    [NativeName("AL_FORMAT_51CHN_MULAW")]
+    Format51ChnMulaw = 65571,
+
+    [NativeName("AL_FORMAT_61CHN_MULAW")]
+    Format61ChnMulaw = 65572,
+
+    [NativeName("AL_FORMAT_71CHN_MULAW")]
+    Format71ChnMulaw = 65573,
+
+    [NativeName("AL_FORMAT_BFORMAT2D_MULAW")]
+    FormatBformat2DMulaw = 65585,
+
+    [NativeName("AL_FORMAT_BFORMAT3D_MULAW")]
+    FormatBformat3DMulaw = 65586,
+
+    [NativeName("AL_FORMAT_BFORMAT2D_8")]
+    FormatBformat2D8 = 131105,
+
+    [NativeName("AL_FORMAT_BFORMAT2D_16")]
+    FormatBformat2D16 = 131106,
+
+    [NativeName("AL_FORMAT_BFORMAT2D_FLOAT32")]
+    FormatBformat2DFloat32 = 131107,
+
+    [NativeName("AL_FORMAT_BFORMAT3D_8")]
+    FormatBformat3D8 = 131121,
+
+    [NativeName("AL_FORMAT_BFORMAT3D_16")]
+    FormatBformat3D16 = 131122,
+
+    [NativeName("AL_FORMAT_BFORMAT3D_FLOAT32")]
+    FormatBformat3DFloat32 = 131123,
 }

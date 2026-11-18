@@ -23,27 +23,27 @@ public enum AudioFormat
     [NativeName("SDL_AUDIO_S16LE")]
     S16Le = 32784,
 
-    [NativeName("SDL_AUDIO_S16BE")]
-    S16Be = 36880,
+    [NativeName("SDL_AUDIO_S16")]
+    S16 = S16Le,
 
     [NativeName("SDL_AUDIO_S32LE")]
     S32Le = 32800,
 
-    [NativeName("SDL_AUDIO_S32BE")]
-    S32Be = 36896,
+    [NativeName("SDL_AUDIO_S32")]
+    S32 = S32Le,
 
     [NativeName("SDL_AUDIO_F32LE")]
     F32Le = 33056,
 
-    [NativeName("SDL_AUDIO_F32BE")]
-    F32Be = 37152,
-
-    [NativeName("SDL_AUDIO_S16")]
-    S16 = S16Le,
-
-    [NativeName("SDL_AUDIO_S32")]
-    S32 = S32Le,
-
     [NativeName("SDL_AUDIO_F32")]
     F32 = F32Le,
+
+    [NativeName("SDL_AUDIO_S16BE")]
+    S16Be = 36880,
+
+    [NativeName("SDL_AUDIO_S32BE")]
+    S32Be = 36896,
+
+    [NativeName("SDL_AUDIO_F32BE")]
+    F32Be = 37152,
 }

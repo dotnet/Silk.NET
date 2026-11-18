@@ -25,6 +25,21 @@ public enum QueueGlobalPriority : uint
     )]
     Low = 128,
 
+    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_LOW_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
+    LowEXT = Low,
+
+    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_LOW_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_global_priority"],
+        ImpliesSets = [
+            "VK_KHR_global_priority+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_global_priority+VK_VERSION_1_1",
+        ]
+    )]
+    LowKHR = Low,
+
     [NativeName("VK_QUEUE_GLOBAL_PRIORITY_MEDIUM")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,6 +52,21 @@ public enum QueueGlobalPriority : uint
         MinVersion = "1.4"
     )]
     Medium = 256,
+
+    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
+    MediumEXT = Medium,
+
+    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_global_priority"],
+        ImpliesSets = [
+            "VK_KHR_global_priority+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_global_priority+VK_VERSION_1_1",
+        ]
+    )]
+    MediumKHR = Medium,
 
     [NativeName("VK_QUEUE_GLOBAL_PRIORITY_HIGH")]
     [SupportedApiProfile(
@@ -51,6 +81,21 @@ public enum QueueGlobalPriority : uint
     )]
     High = 512,
 
+    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_HIGH_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
+    HighEXT = High,
+
+    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_HIGH_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_global_priority"],
+        ImpliesSets = [
+            "VK_KHR_global_priority+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_global_priority+VK_VERSION_1_1",
+        ]
+    )]
+    HighKHR = High,
+
     [NativeName("VK_QUEUE_GLOBAL_PRIORITY_REALTIME")]
     [SupportedApiProfile(
         "vulkan",
@@ -64,54 +109,9 @@ public enum QueueGlobalPriority : uint
     )]
     Realtime = 1024,
 
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_LOW_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
-    LowEXT = Low,
-
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
-    MediumEXT = Medium,
-
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_HIGH_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
-    HighEXT = High,
-
     [NativeName("VK_QUEUE_GLOBAL_PRIORITY_REALTIME_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
     RealtimeEXT = Realtime,
-
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_LOW_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_global_priority"],
-        ImpliesSets = [
-            "VK_KHR_global_priority+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_global_priority+VK_VERSION_1_1",
-        ]
-    )]
-    LowKHR = Low,
-
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_global_priority"],
-        ImpliesSets = [
-            "VK_KHR_global_priority+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_global_priority+VK_VERSION_1_1",
-        ]
-    )]
-    MediumKHR = Medium,
-
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_HIGH_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_global_priority"],
-        ImpliesSets = [
-            "VK_KHR_global_priority+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_global_priority+VK_VERSION_1_1",
-        ]
-    )]
-    HighKHR = High,
 
     [NativeName("VK_QUEUE_GLOBAL_PRIORITY_REALTIME_KHR")]
     [SupportedApiProfile(

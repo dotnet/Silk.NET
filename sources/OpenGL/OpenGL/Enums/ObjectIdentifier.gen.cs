@@ -16,15 +16,6 @@ public enum ObjectIdentifier : uint
     [NativeName("GL_VERTEX_ARRAY")]
     VertexArray = 32884,
 
-    [NativeName("GL_FRAMEBUFFER")]
-    Framebuffer = 36160,
-
-    [NativeName("GL_RENDERBUFFER")]
-    Renderbuffer = 36161,
-
-    [NativeName("GL_TRANSFORM_FEEDBACK")]
-    TransformFeedback = 36386,
-
     [NativeName("GL_BUFFER")]
     Buffer = 33504,
 
@@ -42,4 +33,13 @@ public enum ObjectIdentifier : uint
 
     [NativeName("GL_SAMPLER")]
     Sampler = 33510,
+
+    [NativeName("GL_FRAMEBUFFER")]
+    Framebuffer = 36160,
+
+    [NativeName("GL_RENDERBUFFER")]
+    Renderbuffer = 36161,
+
+    [NativeName("GL_TRANSFORM_FEEDBACK")]
+    TransformFeedback = 36386,
 }

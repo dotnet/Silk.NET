@@ -55,9 +55,9 @@ public enum EffectType : uint
     [NativeName("AL_EFFECT_EAXREVERB")]
     Eaxreverb = 32768,
 
-    [NativeName("AL_EFFECT_DEDICATED_DIALOGUE")]
-    DedicatedDialogue = 36865,
-
     [NativeName("AL_EFFECT_DEDICATED_LOW_FREQUENCY_EFFECT")]
     DedicatedLowFrequencyEffect = 36864,
+
+    [NativeName("AL_EFFECT_DEDICATED_DIALOGUE")]
+    DedicatedDialogue = 36865,
 }

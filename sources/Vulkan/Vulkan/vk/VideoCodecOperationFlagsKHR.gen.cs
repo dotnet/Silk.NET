@@ -21,22 +21,6 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     None = 0x0,
 
-    [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_h264"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
-    )]
-    EncodeH264Bit = 0x10000,
-
-    [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_H265_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_h265"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
-    )]
-    EncodeH265Bit = 0x20000,
-
     [NativeName("VK_VIDEO_CODEC_OPERATION_DECODE_H264_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -61,14 +45,6 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     DecodeAv1Bit = 0x4,
 
-    [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_AV1_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_av1"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
-    )]
-    EncodeAv1Bit = 0x40000,
-
     [NativeName("VK_VIDEO_CODEC_OPERATION_DECODE_VP9_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -76,4 +52,28 @@ public enum VideoCodecOperationFlagsKHR : uint
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
     DecodeVp9Bit = 0x8,
+
+    [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h264"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    EncodeH264Bit = 0x10000,
+
+    [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_H265_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h265"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    EncodeH265Bit = 0x20000,
+
+    [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_AV1_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_av1"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    EncodeAv1Bit = 0x40000,
 }

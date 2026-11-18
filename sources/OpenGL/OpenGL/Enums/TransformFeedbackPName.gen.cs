@@ -19,9 +19,9 @@ public enum TransformFeedbackPName : uint
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_BINDING")]
     BufferBinding = 35983,
 
-    [NativeName("GL_TRANSFORM_FEEDBACK_ACTIVE")]
-    Active = 36388,
-
     [NativeName("GL_TRANSFORM_FEEDBACK_PAUSED")]
     Paused = 36387,
+
+    [NativeName("GL_TRANSFORM_FEEDBACK_ACTIVE")]
+    Active = 36388,
 }

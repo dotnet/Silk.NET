@@ -49,24 +49,24 @@ public enum SourceFloat : uint
     [NativeName("AL_BYTE_OFFSET")]
     ByteOffset = 4134,
 
-    [NativeName("AL_CONE_OUTER_GAINHF")]
-    ConeOuterGainhf = 131081,
+    [NativeName("AL_STEREO_ANGLES")]
+    StereoAngles = 4144,
 
     [NativeName("AL_BYTE_RW_OFFSETS_SOFT")]
     ByteRwOffsetsSOFT = 4145,
 
-    [NativeName("AL_SAMPLE_RW_OFFSETS_SOFT")]
-    SampleRwOffsetsSOFT = 4146,
-
-    [NativeName("AL_STEREO_ANGLES")]
-    StereoAngles = 4144,
-
     [NativeName("AL_SOURCE_RADIUS")]
     SourceRadius = 4145,
+
+    [NativeName("AL_SAMPLE_RW_OFFSETS_SOFT")]
+    SampleRwOffsetsSOFT = 4146,
 
     [NativeName("AL_SEC_OFFSET_LATENCY_SOFT")]
     SecOffsetLatencySOFT = 4609,
 
     [NativeName("AL_SUPER_STEREO_WIDTH_SOFT")]
     SuperStereoWidthSOFT = 6577,
+
+    [NativeName("AL_CONE_OUTER_GAINHF")]
+    ConeOuterGainhf = 131081,
 }

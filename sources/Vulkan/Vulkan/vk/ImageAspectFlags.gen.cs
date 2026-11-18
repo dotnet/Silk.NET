@@ -13,6 +13,27 @@ namespace Silk.NET.Vulkan;
 [SupportedApiProfile("vulkan")]
 public enum ImageAspectFlags : uint
 {
+    [NativeName("VK_IMAGE_ASPECT_NONE")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    None = 0x0,
+
+    [NativeName("VK_IMAGE_ASPECT_NONE_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
+    NoneKHR = None,
+
     [NativeName("VK_IMAGE_ASPECT_COLOR_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -154,6 +175,17 @@ public enum ImageAspectFlags : uint
     )]
     Plane0Bit = 0x10,
 
+    [NativeName("VK_IMAGE_ASPECT_PLANE_0_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    Plane0BitKHR = Plane0Bit,
+
     [NativeName("VK_IMAGE_ASPECT_PLANE_1_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -178,6 +210,17 @@ public enum ImageAspectFlags : uint
         MinVersion = "1.1"
     )]
     Plane1Bit = 0x20,
+
+    [NativeName("VK_IMAGE_ASPECT_PLANE_1_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    Plane1BitKHR = Plane1Bit,
 
     [NativeName("VK_IMAGE_ASPECT_PLANE_2_BIT")]
     [SupportedApiProfile(
@@ -204,22 +247,16 @@ public enum ImageAspectFlags : uint
     )]
     Plane2Bit = 0x40,
 
-    [NativeName("VK_IMAGE_ASPECT_NONE")]
+    [NativeName("VK_IMAGE_ASPECT_PLANE_2_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
     )]
-    None = 0x0,
+    Plane2BitKHR = Plane2Bit,
 
     [NativeName("VK_IMAGE_ASPECT_MEMORY_PLANE_0_BIT_EXT")]
     [SupportedApiProfile(
@@ -268,41 +305,4 @@ public enum ImageAspectFlags : uint
         ]
     )]
     MemoryPlane3BitEXT = 0x400,
-
-    [NativeName("VK_IMAGE_ASPECT_PLANE_0_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    Plane0BitKHR = Plane0Bit,
-
-    [NativeName("VK_IMAGE_ASPECT_PLANE_1_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    Plane1BitKHR = Plane1Bit,
-
-    [NativeName("VK_IMAGE_ASPECT_PLANE_2_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    Plane2BitKHR = Plane2Bit,
-
-    [NativeName("VK_IMAGE_ASPECT_NONE_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
-    NoneKHR = None,
 }

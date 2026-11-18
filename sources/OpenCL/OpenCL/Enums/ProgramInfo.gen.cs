@@ -42,12 +42,12 @@ public enum ProgramInfo : uint
     [NativeName("CL_PROGRAM_IL")]
     Il = 4457,
 
+    [NativeName("CL_PROGRAM_IL_KHR")]
+    IlKHR = 4457,
+
     [NativeName("CL_PROGRAM_SCOPE_GLOBAL_CTORS_PRESENT")]
     ScopeGlobalCtorsPresent = 4458,
 
     [NativeName("CL_PROGRAM_SCOPE_GLOBAL_DTORS_PRESENT")]
     ScopeGlobalDtorsPresent = 4459,
-
-    [NativeName("CL_PROGRAM_IL_KHR")]
-    IlKHR = 4457,
 }

@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.Extensions.Logging;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -13,7 +14,8 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Contains various transformations related to enums.
 /// </summary>
-public class TransformEnums(TransformEnums.Configuration config) : IMod
+public class TransformEnums(TransformEnums.Configuration config, ILogger<TransformEnums> logger)
+    : IMod
 {
     /// <summary>
     /// The preferred backing type for enums.
@@ -78,6 +80,22 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
         /// This likely is required if <see cref="CoerceBackingTypes"/> is enabled.
         /// </remarks>
         public bool RewriteMemberValues { get; init; } = false;
+
+        /// <summary>
+        /// Whether to sort enum members by their value.
+        /// </summary>
+        public bool SortMembers { get; init; } = false;
+
+        /// <summary>
+        /// Whether to identify enum types that are likely to be [Flags] enums as [Flags] enums.
+        /// </summary>
+        public bool IdentifyFlags { get; init; } = false;
+
+        /// <summary>
+        /// Enums manually identified as [Flags] enums or non-[Flags].
+        /// </summary>
+        public IReadOnlyDictionary<string, bool> FlagsOverrides { get; init; } =
+            new Dictionary<string, bool>();
     }
 
     /// <summary>
@@ -130,19 +148,12 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
             }
         }
 
-        public bool IsTypeMatch(ITypeSymbol? enumType)
-        {
-            return enumType != null && TypeName.IsMatch(enumType.Name);
-        }
+        public bool IsTypeMatch(ITypeSymbol? enumType) =>
+            enumType != null && TypeName.IsMatch(enumType.Name);
 
-        public bool IsMemberMatch(ISymbol? enumMember)
+        public bool IsMemberMatch(EnumMemberInfo member)
         {
-            if (enumMember is not IFieldSymbol fieldSymbol)
-            {
-                return false;
-            }
-
-            if (!MemberName.IsMatch(enumMember.Name))
+            if (!MemberName.IsMatch(member.Node.Identifier.Text))
             {
                 return false;
             }
@@ -153,14 +164,14 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 return true;
             }
 
-            if (fieldSymbol.ConstantValue == null)
+            if (member.Value == null)
             {
                 // We don't know the constant value for sure
                 // Return false as a default
                 return false;
             }
 
-            return Convert.ToInt64(fieldSymbol.ConstantValue) == MemberValue;
+            return member.Value == MemberValue;
         }
     }
 
@@ -179,7 +190,13 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
         }
 
         var memberRewriteDecider = new MemberRewriteDecider();
-        var rewriter = new Rewriter(config, removeMemberFilters, compilation, memberRewriteDecider);
+        var rewriter = new Rewriter(
+            config,
+            removeMemberFilters,
+            compilation,
+            memberRewriteDecider,
+            logger
+        );
         foreach (var docId in proj.DocumentIds)
         {
             var doc =
@@ -197,7 +214,8 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
         Configuration config,
         List<EnumMemberFilter> removeMemberFilters,
         Compilation compilation,
-        MemberRewriteDecider memberRewriteDecider
+        MemberRewriteDecider memberRewriteDecider,
+        ILogger logger
     ) : CSharpSyntaxRewriter
     {
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
@@ -209,10 +227,57 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 return base.VisitEnumDeclaration(node);
             }
 
-            // This list is used to defer the modification of the enum declaration syntax node
-            // This is important because modifying the node will detach it from the semantic model
+            // Gather type information
             var originalNode = node;
-            var members = node.Members.ToList();
+            var nativeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
+            var isSigned = symbol.EnumUnderlyingType?.IsSignedInteger() ?? true;
+            var members = node
+                .Members.Select(n =>
+                {
+                    var symbol = semanticModel.GetDeclaredSymbol(n);
+                    long? value = symbol != null ? Convert.ToInt64(symbol.ConstantValue) : null;
+                    return new EnumMemberInfo(n, symbol, value);
+                })
+                .ToList();
+
+            var isFlagsEnumKnown = false;
+            var isFlagsEnum = false;
+
+            if (node.AttributeLists.ContainsAttribute("System.Flags"))
+            {
+                isFlagsEnumKnown = true;
+                isFlagsEnum = true;
+            }
+
+            if (config.FlagsOverrides.TryGetValue(nativeName, out var isFlags))
+            {
+                isFlagsEnumKnown = true;
+                isFlagsEnum = isFlags;
+            }
+
+            // This identification step should happen as early as possible
+            // to ensure we are testing against the original member values
+            if (!isFlagsEnumKnown && config.IdentifyFlags)
+            {
+                var isProbablyFlags = ModUtils.IsProbablyFlags(
+                    members.Where(m => m.Value != null).Select(m => m.Value!.Value).ToArray(),
+                    isSigned
+                );
+
+                if (isProbablyFlags == null)
+                {
+                    logger.LogWarning(
+                        "Unable to conclusively identify whether {Enum} is a [Flags] enum. Please manually identify this using the {FlagsOverride} option.",
+                        nativeName,
+                        nameof(Configuration.FlagsOverrides)
+                    );
+                    isFlagsEnum = false;
+                }
+                else
+                {
+                    isFlagsEnum = isProbablyFlags.Value;
+                }
+            }
 
             foreach (var filter in removeMemberFilters)
             {
@@ -221,12 +286,9 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                     continue;
                 }
 
-                members = members
-                    .Where(member => !filter.IsMemberMatch(semanticModel.GetDeclaredSymbol(member)))
-                    .ToList();
+                members.RemoveAll(m => filter.IsMemberMatch(m));
             }
 
-            var isFlagsEnum = node.AttributeLists.ContainsAttribute("System.Flags");
             if (isFlagsEnum && config.AddNoneMemberToFlags)
             {
                 // Add None member if it doesn't exist yet
@@ -258,15 +320,16 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 {
                     var noneMember = EnumMemberDeclaration("None")
                         .WithEqualsValue(CreateEqualsValueClause(0, isFlagsEnum));
-                    members.Insert(0, noneMember);
+                    members.Insert(0, new EnumMemberInfo(noneMember, null, 0));
                 }
             }
 
-            // This code uses the semantic model for members so it has to run before the members are rewritten below
             switch (config.CoerceBackingTypes)
             {
                 case EnumBackingTypePreference.PreferSigned:
                 {
+                    isSigned = true;
+
                     var baseList = originalNode.BaseList;
                     var baseTypes = (baseList?.Types ?? [])
                         .Select<BaseTypeSyntax, BaseTypeSyntax?>(t =>
@@ -317,18 +380,12 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 {
                     var hasNegativeValues = members.Any(m =>
                     {
-                        if (m.Parent == null)
+                        if (m.Symbol == null)
                         {
                             return false;
                         }
 
-                        var fieldSymbol = semanticModel.GetDeclaredSymbol(m);
-                        if (fieldSymbol == null)
-                        {
-                            return false;
-                        }
-
-                        var value = Convert.ToInt64(fieldSymbol.ConstantValue);
+                        var value = Convert.ToInt64(m.Symbol.ConstantValue);
                         return value < 0;
                     });
 
@@ -337,6 +394,8 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                         // Enum has negative values, we can't use an unsigned backing type
                         break;
                     }
+
+                    isSigned = false;
 
                     var baseList = originalNode.BaseList;
                     var baseTypes = (baseList?.Types ?? [])
@@ -396,38 +455,40 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
                 members = members
                     .Select(m =>
                     {
-                        if (m.Parent == null)
+                        if (m.Node.EqualsValue != null)
                         {
-                            return m;
-                        }
-
-                        if (m.EqualsValue != null)
-                        {
-                            memberRewriteDecider.Visit(m.EqualsValue);
+                            memberRewriteDecider.Visit(m.Node.EqualsValue);
                             if (!memberRewriteDecider.ShouldRewrite)
                             {
                                 return m;
                             }
                         }
 
-                        var fieldSymbol = semanticModel.GetDeclaredSymbol(m);
-                        if (fieldSymbol == null)
+                        var value = m.Value;
+                        if (value == null)
                         {
                             return m;
                         }
 
-                        if (fieldSymbol.ConstantValue == null)
+                        return m with
                         {
-                            return m;
-                        }
-
-                        var value = Convert.ToInt64(fieldSymbol.ConstantValue);
-                        return m.WithEqualsValue(CreateEqualsValueClause(value, isFlagsEnum));
+                            Node = m.Node.WithEqualsValue(
+                                CreateEqualsValueClause(value.Value, isFlagsEnum)
+                            ),
+                        };
                     })
                     .ToList();
             }
 
-            node = node.WithMembers([.. members]);
+            if (config.SortMembers)
+            {
+                members = members
+                    .OrderBy(m => m, new EnumMemberInfoValueComparer(isSigned))
+                    .ToList();
+            }
+
+            node = node.WithMembers([.. members.Select(m => m.Node)]);
+            node = node.WithAttributeLists(node.AttributeLists.WithFlags(isFlagsEnum));
 
             return base.VisitEnumDeclaration(node);
         }
@@ -476,6 +537,51 @@ public class TransformEnums(TransformEnums.Configuration config) : IMod
             //
             // Eg: DepthBufferBit = unchecked((uint)0x00000100)
             // uint is an identifier, but we want to rewrite this anyway
+        }
+    }
+
+    /// <param name="Node">The node corresponding to the member.</param>
+    /// <param name="Symbol">The symbol corresponding to the member, if available.</param>
+    /// <param name="Value">The value of the member, if known.</param>
+    private readonly record struct EnumMemberInfo(
+        EnumMemberDeclarationSyntax Node,
+        IFieldSymbol? Symbol,
+        long? Value
+    );
+
+    /// <param name="isSigned">Whether the enum type is signed or unsigned.</param>
+    private class EnumMemberInfoValueComparer(bool isSigned) : IComparer<EnumMemberInfo>
+    {
+        public int Compare(EnumMemberInfo a, EnumMemberInfo b)
+        {
+            // Ascending value
+            // Null is after non-null
+            if (a.Value.HasValue)
+            {
+                if (b.Value.HasValue)
+                {
+                    if (isSigned)
+                    {
+                        return a.Value.Value.CompareTo(b.Value.Value);
+                    }
+                    else
+                    {
+                        unchecked
+                        {
+                            return ((ulong)a.Value.Value).CompareTo((ulong)b.Value.Value);
+                        }
+                    }
+                }
+
+                return -1;
+            }
+
+            if (b.Value.HasValue)
+            {
+                return 1;
+            }
+
+            return 0;
         }
     }
 }

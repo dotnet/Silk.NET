@@ -13,11 +13,11 @@ public enum ConvolutionTargetEXT : uint
     [NativeName("GL_CONVOLUTION_1D")]
     Convolution1D = 32784,
 
-    [NativeName("GL_CONVOLUTION_2D")]
-    Convolution2D = 32785,
-
     [NativeName("GL_CONVOLUTION_1D_EXT")]
     Convolution1DEXT = 32784,
+
+    [NativeName("GL_CONVOLUTION_2D")]
+    Convolution2D = 32785,
 
     [NativeName("GL_CONVOLUTION_2D_EXT")]
     Convolution2DEXT = 32785,

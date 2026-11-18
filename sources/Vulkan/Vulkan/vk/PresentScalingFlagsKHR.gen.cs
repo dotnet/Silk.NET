@@ -23,22 +23,6 @@ public enum PresentScalingFlagsKHR : uint
     )]
     OneToOneBit = 0x1,
 
-    [NativeName("VK_PRESENT_SCALING_ASPECT_RATIO_STRETCH_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
-    )]
-    AspectRatioStretchBit = 0x2,
-
-    [NativeName("VK_PRESENT_SCALING_STRETCH_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
-    )]
-    StretchBit = 0x4,
-
     [NativeName("VK_PRESENT_SCALING_ONE_TO_ONE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -47,6 +31,14 @@ public enum PresentScalingFlagsKHR : uint
     )]
     OneToOneBitEXT = OneToOneBit,
 
+    [NativeName("VK_PRESENT_SCALING_ASPECT_RATIO_STRETCH_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
+    )]
+    AspectRatioStretchBit = 0x2,
+
     [NativeName("VK_PRESENT_SCALING_ASPECT_RATIO_STRETCH_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -54,6 +46,14 @@ public enum PresentScalingFlagsKHR : uint
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     AspectRatioStretchBitEXT = AspectRatioStretchBit,
+
+    [NativeName("VK_PRESENT_SCALING_STRETCH_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
+    )]
+    StretchBit = 0x4,
 
     [NativeName("VK_PRESENT_SCALING_STRETCH_BIT_EXT")]
     [SupportedApiProfile(

@@ -215,22 +215,6 @@ public enum SubgroupFeatureFlags : uint
     )]
     QuadBit = 0x80,
 
-    [NativeName("VK_SUBGROUP_FEATURE_ROTATE_BIT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    RotateBit = 0x200,
-
-    [NativeName("VK_SUBGROUP_FEATURE_ROTATE_CLUSTERED_BIT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
-        MinVersion = "1.4"
-    )]
-    RotateClusteredBit = 0x400,
-
     [NativeName("VK_SUBGROUP_FEATURE_PARTITIONED_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -250,6 +234,14 @@ public enum SubgroupFeatureFlags : uint
     )]
     PartitionedBitNV = PartitionedBitEXT,
 
+    [NativeName("VK_SUBGROUP_FEATURE_ROTATE_BIT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    RotateBit = 0x200,
+
     [NativeName("VK_SUBGROUP_FEATURE_ROTATE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -260,6 +252,14 @@ public enum SubgroupFeatureFlags : uint
         ]
     )]
     RotateBitKHR = RotateBit,
+
+    [NativeName("VK_SUBGROUP_FEATURE_ROTATE_CLUSTERED_BIT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    RotateClusteredBit = 0x400,
 
     [NativeName("VK_SUBGROUP_FEATURE_ROTATE_CLUSTERED_BIT_KHR")]
     [SupportedApiProfile(
