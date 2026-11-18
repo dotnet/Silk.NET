@@ -126,7 +126,7 @@ try {
           Copy-Item $submodulePath/install-android/x86-install/lib/libSDL3.so runtimes/android-x86/native
           Copy-Item $submodulePath/install-android/x86_64-install/lib/libSDL3.so runtimes/android-x64/native
           $jars = @(Get-ChildItem $submodulePath/install-android/armeabi-v7a-install/share/java/SDL3/SDL3-*.jar | Sort-Object FullName)
-          Copy-Item $jars[1].FullName android/SDL3.jar
+          Copy-Item $jars[0].FullName android/SDL3.jar
           Copy-Item "$(Split-Path -Parent $jars[1].FullName)/proguard.txt" android/proguard.txt
         }
 
