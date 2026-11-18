@@ -38,7 +38,7 @@ try {
   }
 
   # CMake
-  function cmakeShared { @("-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-x86_64-linux-gnu.2.17.cmake", "-DSDL_TEST_LIBRARY=OFF") }
+  function cmakeShared { @("-DCMAKE_BUILD_TYPE=Release", "-DSDL_TEST_LIBRARY=OFF") }
 
   switch ($true) {
     $IsWindows {
