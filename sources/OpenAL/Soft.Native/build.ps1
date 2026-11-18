@@ -109,8 +109,7 @@ try {
         apt-get install -y `
           libasound2-dev:$arch libpulse-dev:$arch libsoundio-dev:$arch libsndfile1-dev:$arch `
           libmysofa-dev:$arch qtbase5-dev:$arch libdbus-1-dev:$arch libjack-dev:$arch portaudio19-dev:$arch `
-          libpipewire-0.3-dev:$arch qt6-base-dev:$arch pulseaudio:$arch `
-          gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
+          libpipewire-0.3-dev:$arch qt6-base-dev:$arch pulseaudio:$arch
       }
 
       switch ($runtime) {
@@ -155,6 +154,9 @@ try {
         }
 
         "linux-arm64" {
+          # Dependencies
+          apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
@@ -165,6 +167,9 @@ try {
         }
 
         "linux-arm" {
+          # Dependencies
+          apt-get install -y gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
+
           # Build
           Remove-Item -Recurse -Force build -ErrorAction Ignore
           New-Item -ItemType Directory build
