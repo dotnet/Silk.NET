@@ -137,6 +137,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-aarch64-linux-gnu.2.17.cmake"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/linux-arm64/native
+          strip build/libSDL3.so
           Copy-Item build/libSDL3.so runtimes/linux-arm64/native
         }
 
@@ -147,6 +148,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-arm-linux-gnueabihf.2.34.cmake"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/linux-arm/native
+          strip build/libSDL3.so
           Copy-Item build/libSDL3.so runtimes/linux-arm/native
         }
 
@@ -157,6 +159,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-x86_64-linux-gnu.2.17.cmake"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/linux-x64/native
+          strip build/libSDL3.so
           Copy-Item build/libSDL3.so runtimes/linux-x64/native
         }
       }
@@ -191,6 +194,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=10.11"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/osx/native
+          strip build/libSDL3.dylib
           Copy-Item build/libSDL3.dylib runtimes/osx/native
         }
 

@@ -128,6 +128,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) $(androidCmakeShared) "-DANDROID_ABI=arm64-v8a"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/android-arm64/native
+          strip build/libopenal.so
           Copy-Item build/libopenal.so runtimes/android-arm64/native
         }
 
@@ -138,6 +139,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) $(androidCmakeShared) "-DANDROID_ABI=armeabi-v7a"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/android-arm/native
+          strip build/libopenal.so
           Copy-Item build/libopenal.so runtimes/android-arm/native
         }
 
@@ -148,6 +150,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) $(androidCmakeShared) "-DANDROID_ABI=x86_64"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/android-x64/native
+          strip build/libopenal.so
           Copy-Item build/libopenal.so runtimes/android-x64/native
         }
 
@@ -158,6 +161,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) $(androidCmakeShared) "-DANDROID_ABI=x86"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/android-x86/native
+          strip build/libopenal.so
           Copy-Item build/libopenal.so runtimes/android-x86/native
         }
 
@@ -171,6 +175,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) $(linuxCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/aarch64-linux-gnu.cmake"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/linux-arm64/native
+          strip build/libopenal.so
           Copy-Item build/libopenal.so runtimes/linux-arm64/native
         }
 
@@ -184,6 +189,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) $(linuxCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/arm-linux-gnueabihf.cmake"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/linux-arm/native
+          strip build/libopenal.so
           Copy-Item build/libopenal.so runtimes/linux-arm/native
         }
 
@@ -194,6 +200,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) $(linuxCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/x86_64-linux-gnu.cmake"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/linux-x64/native
+          strip build/libopenal.so
           Copy-Item build/libopenal.so runtimes/linux-x64/native
         }
       }
@@ -208,6 +215,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) $(appleCmakeShared) "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphoneos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/ios/native
+          strip build/libopenal.dylib
           Copy-Item build/libopenal.dylib runtimes/ios/native
         }
 
@@ -218,6 +226,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) $(appleCmakeShared) "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphonesimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/iossimulator/native
+          strip build/libopenal.dylib
           Copy-Item build/libopenal.dylib runtimes/iossimulator/native
         }
 
@@ -228,6 +237,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) $(appleCmakeShared) "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=13.3"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/osx/native
+          strip build/libopenal.dylib
           Copy-Item build/libopenal.dylib runtimes/osx/native
         }
 
@@ -238,6 +248,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) $(appleCmakeShared) "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/tvos/native
+          strip build/libopenal.dylib
           Copy-Item build/libopenal.dylib runtimes/tvos/native
         }
 
@@ -248,6 +259,7 @@ try {
           cmake $submodulePath -B build $(cmakeShared) $(appleCmakeShared) "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvsimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
           cmake --build build --parallel
           New-Item -ItemType Directory -Force runtimes/tvossimulator/native
+          strip build/libopenal.dylib
           Copy-Item build/libopenal.dylib runtimes/tvossimulator/native
         }
       }
