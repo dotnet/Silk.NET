@@ -38,7 +38,7 @@ try {
   }
 
   # CMake
-  function buildWithCmake {
+  function Build-CMake {
     $buildConfig = $IsWindows ? @("--config", "Release") : @()
 
     Remove-Item -Recurse -Force build -ErrorAction Ignore
@@ -57,7 +57,7 @@ try {
         "win-arm64" {
           # Build
           & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch arm64 -SkipAutomaticLocation
-          buildWithCmake -G Ninja $(cmakeShared)
+          Build-CMake -G Ninja $(cmakeShared)
           New-Item -ItemType Directory -Force runtimes/win-arm64/native
           Copy-Item build/SDL3.dll runtimes/win-arm64/native
         }
@@ -65,7 +65,7 @@ try {
         "win-x64" {
           # Build
           & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch amd64 -SkipAutomaticLocation
-          buildWithCmake -G Ninja $(cmakeShared)
+          Build-CMake -G Ninja $(cmakeShared)
           New-Item -ItemType Directory -Force runtimes/win-x64/native
           Copy-Item build/SDL3.dll runtimes/win-x64/native
         }
@@ -135,21 +135,21 @@ try {
 
         "linux-arm64" {
           # Build
-          buildWithCmake $(cmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-aarch64-linux-gnu.2.17.cmake"
+          Build-CMake $(cmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-aarch64-linux-gnu.2.17.cmake"
           New-Item -ItemType Directory -Force runtimes/linux-arm64/native
           Copy-Item build/libSDL3.so runtimes/linux-arm64/native
         }
 
         "linux-arm" {
           # Build
-          buildWithCmake $(cmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-arm-linux-gnueabihf.2.34.cmake"
+          Build-CMake $(cmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-arm-linux-gnueabihf.2.34.cmake"
           New-Item -ItemType Directory -Force runtimes/linux-arm/native
           Copy-Item build/libSDL3.so runtimes/linux-arm/native
         }
 
         "linux-x64" {
           # Build
-          buildWithCmake $(cmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-x86_64-linux-gnu.2.17.cmake"
+          Build-CMake $(cmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-x86_64-linux-gnu.2.17.cmake"
           New-Item -ItemType Directory -Force runtimes/linux-x64/native
           Copy-Item build/libSDL3.so runtimes/linux-x64/native
         }
@@ -160,35 +160,35 @@ try {
       switch ($runtime) {
         "ios" {
           # Build
-          buildWithCmake $(cmakeShared) "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphoneos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
+          Build-CMake $(cmakeShared) "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphoneos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
           New-Item -ItemType Directory -Force runtimes/ios/native
           Copy-Item build/libSDL3.a runtimes/ios/native
         }
 
         "iossimulator" {
           # Build
-          buildWithCmake $(cmakeShared) "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphonesimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
+          Build-CMake $(cmakeShared) "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphonesimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
           New-Item -ItemType Directory -Force runtimes/iossimulator/native
           Copy-Item build/libSDL3.a runtimes/iossimulator/native
         }
 
         "osx" {
           # Build
-          buildWithCmake $(cmakeShared) "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=10.11"
+          Build-CMake $(cmakeShared) "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=10.11"
           New-Item -ItemType Directory -Force runtimes/osx/native
           Copy-Item build/libSDL3.dylib runtimes/osx/native
         }
 
         "tvos" {
           # Build
-          buildWithCmake $(cmakeShared) "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
+          Build-CMake $(cmakeShared) "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
           New-Item -ItemType Directory -Force runtimes/tvos/native
           Copy-Item build/libSDL3.a runtimes/tvos/native
         }
 
         "tvossimulator" {
           # Build
-          buildWithCmake $(cmakeShared) "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvsimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
+          Build-CMake $(cmakeShared) "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvsimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
           New-Item -ItemType Directory -Force runtimes/tvossimulator/native
           Copy-Item build/libSDL3.a runtimes/tvossimulator/native
         }
