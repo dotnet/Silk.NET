@@ -16,7 +16,14 @@ $arch = switch ([System.Runtime.InteropServices.RuntimeInformation]::OSArchitect
 
 $outputPath = "$PSScriptRoot/zig"
 $archivePath = "$PSScriptRoot/zig.archive"
-$url = (Invoke-RestMethod https://ziglang.org/download/index.json).master."$arch-$os".tarball
+
+$json = (Invoke-RestMethod https://ziglang.org/download/index.json)
+$latestVersion = $json.PSObject.Properties.Name |
+  Where-Object { $_ -match "^(?<major>[\d]+)(\.(?<minor>[\d]+))?(\.(?<patch>[\d]+))$" } |
+  ForEach-Object { @{ major = [int]$matches.major; minor = [int]$matches.minor ?? 0; patch = [int]$matches.patch ?? 0; version = $matches.0 } } |
+  Sort-Object major, minor, patch |
+  Select-Object -last 1
+$url = $json.($latestVersion.version)."$arch-$os".tarball
 
 Write-Host "Downloading: $url"
 Write-Host "Output path: $outputPath"
