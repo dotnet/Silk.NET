@@ -41,7 +41,7 @@ internal class SilkTouchJob : IDisposable
     /// <summary>
     /// The service provider for this job.
     /// </summary>
-    public ServiceProvider Provider;
+    public ServiceProvider Provider { get; private set; }
 
     /// <summary>
     /// Creates a new <see cref="SilkTouchJob"/>.
