@@ -392,6 +392,14 @@ public enum FormatFeatureFlags : uint
     )]
     SampledImageFilterLinearBit = 0x1000,
 
+    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
+    SampledImageFilterCubicBitEXT = 0x2000,
+
+    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_IMG")]
+    [SupportedApiProfile("vulkan", ["VK_IMG_filter_cubic"])]
+    SampledImageFilterCubicBitIMG = SampledImageFilterCubicBitEXT,
+
     [NativeName("VK_FORMAT_FEATURE_TRANSFER_SRC_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -416,6 +424,10 @@ public enum FormatFeatureFlags : uint
         MinVersion = "1.1"
     )]
     TransferSrcBit = 0x4000,
+
+    [NativeName("VK_FORMAT_FEATURE_TRANSFER_SRC_BIT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
+    TransferSrcBitKHR = TransferSrcBit,
 
     [NativeName("VK_FORMAT_FEATURE_TRANSFER_DST_BIT")]
     [SupportedApiProfile(
@@ -442,6 +454,39 @@ public enum FormatFeatureFlags : uint
     )]
     TransferDstBit = 0x8000,
 
+    [NativeName("VK_FORMAT_FEATURE_TRANSFER_DST_BIT_KHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
+    TransferDstBitKHR = TransferDstBit,
+
+    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_MINMAX_BIT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    SampledImageFilterMinmaxBit = 0x10000,
+
+    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_MINMAX_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sampler_filter_minmax"],
+        ImpliesSets = [
+            "VK_EXT_sampler_filter_minmax+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
+        ]
+    )]
+    SampledImageFilterMinmaxBitEXT = SampledImageFilterMinmaxBit,
+
     [NativeName("VK_FORMAT_FEATURE_MIDPOINT_CHROMA_SAMPLES_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -463,6 +508,17 @@ public enum FormatFeatureFlags : uint
     )]
     MidpointChromaSamplesBit = 0x20000,
 
+    [NativeName("VK_FORMAT_FEATURE_MIDPOINT_CHROMA_SAMPLES_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    MidpointChromaSamplesBitKHR = MidpointChromaSamplesBit,
+
     [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_LINEAR_FILTER_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -483,6 +539,17 @@ public enum FormatFeatureFlags : uint
         MinVersion = "1.1"
     )]
     SampledImageYcbcrConversionLinearFilterBit = 0x40000,
+
+    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_LINEAR_FILTER_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    SampledImageYcbcrConversionLinearFilterBitKHR = SampledImageYcbcrConversionLinearFilterBit,
 
     [NativeName(
         "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_SEPARATE_RECONSTRUCTION_FILTER_BIT"
@@ -508,6 +575,20 @@ public enum FormatFeatureFlags : uint
     SampledImageYcbcrConversionSeparateReconstructionFilterBit = 0x80000,
 
     [NativeName(
+        "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_SEPARATE_RECONSTRUCTION_FILTER_BIT_KHR"
+    )]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    SampledImageYcbcrConversionSeparateReconstructionFilterBitKHR =
+        SampledImageYcbcrConversionSeparateReconstructionFilterBit,
+
+    [NativeName(
         "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_BIT"
     )]
     [SupportedApiProfile(
@@ -529,6 +610,20 @@ public enum FormatFeatureFlags : uint
         MinVersion = "1.1"
     )]
     SampledImageYcbcrConversionChromaReconstructionExplicitBit = 0x100000,
+
+    [NativeName(
+        "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_BIT_KHR"
+    )]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    SampledImageYcbcrConversionChromaReconstructionExplicitBitKHR =
+        SampledImageYcbcrConversionChromaReconstructionExplicitBit,
 
     [NativeName(
         "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_FORCEABLE_BIT"
@@ -553,6 +648,20 @@ public enum FormatFeatureFlags : uint
     )]
     SampledImageYcbcrConversionChromaReconstructionExplicitForceableBit = 0x200000,
 
+    [NativeName(
+        "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_FORCEABLE_BIT_KHR"
+    )]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    SampledImageYcbcrConversionChromaReconstructionExplicitForceableBitKHR =
+        SampledImageYcbcrConversionChromaReconstructionExplicitForceableBit,
+
     [NativeName("VK_FORMAT_FEATURE_DISJOINT_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -573,6 +682,17 @@ public enum FormatFeatureFlags : uint
         MinVersion = "1.1"
     )]
     DisjointBit = 0x400000,
+
+    [NativeName("VK_FORMAT_FEATURE_DISJOINT_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    DisjointBitKHR = DisjointBit,
 
     [NativeName("VK_FORMAT_FEATURE_COSITED_CHROMA_SAMPLES_BIT")]
     [SupportedApiProfile(
@@ -595,23 +715,27 @@ public enum FormatFeatureFlags : uint
     )]
     CositedChromaSamplesBit = 0x800000,
 
-    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_MINMAX_BIT")]
+    [NativeName("VK_FORMAT_FEATURE_COSITED_CHROMA_SAMPLES_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        [
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
     )]
-    SampledImageFilterMinmaxBit = 0x10000,
+    CositedChromaSamplesBitKHR = CositedChromaSamplesBit,
+
+    [NativeName("VK_FORMAT_FEATURE_FRAGMENT_DENSITY_MAP_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
+        ]
+    )]
+    FragmentDensityMapBitEXT = 0x1000000,
 
     [NativeName("VK_FORMAT_FEATURE_VIDEO_DECODE_OUTPUT_BIT_KHR")]
     [SupportedApiProfile(
@@ -635,44 +759,6 @@ public enum FormatFeatureFlags : uint
     )]
     VideoDecodeDpbBitKHR = 0x4000000,
 
-    [NativeName("VK_FORMAT_FEATURE_ACCELERATION_STRUCTURE_VERTEX_BUFFER_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_acceleration_structure"],
-        ImpliesSets = [
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
-        ]
-    )]
-    AccelerationStructureVertexBufferBitKHR = 0x20000000,
-
-    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
-    SampledImageFilterCubicBitEXT = 0x2000,
-
-    [NativeName("VK_FORMAT_FEATURE_FRAGMENT_DENSITY_MAP_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_fragment_density_map"],
-        ImpliesSets = [
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
-        ]
-    )]
-    FragmentDensityMapBitEXT = 0x1000000,
-
-    [NativeName("VK_FORMAT_FEATURE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_fragment_shading_rate"],
-        ImpliesSets = [
-            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    FragmentShadingRateAttachmentBitKHR = 0x40000000,
-
     [NativeName("VK_FORMAT_FEATURE_VIDEO_ENCODE_INPUT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -695,112 +781,26 @@ public enum FormatFeatureFlags : uint
     )]
     VideoEncodeDpbBitKHR = 0x10000000,
 
-    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_IMG")]
-    [SupportedApiProfile("vulkan", ["VK_IMG_filter_cubic"])]
-    SampledImageFilterCubicBitIMG = SampledImageFilterCubicBitEXT,
-
-    [NativeName("VK_FORMAT_FEATURE_TRANSFER_SRC_BIT_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
-    TransferSrcBitKHR = TransferSrcBit,
-
-    [NativeName("VK_FORMAT_FEATURE_TRANSFER_DST_BIT_KHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
-    TransferDstBitKHR = TransferDstBit,
-
-    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_MINMAX_BIT_EXT")]
+    [NativeName("VK_FORMAT_FEATURE_ACCELERATION_STRUCTURE_VERTEX_BUFFER_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_sampler_filter_minmax"],
+        ["VK_KHR_acceleration_structure"],
         ImpliesSets = [
-            "VK_EXT_sampler_filter_minmax+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    SampledImageFilterMinmaxBitEXT = SampledImageFilterMinmaxBit,
+    AccelerationStructureVertexBufferBitKHR = 0x20000000,
 
-    [NativeName("VK_FORMAT_FEATURE_MIDPOINT_CHROMA_SAMPLES_BIT_KHR")]
+    [NativeName("VK_FORMAT_FEATURE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
+        ["VK_KHR_fragment_shading_rate"],
         ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
         ]
     )]
-    MidpointChromaSamplesBitKHR = MidpointChromaSamplesBit,
-
-    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_LINEAR_FILTER_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    SampledImageYcbcrConversionLinearFilterBitKHR = SampledImageYcbcrConversionLinearFilterBit,
-
-    [NativeName(
-        "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_SEPARATE_RECONSTRUCTION_FILTER_BIT_KHR"
-    )]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    SampledImageYcbcrConversionSeparateReconstructionFilterBitKHR =
-        SampledImageYcbcrConversionSeparateReconstructionFilterBit,
-
-    [NativeName(
-        "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_BIT_KHR"
-    )]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    SampledImageYcbcrConversionChromaReconstructionExplicitBitKHR =
-        SampledImageYcbcrConversionChromaReconstructionExplicitBit,
-
-    [NativeName(
-        "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_FORCEABLE_BIT_KHR"
-    )]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    SampledImageYcbcrConversionChromaReconstructionExplicitForceableBitKHR =
-        SampledImageYcbcrConversionChromaReconstructionExplicitForceableBit,
-
-    [NativeName("VK_FORMAT_FEATURE_DISJOINT_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    DisjointBitKHR = DisjointBit,
-
-    [NativeName("VK_FORMAT_FEATURE_COSITED_CHROMA_SAMPLES_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    CositedChromaSamplesBitKHR = CositedChromaSamplesBit,
+    FragmentShadingRateAttachmentBitKHR = 0x40000000,
 }

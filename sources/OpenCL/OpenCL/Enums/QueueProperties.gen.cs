@@ -18,6 +18,12 @@ public enum QueueProperties : ulong
     [NativeName("CL_QUEUE_THROTTLE_KHR")]
     ThrottleKHR = 4247,
 
+    [NativeName("CL_QUEUE_FAMILY_INTEL")]
+    FamilyINTEL = 16780,
+
+    [NativeName("CL_QUEUE_INDEX_INTEL")]
+    IndexINTEL = 16781,
+
     [NativeName("CL_QUEUE_JOB_SLOT_ARM")]
     JobSlotARM = 16865,
 
@@ -29,10 +35,4 @@ public enum QueueProperties : ulong
 
     [NativeName("CL_QUEUE_COMPUTE_UNIT_LIMIT_ARM")]
     ComputeUnitLimitARM = 16883,
-
-    [NativeName("CL_QUEUE_FAMILY_INTEL")]
-    FamilyINTEL = 16780,
-
-    [NativeName("CL_QUEUE_INDEX_INTEL")]
-    IndexINTEL = 16781,
 }

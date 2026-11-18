@@ -10,6 +10,9 @@ namespace Silk.NET.OpenGL;
 [NativeName("BufferTargetARB")]
 public enum BufferTarget : uint
 {
+    [NativeName("GL_PARAMETER_BUFFER")]
+    ParameterBuffer = 33006,
+
     [NativeName("GL_ARRAY_BUFFER")]
     ArrayBuffer = 34962,
 
@@ -22,11 +25,14 @@ public enum BufferTarget : uint
     [NativeName("GL_PIXEL_UNPACK_BUFFER")]
     PixelUnpackBuffer = 35052,
 
-    [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER")]
-    TransformFeedbackBuffer = 35982,
+    [NativeName("GL_UNIFORM_BUFFER")]
+    UniformBuffer = 35345,
 
     [NativeName("GL_TEXTURE_BUFFER")]
     TextureBuffer = 35882,
+
+    [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER")]
+    TransformFeedbackBuffer = 35982,
 
     [NativeName("GL_COPY_READ_BUFFER")]
     CopyReadBuffer = 36662,
@@ -34,24 +40,18 @@ public enum BufferTarget : uint
     [NativeName("GL_COPY_WRITE_BUFFER")]
     CopyWriteBuffer = 36663,
 
-    [NativeName("GL_UNIFORM_BUFFER")]
-    UniformBuffer = 35345,
-
     [NativeName("GL_DRAW_INDIRECT_BUFFER")]
     DrawIndirectBuffer = 36671,
-
-    [NativeName("GL_ATOMIC_COUNTER_BUFFER")]
-    AtomicCounterBuffer = 37568,
-
-    [NativeName("GL_DISPATCH_INDIRECT_BUFFER")]
-    DispatchIndirectBuffer = 37102,
 
     [NativeName("GL_SHADER_STORAGE_BUFFER")]
     ShaderStorageBuffer = 37074,
 
+    [NativeName("GL_DISPATCH_INDIRECT_BUFFER")]
+    DispatchIndirectBuffer = 37102,
+
     [NativeName("GL_QUERY_BUFFER")]
     QueryBuffer = 37266,
 
-    [NativeName("GL_PARAMETER_BUFFER")]
-    ParameterBuffer = 33006,
+    [NativeName("GL_ATOMIC_COUNTER_BUFFER")]
+    AtomicCounterBuffer = 37568,
 }

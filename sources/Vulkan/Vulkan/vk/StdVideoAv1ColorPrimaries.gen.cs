@@ -20,6 +20,10 @@ public enum StdVideoAv1ColorPrimaries : uint
     [SupportedApiProfile("vulkan")]
     Unspecified = 2,
 
+    [NativeName("STD_VIDEO_AV1_COLOR_PRIMARIES_BT_UNSPECIFIED")]
+    [SupportedApiProfile("vulkan")]
+    BtUnspecified = Unspecified,
+
     [NativeName("STD_VIDEO_AV1_COLOR_PRIMARIES_BT_470_M")]
     [SupportedApiProfile("vulkan")]
     Bt470M = 4,
@@ -59,8 +63,4 @@ public enum StdVideoAv1ColorPrimaries : uint
     [NativeName("STD_VIDEO_AV1_COLOR_PRIMARIES_EBU_3213")]
     [SupportedApiProfile("vulkan")]
     Ebu3213 = 22,
-
-    [NativeName("STD_VIDEO_AV1_COLOR_PRIMARIES_BT_UNSPECIFIED")]
-    [SupportedApiProfile("vulkan")]
-    BtUnspecified = Unspecified,
 }

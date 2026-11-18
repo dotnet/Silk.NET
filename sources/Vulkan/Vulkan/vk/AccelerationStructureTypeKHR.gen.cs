@@ -23,6 +23,17 @@ public enum AccelerationStructureTypeKHR : uint
     )]
     TopLevel = 0,
 
+    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    TopLevelNV = TopLevel,
+
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -33,6 +44,17 @@ public enum AccelerationStructureTypeKHR : uint
         ]
     )]
     BottomLevel = 1,
+
+    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    BottomLevelNV = BottomLevel,
 
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_GENERIC_KHR")]
     [SupportedApiProfile(
@@ -52,26 +74,4 @@ public enum AccelerationStructureTypeKHR : uint
         ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
     )]
     OpacityMicromap = 1000623000,
-
-    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_ray_tracing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    TopLevelNV = TopLevel,
-
-    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_ray_tracing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    BottomLevelNV = BottomLevel,
 }

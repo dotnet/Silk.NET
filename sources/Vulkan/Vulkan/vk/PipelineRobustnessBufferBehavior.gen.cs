@@ -25,6 +25,17 @@ public enum PipelineRobustnessBufferBehavior : uint
     )]
     DeviceDefault = 0,
 
+    [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_DEVICE_DEFAULT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_robustness"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
+        ]
+    )]
+    DeviceDefaultEXT = DeviceDefault,
+
     [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_DISABLED")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,6 +48,17 @@ public enum PipelineRobustnessBufferBehavior : uint
         MinVersion = "1.4"
     )]
     Disabled = 1,
+
+    [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_DISABLED_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_robustness"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
+        ]
+    )]
+    DisabledEXT = Disabled,
 
     [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS")]
     [SupportedApiProfile(
@@ -51,6 +73,17 @@ public enum PipelineRobustnessBufferBehavior : uint
     )]
     RobustBufferAccess = 2,
 
+    [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_robustness"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
+        ]
+    )]
+    RobustBufferAccessEXT = RobustBufferAccess,
+
     [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS_2")]
     [SupportedApiProfile(
         "vulkan",
@@ -63,39 +96,6 @@ public enum PipelineRobustnessBufferBehavior : uint
         MinVersion = "1.4"
     )]
     RobustBufferAccess2 = 3,
-
-    [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_DEVICE_DEFAULT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_pipeline_robustness"],
-        ImpliesSets = [
-            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
-        ]
-    )]
-    DeviceDefaultEXT = DeviceDefault,
-
-    [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_DISABLED_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_pipeline_robustness"],
-        ImpliesSets = [
-            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
-        ]
-    )]
-    DisabledEXT = Disabled,
-
-    [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_pipeline_robustness"],
-        ImpliesSets = [
-            "VK_EXT_pipeline_robustness+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
-        ]
-    )]
-    RobustBufferAccessEXT = RobustBufferAccess,
 
     [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS_2_EXT")]
     [SupportedApiProfile(

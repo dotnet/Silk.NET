@@ -22,7 +22,7 @@ Silk.NET is your one-stop-shop for high-speed .NET multimedia, graphics, and com
 
 Use Silk.NET to spruce up applications with cross-platform 3D graphics, audio, compute and haptics!
 
-Silk.NET works on any .NET Standard 2.0 compliant platform, including .NET 6.0, Xamarin, .NET Framework 4.6.1+, and .NET Core 2.0+.
+Silk.NET works on any platform supported by .NET 10.
 
 </div>
 <br />
@@ -65,18 +65,18 @@ Silk.NET caters for anything you could need in swift development of multimedia, 
 <h1 align="center">The team</h1>
 
 We currently have the following maintainers:
-- [Kai Jellinghaus](https://github.com/HurricanKai) [<img src="https://about.twitter.com/etc/designs/about2-twitter/public/img/favicon.ico" alt="Follow Kai on Twitter" width="16" />](https://twitter.com/intent/follow?screen_name=KJellinghaus)
-- [Thomas Mizrahi](https://github.com/ThomasMiz)
-- [Beyley Thomas](https://github.com/Beyley)
+- [Andrew Davis](https://github.com/curin) (3.0)
+- [William Chen](https://github.com/Exanite) (3.0)
+- [Beyley Thomas](https://github.com/Beyley) (2.X)
 
 In addition, the Silk.NET working group help drive larger user-facing changes providing key consultation from the perspective of dedicated users and professionals.
 
 <h1 align="center">Building from source</h1>
 
 Prerequisites
-- **Must**: .NET 6 SDK
+- **Must**: .NET 10 SDK
 - **Should**: [NUKE](https://nuke.build) (build system). Install using `dotnet tool install Nuke.GlobalTool --global`
-- **Should**: Android, iOS, and MAUI .NET 6 workloads (use `dotnet workload install android ios maccatalyst maui` to install them)
+- **Should**: Android, iOS, and MAUI .NET 10 workloads (use `dotnet workload install android ios maccatalyst maui` to install them)
 - **Should**: Android SDK version 30 with NDK tools installed. On Windows, for best results this should be installed into `C:\ProgramData\Android\android-sdk`.
 - **Could**: Java JDK (for gradle)
 - **Could**: Visual Studio 2022 Community version 17.0 or later
@@ -88,7 +88,7 @@ Instructions
 
 There are more advanced build actions you can do too, such as FullBuild, Pack, FullPack, among others which you can view by doing `nuke --plan`.
 
-Note: Some .NET 6 workloads are only supported on Windows and macOS today.
+Note: Some .NET 10 workloads are only supported on Windows and macOS today.
 
 <h1 align="center">Contributing</h1>
 
@@ -107,11 +107,12 @@ The Silk.NET solution is **very large**. Learn about how you can combat this usi
 <h2 align="center">Funding</h2>
 Silk.NET requires significant effort to maintain, as such we greatly appreciate any financial support you are able to provide!
 
-This helps ensure Silk.NET's long term viability, and to help support the developers who maintain Silk.NET in their free time. [Kai](https://github.com/sponsors/HurricanKai) is accepting GitHub Sponsorships.
+This helps ensure Silk.NET's long term viability, and to help support the developers who maintain Silk.NET in their free
+time. [William](https://github.com/sponsors/Exanite) is accepting GitHub Sponsorships.
 
 <h1 align="center">Further resources</h1>
 
-- Several examples can be found in the [examples folder](https://github.com/dotnet/Silk.NET/tree/master/examples)
+- Several examples can be found in the [examples folder](https://github.com/dotnet/Silk.NET/tree/main/examples)
 - Come chat with us on [Discord](https://discord.gg/DTHHXRt)!
 
 <h1 align="center">Licensing and governance</h1>
@@ -126,10 +127,9 @@ Silk.NET is a [.NET Foundation](https://www.dotnetfoundation.org/projects) proje
 
 <div>
     <a href="https://www.jetbrains.com/?from=Silk.NET" align="right"><img src="https://raw.githubusercontent.com/dotnet/Silk.NET/develop/3.0/docs/readme/jetbrains.svg" alt="JetBrains" class="logo-footer" width="72" align="left">
-    <a><br/>
+    </a><br/>
 
 Special thanks to [JetBrains](https://www.jetbrains.com/?from=Silk.NET) for supporting us with open-source licenses for their IDEs. </a>
 </div>
 
 <!-- End exclude from NuGet readme. -->
-

@@ -19,17 +19,11 @@ public enum InternalFormatSOFT : uint
     [NativeName("AL_MONO16_SOFT")]
     Mono16 = 4353,
 
-    [NativeName("AL_MONO32F_SOFT")]
-    Mono32F = 65552,
-
     [NativeName("AL_STEREO8_SOFT")]
     Stereo8 = 4354,
 
     [NativeName("AL_STEREO16_SOFT")]
     Stereo16 = 4355,
-
-    [NativeName("AL_STEREO32F_SOFT")]
-    Stereo32F = 65553,
 
     [NativeName("AL_QUAD8_SOFT")]
     Quad8 = 4612,
@@ -75,4 +69,10 @@ public enum InternalFormatSOFT : uint
 
     [NativeName("AL_7POINT1_32F_SOFT")]
     X7Point1x32F = 4626,
+
+    [NativeName("AL_MONO32F_SOFT")]
+    Mono32F = 65552,
+
+    [NativeName("AL_STEREO32F_SOFT")]
+    Stereo32F = 65553,
 }

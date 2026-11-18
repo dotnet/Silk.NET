@@ -10,15 +10,15 @@ namespace Silk.NET.OpenGL;
 [NativeName("MatrixMode")]
 public enum MatrixMode : uint
 {
-    [NativeName("GL_TEXTURE")]
-    Texture = 5890,
-
     [NativeName("GL_MODELVIEW")]
     Modelview = 5888,
+
+    [NativeName("GL_MODELVIEW0_EXT")]
+    Modelview0EXT = 5888,
 
     [NativeName("GL_PROJECTION")]
     Projection = 5889,
 
-    [NativeName("GL_MODELVIEW0_EXT")]
-    Modelview0EXT = 5888,
+    [NativeName("GL_TEXTURE")]
+    Texture = 5890,
 }

@@ -24,10 +24,6 @@ public enum ReferenceSpaceType : uint
     [SupportedApiProfile("openxr")]
     Stage = 3,
 
-    [NativeName("XR_REFERENCE_SPACE_TYPE_LOCAL_FLOOR")]
-    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
-    LocalFloor = 1000426000,
-
     [NativeName("XR_REFERENCE_SPACE_TYPE_UNBOUNDED_MSFT")]
     [SupportedApiProfile("openxr", ["XR_MSFT_unbounded_reference_space"])]
     UnboundedMSFT = 1000038000,
@@ -48,6 +44,14 @@ public enum ReferenceSpaceType : uint
     )]
     LocalizationMapML = 1000139000,
 
+    [NativeName("XR_REFERENCE_SPACE_TYPE_LOCAL_FLOOR")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
+    LocalFloor = 1000426000,
+
+    [NativeName("XR_REFERENCE_SPACE_TYPE_LOCAL_FLOOR_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_local_floor"])]
+    LocalFloorEXT = LocalFloor,
+
     [NativeName("XR_REFERENCE_SPACE_TYPE_UNBOUNDED_ANDROID")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_unbounded_reference_space"])]
     UnboundedANDROID = 1000467000,
@@ -59,8 +63,4 @@ public enum ReferenceSpaceType : uint
         ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
     )]
     StationaryEXT = 1000742000,
-
-    [NativeName("XR_REFERENCE_SPACE_TYPE_LOCAL_FLOOR_EXT")]
-    [SupportedApiProfile("openxr", ["XR_EXT_local_floor"])]
-    LocalFloorEXT = LocalFloor,
 }

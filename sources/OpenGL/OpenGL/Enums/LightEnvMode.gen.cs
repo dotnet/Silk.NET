@@ -10,11 +10,11 @@ namespace Silk.NET.OpenGL;
 [NativeName("LightEnvModeSGIX")]
 public enum LightEnvMode : uint
 {
-    [NativeName("GL_REPLACE")]
-    Replace = 7681,
-
     [NativeName("GL_ADD")]
     Add = 260,
+
+    [NativeName("GL_REPLACE")]
+    Replace = 7681,
 
     [NativeName("GL_MODULATE")]
     Modulate = 8448,

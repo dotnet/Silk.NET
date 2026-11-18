@@ -1839,7 +1839,12 @@ public partial class MixKhronosData(
                 return base.VisitFieldDeclaration(node);
             }
 
-            if (node.AttributeLists.TryParseNativeTypeName(out var info) && info.IsConst)
+            if (
+                node.Declaration.Type is PredefinedTypeSyntax predefined
+                && predefined.Keyword.Kind().IsEnumBaseType()
+                && node.AttributeLists.TryParseNativeTypeName(out var info)
+                && info.IsConst
+            )
             {
                 var name = info.Name.Replace("FlagBits", "Flags");
                 if (info.IsDefine)
@@ -1911,11 +1916,7 @@ public partial class MixKhronosData(
             )
             {
                 // Add [Flags] attribute
-                var flagsAttribute = AttributeList(
-                    SingletonSeparatedList(Attribute(IdentifierName("Flags")))
-                );
-
-                node = node.WithAttributeLists(node.AttributeLists.Add(flagsAttribute));
+                node = node.WithAttributeLists(node.AttributeLists.WithFlags());
             }
 
             return base.VisitEnumDeclaration(node);

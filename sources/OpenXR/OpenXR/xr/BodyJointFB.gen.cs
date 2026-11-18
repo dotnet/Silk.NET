@@ -12,6 +12,10 @@ namespace Silk.NET.OpenXR;
 [SupportedApiProfile("openxr")]
 public enum BodyJointFB
 {
+    [NativeName("XR_BODY_JOINT_NONE_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
+    None = -1,
+
     [NativeName("XR_BODY_JOINT_ROOT_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     Root = 0,
@@ -295,8 +299,4 @@ public enum BodyJointFB
     [NativeName("XR_BODY_JOINT_COUNT_FB")]
     [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     Count = 70,
-
-    [NativeName("XR_BODY_JOINT_NONE_FB")]
-    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
-    None = -1,
 }

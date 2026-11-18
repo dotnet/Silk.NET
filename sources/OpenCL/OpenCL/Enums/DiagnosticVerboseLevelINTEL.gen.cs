@@ -15,9 +15,6 @@ public enum DiagnosticVerboseLevelINTEL : ulong
 {
     None = 0x0,
 
-    [NativeName("CL_CONTEXT_DIAGNOSTICS_LEVEL_ALL_INTEL")]
-    All = 0xFF,
-
     [NativeName("CL_CONTEXT_DIAGNOSTICS_LEVEL_GOOD_INTEL")]
     Good = 0x1,
 
@@ -26,4 +23,7 @@ public enum DiagnosticVerboseLevelINTEL : ulong
 
     [NativeName("CL_CONTEXT_DIAGNOSTICS_LEVEL_NEUTRAL_INTEL")]
     Neutral = 0x4,
+
+    [NativeName("CL_CONTEXT_DIAGNOSTICS_LEVEL_ALL_INTEL")]
+    All = 0xFF,
 }

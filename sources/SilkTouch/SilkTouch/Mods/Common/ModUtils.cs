@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using ClangSharp;
@@ -17,6 +18,111 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 public static class ModUtils
 {
+    /// <summary>
+    /// Whether the symbol represents a signed integer.
+    /// </summary>
+    public static bool IsSignedInteger(this INamedTypeSymbol type) =>
+        type.SpecialType switch
+        {
+            SpecialType.System_SByte
+            or SpecialType.System_Int16
+            or SpecialType.System_Int32
+            or SpecialType.System_Int64
+            or SpecialType.System_IntPtr => true,
+            _ => false,
+        };
+
+    /// <summary>
+    /// Whether the syntax kind represents an enum base type.
+    /// </summary>
+    public static bool IsEnumBaseType(this SyntaxKind syntaxKind) =>
+        syntaxKind
+            is SyntaxKind.ByteKeyword
+                or SyntaxKind.SByteKeyword
+                or SyntaxKind.ShortKeyword
+                or SyntaxKind.UShortKeyword
+                or SyntaxKind.IntKeyword
+                or SyntaxKind.UIntKeyword
+                or SyntaxKind.LongKeyword
+                or SyntaxKind.ULongKeyword;
+
+    /// <summary>
+    /// Identifies whether an enum is probably a [Flags] enum based on its members.
+    /// </summary>
+    /// <remarks>
+    /// Based off of Silk.NET 2.X BuildTools IsProbablyABitmask (not an exact port):
+    /// https://github.com/dotnet/Silk.NET/blob/c87fc664cc5d15abd754997b0a9ad138470554c4/src/Core/Silk.NET.BuildTools/Common/Utilities.cs#L627
+    /// </remarks>
+    /// <returns>false if unlikely, null if inconclusive, true if likely</returns>
+    public static bool? IsProbablyFlags(IReadOnlyList<long> members, bool isSigned)
+    {
+        if (isSigned && members.Any(x => x < 0))
+        {
+            return false;
+        }
+
+        var values = members
+            .Select(x => unchecked((ulong)x))
+            // Ignore 0 since 0 is used in both Flags/non-Flags enums
+            // Ignore MaxValues since these are used to ensure the bitwidth of the native enum
+            // This is based on how BuildTools handles https://github.com/dotnet/Silk.NET/issues/2238, but generalized
+            // Reason we filter these out is that these shouldn't influence the Flags identification process
+            .Where(x =>
+                x is not (0 or int.MaxValue or uint.MaxValue or long.MaxValue or ulong.MaxValue)
+            )
+            .Distinct()
+            .OrderBy(x => x)
+            .ToArray();
+
+        if (values is [1, 2] or [1, 2, 3])
+        {
+            // Inconclusive
+            return null;
+        }
+
+        var countWith1BitSet = values.Count(x => BitOperations.PopCount(x) == 1);
+
+        return (
+                // There is at least 1 item
+                values.Length >= 1
+                &&
+                // Majority of the members have one bit set
+                countWith1BitSet > values.Length / 2
+                &&
+                // It's not sequential (1, 2, 3)
+                !IsSeeminglySequential(values)
+            )
+            || (
+                // There are at least 2 items
+                values.Length >= 2
+                &&
+                // All items have one bit set
+                values.Length == countWith1BitSet
+            );
+
+        // Renamed from IsSequential as suggested by this comment:
+        // https://discord.com/channels/521092042781229087/587346162802229298/1284528132807987212
+        bool IsSeeminglySequential(IReadOnlyList<ulong> values)
+        {
+            const int maxMisses = 1;
+            var misses = 0;
+            for (var i = 0; i < values.Count; i++)
+            {
+                if (values[i] != (ulong)(i - misses) && values[i] != (ulong)(i - misses + 1))
+                {
+                    misses++;
+                }
+
+                if (misses > maxMisses)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    }
+
     /// <summary>
     /// Returns the specified list as a span.
     /// </summary>

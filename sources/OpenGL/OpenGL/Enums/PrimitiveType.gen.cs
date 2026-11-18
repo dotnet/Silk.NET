@@ -10,12 +10,6 @@ namespace Silk.NET.OpenGL;
 [NativeName("PrimitiveType")]
 public enum PrimitiveType : uint
 {
-    [NativeName("GL_PATCHES_EXT")]
-    PatchesEXT = 14,
-
-    [NativeName("GL_QUADS_EXT")]
-    QuadsEXT = 7,
-
     [NativeName("GL_POINTS")]
     Points = 0,
 
@@ -37,6 +31,9 @@ public enum PrimitiveType : uint
     [NativeName("GL_TRIANGLE_FAN")]
     TriangleFan = 6,
 
+    [NativeName("GL_QUADS_EXT")]
+    QuadsEXT = 7,
+
     [NativeName("GL_QUADS")]
     Quads = 7,
 
@@ -49,39 +46,42 @@ public enum PrimitiveType : uint
     [NativeName("GL_LINES_ADJACENCY")]
     LinesAdjacency = 10,
 
-    [NativeName("GL_LINE_STRIP_ADJACENCY")]
-    LineStripAdjacency = 11,
-
-    [NativeName("GL_TRIANGLES_ADJACENCY")]
-    TrianglesAdjacency = 12,
-
-    [NativeName("GL_TRIANGLE_STRIP_ADJACENCY")]
-    TriangleStripAdjacency = 13,
-
-    [NativeName("GL_PATCHES")]
-    Patches = 14,
-
     [NativeName("GL_LINES_ADJACENCY_ARB")]
     LinesAdjacencyARB = 10,
-
-    [NativeName("GL_LINE_STRIP_ADJACENCY_ARB")]
-    LineStripAdjacencyARB = 11,
-
-    [NativeName("GL_TRIANGLES_ADJACENCY_ARB")]
-    TrianglesAdjacencyARB = 12,
-
-    [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_ARB")]
-    TriangleStripAdjacencyARB = 13,
 
     [NativeName("GL_LINES_ADJACENCY_EXT")]
     LinesAdjacencyEXT = 10,
 
+    [NativeName("GL_LINE_STRIP_ADJACENCY")]
+    LineStripAdjacency = 11,
+
+    [NativeName("GL_LINE_STRIP_ADJACENCY_ARB")]
+    LineStripAdjacencyARB = 11,
+
     [NativeName("GL_LINE_STRIP_ADJACENCY_EXT")]
     LineStripAdjacencyEXT = 11,
+
+    [NativeName("GL_TRIANGLES_ADJACENCY")]
+    TrianglesAdjacency = 12,
+
+    [NativeName("GL_TRIANGLES_ADJACENCY_ARB")]
+    TrianglesAdjacencyARB = 12,
 
     [NativeName("GL_TRIANGLES_ADJACENCY_EXT")]
     TrianglesAdjacencyEXT = 12,
 
+    [NativeName("GL_TRIANGLE_STRIP_ADJACENCY")]
+    TriangleStripAdjacency = 13,
+
+    [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_ARB")]
+    TriangleStripAdjacencyARB = 13,
+
     [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_EXT")]
     TriangleStripAdjacencyEXT = 13,
+
+    [NativeName("GL_PATCHES_EXT")]
+    PatchesEXT = 14,
+
+    [NativeName("GL_PATCHES")]
+    Patches = 14,
 }

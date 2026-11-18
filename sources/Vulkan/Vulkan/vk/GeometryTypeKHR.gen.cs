@@ -23,6 +23,17 @@ public enum GeometryTypeKHR : uint
     )]
     Triangles = 0,
 
+    [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    TrianglesNV = Triangles,
+
     [NativeName("VK_GEOMETRY_TYPE_AABBS_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -33,6 +44,17 @@ public enum GeometryTypeKHR : uint
         ]
     )]
     Aabbs = 1,
+
+    [NativeName("VK_GEOMETRY_TYPE_AABBS_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    AabbsNV = Aabbs,
 
     [NativeName("VK_GEOMETRY_TYPE_INSTANCES_KHR")]
     [SupportedApiProfile(
@@ -80,26 +102,4 @@ public enum GeometryTypeKHR : uint
         ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
     )]
     Micromap = 1000623000,
-
-    [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_ray_tracing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    TrianglesNV = Triangles,
-
-    [NativeName("VK_GEOMETRY_TYPE_AABBS_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_ray_tracing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    AabbsNV = Aabbs,
 }

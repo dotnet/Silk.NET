@@ -44,6 +44,34 @@ public enum DependencyFlags : uint
     )]
     ByRegionBit = 0x1,
 
+    [NativeName("VK_DEPENDENCY_VIEW_LOCAL_BIT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    ViewLocalBit = 0x2,
+
+    [NativeName("VK_DEPENDENCY_VIEW_LOCAL_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_multiview"],
+        ImpliesSets = [
+            "VK_KHR_multiview+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_multiview+VK_VERSION_1_1",
+        ]
+    )]
+    ViewLocalBitKHR = ViewLocalBit,
+
     [NativeName("VK_DEPENDENCY_DEVICE_GROUP_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -69,22 +97,13 @@ public enum DependencyFlags : uint
     )]
     DeviceGroupBit = 0x4,
 
-    [NativeName("VK_DEPENDENCY_VIEW_LOCAL_BIT")]
+    [NativeName("VK_DEPENDENCY_DEVICE_GROUP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        [
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
+        ["VK_KHR_device_group"],
+        ImpliesSets = ["VK_KHR_device_group_creation"]
     )]
-    ViewLocalBit = 0x2,
+    DeviceGroupBitKHR = DeviceGroupBit,
 
     [NativeName("VK_DEPENDENCY_FEEDBACK_LOOP_BIT_EXT")]
     [SupportedApiProfile(
@@ -111,23 +130,4 @@ public enum DependencyFlags : uint
         ]
     )]
     AsymmetricEventBitKHR = 0x40,
-
-    [NativeName("VK_DEPENDENCY_VIEW_LOCAL_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_multiview"],
-        ImpliesSets = [
-            "VK_KHR_multiview+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_multiview+VK_VERSION_1_1",
-        ]
-    )]
-    ViewLocalBitKHR = ViewLocalBit,
-
-    [NativeName("VK_DEPENDENCY_DEVICE_GROUP_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_device_group"],
-        ImpliesSets = ["VK_KHR_device_group_creation"]
-    )]
-    DeviceGroupBitKHR = DeviceGroupBit,
 }

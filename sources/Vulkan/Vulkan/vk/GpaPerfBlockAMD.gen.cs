@@ -386,6 +386,17 @@ public enum GpaPerfBlockAMD : uint
     )]
     Ge = 33,
 
+    [NativeName("VK_GPA_PERF_BLOCK_GE1_AMD")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
+    Ge1 = Ge,
+
     [NativeName("VK_GPA_PERF_BLOCK_GL1A_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -638,17 +649,6 @@ public enum GpaPerfBlockAMD : uint
         ]
     )]
     Rlcuser = 56,
-
-    [NativeName("VK_GPA_PERF_BLOCK_GE1_AMD")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_AMD_gpa_interface"],
-        ImpliesSets = [
-            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
-            "VK_AMD_gpa_interface+VK_VERSION_1_1",
-        ]
-    )]
-    Ge1 = Ge,
 
     [NativeName("VK_GPA_PERF_BLOCK_RLCLOCAL_AMD")]
     [SupportedApiProfile(
