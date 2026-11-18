@@ -13,6 +13,12 @@ public enum VertexHintsMaskPGI : uint
 {
     None = 0x0,
 
+    [NativeName("GL_VERTEX23_BIT_PGI")]
+    Vertex23Bit = 0x4,
+
+    [NativeName("GL_VERTEX4_BIT_PGI")]
+    Vertex4Bit = 0x8,
+
     [NativeName("GL_COLOR3_BIT_PGI")]
     Color3Bit = 0x10000,
 
@@ -60,10 +66,4 @@ public enum VertexHintsMaskPGI : uint
 
     [NativeName("GL_TEXCOORD4_BIT_PGI")]
     Texcoord4Bit = 0x80000000,
-
-    [NativeName("GL_VERTEX23_BIT_PGI")]
-    Vertex23Bit = 0x4,
-
-    [NativeName("GL_VERTEX4_BIT_PGI")]
-    Vertex4Bit = 0x8,
 }

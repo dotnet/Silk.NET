@@ -10,6 +10,27 @@ namespace Silk.NET.OpenGL;
 [NativeName("ProgramPropertyARB")]
 public enum ProgramProperty : uint
 {
+    [NativeName("GL_COMPUTE_WORK_GROUP_SIZE")]
+    ComputeWorkGroupSize = 33383,
+
+    [NativeName("GL_PROGRAM_BINARY_LENGTH")]
+    ProgramBinaryLength = 34625,
+
+    [NativeName("GL_GEOMETRY_VERTICES_OUT")]
+    GeometryVerticesOut = 35094,
+
+    [NativeName("GL_GEOMETRY_INPUT_TYPE")]
+    GeometryInputType = 35095,
+
+    [NativeName("GL_GEOMETRY_OUTPUT_TYPE")]
+    GeometryOutputType = 35096,
+
+    [NativeName("GL_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH")]
+    ActiveUniformBlockMaxNameLength = 35381,
+
+    [NativeName("GL_ACTIVE_UNIFORM_BLOCKS")]
+    ActiveUniformBlocks = 35382,
+
     [NativeName("GL_DELETE_STATUS")]
     DeleteStatus = 35712,
 
@@ -46,27 +67,6 @@ public enum ProgramProperty : uint
     [NativeName("GL_TRANSFORM_FEEDBACK_VARYINGS")]
     TransformFeedbackVaryings = 35971,
 
-    [NativeName("GL_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH")]
-    ActiveUniformBlockMaxNameLength = 35381,
-
-    [NativeName("GL_ACTIVE_UNIFORM_BLOCKS")]
-    ActiveUniformBlocks = 35382,
-
-    [NativeName("GL_GEOMETRY_VERTICES_OUT")]
-    GeometryVerticesOut = 35094,
-
-    [NativeName("GL_GEOMETRY_INPUT_TYPE")]
-    GeometryInputType = 35095,
-
-    [NativeName("GL_GEOMETRY_OUTPUT_TYPE")]
-    GeometryOutputType = 35096,
-
-    [NativeName("GL_PROGRAM_BINARY_LENGTH")]
-    ProgramBinaryLength = 34625,
-
     [NativeName("GL_ACTIVE_ATOMIC_COUNTER_BUFFERS")]
     ActiveAtomicCounterBuffers = 37593,
-
-    [NativeName("GL_COMPUTE_WORK_GROUP_SIZE")]
-    ComputeWorkGroupSize = 33383,
 }

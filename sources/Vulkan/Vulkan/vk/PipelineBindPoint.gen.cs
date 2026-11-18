@@ -82,6 +82,17 @@ public enum PipelineBindPoint : uint
     )]
     RayTracingKHR = 1000165000,
 
+    [NativeName("VK_PIPELINE_BIND_POINT_RAY_TRACING_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    RayTracingNV = RayTracingKHR,
+
     [NativeName("VK_PIPELINE_BIND_POINT_SUBPASS_SHADING_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -104,15 +115,4 @@ public enum PipelineBindPoint : uint
         ]
     )]
     DataGraphARM = 1000507000,
-
-    [NativeName("VK_PIPELINE_BIND_POINT_RAY_TRACING_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_ray_tracing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    RayTracingNV = RayTracingKHR,
 }

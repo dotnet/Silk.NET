@@ -247,18 +247,39 @@ public enum ImageUsageFlags : uint
     )]
     InputAttachmentBit = 0x80,
 
-    [NativeName("VK_IMAGE_USAGE_HOST_TRANSFER_BIT")]
+    [NativeName("VK_IMAGE_USAGE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
+        ["VK_KHR_fragment_shading_rate"],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
     )]
-    HostTransferBit = 0x400000,
+    FragmentShadingRateAttachmentBitKHR = 0x100,
+
+    [NativeName("VK_IMAGE_USAGE_SHADING_RATE_IMAGE_BIT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
+    ShadingRateImageBitNV = FragmentShadingRateAttachmentBitKHR,
+
+    [NativeName("VK_IMAGE_USAGE_FRAGMENT_DENSITY_MAP_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
+        ]
+    )]
+    FragmentDensityMapBitEXT = 0x200,
 
     [NativeName("VK_IMAGE_USAGE_VIDEO_DECODE_DST_BIT_KHR")]
     [SupportedApiProfile(
@@ -293,29 +314,6 @@ public enum ImageUsageFlags : uint
     )]
     VideoDecodeDpbBitKHR = 0x1000,
 
-    [NativeName("VK_IMAGE_USAGE_FRAGMENT_DENSITY_MAP_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_fragment_density_map"],
-        ImpliesSets = [
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
-        ]
-    )]
-    FragmentDensityMapBitEXT = 0x200,
-
-    [NativeName("VK_IMAGE_USAGE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_fragment_shading_rate"],
-        ImpliesSets = [
-            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    FragmentShadingRateAttachmentBitKHR = 0x100,
-
     [NativeName("VK_IMAGE_USAGE_VIDEO_ENCODE_DST_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -349,17 +347,6 @@ public enum ImageUsageFlags : uint
     )]
     VideoEncodeDpbBitKHR = 0x8000,
 
-    [NativeName("VK_IMAGE_USAGE_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_attachment_feedback_loop_layout"],
-        ImpliesSets = [
-            "VK_EXT_attachment_feedback_loop_layout+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
-        ]
-    )]
-    AttachmentFeedbackLoopBitEXT = 0x80000,
-
     [NativeName("VK_IMAGE_USAGE_INVOCATION_MASK_BIT_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -370,6 +357,17 @@ public enum ImageUsageFlags : uint
         ]
     )]
     InvocationMaskBitHUAWEI = 0x40000,
+
+    [NativeName("VK_IMAGE_USAGE_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_attachment_feedback_loop_layout"],
+        ImpliesSets = [
+            "VK_EXT_attachment_feedback_loop_layout+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
+        ]
+    )]
+    AttachmentFeedbackLoopBitEXT = 0x80000,
 
     [NativeName("VK_IMAGE_USAGE_SAMPLE_WEIGHT_BIT_QCOM")]
     [SupportedApiProfile(
@@ -393,20 +391,34 @@ public enum ImageUsageFlags : uint
     )]
     SampleBlockMatchBitQCOM = 0x200000,
 
+    [NativeName("VK_IMAGE_USAGE_HOST_TRANSFER_BIT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    HostTransferBit = 0x400000,
+
+    [NativeName("VK_IMAGE_USAGE_HOST_TRANSFER_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_host_image_copy"],
+        ImpliesSets = [
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    HostTransferBitEXT = HostTransferBit,
+
     [NativeName("VK_IMAGE_USAGE_TENSOR_ALIASING_BIT_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorAliasingBitARM = 0x800000,
-
-    [NativeName("VK_IMAGE_USAGE_TILE_MEMORY_BIT_QCOM")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_QCOM_tile_memory_heap"],
-        ImpliesSets = [
-            "VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    TileMemoryBitQCOM = 0x8000000,
 
     [NativeName("VK_IMAGE_USAGE_VIDEO_ENCODE_QUANTIZATION_DELTA_MAP_BIT_KHR")]
     [SupportedApiProfile(
@@ -430,26 +442,14 @@ public enum ImageUsageFlags : uint
     )]
     VideoEncodeEmphasisMapBitKHR = 0x4000000,
 
-    [NativeName("VK_IMAGE_USAGE_SHADING_RATE_IMAGE_BIT_NV")]
+    [NativeName("VK_IMAGE_USAGE_TILE_MEMORY_BIT_QCOM")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_shading_rate_image"],
+        ["VK_QCOM_tile_memory_heap"],
         ImpliesSets = [
-            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
-            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+            "VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
         ]
     )]
-    ShadingRateImageBitNV = FragmentShadingRateAttachmentBitKHR,
-
-    [NativeName("VK_IMAGE_USAGE_HOST_TRANSFER_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_host_image_copy"],
-        ImpliesSets = [
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    HostTransferBitEXT = HostTransferBit,
+    TileMemoryBitQCOM = 0x8000000,
 }

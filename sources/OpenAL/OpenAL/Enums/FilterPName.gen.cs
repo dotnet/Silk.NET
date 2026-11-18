@@ -16,17 +16,17 @@ public enum FilterPName : uint
     [NativeName("AL_LOWPASS_GAIN")]
     LowpassGain = 1,
 
-    [NativeName("AL_LOWPASS_GAINHF")]
-    LowpassGainhf = 2,
-
     [NativeName("AL_HIGHPASS_GAIN")]
     HighpassGain = 1,
 
-    [NativeName("AL_HIGHPASS_GAINLF")]
-    HighpassGainlf = 2,
-
     [NativeName("AL_BANDPASS_GAIN")]
     BandpassGain = 1,
+
+    [NativeName("AL_LOWPASS_GAINHF")]
+    LowpassGainhf = 2,
+
+    [NativeName("AL_HIGHPASS_GAINLF")]
+    HighpassGainlf = 2,
 
     [NativeName("AL_BANDPASS_GAINLF")]
     BandpassGainlf = 2,

@@ -10,12 +10,12 @@ namespace Silk.NET.OpenGL;
 [NativeName("VertexArrayPNameAPPLE")]
 public enum VertexArrayPNameAPPLE : uint
 {
+    [NativeName("GL_STORAGE_CLIENT_APPLE")]
+    Client = 34228,
+
     [NativeName("GL_STORAGE_CACHED_APPLE")]
     Cached = 34238,
 
     [NativeName("GL_STORAGE_SHARED_APPLE")]
     Shared = 34239,
-
-    [NativeName("GL_STORAGE_CLIENT_APPLE")]
-    Client = 34228,
 }

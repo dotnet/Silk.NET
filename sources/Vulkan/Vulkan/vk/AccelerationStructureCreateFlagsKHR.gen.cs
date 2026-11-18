@@ -26,6 +26,14 @@ public enum AccelerationStructureCreateFlagsKHR : uint
     )]
     DeviceAddressCaptureReplayBit = 0x1,
 
+    [NativeName("VK_ACCELERATION_STRUCTURE_CREATE_MOTION_BIT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
+    MotionBitNV = 0x4,
+
     [NativeName("VK_ACCELERATION_STRUCTURE_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -38,12 +46,4 @@ public enum AccelerationStructureCreateFlagsKHR : uint
         ]
     )]
     DescriptorBufferCaptureReplayBitEXT = 0x8,
-
-    [NativeName("VK_ACCELERATION_STRUCTURE_CREATE_MOTION_BIT_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_ray_tracing_motion_blur"],
-        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
-    )]
-    MotionBitNV = 0x4,
 }

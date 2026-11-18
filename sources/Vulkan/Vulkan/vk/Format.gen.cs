@@ -5377,1222 +5377,6 @@ public enum Format : uint
     )]
     Astc12x12SrgbBlock = 184,
 
-    [NativeName("VK_FORMAT_G8B8G8R8_422_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G8B8G8R8x422Unorm = 1000156000,
-
-    [NativeName("VK_FORMAT_B8G8R8G8_422_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    B8G8R8G8x422Unorm = 1000156001,
-
-    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_420_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G8B8R8x3Plane420Unorm = 1000156002,
-
-    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_420_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G8B8R8x2Plane420Unorm = 1000156003,
-
-    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_422_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G8B8R8x3Plane422Unorm = 1000156004,
-
-    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_422_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G8B8R8x2Plane422Unorm = 1000156005,
-
-    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_444_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G8B8R8x3Plane444Unorm = 1000156006,
-
-    [NativeName("VK_FORMAT_R10X6_UNORM_PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    R10x6UnormPack16 = 1000156007,
-
-    [NativeName("VK_FORMAT_R10X6G10X6_UNORM_2PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    R10x6G10x6Unorm2Pack16 = 1000156008,
-
-    [NativeName("VK_FORMAT_R10X6G10X6B10X6A10X6_UNORM_4PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    R10x6G10x6B10x6A10x6Unorm4Pack16 = 1000156009,
-
-    [NativeName("VK_FORMAT_G10X6B10X6G10X6R10X6_422_UNORM_4PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G10x6B10x6G10x6R10x6x422Unorm4Pack16 = 1000156010,
-
-    [NativeName("VK_FORMAT_B10X6G10X6R10X6G10X6_422_UNORM_4PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    B10x6G10x6R10x6G10x6x422Unorm4Pack16 = 1000156011,
-
-    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G10x6B10x6R10x6x3Plane420Unorm3Pack16 = 1000156012,
-
-    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G10x6B10x6R10x6x2Plane420Unorm3Pack16 = 1000156013,
-
-    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G10x6B10x6R10x6x3Plane422Unorm3Pack16 = 1000156014,
-
-    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G10x6B10x6R10x6x2Plane422Unorm3Pack16 = 1000156015,
-
-    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G10x6B10x6R10x6x3Plane444Unorm3Pack16 = 1000156016,
-
-    [NativeName("VK_FORMAT_R12X4_UNORM_PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    R12x4UnormPack16 = 1000156017,
-
-    [NativeName("VK_FORMAT_R12X4G12X4_UNORM_2PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    R12x4G12x4Unorm2Pack16 = 1000156018,
-
-    [NativeName("VK_FORMAT_R12X4G12X4B12X4A12X4_UNORM_4PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    R12x4G12x4B12x4A12x4Unorm4Pack16 = 1000156019,
-
-    [NativeName("VK_FORMAT_G12X4B12X4G12X4R12X4_422_UNORM_4PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G12x4B12x4G12x4R12x4x422Unorm4Pack16 = 1000156020,
-
-    [NativeName("VK_FORMAT_B12X4G12X4R12X4G12X4_422_UNORM_4PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    B12x4G12x4R12x4G12x4x422Unorm4Pack16 = 1000156021,
-
-    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G12x4B12x4R12x4x3Plane420Unorm3Pack16 = 1000156022,
-
-    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G12x4B12x4R12x4x2Plane420Unorm3Pack16 = 1000156023,
-
-    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G12x4B12x4R12x4x3Plane422Unorm3Pack16 = 1000156024,
-
-    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G12x4B12x4R12x4x2Plane422Unorm3Pack16 = 1000156025,
-
-    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G12x4B12x4R12x4x3Plane444Unorm3Pack16 = 1000156026,
-
-    [NativeName("VK_FORMAT_G16B16G16R16_422_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G16B16G16R16x422Unorm = 1000156027,
-
-    [NativeName("VK_FORMAT_B16G16R16G16_422_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    B16G16R16G16x422Unorm = 1000156028,
-
-    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_420_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G16B16R16x3Plane420Unorm = 1000156029,
-
-    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_420_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G16B16R16x2Plane420Unorm = 1000156030,
-
-    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_422_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G16B16R16x3Plane422Unorm = 1000156031,
-
-    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_422_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G16B16R16x2Plane422Unorm = 1000156032,
-
-    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_444_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_1",
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_1",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_1",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.1"
-    )]
-    G16B16R16x3Plane444Unorm = 1000156033,
-
-    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_444_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    G8B8R8x2Plane444Unorm = 1000330000,
-
-    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_444_UNORM_3PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    G10x6B10x6R10x6x2Plane444Unorm3Pack16 = 1000330001,
-
-    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_444_UNORM_3PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    G12x4B12x4R12x4x2Plane444Unorm3Pack16 = 1000330002,
-
-    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_444_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    G16B16R16x2Plane444Unorm = 1000330003,
-
-    [NativeName("VK_FORMAT_A4R4G4B4_UNORM_PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    A4R4G4B4UnormPack16 = 1000340000,
-
-    [NativeName("VK_FORMAT_A4B4G4R4_UNORM_PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    A4B4G4R4UnormPack16 = 1000340001,
-
-    [NativeName("VK_FORMAT_ASTC_4x4_SFLOAT_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    Astc4x4SfloatBlock = 1000066000,
-
-    [NativeName("VK_FORMAT_ASTC_5x4_SFLOAT_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    Astc5x4SfloatBlock = 1000066001,
-
-    [NativeName("VK_FORMAT_ASTC_5x5_SFLOAT_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    Astc5x5SfloatBlock = 1000066002,
-
-    [NativeName("VK_FORMAT_ASTC_6x5_SFLOAT_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    Astc6x5SfloatBlock = 1000066003,
-
-    [NativeName("VK_FORMAT_ASTC_6x6_SFLOAT_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    Astc6x6SfloatBlock = 1000066004,
-
-    [NativeName("VK_FORMAT_ASTC_8x5_SFLOAT_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    Astc8x5SfloatBlock = 1000066005,
-
-    [NativeName("VK_FORMAT_ASTC_8x6_SFLOAT_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    Astc8x6SfloatBlock = 1000066006,
-
-    [NativeName("VK_FORMAT_ASTC_8x8_SFLOAT_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    Astc8x8SfloatBlock = 1000066007,
-
-    [NativeName("VK_FORMAT_ASTC_10x5_SFLOAT_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    Astc10x5SfloatBlock = 1000066008,
-
-    [NativeName("VK_FORMAT_ASTC_10x6_SFLOAT_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    Astc10x6SfloatBlock = 1000066009,
-
-    [NativeName("VK_FORMAT_ASTC_10x8_SFLOAT_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    Astc10x8SfloatBlock = 1000066010,
-
-    [NativeName("VK_FORMAT_ASTC_10x10_SFLOAT_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    Astc10x10SfloatBlock = 1000066011,
-
-    [NativeName("VK_FORMAT_ASTC_12x10_SFLOAT_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    Astc12x10SfloatBlock = 1000066012,
-
-    [NativeName("VK_FORMAT_ASTC_12x12_SFLOAT_BLOCK")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.3"
-    )]
-    Astc12x12SfloatBlock = 1000066013,
-
-    [NativeName("VK_FORMAT_A1B5G5R5_UNORM_PACK16")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    A1B5G5R5UnormPack16 = 1000470000,
-
-    [NativeName("VK_FORMAT_A8_UNORM")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.4"
-    )]
-    A8Unorm = 1000470001,
-
     [NativeName("VK_FORMAT_PVRTC1_2BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
     Pvrtc1x2BppUnormBlockIMG = 1000054000,
@@ -6624,6 +5408,1622 @@ public enum Format : uint
     [NativeName("VK_FORMAT_PVRTC2_4BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
     Pvrtc2x4BppSrgbBlockIMG = 1000054007,
+
+    [NativeName("VK_FORMAT_ASTC_4x4_SFLOAT_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    Astc4x4SfloatBlock = 1000066000,
+
+    [NativeName("VK_FORMAT_ASTC_4x4_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    Astc4x4SfloatBlockEXT = Astc4x4SfloatBlock,
+
+    [NativeName("VK_FORMAT_ASTC_5x4_SFLOAT_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    Astc5x4SfloatBlock = 1000066001,
+
+    [NativeName("VK_FORMAT_ASTC_5x4_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    Astc5x4SfloatBlockEXT = Astc5x4SfloatBlock,
+
+    [NativeName("VK_FORMAT_ASTC_5x5_SFLOAT_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    Astc5x5SfloatBlock = 1000066002,
+
+    [NativeName("VK_FORMAT_ASTC_5x5_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    Astc5x5SfloatBlockEXT = Astc5x5SfloatBlock,
+
+    [NativeName("VK_FORMAT_ASTC_6x5_SFLOAT_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    Astc6x5SfloatBlock = 1000066003,
+
+    [NativeName("VK_FORMAT_ASTC_6x5_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    Astc6x5SfloatBlockEXT = Astc6x5SfloatBlock,
+
+    [NativeName("VK_FORMAT_ASTC_6x6_SFLOAT_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    Astc6x6SfloatBlock = 1000066004,
+
+    [NativeName("VK_FORMAT_ASTC_6x6_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    Astc6x6SfloatBlockEXT = Astc6x6SfloatBlock,
+
+    [NativeName("VK_FORMAT_ASTC_8x5_SFLOAT_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    Astc8x5SfloatBlock = 1000066005,
+
+    [NativeName("VK_FORMAT_ASTC_8x5_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    Astc8x5SfloatBlockEXT = Astc8x5SfloatBlock,
+
+    [NativeName("VK_FORMAT_ASTC_8x6_SFLOAT_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    Astc8x6SfloatBlock = 1000066006,
+
+    [NativeName("VK_FORMAT_ASTC_8x6_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    Astc8x6SfloatBlockEXT = Astc8x6SfloatBlock,
+
+    [NativeName("VK_FORMAT_ASTC_8x8_SFLOAT_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    Astc8x8SfloatBlock = 1000066007,
+
+    [NativeName("VK_FORMAT_ASTC_8x8_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    Astc8x8SfloatBlockEXT = Astc8x8SfloatBlock,
+
+    [NativeName("VK_FORMAT_ASTC_10x5_SFLOAT_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    Astc10x5SfloatBlock = 1000066008,
+
+    [NativeName("VK_FORMAT_ASTC_10x5_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    Astc10x5SfloatBlockEXT = Astc10x5SfloatBlock,
+
+    [NativeName("VK_FORMAT_ASTC_10x6_SFLOAT_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    Astc10x6SfloatBlock = 1000066009,
+
+    [NativeName("VK_FORMAT_ASTC_10x6_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    Astc10x6SfloatBlockEXT = Astc10x6SfloatBlock,
+
+    [NativeName("VK_FORMAT_ASTC_10x8_SFLOAT_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    Astc10x8SfloatBlock = 1000066010,
+
+    [NativeName("VK_FORMAT_ASTC_10x8_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    Astc10x8SfloatBlockEXT = Astc10x8SfloatBlock,
+
+    [NativeName("VK_FORMAT_ASTC_10x10_SFLOAT_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    Astc10x10SfloatBlock = 1000066011,
+
+    [NativeName("VK_FORMAT_ASTC_10x10_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    Astc10x10SfloatBlockEXT = Astc10x10SfloatBlock,
+
+    [NativeName("VK_FORMAT_ASTC_12x10_SFLOAT_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    Astc12x10SfloatBlock = 1000066012,
+
+    [NativeName("VK_FORMAT_ASTC_12x10_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    Astc12x10SfloatBlockEXT = Astc12x10SfloatBlock,
+
+    [NativeName("VK_FORMAT_ASTC_12x12_SFLOAT_BLOCK")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    Astc12x12SfloatBlock = 1000066013,
+
+    [NativeName("VK_FORMAT_ASTC_12x12_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_hdr"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
+        ]
+    )]
+    Astc12x12SfloatBlockEXT = Astc12x12SfloatBlock,
+
+    [NativeName("VK_FORMAT_G8B8G8R8_422_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G8B8G8R8x422Unorm = 1000156000,
+
+    [NativeName("VK_FORMAT_G8B8G8R8_422_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G8B8G8R8x422UnormKHR = G8B8G8R8x422Unorm,
+
+    [NativeName("VK_FORMAT_B8G8R8G8_422_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    B8G8R8G8x422Unorm = 1000156001,
+
+    [NativeName("VK_FORMAT_B8G8R8G8_422_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    B8G8R8G8x422UnormKHR = B8G8R8G8x422Unorm,
+
+    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_420_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G8B8R8x3Plane420Unorm = 1000156002,
+
+    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_420_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G8B8R8x3Plane420UnormKHR = G8B8R8x3Plane420Unorm,
+
+    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_420_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G8B8R8x2Plane420Unorm = 1000156003,
+
+    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_420_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G8B8R8x2Plane420UnormKHR = G8B8R8x2Plane420Unorm,
+
+    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_422_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G8B8R8x3Plane422Unorm = 1000156004,
+
+    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_422_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G8B8R8x3Plane422UnormKHR = G8B8R8x3Plane422Unorm,
+
+    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_422_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G8B8R8x2Plane422Unorm = 1000156005,
+
+    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_422_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G8B8R8x2Plane422UnormKHR = G8B8R8x2Plane422Unorm,
+
+    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_444_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G8B8R8x3Plane444Unorm = 1000156006,
+
+    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_444_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G8B8R8x3Plane444UnormKHR = G8B8R8x3Plane444Unorm,
+
+    [NativeName("VK_FORMAT_R10X6_UNORM_PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    R10x6UnormPack16 = 1000156007,
+
+    [NativeName("VK_FORMAT_R10X6_UNORM_PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    R10x6UnormPack16KHR = R10x6UnormPack16,
+
+    [NativeName("VK_FORMAT_R10X6G10X6_UNORM_2PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    R10x6G10x6Unorm2Pack16 = 1000156008,
+
+    [NativeName("VK_FORMAT_R10X6G10X6_UNORM_2PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    R10x6G10x6Unorm2Pack16KHR = R10x6G10x6Unorm2Pack16,
+
+    [NativeName("VK_FORMAT_R10X6G10X6B10X6A10X6_UNORM_4PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    R10x6G10x6B10x6A10x6Unorm4Pack16 = 1000156009,
+
+    [NativeName("VK_FORMAT_R10X6G10X6B10X6A10X6_UNORM_4PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    R10x6G10x6B10x6A10x6Unorm4Pack16KHR = R10x6G10x6B10x6A10x6Unorm4Pack16,
+
+    [NativeName("VK_FORMAT_G10X6B10X6G10X6R10X6_422_UNORM_4PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G10x6B10x6G10x6R10x6x422Unorm4Pack16 = 1000156010,
+
+    [NativeName("VK_FORMAT_G10X6B10X6G10X6R10X6_422_UNORM_4PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G10x6B10x6G10x6R10x6x422Unorm4Pack16KHR = G10x6B10x6G10x6R10x6x422Unorm4Pack16,
+
+    [NativeName("VK_FORMAT_B10X6G10X6R10X6G10X6_422_UNORM_4PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    B10x6G10x6R10x6G10x6x422Unorm4Pack16 = 1000156011,
+
+    [NativeName("VK_FORMAT_B10X6G10X6R10X6G10X6_422_UNORM_4PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    B10x6G10x6R10x6G10x6x422Unorm4Pack16KHR = B10x6G10x6R10x6G10x6x422Unorm4Pack16,
+
+    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G10x6B10x6R10x6x3Plane420Unorm3Pack16 = 1000156012,
+
+    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G10x6B10x6R10x6x3Plane420Unorm3Pack16KHR = G10x6B10x6R10x6x3Plane420Unorm3Pack16,
+
+    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G10x6B10x6R10x6x2Plane420Unorm3Pack16 = 1000156013,
+
+    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G10x6B10x6R10x6x2Plane420Unorm3Pack16KHR = G10x6B10x6R10x6x2Plane420Unorm3Pack16,
+
+    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G10x6B10x6R10x6x3Plane422Unorm3Pack16 = 1000156014,
+
+    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G10x6B10x6R10x6x3Plane422Unorm3Pack16KHR = G10x6B10x6R10x6x3Plane422Unorm3Pack16,
+
+    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G10x6B10x6R10x6x2Plane422Unorm3Pack16 = 1000156015,
+
+    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G10x6B10x6R10x6x2Plane422Unorm3Pack16KHR = G10x6B10x6R10x6x2Plane422Unorm3Pack16,
+
+    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G10x6B10x6R10x6x3Plane444Unorm3Pack16 = 1000156016,
+
+    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G10x6B10x6R10x6x3Plane444Unorm3Pack16KHR = G10x6B10x6R10x6x3Plane444Unorm3Pack16,
+
+    [NativeName("VK_FORMAT_R12X4_UNORM_PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    R12x4UnormPack16 = 1000156017,
+
+    [NativeName("VK_FORMAT_R12X4_UNORM_PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    R12x4UnormPack16KHR = R12x4UnormPack16,
+
+    [NativeName("VK_FORMAT_R12X4G12X4_UNORM_2PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    R12x4G12x4Unorm2Pack16 = 1000156018,
+
+    [NativeName("VK_FORMAT_R12X4G12X4_UNORM_2PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    R12x4G12x4Unorm2Pack16KHR = R12x4G12x4Unorm2Pack16,
+
+    [NativeName("VK_FORMAT_R12X4G12X4B12X4A12X4_UNORM_4PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    R12x4G12x4B12x4A12x4Unorm4Pack16 = 1000156019,
+
+    [NativeName("VK_FORMAT_R12X4G12X4B12X4A12X4_UNORM_4PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    R12x4G12x4B12x4A12x4Unorm4Pack16KHR = R12x4G12x4B12x4A12x4Unorm4Pack16,
+
+    [NativeName("VK_FORMAT_G12X4B12X4G12X4R12X4_422_UNORM_4PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G12x4B12x4G12x4R12x4x422Unorm4Pack16 = 1000156020,
+
+    [NativeName("VK_FORMAT_G12X4B12X4G12X4R12X4_422_UNORM_4PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G12x4B12x4G12x4R12x4x422Unorm4Pack16KHR = G12x4B12x4G12x4R12x4x422Unorm4Pack16,
+
+    [NativeName("VK_FORMAT_B12X4G12X4R12X4G12X4_422_UNORM_4PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    B12x4G12x4R12x4G12x4x422Unorm4Pack16 = 1000156021,
+
+    [NativeName("VK_FORMAT_B12X4G12X4R12X4G12X4_422_UNORM_4PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    B12x4G12x4R12x4G12x4x422Unorm4Pack16KHR = B12x4G12x4R12x4G12x4x422Unorm4Pack16,
+
+    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G12x4B12x4R12x4x3Plane420Unorm3Pack16 = 1000156022,
+
+    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G12x4B12x4R12x4x3Plane420Unorm3Pack16KHR = G12x4B12x4R12x4x3Plane420Unorm3Pack16,
+
+    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G12x4B12x4R12x4x2Plane420Unorm3Pack16 = 1000156023,
+
+    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G12x4B12x4R12x4x2Plane420Unorm3Pack16KHR = G12x4B12x4R12x4x2Plane420Unorm3Pack16,
+
+    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G12x4B12x4R12x4x3Plane422Unorm3Pack16 = 1000156024,
+
+    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G12x4B12x4R12x4x3Plane422Unorm3Pack16KHR = G12x4B12x4R12x4x3Plane422Unorm3Pack16,
+
+    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G12x4B12x4R12x4x2Plane422Unorm3Pack16 = 1000156025,
+
+    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G12x4B12x4R12x4x2Plane422Unorm3Pack16KHR = G12x4B12x4R12x4x2Plane422Unorm3Pack16,
+
+    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G12x4B12x4R12x4x3Plane444Unorm3Pack16 = 1000156026,
+
+    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G12x4B12x4R12x4x3Plane444Unorm3Pack16KHR = G12x4B12x4R12x4x3Plane444Unorm3Pack16,
+
+    [NativeName("VK_FORMAT_G16B16G16R16_422_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G16B16G16R16x422Unorm = 1000156027,
+
+    [NativeName("VK_FORMAT_G16B16G16R16_422_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G16B16G16R16x422UnormKHR = G16B16G16R16x422Unorm,
+
+    [NativeName("VK_FORMAT_B16G16R16G16_422_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    B16G16R16G16x422Unorm = 1000156028,
+
+    [NativeName("VK_FORMAT_B16G16R16G16_422_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    B16G16R16G16x422UnormKHR = B16G16R16G16x422Unorm,
+
+    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_420_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G16B16R16x3Plane420Unorm = 1000156029,
+
+    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_420_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G16B16R16x3Plane420UnormKHR = G16B16R16x3Plane420Unorm,
+
+    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_420_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G16B16R16x2Plane420Unorm = 1000156030,
+
+    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_420_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G16B16R16x2Plane420UnormKHR = G16B16R16x2Plane420Unorm,
+
+    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_422_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G16B16R16x3Plane422Unorm = 1000156031,
+
+    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_422_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G16B16R16x3Plane422UnormKHR = G16B16R16x3Plane422Unorm,
+
+    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_422_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G16B16R16x2Plane422Unorm = 1000156032,
+
+    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_422_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G16B16R16x2Plane422UnormKHR = G16B16R16x2Plane422Unorm,
+
+    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_444_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    G16B16R16x3Plane444Unorm = 1000156033,
+
+    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_444_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    G16B16R16x3Plane444UnormKHR = G16B16R16x3Plane444Unorm,
 
     [NativeName("VK_FORMAT_ASTC_3x3x3_UNORM_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6955,6 +7355,174 @@ public enum Format : uint
     )]
     Astc6x6x6SfloatBlockEXT = 1000288029,
 
+    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_444_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    G8B8R8x2Plane444Unorm = 1000330000,
+
+    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_444_UNORM_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_ycbcr_2plane_444_formats"],
+        ImpliesSets = [
+            "VK_EXT_ycbcr_2plane_444_formats+VK_KHR_sampler_ycbcr_conversion",
+            "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
+        ]
+    )]
+    G8B8R8x2Plane444UnormEXT = G8B8R8x2Plane444Unorm,
+
+    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_444_UNORM_3PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    G10x6B10x6R10x6x2Plane444Unorm3Pack16 = 1000330001,
+
+    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_444_UNORM_3PACK16_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_ycbcr_2plane_444_formats"],
+        ImpliesSets = [
+            "VK_EXT_ycbcr_2plane_444_formats+VK_KHR_sampler_ycbcr_conversion",
+            "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
+        ]
+    )]
+    G10x6B10x6R10x6x2Plane444Unorm3Pack16EXT = G10x6B10x6R10x6x2Plane444Unorm3Pack16,
+
+    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_444_UNORM_3PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    G12x4B12x4R12x4x2Plane444Unorm3Pack16 = 1000330002,
+
+    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_444_UNORM_3PACK16_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_ycbcr_2plane_444_formats"],
+        ImpliesSets = [
+            "VK_EXT_ycbcr_2plane_444_formats+VK_KHR_sampler_ycbcr_conversion",
+            "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
+        ]
+    )]
+    G12x4B12x4R12x4x2Plane444Unorm3Pack16EXT = G12x4B12x4R12x4x2Plane444Unorm3Pack16,
+
+    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_444_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    G16B16R16x2Plane444Unorm = 1000330003,
+
+    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_444_UNORM_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_ycbcr_2plane_444_formats"],
+        ImpliesSets = [
+            "VK_EXT_ycbcr_2plane_444_formats+VK_KHR_sampler_ycbcr_conversion",
+            "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
+        ]
+    )]
+    G16B16R16x2Plane444UnormEXT = G16B16R16x2Plane444Unorm,
+
+    [NativeName("VK_FORMAT_A4R4G4B4_UNORM_PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    A4R4G4B4UnormPack16 = 1000340000,
+
+    [NativeName("VK_FORMAT_A4R4G4B4_UNORM_PACK16_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_4444_formats"],
+        ImpliesSets = [
+            "VK_EXT_4444_formats+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_4444_formats+VK_VERSION_1_1",
+        ]
+    )]
+    A4R4G4B4UnormPack16EXT = A4R4G4B4UnormPack16,
+
+    [NativeName("VK_FORMAT_A4B4G4R4_UNORM_PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    A4B4G4R4UnormPack16 = 1000340001,
+
+    [NativeName("VK_FORMAT_A4B4G4R4_UNORM_PACK16_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_4444_formats"],
+        ImpliesSets = [
+            "VK_EXT_4444_formats+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_4444_formats+VK_VERSION_1_1",
+        ]
+    )]
+    A4B4G4R4UnormPack16EXT = A4B4G4R4UnormPack16,
+
     [NativeName("VK_FORMAT_R8_BOOL_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     R8BoolARM = 1000460000,
@@ -6997,6 +7565,48 @@ public enum Format : uint
         ]
     )]
     R16G16Sfixed5NV = 1000464000,
+
+    [NativeName("VK_FORMAT_A1B5G5R5_UNORM_PACK16")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    A1B5G5R5UnormPack16 = 1000470000,
+
+    [NativeName("VK_FORMAT_A1B5G5R5_UNORM_PACK16_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance5"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
+    )]
+    A1B5G5R5UnormPack16KHR = A1B5G5R5UnormPack16,
+
+    [NativeName("VK_FORMAT_A8_UNORM")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    A8Unorm = 1000470001,
+
+    [NativeName("VK_FORMAT_A8_UNORM_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance5"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
+    )]
+    A8UnormKHR = A8Unorm,
 
     [NativeName("VK_FORMAT_R10X6_UINT_PACK16_ARM")]
     [SupportedApiProfile(
@@ -7151,614 +7761,4 @@ public enum Format : uint
         ]
     )]
     G14x2B14x2R14x2x2Plane422Unorm3Pack16ARM = 1000609013,
-
-    [NativeName("VK_FORMAT_ASTC_4x4_SFLOAT_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    Astc4x4SfloatBlockEXT = Astc4x4SfloatBlock,
-
-    [NativeName("VK_FORMAT_ASTC_5x4_SFLOAT_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    Astc5x4SfloatBlockEXT = Astc5x4SfloatBlock,
-
-    [NativeName("VK_FORMAT_ASTC_5x5_SFLOAT_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    Astc5x5SfloatBlockEXT = Astc5x5SfloatBlock,
-
-    [NativeName("VK_FORMAT_ASTC_6x5_SFLOAT_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    Astc6x5SfloatBlockEXT = Astc6x5SfloatBlock,
-
-    [NativeName("VK_FORMAT_ASTC_6x6_SFLOAT_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    Astc6x6SfloatBlockEXT = Astc6x6SfloatBlock,
-
-    [NativeName("VK_FORMAT_ASTC_8x5_SFLOAT_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    Astc8x5SfloatBlockEXT = Astc8x5SfloatBlock,
-
-    [NativeName("VK_FORMAT_ASTC_8x6_SFLOAT_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    Astc8x6SfloatBlockEXT = Astc8x6SfloatBlock,
-
-    [NativeName("VK_FORMAT_ASTC_8x8_SFLOAT_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    Astc8x8SfloatBlockEXT = Astc8x8SfloatBlock,
-
-    [NativeName("VK_FORMAT_ASTC_10x5_SFLOAT_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    Astc10x5SfloatBlockEXT = Astc10x5SfloatBlock,
-
-    [NativeName("VK_FORMAT_ASTC_10x6_SFLOAT_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    Astc10x6SfloatBlockEXT = Astc10x6SfloatBlock,
-
-    [NativeName("VK_FORMAT_ASTC_10x8_SFLOAT_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    Astc10x8SfloatBlockEXT = Astc10x8SfloatBlock,
-
-    [NativeName("VK_FORMAT_ASTC_10x10_SFLOAT_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    Astc10x10SfloatBlockEXT = Astc10x10SfloatBlock,
-
-    [NativeName("VK_FORMAT_ASTC_12x10_SFLOAT_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    Astc12x10SfloatBlockEXT = Astc12x10SfloatBlock,
-
-    [NativeName("VK_FORMAT_ASTC_12x12_SFLOAT_BLOCK_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_texture_compression_astc_hdr"],
-        ImpliesSets = [
-            "VK_EXT_texture_compression_astc_hdr+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
-        ]
-    )]
-    Astc12x12SfloatBlockEXT = Astc12x12SfloatBlock,
-
-    [NativeName("VK_FORMAT_G8B8G8R8_422_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G8B8G8R8x422UnormKHR = G8B8G8R8x422Unorm,
-
-    [NativeName("VK_FORMAT_B8G8R8G8_422_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    B8G8R8G8x422UnormKHR = B8G8R8G8x422Unorm,
-
-    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_420_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G8B8R8x3Plane420UnormKHR = G8B8R8x3Plane420Unorm,
-
-    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_420_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G8B8R8x2Plane420UnormKHR = G8B8R8x2Plane420Unorm,
-
-    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_422_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G8B8R8x3Plane422UnormKHR = G8B8R8x3Plane422Unorm,
-
-    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_422_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G8B8R8x2Plane422UnormKHR = G8B8R8x2Plane422Unorm,
-
-    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_444_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G8B8R8x3Plane444UnormKHR = G8B8R8x3Plane444Unorm,
-
-    [NativeName("VK_FORMAT_R10X6_UNORM_PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    R10x6UnormPack16KHR = R10x6UnormPack16,
-
-    [NativeName("VK_FORMAT_R10X6G10X6_UNORM_2PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    R10x6G10x6Unorm2Pack16KHR = R10x6G10x6Unorm2Pack16,
-
-    [NativeName("VK_FORMAT_R10X6G10X6B10X6A10X6_UNORM_4PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    R10x6G10x6B10x6A10x6Unorm4Pack16KHR = R10x6G10x6B10x6A10x6Unorm4Pack16,
-
-    [NativeName("VK_FORMAT_G10X6B10X6G10X6R10X6_422_UNORM_4PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G10x6B10x6G10x6R10x6x422Unorm4Pack16KHR = G10x6B10x6G10x6R10x6x422Unorm4Pack16,
-
-    [NativeName("VK_FORMAT_B10X6G10X6R10X6G10X6_422_UNORM_4PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    B10x6G10x6R10x6G10x6x422Unorm4Pack16KHR = B10x6G10x6R10x6G10x6x422Unorm4Pack16,
-
-    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G10x6B10x6R10x6x3Plane420Unorm3Pack16KHR = G10x6B10x6R10x6x3Plane420Unorm3Pack16,
-
-    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G10x6B10x6R10x6x2Plane420Unorm3Pack16KHR = G10x6B10x6R10x6x2Plane420Unorm3Pack16,
-
-    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G10x6B10x6R10x6x3Plane422Unorm3Pack16KHR = G10x6B10x6R10x6x3Plane422Unorm3Pack16,
-
-    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G10x6B10x6R10x6x2Plane422Unorm3Pack16KHR = G10x6B10x6R10x6x2Plane422Unorm3Pack16,
-
-    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G10x6B10x6R10x6x3Plane444Unorm3Pack16KHR = G10x6B10x6R10x6x3Plane444Unorm3Pack16,
-
-    [NativeName("VK_FORMAT_R12X4_UNORM_PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    R12x4UnormPack16KHR = R12x4UnormPack16,
-
-    [NativeName("VK_FORMAT_R12X4G12X4_UNORM_2PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    R12x4G12x4Unorm2Pack16KHR = R12x4G12x4Unorm2Pack16,
-
-    [NativeName("VK_FORMAT_R12X4G12X4B12X4A12X4_UNORM_4PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    R12x4G12x4B12x4A12x4Unorm4Pack16KHR = R12x4G12x4B12x4A12x4Unorm4Pack16,
-
-    [NativeName("VK_FORMAT_G12X4B12X4G12X4R12X4_422_UNORM_4PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G12x4B12x4G12x4R12x4x422Unorm4Pack16KHR = G12x4B12x4G12x4R12x4x422Unorm4Pack16,
-
-    [NativeName("VK_FORMAT_B12X4G12X4R12X4G12X4_422_UNORM_4PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    B12x4G12x4R12x4G12x4x422Unorm4Pack16KHR = B12x4G12x4R12x4G12x4x422Unorm4Pack16,
-
-    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G12x4B12x4R12x4x3Plane420Unorm3Pack16KHR = G12x4B12x4R12x4x3Plane420Unorm3Pack16,
-
-    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G12x4B12x4R12x4x2Plane420Unorm3Pack16KHR = G12x4B12x4R12x4x2Plane420Unorm3Pack16,
-
-    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G12x4B12x4R12x4x3Plane422Unorm3Pack16KHR = G12x4B12x4R12x4x3Plane422Unorm3Pack16,
-
-    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G12x4B12x4R12x4x2Plane422Unorm3Pack16KHR = G12x4B12x4R12x4x2Plane422Unorm3Pack16,
-
-    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G12x4B12x4R12x4x3Plane444Unorm3Pack16KHR = G12x4B12x4R12x4x3Plane444Unorm3Pack16,
-
-    [NativeName("VK_FORMAT_G16B16G16R16_422_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G16B16G16R16x422UnormKHR = G16B16G16R16x422Unorm,
-
-    [NativeName("VK_FORMAT_B16G16R16G16_422_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    B16G16R16G16x422UnormKHR = B16G16R16G16x422Unorm,
-
-    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_420_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G16B16R16x3Plane420UnormKHR = G16B16R16x3Plane420Unorm,
-
-    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_420_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G16B16R16x2Plane420UnormKHR = G16B16R16x2Plane420Unorm,
-
-    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_422_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G16B16R16x3Plane422UnormKHR = G16B16R16x3Plane422Unorm,
-
-    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_422_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G16B16R16x2Plane422UnormKHR = G16B16R16x2Plane422Unorm,
-
-    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_444_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    G16B16R16x3Plane444UnormKHR = G16B16R16x3Plane444Unorm,
-
-    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_444_UNORM_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_ycbcr_2plane_444_formats"],
-        ImpliesSets = [
-            "VK_EXT_ycbcr_2plane_444_formats+VK_KHR_sampler_ycbcr_conversion",
-            "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
-        ]
-    )]
-    G8B8R8x2Plane444UnormEXT = G8B8R8x2Plane444Unorm,
-
-    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_444_UNORM_3PACK16_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_ycbcr_2plane_444_formats"],
-        ImpliesSets = [
-            "VK_EXT_ycbcr_2plane_444_formats+VK_KHR_sampler_ycbcr_conversion",
-            "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
-        ]
-    )]
-    G10x6B10x6R10x6x2Plane444Unorm3Pack16EXT = G10x6B10x6R10x6x2Plane444Unorm3Pack16,
-
-    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_444_UNORM_3PACK16_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_ycbcr_2plane_444_formats"],
-        ImpliesSets = [
-            "VK_EXT_ycbcr_2plane_444_formats+VK_KHR_sampler_ycbcr_conversion",
-            "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
-        ]
-    )]
-    G12x4B12x4R12x4x2Plane444Unorm3Pack16EXT = G12x4B12x4R12x4x2Plane444Unorm3Pack16,
-
-    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_444_UNORM_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_ycbcr_2plane_444_formats"],
-        ImpliesSets = [
-            "VK_EXT_ycbcr_2plane_444_formats+VK_KHR_sampler_ycbcr_conversion",
-            "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
-        ]
-    )]
-    G16B16R16x2Plane444UnormEXT = G16B16R16x2Plane444Unorm,
-
-    [NativeName("VK_FORMAT_A4R4G4B4_UNORM_PACK16_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_4444_formats"],
-        ImpliesSets = [
-            "VK_EXT_4444_formats+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_4444_formats+VK_VERSION_1_1",
-        ]
-    )]
-    A4R4G4B4UnormPack16EXT = A4R4G4B4UnormPack16,
-
-    [NativeName("VK_FORMAT_A4B4G4R4_UNORM_PACK16_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_4444_formats"],
-        ImpliesSets = [
-            "VK_EXT_4444_formats+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_4444_formats+VK_VERSION_1_1",
-        ]
-    )]
-    A4B4G4R4UnormPack16EXT = A4B4G4R4UnormPack16,
-
-    [NativeName("VK_FORMAT_A1B5G5R5_UNORM_PACK16_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance5"],
-        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
-    )]
-    A1B5G5R5UnormPack16KHR = A1B5G5R5UnormPack16,
-
-    [NativeName("VK_FORMAT_A8_UNORM_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance5"],
-        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
-    )]
-    A8UnormKHR = A8Unorm,
 }

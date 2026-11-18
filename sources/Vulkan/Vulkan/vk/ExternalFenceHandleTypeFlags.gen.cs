@@ -40,6 +40,17 @@ public enum ExternalFenceHandleTypeFlags : uint
     )]
     OpaqueFdBit = 0x1,
 
+    [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_FD_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    OpaqueFdBitKHR = OpaqueFdBit,
+
     [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -64,6 +75,17 @@ public enum ExternalFenceHandleTypeFlags : uint
         MinVersion = "1.1"
     )]
     OpaqueWin32Bit = 0x2,
+
+    [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    OpaqueWin32BitKHR = OpaqueWin32Bit,
 
     [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT")]
     [SupportedApiProfile(
@@ -90,6 +112,17 @@ public enum ExternalFenceHandleTypeFlags : uint
     )]
     OpaqueWin32KmtBit = 0x4,
 
+    [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_capabilities"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_capabilities+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
+        ]
+    )]
+    OpaqueWin32KmtBitKHR = OpaqueWin32KmtBit,
+
     [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_SYNC_FD_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -114,39 +147,6 @@ public enum ExternalFenceHandleTypeFlags : uint
         MinVersion = "1.1"
     )]
     SyncFdBit = 0x8,
-
-    [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_FD_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_fence_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_fence_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    OpaqueFdBitKHR = OpaqueFdBit,
-
-    [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_fence_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_fence_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    OpaqueWin32BitKHR = OpaqueWin32Bit,
-
-    [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_external_fence_capabilities"],
-        ImpliesSets = [
-            "VK_KHR_external_fence_capabilities+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
-        ]
-    )]
-    OpaqueWin32KmtBitKHR = OpaqueWin32KmtBit,
 
     [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_SYNC_FD_BIT_KHR")]
     [SupportedApiProfile(

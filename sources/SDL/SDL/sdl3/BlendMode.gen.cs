@@ -13,10 +13,10 @@ public enum BlendMode : uint
 {
     None = 0,
     Blend = 1,
-    BlendPremultiplied = 16,
     Add = 2,
-    AddPremultiplied = 32,
     Mod = 4,
     Mul = 8,
+    BlendPremultiplied = 16,
+    AddPremultiplied = 32,
     Invalid = 2147483647,
 }

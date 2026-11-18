@@ -23,6 +23,18 @@ public enum RenderingFlags : uint
     )]
     ContentsSecondaryCommandBuffersBit = 0x1,
 
+    [NativeName("VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_dynamic_rendering"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    ContentsSecondaryCommandBuffersBitKHR = ContentsSecondaryCommandBuffersBit,
+
     [NativeName("VK_RENDERING_SUSPENDING_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -31,6 +43,18 @@ public enum RenderingFlags : uint
     )]
     SuspendingBit = 0x2,
 
+    [NativeName("VK_RENDERING_SUSPENDING_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_dynamic_rendering"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    SuspendingBitKHR = SuspendingBit,
+
     [NativeName("VK_RENDERING_RESUMING_BIT")]
     [SupportedApiProfile(
         "vulkan",
@@ -38,6 +62,18 @@ public enum RenderingFlags : uint
         MinVersion = "1.3"
     )]
     ResumingBit = 0x4,
+
+    [NativeName("VK_RENDERING_RESUMING_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_dynamic_rendering"],
+        ImpliesSets = [
+            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    ResumingBitKHR = ResumingBit,
 
     [NativeName("VK_RENDERING_ENABLE_LEGACY_DITHERING_BIT_EXT")]
     [SupportedApiProfile(
@@ -60,6 +96,17 @@ public enum RenderingFlags : uint
     [NativeName("VK_RENDERING_CONTENTS_INLINE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     ContentsInlineBitKHR = 0x10,
+
+    [NativeName("VK_RENDERING_CONTENTS_INLINE_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_nested_command_buffer"],
+        ImpliesSets = [
+            "VK_EXT_nested_command_buffer+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_nested_command_buffer+VK_VERSION_1_1",
+        ]
+    )]
+    ContentsInlineBitEXT = ContentsInlineBitKHR,
 
     [NativeName("VK_RENDERING_PER_LAYER_FRAGMENT_DENSITY_BIT_VALVE")]
     [SupportedApiProfile(
@@ -110,51 +157,4 @@ public enum RenderingFlags : uint
         ]
     )]
     LocalReadConcurrentAccessControlBitKHR = 0x100,
-
-    [NativeName("VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_dynamic_rendering"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    ContentsSecondaryCommandBuffersBitKHR = ContentsSecondaryCommandBuffersBit,
-
-    [NativeName("VK_RENDERING_SUSPENDING_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_dynamic_rendering"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    SuspendingBitKHR = SuspendingBit,
-
-    [NativeName("VK_RENDERING_RESUMING_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_dynamic_rendering"],
-        ImpliesSets = [
-            "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    ResumingBitKHR = ResumingBit,
-
-    [NativeName("VK_RENDERING_CONTENTS_INLINE_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_nested_command_buffer"],
-        ImpliesSets = [
-            "VK_EXT_nested_command_buffer+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_nested_command_buffer+VK_VERSION_1_1",
-        ]
-    )]
-    ContentsInlineBitEXT = ContentsInlineBitKHR,
 }

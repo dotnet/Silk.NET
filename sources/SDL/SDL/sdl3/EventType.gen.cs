@@ -44,6 +44,9 @@ public enum EventType
     [NativeName("SDL_EVENT_DISPLAY_ORIENTATION")]
     DisplayOrientation = 337,
 
+    [NativeName("SDL_EVENT_DISPLAY_FIRST")]
+    DisplayFirst = DisplayOrientation,
+
     [NativeName("SDL_EVENT_DISPLAY_ADDED")]
     DisplayAdded = 338,
 
@@ -65,14 +68,14 @@ public enum EventType
     [NativeName("SDL_EVENT_DISPLAY_USABLE_BOUNDS_CHANGED")]
     DisplayUsableBoundsChanged = 344,
 
-    [NativeName("SDL_EVENT_DISPLAY_FIRST")]
-    DisplayFirst = DisplayOrientation,
-
     [NativeName("SDL_EVENT_DISPLAY_LAST")]
     DisplayLast = DisplayUsableBoundsChanged,
 
     [NativeName("SDL_EVENT_WINDOW_SHOWN")]
     WindowShown = 514,
+
+    [NativeName("SDL_EVENT_WINDOW_FIRST")]
+    WindowFirst = WindowShown,
 
     [NativeName("SDL_EVENT_WINDOW_HIDDEN")]
     WindowHidden = 515,
@@ -145,9 +148,6 @@ public enum EventType
 
     [NativeName("SDL_EVENT_WINDOW_HDR_STATE_CHANGED")]
     WindowHdrStateChanged = 538,
-
-    [NativeName("SDL_EVENT_WINDOW_FIRST")]
-    WindowFirst = WindowShown,
 
     [NativeName("SDL_EVENT_WINDOW_LAST")]
     WindowLast = WindowHdrStateChanged,

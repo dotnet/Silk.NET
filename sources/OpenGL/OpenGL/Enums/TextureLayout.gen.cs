@@ -10,6 +10,12 @@ namespace Silk.NET.OpenGL;
 [NativeName("TextureLayout")]
 public enum TextureLayout : uint
 {
+    [NativeName("GL_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_EXT")]
+    DepthReadOnlyStencilAttachmentEXT = 38192,
+
+    [NativeName("GL_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_EXT")]
+    DepthAttachmentStencilReadOnlyEXT = 38193,
+
     [NativeName("GL_LAYOUT_GENERAL_EXT")]
     GeneralEXT = 38285,
 
@@ -30,10 +36,4 @@ public enum TextureLayout : uint
 
     [NativeName("GL_LAYOUT_TRANSFER_DST_EXT")]
     TransferDstEXT = 38291,
-
-    [NativeName("GL_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_EXT")]
-    DepthReadOnlyStencilAttachmentEXT = 38192,
-
-    [NativeName("GL_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_EXT")]
-    DepthAttachmentStencilReadOnlyEXT = 38193,
 }

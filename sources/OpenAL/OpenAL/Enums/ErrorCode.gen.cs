@@ -16,6 +16,12 @@ public enum ErrorCode : uint
     [NativeName("AL_NO_ERROR")]
     NoError = 0,
 
+    [NativeName("AL_STACK_OVERFLOW_EXT")]
+    StackOverflowEXT = 6605,
+
+    [NativeName("AL_STACK_UNDERFLOW_EXT")]
+    StackUnderflowEXT = 6606,
+
     [NativeName("AL_INVALID_NAME")]
     InvalidName = 40961,
 
@@ -30,10 +36,4 @@ public enum ErrorCode : uint
 
     [NativeName("AL_OUT_OF_MEMORY")]
     OutOfMemory = 40965,
-
-    [NativeName("AL_STACK_OVERFLOW_EXT")]
-    StackOverflowEXT = 6605,
-
-    [NativeName("AL_STACK_UNDERFLOW_EXT")]
-    StackUnderflowEXT = 6606,
 }

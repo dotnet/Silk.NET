@@ -13,9 +13,6 @@ namespace Silk.NET.OpenAL;
 [NativeName("BooleanPName")]
 public enum BooleanPName : uint
 {
-    [NativeName("AL_DEFERRED_UPDATES_SOFT")]
-    DeferredUpdatesSOFT = 49154,
-
     [NativeName("AL_DEBUG_LOGGED_MESSAGES_EXT")]
     DebugLoggedMessagesEXT = 6599,
 
@@ -33,4 +30,7 @@ public enum BooleanPName : uint
 
     [NativeName("AL_MAX_LABEL_LENGTH_EXT")]
     MaxLabelLengthEXT = 6604,
+
+    [NativeName("AL_DEFERRED_UPDATES_SOFT")]
+    DeferredUpdatesSOFT = 49154,
 }

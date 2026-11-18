@@ -140,14 +140,6 @@ public enum DebugReportObjectTypeEXT : uint
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     ValidationCacheExt = 33,
 
-    [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report", "VK_VERSION_1_1"], RequireAll = true)]
-    SamplerYcbcrConversion = 1000156000,
-
-    [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_EXT")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report", "VK_VERSION_1_1"], RequireAll = true)]
-    DescriptorUpdateTemplate = 1000085000,
-
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_CU_MODULE_NVX_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -164,6 +156,18 @@ public enum DebugReportObjectTypeEXT : uint
     )]
     CuFunctionNvx = 1000029001,
 
+    [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report", "VK_VERSION_1_1"], RequireAll = true)]
+    DescriptorUpdateTemplate = 1000085000,
+
+    [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_KHR_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_debug_report", "VK_KHR_descriptor_update_template"],
+        RequireAll = true
+    )]
+    DescriptorUpdateTemplateKhr = DescriptorUpdateTemplate,
+
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_ACCELERATION_STRUCTURE_KHR_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -175,6 +179,22 @@ public enum DebugReportObjectTypeEXT : uint
         RequireAll = true
     )]
     AccelerationStructureKhr = 1000150000,
+
+    [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report", "VK_VERSION_1_1"], RequireAll = true)]
+    SamplerYcbcrConversion = 1000156000,
+
+    [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION_KHR_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_debug_report", "VK_KHR_sampler_ycbcr_conversion"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
+    SamplerYcbcrConversionKhr = SamplerYcbcrConversion,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_ACCELERATION_STRUCTURE_NV_EXT")]
     [SupportedApiProfile(
@@ -223,24 +243,4 @@ public enum DebugReportObjectTypeEXT : uint
         RequireAll = true
     )]
     BufferCollectionFuchsia = 1000366000,
-
-    [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_KHR_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_debug_report", "VK_KHR_descriptor_update_template"],
-        RequireAll = true
-    )]
-    DescriptorUpdateTemplateKhr = DescriptorUpdateTemplate,
-
-    [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION_KHR_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_debug_report", "VK_KHR_sampler_ycbcr_conversion"],
-        ImpliesSets = [
-            "VK_KHR_maintenance1+VK_KHR_bind_memory2+VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
-            "VK_VERSION_1_1",
-        ],
-        RequireAll = true
-    )]
-    SamplerYcbcrConversionKhr = SamplerYcbcrConversion,
 }

@@ -148,27 +148,6 @@ public enum BufferCreateFlags : uint
     )]
     DeviceAddressCaptureReplayBit = 0x10,
 
-    [NativeName("VK_BUFFER_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_buffer"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
-            "VK_KHR_synchronization2+VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    DescriptorBufferCaptureReplayBitEXT = 0x20,
-
-    [NativeName("VK_BUFFER_CREATE_VIDEO_PROFILE_INDEPENDENT_BIT_KHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_maintenance1"],
-        ImpliesSets = ["VK_KHR_video_queue"]
-    )]
-    VideoProfileIndependentBitKHR = 0x40,
-
     [NativeName("VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -190,4 +169,25 @@ public enum BufferCreateFlags : uint
         ]
     )]
     DeviceAddressCaptureReplayBitKHR = DeviceAddressCaptureReplayBit,
+
+    [NativeName("VK_BUFFER_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    DescriptorBufferCaptureReplayBitEXT = 0x20,
+
+    [NativeName("VK_BUFFER_CREATE_VIDEO_PROFILE_INDEPENDENT_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_maintenance1"],
+        ImpliesSets = ["VK_KHR_video_queue"]
+    )]
+    VideoProfileIndependentBitKHR = 0x40,
 }

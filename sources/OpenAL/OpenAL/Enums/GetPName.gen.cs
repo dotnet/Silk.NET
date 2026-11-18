@@ -13,36 +13,6 @@ namespace Silk.NET.OpenAL;
 [NativeName("GetPName")]
 public enum GetPName : uint
 {
-    [NativeName("AL_VENDOR")]
-    Vendor = 45057,
-
-    [NativeName("AL_VERSION")]
-    Version = 45058,
-
-    [NativeName("AL_RENDERER")]
-    Renderer = 45059,
-
-    [NativeName("AL_EXTENSIONS")]
-    Extensions = 45060,
-
-    [NativeName("AL_DOPPLER_FACTOR")]
-    DopplerFactor = 49152,
-
-    [NativeName("AL_DOPPLER_VELOCITY")]
-    DopplerVelocity = 49153,
-
-    [NativeName("AL_DISTANCE_MODEL")]
-    DistanceModel = 53248,
-
-    [NativeName("AL_SPEED_OF_SOUND")]
-    SpeedOfSound = 49155,
-
-    [NativeName("AL_DEFERRED_UPDATES_SOFT")]
-    DeferredUpdatesSOFT = 49154,
-
-    [NativeName("AL_GAIN_LIMIT_SOFT")]
-    GainLimitSOFT = 8206,
-
     [NativeName("AL_NUM_RESAMPLERS_SOFT")]
     NumResamplersSOFT = 4624,
 
@@ -78,4 +48,34 @@ public enum GetPName : uint
 
     [NativeName("AL_CONTEXT_FLAGS_EXT")]
     ContextFlagsEXT = 6607,
+
+    [NativeName("AL_GAIN_LIMIT_SOFT")]
+    GainLimitSOFT = 8206,
+
+    [NativeName("AL_VENDOR")]
+    Vendor = 45057,
+
+    [NativeName("AL_VERSION")]
+    Version = 45058,
+
+    [NativeName("AL_RENDERER")]
+    Renderer = 45059,
+
+    [NativeName("AL_EXTENSIONS")]
+    Extensions = 45060,
+
+    [NativeName("AL_DOPPLER_FACTOR")]
+    DopplerFactor = 49152,
+
+    [NativeName("AL_DOPPLER_VELOCITY")]
+    DopplerVelocity = 49153,
+
+    [NativeName("AL_DEFERRED_UPDATES_SOFT")]
+    DeferredUpdatesSOFT = 49154,
+
+    [NativeName("AL_SPEED_OF_SOUND")]
+    SpeedOfSound = 49155,
+
+    [NativeName("AL_DISTANCE_MODEL")]
+    DistanceModel = 53248,
 }

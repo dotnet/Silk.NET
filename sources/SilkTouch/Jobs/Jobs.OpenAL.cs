@@ -106,7 +106,12 @@ internal static partial class Jobs
                         }
                     )
                     .TransformEnums(
-                        new() { AddNoneMemberToFlags = true, RewriteMemberValues = true }
+                        new()
+                        {
+                            AddNoneMemberToFlags = true,
+                            RewriteMemberValues = true,
+                            SortMembers = true,
+                        }
                     )
                     .AddVTables(
                         new()

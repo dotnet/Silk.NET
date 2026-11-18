@@ -29,9 +29,6 @@ public enum ImageCreateFlags2KHR : ulong
     [NativeName("VK_IMAGE_CREATE_2_CUBE_COMPATIBLE_BIT_KHR")]
     CubeCompatibleBit = 0x10,
 
-    [NativeName("VK_IMAGE_CREATE_2_ALIAS_SINGLE_LAYER_DESCRIPTOR_BIT_KHR")]
-    AliasSingleLayerDescriptorBit = 0x400000,
-
     [NativeName("VK_IMAGE_CREATE_2_2D_ARRAY_COMPATIBLE_BIT_KHR")]
     X2DArrayCompatibleBit = 0x20,
 
@@ -76,4 +73,7 @@ public enum ImageCreateFlags2KHR : ulong
 
     [NativeName("VK_IMAGE_CREATE_2_VIDEO_PROFILE_INDEPENDENT_BIT_KHR")]
     VideoProfileIndependentBit = 0x100000,
+
+    [NativeName("VK_IMAGE_CREATE_2_ALIAS_SINGLE_LAYER_DESCRIPTOR_BIT_KHR")]
+    AliasSingleLayerDescriptorBit = 0x400000,
 }
