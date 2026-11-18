@@ -27,8 +27,8 @@ RUN ./android.ps1
 
 # Zig
 ENV PATH="$PATH:/data/setup/zig"
-COPY dependencies/download-zig.py download-zig.py
-RUN ./download-zig.py && zig version
+COPY dependencies/zig.ps1 zig.ps1
+RUN ./zig.ps1 && zig version
 
 WORKDIR /data
 CMD ["pwsh"]
