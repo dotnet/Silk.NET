@@ -4,8 +4,7 @@
 # Modified to add SILKDOTNET_ paths in response to some issues with SwiftShader
 
 args=""
-for arg in "$@"
-do
+for arg in "$@"; do
     outputArg="$arg"
 
     optionKey=${arg%=*}
@@ -14,8 +13,7 @@ do
     if [[ "$optionKey" == "-march" || "$optionKey" == "-mcpu" || "$optionKey" == "-mtune" ]]; then
         shouldRemove=0
 
-        for replacement in $SILKDOTNET_ReplaceArchitectureZigCcFlags
-        do
+        for replacement in $SILKDOTNET_ReplaceArchitectureZigCcFlags; do
             replacementValueFrom=${replacement%=*}
             replacementValueTo=${replacement#*=}
 
