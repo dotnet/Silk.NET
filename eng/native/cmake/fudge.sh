@@ -7,15 +7,15 @@ args=""
 for arg in "$@"; do
     outputArg="$arg"
 
-    optionKey=${arg%=*}
-    optionValue=${arg#*=}
+    optionKey="${arg%=*}"
+    optionValue="${arg#*=}"
 
     if [[ "$optionKey" == "-march" || "$optionKey" == "-mcpu" || "$optionKey" == "-mtune" ]]; then
         shouldRemove=0
 
         for replacement in $SILKDOTNET_ReplaceArchitectureZigCcFlags; do
-            replacementValueFrom=${replacement%=*}
-            replacementValueTo=${replacement#*=}
+            replacementValueFrom="${replacement%=*}"
+            replacementValueTo="${replacement#*=}"
 
             if [[ "$replacementValueFrom" == "$optionValue" ]]; then
                 if [[ "$replacementValueTo" == "" ]]; then
@@ -29,7 +29,7 @@ for arg in "$@"; do
         if [[ "$shouldRemove" == "1" || "$SILKDOTNET_RemoveAllPotentiallyProblematicZigCcFlags" == "1" ]]; then
             continue
         else
-            underscoredOptionValue=${optionValue//-/_}
+            underscoredOptionValue="${optionValue//-/_}"
             outputArg="$optionKey=$underscoredOptionValue"
         fi
     fi
