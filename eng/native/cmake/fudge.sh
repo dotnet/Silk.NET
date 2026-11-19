@@ -11,7 +11,7 @@ do
     optionKey=${arg%=*}
     optionValue=${arg#*=}
 
-    if [[ $optionKey == "-march" || $optionKey == "-mcpu" || $optionKey == "-mtune" ]]; then
+    if [[ "$optionKey" == "-march" || "$optionKey" == "-mcpu" || "$optionKey" == "-mtune" ]]; then
         shouldRemove=0
 
         for replacement in $SILKDOTNET_ReplaceArchitectureZigCcFlags
@@ -19,7 +19,7 @@ do
             replacementValueFrom=${replacement%=*}
             replacementValueTo=${replacement#*=}
 
-            if [[ $replacementValueFrom == $optionValue ]]; then
+            if [[ "$replacementValueFrom" == "$optionValue" ]]; then
                 if [[ "$replacementValueTo" == "" ]]; then
                     shouldRemove=1
                 else
@@ -28,7 +28,7 @@ do
             fi
         done
 
-        if [[ $shouldRemove == 1 || "$SILKDOTNET_RemoveAllPotentiallyProblematicZigCcFlags" == "1" ]]; then
+        if [[ "$shouldRemove" == "1" || "$SILKDOTNET_RemoveAllPotentiallyProblematicZigCcFlags" == "1" ]]; then
             continue
         else
             underscoredOptionValue=${optionValue//-/_}
