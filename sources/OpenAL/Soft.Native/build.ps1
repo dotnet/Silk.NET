@@ -52,7 +52,7 @@ try {
   # C++ modules needs clang-scan-deps, and gets auto-enabled when using Ninja, which leads to the Linux Zig builds failing
   function cmakeShared { @("-DCMAKE_BUILD_TYPE=Release", "-DALSOFT_UTILS=OFF", "-DALSOFT_EXAMPLES=OFF", "-DALSOFT_ENABLE_MODULES=OFF", "-DCMAKE_CXX_SCAN_FOR_MODULES=OFF") }
   function windowsCmakeShared { @("-DALSOFT_BUILD_ROUTER=ON", "-DALSOFT_REQUIRE_WINMM=ON", "-DALSOFT_REQUIRE_DSOUND=ON", "-DALSOFT_REQUIRE_WASAPI=ON") }
-  function androidCmakeShared { @("-DANDROID_PLATFORM=21", "-DCMAKE_TOOLCHAIN_FILE=$env:ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake", "-DALSOFT_EMBED_HRTF_DATA=TRUE", "-DALSOFT_REQUIRE_OPENSL=ON") }
+  function androidCmakeShared { @("-DANDROID_PLATFORM=21", "-DALSOFT_EMBED_HRTF_DATA=TRUE", "-DALSOFT_REQUIRE_OPENSL=ON") }
   function linuxCmakeShared { @("-DALSOFT_REQUIRE_RTKIT=ON", "-DALSOFT_REQUIRE_ALSA=ON", "-DALSOFT_REQUIRE_OSS=ON", "-DALSOFT_REQUIRE_PORTAUDIO=ON", "-DALSOFT_REQUIRE_PULSEAUDIO=ON", "-DALSOFT_REQUIRE_JACK=ON", "-DALSOFT_REQUIRE_PIPEWIRE=ON") }
   function appleCmakeShared { @("-DALSOFT_REQUIRE_COREAUDIO=ON") }
 
@@ -125,28 +125,28 @@ try {
       switch ($runtime) {
         "android-arm64" {
           # Build
-          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DANDROID_ABI=arm64-v8a"
+          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-arm64-v8a.cmake"
           New-Item -ItemType Directory -Force runtimes/android-arm64/native
           Copy-Item build/libopenal.so runtimes/android-arm64/native
         }
 
         "android-arm" {
           # Build
-          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DANDROID_ABI=armeabi-v7a"
+          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-armeabi-v7a.cmake"
           New-Item -ItemType Directory -Force runtimes/android-arm/native
           Copy-Item build/libopenal.so runtimes/android-arm/native
         }
 
         "android-x64" {
           # Build
-          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DANDROID_ABI=x86_64"
+          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-x86_64.cmake"
           New-Item -ItemType Directory -Force runtimes/android-x64/native
           Copy-Item build/libopenal.so runtimes/android-x64/native
         }
 
         "android-x86" {
           # Build
-          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DANDROID_ABI=x86"
+          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-x86.cmake"
           New-Item -ItemType Directory -Force runtimes/android-x86/native
           Copy-Item build/libopenal.so runtimes/android-x86/native
         }
