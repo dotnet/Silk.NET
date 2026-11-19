@@ -6,31 +6,35 @@
 args=""
 for arg in "$@"
 do
-    parg="$arg"
+    outputArg="$arg"
 
-    option=${arg%=*}
-    target=${arg#*=}
-    if [[ $option == "-march" || $option == "-mcpu" || $option == "-mtune" ]]; then
-        moveon=0
-        for replace in $SILKDOTNET_ReplaceArchitectureZigCcFlags
+    optionKey=${arg%=*}
+    optionValue=${arg#*=}
+
+    if [[ $optionKey == "-march" || $optionKey == "-mcpu" || $optionKey == "-mtune" ]]; then
+        shouldRemove=0
+
+        for replacement in $SILKDOTNET_ReplaceArchitectureZigCcFlags
         do
-            replacetarget=${replace%=*}
-            replacement=${replace#*=}
-            # echo $replacetarget A $replacement B $target END
-            if [[ $replacetarget == $target ]]; then
-                if [[ "$replacement" == "" ]]; then
-                    moveon=1
+            replacementValueFrom=${replacement%=*}
+            replacementValueTo=${replacement#*=}
+
+            if [[ $replacementValueFrom == $optionValue ]]; then
+                if [[ "$replacementValueTo" == "" ]]; then
+                    shouldRemove=1
                 else
-                    target="$replacement"
+                    optionValue="$replacementValueTo"
                 fi
             fi
         done
-        if [[ $moveon == 1 || "$SILKDOTNET_RemoveAllPotentiallyProblematicZigCcFlags" == "1" ]]; then
+
+        if [[ $shouldRemove == 1 || "$SILKDOTNET_RemoveAllPotentiallyProblematicZigCcFlags" == "1" ]]; then
             continue
         else
-            fixedTarget=${target//-/_}
-            parg="$option=$fixedTarget"
+            underscoredOptionValue=${optionValue//-/_}
+            outputArg="$optionKey=$underscoredOptionValue"
         fi
     fi
-    args="$args $parg"
+
+    args="$args $outputArg"
 done
