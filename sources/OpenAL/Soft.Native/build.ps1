@@ -63,7 +63,7 @@ try {
         "win-arm64" {
           # Build
           & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch arm64 -SkipAutomaticLocation
-          Build-CMake $(cmakeShared) $(windowsCmakeShared) -A arm64
+          Build-CMake $(cmakeShared) $(windowsCmakeShared)
           New-Item -ItemType Directory -Force runtimes/win-arm64/native
           Copy-Item build/Release/OpenAL32.dll runtimes/win-arm64/native
           Copy-Item build/Release/soft_oal.dll runtimes/win-arm64/native
@@ -72,7 +72,7 @@ try {
         "win-x64" {
           # Build
           & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch amd64 -SkipAutomaticLocation
-          Build-CMake $(cmakeShared) $(windowsCmakeShared) -A x64
+          Build-CMake $(cmakeShared) $(windowsCmakeShared)
           New-Item -ItemType Directory -Force runtimes/win-x64/native
           Copy-Item build/Release/OpenAL32.dll runtimes/win-x64/native
           Copy-Item build/Release/soft_oal.dll runtimes/win-x64/native
