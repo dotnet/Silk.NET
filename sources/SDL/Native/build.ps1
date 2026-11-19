@@ -49,7 +49,7 @@ try {
   }
 
   function cmakeShared { @("-DCMAKE_BUILD_TYPE=Release", "-DSDL_TEST_LIBRARY=OFF") }
-  function androidCmakeShared { @("-DANDROID_PLATFORM=21", "-DSDL_ANDROID_JAR=ON", "-DCMAKE_INSTALL_PREFIX=$PSScriptRoot/build/install") }
+  function androidCmakeShared { @("-DANDROID_PLATFORM=21", "-DSDL_ANDROID_JAR=ON", "-DCMAKE_INSTALL_PREFIX=$PWD/build/install") }
 
   switch ($true) {
     $IsWindows {
