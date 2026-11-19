@@ -50,11 +50,11 @@ try {
   }
 
   # C++ modules needs clang-scan-deps, and gets auto-enabled when using Ninja, which leads to the Linux Zig builds failing
-  function cmakeShared { @("-DCMAKE_BUILD_TYPE=Release", "-DALSOFT_UTILS=OFF", "-DALSOFT_EXAMPLES=OFF", "-DALSOFT_ENABLE_MODULES=OFF", "-DCMAKE_CXX_SCAN_FOR_MODULES=OFF") }
-  function windowsCmakeShared { @("-DALSOFT_BUILD_ROUTER=ON", "-DALSOFT_REQUIRE_WINMM=ON", "-DALSOFT_REQUIRE_DSOUND=ON", "-DALSOFT_REQUIRE_WASAPI=ON") }
-  function androidCmakeShared { @("-DANDROID_PLATFORM=21", "-DALSOFT_EMBED_HRTF_DATA=TRUE", "-DALSOFT_REQUIRE_OPENSL=ON") }
-  function linuxCmakeShared { @("-DALSOFT_REQUIRE_RTKIT=ON", "-DALSOFT_REQUIRE_ALSA=ON", "-DALSOFT_REQUIRE_OSS=ON", "-DALSOFT_REQUIRE_PORTAUDIO=ON", "-DALSOFT_REQUIRE_PULSEAUDIO=ON", "-DALSOFT_REQUIRE_JACK=ON", "-DALSOFT_REQUIRE_PIPEWIRE=ON") }
-  function appleCmakeShared { @("-DALSOFT_REQUIRE_COREAUDIO=ON") }
+  function Get-CMakeSharedArgs { @("-DCMAKE_BUILD_TYPE=Release", "-DALSOFT_UTILS=OFF", "-DALSOFT_EXAMPLES=OFF", "-DALSOFT_ENABLE_MODULES=OFF", "-DCMAKE_CXX_SCAN_FOR_MODULES=OFF") }
+  function Get-CMakeWindowsArgs { @("-DALSOFT_BUILD_ROUTER=ON", "-DALSOFT_REQUIRE_WINMM=ON", "-DALSOFT_REQUIRE_DSOUND=ON", "-DALSOFT_REQUIRE_WASAPI=ON") }
+  function Get-CMakeAndroidArgs { @("-DANDROID_PLATFORM=21", "-DALSOFT_EMBED_HRTF_DATA=TRUE", "-DALSOFT_REQUIRE_OPENSL=ON") }
+  function Get-CMakeLinuxArgs { @("-DALSOFT_REQUIRE_RTKIT=ON", "-DALSOFT_REQUIRE_ALSA=ON", "-DALSOFT_REQUIRE_OSS=ON", "-DALSOFT_REQUIRE_PORTAUDIO=ON", "-DALSOFT_REQUIRE_PULSEAUDIO=ON", "-DALSOFT_REQUIRE_JACK=ON", "-DALSOFT_REQUIRE_PIPEWIRE=ON") }
+  function Get-CMakeAppleArgs { @("-DALSOFT_REQUIRE_COREAUDIO=ON") }
 
   switch ($true) {
     $IsWindows {
@@ -64,7 +64,7 @@ try {
         "win-arm64" {
           # Build
           & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch arm64 -SkipAutomaticLocation
-          Build-CMake $(cmakeShared) $(windowsCmakeShared)
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeWindowsArgs)
           New-Item -ItemType Directory -Force runtimes/win-arm64/native
           Copy-Item build/OpenAL32.dll runtimes/win-arm64/native
           Copy-Item build/soft_oal.dll runtimes/win-arm64/native
@@ -73,7 +73,7 @@ try {
         "win-x64" {
           # Build
           & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch amd64 -SkipAutomaticLocation
-          Build-CMake $(cmakeShared) $(windowsCmakeShared)
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeWindowsArgs)
           New-Item -ItemType Directory -Force runtimes/win-x64/native
           Copy-Item build/OpenAL32.dll runtimes/win-x64/native
           Copy-Item build/soft_oal.dll runtimes/win-x64/native
@@ -125,49 +125,49 @@ try {
       switch ($runtime) {
         "android-arm64" {
           # Build
-          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-arm64-v8a.cmake"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAndroidArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-arm64-v8a.cmake"
           New-Item -ItemType Directory -Force runtimes/android-arm64/native
           Copy-Item build/libopenal.so runtimes/android-arm64/native
         }
 
         "android-arm" {
           # Build
-          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-armeabi-v7a.cmake"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAndroidArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-armeabi-v7a.cmake"
           New-Item -ItemType Directory -Force runtimes/android-arm/native
           Copy-Item build/libopenal.so runtimes/android-arm/native
         }
 
         "android-x64" {
           # Build
-          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-x86_64.cmake"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAndroidArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-x86_64.cmake"
           New-Item -ItemType Directory -Force runtimes/android-x64/native
           Copy-Item build/libopenal.so runtimes/android-x64/native
         }
 
         "android-x86" {
           # Build
-          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-x86.cmake"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAndroidArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-x86.cmake"
           New-Item -ItemType Directory -Force runtimes/android-x86/native
           Copy-Item build/libopenal.so runtimes/android-x86/native
         }
 
         "linux-arm64" {
           # Build
-          Build-CMake $(cmakeShared) $(linuxCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-aarch64-linux-gnu.2.28.cmake"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeLinuxArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-aarch64-linux-gnu.2.28.cmake"
           New-Item -ItemType Directory -Force runtimes/linux-arm64/native
           Copy-Item build/libopenal.so runtimes/linux-arm64/native
         }
 
         "linux-arm" {
           # Build
-          Build-CMake $(cmakeShared) $(linuxCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-arm-linux-gnueabihf.2.34.cmake"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeLinuxArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-arm-linux-gnueabihf.2.34.cmake"
           New-Item -ItemType Directory -Force runtimes/linux-arm/native
           Copy-Item build/libopenal.so runtimes/linux-arm/native
         }
 
         "linux-x64" {
           # Build
-          Build-CMake $(cmakeShared) $(linuxCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-x86_64-linux-gnu.2.28.cmake"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeLinuxArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-x86_64-linux-gnu.2.28.cmake"
           New-Item -ItemType Directory -Force runtimes/linux-x64/native
           Copy-Item build/libopenal.so runtimes/linux-x64/native
         }
@@ -178,35 +178,35 @@ try {
       switch ($runtime) {
         "ios" {
           # Build
-          Build-CMake $(cmakeShared) $(appleCmakeShared) "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphoneos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphoneos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
           New-Item -ItemType Directory -Force runtimes/ios/native
           Copy-Item build/libopenal.dylib runtimes/ios/native
         }
 
         "iossimulator" {
           # Build
-          Build-CMake $(cmakeShared) $(appleCmakeShared) "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphonesimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphonesimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
           New-Item -ItemType Directory -Force runtimes/iossimulator/native
           Copy-Item build/libopenal.dylib runtimes/iossimulator/native
         }
 
         "osx" {
           # Build
-          Build-CMake $(cmakeShared) $(appleCmakeShared) "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=13.3"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=13.3"
           New-Item -ItemType Directory -Force runtimes/osx/native
           Copy-Item build/libopenal.dylib runtimes/osx/native
         }
 
         "tvos" {
           # Build
-          Build-CMake $(cmakeShared) $(appleCmakeShared) "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
           New-Item -ItemType Directory -Force runtimes/tvos/native
           Copy-Item build/libopenal.dylib runtimes/tvos/native
         }
 
         "tvossimulator" {
           # Build
-          Build-CMake $(cmakeShared) $(appleCmakeShared) "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvsimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvsimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
           New-Item -ItemType Directory -Force runtimes/tvossimulator/native
           Copy-Item build/libopenal.dylib runtimes/tvossimulator/native
         }
