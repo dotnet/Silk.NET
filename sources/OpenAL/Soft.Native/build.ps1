@@ -43,12 +43,10 @@ try {
 
   # CMake
   function Build-CMake {
-    $buildConfig = $IsWindows ? @("--config", "Release") : @()
-
     Remove-Item -Recurse -Force build -ErrorAction Ignore
     New-Item -ItemType Directory build
     cmake $submodulePath -B build -G Ninja ($args | ForEach-Object { $_ })
-    cmake --build build --parallel $buildConfig
+    cmake --build build --parallel
   }
 
   function cmakeShared { @("-DCMAKE_BUILD_TYPE=Release", "-DALSOFT_UTILS=OFF", "-DALSOFT_EXAMPLES=OFF") }
