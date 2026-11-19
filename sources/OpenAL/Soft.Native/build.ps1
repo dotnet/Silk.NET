@@ -47,7 +47,7 @@ try {
 
     Remove-Item -Recurse -Force build -ErrorAction Ignore
     New-Item -ItemType Directory build
-    cmake $submodulePath -B build ($args | ForEach-Object { $_ })
+    cmake $submodulePath -B build -G Ninja ($args | ForEach-Object { $_ })
     cmake --build build --parallel $buildConfig
   }
 

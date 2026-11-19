@@ -43,7 +43,7 @@ try {
 
     Remove-Item -Recurse -Force build -ErrorAction Ignore
     New-Item -ItemType Directory build
-    cmake $submodulePath -B build ($args | ForEach-Object { $_ })
+    cmake $submodulePath -B build -G Ninja ($args | ForEach-Object { $_ })
     cmake --build build --parallel $buildConfig
   }
 
@@ -57,7 +57,7 @@ try {
         "win-arm64" {
           # Build
           & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch arm64 -SkipAutomaticLocation
-          Build-CMake -G Ninja $(cmakeShared)
+          Build-CMake $(cmakeShared)
           New-Item -ItemType Directory -Force runtimes/win-arm64/native
           Copy-Item build/SDL3.dll runtimes/win-arm64/native
         }
@@ -65,7 +65,7 @@ try {
         "win-x64" {
           # Build
           & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch amd64 -SkipAutomaticLocation
-          Build-CMake -G Ninja $(cmakeShared)
+          Build-CMake $(cmakeShared)
           New-Item -ItemType Directory -Force runtimes/win-x64/native
           Copy-Item build/SDL3.dll runtimes/win-x64/native
         }
