@@ -9,7 +9,10 @@ try {
   $repoRoot = Join-Path $PSScriptRoot "../../.."
   $submodulePath = Join-Path $repoRoot "eng/submodules/sdl"
   $supportedRuntimes = @(
-    "android",
+    "android-arm64",
+    "android-arm",
+    "android-x64",
+    "android-x86",
     "ios",
     "iossimulator",
     "linux-arm64",
@@ -46,6 +49,7 @@ try {
   }
 
   function cmakeShared { @("-DCMAKE_BUILD_TYPE=Release", "-DSDL_TEST_LIBRARY=OFF") }
+  function androidCmakeShared { @("-DANDROID_PLATFORM=21", "-DSDL_ANDROID_JAR=ON", "-DCMAKE_INSTALL_PREFIX=$PSScriptRoot/build/install") }
 
   switch ($true) {
     $IsWindows {
@@ -118,17 +122,38 @@ try {
       }
 
       switch ($runtime) {
-        "android" {
+        "android-arm64" {
           # Build
-          & python3 $submodulePath/build-scripts/build-release.py --actions android --root $submodulePath
-          New-Item -ItemType Directory -Force runtimes/android-x86/native, runtimes/android-x64/native, runtimes/android-arm/native, runtimes/android-arm64/native, android
-          Copy-Item $submodulePath/install-android/arm64-v8a-install/lib/libSDL3.so runtimes/android-arm64/native
-          Copy-Item $submodulePath/install-android/armeabi-v7a-install/lib/libSDL3.so runtimes/android-arm/native
-          Copy-Item $submodulePath/install-android/x86-install/lib/libSDL3.so runtimes/android-x86/native
-          Copy-Item $submodulePath/install-android/x86_64-install/lib/libSDL3.so runtimes/android-x64/native
-          $jars = @(Get-ChildItem $submodulePath/install-android/armeabi-v7a-install/share/java/SDL3/SDL3-*.jar | Sort-Object FullName)
-          Copy-Item $jars[0].FullName android/SDL3.jar
-          Copy-Item "$(Split-Path -Parent $jars[0].FullName)/proguard.txt" android/proguard.txt
+          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-arm64-v8a.cmake"
+          cmake --install build
+          New-Item -ItemType Directory -Force runtimes/android-arm64/native
+          Copy-Item build/install/lib/libSDL3.so runtimes/android-arm64/native
+        }
+
+        "android-arm" {
+          # Build
+          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-armeabi-v7a.cmake"
+          cmake --install build
+          New-Item -ItemType Directory -Force runtimes/android-arm/native
+          Copy-Item build/install/lib/libSDL3.so runtimes/android-arm/native
+        }
+
+        "android-x64" {
+          # Build
+          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-x86_64.cmake"
+          cmake --install build
+          New-Item -ItemType Directory -Force runtimes/android-x64/native, android
+          Copy-Item build/install/lib/libSDL3.so runtimes/android-x64/native
+          Copy-Item (Get-ChildItem build/install/share/java/SDL3/SDL3-*.jar -Exclude "*-sources.jar") android/SDL3.jar
+          Copy-Item build/install/share/java/SDL3/proguard.txt android/proguard.txt
+        }
+
+        "android-x86" {
+          # Build
+          Build-CMake $(cmakeShared) $(androidCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/android-toolchain-x86.cmake"
+          cmake --install build
+          New-Item -ItemType Directory -Force runtimes/android-x86/native
+          Copy-Item build/install/lib/libSDL3.so runtimes/android-x86/native
         }
 
         "linux-arm64" {

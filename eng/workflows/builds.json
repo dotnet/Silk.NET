@@ -8,7 +8,10 @@
           "eng/submodules/sdl"
         ],
         "builds": {
-          "android": "ubuntu-latest",
+          "android-arm64": "ubuntu-latest",
+          "android-arm": "ubuntu-latest",
+          "android-x64": "ubuntu-latest",
+          "android-x86": "ubuntu-latest",
           "ios": "macos-latest",
           "iossimulator": "macos-latest",
           "linux-arm64": "ubuntu-latest",
