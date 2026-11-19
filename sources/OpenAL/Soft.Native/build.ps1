@@ -49,7 +49,8 @@ try {
     cmake --build build --parallel
   }
 
-  function cmakeShared { @("-DCMAKE_BUILD_TYPE=Release", "-DALSOFT_UTILS=OFF", "-DALSOFT_EXAMPLES=OFF") }
+  # C++ modules needs clang-scan-deps, and gets auto-enabled when using Ninja, which leads to the Linux Zig builds failing
+  function cmakeShared { @("-DCMAKE_BUILD_TYPE=Release", "-DALSOFT_UTILS=OFF", "-DALSOFT_EXAMPLES=OFF", "-DALSOFT_ENABLE_MODULES=OFF", "-DCMAKE_CXX_SCAN_FOR_MODULES=OFF") }
   function windowsCmakeShared { @("-DALSOFT_BUILD_ROUTER=ON", "-DALSOFT_REQUIRE_WINMM=ON", "-DALSOFT_REQUIRE_DSOUND=ON", "-DALSOFT_REQUIRE_WASAPI=ON") }
   function androidCmakeShared { @("-DANDROID_PLATFORM=21", "-DCMAKE_TOOLCHAIN_FILE=$env:ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake", "-DALSOFT_EMBED_HRTF_DATA=TRUE", "-DALSOFT_REQUIRE_OPENSL=ON") }
   function linuxCmakeShared { @("-DALSOFT_REQUIRE_RTKIT=ON", "-DALSOFT_REQUIRE_ALSA=ON", "-DALSOFT_REQUIRE_OSS=ON", "-DALSOFT_REQUIRE_PORTAUDIO=ON", "-DALSOFT_REQUIRE_PULSEAUDIO=ON", "-DALSOFT_REQUIRE_JACK=ON", "-DALSOFT_REQUIRE_PIPEWIRE=ON") }
@@ -151,28 +152,22 @@ try {
         }
 
         "linux-arm64" {
-          # Dependencies
-          apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
-
           # Build
-          Build-CMake $(cmakeShared) $(linuxCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/aarch64-linux-gnu.cmake"
+          Build-CMake $(cmakeShared) $(linuxCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-aarch64-linux-gnu.2.28.cmake"
           New-Item -ItemType Directory -Force runtimes/linux-arm64/native
           Copy-Item build/libopenal.so runtimes/linux-arm64/native
         }
 
         "linux-arm" {
-          # Dependencies
-          apt-get install -y gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
-
           # Build
-          Build-CMake $(cmakeShared) $(linuxCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/arm-linux-gnueabihf.cmake"
+          Build-CMake $(cmakeShared) $(linuxCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-arm-linux-gnueabihf.2.34.cmake"
           New-Item -ItemType Directory -Force runtimes/linux-arm/native
           Copy-Item build/libopenal.so runtimes/linux-arm/native
         }
 
         "linux-x64" {
           # Build
-          Build-CMake $(cmakeShared) $(linuxCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/x86_64-linux-gnu.cmake"
+          Build-CMake $(cmakeShared) $(linuxCmakeShared) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/zig-toolchain-x86_64-linux-gnu.2.28.cmake"
           New-Item -ItemType Directory -Force runtimes/linux-x64/native
           Copy-Item build/libopenal.so runtimes/linux-x64/native
         }

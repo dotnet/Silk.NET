@@ -7,6 +7,12 @@ args=""
 for arg in "$@"; do
   currentArg="$arg"
 
+  # Move system headers to end
+  # This fixes an issue where Zig headers are not being used
+  case "$currentArg" in
+    -I/usr/include|-I/usr/include/*-linux-gnu*) currentArg="-idirafter ${currentArg#-I}" ;;
+  esac
+
   optionKey="${currentArg%=*}"
   optionValue="${currentArg#*=}"
 
