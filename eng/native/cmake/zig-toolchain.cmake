@@ -41,10 +41,10 @@ set(CMAKE_CXX_COMPILER "${CMAKE_CURRENT_LIST_DIR}/zig-c++${SCRIPT_SUFFIX}" -targ
 set(CMAKE_OBJCOPY "${CMAKE_CURRENT_LIST_DIR}/zig-objcopy${SCRIPT_SUFFIX}" -target ${ZIG_TARGET})
 
 if(ZIG_OS STREQUAL "linux")
-    set(PKG_CONFIG_EXECUTABLE "/usr/bin/${DEBIAN_TARGET}-pkg-config")
-    set(ENV{PKG_CONFIG_LIBDIR} "/usr/lib/${DEBIAN_TARGET}/pkgconfig")
+    set(PKG_CONFIG_EXECUTABLE "/usr/bin/${GNU_TARGET}-pkg-config")
+    set(ENV{PKG_CONFIG_LIBDIR} "/usr/lib/${GNU_TARGET}/pkgconfig")
     set(ENV{PKG_CONFIG_PATH} "/usr/lib/pkgconfig:/usr/share/pkgconfig")
-    set(CMAKE_LIBRARY_ARCHITECTURE "${DEBIAN_TARGET}")
+    set(CMAKE_LIBRARY_ARCHITECTURE "${GNU_TARGET}")
     set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
     set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY BOTH)
     set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE BOTH)
