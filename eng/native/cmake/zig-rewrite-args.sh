@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Original script from https://github.com/ziglang/zig/issues/4911
-# Modified to add SILKDOTNET_ paths in response to some issues with SwiftShader
-
 args=""
 for arg in "$@"; do
   currentArg="$arg"
@@ -16,6 +13,8 @@ for arg in "$@"; do
   optionKey="${currentArg%=*}"
   optionValue="${currentArg#*=}"
 
+  # Original script from https://github.com/ziglang/zig/issues/4911
+  # Modified to add SILKDOTNET_ paths in response to some issues with SwiftShader
   if [[ "$optionKey" == "-march" || "$optionKey" == "-mcpu" || "$optionKey" == "-mtune" ]]; then
     shouldRemove=0
 
