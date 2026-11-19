@@ -144,6 +144,8 @@ try {
           cmake --install build
           New-Item -ItemType Directory -Force runtimes/android-x64/native, android
           Copy-Item build/install/lib/libSDL3.so runtimes/android-x64/native
+
+          # The jar and proguard files are the same for all 4 Android jobs
           Copy-Item (Get-ChildItem build/install/share/java/SDL3/SDL3-*.jar -Exclude "*-sources.jar") android/SDL3.jar
           Copy-Item build/install/share/java/SDL3/proguard.txt android/proguard.txt
         }
