@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Origignal script from https://github.com/ziglang/zig/issues/4911
+# Original script from https://github.com/ziglang/zig/issues/4911
 # Modified to add SILKDOTNET_ paths in response to some issues with SwiftShader
 
 args=""
