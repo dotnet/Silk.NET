@@ -64,7 +64,7 @@ try {
         "win-arm64" {
           # Build
           & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch arm64 -SkipAutomaticLocation
-          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeWindowsArgs)
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeWindowsArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/shared-toolchain.cmake"
           New-Item -ItemType Directory -Force runtimes/win-arm64/native
           Copy-Item build/OpenAL32.dll runtimes/win-arm64/native
           Copy-Item build/soft_oal.dll runtimes/win-arm64/native
@@ -73,7 +73,7 @@ try {
         "win-x64" {
           # Build
           & "$vsPath/Common7/Tools/Launch-VsDevShell.ps1" -HostArch amd64 -Arch amd64 -SkipAutomaticLocation
-          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeWindowsArgs)
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeWindowsArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/shared-toolchain.cmake"
           New-Item -ItemType Directory -Force runtimes/win-x64/native
           Copy-Item build/OpenAL32.dll runtimes/win-x64/native
           Copy-Item build/soft_oal.dll runtimes/win-x64/native
@@ -178,35 +178,35 @@ try {
       switch ($runtime) {
         "ios" {
           # Build
-          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphoneos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/shared-toolchain.cmake" "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphoneos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
           New-Item -ItemType Directory -Force runtimes/ios/native
           Copy-Item build/libopenal.dylib runtimes/ios/native
         }
 
         "iossimulator" {
           # Build
-          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphonesimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/shared-toolchain.cmake" "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphonesimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
           New-Item -ItemType Directory -Force runtimes/iossimulator/native
           Copy-Item build/libopenal.dylib runtimes/iossimulator/native
         }
 
         "osx" {
           # Build
-          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=13.3"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/shared-toolchain.cmake" "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=13.3"
           New-Item -ItemType Directory -Force runtimes/osx/native
           Copy-Item build/libopenal.dylib runtimes/osx/native
         }
 
         "tvos" {
           # Build
-          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/shared-toolchain.cmake" "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
           New-Item -ItemType Directory -Force runtimes/tvos/native
           Copy-Item build/libopenal.dylib runtimes/tvos/native
         }
 
         "tvossimulator" {
           # Build
-          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvsimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/shared-toolchain.cmake" "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvsimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
           New-Item -ItemType Directory -Force runtimes/tvossimulator/native
           Copy-Item build/libopenal.dylib runtimes/tvossimulator/native
         }
