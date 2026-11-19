@@ -5,10 +5,10 @@
 
 args=""
 for arg in "$@"; do
-  outputArg="$arg"
+  currentArg="$arg"
 
-  optionKey="${arg%=*}"
-  optionValue="${arg#*=}"
+  optionKey="${currentArg%=*}"
+  optionValue="${currentArg#*=}"
 
   if [[ "$optionKey" == "-march" || "$optionKey" == "-mcpu" || "$optionKey" == "-mtune" ]]; then
     shouldRemove=0
@@ -30,9 +30,9 @@ for arg in "$@"; do
       continue
     else
       underscoredOptionValue="${optionValue//-/_}"
-      outputArg="$optionKey=$underscoredOptionValue"
+      currentArg="$optionKey=$underscoredOptionValue"
     fi
   fi
 
-  args="$args $outputArg"
+  args="$args $currentArg"
 done
