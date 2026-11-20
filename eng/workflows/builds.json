@@ -8,20 +8,20 @@
           "eng/submodules/sdl"
         ],
         "builds": {
-          "android-arm64": "ubuntu-latest",
-          "android-arm": "ubuntu-latest",
-          "android-x64": "ubuntu-latest",
-          "android-x86": "ubuntu-latest",
-          "ios": "macos-latest",
-          "iossimulator": "macos-latest",
-          "linux-arm64": "ubuntu-latest",
-          "linux-arm": "ubuntu-latest",
-          "linux-x64": "ubuntu-latest",
-          "osx": "macos-latest",
-          "tvos": "macos-latest",
-          "tvossimulator": "macos-latest",
-          "win-arm64": "windows-latest",
-          "win-x64": "windows-latest"
+          "android-arm64": { "runner": "ubuntu-latest" },
+          "android-arm": { "runner": "ubuntu-latest" },
+          "android-x64": { "runner": "ubuntu-latest" },
+          "android-x86": { "runner": "ubuntu-latest" },
+          "ios": { "runner": "macos-latest" },
+          "iossimulator": { "runner": "macos-latest" },
+          "linux-arm64": { "runner": "ubuntu-latest" },
+          "linux-arm": { "runner": "ubuntu-latest" },
+          "linux-x64": { "runner": "ubuntu-latest" },
+          "osx": { "runner": "macos-latest" },
+          "tvos": { "runner": "macos-latest" },
+          "tvossimulator": { "runner": "macos-latest" },
+          "win-arm64": { "runner": "windows-latest" },
+          "win-x64": { "runner": "windows-latest" },
         }
       },
       "OpenAL-Soft": {
@@ -30,20 +30,20 @@
           "eng/submodules/openal-soft"
         ],
         "builds": {
-          "android-arm64": "ubuntu-latest",
-          "android-arm": "ubuntu-latest",
-          "android-x64": "ubuntu-latest",
-          "android-x86": "ubuntu-latest",
-          "ios": "macos-latest",
-          "iossimulator": "macos-latest",
-          "linux-arm64": "ubuntu-latest",
-          "linux-arm": "ubuntu-latest",
-          "linux-x64": "ubuntu-latest",
-          "osx": "macos-latest",
-          "tvos": "macos-latest",
-          "tvossimulator": "macos-latest",
-          "win-arm64": "windows-latest",
-          "win-x64": "windows-latest"
+          "android-arm64": { "runner": "ubuntu-latest" },
+          "android-arm": { "runner": "ubuntu-latest" },
+          "android-x64": { "runner": "ubuntu-latest" },
+          "android-x86": { "runner": "ubuntu-latest" },
+          "ios": { "runner": "macos-latest" },
+          "iossimulator": { "runner": "macos-latest" },
+          "linux-arm64": { "runner": "ubuntu-latest" },
+          "linux-arm": { "runner": "ubuntu-latest" },
+          "linux-x64": { "runner": "ubuntu-latest" },
+          "osx": { "runner": "macos-latest" },
+          "tvos": { "runner": "macos-latest" },
+          "tvossimulator": { "runner": "macos-latest" },
+          "win-arm64": { "runner": "windows-latest" },
+          "win-x64": { "runner": "windows-latest" }
         }
       }
     }

@@ -22,12 +22,15 @@ foreach ($chosenJob in $chosenJobs) {
 
   $job = $buildsJson.native.jobs.PSObject.Properties[$chosenJob];
   foreach ($build in $job.Value.builds.PSObject.Properties) {
+    $dir = $job.Value.path
+    $runtime = $build.Name
+
     $matrix += [ordered]@{
       job = $job.Name
-      os = $build.Value
-      runtime = $build.Name
+      runner = $build.Value.runner
+      runtime = $runtime
 
-      dir = $job.Value.path
+      dir = $dir
     }
   }
 }

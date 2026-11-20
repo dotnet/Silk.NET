@@ -19,151 +19,169 @@ matrix<<EOF
 [
   {
     "job": "OpenAL-Soft",
-    "os": "ubuntu-latest",
+    "runner": "ubuntu-latest",
     "runtime": "android-arm64",
     "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
-    "os": "ubuntu-latest",
+    "runner": "ubuntu-latest",
     "runtime": "android-arm",
     "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
-    "os": "ubuntu-latest",
+    "runner": "ubuntu-latest",
     "runtime": "android-x64",
     "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
-    "os": "ubuntu-latest",
+    "runner": "ubuntu-latest",
     "runtime": "android-x86",
     "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
-    "os": "macos-latest",
+    "runner": "macos-latest",
     "runtime": "ios",
     "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
-    "os": "macos-latest",
+    "runner": "macos-latest",
     "runtime": "iossimulator",
     "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
-    "os": "ubuntu-latest",
+    "runner": "ubuntu-latest",
     "runtime": "linux-arm64",
     "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
-    "os": "ubuntu-latest",
+    "runner": "ubuntu-latest",
     "runtime": "linux-arm",
     "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
-    "os": "ubuntu-latest",
+    "runner": "ubuntu-latest",
     "runtime": "linux-x64",
     "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
-    "os": "macos-latest",
+    "runner": "macos-latest",
     "runtime": "osx",
     "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
-    "os": "macos-latest",
+    "runner": "macos-latest",
     "runtime": "tvos",
     "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
-    "os": "macos-latest",
+    "runner": "macos-latest",
     "runtime": "tvossimulator",
     "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
-    "os": "windows-latest",
+    "runner": "windows-latest",
     "runtime": "win-arm64",
     "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "OpenAL-Soft",
-    "os": "windows-latest",
+    "runner": "windows-latest",
     "runtime": "win-x64",
     "dir": "sources/OpenAL/Soft.Native"
   },
   {
     "job": "SDL",
-    "os": "ubuntu-latest",
-    "runtime": "android",
+    "runner": "ubuntu-latest",
+    "runtime": "android-arm64",
     "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
-    "os": "macos-latest",
+    "runner": "ubuntu-latest",
+    "runtime": "android-arm",
+    "dir": "sources/SDL/Native"
+  },
+  {
+    "job": "SDL",
+    "runner": "ubuntu-latest",
+    "runtime": "android-x64",
+    "dir": "sources/SDL/Native"
+  },
+  {
+    "job": "SDL",
+    "runner": "ubuntu-latest",
+    "runtime": "android-x86",
+    "dir": "sources/SDL/Native"
+  },
+  {
+    "job": "SDL",
+    "runner": "macos-latest",
     "runtime": "ios",
     "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
-    "os": "macos-latest",
+    "runner": "macos-latest",
     "runtime": "iossimulator",
     "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
-    "os": "ubuntu-latest",
+    "runner": "ubuntu-latest",
     "runtime": "linux-arm64",
     "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
-    "os": "ubuntu-latest",
+    "runner": "ubuntu-latest",
     "runtime": "linux-arm",
     "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
-    "os": "ubuntu-latest",
+    "runner": "ubuntu-latest",
     "runtime": "linux-x64",
     "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
-    "os": "macos-latest",
+    "runner": "macos-latest",
     "runtime": "osx",
     "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
-    "os": "macos-latest",
+    "runner": "macos-latest",
     "runtime": "tvos",
     "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
-    "os": "macos-latest",
+    "runner": "macos-latest",
     "runtime": "tvossimulator",
     "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
-    "os": "windows-latest",
+    "runner": "windows-latest",
     "runtime": "win-arm64",
     "dir": "sources/SDL/Native"
   },
   {
     "job": "SDL",
-    "os": "windows-latest",
+    "runner": "windows-latest",
     "runtime": "win-x64",
     "dir": "sources/SDL/Native"
   }
@@ -174,35 +192,35 @@ scrapeMatrix<<EOF
 [
   {
     "job": "Vulkan",
-    "os": "windows-latest",
+    "runner": "windows-latest",
     "caches": [
       "vulkan-clangsharp.stout"
     ]
   },
   {
     "job": "OpenXR",
-    "os": "ubuntu-latest",
+    "runner": "ubuntu-latest",
     "caches": [
       "openxr-linux-clangsharp.stout"
     ]
   },
   {
     "job": "OpenXR",
-    "os": "macos-latest",
+    "runner": "macos-latest",
     "caches": [
       "openxr-mac-clangsharp.stout"
     ]
   },
   {
     "job": "OpenXR",
-    "os": "windows-latest",
+    "runner": "windows-latest",
     "caches": [
       "openxr-windows-clangsharp.stout"
     ]
   },
   {
     "job": "OpenGL",
-    "os": "windows-latest",
+    "runner": "windows-latest",
     "caches": [
       "opengl-clangsharp.stout"
     ]

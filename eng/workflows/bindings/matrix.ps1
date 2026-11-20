@@ -25,7 +25,7 @@ foreach ($chosenJob in $chosenJobs) {
   foreach ($cache in $job.Value.caches.PSObject.Properties) {
     $scrapeMatrix += [ordered]@{
       job = $job.Name
-      os = $cache.Name
+      runner = $cache.Name
 
       caches = $cache.Value
     }
