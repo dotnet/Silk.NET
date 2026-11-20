@@ -36,6 +36,12 @@ foreach ($chosenJob in $chosenJobs) {
     $outputs += "$dir/lib/*$runtime*/**/*"
     $outputs += "$dir/*$runtime*/**/*"
 
+    if ("additionalOutputs" -in $build.Value.PSObject.Properties.Name) {
+      foreach ($additionalOutput in $build.Value.additionalOutputs) {
+        $outputs += "$dir/$additionalOutput"
+      }
+    }
+
     $matrix += [ordered]@{
       job = $job.Name
       runner = $build.Value.runner

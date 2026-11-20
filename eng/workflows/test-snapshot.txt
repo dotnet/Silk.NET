@@ -134,7 +134,7 @@ matrix<<EOF
     "runner": "ubuntu-latest",
     "runtime": "android-x64",
     "dir": "sources/SDL/Native",
-    "outputs": "sources/SDL/Native/runtimes/android-x64/**/*\nsources/SDL/Native/lib/*android-x64*/**/*\nsources/SDL/Native/*android-x64*/**/*"
+    "outputs": "sources/SDL/Native/runtimes/android-x64/**/*\nsources/SDL/Native/lib/*android-x64*/**/*\nsources/SDL/Native/*android-x64*/**/*\nsources/SDL/Native/android"
   },
   {
     "job": "SDL",

@@ -10,7 +10,12 @@
         "builds": {
           "android-arm64": { "runner": "ubuntu-latest" },
           "android-arm": { "runner": "ubuntu-latest" },
-          "android-x64": { "runner": "ubuntu-latest" },
+          "android-x64": {
+            "runner": "ubuntu-latest",
+            "additionalOutputs": [
+              "android"
+            ]
+          },
           "android-x86": { "runner": "ubuntu-latest" },
           "ios": { "runner": "macos-latest" },
           "iossimulator": { "runner": "macos-latest" },
