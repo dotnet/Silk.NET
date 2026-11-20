@@ -85,8 +85,8 @@ jobs:
 
   # Unprivileged - Executes untrusted code
   build:
-    name: Build ${{ matrix.job }} for ${{ matrix.runtime }} on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    name: Build ${{ matrix.job }} for ${{ matrix.runtime }} on ${{ matrix.runner }}
+    runs-on: ${{ matrix.runner }}
 
     needs: [check, dispatch]
     if: join(fromJSON(needs.dispatch.outputs.matrix), ',') != ''
