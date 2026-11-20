@@ -21,169 +21,197 @@ matrix<<EOF
     "job": "OpenAL-Soft",
     "runner": "ubuntu-latest",
     "runtime": "android-arm64",
-    "dir": "sources/OpenAL/Soft.Native"
+    "dir": "sources/OpenAL/Soft.Native",
+    "outputs": "sources/OpenAL/Soft.Native/runtimes/android-arm64/**/*\nsources/OpenAL/Soft.Native/lib/*android-arm64*/**/*\nsources/OpenAL/Soft.Native/*android-arm64*/**/*"
   },
   {
     "job": "OpenAL-Soft",
     "runner": "ubuntu-latest",
     "runtime": "android-arm",
-    "dir": "sources/OpenAL/Soft.Native"
+    "dir": "sources/OpenAL/Soft.Native",
+    "outputs": "sources/OpenAL/Soft.Native/runtimes/android-arm/**/*\nsources/OpenAL/Soft.Native/lib/*android-arm*/**/*\nsources/OpenAL/Soft.Native/*android-arm*/**/*"
   },
   {
     "job": "OpenAL-Soft",
     "runner": "ubuntu-latest",
     "runtime": "android-x64",
-    "dir": "sources/OpenAL/Soft.Native"
+    "dir": "sources/OpenAL/Soft.Native",
+    "outputs": "sources/OpenAL/Soft.Native/runtimes/android-x64/**/*\nsources/OpenAL/Soft.Native/lib/*android-x64*/**/*\nsources/OpenAL/Soft.Native/*android-x64*/**/*"
   },
   {
     "job": "OpenAL-Soft",
     "runner": "ubuntu-latest",
     "runtime": "android-x86",
-    "dir": "sources/OpenAL/Soft.Native"
+    "dir": "sources/OpenAL/Soft.Native",
+    "outputs": "sources/OpenAL/Soft.Native/runtimes/android-x86/**/*\nsources/OpenAL/Soft.Native/lib/*android-x86*/**/*\nsources/OpenAL/Soft.Native/*android-x86*/**/*"
   },
   {
     "job": "OpenAL-Soft",
     "runner": "macos-latest",
     "runtime": "ios",
-    "dir": "sources/OpenAL/Soft.Native"
+    "dir": "sources/OpenAL/Soft.Native",
+    "outputs": "sources/OpenAL/Soft.Native/runtimes/ios*/**/*\nsources/OpenAL/Soft.Native/lib/*ios*/**/*\nsources/OpenAL/Soft.Native/*ios*/**/*"
   },
   {
     "job": "OpenAL-Soft",
     "runner": "macos-latest",
     "runtime": "iossimulator",
-    "dir": "sources/OpenAL/Soft.Native"
+    "dir": "sources/OpenAL/Soft.Native",
+    "outputs": "sources/OpenAL/Soft.Native/runtimes/iossimulator*/**/*\nsources/OpenAL/Soft.Native/lib/*iossimulator*/**/*\nsources/OpenAL/Soft.Native/*iossimulator*/**/*"
   },
   {
     "job": "OpenAL-Soft",
     "runner": "ubuntu-latest",
     "runtime": "linux-arm64",
-    "dir": "sources/OpenAL/Soft.Native"
+    "dir": "sources/OpenAL/Soft.Native",
+    "outputs": "sources/OpenAL/Soft.Native/runtimes/linux-arm64/**/*\nsources/OpenAL/Soft.Native/lib/*linux-arm64*/**/*\nsources/OpenAL/Soft.Native/*linux-arm64*/**/*"
   },
   {
     "job": "OpenAL-Soft",
     "runner": "ubuntu-latest",
     "runtime": "linux-arm",
-    "dir": "sources/OpenAL/Soft.Native"
+    "dir": "sources/OpenAL/Soft.Native",
+    "outputs": "sources/OpenAL/Soft.Native/runtimes/linux-arm/**/*\nsources/OpenAL/Soft.Native/lib/*linux-arm*/**/*\nsources/OpenAL/Soft.Native/*linux-arm*/**/*"
   },
   {
     "job": "OpenAL-Soft",
     "runner": "ubuntu-latest",
     "runtime": "linux-x64",
-    "dir": "sources/OpenAL/Soft.Native"
+    "dir": "sources/OpenAL/Soft.Native",
+    "outputs": "sources/OpenAL/Soft.Native/runtimes/linux-x64/**/*\nsources/OpenAL/Soft.Native/lib/*linux-x64*/**/*\nsources/OpenAL/Soft.Native/*linux-x64*/**/*"
   },
   {
     "job": "OpenAL-Soft",
     "runner": "macos-latest",
     "runtime": "osx",
-    "dir": "sources/OpenAL/Soft.Native"
+    "dir": "sources/OpenAL/Soft.Native",
+    "outputs": "sources/OpenAL/Soft.Native/runtimes/osx*/**/*\nsources/OpenAL/Soft.Native/lib/*osx*/**/*\nsources/OpenAL/Soft.Native/*osx*/**/*"
   },
   {
     "job": "OpenAL-Soft",
     "runner": "macos-latest",
     "runtime": "tvos",
-    "dir": "sources/OpenAL/Soft.Native"
+    "dir": "sources/OpenAL/Soft.Native",
+    "outputs": "sources/OpenAL/Soft.Native/runtimes/tvos*/**/*\nsources/OpenAL/Soft.Native/lib/*tvos*/**/*\nsources/OpenAL/Soft.Native/*tvos*/**/*"
   },
   {
     "job": "OpenAL-Soft",
     "runner": "macos-latest",
     "runtime": "tvossimulator",
-    "dir": "sources/OpenAL/Soft.Native"
+    "dir": "sources/OpenAL/Soft.Native",
+    "outputs": "sources/OpenAL/Soft.Native/runtimes/tvossimulator*/**/*\nsources/OpenAL/Soft.Native/lib/*tvossimulator*/**/*\nsources/OpenAL/Soft.Native/*tvossimulator*/**/*"
   },
   {
     "job": "OpenAL-Soft",
     "runner": "windows-latest",
     "runtime": "win-arm64",
-    "dir": "sources/OpenAL/Soft.Native"
+    "dir": "sources/OpenAL/Soft.Native",
+    "outputs": "sources/OpenAL/Soft.Native/runtimes/win-arm64/**/*\nsources/OpenAL/Soft.Native/lib/*win-arm64*/**/*\nsources/OpenAL/Soft.Native/*win-arm64*/**/*"
   },
   {
     "job": "OpenAL-Soft",
     "runner": "windows-latest",
     "runtime": "win-x64",
-    "dir": "sources/OpenAL/Soft.Native"
+    "dir": "sources/OpenAL/Soft.Native",
+    "outputs": "sources/OpenAL/Soft.Native/runtimes/win-x64/**/*\nsources/OpenAL/Soft.Native/lib/*win-x64*/**/*\nsources/OpenAL/Soft.Native/*win-x64*/**/*"
   },
   {
     "job": "SDL",
     "runner": "ubuntu-latest",
     "runtime": "android-arm64",
-    "dir": "sources/SDL/Native"
+    "dir": "sources/SDL/Native",
+    "outputs": "sources/SDL/Native/runtimes/android-arm64/**/*\nsources/SDL/Native/lib/*android-arm64*/**/*\nsources/SDL/Native/*android-arm64*/**/*"
   },
   {
     "job": "SDL",
     "runner": "ubuntu-latest",
     "runtime": "android-arm",
-    "dir": "sources/SDL/Native"
+    "dir": "sources/SDL/Native",
+    "outputs": "sources/SDL/Native/runtimes/android-arm/**/*\nsources/SDL/Native/lib/*android-arm*/**/*\nsources/SDL/Native/*android-arm*/**/*"
   },
   {
     "job": "SDL",
     "runner": "ubuntu-latest",
     "runtime": "android-x64",
-    "dir": "sources/SDL/Native"
+    "dir": "sources/SDL/Native",
+    "outputs": "sources/SDL/Native/runtimes/android-x64/**/*\nsources/SDL/Native/lib/*android-x64*/**/*\nsources/SDL/Native/*android-x64*/**/*"
   },
   {
     "job": "SDL",
     "runner": "ubuntu-latest",
     "runtime": "android-x86",
-    "dir": "sources/SDL/Native"
+    "dir": "sources/SDL/Native",
+    "outputs": "sources/SDL/Native/runtimes/android-x86/**/*\nsources/SDL/Native/lib/*android-x86*/**/*\nsources/SDL/Native/*android-x86*/**/*"
   },
   {
     "job": "SDL",
     "runner": "macos-latest",
     "runtime": "ios",
-    "dir": "sources/SDL/Native"
+    "dir": "sources/SDL/Native",
+    "outputs": "sources/SDL/Native/runtimes/ios*/**/*\nsources/SDL/Native/lib/*ios*/**/*\nsources/SDL/Native/*ios*/**/*"
   },
   {
     "job": "SDL",
     "runner": "macos-latest",
     "runtime": "iossimulator",
-    "dir": "sources/SDL/Native"
+    "dir": "sources/SDL/Native",
+    "outputs": "sources/SDL/Native/runtimes/iossimulator*/**/*\nsources/SDL/Native/lib/*iossimulator*/**/*\nsources/SDL/Native/*iossimulator*/**/*"
   },
   {
     "job": "SDL",
     "runner": "ubuntu-latest",
     "runtime": "linux-arm64",
-    "dir": "sources/SDL/Native"
+    "dir": "sources/SDL/Native",
+    "outputs": "sources/SDL/Native/runtimes/linux-arm64/**/*\nsources/SDL/Native/lib/*linux-arm64*/**/*\nsources/SDL/Native/*linux-arm64*/**/*"
   },
   {
     "job": "SDL",
     "runner": "ubuntu-latest",
     "runtime": "linux-arm",
-    "dir": "sources/SDL/Native"
+    "dir": "sources/SDL/Native",
+    "outputs": "sources/SDL/Native/runtimes/linux-arm/**/*\nsources/SDL/Native/lib/*linux-arm*/**/*\nsources/SDL/Native/*linux-arm*/**/*"
   },
   {
     "job": "SDL",
     "runner": "ubuntu-latest",
     "runtime": "linux-x64",
-    "dir": "sources/SDL/Native"
+    "dir": "sources/SDL/Native",
+    "outputs": "sources/SDL/Native/runtimes/linux-x64/**/*\nsources/SDL/Native/lib/*linux-x64*/**/*\nsources/SDL/Native/*linux-x64*/**/*"
   },
   {
     "job": "SDL",
     "runner": "macos-latest",
     "runtime": "osx",
-    "dir": "sources/SDL/Native"
+    "dir": "sources/SDL/Native",
+    "outputs": "sources/SDL/Native/runtimes/osx*/**/*\nsources/SDL/Native/lib/*osx*/**/*\nsources/SDL/Native/*osx*/**/*"
   },
   {
     "job": "SDL",
     "runner": "macos-latest",
     "runtime": "tvos",
-    "dir": "sources/SDL/Native"
+    "dir": "sources/SDL/Native",
+    "outputs": "sources/SDL/Native/runtimes/tvos*/**/*\nsources/SDL/Native/lib/*tvos*/**/*\nsources/SDL/Native/*tvos*/**/*"
   },
   {
     "job": "SDL",
     "runner": "macos-latest",
     "runtime": "tvossimulator",
-    "dir": "sources/SDL/Native"
+    "dir": "sources/SDL/Native",
+    "outputs": "sources/SDL/Native/runtimes/tvossimulator*/**/*\nsources/SDL/Native/lib/*tvossimulator*/**/*\nsources/SDL/Native/*tvossimulator*/**/*"
   },
   {
     "job": "SDL",
     "runner": "windows-latest",
     "runtime": "win-arm64",
-    "dir": "sources/SDL/Native"
+    "dir": "sources/SDL/Native",
+    "outputs": "sources/SDL/Native/runtimes/win-arm64/**/*\nsources/SDL/Native/lib/*win-arm64*/**/*\nsources/SDL/Native/*win-arm64*/**/*"
   },
   {
     "job": "SDL",
     "runner": "windows-latest",
     "runtime": "win-x64",
-    "dir": "sources/SDL/Native"
+    "dir": "sources/SDL/Native",
+    "outputs": "sources/SDL/Native/runtimes/win-x64/**/*\nsources/SDL/Native/lib/*win-x64*/**/*\nsources/SDL/Native/*win-x64*/**/*"
   }
 ]
 EOF
