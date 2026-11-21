@@ -26,7 +26,7 @@ try {
   )
 
   # Imports
-  . $repoRoot/eng/workflows/native/build-utility.ps1
+  . $repoRoot/eng/workflows/native/build-utils.ps1
 
   # Inputs
   $runtime = ($args.Count -gt 0 -and $args[0]) ? $args[0] : $env:CHOSEN_RUNTIME
