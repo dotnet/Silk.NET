@@ -118,6 +118,12 @@ public enum SourcePName : uint
     [NativeName("AL_SUPER_STEREO_WIDTH_SOFT")]
     SuperStereoWidthSOFT = 6577,
 
+    [NativeName("AL_PANNING_ENABLED_SOFT")]
+    PanningEnabledSOFT = 6636,
+
+    [NativeName("AL_PAN_SOFT")]
+    PanSOFT = 6637,
+
     [NativeName("AL_DIRECT_FILTER")]
     DirectFilter = 131077,
 
