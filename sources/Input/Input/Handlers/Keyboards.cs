@@ -28,11 +28,6 @@ public sealed class Keyboards : InputContextDeviceList<IKeyboard>, IKeyboardInpu
         remove => _keyCharEventHandler.Remove(value);
     }
 
-    internal void HandleButtonChanged(ButtonChangedEvent<KeyName> @event) { }
-
-    void IButtonInputHandler<KeyName>.HandleButtonChanged(ButtonChangedEvent<KeyName> @event) =>
-        HandleButtonChanged(@event);
-
     internal void HandleKeyChanged(KeyChangedEvent @event) => _keyChangedEventHandler.Invoke(@event);
 
     void IKeyboardInputHandler.HandleKeyChanged(KeyChangedEvent @event) => HandleKeyChanged(@event);
@@ -41,6 +36,12 @@ public sealed class Keyboards : InputContextDeviceList<IKeyboard>, IKeyboardInpu
 
     void IKeyboardInputHandler.HandleKeyChar(KeyCharEvent @event) => HandleKeyChar(@event);
 
+    internal void HandleButtonChanged(ButtonChangedEvent<KeyName> @event) => _buttonChangedEventHandler.Invoke(@event);
+
+    void IButtonInputHandler<KeyName>.HandleButtonChanged(ButtonChangedEvent<KeyName> @event) =>
+        HandleButtonChanged(@event);
+
     private readonly InputContextEventHandler<KeyChangedEvent> _keyChangedEventHandler = new();
     private readonly InputContextEventHandler<KeyCharEvent> _keyCharEventHandler = new();
+    private readonly InputContextEventHandler<ButtonChangedEvent<KeyName>> _buttonChangedEventHandler = new();
 }
