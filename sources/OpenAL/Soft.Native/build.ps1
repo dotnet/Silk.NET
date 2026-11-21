@@ -26,6 +26,9 @@ try {
     "win-x64"
   )
 
+  # Imports
+  . $repoRoot/eng/workflows/native/build-utility.ps1
+
   # Inputs
   Write-Host "Supported runtimes: $supportedRuntimes"
 
@@ -83,24 +86,7 @@ try {
 
     $IsLinux {
       # Enter Debian container
-      if (-not $env:SILKDOTNET_DOCKER) {
-        $docker = "docker"
-        if (Get-Command podman -ErrorAction Ignore) {
-          $docker = "podman"
-        }
-
-        $name = "silk-native-$PID"
-        try {
-          & $docker build -t silkdotnet-builder:latest --platform=linux/amd64 -f $repoRoot/eng/workflows/native/debian/Dockerfile $repoRoot/eng/workflows
-          & $docker run --rm --init --name $name -e SILKDOTNET_DOCKER=1 -e CHOSEN_RUNTIME=$runtime -v "${repoRoot}:/data/repo" silkdotnet-builder:latest bash -c "/data/repo/sources/OpenAL/Soft.Native/build.ps1"
-        } finally {
-          & $docker rm -f $name
-        }
-
-        exit 0
-      }
-
-      . $repoRoot/eng/workflows/dependencies/initialize-env.ps1
+      Enter-SilkDebianContainer $runtime "sources/OpenAL/Soft.Native/build.ps1"
 
       if ($runtime -like "linux*") {
         $arch = switch ($runtime) {
