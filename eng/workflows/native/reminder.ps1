@@ -9,8 +9,7 @@ $previousCommentId = $env:PREVIOUS_COMMENT_ID
 $affectedJobs = @()
 try {
   $affectedJobs = @(-split (ConvertFrom-Json $env:AFFECTED_JOBS) | Where-Object { $_ })
-}
-catch {}
+} catch {}
 
 # PR Comment
 $mustComment = $false
