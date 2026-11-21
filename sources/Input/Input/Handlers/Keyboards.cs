@@ -13,23 +13,34 @@ public sealed class Keyboards : InputContextDeviceList<IKeyboard>, IKeyboardInpu
     /// <summary>
     /// Raised when state pertaining to a pushable key on the keyboard changes (e.g. key up, key down, key repeat).
     /// </summary>
-    public event Action<KeyChangedEvent>? KeyChanged;
+    public event Action<KeyChangedEvent>? KeyChanged
+    {
+        add => _keyChangedEventHandler.Add(value);
+        remove => _keyChangedEventHandler.Remove(value);
+    }
 
     /// <summary>
     /// Raised when the user types a character using the keyboard.
     /// </summary>
-    public event Action<KeyCharEvent>? KeyChar;
+    public event Action<KeyCharEvent>? KeyChar
+    {
+        add => _keyCharEventHandler.Add(value);
+        remove => _keyCharEventHandler.Remove(value);
+    }
 
     internal void HandleButtonChanged(ButtonChangedEvent<KeyName> @event) { }
 
     void IButtonInputHandler<KeyName>.HandleButtonChanged(ButtonChangedEvent<KeyName> @event) =>
         HandleButtonChanged(@event);
 
-    internal void HandleKeyChanged(KeyChangedEvent @event) => KeyChanged?.Invoke(@event);
+    internal void HandleKeyChanged(KeyChangedEvent @event) => _keyChangedEventHandler.Invoke(@event);
 
     void IKeyboardInputHandler.HandleKeyChanged(KeyChangedEvent @event) => HandleKeyChanged(@event);
 
-    internal void HandleKeyChar(KeyCharEvent @event) => KeyChar?.Invoke(@event);
+    internal void HandleKeyChar(KeyCharEvent @event) => _keyCharEventHandler.Invoke(@event);
 
     void IKeyboardInputHandler.HandleKeyChar(KeyCharEvent @event) => HandleKeyChar(@event);
+
+    private readonly InputContextEventHandler<KeyChangedEvent> _keyChangedEventHandler = new();
+    private readonly InputContextEventHandler<KeyCharEvent> _keyCharEventHandler = new();
 }

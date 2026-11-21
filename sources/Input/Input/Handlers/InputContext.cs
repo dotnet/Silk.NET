@@ -1,4 +1,3 @@
-using System.Buffers;
 using System.Diagnostics;
 
 namespace Silk.NET.Input;
@@ -57,20 +56,8 @@ public partial class InputContext
     /// </remarks>
     public event Action<ConnectionEvent> ConnectionChanged
     {
-        add
-        {
-            lock (_connectionChangedLock)
-            {
-                _connectionChangedHandlers.Add(value);
-            }
-        }
-        remove
-        {
-            lock (_connectionChangedLock)
-            {
-                _connectionChangedHandlers.Remove(value);
-            }
-        }
+        add => _connectionEventHandler.Add(value);
+        remove => _connectionEventHandler.Remove(value);
     }
 
     /// <summary>
@@ -82,7 +69,24 @@ public partial class InputContext
     /// </remarks>
     public void Update()
     {
-        ProcessBackendAdditions();
+        while (_newBackends.TryDequeue(out var backend))
+        {
+            if (!_backends.Contains(backend))
+            {
+                // it was already removed
+                continue;
+            }
+
+            var timestamp = Stopwatch.GetTimestamp();
+
+            foreach (var device in backend.Devices)
+            {
+                if (!_devices.Contains(device))
+                {
+                    HandleDeviceConnectionChanged(new ConnectionEvent(device, timestamp, true));
+                }
+            }
+        }
 
         for (var index = 0; index < _backends.Count; index++)
         {
@@ -90,24 +94,6 @@ public partial class InputContext
         }
 
         _pointers?.ProcessClicks();
-        return;
-
-        void ProcessBackendAdditions()
-        {
-            while(_newBackends.TryDequeue(out var backend))
-            {
-                var timestamp = Stopwatch.GetTimestamp();
-
-                foreach (var device in backend.Devices)
-                {
-                    if (!_devices.Contains(device))
-                    {
-                        HandleDeviceConnectionChanged(new ConnectionEvent(device, timestamp, true));
-                    }
-                }
-            }
-        }
-
     }
 
     private void DisconnectBackendDevices(IInputBackend backend)
@@ -146,43 +132,7 @@ public partial class InputContext
             _devices.Remove(evt.Device);
         }
 
-        RaiseConnectionChanged(evt);
-    }
-
-    private void RaiseConnectionChanged(ConnectionEvent evt)
-    {
-        Action<ConnectionEvent>[] handlers;
-        int handlerCount;
-
-        lock (_connectionChangedLock)
-        {
-            handlerCount = _connectionChangedHandlers.Count;
-            if (handlerCount == 0)
-            {
-                return;
-            }
-
-            // so we don't hold the lock while running user code.
-            handlers = ArrayPool<Action<ConnectionEvent>>.Shared.Rent(handlerCount);
-            _connectionChangedHandlers.CopyTo(handlers);
-        }
-
-        // We invoke each subscriber individually so that one misbehaving subscriber can't stop the others from
-        // receiving the event.
-        for (var index = 0; index < handlerCount; ++index)
-        {
-            var handler = handlers[index];
-            try
-            {
-                handler.Invoke(evt);
-            }
-            catch (Exception e)
-            {
-                InputLog.Error($"Exception in connection changed event `{handler}`: {e.Message}\n{e.StackTrace}");
-            }
-        }
-
-        ArrayPool<Action<ConnectionEvent>>.Shared.Return(handlers);
+        _connectionEventHandler.Invoke(evt);
     }
 
     // These are lazy-initialized as they contain their own device lists in addition to the device list stored here and
@@ -198,6 +148,5 @@ public partial class InputContext
 
     private readonly Queue<IInputBackend> _newBackends = [];
     private readonly List<IInputDevice> _devices = [];
-    private readonly List<Action<ConnectionEvent>> _connectionChangedHandlers = [];
-    private readonly Lock _connectionChangedLock = new();
+    private readonly InputContextEventHandler<ConnectionEvent> _connectionEventHandler = new();
 }

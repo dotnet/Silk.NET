@@ -36,39 +36,67 @@ public sealed class Pointers
     /// <summary>
     /// Raised when state pertaining to a pushable button on the pointer device changes (e.g. button up, button down).
     /// </summary>
-    public event Action<ButtonChangedEvent<PointerButton>>? ButtonChanged;
+    public event Action<ButtonChangedEvent<PointerButton>>? ButtonChanged
+    {
+        add => _buttonChangedEventHandler.Add(value);
+        remove => _buttonChangedEventHandler.Remove(value);
+    }
 
     /// <summary>
     /// Raised when one or more <see cref="ButtonChanged"/> events indicate a single click as defined by the
     /// <see cref="ClickConfiguration"/>.
     /// </summary>
-    public event Action<PointerClickEvent>? Click;
+    public event Action<PointerClickEvent>? Click
+    {
+        add => _clickEventHandler.Add(value);
+        remove => _clickEventHandler.Remove(value);
+    }
 
     /// <summary>
     /// Raised when one or more <see cref="ButtonChanged"/> events indicate a double click as defined by the
     /// <see cref="ClickConfiguration"/>.
     /// </summary>
-    public event Action<PointerClickEvent>? DoubleClick;
+    public event Action<PointerClickEvent>? DoubleClick
+    {
+        add => _doubleClickEventHandler.Add(value);
+        remove => _doubleClickEventHandler.Remove(value);
+    }
 
     /// <summary>
     /// Raised when a <see cref="TargetPoint"/>'s state changes (e.g. mouse move).
     /// </summary>
-    public event Action<PointChangedEvent>? PointChanged;
+    public event Action<PointChangedEvent>? PointChanged
+    {
+        add => _pointChangedEventHandler.Add(value);
+        remove => _pointChangedEventHandler.Remove(value);
+    }
 
     /// <summary>
     /// Raised when a user scrolls using a pointer device's mouse wheel.
     /// </summary>
-    public event Action<MouseScrollEvent>? MouseScroll;
+    public event Action<MouseScrollEvent>? MouseScroll
+    {
+        add => _mouseScrollEventHandler.Add(value);
+        remove => _mouseScrollEventHandler.Remove(value);
+    }
 
     /// <summary>
     /// Raised when a "target" at which the user can point using a pointer device changes.
     /// </summary>
-    public event Action<PointerTargetChangedEvent>? TargetChanged;
+    public event Action<PointerTargetChangedEvent>? TargetChanged
+    {
+        add => _targetChangedEventHandler.Add(value);
+        remove => _targetChangedEventHandler.Remove(value);
+    }
 
     /// <summary>
     /// Raised when the user adjusts their grip on the pointer device.
     /// </summary>
-    public event Action<PointerGripChangedEvent>? GripChanged;
+    public event Action<PointerGripChangedEvent>? GripChanged
+    {
+        add => _gripChangedEventHandler.Add(value);
+        remove => _gripChangedEventHandler.Remove(value);
+    }
 
     void IButtonInputHandler<PointerButton>.HandleButtonChanged(
         ButtonChangedEvent<PointerButton> @event
@@ -81,14 +109,7 @@ public sealed class Pointers
             return;
         }
 
-        try
-        {
-            ButtonChanged?.Invoke(@event);
-        }
-        catch (Exception e)
-        {
-            InputLog.Error($"Exception while handling button changed event: {e.Message}\n{e.StackTrace}");
-        }
+        _buttonChangedEventHandler.Invoke(@event);
 
         if (@event.Previous.IsDown || !@event.Button.IsDown)
         {
@@ -111,19 +132,12 @@ public sealed class Pointers
     }
 
     /// <inheritdoc/>
-    public void HandleScroll(MouseScrollEvent @event) => MouseScroll?.Invoke(@event);
+    public void HandleScroll(MouseScrollEvent @event) => _mouseScrollEventHandler.Invoke(@event);
 
     /// <inheritdoc/>
     public void HandleTargetChanged(PointerTargetChangedEvent @event)
     {
-        try
-        {
-            TargetChanged?.Invoke(@event);
-        }
-        catch (Exception e)
-        {
-            InputLog.Error($"Exception while handling target changed event: {e.Message}\n{e.StackTrace}");
-        }
+        _targetChangedEventHandler.Invoke(@event);
 
         if (_clicks is null || @event.IsAdded is not false)
         {
@@ -151,14 +165,7 @@ public sealed class Pointers
     /// <inheritdoc/>
     public void HandlePointChanged(PointChangedEvent @event)
     {
-        try
-        {
-            PointChanged?.Invoke(@event);
-        }
-        catch (Exception e)
-        {
-            InputLog.Error($"Exception while handling point changed event: {e.Message}\n{e.StackTrace}");
-        }
+        _pointChangedEventHandler.Invoke(@event);
 
         if (_clicks is null || @event is not { OldPoint: not null, NewPoint: { } @new })
         {
@@ -186,7 +193,8 @@ public sealed class Pointers
     }
 
     /// <inheritdoc/>
-    public void HandleGripChanged(PointerGripChangedEvent @event) => GripChanged?.Invoke(@event);
+    public void HandleGripChanged(PointerGripChangedEvent @event) =>
+        _gripChangedEventHandler.Invoke(@event);
 
     private record struct ClickData(
         IPointerDevice Device,
@@ -251,7 +259,7 @@ public sealed class Pointers
         long timestamp
     )
     {
-        if ((_clicks is null && DoubleClick is null && Click is null) || point.Target is null)
+        if ((_clicks is null && !_doubleClickEventHandler.Any() && !_clickEventHandler.Any()) || point.Target is null)
         {
             return;
         }
@@ -269,7 +277,7 @@ public sealed class Pointers
             )
             {
                 // Only the mouse buttons differ so treat last click as a single click.
-                InvokeClick(new PointerClickEvent(device, clickTime, click.FirstClickPosition, prevBtn));
+                _clickEventHandler.Invoke(new PointerClickEvent(device, clickTime, click.FirstClickPosition, prevBtn));
             }
         }
         else
@@ -282,7 +290,7 @@ public sealed class Pointers
                 if (!click.HasMovedTooFar(_doubleClickRange, point.Position))
                 {
                     // Second click was in time and in range -> double click.
-                    DoubleClick?.Invoke(new PointerClickEvent(device, timestamp, point, button));
+                    _doubleClickEventHandler?.Invoke(new PointerClickEvent(device, timestamp, point, button));
 
                     // SAFETY: Must not use the click ref from now on! Returning instantly.
                     _clicks.RemoveAt(idx);
@@ -291,7 +299,7 @@ public sealed class Pointers
 
                 // Second click was in time but outside range -> single click.
                 // The second click is another "first click".
-                InvokeClick(new PointerClickEvent(device, timestamp, point, button));
+                _clickEventHandler.Invoke(new PointerClickEvent(device, timestamp, point, button));
             }
             else
             {
@@ -328,7 +336,7 @@ public sealed class Pointers
     {
         if (click is { FirstClickButton: { } fcb, FirstClickTime: { } fct })
         {
-            InvokeClick(new PointerClickEvent(click.Device, fct, click.FirstClickPosition, fcb));
+            _clickEventHandler.Invoke(new PointerClickEvent(click.Device, fct, click.FirstClickPosition, fcb));
         }
 
         click.FirstClickTime = null;
@@ -361,18 +369,6 @@ public sealed class Pointers
         }
     }
 
-    private void InvokeClick(PointerClickEvent evt)
-    {
-        try
-        {
-            Click?.Invoke(evt);
-        }
-        catch (Exception e)
-        {
-            InputLog.Error($"Exception during click event: {e.Message}\n{e.StackTrace}");
-        }
-    }
-
     /// <inheritdoc />
     protected internal override void HandleDeviceConnectionChanged(ConnectionEvent @event)
     {
@@ -392,4 +388,12 @@ public sealed class Pointers
             _clicks.RemoveAt(i--);
         }
     }
+
+    private readonly InputContextEventHandler<PointerClickEvent> _clickEventHandler = new();
+    private readonly InputContextEventHandler<PointerClickEvent> _doubleClickEventHandler = new();
+    private readonly InputContextEventHandler<PointChangedEvent> _pointChangedEventHandler = new();
+    private readonly InputContextEventHandler<MouseScrollEvent> _mouseScrollEventHandler = new();
+    private readonly InputContextEventHandler<PointerTargetChangedEvent> _targetChangedEventHandler = new();
+    private readonly InputContextEventHandler<PointerGripChangedEvent> _gripChangedEventHandler = new();
+    private readonly InputContextEventHandler<ButtonChangedEvent<PointerButton>> _buttonChangedEventHandler = new();
 }

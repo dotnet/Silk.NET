@@ -127,15 +127,17 @@ public partial class InputContext
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     int IList<IInputBackend>.IndexOf(IInputBackend item) => _backends.IndexOf(item);
 
-    void IList<IInputBackend>.Insert(int index, IInputBackend item) => _backends.Insert(index, item);
+    void IList<IInputBackend>.Insert(int index, IInputBackend item)
+    {
+        _backends.Insert(index, item);
+        _newBackends.Enqueue(item);
+    }
 
     void IList<IInputBackend>.RemoveAt(int index)
     {
         var backend = _backends[index];
         _backends.RemoveAt(index);
-        {
-            DisconnectBackendDevices(backend);
-        }
+        DisconnectBackendDevices(backend);
     }
 
     IInputBackend IList<IInputBackend>.this[int index]
@@ -153,9 +155,8 @@ public partial class InputContext
 
             // overwrite
             _backends[index] = value;
-            {
-                DisconnectBackendDevices(existing);
-            }
+            _newBackends.Enqueue(value);
+            DisconnectBackendDevices(existing);
         }
     }
 

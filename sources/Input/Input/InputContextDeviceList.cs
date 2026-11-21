@@ -38,8 +38,7 @@ public abstract class InputContextDeviceList<T> : IReadOnlyList<T>, IInputHandle
     /// <inheritdoc />
     public T this[int index] => List[index];
 
-    void IInputHandler.HandleDeviceConnectionChanged(ConnectionEvent @event) =>
-        HandleDeviceConnectionChanged(@event);
+    void IInputHandler.HandleDeviceConnectionChanged(ConnectionEvent @event) => HandleDeviceConnectionChanged(@event);
 
     /// <inheritdoc cref="IInputHandler.HandleDeviceConnectionChanged"/>
     protected internal virtual void HandleDeviceConnectionChanged(ConnectionEvent @event)
