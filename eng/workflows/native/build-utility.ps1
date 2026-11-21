@@ -3,13 +3,29 @@ $ErrorActionPreference = "Stop"
 $PSNativeCommandUseErrorActionPreference = $true
 Set-StrictMode -Version Latest
 
+function Validate-ChosenRuntime {
+  param([string[]]$supportedRuntimes, [string]$runtime)
+  Write-Host "Supported runtimes: $supportedRuntimes"
+
+  if (-not $runtime) {
+    Write-Host "Please choose a runtime by providing it as the first argument or setting the CHOSEN_RUNTIME env var"
+    exit 1
+  }
+
+  Write-Host "Chosen runtime: $runtime"
+  if (-not ($runtime -in $supportedRuntimes)) {
+    Write-Host "Unknown runtime: $runtime"
+    exit 1
+  }
+}
+
 # Use for all Silk Linux builds
 # This ensures a consistent build environment that can be ran locally
 # This is especially important for Linux because distros differ drastically when it comes to cross compilation
 function Enter-SilkDebianContainer {
   # $runtime - Eg: linux-x64
   # $script - Eg: sources/SDL/Native/build.ps1
-  param($runtime, $script)
+  param([string]$runtime, [string]$script)
 
   # Config
   $repoRoot = Join-Path $PSScriptRoot "../../.."

@@ -29,19 +29,8 @@ try {
   . $repoRoot/eng/workflows/native/build-utility.ps1
 
   # Inputs
-  Write-Host "Supported runtimes: $supportedRuntimes"
-
   $runtime = ($args.Count -gt 0 -and $args[0]) ? $args[0] : $env:CHOSEN_RUNTIME
-  if (-not $runtime) {
-    Write-Host "Please choose a runtime by providing it as the first argument or setting the CHOSEN_RUNTIME env var"
-    exit 1
-  }
-
-  Write-Host "Chosen runtime: $runtime"
-  if (-not ($runtime -in $supportedRuntimes)) {
-    Write-Host "Unknown runtime: $runtime"
-    exit 1
-  }
+  Validate-ChosenRuntime $supportedRuntimes $runtime
 
   # CMake
   function Build-CMake {
