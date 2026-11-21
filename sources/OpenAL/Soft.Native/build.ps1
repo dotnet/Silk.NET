@@ -34,6 +34,7 @@ try {
 
   # CMake
   # C++ modules needs clang-scan-deps, and gets auto-enabled when using Ninja, which leads to the Linux Zig builds failing
+  # C++ modules is disabled for all builds for consistency
   function Get-CMakeSharedArgs { @("-DCMAKE_BUILD_TYPE=Release", "-DALSOFT_UTILS=OFF", "-DALSOFT_EXAMPLES=OFF", "-DALSOFT_ENABLE_MODULES=OFF", "-DCMAKE_CXX_SCAN_FOR_MODULES=OFF") }
   function Get-CMakeWindowsArgs { @("-DALSOFT_BUILD_ROUTER=ON", "-DALSOFT_REQUIRE_WINMM=ON", "-DALSOFT_REQUIRE_DSOUND=ON", "-DALSOFT_REQUIRE_WASAPI=ON") }
   function Get-CMakeAndroidArgs { @("-DANDROID_PLATFORM=21", "-DALSOFT_EMBED_HRTF_DATA=TRUE", "-DALSOFT_REQUIRE_OPENSL=ON") }
