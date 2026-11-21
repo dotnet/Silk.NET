@@ -152,35 +152,35 @@ try {
       switch ($runtime) {
         "ios" {
           # Build
-          Build-CMake (Get-CMakeSharedArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/shared-toolchain.cmake" "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphoneos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
+          Build-CMake (Get-CMakeSharedArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/apple-toolchain-ios.cmake" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
           New-Item -ItemType Directory -Force runtimes/ios/native
           Copy-Item build/libSDL3.a runtimes/ios/native
         }
 
         "iossimulator" {
           # Build
-          Build-CMake (Get-CMakeSharedArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/shared-toolchain.cmake" "-DCMAKE_SYSTEM_NAME=iOS" "-DCMAKE_OSX_SYSROOT=iphonesimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
+          Build-CMake (Get-CMakeSharedArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/apple-toolchain-ios-simulator.cmake" "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
           New-Item -ItemType Directory -Force runtimes/iossimulator/native
           Copy-Item build/libSDL3.a runtimes/iossimulator/native
         }
 
         "osx" {
           # Build
-          Build-CMake (Get-CMakeSharedArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/shared-toolchain.cmake" "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=10.11"
+          Build-CMake (Get-CMakeSharedArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/apple-toolchain-osx.cmake" "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=10.11"
           New-Item -ItemType Directory -Force runtimes/osx/native
           Copy-Item build/libSDL3.dylib runtimes/osx/native
         }
 
         "tvos" {
           # Build
-          Build-CMake (Get-CMakeSharedArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/shared-toolchain.cmake" "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvos" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
+          Build-CMake (Get-CMakeSharedArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/apple-toolchain-tvos.cmake" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
           New-Item -ItemType Directory -Force runtimes/tvos/native
           Copy-Item build/libSDL3.a runtimes/tvos/native
         }
 
         "tvossimulator" {
           # Build
-          Build-CMake (Get-CMakeSharedArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/shared-toolchain.cmake" "-DCMAKE_SYSTEM_NAME=tvOS" "-DCMAKE_OSX_SYSROOT=appletvsimulator" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
+          Build-CMake (Get-CMakeSharedArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/apple-toolchain-tvos-simulator.cmake" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
           New-Item -ItemType Directory -Force runtimes/tvossimulator/native
           Copy-Item build/libSDL3.a runtimes/tvossimulator/native
         }
