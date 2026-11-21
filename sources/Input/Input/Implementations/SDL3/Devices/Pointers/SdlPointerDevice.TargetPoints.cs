@@ -105,19 +105,46 @@ internal abstract partial class SdlPointerDevice
         oldPoint = isNewPoint ? null : point;
 
         // replace the point with a newly calculated point based on the inputs
+        var pos = positionOnTarget ?? (isNewPoint ? Vector3.Zero : point.Position);
+
+        Ray3D<float> effectiveRay;
+        if (ray.HasValue)
+        {
+            effectiveRay = ray.Value;
+        }
+        else if (isNewPoint)
+        {
+            var worldPos = GetWorldPosition(target, pos);
+            effectiveRay = new Ray3D<float>(
+                origin: new Vector3D<float>(worldPos.X, worldPos.Y, worldPos.Z),
+                direction: new Vector3D<float>(0, 0, 1));
+        }
+        else
+        {
+            var oldWorldPos = GetWorldPosition(target, point.Position);
+            var newWorldPos = GetWorldPosition(target, pos);
+            var zOffset = point.Pointer.Origin.Z - oldWorldPos.Z;
+            effectiveRay = new Ray3D<float>(
+                origin: new Vector3D<float>(newWorldPos.X, newWorldPos.Y, newWorldPos.Z + zOffset),
+                direction: point.Pointer.Direction);
+        }
+
         point = ToTargetPoint(
             target: target,
             touchId: *(int*)&touchId,
-            posOnTarget: positionOnTarget ?? point.Position,
+            posOnTarget: pos,
             pressure: pressure ?? point.Pressure,
-
-            // if a ray is provided, use it. otherwise, if it's a new point, use the default ray.
-            // if it's a pre-existing point, use the existing ray.
-            ray: ray ?? (isNewPoint
-                ? new Ray3D<float>(origin: Vector3D<float>.Zero, direction: new Vector3D<float>(0, 0, 1))
-                : point.Pointer));
+            ray: effectiveRay);
 
         return ref point;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static Vector3 GetWorldPosition(IPointerTarget target, in Vector3 posOnTarget)
+    {
+        var min = target.Bounds.Min.ToSystem();
+        min &= Vector3.IsFinite(min); // returns vector whose elements are all-bits-set or zero
+        return posOnTarget + min;
     }
 
     /// <summary>
@@ -133,24 +160,12 @@ internal abstract partial class SdlPointerDevice
     {
         var bounds = target.Bounds;
         var min = bounds.Min.ToSystem();
+        min &= Vector3.IsFinite(min);
         var max = bounds.Max.ToSystem();
+        max &= Vector3.IsFinite(max);
         var diff3 = max - min;
-        var normalizedPosition = (posOnTarget - min) / diff3;
-
-        if (!float.IsFinite(normalizedPosition.X))
-        {
-            normalizedPosition.X = 0;
-        }
-
-        if (!float.IsFinite(normalizedPosition.Y))
-        {
-            normalizedPosition.Y = 0;
-        }
-
-        if (!float.IsFinite(normalizedPosition.Z))
-        {
-            normalizedPosition.Z = 0;
-        }
+        var normalizedPosition = posOnTarget / diff3;
+        normalizedPosition &= Vector3.IsFinite(normalizedPosition);
 
         return new TargetPoint(touchId,
             Flags: TargetPointFlags.PointingAtTarget,
@@ -273,11 +288,13 @@ internal abstract partial class SdlPointerDevice
         xTilt ??= ray.Direction.X;
         yTilt ??= ray.Direction.Y;
         zTwist ??= ray.Direction.Z;
-        distance ??= ray.Origin.Z;
+
+        var worldPos = GetWorldPosition(target, point.Position);
+        var zDistance = distance ?? (ray.Origin.Z - worldPos.Z);
 
         point = point with {
             Pointer = new Ray3D<float>(
-                origin: ray.Origin with { Z = distance.Value },
+                origin: new Vector3D<float>(worldPos.X, worldPos.Y, worldPos.Z + zDistance),
                 direction: new Vector3D<float>(xTilt.Value, yTilt.Value, zTwist.Value))
         };
 

@@ -1,3 +1,4 @@
+using System.Buffers;
 using System.Diagnostics;
 
 namespace Silk.NET.Input;
@@ -36,37 +37,11 @@ public partial class InputContext
     /// <summary>
     /// Gets the <see cref="IInputDevice"/>s enumerated by the <see cref="IInputBackend"/>s attached to this context.
     /// </summary>
-    public IReadOnlyList<IInputDevice> Devices
-    {
-        get
-        {
-            if (_devices is not null)
-            {
-                return _devices;
-            }
-
-            if (_backends.Count == 0)
-            {
-                return _devices = [];
-            }
-
-            var deviceCount = 0;
-
-            for (var index = 0; index < _backends.Count; index++)
-            {
-                deviceCount += _backends[index].Devices.Count;
-            }
-
-            _devices = new List<IInputDevice>(deviceCount);
-
-            for (var index = 0; index < _backends.Count; index++)
-            {
-                _devices.AddRange(_backends[index].Devices);
-            }
-
-            return _devices ??= [];
-        }
-    }
+    /// <remarks>
+    /// This is only updated when <see cref="Update"/> is called. In particular, the devices of a backend added to
+    /// <see cref="Backends"/> are not enumerated until the next call to <see cref="Update"/>.
+    /// </remarks>
+    public IReadOnlyList<IInputDevice> Devices => _devices;
 
     /// <summary>
     /// Gets a list denoting the <see cref="IInputBackend"/> attached to this context.
@@ -76,7 +51,27 @@ public partial class InputContext
     /// <summary>
     /// Raised when a device is added or removed from the list of connected <see cref="Devices"/>.
     /// </summary>
-    public event Action<ConnectionEvent>? ConnectionChanged;
+    /// <remarks>
+    /// Subscribers are invoked individually, such that a subscriber throwing an exception does not prevent the
+    /// remaining subscribers from receiving the event.
+    /// </remarks>
+    public event Action<ConnectionEvent> ConnectionChanged
+    {
+        add
+        {
+            lock (_connectionChangedLock)
+            {
+                _connectionChangedHandlers.Add(value);
+            }
+        }
+        remove
+        {
+            lock (_connectionChangedLock)
+            {
+                _connectionChangedHandlers.Remove(value);
+            }
+        }
+    }
 
     /// <summary>
     /// Polls and updates the state of the <see cref="IInputDevice"/> objects connected to each
@@ -87,37 +82,46 @@ public partial class InputContext
     /// </remarks>
     public void Update()
     {
-        for (var index = 0; index < Backends.Count; index++)
+        ProcessBackendAdditions();
+
+        for (var index = 0; index < _backends.Count; index++)
         {
-            Backends[index].Update(this);
+            _backends[index].Update(this);
         }
 
         _pointers?.ProcessClicks();
+        return;
+
+        void ProcessBackendAdditions()
+        {
+            while(_newBackends.TryDequeue(out var backend))
+            {
+                var timestamp = Stopwatch.GetTimestamp();
+
+                foreach (var device in backend.Devices)
+                {
+                    if (!_devices.Contains(device))
+                    {
+                        HandleDeviceConnectionChanged(new ConnectionEvent(device, timestamp, true));
+                    }
+                }
+            }
+        }
+
     }
 
-    private void HandleBackendRemoval(IInputBackend backend)
+    private void DisconnectBackendDevices(IInputBackend backend)
     {
         var timestamp = Stopwatch.GetTimestamp();
 
         // remove all of their devices
-        foreach (var device in backend.Devices)
+        var devices = backend.Devices;
+        for (var index = 0; index < devices.Count; index++)
         {
+            var device = devices[index];
             HandleDeviceConnectionChanged(new ConnectionEvent(device, timestamp, false));
         }
     }
-
-    private void HandleBackendAddition(IInputBackend backend)
-    {
-        var timestamp = Stopwatch.GetTimestamp();
-        InputLog.Debug($"Adding backend {backend.Name}");
-
-        // add all of their devices to ours
-        foreach (var device in backend.Devices)
-        {
-            HandleDeviceConnectionChanged(new ConnectionEvent(device, timestamp, true));
-        }
-    }
-
 
     private void HandleDeviceConnectionChanged(ConnectionEvent evt)
     {
@@ -130,27 +134,55 @@ public partial class InputContext
         _keyboards?.HandleDeviceConnectionChanged(evt);
 
 
-        if (_devices is not null)
+        if (evt.IsConnected)
         {
-
-            if (evt.IsConnected)
+            if (!_devices.Contains(evt.Device))
             {
                 _devices.Add(evt.Device);
             }
-            else
+        }
+        else
+        {
+            _devices.Remove(evt.Device);
+        }
+
+        RaiseConnectionChanged(evt);
+    }
+
+    private void RaiseConnectionChanged(ConnectionEvent evt)
+    {
+        Action<ConnectionEvent>[] handlers;
+        int handlerCount;
+
+        lock (_connectionChangedLock)
+        {
+            handlerCount = _connectionChangedHandlers.Count;
+            if (handlerCount == 0)
             {
-                _devices.Remove(evt.Device);
+                return;
+            }
+
+            // so we don't hold the lock while running user code.
+            handlers = ArrayPool<Action<ConnectionEvent>>.Shared.Rent(handlerCount);
+            _connectionChangedHandlers.CopyTo(handlers);
+        }
+
+        // We invoke each subscriber individually so that one misbehaving subscriber can't stop the others from
+        // receiving the event.
+        for (var index = 0; index < handlerCount; ++index)
+        {
+            var handler = handlers[index];
+            try
+            {
+                handler.Invoke(evt);
+            }
+            catch (Exception e)
+            {
+                InputLog.Error($"Exception in connection changed event `{handler}`: {e.Message}\n{e.StackTrace}");
             }
         }
 
-        try
-        {
-            ConnectionChanged?.Invoke(evt);
-        }
-        catch (Exception e)
-        {
-            InputLog.Error(e.ToString());
-        }
+        ArrayPool<Action<ConnectionEvent>>.Shared.Return(handlers);
     }
 
     // These are lazy-initialized as they contain their own device lists in addition to the device list stored here and
@@ -163,5 +195,9 @@ public partial class InputContext
     private Gamepads? _gamepads;
     private Joysticks? _joysticks;
     private readonly List<IInputBackend> _backends = [];
-    private List<IInputDevice>? _devices;
+
+    private readonly Queue<IInputBackend> _newBackends = [];
+    private readonly List<IInputDevice> _devices = [];
+    private readonly List<Action<ConnectionEvent>> _connectionChangedHandlers = [];
+    private readonly Lock _connectionChangedLock = new();
 }

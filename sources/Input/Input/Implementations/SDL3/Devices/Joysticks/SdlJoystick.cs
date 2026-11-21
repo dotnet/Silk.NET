@@ -589,7 +589,7 @@ internal sealed unsafe class SdlJoystick : SdlDevice, IJoystick, ISdlDevice<SdlJ
                 break;
 
             case GamepadBindingType.Button:
-                UpdateFromGamepadButton(output->Button, down, timestamp);
+                ButtonConversions.UpdateFromGamepadButton(this, output->Button, down, timestamp, _rawButtonState, ButtonEvents);
                 break;
         }
     }
@@ -628,8 +628,8 @@ internal sealed unsafe class SdlJoystick : SdlDevice, IJoystick, ISdlDevice<SdlJ
             }
             case GamepadBindingType.Button:
             {
-                UpdateFromGamepadButton(output->Button, IsInPressedRange(joystickInput, input->AxisMin, input->AxisMax),
-                    timestamp);
+                ButtonConversions.UpdateFromGamepadButton(this, output->Button, IsInPressedRange(joystickInput, input->AxisMin, input->AxisMax),
+                    timestamp, _rawButtonState, ButtonEvents);
 
                 break;
             }
@@ -705,7 +705,7 @@ internal sealed unsafe class SdlJoystick : SdlDevice, IJoystick, ISdlDevice<SdlJ
                     break;
                 case GamepadBindingType.Button:
                     var button = binding.Output.Button;
-                    UpdateFromGamepadButton(button, bindingState != SdlJoystick.HatState.Centered, timestamp);
+                    ButtonConversions.UpdateFromGamepadButton(this, button, bindingState != SdlJoystick.HatState.Centered, timestamp, _rawButtonState, ButtonEvents);
                     break;
             }
         }
@@ -713,56 +713,6 @@ internal sealed unsafe class SdlJoystick : SdlDevice, IJoystick, ISdlDevice<SdlJ
 
     #endregion
 
-    /// <summary>
-    /// Final registration of a button press into the gamepad's internal state.
-    /// </summary>
-    /// <param name="button">The button that was pressed.</param>
-    /// <param name="value">Whether the button was pressed or released.</param>
-    /// <param name="timestamp">The timestamp from <see cref="InputContext"/>.</param>
-    private void UpdateFromGamepadButton(GamepadButton button, bool value, long timestamp)
-    {
-        var asJoystickButton = AsJoystickButton(button);
-        float pressure1 = value ? 1 : 0;
-        var idx1 = asJoystickButton.Index();
-        if (idx1 < 0)
-        {
-            throw new Exception("Received an invalid SDL button??");
-        }
-
-        ref var buttonState = ref _rawButtonState[idx1];
-
-        var previous = buttonState;
-
-        buttonState = new Button<JoystickButton>(asJoystickButton, value, pressure1);
-
-        // ReSharper disable once CompareOfFloatsByEqualityOperator
-        if (previous.IsDown != buttonState.IsDown || previous.Pressure != buttonState.Pressure)
-        {
-            ButtonEvents.Enqueue(new ButtonChangedEvent<JoystickButton>(this, timestamp, buttonState, previous));
-        }
-
-        return;
-
-        static JoystickButton AsJoystickButton(GamepadButton buttonIndex) =>
-            buttonIndex switch {
-                GamepadButton.South => JoystickButton.ButtonDown,
-                GamepadButton.East => JoystickButton.ButtonRight,
-                GamepadButton.West => JoystickButton.ButtonLeft,
-                GamepadButton.North => JoystickButton.ButtonUp,
-                GamepadButton.Back => JoystickButton.Back,
-                GamepadButton.Guide => JoystickButton.Home,
-                GamepadButton.Start => JoystickButton.Start,
-                GamepadButton.LeftStick => JoystickButton.LeftStick,
-                GamepadButton.RightStick => JoystickButton.RightStick,
-                GamepadButton.LeftShoulder => JoystickButton.LeftBumper,
-                GamepadButton.RightShoulder => JoystickButton.RightBumper,
-                GamepadButton.DpadUp => JoystickButton.DPadUp,
-                GamepadButton.DpadDown => JoystickButton.DPadDown,
-                GamepadButton.DpadLeft => JoystickButton.DPadLeft,
-                GamepadButton.DpadRight => JoystickButton.DPadRight,
-                _ => (JoystickButton)buttonIndex
-            };
-    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static int InputIndexToMappingIndex(int index, InputType type)

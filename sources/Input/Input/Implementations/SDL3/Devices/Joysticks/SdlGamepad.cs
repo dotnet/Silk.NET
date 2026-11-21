@@ -163,7 +163,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         for (var i = 0; i <= (int)GamepadButton.DpadRight; i++)
         {
             var button = (GamepadButton)i;
-            UpdateButton(button, isDown: NativeBackend.GetGamepadButtonRaw(_gamepadHandle, button) != 0, timestamp);
+            ButtonConversions.UpdateFromGamepadButton(this, button, isDown: NativeBackend.GetGamepadButtonRaw(_gamepadHandle, button) != 0, timestamp, _buttons, ButtonEvents);
         }
 
         for (var i = 0; i < (int)GamepadAxis.Count; i++)
@@ -178,7 +178,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     /// Updates the gamepad's button state from an SDL <see cref="GamepadButton"/> event.
     /// </summary>
     public void AddButtonEvent(GamepadButton button, bool isDown, long timestamp) =>
-        UpdateButton(button, isDown, timestamp);
+        ButtonConversions.UpdateFromGamepadButton(this, button, isDown, timestamp, _buttons, ButtonEvents);
 
     /// <summary>
     /// Updates the gamepad's axis state from an SDL <see cref="GamepadAxis"/> event.
@@ -298,54 +298,6 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
         // todo - define axes and implement
         var sensorType = (SensorType)evtGsensor.Sensor;
-    }
-
-    private void UpdateButton(GamepadButton button, bool isDown, long timestamp)
-    {
-        var joystickButton = AsJoystickButton(button);
-        if (joystickButton == JoystickButton.Unknown)
-        {
-            // Outputs outside the standard gamepad button set are not part of the IGamepad API.
-            return;
-        }
-
-        var idx = joystickButton.Index();
-        if ((uint)idx >= (uint)_buttons.Length)
-        {
-            return;
-        }
-
-        ref var state = ref _buttons[idx];
-        var previous = state;
-        state = new Button<JoystickButton>(joystickButton, isDown, isDown ? 1 : 0);
-
-        // ReSharper disable once CompareOfFloatsByEqualityOperator
-        if (previous.IsDown != state.IsDown || previous.Pressure != state.Pressure)
-        {
-            ButtonEvents.Enqueue(new ButtonChangedEvent<JoystickButton>(this, timestamp, state, previous));
-        }
-
-        return;
-
-        static JoystickButton AsJoystickButton(GamepadButton buttonIndex) =>
-            buttonIndex switch {
-                GamepadButton.South => JoystickButton.ButtonDown,
-                GamepadButton.East => JoystickButton.ButtonRight,
-                GamepadButton.West => JoystickButton.ButtonLeft,
-                GamepadButton.North => JoystickButton.ButtonUp,
-                GamepadButton.Back => JoystickButton.Back,
-                GamepadButton.Guide => JoystickButton.Home,
-                GamepadButton.Start => JoystickButton.Start,
-                GamepadButton.LeftStick => JoystickButton.LeftStick,
-                GamepadButton.RightStick => JoystickButton.RightStick,
-                GamepadButton.LeftShoulder => JoystickButton.LeftBumper,
-                GamepadButton.RightShoulder => JoystickButton.RightBumper,
-                GamepadButton.DpadUp => JoystickButton.DPadUp,
-                GamepadButton.DpadDown => JoystickButton.DPadDown,
-                GamepadButton.DpadLeft => JoystickButton.DPadLeft,
-                GamepadButton.DpadRight => JoystickButton.DPadRight,
-                _ => JoystickButton.Unknown
-            };
     }
 
     private void UpdateAxis(GamepadAxis axis, short value, long timestamp)
