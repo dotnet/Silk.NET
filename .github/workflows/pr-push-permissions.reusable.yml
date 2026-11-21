@@ -73,8 +73,7 @@ jobs:
             git -c credential.helper= -c "credential.helper=!gh auth git-credential" push --dry-run "https://github.com/$env:HEAD_REPO.git" "FETCH_HEAD:refs/heads/$env:HEAD_BRANCH"
             $hasPushPermission = $true
             Write-Host "Write permissions confirmed"
-          }
-          catch {
+          } catch {
             Write-Host "Write permissions not available"
             Write-Host "This does not fail the workflow so the relevant artifacts are still generated"
           }
