@@ -33,13 +33,6 @@ try {
   Validate-ChosenRuntime $supportedRuntimes $runtime
 
   # CMake
-  function Build-CMake {
-    Remove-Item -Recurse -Force build -ErrorAction Ignore
-    New-Item -ItemType Directory build
-    cmake $submodulePath -B build -G Ninja ($args | ForEach-Object { $_ })
-    cmake --build build --parallel
-  }
-
   # C++ modules needs clang-scan-deps, and gets auto-enabled when using Ninja, which leads to the Linux Zig builds failing
   function Get-CMakeSharedArgs { @("-DCMAKE_BUILD_TYPE=Release", "-DALSOFT_UTILS=OFF", "-DALSOFT_EXAMPLES=OFF", "-DALSOFT_ENABLE_MODULES=OFF", "-DCMAKE_CXX_SCAN_FOR_MODULES=OFF") }
   function Get-CMakeWindowsArgs { @("-DALSOFT_BUILD_ROUTER=ON", "-DALSOFT_REQUIRE_WINMM=ON", "-DALSOFT_REQUIRE_DSOUND=ON", "-DALSOFT_REQUIRE_WASAPI=ON") }

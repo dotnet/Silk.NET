@@ -33,13 +33,6 @@ try {
   Validate-ChosenRuntime $supportedRuntimes $runtime
 
   # CMake
-  function Build-CMake {
-    Remove-Item -Recurse -Force build -ErrorAction Ignore
-    New-Item -ItemType Directory build
-    cmake $submodulePath -B build -G Ninja ($args | ForEach-Object { $_ })
-    cmake --build build --parallel
-  }
-
   function Get-CMakeSharedArgs { @("-DCMAKE_BUILD_TYPE=Release", "-DSDL_TEST_LIBRARY=OFF") }
   function Get-CMakeAndroidArgs { @("-DANDROID_PLATFORM=21", "-DSDL_ANDROID_JAR=ON", "-DCMAKE_INSTALL_PREFIX=$PWD/build/install") }
 

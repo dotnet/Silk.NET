@@ -49,3 +49,10 @@ function Enter-SilkDebianContainer {
 
   . $repoRoot/eng/workflows/dependencies/initialize-env.ps1
 }
+
+function Build-CMake {
+  Remove-Item -Recurse -Force build -ErrorAction Ignore
+  New-Item -ItemType Directory build
+  cmake $submodulePath -B build -G Ninja ($args | ForEach-Object { $_ })
+  cmake --build build --parallel
+}
