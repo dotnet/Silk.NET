@@ -153,7 +153,7 @@ try {
 
         "iossimulator" {
           # Build
-          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/apple-toolchain-ios-simulator.cmake" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/apple-toolchain-ios-simulator.cmake" "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
           New-Item -ItemType Directory -Force runtimes/iossimulator/native
           Copy-Item build/libopenal.dylib runtimes/iossimulator/native
         }
@@ -174,7 +174,7 @@ try {
 
         "tvossimulator" {
           # Build
-          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/apple-toolchain-tvos-simulator.cmake" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
+          Build-CMake (Get-CMakeSharedArgs) (Get-CMakeAppleArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/apple-toolchain-tvos-simulator.cmake" "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3"
           New-Item -ItemType Directory -Force runtimes/tvossimulator/native
           Copy-Item build/libopenal.dylib runtimes/tvossimulator/native
         }

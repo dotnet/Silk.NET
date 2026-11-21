@@ -180,7 +180,7 @@ try {
 
         "tvossimulator" {
           # Build
-          Build-CMake (Get-CMakeSharedArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/apple-toolchain-tvos-simulator.cmake" "-DCMAKE_OSX_ARCHITECTURES=arm64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
+          Build-CMake (Get-CMakeSharedArgs) "-DCMAKE_TOOLCHAIN_FILE=$repoRoot/eng/native/cmake/apple-toolchain-tvos-simulator.cmake" "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" "-DCMAKE_OSX_DEPLOYMENT_TARGET=9.0" "-DSDL_STATIC=ON"
           New-Item -ItemType Directory -Force runtimes/tvossimulator/native
           Copy-Item build/libSDL3.a runtimes/tvossimulator/native
         }
