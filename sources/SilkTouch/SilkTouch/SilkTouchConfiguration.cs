@@ -16,7 +16,7 @@ public record SilkTouchConfiguration
     /// <summary>
     /// The source output csproj path, the directory of which used when writing the modded bindings.
     /// </summary>
-    public string? SourceProject { get; init; }
+    public required string SourceProject { get; init; }
 
     /// <summary>
     /// The test output csproj path, the directory of which used when writing the modded tests.

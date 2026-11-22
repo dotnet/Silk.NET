@@ -84,11 +84,6 @@ internal class MSBuildModContext(
         var solutionPath = Path.GetFullPath(jobConfig.Solution, WorkingDirectory);
         var solution = await parent.OpenSolutionAsync(solutionPath);
 
-        if (jobConfig.SourceProject is null)
-        {
-            throw new InvalidOperationException("No source project provided in configuration.");
-        }
-
         // First locate the source project
         var projectFile = Path.GetFullPath(jobConfig.SourceProject, WorkingDirectory);
         {
