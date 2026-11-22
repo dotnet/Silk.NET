@@ -33,4 +33,9 @@ public record SilkTouchConfiguration
     /// The default namespace to be used by generated documents.
     /// </summary>
     public string? DefaultNamespace { get; init; }
+
+    /// <summary>
+    /// The default namespace to be used by generated documents.
+    /// </summary>
+    public string? DefaultTestNamespace { get; init; }
 }
