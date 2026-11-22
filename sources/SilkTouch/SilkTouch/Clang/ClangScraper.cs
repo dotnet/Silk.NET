@@ -581,6 +581,11 @@ public sealed class ClangScraper(
         }
         ctx.SourceProject = sourceProject;
 
+        foreach (var document in testDocuments)
+        {
+            documentFactories.Test.ReportDocument(document.Root);
+        }
+
         var testProject = ctx.TestProject;
         if (testProject != null)
         {
