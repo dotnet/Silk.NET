@@ -86,8 +86,8 @@ jobs:
   
   # Unprivileged - Executes untrusted code
   scrape:
-    name: Scrape ${{ matrix.job }} on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    name: Scrape ${{ matrix.job }} on ${{ matrix.runner }}
+    runs-on: ${{ matrix.runner }}
 
     needs: [check, dispatch]
     if: join(fromJSON(needs.dispatch.outputs.scrapeMatrix), ',') != ''
@@ -141,7 +141,7 @@ jobs:
       - name: Upload cache as artifact
         uses: actions/upload-artifact@v7
         with:
-          name: silktouch-cache-${{ matrix.job }}-${{ matrix.os }}
+          name: silktouch-cache-${{ matrix.job }}-${{ matrix.runner }}
           path: .silktouch
           include-hidden-files: true
   
