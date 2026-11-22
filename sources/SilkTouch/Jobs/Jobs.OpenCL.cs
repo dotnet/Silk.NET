@@ -14,6 +14,7 @@ internal static partial class Jobs
             {
                 Solution = "Silk.NET.slnx",
                 SourceProject = "sources/OpenCL/OpenCL/Silk.NET.OpenCL.csproj",
+                TestProject = "tests/OpenCL/OpenCL/Silk.NET.OpenCL.UnitTests.csproj",
                 DefaultLicenseHeader = "eng/silktouch/opencl/header.txt",
                 DefaultNamespace = "Silk.NET.OpenCL",
             },
