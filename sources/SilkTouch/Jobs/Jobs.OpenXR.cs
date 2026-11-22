@@ -17,6 +17,7 @@ internal static partial class Jobs
                 TestProject = "tests/OpenXR/OpenXR/Silk.NET.OpenXR.UnitTests.csproj",
                 DefaultLicenseHeader = "eng/silktouch/openxr/header.txt",
                 DefaultNamespace = "Silk.NET.OpenXR",
+                DefaultTestNamespace = "Silk.NET.OpenXR.UnitTests",
             },
             context =>
                 context

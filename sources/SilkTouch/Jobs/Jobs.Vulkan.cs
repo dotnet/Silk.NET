@@ -17,6 +17,7 @@ internal static partial class Jobs
                 TestProject = "tests/Vulkan/Vulkan/Silk.NET.Vulkan.UnitTests.csproj",
                 DefaultLicenseHeader = "eng/silktouch/vulkan/header.txt",
                 DefaultNamespace = "Silk.NET.Vulkan",
+                DefaultTestNamespace = "Silk.NET.Vulkan.UnitTests",
             },
             context =>
                 context

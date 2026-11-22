@@ -17,6 +17,7 @@ internal static partial class Jobs
                 TestProject = "tests/OpenCL/OpenCL/Silk.NET.OpenCL.UnitTests.csproj",
                 DefaultLicenseHeader = "eng/silktouch/opencl/header.txt",
                 DefaultNamespace = "Silk.NET.OpenCL",
+                DefaultTestNamespace = "Silk.NET.OpenCL.UnitTests",
             },
             context =>
                 context
