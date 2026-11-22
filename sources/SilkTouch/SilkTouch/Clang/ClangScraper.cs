@@ -563,6 +563,7 @@ public sealed class ClangScraper(
         var sourceDocuments = result.SourceDocuments.OrderBy(x => x.FilePath).ToArray();
         var testDocuments = result.TestDocuments.OrderBy(x => x.FilePath).ToArray();
 
+        // Source
         foreach (var document in sourceDocuments)
         {
             documentFactories.Source.ReportDocument(document.Root);
@@ -581,6 +582,7 @@ public sealed class ClangScraper(
         }
         ctx.SourceProject = sourceProject;
 
+        // Test
         foreach (var document in testDocuments)
         {
             documentFactories.Test.ReportDocument(document.Root);
