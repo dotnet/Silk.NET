@@ -27,7 +27,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <see cref="DllImport"/>-based partial class implementation of the static interface. However, in some cases this
 /// could be any other implementation such as the <see cref="ThisThread"/> implementation.
 /// </remarks>
-public class AddVTables(AddVTables.Configuration config, DocumentFactory sharedDocumentFactory)
+public class AddVTables(AddVTables.Configuration config, IDocumentFactories documentFactories)
     : IMod
 {
     /// <summary>
@@ -1376,7 +1376,7 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory sharedD
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var documentFactory = sharedDocumentFactory.Clone();
+        var documentFactory = documentFactories.Source.Clone();
         documentFactory.AddUsing("Silk.NET.Core.Loader");
         documentFactory.AddUsing("System.Reflection");
 
