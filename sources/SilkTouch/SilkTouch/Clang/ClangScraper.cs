@@ -26,7 +26,7 @@ namespace Silk.NET.SilkTouch.Clang;
 /// <param name="rspHandler">
 /// The handler of response file (.rsp) files i.e. configuration for the ClangSharp generator.
 /// </param>
-/// <param name="documentFactory">The document factory to use.</param>
+/// <param name="documentFactories">The document factories to use.</param>
 /// <param name="config">The configuration to use.</param>
 /// <param name="logger">The logger to use.</param>
 /// <param name="inputResolver">The input resolver to use.</param>
@@ -34,7 +34,7 @@ namespace Silk.NET.SilkTouch.Clang;
 /// <param name="cacheProvider">The cache provider into which ClangSharp outputs are cached.</param>
 public sealed class ClangScraper(
     ResponseFileHandler rspHandler,
-    DocumentFactory documentFactory,
+    IDocumentFactories documentFactories,
     ClangScraper.Configuration config,
     ILogger<ClangScraper> logger,
     IInputResolver inputResolver,
@@ -565,7 +565,7 @@ public sealed class ClangScraper(
 
         foreach (var document in sourceDocuments)
         {
-            documentFactory.ReportDocument(document.Root);
+            documentFactories.Source.ReportDocument(document.Root);
         }
 
         var sourceProject = ctx.SourceProject;
@@ -574,7 +574,7 @@ public sealed class ClangScraper(
             sourceProject = sourceProject
                 .AddDocument(
                     Path.GetFileName(filePath),
-                    documentFactory.PopulateDocument(root),
+                    documentFactories.Source.PopulateDocument(root),
                     filePath: sourceProject.FullPath(filePath)
                 )
                 .Project;

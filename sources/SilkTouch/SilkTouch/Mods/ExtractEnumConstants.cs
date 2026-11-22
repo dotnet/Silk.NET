@@ -20,7 +20,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// extern MyEnum GetMyEnum();
 /// </code>
 /// </summary>
-public class ExtractEnumConstants(DocumentFactory documentFactory) : IMod
+public class ExtractEnumConstants(IDocumentFactories documentFactories) : IMod
 {
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
@@ -76,7 +76,7 @@ public class ExtractEnumConstants(DocumentFactory documentFactory) : IMod
             project = project
                 .AddDocument(
                     $"{identifier}.gen.cs",
-                    documentFactory.PopulateDocument(
+                    documentFactories.Source.PopulateDocument(
                         CompilationUnit()
                             .WithMembers(
                                 ns is { Length: > 0 }
