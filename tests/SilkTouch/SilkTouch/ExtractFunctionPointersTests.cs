@@ -46,11 +46,11 @@ public class ExtractFunctionPointersTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
         var extractFunctionPointers = new ExtractFunctionPointers(
             NullLogger<ExtractFunctionPointers>.Instance,
-            documentFactory
+            documentFactories
         );
 
         await extractFunctionPointers.ExecuteAsync(context);
