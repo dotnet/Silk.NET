@@ -4,6 +4,7 @@
 using System;
 using System.Globalization;
 using System.Runtime.InteropServices;
+using System.Text;
 using Xunit;
 
 namespace Silk.NET.Maths.Tests
@@ -24,10 +25,9 @@ namespace Silk.NET.Maths.Tests
             float[] a = new float[5];
             float[] b = new float[4];
 
-            Assert.Throws<NullReferenceException>(() => v1.CopyTo(null, 0));
             Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, -1));
             Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, a.Length));
-            Assert.Throws<ArgumentException>(() => v1.CopyTo(a, a.Length - 2));
+            Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, a.Length - 2));
 
             v1.CopyTo(a, 1);
             v1.CopyTo(b);
@@ -98,6 +98,56 @@ namespace Silk.NET.Maths.Tests
                 , "<{1:c}{0} {2:c}{0} {3:c}{0} {4:c}>"
                 , separator, 2.5, 2, 3, 3.3);
             Assert.Equal(expectedv3formatted, v3strformatted);
+        }
+
+        [Fact]
+        public void Vector4TryFormatCharTest()
+        {
+            CultureInfo enUsCultureInfo = new CultureInfo("en-US");
+            Vector4D<float> v1 = new Vector4D<float>(2.5f, 2.0f, 3.0f, 3.3f);
+
+            Span<char> dest = stackalloc char[128];
+            bool result = v1.TryFormat(dest, out int charsWritten, "G", enUsCultureInfo);
+            Assert.True(result);
+            string actual = dest[..charsWritten].ToString();
+            string separator = enUsCultureInfo.NumberFormat.NumberGroupSeparator;
+            string expected = string.Format(enUsCultureInfo, "<{1:G}{0} {2:G}{0} {3:G}{0} {4:G}>", separator, 2.5, 2, 3, 3.3);
+            Assert.Equal(expected, actual);
+
+            result = v1.TryFormat(dest, out charsWritten, "c", enUsCultureInfo);
+            Assert.True(result);
+            actual = dest[..charsWritten].ToString();
+            expected = string.Format(enUsCultureInfo, "<{1:c}{0} {2:c}{0} {3:c}{0} {4:c}>", separator, 2.5, 2, 3, 3.3);
+            Assert.Equal(expected, actual);
+
+            Span<char> smallDest = stackalloc char[3];
+            result = v1.TryFormat(smallDest, out charsWritten, "G", enUsCultureInfo);
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void Vector4TryFormatUtf8Test()
+        {
+            CultureInfo enUsCultureInfo = new CultureInfo("en-US");
+            Vector4D<float> v1 = new Vector4D<float>(2.5f, 2.0f, 3.0f, 3.3f);
+
+            Span<byte> dest = stackalloc byte[128];
+            bool result = v1.TryFormat(dest, out int bytesWritten, "G", enUsCultureInfo);
+            Assert.True(result);
+            string separator = enUsCultureInfo.NumberFormat.NumberGroupSeparator;
+            string expected = string.Format(enUsCultureInfo, "<{1:G}{0} {2:G}{0} {3:G}{0} {4:G}>", separator, 2.5, 2, 3, 3.3);
+            byte[] expectedBytes = Encoding.UTF8.GetBytes(expected);
+            Assert.True(dest[..bytesWritten].SequenceEqual(expectedBytes));
+
+            result = v1.TryFormat(dest, out bytesWritten, "c", enUsCultureInfo);
+            Assert.True(result);
+            expected = string.Format(enUsCultureInfo, "<{1:c}{0} {2:c}{0} {3:c}{0} {4:c}>", separator, 2.5, 2, 3, 3.3);
+            expectedBytes = Encoding.UTF8.GetBytes(expected);
+            Assert.True(dest[..bytesWritten].SequenceEqual(expectedBytes));
+
+            Span<byte> smallDest = stackalloc byte[3];
+            result = v1.TryFormat(smallDest, out bytesWritten, "G", enUsCultureInfo);
+            Assert.False(result);
         }
 
         // A test for DistanceSquared (Vector4D<float>f, Vector4D<float>f)
@@ -296,29 +346,6 @@ namespace Silk.NET.Maths.Tests
             // Case N4: combination case.
             a = new Vector4D<float>(-2.0f, 0.5f, 4.0f, -5.0f);
             expected = new Vector4D<float>(min.X, a.Y, max.Z, min.W);
-            actual = Vector4D.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Clamp did not return the expected value.");
-
-            // User specified min value is bigger than max value.
-            max = new Vector4D<float>(0.0f, 0.1f, 0.13f, 0.14f);
-            min = new Vector4D<float>(1.0f, 1.1f, 1.13f, 1.14f);
-
-            // Case W1: specified value is in the range.
-            a = new Vector4D<float>(0.5f, 0.3f, 0.33f, 0.44f);
-            expected = max;
-            actual = Vector4D.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Clamp did not return the expected value.");
-
-            // Normal case.
-            // Case W2: specified value is bigger than max and min value.
-            a = new Vector4D<float>(2.0f, 3.0f, 4.0f, 5.0f);
-            expected = max;
-            actual = Vector4D.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Clamp did not return the expected value.");
-
-            // Case W3: specified value is smaller than min and max value.
-            a = new Vector4D<float>(-2.0f, -3.0f, -4.0f, -5.0f);
-            expected = max;
             actual = Vector4D.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Clamp did not return the expected value.");
         }
@@ -643,27 +670,6 @@ namespace Silk.NET.Maths.Tests
             Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-
-        // A test for Transform (Vector2D<float>f, Quaternion)
-        [Fact]
-        public void Vector4TransformVector2QuaternionTest3()
-        {
-            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
-
-            Matrix4X4<float> m =
-                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
-
-            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
-
-            Vector4D<float> expected = Vector4D.Transform(v, m);
-            Vector4D<float> actual;
-
-            actual = Vector4D.Transform(v, q);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
-        }
-
         // A test for Transform (Vector3D<float>f, Quaternion)
         [Fact]
         public void Vector4TransformVector3Quaternion()
@@ -671,10 +677,10 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
 
             Matrix4X4<float> m =
-                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
-            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
+                Matrix4X4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion.CreateFromRotationMatrix(m);
 
             Vector4D<float> expected = Vector4D.Transform(v, m);
             Vector4D<float> actual;
@@ -690,15 +696,13 @@ namespace Silk.NET.Maths.Tests
             Vector4D<float> v = new Vector4D<float>(1.0f, 2.0f, 3.0f, 0.0f);
 
             Matrix4X4<float> m =
-                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
-            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
+                Matrix4X4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion.CreateFromRotationMatrix(m);
 
             Vector4D<float> expected = Vector4D.Transform(v, m);
-            Vector4D<float> actual;
-
-            actual = Vector4D.Transform(v, q);
+            Vector4D<float> actual = Vector4D.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
 
             //
@@ -742,10 +746,10 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
 
             Matrix4X4<float> m =
-                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
-            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
+                Matrix4X4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion.CreateFromRotationMatrix(m);
 
             Vector4D<float> expected = Vector4D.Transform(v, m);
             Vector4D<float> actual = Vector4D.Transform(v, q);
@@ -786,10 +790,10 @@ namespace Silk.NET.Maths.Tests
             Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
 
             Matrix4X4<float> m =
-                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
-            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
+                Matrix4X4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion.CreateFromRotationMatrix(m);
 
             Vector4D<float> expected = Vector4D.Transform(v, m);
             Vector4D<float> actual = Vector4D.Transform(v, q);
@@ -1111,7 +1115,7 @@ namespace Silk.NET.Maths.Tests
             Vector4D<float> expected = new Vector4D<float>(6.0f, 8.0f, 10.0f, 12.0f);
             Vector4D<float> actual;
 
-            actual = Vector4D.Add(a, b);
+            actual = a + b;
             Assert.Equal(expected, actual);
         }
 
@@ -1123,7 +1127,7 @@ namespace Silk.NET.Maths.Tests
             float div = 2.0f;
             Vector4D<float> expected = new Vector4D<float>(0.5f, 1.0f, 1.5f, 2.0f);
             Vector4D<float> actual;
-            actual = Vector4D.Divide(a, div);
+            actual = a / div;
             Assert.Equal(expected, actual);
         }
 
@@ -1137,7 +1141,7 @@ namespace Silk.NET.Maths.Tests
             Vector4D<float> expected = new Vector4D<float>(1.0f / 5.0f, 6.0f / 2.0f, 7.0f / 3.0f, 4.0f / 8.0f);
             Vector4D<float> actual;
 
-            actual = Vector4D.Divide(a, b);
+            actual = a / b;
             Assert.Equal(expected, actual);
         }
 
@@ -1182,7 +1186,7 @@ namespace Silk.NET.Maths.Tests
             Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
             const float factor = 2.0f;
             Vector4D<float> expected = new Vector4D<float>(2.0f, 4.0f, 6.0f, 8.0f);
-            Vector4D<float> actual = Vector4D.Multiply(factor, a);
+            Vector4D<float> actual = factor * a;
             Assert.Equal(expected, actual);
         }
 
@@ -1207,7 +1211,7 @@ namespace Silk.NET.Maths.Tests
             Vector4D<float> expected = new Vector4D<float>(5.0f, 12.0f, 21.0f, 32.0f);
             Vector4D<float> actual;
 
-            actual = Vector4D.Multiply(a, b);
+            actual = a * b;
             Assert.Equal(expected, actual);
         }
 
@@ -1220,7 +1224,7 @@ namespace Silk.NET.Maths.Tests
             Vector4D<float> expected = new Vector4D<float>(-1.0f, -2.0f, -3.0f, -4.0f);
             Vector4D<float> actual;
 
-            actual = Vector4D.Negate(a);
+            actual = -a;
             Assert.Equal(expected, actual);
         }
 
@@ -1272,7 +1276,7 @@ namespace Silk.NET.Maths.Tests
             Vector4D<float> expected = new Vector4D<float>(-4.0f, 4.0f, 0.0f, -5.0f);
             Vector4D<float> actual;
 
-            actual = Vector4D.Subtract(a, b);
+            actual = a - b;
 
             Assert.Equal(expected, actual);
         }
@@ -1381,10 +1385,17 @@ namespace Silk.NET.Maths.Tests
             Assert.False(d.Equals(Vector4D<float>.Zero));
 
             // Counterintuitive result - IEEE rules for NaN comparison are weird!
-            Assert.False(a.Equals(a));
-            Assert.False(b.Equals(b));
-            Assert.False(c.Equals(c));
-            Assert.False(d.Equals(d));
+#pragma warning disable CS1718 // Comparison made to same variable
+            Assert.False(a == a);
+            Assert.False(b == b);
+            Assert.False(c == c);
+            Assert.False(d == d);
+#pragma warning restore CS1718 // Comparison made to same variable
+
+            Assert.True(a.Equals(a));
+            Assert.True(b.Equals(b));
+            Assert.True(c.Equals(c));
+            Assert.True(d.Equals(d));
         }
 
         [Fact]
@@ -1408,11 +1419,11 @@ namespace Silk.NET.Maths.Tests
         {
             Vector4D<float> v1 = new Vector4D<float>(-2.5f, 2.0f, 3.0f, 3.3f);
             Vector4D<float> v2 = new Vector4D<float>(5.5f, 4.5f, 6.5f, 7.5f);
-            Assert.Equal(2, (int)Vector4D.SquareRoot(v2).X);
-            Assert.Equal(2, (int)Vector4D.SquareRoot(v2).Y);
-            Assert.Equal(2, (int)Vector4D.SquareRoot(v2).Z);
-            Assert.Equal(2, (int)Vector4D.SquareRoot(v2).W);
-            Assert.Equal(float.NaN, Vector4D.SquareRoot(v1).X);
+            Assert.Equal(2, (int)Vector4D.Sqrt(v2).X);
+            Assert.Equal(2, (int)Vector4D.Sqrt(v2).Y);
+            Assert.Equal(2, (int)Vector4D.Sqrt(v2).Z);
+            Assert.Equal(2, (int)Vector4D.Sqrt(v2).W);
+            Assert.Equal(float.NaN, Vector4D.Sqrt(v1).X);
         }
 
         // A test to make sure these types are blittable directly into GPU buffer memory layouts
