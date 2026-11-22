@@ -343,13 +343,27 @@ public class BakeSourceSets(
             );
         }
 
+        // Bake both projects
+        ctx.SourceProject = await BakeProject(ctx.SourceProject, strategy, ct);
+        if (ctx.TestProject != null)
+        {
+            ctx.TestProject = await BakeProject(ctx.TestProject, strategy, ct);
+        }
+    }
+
+    private async Task<Project> BakeProject(
+        Project project,
+        IBakeStrategy strategy,
+        CancellationToken ct
+    )
+    {
         // Visit each doc
         var visitor = new Visitor(strategy);
         var baked = new List<string>();
-        foreach (var docId in ctx.SourceProject.DocumentIds)
+        foreach (var docId in project.DocumentIds)
         {
             var doc =
-                ctx.SourceProject.GetDocument(docId)
+                project.GetDocument(docId)
                 ?? throw new InvalidOperationException("Document missing");
             var path = doc.RelativePath();
             if (path is null)
@@ -379,11 +393,9 @@ public class BakeSourceSets(
         }
 
         // Remove documents that were used as baker input
-        var proj = ctx.SourceProject.RemoveDocuments([
-            .. ctx
-                .SourceProject.Documents.Where(x =>
-                    x.RelativePath() is { } rp && baked.Contains(rp)
-                )
+        project = project.RemoveDocuments([
+            .. project
+                .Documents.Where(x => x.RelativePath() is { } rp && baked.Contains(rp))
                 .Select(x => x.Id),
         ]);
 
@@ -397,14 +409,16 @@ public class BakeSourceSets(
                 .Select(x => (x.Value, path: x.Key))
         )
         {
-            proj = proj.AddDocument(
-                Path.GetFileName(bakedPath),
-                documentFactory.PopulateDocument(bakedRoot),
-                filePath: proj.FullPath(bakedPath)
-            ).Project;
+            project = project
+                .AddDocument(
+                    Path.GetFileName(bakedPath),
+                    documentFactory.PopulateDocument(bakedRoot),
+                    filePath: project.FullPath(bakedPath)
+                )
+                .Project;
         }
 
-        ctx.SourceProject = proj;
+        return project;
     }
 
     private Dictionary<string, BakeSet> Bake(
