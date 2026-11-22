@@ -1,2 +1,3 @@
 @echo off
+
 zig rc %*

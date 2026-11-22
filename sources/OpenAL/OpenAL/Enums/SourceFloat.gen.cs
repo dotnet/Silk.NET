@@ -67,6 +67,9 @@ public enum SourceFloat : uint
     [NativeName("AL_SUPER_STEREO_WIDTH_SOFT")]
     SuperStereoWidthSOFT = 6577,
 
+    [NativeName("AL_PAN_SOFT")]
+    PanSOFT = 6637,
+
     [NativeName("AL_CONE_OUTER_GAINHF")]
     ConeOuterGainhf = 131081,
 }

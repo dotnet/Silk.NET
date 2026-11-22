@@ -1213,6 +1213,12 @@ public enum ALEnum : uint
     [NativeName("AL_AUXILIARY_EFFECT_SLOT_EXT")]
     AuxiliaryEffectSlotEXT = 6611,
 
+    [NativeName("AL_PANNING_ENABLED_SOFT")]
+    PanningEnabledSOFT = 6636,
+
+    [NativeName("AL_PAN_SOFT")]
+    PanSOFT = 6637,
+
     [NativeName("AL_FREQUENCY")]
     Frequency = 8193,
 

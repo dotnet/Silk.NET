@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 $PSNativeCommandUseErrorActionPreference = $true
 Set-StrictMode -Version Latest
 
-# Input
+# Inputs
 $apply = $args -eq "--apply"
 $chosenJob = $env:JOB
 

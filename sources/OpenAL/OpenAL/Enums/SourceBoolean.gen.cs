@@ -19,6 +19,9 @@ public enum SourceBoolean : uint
     [NativeName("AL_LOOPING")]
     Looping = 4103,
 
+    [NativeName("AL_PANNING_ENABLED_SOFT")]
+    PanningEnabledSOFT = 6636,
+
     [NativeName("AL_DIRECT_FILTER_GAINHF_AUTO")]
     DirectFilterGainhfAuto = 131082,
 
