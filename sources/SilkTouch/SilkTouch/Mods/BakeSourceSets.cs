@@ -344,14 +344,14 @@ public class BakeSourceSets(
         }
 
         // Bake both projects
-        ctx.SourceProject = await BakeProject(ctx.SourceProject, strategy, ct);
+        ctx.SourceProject = await BakeProjectAsync(ctx.SourceProject, strategy, ct);
         if (ctx.TestProject != null)
         {
-            ctx.TestProject = await BakeProject(ctx.TestProject, strategy, ct);
+            ctx.TestProject = await BakeProjectAsync(ctx.TestProject, strategy, ct);
         }
     }
 
-    private async Task<Project> BakeProject(
+    private async Task<Project> BakeProjectAsync(
         Project project,
         IBakeStrategy strategy,
         CancellationToken ct
