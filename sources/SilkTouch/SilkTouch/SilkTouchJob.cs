@@ -64,7 +64,23 @@ internal class SilkTouchJob : IDisposable
         var services = new ServiceCollection();
         {
             // Register default dependencies
-            services.AddSingleton<DocumentFactory>();
+            {
+                var sourceKey = new object();
+                var testKey = new object();
+
+                services.AddKeyedSingleton<DocumentFactory>(sourceKey);
+                services.AddKeyedSingleton<DocumentFactory>(testKey);
+
+                services.AddSingleton<DocumentFactory>(sp =>
+                    sp.GetRequiredKeyedService<DocumentFactory>(sourceKey)
+                );
+
+                services.AddSingleton<IDocumentFactories>(sp => new DocumentFactories(
+                    sp.GetRequiredKeyedService<DocumentFactory>(sourceKey),
+                    sp.GetRequiredKeyedService<DocumentFactory>(testKey)
+                ));
+            }
+
             services.AddSingleton<FunctionTransformer>();
             services.AddSingleton<ResponseFileHandler>();
             services.AddSingleton<IBakeStrategy, DefaultBakeStrategy>();
