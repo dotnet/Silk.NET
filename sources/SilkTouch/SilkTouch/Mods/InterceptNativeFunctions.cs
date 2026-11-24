@@ -50,7 +50,7 @@ public class InterceptNativeFunctions(InterceptNativeFunctions.Configuration con
         ctx.SourceProject = proj;
     }
 
-    class Rewriter(Configuration cfg) : CSharpSyntaxRewriter
+    private class Rewriter(Configuration cfg) : CSharpSyntaxRewriter
     {
         private List<MethodDeclarationSyntax> _newMethods = [];
 

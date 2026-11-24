@@ -37,7 +37,7 @@ public static class TransformationUtils
         IReadOnlyDictionary<string, string> reassignments
     ) => new IdentifierRewriter(reassignments).Visit(syn);
 
-    class IdentifierRewriter(IReadOnlyDictionary<string, string> reassignments)
+    private class IdentifierRewriter(IReadOnlyDictionary<string, string> reassignments)
         : CSharpSyntaxRewriter(true)
     {
         public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node) =>
@@ -103,7 +103,7 @@ public static class TransformationUtils
         return node.CastFunctionCalls(callee, newReturnType, toRw);
     }
 
-    class MethodCallRewriter(
+    private class MethodCallRewriter(
         MethodDeclarationSyntax callee,
         TypeSyntax? castReturnType = null,
         IReadOnlyList<(int Index, TypeSyntax CastType)>? castParameterTypes = null

@@ -52,7 +52,7 @@ public class AddApiProfiles(
         public required string SourceSubdirectory { get; init; }
     }
 
-    class Rewriter(
+    private class Rewriter(
         IEnumerable<
             IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>
         > versionProviders

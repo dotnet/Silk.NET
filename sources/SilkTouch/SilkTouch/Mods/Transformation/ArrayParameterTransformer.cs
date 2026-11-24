@@ -212,7 +212,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
         next(rw.Visit(decl) as MethodDeclarationSyntax ?? decl);
     }
 
-    class TransformArrayParameterRewriter(
+    private class TransformArrayParameterRewriter(
         string? countParam,
         string ptrParam,
         TypeSyntax ptrParamType,
