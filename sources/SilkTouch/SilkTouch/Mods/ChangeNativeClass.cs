@@ -218,7 +218,7 @@ public class ChangeNativeClass(
     /// <summary>
     /// Discover the classes, and also discover matching members.
     /// </summary>
-    class MatchFinder(List<(Regex Regex, string Value)> patterns) : CSharpSyntaxRewriter
+    private class MatchFinder(List<(Regex Regex, string Value)> patterns) : CSharpSyntaxRewriter
     {
         /// <summary>
         /// A map of fully qualified class names to the declarations of those classes and the members that would like to
@@ -288,7 +288,7 @@ public class ChangeNativeClass(
                             is VariableDeclaratorSyntax
                             {
                                 Parent: not VariableDeclarationSyntax
-                                    or { Parent: not FieldDeclarationSyntax }
+                                    or { Parent: not FieldDeclarationSyntax },
                             }
                     )
                 )
@@ -350,8 +350,8 @@ public class ChangeNativeClass(
                     {
                         Parent: VariableDeclarationSyntax
                         {
-                            Parent: BaseFieldDeclarationSyntax fld
-                        } decl
+                            Parent: BaseFieldDeclarationSyntax fld,
+                        } decl,
                     } decla
                 )
                 {
@@ -370,7 +370,7 @@ public class ChangeNativeClass(
         }
     }
 
-    class MemberMover : CSharpSyntaxRewriter
+    private class MemberMover : CSharpSyntaxRewriter
     {
         public string? FullyQualifiedTargetType { get; set; }
         public IReadOnlyList<MemberDeclarationSyntax>? Members { get; set; }

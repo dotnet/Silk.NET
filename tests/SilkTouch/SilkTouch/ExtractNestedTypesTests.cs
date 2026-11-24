@@ -44,9 +44,9 @@ public class ExtractNestedTypesTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
-        var extractNestedTyping = new ExtractNestedTypes(documentFactory);
+        var extractNestedTyping = new ExtractNestedTypes(documentFactories);
 
         await extractNestedTyping.ExecuteAsync(context);
 

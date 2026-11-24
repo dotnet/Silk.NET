@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Silk.NET.SilkTouch.Mods;
+using static Silk.NET.SilkTouch.SilkConstants;
 
 namespace Silk.NET.SilkTouch.Jobs;
 
@@ -14,8 +15,10 @@ internal static partial class Jobs
             {
                 Solution = "Silk.NET.slnx",
                 SourceProject = "sources/Vulkan/Vulkan/Silk.NET.Vulkan.csproj",
+                // TestProject = "tests/Vulkan/Vulkan/Silk.NET.Vulkan.UnitTests.csproj", // TODO: Disabled due to issues identified during https://github.com/dotnet/Silk.NET/pull/2650
                 DefaultLicenseHeader = "eng/silktouch/vulkan/header.txt",
                 DefaultNamespace = "Silk.NET.Vulkan",
+                DefaultTestNamespace = "Silk.NET.Vulkan.UnitTests",
             },
             context =>
                 context
@@ -84,12 +87,12 @@ internal static partial class Jobs
                             NameOverrides = new() { ["numAABBs"] = "NumAabbs" },
                             Affixes = new()
                             {
-                                ["HandleType"] = new() { Order = 1 },
-                                ["FunctionPointerDelegateType"] = new() { Order = 1 },
-                                ["KhronosVendor"] = new() { Order = -1 },
-                                ["KhronosImpliedVendor"] = new() { Remove = true },
-                                ["KhronosHandleType"] = new() { Remove = true },
-                                ["SharedPrefix"] = new() { Remove = true },
+                                [NameAffixes.HandleType] = new() { Order = 1 },
+                                [NameAffixes.FunctionPointerDelegateType] = new() { Order = 1 },
+                                [NameAffixes.KhronosVendor] = new() { Order = -1 },
+                                [NameAffixes.KhronosImpliedVendor] = new() { Remove = true },
+                                [NameAffixes.KhronosHandleType] = new() { Remove = true },
+                                [NameAffixes.SharedPrefix] = new() { Remove = true },
                             },
                         }
                     )

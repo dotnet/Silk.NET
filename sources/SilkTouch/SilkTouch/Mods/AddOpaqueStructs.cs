@@ -14,7 +14,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Adds opaque structs.
 /// </summary>
 public class AddOpaqueStructs(
-    DocumentFactory documentFactory,
+    IDocumentFactories documentFactories,
     ILogger<AddOpaqueStructs> logger,
     AddOpaqueStructs.Configuration config
 ) : IMod, IResponseFileMod
@@ -78,7 +78,7 @@ public class AddOpaqueStructs(
             var fileName = $"{name}.gen.cs";
             proj = proj.AddDocument(
                 fileName,
-                documentFactory.PopulateDocument(
+                documentFactories.Source.PopulateDocument(
                     CompilationUnit()
                         .WithMembers(
                             SingletonList<MemberDeclarationSyntax>(

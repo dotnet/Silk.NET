@@ -5,6 +5,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Silk.NET.SilkTouch.Naming;
+using static Silk.NET.SilkTouch.SilkConstants;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -643,7 +644,7 @@ public class IdentifySharedPrefixes(IdentifySharedPrefixes.Configuration config)
 
             return memberAttributeLists.AddNameAffix(
                 NameAffixType.Prefix,
-                "SharedPrefix",
+                NameAffixes.SharedPrefix,
                 prefix,
                 true
             );

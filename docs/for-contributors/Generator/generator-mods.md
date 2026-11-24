@@ -381,11 +381,11 @@ Name affix categories:
 Example name affix configurations for `PrettifyNames`:
 
 ```cs
-["SharedPrefix"] = new() { Remove = true },
+[NameAffixCategories.SharedPrefix] = new() { Remove = true },
 ```
 
 ```cs
-["SharedPrefix"] = new() { IsDiscriminator = true },
+[NameAffixCategories.SharedPrefix] = new() { IsDiscriminator = true },
 ```
 
 Usage recommendations:

@@ -88,7 +88,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
                     // (as indicated by the 0 index)
                     x
                         is {
-                            ParamForCount: { PtrParamInfo.PtrParam: not null, ParamForCountIdx: 0 }
+                            ParamForCount: { PtrParamInfo.PtrParam: not null, ParamForCountIdx: 0 },
                         }
                 )
                 // 4. Only select the last count parameter
@@ -212,7 +212,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
         next(rw.Visit(decl) as MethodDeclarationSyntax ?? decl);
     }
 
-    class TransformArrayParameterRewriter(
+    private class TransformArrayParameterRewriter(
         string? countParam,
         string ptrParam,
         TypeSyntax ptrParamType,

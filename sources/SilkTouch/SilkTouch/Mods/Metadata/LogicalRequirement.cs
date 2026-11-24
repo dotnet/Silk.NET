@@ -27,5 +27,5 @@ public enum LogicalRequirement
     /// <summary>
     /// An expression is used to determine when the annotation applies.
     /// </summary>
-    Expression
+    Expression,
 }

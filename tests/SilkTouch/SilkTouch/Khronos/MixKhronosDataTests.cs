@@ -48,7 +48,7 @@ public class MixKhronosDataTests
                 async (x, ct) =>
                 {
                     var mod = new MixKhronosData(
-                        new DocumentFactory(),
+                        new DummyDocumentFactories(),
                         new NullLogger<MixKhronosData>(),
                         new MixKhronosData.Configuration { SpecPath = TestFile(x) }
                     );
@@ -319,10 +319,10 @@ public class MixKhronosDataTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
         var mixKhronosData = new MixKhronosData(
-            documentFactory,
+            documentFactories,
             NullLogger<MixKhronosData>.Instance,
             null!
         )
@@ -358,10 +358,10 @@ public class MixKhronosDataTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
         var mixKhronosData = new MixKhronosData(
-            documentFactory,
+            documentFactories,
             NullLogger<MixKhronosData>.Instance,
             null!
         )
@@ -401,10 +401,10 @@ public class MixKhronosDataTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
         var mixKhronosData = new MixKhronosData(
-            documentFactory,
+            documentFactories,
             NullLogger<MixKhronosData>.Instance,
             null!
         )
@@ -441,10 +441,10 @@ public class MixKhronosDataTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
         var mixKhronosData = new MixKhronosData(
-            documentFactory,
+            documentFactories,
             NullLogger<MixKhronosData>.Instance,
             null!
         )

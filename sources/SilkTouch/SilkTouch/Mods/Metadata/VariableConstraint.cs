@@ -21,5 +21,5 @@ public enum VariableConstraint
     /// <summary>
     /// The constraint may apply.
     /// </summary>
-    Maybe
+    Maybe,
 }

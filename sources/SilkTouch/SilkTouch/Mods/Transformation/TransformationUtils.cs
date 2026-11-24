@@ -1,10 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -40,7 +37,7 @@ public static class TransformationUtils
         IReadOnlyDictionary<string, string> reassignments
     ) => new IdentifierRewriter(reassignments).Visit(syn);
 
-    class IdentifierRewriter(IReadOnlyDictionary<string, string> reassignments)
+    private class IdentifierRewriter(IReadOnlyDictionary<string, string> reassignments)
         : CSharpSyntaxRewriter(true)
     {
         public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node) =>
@@ -106,7 +103,7 @@ public static class TransformationUtils
         return node.CastFunctionCalls(callee, newReturnType, toRw);
     }
 
-    class MethodCallRewriter(
+    private class MethodCallRewriter(
         MethodDeclarationSyntax callee,
         TypeSyntax? castReturnType = null,
         IReadOnlyList<(int Index, TypeSyntax CastType)>? castParameterTypes = null

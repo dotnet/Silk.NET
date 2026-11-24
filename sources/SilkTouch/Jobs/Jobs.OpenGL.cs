@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Silk.NET.SilkTouch.Mods;
+using static Silk.NET.SilkTouch.SilkConstants;
 
 namespace Silk.NET.SilkTouch.Jobs;
 
@@ -14,8 +15,10 @@ internal static partial class Jobs
             {
                 Solution = "Silk.NET.slnx",
                 SourceProject = "sources/OpenGL/OpenGL/Silk.NET.OpenGL.csproj",
+                TestProject = "tests/OpenGL/OpenGL/Silk.NET.OpenGL.UnitTests.csproj",
                 DefaultLicenseHeader = "eng/silktouch/opengl/header.txt",
                 DefaultNamespace = "Silk.NET.OpenGL",
+                DefaultTestNamespace = "Silk.NET.OpenGL.UnitTests",
             },
             context =>
                 context
@@ -113,13 +116,16 @@ internal static partial class Jobs
                         {
                             Affixes = new()
                             {
-                                ["HandleType"] = new() { Order = 1 },
-                                ["FunctionPointerDelegateType"] = new() { Order = 1 },
-                                ["KhronosVendor"] = new() { Order = -1 },
-                                ["KhronosFunctionDataType"] = new() { IsDiscriminator = true },
-                                ["KhronosImpliedVendor"] = new() { Remove = true },
-                                ["KhronosNonExclusiveVendor"] = new() { Remove = true },
-                                ["SharedPrefix"] = new() { Remove = true },
+                                [NameAffixes.HandleType] = new() { Order = 1 },
+                                [NameAffixes.FunctionPointerDelegateType] = new() { Order = 1 },
+                                [NameAffixes.KhronosVendor] = new() { Order = -1 },
+                                [NameAffixes.KhronosFunctionDataType] = new()
+                                {
+                                    IsDiscriminator = true,
+                                },
+                                [NameAffixes.KhronosImpliedVendor] = new() { Remove = true },
+                                [NameAffixes.KhronosNonExclusiveVendor] = new() { Remove = true },
+                                [NameAffixes.SharedPrefix] = new() { Remove = true },
                             },
                         }
                     )

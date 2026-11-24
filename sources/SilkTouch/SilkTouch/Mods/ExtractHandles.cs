@@ -17,7 +17,8 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <para/>
 /// See <see cref="TransformHandles"/> for applying further transformations.
 /// </summary>
-public class ExtractHandles(ILogger<ExtractHandles> logger, DocumentFactory documentFactory) : IMod
+public class ExtractHandles(ILogger<ExtractHandles> logger, IDocumentFactories documentFactories)
+    : IMod
 {
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
@@ -42,11 +43,11 @@ public class ExtractHandles(ILogger<ExtractHandles> logger, DocumentFactory docu
         foreach (var (fullyQualifiedName, node) in syntaxNodes)
         {
             var relativePath =
-                $"Handles/{documentFactory.PathForFullyQualified(fullyQualifiedName)}";
+                $"Handles/{documentFactories.Source.PathForFullyQualified(fullyQualifiedName)}";
             project = project
                 .AddDocument(
                     Path.GetFileName(relativePath),
-                    documentFactory.PopulateDocument(node),
+                    documentFactories.Source.PopulateDocument(node),
                     filePath: project.FullPath(relativePath)
                 )
                 .Project;

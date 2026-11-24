@@ -6,6 +6,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using static Silk.NET.SilkTouch.SilkConstants;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -50,7 +51,7 @@ public class InterceptNativeFunctions(InterceptNativeFunctions.Configuration con
         ctx.SourceProject = proj;
     }
 
-    class Rewriter(Configuration cfg) : CSharpSyntaxRewriter
+    private class Rewriter(Configuration cfg) : CSharpSyntaxRewriter
     {
         private List<MethodDeclarationSyntax> _newMethods = [];
 
@@ -124,7 +125,7 @@ public class InterceptNativeFunctions(InterceptNativeFunctions.Configuration con
             return node.WithAttributeLists(
                 node.AttributeLists.AddNameAffix(
                     NameAffixType.Suffix,
-                    "InterceptedFunction",
+                    NameAffixes.InterceptedFunction,
                     "Internal"
                 )
             );

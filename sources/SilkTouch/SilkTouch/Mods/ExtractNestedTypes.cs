@@ -8,6 +8,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using static Silk.NET.SilkTouch.SilkConstants;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -19,7 +20,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Apparently this mod only handles the special nested structs output by <see cref="ClangScraper"/>
 /// right now. We might change this in the future if there is the need.
 /// </remarks>
-public partial class ExtractNestedTypes(DocumentFactory documentFactory) : IMod
+public partial class ExtractNestedTypes(IDocumentFactories documentFactories) : IMod
 {
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
@@ -51,7 +52,7 @@ public partial class ExtractNestedTypes(DocumentFactory documentFactory) : IMod
                 project = project
                     .AddDocument(
                         $"{newStruct.Identifier}.gen.cs",
-                        documentFactory.PopulateDocument(
+                        documentFactories.Source.PopulateDocument(
                             CompilationUnit()
                                 .WithMembers(
                                     rewriter.Namespace is not null
@@ -130,7 +131,7 @@ public partial class ExtractNestedTypes(DocumentFactory documentFactory) : IMod
                             .WithAttributeLists(
                                 structNode.AttributeLists.AddReferencedNameAffix(
                                     NameAffixType.Prefix,
-                                    "NestedStructParent",
+                                    NameAffixes.NestedStructParent,
                                     node.Identifier.ToString()
                                 )
                             )

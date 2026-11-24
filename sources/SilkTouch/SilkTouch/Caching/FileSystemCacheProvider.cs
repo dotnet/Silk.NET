@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Microsoft.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Caching;
@@ -14,7 +13,7 @@ public class FileSystemCacheProvider(ILogger<FileSystemCacheProvider> logger) : 
     internal static string CommonDir { get; set; } = Environment.CurrentDirectory;
     internal ILogger<FileSystemCacheProvider> Logger { get; } = logger;
 
-    static string GetCachePath(string cacheKey, CacheIntent intent)
+    private static string GetCachePath(string cacheKey, CacheIntent intent)
     {
         var outDir = Path.Combine(CommonDir, ".silktouch");
         if (!Directory.Exists(outDir))

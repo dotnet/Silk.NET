@@ -40,11 +40,11 @@ public class ExtractHandlesTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
         var extractHandles = new ExtractHandles(
             NullLogger<ExtractHandles>.Instance,
-            documentFactory
+            documentFactories
         );
 
         await extractHandles.ExecuteAsync(context);

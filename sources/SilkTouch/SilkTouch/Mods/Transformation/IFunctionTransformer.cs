@@ -1,7 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Silk.NET.SilkTouch.Mods.Transformation;
@@ -23,7 +22,7 @@ public interface IFunctionTransformer
     /// <paramref name="next"/> can be called multiple times for the same input. This can be used to generate
     /// transformative overloads for a function.
     /// </remarks>
-    void Transform(
+    public void Transform(
         MethodDeclarationSyntax current,
         ITransformationContext ctx,
         Action<MethodDeclarationSyntax> next

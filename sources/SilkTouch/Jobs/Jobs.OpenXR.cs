@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Silk.NET.SilkTouch.Mods;
+using static Silk.NET.SilkTouch.SilkConstants;
 
 namespace Silk.NET.SilkTouch.Jobs;
 
@@ -14,8 +15,10 @@ internal static partial class Jobs
             {
                 Solution = "Silk.NET.slnx",
                 SourceProject = "sources/OpenXR/OpenXR/Silk.NET.OpenXR.csproj",
+                TestProject = "tests/OpenXR/OpenXR/Silk.NET.OpenXR.UnitTests.csproj",
                 DefaultLicenseHeader = "eng/silktouch/openxr/header.txt",
                 DefaultNamespace = "Silk.NET.OpenXR",
+                DefaultTestNamespace = "Silk.NET.OpenXR.UnitTests",
             },
             context =>
                 context
@@ -120,12 +123,12 @@ internal static partial class Jobs
                         {
                             Affixes = new()
                             {
-                                ["HandleType"] = new() { Order = 1 },
-                                ["FunctionPointerDelegateType"] = new() { Order = 1 },
-                                ["KhronosVendor"] = new() { Order = -1 },
-                                ["KhronosImpliedVendor"] = new() { Remove = true },
-                                ["KhronosHandleType"] = new() { Remove = true },
-                                ["SharedPrefix"] = new() { Remove = true },
+                                [NameAffixes.HandleType] = new() { Order = 1 },
+                                [NameAffixes.FunctionPointerDelegateType] = new() { Order = 1 },
+                                [NameAffixes.KhronosVendor] = new() { Order = -1 },
+                                [NameAffixes.KhronosImpliedVendor] = new() { Remove = true },
+                                [NameAffixes.KhronosHandleType] = new() { Remove = true },
+                                [NameAffixes.SharedPrefix] = new() { Remove = true },
                             },
                         }
                     )
