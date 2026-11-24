@@ -125,7 +125,7 @@ public class InterceptNativeFunctions(InterceptNativeFunctions.Configuration con
             return node.WithAttributeLists(
                 node.AttributeLists.AddNameAffix(
                     NameAffixType.Suffix,
-                    NameAffixCategories.InterceptedFunction,
+                    NameAffixes.InterceptedFunction,
                     "Internal"
                 )
             );

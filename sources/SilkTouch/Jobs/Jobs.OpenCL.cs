@@ -150,29 +150,20 @@ internal static partial class Jobs
                             },
                             Affixes = new()
                             {
-                                [NameAffixCategories.HandleType] = new() { Order = 1 },
-                                [NameAffixCategories.FunctionPointerDelegateType] = new()
-                                {
-                                    Order = 1,
-                                },
-                                [NameAffixCategories.KhronosVendor] = new()
+                                [NameAffixes.HandleType] = new() { Order = 1 },
+                                [NameAffixes.FunctionPointerDelegateType] = new() { Order = 1 },
+                                [NameAffixes.KhronosVendor] = new()
                                 {
                                     Order = -1,
                                     Capitalize = true,
                                 },
-                                [NameAffixCategories.KhronosFunctionDataType] = new()
+                                [NameAffixes.KhronosFunctionDataType] = new()
                                 {
                                     IsDiscriminator = true,
                                 },
-                                [NameAffixCategories.KhronosImpliedVendor] = new()
-                                {
-                                    Remove = true,
-                                },
-                                [NameAffixCategories.KhronosNonExclusiveVendor] = new()
-                                {
-                                    Remove = true,
-                                },
-                                [NameAffixCategories.SharedPrefix] = new() { Remove = true },
+                                [NameAffixes.KhronosImpliedVendor] = new() { Remove = true },
+                                [NameAffixes.KhronosNonExclusiveVendor] = new() { Remove = true },
+                                [NameAffixes.SharedPrefix] = new() { Remove = true },
                             },
                         }
                     )

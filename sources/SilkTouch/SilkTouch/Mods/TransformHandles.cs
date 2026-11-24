@@ -229,7 +229,7 @@ public class TransformHandles(
                 .WithAttributeLists(
                     node.AttributeLists.AddNameAffix(
                         NameAffixType.Suffix,
-                        NameAffixCategories.HandleType,
+                        NameAffixes.HandleType,
                         "Handle"
                     )
                 )

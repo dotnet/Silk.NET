@@ -644,7 +644,7 @@ public class IdentifySharedPrefixes(IdentifySharedPrefixes.Configuration config)
 
             return memberAttributeLists.AddNameAffix(
                 NameAffixType.Prefix,
-                NameAffixCategories.SharedPrefix,
+                NameAffixes.SharedPrefix,
                 prefix,
                 true
             );

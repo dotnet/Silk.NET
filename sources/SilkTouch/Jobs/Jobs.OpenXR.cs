@@ -123,18 +123,12 @@ internal static partial class Jobs
                         {
                             Affixes = new()
                             {
-                                [NameAffixCategories.HandleType] = new() { Order = 1 },
-                                [NameAffixCategories.FunctionPointerDelegateType] = new()
-                                {
-                                    Order = 1,
-                                },
-                                [NameAffixCategories.KhronosVendor] = new() { Order = -1 },
-                                [NameAffixCategories.KhronosImpliedVendor] = new()
-                                {
-                                    Remove = true,
-                                },
-                                [NameAffixCategories.KhronosHandleType] = new() { Remove = true },
-                                [NameAffixCategories.SharedPrefix] = new() { Remove = true },
+                                [NameAffixes.HandleType] = new() { Order = 1 },
+                                [NameAffixes.FunctionPointerDelegateType] = new() { Order = 1 },
+                                [NameAffixes.KhronosVendor] = new() { Order = -1 },
+                                [NameAffixes.KhronosImpliedVendor] = new() { Remove = true },
+                                [NameAffixes.KhronosHandleType] = new() { Remove = true },
+                                [NameAffixes.SharedPrefix] = new() { Remove = true },
                             },
                         }
                     )

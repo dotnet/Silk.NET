@@ -149,7 +149,7 @@ public partial class ExtractFunctionPointers(
 
             // As above, get the native type name if we can and also get a fallback name based on context.
             const string functionPointerNameFallbackParent =
-                NameAffixCategories.FunctionPointerNameFallbackParent;
+                NameAffixes.FunctionPointerNameFallbackParent;
             string? currentNativeTypeName = null;
             string? fallback = null;
             SyntaxList<AttributeListSyntax> fallbackPfnAttrLists = default;
@@ -352,12 +352,12 @@ public partial class ExtractFunctionPointers(
                         .WithNativeName(currentNativeTypeName)
                         .AddReferencedNameAffix(
                             NameAffixType.Prefix,
-                            NameAffixCategories.FunctionPointerParent,
+                            NameAffixes.FunctionPointerParent,
                             currentNativeTypeName
                         )
                         .AddNameAffix(
                             NameAffixType.Suffix,
-                            NameAffixCategories.FunctionPointerDelegateType,
+                            NameAffixes.FunctionPointerDelegateType,
                             "Delegate"
                         ),
                     rawPfn: node
