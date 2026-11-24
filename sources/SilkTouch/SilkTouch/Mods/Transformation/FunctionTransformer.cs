@@ -183,7 +183,7 @@ public class FunctionTransformer(
                     newFun = newFun.WithAttributeLists(
                         newFun.AttributeLists.AddNameAffix(
                             NameAffixType.Suffix,
-                            NameAffixCategories.RawFunction,
+                            NameAffixes.RawFunction,
                             "Raw"
                         )
                     );

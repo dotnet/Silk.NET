@@ -34,17 +34,6 @@ public partial class MixKhronosData(
     internal JobData Job = null!;
     private static readonly char[] _listSeparators = { ',', '|', '+' };
 
-    private static class NameAffixes
-    {
-        public const string KhronosFunctionDataType = nameof(KhronosFunctionDataType);
-        public const string KhronosHandleType = nameof(KhronosHandleType);
-        public const string KhronosImpliedVendor = nameof(KhronosImpliedVendor);
-        public const string KhronosNamespaceEnum = nameof(KhronosNamespaceEnum);
-        public const string KhronosNonExclusiveVendor = nameof(KhronosNonExclusiveVendor);
-        public const string KhronosNonVendor = nameof(KhronosNonVendor);
-        public const string KhronosVendor = nameof(KhronosVendor);
-    }
-
     internal class JobData
     {
         /// <summary>
@@ -209,14 +198,14 @@ public partial class MixKhronosData(
         /// when determining a data type suffix to trim when <see cref="IdentifyFunctionDataTypes"/> is on. For example,
         /// <c>Direct</c> for OpenAL.
         /// <para/>
-        /// Identified suffixes will be categorized as a <see cref="NameAffixCategories.KhronosNonVendor"/> affix.
+        /// Identified suffixes will be categorized as a <see cref="NameAffixes.KhronosNonVendor"/> affix.
         /// </summary>
         public List<string> NonVendorSuffixes { get; init; } = [];
 
         /// <summary>
         /// Whether OpenGL-style data type suffixes should be identified.
         /// <para/>
-        /// Identified suffixes will be categorized as a <see cref="NameAffixCategories.KhronosFunctionDataType"/>" affix.
+        /// Identified suffixes will be categorized as a <see cref="NameAffixes.KhronosFunctionDataType"/>" affix.
         /// </summary>
         public bool IdentifyFunctionDataTypes { get; init; }
 
@@ -224,7 +213,7 @@ public partial class MixKhronosData(
         /// Whether enum type vendor suffixes should be identified
         /// if the enum type contains members that don't match the exclusive vendor.
         /// <para/>
-        /// Identified suffixes will be categorized as a <see cref="NameAffixCategories.KhronosNonExclusiveVendor"/>" affix.
+        /// Identified suffixes will be categorized as a <see cref="NameAffixes.KhronosNonExclusiveVendor"/>" affix.
         /// </summary>
         /// <remarks>
         /// For context, OpenGL has a problem where an enum group starts out as ARB but never gets promoted,
@@ -244,7 +233,7 @@ public partial class MixKhronosData(
         /// Whether enum members should have their vendor suffixes identified
         /// if they share a vendor suffix with the containing type.
         /// <para/>
-        /// Identified suffixes will be categorized as a <see cref="NameAffixCategories.KhronosImpliedVendor"/> affix.
+        /// Identified suffixes will be categorized as a <see cref="NameAffixes.KhronosImpliedVendor"/> affix.
         /// </summary>
         /// <example>
         /// <c>VkPresentModeKHR</c> in Vulkan is a KHR suffixed enum that contains <c>VK_PRESENT_MODE_IMMEDIATE_KHR</c>.

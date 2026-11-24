@@ -49,7 +49,7 @@ public class PrettifyNamesTests
                 Affixes =
                 {
                     {
-                        NameAffixCategories.SharedPrefix,
+                        NameAffixes.SharedPrefix,
                         new PrettifyNames.NameAffixConfiguration() { Remove = true }
                     },
                 },
@@ -110,7 +110,7 @@ public class PrettifyNamesTests
                 Affixes =
                 {
                     {
-                        NameAffixCategories.SharedPrefix,
+                        NameAffixes.SharedPrefix,
                         new PrettifyNames.NameAffixConfiguration() { Remove = true }
                     },
                 },
@@ -162,7 +162,7 @@ public class PrettifyNamesTests
                 Affixes =
                 {
                     {
-                        NameAffixCategories.SharedPrefix,
+                        NameAffixes.SharedPrefix,
                         new PrettifyNames.NameAffixConfiguration()
                         {
                             DiscriminatorPriority = 0,
@@ -170,7 +170,7 @@ public class PrettifyNamesTests
                         }
                     },
                     {
-                        NameAffixCategories.KhronosFunctionDataType,
+                        NameAffixes.KhronosFunctionDataType,
                         new PrettifyNames.NameAffixConfiguration()
                         {
                             DiscriminatorPriority = 1,
@@ -228,7 +228,7 @@ public class PrettifyNamesTests
                 Affixes =
                 {
                     {
-                        NameAffixCategories.SharedPrefix,
+                        NameAffixes.SharedPrefix,
                         new PrettifyNames.NameAffixConfiguration()
                         {
                             DiscriminatorPriority = 1,
@@ -236,7 +236,7 @@ public class PrettifyNamesTests
                         }
                     },
                     {
-                        NameAffixCategories.KhronosFunctionDataType,
+                        NameAffixes.KhronosFunctionDataType,
                         new PrettifyNames.NameAffixConfiguration()
                         {
                             DiscriminatorPriority = 0,
@@ -476,7 +476,7 @@ public class PrettifyNamesTests
                 Affixes =
                 {
                     {
-                        NameAffixCategories.SharedPrefix,
+                        NameAffixes.SharedPrefix,
                         new PrettifyNames.NameAffixConfiguration()
                         {
                             DiscriminatorPriority = 0,

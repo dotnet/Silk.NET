@@ -49,7 +49,7 @@ internal static partial class Jobs
                         {
                             Affixes = new()
                             {
-                                [NameAffixCategories.SharedPrefix] = new() { Remove = true },
+                                [NameAffixes.SharedPrefix] = new() { Remove = true },
                             },
                         }
                     )

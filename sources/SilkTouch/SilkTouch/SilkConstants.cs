@@ -11,7 +11,7 @@ public static class SilkConstants
     /// <summary>
     /// Contains the name affix category names used by SilkTouch.
     /// </summary>
-    public static class NameAffixCategories
+    public static class NameAffixes
     {
         /// <summary>
         /// The name of the FunctionPointerDelegateType name affix category.

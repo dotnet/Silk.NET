@@ -131,7 +131,7 @@ public partial class ExtractNestedTypes(IDocumentFactories documentFactories) : 
                             .WithAttributeLists(
                                 structNode.AttributeLists.AddReferencedNameAffix(
                                     NameAffixType.Prefix,
-                                    NameAffixCategories.NestedStructParent,
+                                    NameAffixes.NestedStructParent,
                                     node.Identifier.ToString()
                                 )
                             )
