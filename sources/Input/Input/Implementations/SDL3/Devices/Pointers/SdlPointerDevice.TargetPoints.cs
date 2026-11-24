@@ -102,7 +102,15 @@ internal abstract partial class SdlPointerDevice
 
         // note: a null oldPoint means this is a new point
         // see PointChangedEvent for more info
-        oldPoint = isNewPoint ? null : point;
+        if (isNewPoint)
+        {
+            oldPoint = null;
+            point = point with { Pressure = 1.0f };
+        }
+        else
+        {
+            oldPoint = point;
+        }
 
         // replace the point with a newly calculated point based on the inputs
         var pos = positionOnTarget ?? (isNewPoint ? Vector3.Zero : point.Position);
@@ -129,12 +137,14 @@ internal abstract partial class SdlPointerDevice
                 direction: point.Pointer.Direction);
         }
 
-        point = ToTargetPoint(
-            target: target,
-            touchId: *(int*)&touchId,
-            posOnTarget: pos,
-            pressure: pressure ?? point.Pressure,
-            ray: effectiveRay);
+        point = new TargetPoint(*(int*)&touchId,
+            Flags: TargetPointFlags.PointingAtTarget,
+            Position: pos,
+            NormalizedPosition: NormalizeOnTarget(pos, target.Bounds),
+            Pointer: effectiveRay,
+            Pressure: pressure ?? point.Pressure,
+            Target: target
+        );
 
         return ref point;
     }
@@ -148,33 +158,25 @@ internal abstract partial class SdlPointerDevice
     }
 
     /// <summary>
-    /// Creates a target point
+    /// Normalizes a position expressed in its target space (i.e. relative to
+    /// <see cref="IPointerTarget.Bounds"/>'s Min) to the range [0, 1].
+    /// This is the only method a position should be normalized by.
     /// </summary>
-    /// <param name="posOnTarget">Position projected to target-space</param>
-    /// <param name="pressure">Touch/etc point pressure</param>
-    /// <param name="target">The target being pointed at</param>
-    /// <param name="touchId">The unique ID of the touch/pointer point, persisting through its lifetime</param>
-    /// <param name="ray">A ray that determines the final point on the target</param>
-    private static TargetPoint ToTargetPoint(in Vector3 posOnTarget, float pressure, IPointerTarget target, int touchId,
-        Ray3D<float> ray)
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static Vector3 NormalizeOnTarget(in Vector3 posOnTarget, in Box3D<float> bounds)
     {
-        var bounds = target.Bounds;
         var min = bounds.Min.ToSystem();
-        min &= Vector3.IsFinite(min);
         var max = bounds.Max.ToSystem();
-        max &= Vector3.IsFinite(max);
-        var diff3 = max - min;
-        var normalizedPosition = posOnTarget / diff3;
-        normalizedPosition &= Vector3.IsFinite(normalizedPosition);
+        var size = max - min;
 
-        return new TargetPoint(touchId,
-            Flags: TargetPointFlags.PointingAtTarget,
-            Position: posOnTarget,
-            NormalizedPosition: normalizedPosition,
-            Pointer: ray,
-            Pressure: pressure,
-            Target: target
-        );
+        // Per-axis validity: IsFinite yields an all-bits-set mask per valid component.
+        // then we mask-select non-zero sizes.
+        var valid = Vector3.IsFinite(min) & Vector3.IsFinite(max) & ~Vector3.Equals(size, Vector3.Zero);
+
+        // Substitute 1.0 on invalid axes so the divide never produces NaN
+        var divisor = Vector3.ConditionalSelect(valid, size, Vector3.One);
+
+        return (posOnTarget / divisor) & valid;
     }
 
     protected void SetPointLookAtTarget(uint? touchId, IPointerTarget target, bool lookAt, long timestamp)
@@ -204,8 +206,8 @@ internal abstract partial class SdlPointerDevice
     /// <param name="ray">The ray - set null if has not changed or is simply computed in 2D without extra calculation</param>
     /// <param name="timestamp"></param>
     /// <exception cref="InvalidOperationException"></exception>
-    protected TargetPoint AddOrUpdatePoint(uint? touchId, IPointerTarget target, in Vector3? pos, float? pressure,
-        bool? isDown, Ray3D<float>? ray, long timestamp)
+    protected TargetPoint AddOrUpdatePoint(uint? touchId, IPointerTarget target, in Vector3? pos,
+        float? pressure, bool? isDown, Ray3D<float>? ray, long timestamp)
     {
         if (pos == null && pressure == null && isDown == null && ray == null)
         {
@@ -339,25 +341,22 @@ internal abstract partial class SdlPointerDevice
         var newBoundsMin = Unsafe.As<Vector3D<float>, Vector3>(ref newBounds.Min);
         newBoundsMin &= Vector3.IsFinite(newBoundsMin);
 
-        // both bounds exist in the same coordinate space - the new position needs to be translated to be relative
-        // to the new target
-        var rawPtPosition = pt.Position + oldBoundsMin;
-        var newPtPosition = rawPtPosition - newBoundsMin;
-
-        var newBoundsMax = Unsafe.As<Vector3D<float>, Vector3>(ref newBounds.Max);
-        newBoundsMax &= Vector3.IsFinite(newBoundsMax);
-
-        // normalized pos = newPos / newBoundsSize
-        var newNormalizedPos = newPtPosition / (newBoundsMax - newBoundsMin);
-        newNormalizedPos &= Vector3.IsFinite(newNormalizedPos);
+        var newPtPosition = pt.Position + oldBoundsMin - newBoundsMin;
+        var newNormalizedPos = NormalizeOnTarget(newPtPosition, newBounds);
 
         return new TargetPoint(
             Id: pt.Id,
-            Flags: TargetPointFlags.NotPointingAtTarget, // todo - should this be actually measured?
             Position: newPtPosition,
             NormalizedPosition: newNormalizedPos,
             Pointer: pt.Pointer,
             Pressure: pt.Pressure,
-            Target: target);
+            Target: target,
+
+            // todo - should this be actually measured?
+            // we currently just assert that it's not pointing at a translated target, which is probably the most
+            // intuitive result for consumers looking to just consume the pointer's single-window position. but i think
+            // this is an API design gap.
+            Flags: TargetPointFlags.NotPointingAtTarget
+            );
     }
 }

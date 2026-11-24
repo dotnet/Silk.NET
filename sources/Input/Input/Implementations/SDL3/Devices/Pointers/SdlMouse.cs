@@ -13,12 +13,22 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
     public override PointerState State => _state;
     public ICursorConfiguration Cursor { get; }
 
+    public override string Name { get; }
+
+    /// <summary>
+    /// A user has attempted to modify the hardware mouse position - we need a pump to process these events.
+    /// todo - let's pump events immediately before our input update ends. should we have an internal interface
+    /// for this?
+    /// </summary>
+    public bool NeedsPump { get; set; }
+
+    protected override bool OnePointOnly => true;
+    private bool _hintsAsEvents;
+
     private readonly MouseState _state;
 
-    // the mouse is always considered "down" - there is no up/down state for the mouse pointer itself - only its buttons.
-    private const bool DownState = true;
-
     private static bool _firstMouse = true;
+    private Vector3 _lastMousePositionSdl;
 
     private SdlMouse(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend,
         SdlCursor cursor)
@@ -34,6 +44,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
         }
 
         cursor.ModeChanged += OnCursorModeChange;
+        Name = NativeBackend.GetMouseNameForID((uint)SdlDeviceId).ReadToString();
     }
 
     private void OnCursorModeChange(object? sender, CursorModes e)
@@ -154,7 +165,13 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
         var window = NativeBackend.GetMouseFocus();
         if (Backend.TryGetOrCreatePointerTargetForWindow(window, out var target))
         {
-            AddOrUpdatePoint(null, target, new Vector3(x, y, 0), null, DownState, null, timestamp);
+            _lastMousePositionSdl = new Vector3(x, y, 0);
+            if (!IsMouseRelative)
+            {
+                // the mouse is always considered "down" - there is no up/down state for the mouse pointer itself - only its buttons.
+                const bool downState = true;
+                AddOrUpdatePoint(null, target, _lastMousePositionSdl, null, downState, null, timestamp);
+            }
         }
         // var point = _unboundedPointerTarget.GetPoint(this, 0);
     }
@@ -185,8 +202,6 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
 
         return mouse;
     }
-
-    public override string Name => NativeBackend.GetMouseNameForID((uint)SdlDeviceId).ReadToString();
 
     protected override void Release()
     {
@@ -221,9 +236,6 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
             return isRelative;
         }
     }
-
-    protected override bool OnePointOnly => true;
-    private bool _hintsAsEvents = false;
 
 
     /// <summary>
@@ -274,10 +286,6 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
         return true;
     }
 
-    /// <summary>
-    /// A user has attempted to modify the hardware mouse position - we need a pump to process these events.
-    /// </summary>
-    public bool NeedsPump { get; private set; }
 
     public void AddMotion(ref readonly MouseMotionEvent evtMotion, IPointerTarget target, long timestamp)
     {
@@ -286,8 +294,14 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
             return;
         }
 
-        AddOrUpdatePoint(null, target, new Vector3(evtMotion.X, evtMotion.Y, 0), 1, null, null, timestamp);
+        var position = IsMouseRelative
+            ? _lastMousePositionSdl + new Vector3(evtMotion.Xrel, evtMotion.Yrel, 0)
+            : new Vector3(evtMotion.X, evtMotion.Y, 0);
+        _lastMousePositionSdl = position;
+
+        AddOrUpdatePoint(null, target, position, 1, null, null, timestamp);
     }
+
 
 
     public void AddMouseButtonEvent(ref readonly MouseButtonEvent evtButton, long timestamp)
@@ -322,4 +336,5 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
     }
 
     public void PreUpdate() => _state.WheelPosition = Vector2.Zero;
+
 }

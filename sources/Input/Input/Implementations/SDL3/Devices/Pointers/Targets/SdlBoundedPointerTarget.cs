@@ -25,6 +25,7 @@ internal abstract class SdlBoundedPointerTarget : IPointerTarget
     }
 
     internal ISdl NativeBackend { get; }
+
     private Box2D<float> Bounds2D
     {
         get
@@ -39,17 +40,23 @@ internal abstract class SdlBoundedPointerTarget : IPointerTarget
     public bool UpdateBounds()
     {
         var previous = Bounds;
-        Bounds = CalculateBounds();
+
+        if (TryCalculateBounds(out var newBounds))
+        {
+            Bounds = newBounds;
+        }
+
         return previous != Bounds;
     }
 
-    protected abstract Box3D<float> CalculateBounds();
+    protected abstract bool TryCalculateBounds(out Box3D<float> bounds);
 
     /// <inheritdoc />
     public int GetPointCount(IPointerDevice pointer) => PointerTargetExtensions.GetPointCount(this, pointer);
 
     /// <inheritdoc />
-    public TargetPoint GetPoint(IPointerDevice pointer, int point) => PointerTargetExtensions.GetPoint(this, pointer, point);
+    public TargetPoint GetPoint(IPointerDevice pointer, int point) =>
+        PointerTargetExtensions.GetPoint(this, pointer, point);
 
 
     public bool Move(Vector2D<float> newPosXy)
@@ -59,6 +66,7 @@ internal abstract class SdlBoundedPointerTarget : IPointerTarget
         {
             return false;
         }
+
         var currentSize = Bounds.Size;
         var newPos = new Vector3D<float>(newPosXy.X, newPosXy.Y, 0);
         Bounds = new Box3D<float>(newPos, newPos + currentSize);
@@ -98,24 +106,27 @@ internal abstract class SdlBoundedPointerTarget : IPointerTarget
             return default;
         }
 
-        var totalBounds = CalculateDisplayBounds(sdl, displays[0]);
+        TryCalculateDisplayBounds(sdl, displays[0], out var totalBounds);
 
         for (var i = 1; i < displayCount; i++)
         {
-            var bounds = CalculateDisplayBounds(sdl, displays[i]);
-            totalBounds = totalBounds.ExtendBy(bounds);
+            if (TryCalculateDisplayBounds(sdl, displays[i], out var bounds))
+            {
+                totalBounds = totalBounds.ExtendBy(bounds);
+            }
         }
 
         sdl.Free(displays);
         return totalBounds;
     }
 
-    public static unsafe Box2D<float> CalculateDisplayBounds(ISdl sdl, uint sdlDisplayId)
+    protected static unsafe bool TryCalculateDisplayBounds(ISdl sdl, uint sdlDisplayId, out Box2D<float> bounds)
     {
         if (sdlDisplayId == 0)
         {
             // https://wiki.libsdl.org/SDL3/SDL_DisplayID
-            return default;
+            bounds = default;
+            return false;
         }
 
         Rect rect = default;
@@ -123,15 +134,11 @@ internal abstract class SdlBoundedPointerTarget : IPointerTarget
         if (gotDisplayBounds == 0)
         {
             SdlLog.Error($"Failed to get display from ID {sdlDisplayId}.");
-            return default;
+            bounds = default;
+            return false;
         }
 
-        return new Box2D<float>(rect.X, rect.Y, rect.X + rect.W, rect.Y + rect.H);
-    }
-
-
-    public void Dispose()
-    {
-
+        bounds = new Box2D<float>(rect.X, rect.Y, rect.X + rect.W, rect.Y + rect.H);
+        return true;
     }
 }

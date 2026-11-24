@@ -18,7 +18,11 @@ internal sealed class SimulatedPointerTarget : SdlBoundedPointerTarget, ISimulat
     private Box3D<float> _bounds;
 
 
-    protected override Box3D<float> CalculateBounds() => _bounds;
+    protected override bool TryCalculateBounds(out Box3D<float> bounds)
+    {
+        bounds = _bounds;
+        return true;
+    }
 }
 
 internal interface ISimulatedPointerTarget : IPointerTarget

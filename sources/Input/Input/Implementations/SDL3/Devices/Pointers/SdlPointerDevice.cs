@@ -23,6 +23,8 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
     protected ButtonReadOnlyList<PointerButton> Buttons => new(_buttons);
     protected InputReadOnlyList<TargetPoint> StatePoints => new(other: _publicPoints);
 
+    internal IReadOnlyList<TargetPoint> TranslatedPoints => _publicPoints;
+
     /// <summary>
     /// This collection is maintained 1:1 with SDL's input events
     /// </summary>

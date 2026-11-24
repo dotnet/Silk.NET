@@ -109,8 +109,7 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void Event(in TouchFingerEvent finger, IPointerTarget target, SdlInputBackend.FingerEventType fingerType, long timestamp)
     {
-        var position = new Vector3(finger.X, finger.Y, 0);
-        position *= target.Bounds.Size.ToSystem();
+        var position = NormalizedToTargetPixels(new Vector3(finger.X, finger.Y, 0), target);
 
         Event(
             fingerId: (uint)(finger.FingerID % int.MaxValue),
@@ -120,6 +119,13 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
             pressure: finger.Pressure,
             timestamp: timestamp);
     }
+
+    /// <summary>
+    /// Converts a normalised position into target space.
+    /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    internal static Vector3 NormalizedToTargetPixels(Vector3 position01, IPointerTarget target)
+        => position01 * target.Bounds.Size.ToSystem();
 
     public void Event(uint fingerId, IPointerTarget target, Vector3 position, SdlInputBackend.FingerEventType eventType,
         float pressure, long timestamp)

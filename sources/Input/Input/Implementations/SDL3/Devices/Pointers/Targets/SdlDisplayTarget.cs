@@ -14,10 +14,16 @@ internal sealed class SdlDisplayTarget : SdlBoundedPointerTarget, ISdlBoundedPoi
         Handle = id;
     }
 
-    protected override Box3D<float> CalculateBounds()
+    protected override bool TryCalculateBounds(out Box3D<float> bounds)
     {
-        var bounds2d = CalculateDisplayBounds(NativeBackend, Id);
-        return new Box3D<float>(bounds2d.Min.X, bounds2d.Min.Y, 0, bounds2d.Max.X, bounds2d.Max.Y, 0);
+        if(!TryCalculateDisplayBounds(NativeBackend, Id, out var bounds2D))
+        {
+            bounds = default;
+            return false;
+        }
+
+        bounds = new Box3D<float>(bounds2D.Min.X, bounds2D.Min.Y, 0, bounds2D.Max.X, bounds2D.Max.Y, 0);
+        return true;
     }
 
     public uint Id { get; }
