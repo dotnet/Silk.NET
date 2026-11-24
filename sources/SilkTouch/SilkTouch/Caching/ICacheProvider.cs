@@ -16,7 +16,7 @@ public interface ICacheProvider
     /// The directory, or <c>null</c> if the directory did not exist in the cache already and
     /// <see cref="CacheFlags.AllowNew"/> was not set.
     /// </returns>
-    ValueTask<ICacheDirectory?> GetDirectoryAsync(
+    public ValueTask<ICacheDirectory?> GetDirectoryAsync(
         string cacheKey,
         CacheIntent intent,
         CacheFlags flags,

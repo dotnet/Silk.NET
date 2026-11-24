@@ -16,14 +16,14 @@ public interface IInputResolver
     /// </summary>
     /// <param name="path">The path input.</param>
     /// <returns>The resolved path asynchronously.</returns>
-    Task<string?> TryResolvePath(string path);
+    public Task<string?> TryResolvePath(string path);
 
     /// <summary>
     /// Resolves the input path to its canonical host file system path, returning the original path if resolution failed.
     /// </summary>
     /// <param name="path">The path input.</param>
     /// <returns>The resolved path asynchronously.</returns>
-    async Task<string> ResolvePath(string path) =>
+    public async Task<string> ResolvePath(string path) =>
         (await TryResolvePath(path))?.Replace('\\', '/') ?? path;
 
     /// <summary>
@@ -31,7 +31,7 @@ public interface IInputResolver
     /// </summary>
     /// <param name="rsps">The response files.</param>
     /// <returns>An asynchronous task.</returns>
-    async Task ResolveInPlace(IList<ResponseFile> rsps)
+    public async Task ResolveInPlace(IList<ResponseFile> rsps)
     {
         // Resolve any foreign paths
         for (var i = 0; i < rsps.Count; i++)
@@ -102,7 +102,7 @@ public interface IInputResolver
     /// Resolves the paths in the given array in-place.
     /// </summary>
     /// <param name="files">The paths to resolve.</param>
-    async Task ResolveInPlace(IList<string> files)
+    public async Task ResolveInPlace(IList<string> files)
     {
         for (var i = 0; i < files.Count; i++)
         {
@@ -115,7 +115,7 @@ public interface IInputResolver
     /// </summary>
     /// <param name="config">The configuration.</param>
     /// <returns>The configuration with all paths resolved.</returns>
-    async Task<ClangScraper.Configuration> Resolve(ClangScraper.Configuration config)
+    public async Task<ClangScraper.Configuration> Resolve(ClangScraper.Configuration config)
     {
         await ResolveInPlace(config.ClangSharpResponseFiles);
         foreach (var (k, v) in config.ManualOverrides ?? [])
@@ -139,7 +139,7 @@ public interface IInputResolver
     /// </summary>
     /// <param name="config">The job config.</param>
     /// <returns>The job config with all paths resolved.</returns>
-    async Task<SilkTouchConfiguration> Resolve(SilkTouchConfiguration config) =>
+    public async Task<SilkTouchConfiguration> Resolve(SilkTouchConfiguration config) =>
         config with
         {
             SourceProject = await ResolvePath(config.SourceProject),

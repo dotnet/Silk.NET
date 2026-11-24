@@ -22,7 +22,7 @@ public interface IFunctionTransformer
     /// <paramref name="next"/> can be called multiple times for the same input. This can be used to generate
     /// transformative overloads for a function.
     /// </remarks>
-    void Transform(
+    public void Transform(
         MethodDeclarationSyntax current,
         ITransformationContext ctx,
         Action<MethodDeclarationSyntax> next

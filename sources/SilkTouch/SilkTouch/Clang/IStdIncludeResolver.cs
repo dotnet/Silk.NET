@@ -9,5 +9,5 @@ public interface IStdIncludeResolver
     /// Gets the standard include libclang arguments for the C compilation on this PC.
     /// </summary>
     /// <returns>Standard include libclang arguments.</returns>
-    IEnumerable<string> GetStandardIncludes();
+    public IEnumerable<string> GetStandardIncludes();
 }
