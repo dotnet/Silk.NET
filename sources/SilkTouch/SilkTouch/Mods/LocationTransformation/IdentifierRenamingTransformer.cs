@@ -17,7 +17,7 @@ public class IdentifierRenamingTransformer : LocationTransformer
     private readonly IReadOnlyDictionary<
         string,
         List<(ISymbol Symbol, string NewName)>
-    > newNameLookup;
+    > _newNameLookup;
 
     /// <summary>
     /// Creates a new IdentifierRenamingTransformer.
@@ -34,7 +34,7 @@ public class IdentifierRenamingTransformer : LocationTransformer
         IReadOnlyDictionary<string, List<(ISymbol Symbol, string NewName)>> newNameLookup
     )
     {
-        this.newNameLookup = newNameLookup;
+        this._newNameLookup = newNameLookup;
     }
 
     /// <summary>
@@ -60,12 +60,12 @@ public class IdentifierRenamingTransformer : LocationTransformer
     /// <inheritdoc />
     public override LocationTransformer GetThreadSafeCopy()
     {
-        return new IdentifierRenamingTransformer(newNameLookup);
+        return new IdentifierRenamingTransformer(_newNameLookup);
     }
 
     private SyntaxToken GetRenamed(ISymbol symbol, SyntaxToken currentNameIdentifier)
     {
-        if (newNameLookup.TryGetValue(symbol.Name, out var potentialCandidates))
+        if (_newNameLookup.TryGetValue(symbol.Name, out var potentialCandidates))
         {
             foreach (var candidate in potentialCandidates)
             {
