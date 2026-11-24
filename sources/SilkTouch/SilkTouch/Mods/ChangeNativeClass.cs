@@ -288,7 +288,7 @@ public class ChangeNativeClass(
                             is VariableDeclaratorSyntax
                             {
                                 Parent: not VariableDeclarationSyntax
-                                    or { Parent: not FieldDeclarationSyntax }
+                                    or { Parent: not FieldDeclarationSyntax },
                             }
                     )
                 )
@@ -350,8 +350,8 @@ public class ChangeNativeClass(
                     {
                         Parent: VariableDeclarationSyntax
                         {
-                            Parent: BaseFieldDeclarationSyntax fld
-                        } decl
+                            Parent: BaseFieldDeclarationSyntax fld,
+                        } decl,
                     } decla
                 )
                 {

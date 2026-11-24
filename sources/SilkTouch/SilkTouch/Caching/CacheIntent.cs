@@ -13,5 +13,5 @@ public enum CacheIntent
     /// <summary>
     /// Intermediate output from a job stage (e.g. raw bindings generated from ClangSharp).
     /// </summary>
-    StageIntermediateOutput
+    StageIntermediateOutput,
 }
