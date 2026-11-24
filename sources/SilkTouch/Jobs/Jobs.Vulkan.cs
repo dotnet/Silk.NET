@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Silk.NET.SilkTouch.Mods;
+using static Silk.NET.SilkTouch.SilkConstants;
 
 namespace Silk.NET.SilkTouch.Jobs;
 
@@ -86,12 +87,18 @@ internal static partial class Jobs
                             NameOverrides = new() { ["numAABBs"] = "NumAabbs" },
                             Affixes = new()
                             {
-                                ["HandleType"] = new() { Order = 1 },
-                                ["FunctionPointerDelegateType"] = new() { Order = 1 },
-                                ["KhronosVendor"] = new() { Order = -1 },
-                                ["KhronosImpliedVendor"] = new() { Remove = true },
-                                ["KhronosHandleType"] = new() { Remove = true },
-                                ["SharedPrefix"] = new() { Remove = true },
+                                [NameAffixCategories.HandleType] = new() { Order = 1 },
+                                [NameAffixCategories.FunctionPointerDelegateType] = new()
+                                {
+                                    Order = 1,
+                                },
+                                [NameAffixCategories.KhronosVendor] = new() { Order = -1 },
+                                [NameAffixCategories.KhronosImpliedVendor] = new()
+                                {
+                                    Remove = true,
+                                },
+                                [NameAffixCategories.KhronosHandleType] = new() { Remove = true },
+                                [NameAffixCategories.SharedPrefix] = new() { Remove = true },
                             },
                         }
                     )

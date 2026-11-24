@@ -8,6 +8,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using static Silk.NET.SilkTouch.SilkConstants;
 
 namespace Silk.NET.SilkTouch.Mods.Transformation;
 
@@ -182,7 +183,7 @@ public class FunctionTransformer(
                     newFun = newFun.WithAttributeLists(
                         newFun.AttributeLists.AddNameAffix(
                             NameAffixType.Suffix,
-                            "RawFunction",
+                            NameAffixCategories.RawFunction,
                             "Raw"
                         )
                     );

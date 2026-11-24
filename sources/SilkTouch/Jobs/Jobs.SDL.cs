@@ -1,6 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using static Silk.NET.SilkTouch.SilkConstants;
+
 namespace Silk.NET.SilkTouch.Jobs;
 
 internal static partial class Jobs
@@ -43,7 +45,13 @@ internal static partial class Jobs
                     .TransformProperties(new() { BoolTypes = new() { ["SDL_bool"] = null } })
                     .IdentifySharedPrefixes(new() { GlobalPrefixHints = ["SDL"] })
                     .PrettifyNames(
-                        new() { Affixes = new() { ["SharedPrefix"] = new() { Remove = true } } }
+                        new()
+                        {
+                            Affixes = new()
+                            {
+                                [NameAffixCategories.SharedPrefix] = new() { Remove = true },
+                            },
+                        }
                     )
                     .TransformEnums(
                         new()

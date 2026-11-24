@@ -3,6 +3,7 @@
 
 using Microsoft.Extensions.Logging.Abstractions;
 using Silk.NET.SilkTouch.Mods;
+using static Silk.NET.SilkTouch.SilkConstants;
 
 namespace Silk.NET.SilkTouch.UnitTests.Naming;
 
@@ -48,7 +49,7 @@ public class PrettifyNamesTests
                 Affixes =
                 {
                     {
-                        "SharedPrefix",
+                        NameAffixCategories.SharedPrefix,
                         new PrettifyNames.NameAffixConfiguration() { Remove = true }
                     },
                 },
@@ -109,7 +110,7 @@ public class PrettifyNamesTests
                 Affixes =
                 {
                     {
-                        "SharedPrefix",
+                        NameAffixCategories.SharedPrefix,
                         new PrettifyNames.NameAffixConfiguration() { Remove = true }
                     },
                 },
@@ -161,7 +162,7 @@ public class PrettifyNamesTests
                 Affixes =
                 {
                     {
-                        "SharedPrefix",
+                        NameAffixCategories.SharedPrefix,
                         new PrettifyNames.NameAffixConfiguration()
                         {
                             DiscriminatorPriority = 0,
@@ -169,7 +170,7 @@ public class PrettifyNamesTests
                         }
                     },
                     {
-                        "KhronosFunctionDataType",
+                        NameAffixCategories.KhronosFunctionDataType,
                         new PrettifyNames.NameAffixConfiguration()
                         {
                             DiscriminatorPriority = 1,
@@ -227,7 +228,7 @@ public class PrettifyNamesTests
                 Affixes =
                 {
                     {
-                        "SharedPrefix",
+                        NameAffixCategories.SharedPrefix,
                         new PrettifyNames.NameAffixConfiguration()
                         {
                             DiscriminatorPriority = 1,
@@ -235,7 +236,7 @@ public class PrettifyNamesTests
                         }
                     },
                     {
-                        "KhronosFunctionDataType",
+                        NameAffixCategories.KhronosFunctionDataType,
                         new PrettifyNames.NameAffixConfiguration()
                         {
                             DiscriminatorPriority = 0,
@@ -475,7 +476,7 @@ public class PrettifyNamesTests
                 Affixes =
                 {
                     {
-                        "SharedPrefix",
+                        NameAffixCategories.SharedPrefix,
                         new PrettifyNames.NameAffixConfiguration()
                         {
                             DiscriminatorPriority = 0,

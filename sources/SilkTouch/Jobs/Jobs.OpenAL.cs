@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Silk.NET.SilkTouch.Mods;
+using static Silk.NET.SilkTouch.SilkConstants;
 
 namespace Silk.NET.SilkTouch.Jobs;
 
@@ -97,13 +98,25 @@ internal static partial class Jobs
                             },
                             Affixes = new()
                             {
-                                ["HandleType"] = new() { Order = 1 },
-                                ["FunctionPointerDelegateType"] = new() { Order = 1 },
-                                ["KhronosVendor"] = new() { Order = -1 },
-                                ["KhronosFunctionDataType"] = new() { IsDiscriminator = true },
-                                ["KhronosImpliedVendor"] = new() { Remove = true },
-                                ["KhronosNonExclusiveVendor"] = new() { Remove = true },
-                                ["SharedPrefix"] = new() { Remove = true },
+                                [NameAffixCategories.HandleType] = new() { Order = 1 },
+                                [NameAffixCategories.FunctionPointerDelegateType] = new()
+                                {
+                                    Order = 1,
+                                },
+                                [NameAffixCategories.KhronosVendor] = new() { Order = -1 },
+                                [NameAffixCategories.KhronosFunctionDataType] = new()
+                                {
+                                    IsDiscriminator = true,
+                                },
+                                [NameAffixCategories.KhronosImpliedVendor] = new()
+                                {
+                                    Remove = true,
+                                },
+                                [NameAffixCategories.KhronosNonExclusiveVendor] = new()
+                                {
+                                    Remove = true,
+                                },
+                                [NameAffixCategories.SharedPrefix] = new() { Remove = true },
                             },
                         }
                     )

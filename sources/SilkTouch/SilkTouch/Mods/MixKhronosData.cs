@@ -13,6 +13,7 @@ using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using static Silk.NET.SilkTouch.SilkConstants;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -208,14 +209,14 @@ public partial class MixKhronosData(
         /// when determining a data type suffix to trim when <see cref="IdentifyFunctionDataTypes"/> is on. For example,
         /// <c>Direct</c> for OpenAL.
         /// <para/>
-        /// Identified suffixes will be categorized as a "KhronosNonVendor" affix.
+        /// Identified suffixes will be categorized as a <see cref="NameAffixCategories.KhronosNonVendor"/> affix.
         /// </summary>
         public List<string> NonVendorSuffixes { get; init; } = [];
 
         /// <summary>
         /// Whether OpenGL-style data type suffixes should be identified.
         /// <para/>
-        /// Identified suffixes will be categorized as a "KhronosFunctionDataType" affix.
+        /// Identified suffixes will be categorized as a <see cref="NameAffixCategories.KhronosFunctionDataType"/>" affix.
         /// </summary>
         public bool IdentifyFunctionDataTypes { get; init; }
 
@@ -223,7 +224,7 @@ public partial class MixKhronosData(
         /// Whether enum type vendor suffixes should be identified
         /// if the enum type contains members that don't match the exclusive vendor.
         /// <para/>
-        /// Identified suffixes will be categorized as a "KhronosNonExclusiveVendor" affix.
+        /// Identified suffixes will be categorized as a <see cref="NameAffixCategories.KhronosNonExclusiveVendor"/>" affix.
         /// </summary>
         /// <remarks>
         /// For context, OpenGL has a problem where an enum group starts out as ARB but never gets promoted,
@@ -243,7 +244,7 @@ public partial class MixKhronosData(
         /// Whether enum members should have their vendor suffixes identified
         /// if they share a vendor suffix with the containing type.
         /// <para/>
-        /// Identified suffixes will be categorized as a "KhronosImpliedVendor" affix.
+        /// Identified suffixes will be categorized as a <see cref="NameAffixCategories.KhronosImpliedVendor"/> affix.
         /// </summary>
         /// <example>
         /// <c>VkPresentModeKHR</c> in Vulkan is a KHR suffixed enum that contains <c>VK_PRESENT_MODE_IMMEDIATE_KHR</c>.

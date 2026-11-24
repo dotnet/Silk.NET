@@ -8,6 +8,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using static Silk.NET.SilkTouch.SilkConstants;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -130,7 +131,7 @@ public partial class ExtractNestedTypes(IDocumentFactories documentFactories) : 
                             .WithAttributeLists(
                                 structNode.AttributeLists.AddReferencedNameAffix(
                                     NameAffixType.Prefix,
-                                    "NestedStructParent",
+                                    NameAffixCategories.NestedStructParent,
                                     node.Identifier.ToString()
                                 )
                             )

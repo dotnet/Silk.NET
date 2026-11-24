@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Mods.LocationTransformation;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using static Silk.NET.SilkTouch.SilkConstants;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -226,7 +227,11 @@ public class TransformHandles(
             var structName = node.Identifier.Text;
             return node.WithIdentifier(Identifier(structName))
                 .WithAttributeLists(
-                    node.AttributeLists.AddNameAffix(NameAffixType.Suffix, "HandleType", "Handle")
+                    node.AttributeLists.AddNameAffix(
+                        NameAffixType.Suffix,
+                        NameAffixCategories.HandleType,
+                        "Handle"
+                    )
                 )
                 .WithMembers(
                     List(

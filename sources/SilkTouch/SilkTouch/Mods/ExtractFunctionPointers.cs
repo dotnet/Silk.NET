@@ -9,6 +9,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using static Silk.NET.SilkTouch.SilkConstants;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -147,7 +148,8 @@ public partial class ExtractFunctionPointers(
             }
 
             // As above, get the native type name if we can and also get a fallback name based on context.
-            const string functionPointerNameFallbackParent = "FunctionPointerNameFallbackParent";
+            const string functionPointerNameFallbackParent =
+                NameAffixCategories.FunctionPointerNameFallbackParent;
             string? currentNativeTypeName = null;
             string? fallback = null;
             SyntaxList<AttributeListSyntax> fallbackPfnAttrLists = default;
@@ -350,12 +352,12 @@ public partial class ExtractFunctionPointers(
                         .WithNativeName(currentNativeTypeName)
                         .AddReferencedNameAffix(
                             NameAffixType.Prefix,
-                            "FunctionPointerParent",
+                            NameAffixCategories.FunctionPointerParent,
                             currentNativeTypeName
                         )
                         .AddNameAffix(
                             NameAffixType.Suffix,
-                            "FunctionPointerDelegateType",
+                            NameAffixCategories.FunctionPointerDelegateType,
                             "Delegate"
                         ),
                     rawPfn: node
