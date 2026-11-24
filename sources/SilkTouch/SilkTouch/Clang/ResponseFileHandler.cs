@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.CommandLine;
+﻿using System.CommandLine;
 using System.CommandLine.Parsing;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using System.IO.Hashing;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using ClangSharp;

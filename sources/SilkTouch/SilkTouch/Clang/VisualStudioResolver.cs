@@ -1,12 +1,8 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Linq;
 
 namespace Silk.NET.SilkTouch.Clang;
 
@@ -54,7 +50,7 @@ public static class VisualStudioResolver
     {
         "Include/{0}/um",
         "Include/{0}/ucrt",
-        "Include/{0}/shared"
+        "Include/{0}/shared",
     };
 
     private static VisualStudioInfo? _cachedInfo;

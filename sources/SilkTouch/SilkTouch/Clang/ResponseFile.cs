@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ClangSharp;
+﻿using ClangSharp;
 using ClangSharp.Interop;
 
 namespace Silk.NET.SilkTouch.Clang;

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
+﻿using System.Diagnostics;
 using Microsoft.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Clang;
@@ -70,7 +66,7 @@ public class MacOSStdIncludeResolver : UnixStdIncludeResolver
             "--show-sdk-path" + (sdk is null ? "" : $" --sdk {sdk}")
         )
         {
-            RedirectStandardOutput = true
+            RedirectStandardOutput = true,
         };
         process.Start();
         process.WaitForExit();
