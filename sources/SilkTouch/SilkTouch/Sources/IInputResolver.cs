@@ -23,7 +23,7 @@ public interface IInputResolver
     /// </summary>
     /// <param name="path">The path input.</param>
     /// <returns>The resolved path asynchronously.</returns>
-    public async Task<string> ResolvePath(string path) =>
+    public async Task<string> ResolvePathAsync(string path) =>
         (await TryResolvePath(path))?.Replace('\\', '/') ?? path;
 
     /// <summary>
@@ -31,7 +31,7 @@ public interface IInputResolver
     /// </summary>
     /// <param name="rsps">The response files.</param>
     /// <returns>An asynchronous task.</returns>
-    public async Task ResolveInPlace(IList<ResponseFile> rsps)
+    public async Task ResolveInPlaceAsync(IList<ResponseFile> rsps)
     {
         // Resolve any foreign paths
         for (var i = 0; i < rsps.Count; i++)
@@ -40,7 +40,7 @@ public interface IInputResolver
             var files = rsp.Files.ToArray();
             for (var j = 0; j < files.Length; j++)
             {
-                files[j] = await ResolvePath(files[j]);
+                files[j] = await ResolvePathAsync(files[j]);
             }
 
             for (var j = 0; j < rsp.ClangCommandLineArgs.Length; j++)
@@ -54,7 +54,7 @@ public interface IInputResolver
                         {
                             break;
                         }
-                        rsp.ClangCommandLineArgs[k] = await ResolvePath(
+                        rsp.ClangCommandLineArgs[k] = await ResolvePathAsync(
                             rsp.ClangCommandLineArgs[k]
                         );
                         j++;
@@ -64,19 +64,21 @@ public interface IInputResolver
                 {
                     rsp.ClangCommandLineArgs[j] =
                         "--include-directory="
-                        + await ResolvePath(arg["--include-directory".Length..].TrimStart('='));
+                        + await ResolvePathAsync(
+                            arg["--include-directory".Length..].TrimStart('=')
+                        );
                 }
                 else if (arg.StartsWith("-I"))
                 {
                     rsp.ClangCommandLineArgs[j] =
-                        "-I" + await ResolvePath(arg["-I".Length..].TrimStart('='));
+                        "-I" + await ResolvePathAsync(arg["-I".Length..].TrimStart('='));
                 }
             }
 
             var traversals = rsp.GeneratorConfiguration.TraversalNames.ToArray();
             for (var j = 0; j < traversals.Length; j++)
             {
-                traversals[j] = await ResolvePath(traversals[j]);
+                traversals[j] = await ResolvePathAsync(traversals[j]);
             }
 
             rsps[i] = rsp with
@@ -88,9 +90,11 @@ public interface IInputResolver
                 ClangCommandLineArgs = rsp.ClangCommandLineArgs,
                 GeneratorConfiguration = rsp.GeneratorConfiguration.ToWrapper() with
                 {
-                    OutputLocation = await ResolvePath(rsp.GeneratorConfiguration.OutputLocation),
+                    OutputLocation = await ResolvePathAsync(
+                        rsp.GeneratorConfiguration.OutputLocation
+                    ),
                     TraversalNames = traversals,
-                    TestOutputLocation = await ResolvePath(
+                    TestOutputLocation = await ResolvePathAsync(
                         rsp.GeneratorConfiguration.TestOutputLocation
                     ),
                 },
@@ -102,11 +106,11 @@ public interface IInputResolver
     /// Resolves the paths in the given array in-place.
     /// </summary>
     /// <param name="files">The paths to resolve.</param>
-    public async Task ResolveInPlace(IList<string> files)
+    public async Task ResolveInPlaceAsync(IList<string> files)
     {
         for (var i = 0; i < files.Count; i++)
         {
-            files[i] = await ResolvePath(files[i]);
+            files[i] = await ResolvePathAsync(files[i]);
         }
     }
 
@@ -115,22 +119,22 @@ public interface IInputResolver
     /// </summary>
     /// <param name="config">The configuration.</param>
     /// <returns>The configuration with all paths resolved.</returns>
-    public async Task<ClangScraper.Configuration> Resolve(ClangScraper.Configuration config)
+    public async Task<ClangScraper.Configuration> ResolveAsync(ClangScraper.Configuration config)
     {
-        await ResolveInPlace(config.ClangSharpResponseFiles);
+        await ResolveInPlaceAsync(config.ClangSharpResponseFiles);
         foreach (var (k, v) in config.ManualOverrides ?? [])
         {
-            config.ManualOverrides![k] = await ResolvePath(v);
+            config.ManualOverrides![k] = await ResolvePathAsync(v);
         }
 
         return config with
         {
             InputSourceRoot = config.InputSourceRoot is null
                 ? null
-                : await ResolvePath(config.InputSourceRoot),
+                : await ResolvePathAsync(config.InputSourceRoot),
             InputTestRoot = config.InputTestRoot is null
                 ? null
-                : await ResolvePath(config.InputTestRoot),
+                : await ResolvePathAsync(config.InputTestRoot),
         };
     }
 
@@ -139,10 +143,12 @@ public interface IInputResolver
     /// </summary>
     /// <param name="config">The job config.</param>
     /// <returns>The job config with all paths resolved.</returns>
-    public async Task<SilkTouchConfiguration> Resolve(SilkTouchConfiguration config) =>
+    public async Task<SilkTouchConfiguration> ResolveAsync(SilkTouchConfiguration config) =>
         config with
         {
-            SourceProject = await ResolvePath(config.SourceProject),
-            TestProject = config.TestProject is null ? null : await ResolvePath(config.TestProject),
+            SourceProject = await ResolvePathAsync(config.SourceProject),
+            TestProject = config.TestProject is null
+                ? null
+                : await ResolvePathAsync(config.TestProject),
         };
 }

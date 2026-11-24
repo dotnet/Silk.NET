@@ -92,19 +92,19 @@ public class AddIncludes(
                             break;
                         }
 
-                        path = await inputResolver.ResolvePath(cmdLineArgs[k]);
+                        path = await inputResolver.ResolvePathAsync(cmdLineArgs[k]);
                         j++;
                     }
                 }
                 else if (arg.StartsWith("--include-directory"))
                 {
-                    path = await inputResolver.ResolvePath(
+                    path = await inputResolver.ResolvePathAsync(
                         arg["--include-directory".Length..].TrimStart('=')
                     );
                 }
                 else if (arg.StartsWith("-I"))
                 {
-                    path = await inputResolver.ResolvePath(arg["-I".Length..].TrimStart('='));
+                    path = await inputResolver.ResolvePathAsync(arg["-I".Length..].TrimStart('='));
                 }
 
                 if (path is null)

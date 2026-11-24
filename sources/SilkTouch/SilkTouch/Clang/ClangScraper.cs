@@ -347,7 +347,7 @@ public sealed class ClangScraper(
                                                 out var @override
                                             ) ?? false
                                                 ? File.OpenRead(
-                                                    await inputResolver.ResolvePath(@override)
+                                                    await inputResolver.ResolvePathAsync(@override)
                                                 )
                                                 : stream
                                         ),
@@ -401,7 +401,7 @@ public sealed class ClangScraper(
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         // Read the configuration.
-        var resolvedConfig = await inputResolver.Resolve(config);
+        var resolvedConfig = await inputResolver.ResolveAsync(config);
 
         // Read the response files.
         logger.LogInformation("Reading response files for {}, please wait...", ctx.JobKey);
@@ -420,7 +420,7 @@ public sealed class ClangScraper(
         }
 
         // Resolve any foreign paths referenced in the response files
-        await inputResolver.ResolveInPlace(rsps);
+        await inputResolver.ResolveInPlaceAsync(rsps);
 
         // Try generating the raw bindings with ClangSharp
         // If scraping needs to be skipped or if the scrape fails, then fall back to a cache if available

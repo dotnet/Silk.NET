@@ -101,7 +101,7 @@ internal class SilkTouchJob : IDisposable
         var sw = Stopwatch.StartNew();
 
         // Resolve any relative paths in the job configuration.
-        Config = await _inputResolver.Resolve(Config);
+        Config = await _inputResolver.ResolveAsync(Config);
 
         // Prepare the context
         await using var context = await _modContextFactory.CreateContextAsync(Key, Config, ct);
