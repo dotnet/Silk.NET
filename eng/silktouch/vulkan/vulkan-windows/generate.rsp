@@ -1,7 +1,5 @@
 @../settings.rsp
 @../remap.rsp
---exclude
-VK_NULL_HANDLE
 --file
 vulkan.h
 --methodClassName

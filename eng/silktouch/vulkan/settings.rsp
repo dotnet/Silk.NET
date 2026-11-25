@@ -2,6 +2,8 @@
 --define-macro
 VK_ENABLE_BETA_EXTENSIONS
 TODO_DEFINE_MACROS=HERE
+--exclude
+VK_NULL_HANDLE
 --headerFile
 ../header.txt
 --include-directory
