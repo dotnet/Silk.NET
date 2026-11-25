@@ -1,6 +1,9 @@
 @../settings.rsp
 @../remap.rsp
 
+--remap
+_cl_icd_dispatch=_cl_icd_dispatch_windows
+
 --additional
 -Wno-invalid-constexpr
 
