@@ -70,32 +70,75 @@ public partial class ExtractFunctionPointers(
             )
             .ToList();
 
+        var addedDocumentIds = new List<DocumentId>();
         foreach (var (typeDecl, identifier, fileDirs, namespaces) in extractedFunctionPointers)
         {
             var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true);
             var dir = NameUtils.FindCommonPrefix(fileDirs, true, false, true).TrimEnd('/');
-            project = project
-                .AddDocument(
-                    $"{identifier}.gen.cs",
-                    documentFactories.Source.PopulateDocument(
-                        CompilationUnit()
-                            .WithMembers(
-                                ns is { Length: > 0 }
-                                    ? SingletonList<MemberDeclarationSyntax>(
-                                        FileScopedNamespaceDeclaration(
-                                                ModUtils.NamespaceIntoIdentifierName(
-                                                    ns.TrimEnd('.')
-                                                )
-                                            )
-                                            .WithMembers(SingletonList(typeDecl))
-                                    )
-                                    : SingletonList(typeDecl)
-                            )
-                    ),
-                    // Place extracted function pointer types in the directory common to where the types are referenced from
-                    filePath: project.FullPath($"{dir}/{identifier}.gen.cs")
+
+            var doc = project.AddDocument(
+                $"{identifier}.gen.cs",
+                documentFactories.Source.PopulateDocument(
+                    CompilationUnit()
+                        .WithMembers(
+                            ns is { Length: > 0 }
+                                ? SingletonList<MemberDeclarationSyntax>(
+                                    FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns.TrimEnd('.'))
+                                        )
+                                        .WithMembers(SingletonList(typeDecl))
+                                )
+                                : SingletonList(typeDecl)
+                        )
+                ),
+                // Place extracted function pointer types in the directory common to where the types are referenced from
+                filePath: project.FullPath($"{dir}/{identifier}.gen.cs")
+            );
+
+            addedDocumentIds.Add(doc.Id);
+            project = doc.Project;
+        }
+
+        // Update invocation expressions
+        var compilation = await project.GetCompilationAsync(ct);
+        if (compilation != null)
+        {
+            // Gather function pointer struct symbols
+            var addedStructSymbols = new List<INamedTypeSymbol>();
+            foreach (var addedDocumentId in addedDocumentIds)
+            {
+                var document = project.GetDocument(addedDocumentId);
+                if (document == null)
+                {
+                    continue;
+                }
+
+                var tree = await document.GetSyntaxTreeAsync(ct);
+                if (tree == null)
+                {
+                    continue;
+                }
+
+                var root = await tree.GetRootAsync(ct);
+                if (
+                    root.DescendantNodes().FirstOrDefault(x => x is StructDeclarationSyntax)
+                    is not StructDeclarationSyntax structDeclaration
                 )
-                .Project;
+                {
+                    continue;
+                }
+
+                var semanticModel = compilation.GetSemanticModel(tree);
+                var symbol = semanticModel.GetDeclaredSymbol(structDeclaration, ct);
+                if (symbol == null)
+                {
+                    continue;
+                }
+
+                addedStructSymbols.Add(symbol);
+            }
+
+            Console.Write("TODO");
         }
 
         ctx.SourceProject = project;
@@ -589,5 +632,11 @@ public partial class ExtractFunctionPointers(
             @"^((?:[A-Za-z0-9\s\*_]|\[[0-9]*\])+)\((\*)+\)\(((?:(?:[A-Za-z0-9\s\*_]|\[[0-9]*\])+,?)*)\)"
         )]
         private partial Regex FunctionPointerNativeTypeNameRegex();
+    }
+
+    private class InvocationExpressionRewriter : CSharpSyntaxRewriter
+    {
+        public override SyntaxNode? VisitInvocationExpression(InvocationExpressionSyntax node) =>
+            base.VisitInvocationExpression(node);
     }
 }
