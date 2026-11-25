@@ -1,4 +1,5 @@
 @../../remap-stdint.rsp
+
 --remap
 _cl_platform_id=cl_platform_id
 _cl_device_id=cl_device_id
