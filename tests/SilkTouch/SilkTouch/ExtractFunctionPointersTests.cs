@@ -58,4 +58,44 @@ public class ExtractFunctionPointersTests
         // The function pointer should be extracted as both a struct and a delegate
         await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
+
+    [Test]
+    public async Task UpdatesReferences()
+    {
+        var inputDocName = "VkEnumerateInstanceExtensionPropertiesChain.gen.cs";
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                inputDocName,
+                """
+                public unsafe partial struct VkEnumerateInstanceExtensionPropertiesChain
+                {
+                    [NativeTypeName("VkResult (*)(const struct VkEnumerateInstanceExtensionPropertiesChain *, const char *, uint32_t *, VkExtensionProperties *)")]
+                    public delegate* unmanaged<VkEnumerateInstanceExtensionPropertiesChain*, sbyte*, uint*, VkExtensionProperties*, VkResult> pfnNextLayer;
+
+                    [NativeName("CallDown")]
+                    public readonly VkResult CallDown([NativeTypeName("const char *")] sbyte* pLayerName, [NativeTypeName("uint32_t *")] uint* pPropertyCount, VkExtensionProperties* pProperties)
+                    {
+                        return pfnNextLayer(pNextLink, pLayerName, pPropertyCount, pProperties);
+                    }
+                }
+                """,
+                // ExtractFunctionPointers requires the file path to be set and that the document is under a subfolder
+                filePath: $"Vulkan/{inputDocName}"
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+        var documentFactories = new DummyDocumentFactories();
+
+        var extractFunctionPointers = new ExtractFunctionPointers(
+            NullLogger<ExtractFunctionPointers>.Instance,
+            documentFactories
+        );
+
+        await extractFunctionPointers.ExecuteAsync(context);
+
+        // The reference in the CallDown method should be updated to point to pfnNextLayer.Handle
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
+    }
 }
