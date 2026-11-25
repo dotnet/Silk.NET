@@ -29,7 +29,6 @@ public unsafe partial struct VkEnumerateInstanceExtensionPropertiesChain
     [NativeName("CallDown")]
     public readonly VkResult CallDown([NativeTypeName("const char *")] sbyte* pLayerName, [NativeTypeName("uint32_t *")] uint* pPropertyCount, VkExtensionProperties* pProperties)
     {
-        // TODO
         return pfnNextLayer.Handle(pNextLink, pLayerName, pPropertyCount, pProperties);
     }
 }

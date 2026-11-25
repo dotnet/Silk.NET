@@ -3,6 +3,7 @@
 
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using Microsoft.Build.Framework;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 using static Silk.NET.SilkTouch.SilkConstants;
+using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -100,11 +102,13 @@ public partial class ExtractFunctionPointers(
         }
 
         // Update invocation expressions
+        // Unmanaged delegates are invocable, but once we wrap them with a struct, we handle to invoke the .Handle property instead
+        // Eg: pfnNextLayer() becomes pfnNextLayer.Handle()
         var compilation = await project.GetCompilationAsync(ct);
         if (compilation != null)
         {
             // Gather function pointer struct symbols
-            var addedStructSymbols = new List<INamedTypeSymbol>();
+            var addedStructSymbols = new HashSet<INamedTypeSymbol>(SymbolEqualityComparer.Default);
             foreach (var addedDocumentId in addedDocumentIds)
             {
                 var document = project.GetDocument(addedDocumentId);
@@ -138,7 +142,32 @@ public partial class ExtractFunctionPointers(
                 addedStructSymbols.Add(symbol);
             }
 
-            Console.Write("TODO");
+            // Rewrite all docs
+            foreach (var docId in project.DocumentIds)
+            {
+                var doc = project.GetDocument(docId);
+                if (doc == null)
+                {
+                    continue;
+                }
+
+                var tree = await doc.GetSyntaxTreeAsync(ct);
+                if (tree == null)
+                {
+                    continue;
+                }
+
+                var semanticModel = compilation.GetSemanticModel(tree);
+                var invocationExpressionRewriter = new InvocationExpressionRewriter(
+                    semanticModel,
+                    addedStructSymbols
+                );
+
+                project = doc.WithSyntaxRoot(
+                    invocationExpressionRewriter.Visit(await doc.GetSyntaxRootAsync(ct))
+                        ?? throw new InvalidOperationException("Visit returned null.")
+                ).Project;
+            }
         }
 
         ctx.SourceProject = project;
@@ -634,9 +663,28 @@ public partial class ExtractFunctionPointers(
         private partial Regex FunctionPointerNativeTypeNameRegex();
     }
 
-    private class InvocationExpressionRewriter : CSharpSyntaxRewriter
+    private class InvocationExpressionRewriter(
+        SemanticModel semanticModel,
+        HashSet<INamedTypeSymbol> addedStructSymbols
+    ) : CSharpSyntaxRewriter
     {
-        public override SyntaxNode? VisitInvocationExpression(InvocationExpressionSyntax node) =>
-            base.VisitInvocationExpression(node);
+        public override SyntaxNode VisitInvocationExpression(InvocationExpressionSyntax node)
+        {
+            var expressionType = semanticModel.GetTypeInfo(node.Expression).Type;
+            node = (InvocationExpressionSyntax)base.VisitInvocationExpression(node)!;
+
+            if (addedStructSymbols.Contains(expressionType, SymbolEqualityComparer.Default))
+            {
+                node = node.WithExpression(
+                    MemberAccessExpression(
+                        SyntaxKind.SimpleMemberAccessExpression,
+                        node.Expression,
+                        IdentifierName("Handle")
+                    )
+                );
+            }
+
+            return node;
+        }
     }
 }
