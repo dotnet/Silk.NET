@@ -48,6 +48,18 @@ public enum ErrorCodes : int
     [NativeName("CL_COMMAND_TERMINATED_ITSELF_WITH_FAILURE_ARM")]
     CommandTerminatedItselfWithFailureARM = -1108,
 
+    [NativeName("CL_VA_API_MEDIA_SURFACE_NOT_ACQUIRED_INTEL")]
+    VaApiMediaSurfaceNotAcquiredINTEL = -1101,
+
+    [NativeName("CL_VA_API_MEDIA_SURFACE_ALREADY_ACQUIRED_INTEL")]
+    VaApiMediaSurfaceAlreadyAcquiredINTEL = -1100,
+
+    [NativeName("CL_INVALID_VA_API_MEDIA_SURFACE_INTEL")]
+    InvalidVaApiMediaSurfaceINTEL = -1099,
+
+    [NativeName("CL_INVALID_VA_API_MEDIA_ADAPTER_INTEL")]
+    InvalidVaApiMediaAdapterINTEL = -1098,
+
     [NativeName("CL_ACCELERATOR_TYPE_NOT_SUPPORTED_INTEL")]
     AcceleratorTypeNotSupportedINTEL = -1097,
 
@@ -60,6 +72,12 @@ public enum ErrorCodes : int
     [NativeName("CL_INVALID_ACCELERATOR_INTEL")]
     InvalidAcceleratorINTEL = -1094,
 
+    [NativeName("CL_INVALID_EGL_OBJECT_KHR")]
+    InvalidEglObjectKHR = -1093,
+
+    [NativeName("CL_EGL_RESOURCE_NOT_ACQUIRED_KHR")]
+    EglResourceNotAcquiredKHR = -1092,
+
     [NativeName("CL_INVALID_PARTITION_NAME_EXT")]
     InvalidPartitionNameEXT = -1059,
 
@@ -69,8 +87,59 @@ public enum ErrorCodes : int
     [NativeName("CL_DEVICE_PARTITION_FAILED_EXT")]
     DevicePartitionFailedEXT = -1057,
 
+    [NativeName("CL_DX9_MEDIA_SURFACE_NOT_ACQUIRED_KHR")]
+    Dx9MediaSurfaceNotAcquiredKHR = -1013,
+
+    [NativeName("CL_DX9_RESOURCE_NOT_ACQUIRED_INTEL")]
+    Dx9ResourceNotAcquiredINTEL = -1013,
+
+    [NativeName("CL_DX9_MEDIA_SURFACE_ALREADY_ACQUIRED_KHR")]
+    Dx9MediaSurfaceAlreadyAcquiredKHR = -1012,
+
+    [NativeName("CL_DX9_RESOURCE_ALREADY_ACQUIRED_INTEL")]
+    Dx9ResourceAlreadyAcquiredINTEL = -1012,
+
+    [NativeName("CL_INVALID_DX9_MEDIA_SURFACE_KHR")]
+    InvalidDx9MediaSurfaceKHR = -1011,
+
+    [NativeName("CL_INVALID_DX9_RESOURCE_INTEL")]
+    InvalidDx9ResourceINTEL = -1011,
+
+    [NativeName("CL_INVALID_DX9_MEDIA_ADAPTER_KHR")]
+    InvalidDx9MediaAdapterKHR = -1010,
+
+    [NativeName("CL_INVALID_DX9_DEVICE_INTEL")]
+    InvalidDx9DeviceINTEL = -1010,
+
+    [NativeName("CL_D3D11_RESOURCE_NOT_ACQUIRED_KHR")]
+    D3D11ResourceNotAcquiredKHR = -1009,
+
+    [NativeName("CL_D3D11_RESOURCE_ALREADY_ACQUIRED_KHR")]
+    D3D11ResourceAlreadyAcquiredKHR = -1008,
+
+    [NativeName("CL_INVALID_D3D11_RESOURCE_KHR")]
+    InvalidD3D11ResourceKHR = -1007,
+
+    [NativeName("CL_INVALID_D3D11_DEVICE_KHR")]
+    InvalidD3D11DeviceKHR = -1006,
+
+    [NativeName("CL_D3D10_RESOURCE_NOT_ACQUIRED_KHR")]
+    D3D10ResourceNotAcquiredKHR = -1005,
+
+    [NativeName("CL_D3D10_RESOURCE_ALREADY_ACQUIRED_KHR")]
+    D3D10ResourceAlreadyAcquiredKHR = -1004,
+
+    [NativeName("CL_INVALID_D3D10_RESOURCE_KHR")]
+    InvalidD3D10ResourceKHR = -1003,
+
+    [NativeName("CL_INVALID_D3D10_DEVICE_KHR")]
+    InvalidD3D10DeviceKHR = -1002,
+
     [NativeName("CL_PLATFORM_NOT_FOUND_KHR")]
     PlatformNotFoundKHR = -1001,
+
+    [NativeName("CL_INVALID_GL_SHAREGROUP_REFERENCE_KHR")]
+    InvalidGlSharegroupReferenceKHR = -1000,
 
     [NativeName("CL_MAX_SIZE_RESTRICTION_EXCEEDED")]
     MaxSizeRestrictionExceeded = -72,

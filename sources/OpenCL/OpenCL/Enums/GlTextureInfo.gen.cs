@@ -10,4 +10,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_gl_texture_info")]
-public enum GlTextureInfo : uint { }
+public enum GlTextureInfo : uint
+{
+    [NativeName("CL_GL_TEXTURE_TARGET")]
+    TextureTarget = 8196,
+
+    [NativeName("CL_GL_MIPMAP_LEVEL")]
+    MipmapLevel = 8197,
+
+    [NativeName("CL_GL_NUM_SAMPLES")]
+    NumSamples = 8210,
+}

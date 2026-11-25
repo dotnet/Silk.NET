@@ -1,0 +1,20 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// Ported from the OpenCL headers and corresponding dependencies.
+// Original source is Copyright 2013-2026 The Khronos Group Inc. Licensed under the Apache 2.0 license.
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace Silk.NET.OpenCL;
+
+[NativeName("_cl_dx9_surface_info_khr")]
+public unsafe partial struct Dx9SurfaceInfoKHR
+{
+    [NativeName("resource")]
+    public IDirect3DSurface9Handle Resource;
+
+    [NativeName("shared_handle")]
+    public void* SharedHandle;
+}

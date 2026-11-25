@@ -10,4 +10,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_gl_context_info")]
-public enum GlContextInfo : uint { }
+public enum GlContextInfo : uint
+{
+    [NativeName("CL_CURRENT_DEVICE_FOR_GL_CONTEXT_KHR")]
+    CurrentDeviceForGlContextKHR = 8198,
+
+    [NativeName("CL_DEVICES_FOR_GL_CONTEXT_KHR")]
+    DevicesForGlContextKHR = 8199,
+}

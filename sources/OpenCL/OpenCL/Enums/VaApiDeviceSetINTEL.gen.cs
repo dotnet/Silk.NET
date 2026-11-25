@@ -10,4 +10,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_va_api_device_set_intel")]
-public enum VaApiDeviceSetINTEL : uint { }
+public enum VaApiDeviceSetINTEL : uint
+{
+    [NativeName("CL_PREFERRED_DEVICES_FOR_VA_API_INTEL")]
+    PreferredDevicesForVaApi = 16533,
+
+    [NativeName("CL_ALL_DEVICES_FOR_VA_API_INTEL")]
+    AllDevicesForVaApi = 16534,
+}

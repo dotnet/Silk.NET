@@ -54,6 +54,9 @@ public enum ChannelOrder : uint
     [NativeName("CL_DEPTH")]
     Depth = 4285,
 
+    [NativeName("CL_DEPTH_STENCIL")]
+    DepthStencil = 4286,
+
     [NativeName("CL_sRGB")]
     SRgb = 4287,
 

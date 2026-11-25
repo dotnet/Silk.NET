@@ -108,6 +108,15 @@ public enum CommandType : uint
     [NativeName("CL_COMMAND_COMMAND_BUFFER_KHR")]
     CommandBufferKHR = 4776,
 
+    [NativeName("CL_COMMAND_GL_FENCE_SYNC_OBJECT_KHR")]
+    GlFenceSyncObjectKHR = 8205,
+
+    [NativeName("CL_COMMAND_ACQUIRE_DX9_MEDIA_SURFACES_KHR")]
+    AcquireDx9MediaSurfacesKHR = 8235,
+
+    [NativeName("CL_COMMAND_RELEASE_DX9_MEDIA_SURFACES_KHR")]
+    ReleaseDx9MediaSurfacesKHR = 8236,
+
     [NativeName("CL_COMMAND_SEMAPHORE_WAIT_KHR")]
     SemaphoreWaitKHR = 8258,
 
@@ -120,8 +129,32 @@ public enum CommandType : uint
     [NativeName("CL_COMMAND_RELEASE_EXTERNAL_MEM_OBJECTS_KHR")]
     ReleaseExternalMemObjectsKHR = 8264,
 
+    [NativeName("CL_COMMAND_ACQUIRE_D3D10_OBJECTS_KHR")]
+    AcquireD3D10ObjectsKHR = 16407,
+
+    [NativeName("CL_COMMAND_RELEASE_D3D10_OBJECTS_KHR")]
+    ReleaseD3D10ObjectsKHR = 16408,
+
+    [NativeName("CL_COMMAND_ACQUIRE_D3D11_OBJECTS_KHR")]
+    AcquireD3D11ObjectsKHR = 16416,
+
+    [NativeName("CL_COMMAND_RELEASE_D3D11_OBJECTS_KHR")]
+    ReleaseD3D11ObjectsKHR = 16417,
+
+    [NativeName("CL_COMMAND_ACQUIRE_DX9_OBJECTS_INTEL")]
+    AcquireDx9ObjectsINTEL = 16426,
+
+    [NativeName("CL_COMMAND_RELEASE_DX9_OBJECTS_INTEL")]
+    ReleaseDx9ObjectsINTEL = 16427,
+
     [NativeName("CL_COMMAND_MIGRATE_MEM_OBJECT_EXT")]
     MigrateMemObjectEXT = 16448,
+
+    [NativeName("CL_COMMAND_ACQUIRE_VA_API_MEDIA_SURFACES_INTEL")]
+    AcquireVaApiMediaSurfacesINTEL = 16538,
+
+    [NativeName("CL_COMMAND_RELEASE_VA_API_MEDIA_SURFACES_INTEL")]
+    ReleaseVaApiMediaSurfacesINTEL = 16539,
 
     [NativeName("CL_COMMAND_SVM_FREE_ARM")]
     SvmFreeARM = 16570,

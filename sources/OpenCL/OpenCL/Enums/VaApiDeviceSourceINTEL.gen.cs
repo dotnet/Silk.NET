@@ -10,4 +10,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_va_api_device_source_intel")]
-public enum VaApiDeviceSourceINTEL : uint { }
+public enum VaApiDeviceSourceINTEL : uint
+{
+    [NativeName("CL_VA_API_DISPLAY_INTEL")]
+    Display = 16532,
+}
