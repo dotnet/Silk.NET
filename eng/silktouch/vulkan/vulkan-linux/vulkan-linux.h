@@ -12,6 +12,7 @@
 #include <vk_video/vulkan_video_codecs_common.h>
 
 #include <vulkan/vulkan.h>
+#include <vulkan/vk_layer.h>
 
 #include <vulkan/vulkan_android.h>
 #include <vulkan/vulkan_ohos.h>

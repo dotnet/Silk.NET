@@ -38,8 +38,10 @@ Silk.NET.Vulkan
 ../../../submodules/vulkan-headers/include/vk_video/vulkan_video_codec_vp9std.h
 ../../../submodules/vulkan-headers/include/vk_video/vulkan_video_codec_vp9std_decode.h
 ../../../submodules/vulkan-headers/include/vk_video/vulkan_video_codecs_common.h
+
 ../../../submodules/vulkan-headers/include/vulkan/vulkan.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_core.h
+../../../submodules/vulkan-headers/include/vulkan/vk_layer.h
 
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_android.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_ohos.h
