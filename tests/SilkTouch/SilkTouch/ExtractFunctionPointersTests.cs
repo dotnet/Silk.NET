@@ -60,7 +60,7 @@ public class ExtractFunctionPointersTests
     }
 
     [Test]
-    public async Task UpdatesReferences()
+    public async Task UpdatesInvocations()
     {
         var inputDocName = "VkEnumerateInstanceExtensionPropertiesChain.gen.cs";
         var project = TestUtils
