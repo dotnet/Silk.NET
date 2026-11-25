@@ -2,7 +2,7 @@
 @../remap.rsp
 
 --file
-vulkan.h
+vulkan-mac.h
 
 --methodClassName
 Vk
@@ -11,10 +11,10 @@ Vk
 Silk.NET.Vulkan
 
 --output
-../../../../sources/Vulkan/vk
+../../../../sources/Vulkan/vk-mac
 
 --test-output
-../../../../tests/Vulkan/vk
+../../../../tests/Vulkan/vk-mac
 
 --traverse
 ../../../submodules/vulkan-headers/include/vk_video/vulkan_video_codec_av1std.h

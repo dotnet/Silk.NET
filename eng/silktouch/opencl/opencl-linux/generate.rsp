@@ -5,7 +5,7 @@
 -Wno-invalid-constexpr
 
 --file
-opencl.h
+opencl-linux.h
 
 --methodClassName
 Cl
@@ -14,10 +14,10 @@ Cl
 Silk.NET.OpenCL
 
 --output
-../../../../sources/OpenCL/cl
+../../../../sources/OpenCL/cl-linux
 
 --test-output
-../../../../tests/OpenCL/cl
+../../../../tests/OpenCL/cl-linux
 
 --traverse
 ../../../submodules/opencl-headers/CL/cl.h
