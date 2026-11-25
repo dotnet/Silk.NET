@@ -77,8 +77,11 @@
           "eng/submodules/opencl-headers"
         ],
         "caches": {
+          "ubuntu-latest": [
+            "opencl-linux-clangsharp.stout"
+          ],
           "windows-latest": [
-            "opencl-clangsharp.stout"
+            "opencl-windows-clangsharp.stout"
           ]
         },
         "dependencies": [
@@ -139,8 +142,14 @@
           "eng/submodules/vulkan-headers"
         ],
         "caches": {
+          "ubuntu-latest": [
+            "vulkan-linux-clangsharp.stout"
+          ],
+          "macos-latest": [
+            "vulkan-mac-clangsharp.stout"
+          ],
           "windows-latest": [
-            "vulkan-clangsharp.stout"
+            "vulkan-windows-clangsharp.stout"
           ]
         },
         "dependencies": [
