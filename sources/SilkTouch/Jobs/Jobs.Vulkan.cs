@@ -29,11 +29,55 @@ internal static partial class Jobs
                     .ClangScraper(
                         new()
                         {
+                            CacheKey = "Windows",
                             ScrapeIf = static () => OperatingSystem.IsWindows(),
 
-                            ClangSharpResponseFiles = ["eng/silktouch/vulkan/**/generate.rsp"],
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/vulkan/vulkan-windows/generate.rsp",
+                            ],
                             InputSourceRoot = "sources/Vulkan",
                             InputTestRoot = "tests/Vulkan",
+                        }
+                    )
+                    .ClangScraper(
+                        new()
+                        {
+                            CacheKey = "Linux",
+                            ScrapeIf = static () => OperatingSystem.IsLinux(),
+
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/vulkan/vulkan-linux/generate.rsp",
+                            ],
+                            InputSourceRoot = "sources/Vulkan",
+                            InputTestRoot = "tests/Vulkan",
+                        }
+                    )
+                    .ClangScraper(
+                        new()
+                        {
+                            CacheKey = "Mac",
+                            ScrapeIf = static () => OperatingSystem.IsMacOS(),
+                            ExitAfterGenerateCacheOnlyRun = true,
+
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/vulkan/vulkan-mac/generate.rsp",
+                            ],
+                            InputSourceRoot = "sources/Vulkan",
+                            InputTestRoot = "tests/Vulkan",
+                        }
+                    )
+                    .BakeSourceSets(
+                        new()
+                        {
+                            SourceSets = new()
+                            {
+                                ["vk-windows"] = "vk",
+                                ["vk-linux"] = "vk",
+                                ["vk-mac"] = "vk",
+                            },
                         }
                     )
                     .MarkNativeNames()
