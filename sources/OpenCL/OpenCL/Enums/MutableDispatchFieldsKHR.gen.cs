@@ -14,4 +14,19 @@ namespace Silk.NET.OpenCL;
 public enum MutableDispatchFieldsKHR : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_MUTABLE_DISPATCH_GLOBAL_OFFSET_KHR")]
+    GlobalOffset = 0x1,
+
+    [NativeName("CL_MUTABLE_DISPATCH_GLOBAL_SIZE_KHR")]
+    GlobalSize = 0x2,
+
+    [NativeName("CL_MUTABLE_DISPATCH_LOCAL_SIZE_KHR")]
+    LocalSize = 0x4,
+
+    [NativeName("CL_MUTABLE_DISPATCH_ARGUMENTS_KHR")]
+    Arguments = 0x8,
+
+    [NativeName("CL_MUTABLE_DISPATCH_EXEC_INFO_KHR")]
+    ExecInfo = 0x10,
 }

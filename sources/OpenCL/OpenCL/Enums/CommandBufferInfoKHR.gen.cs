@@ -10,4 +10,23 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_command_buffer_info_khr")]
-public enum CommandBufferInfoKHR : uint { }
+public enum CommandBufferInfoKHR : uint
+{
+    [NativeName("CL_COMMAND_BUFFER_QUEUES_KHR")]
+    Queues = 4756,
+
+    [NativeName("CL_COMMAND_BUFFER_NUM_QUEUES_KHR")]
+    NumQueues = 4757,
+
+    [NativeName("CL_COMMAND_BUFFER_REFERENCE_COUNT_KHR")]
+    ReferenceCount = 4758,
+
+    [NativeName("CL_COMMAND_BUFFER_STATE_KHR")]
+    State = 4759,
+
+    [NativeName("CL_COMMAND_BUFFER_PROPERTIES_ARRAY_KHR")]
+    PropertiesArray = 4760,
+
+    [NativeName("CL_COMMAND_BUFFER_CONTEXT_KHR")]
+    Context = 4761,
+}

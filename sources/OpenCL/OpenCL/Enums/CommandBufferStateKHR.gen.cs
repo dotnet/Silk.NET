@@ -10,4 +10,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_command_buffer_state_khr")]
-public enum CommandBufferStateKHR : uint { }
+public enum CommandBufferStateKHR : uint
+{
+    [NativeName("CL_COMMAND_BUFFER_STATE_RECORDING_KHR")]
+    Recording = 0,
+
+    [NativeName("CL_COMMAND_BUFFER_STATE_EXECUTABLE_KHR")]
+    Executable = 1,
+
+    [NativeName("CL_COMMAND_BUFFER_STATE_FINALIZED_KHR")]
+    Finalized = 2,
+}

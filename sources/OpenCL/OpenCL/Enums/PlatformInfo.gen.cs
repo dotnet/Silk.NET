@@ -42,6 +42,12 @@ public enum PlatformInfo : uint
     [NativeName("CL_PLATFORM_EXTENSIONS_WITH_VERSION_KHR")]
     ExtensionsWithVersionKHR = 2311,
 
+    [NativeName("CL_PLATFORM_COMMAND_BUFFER_CAPABILITIES_KHR")]
+    CommandBufferCapabilitiesKHR = 2312,
+
+    [NativeName("CL_PLATFORM_SVM_TYPE_CAPABILITIES_KHR")]
+    SvmTypeCapabilitiesKHR = 2313,
+
     [NativeName("CL_PLATFORM_ICD_SUFFIX_KHR")]
     IcdSuffixKHR = 2336,
 

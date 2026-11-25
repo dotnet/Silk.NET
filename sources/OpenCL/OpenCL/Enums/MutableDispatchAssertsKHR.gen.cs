@@ -14,4 +14,7 @@ namespace Silk.NET.OpenCL;
 public enum MutableDispatchAssertsKHR : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_MUTABLE_DISPATCH_ASSERT_NO_ADDITIONAL_WORK_GROUPS_KHR")]
+    AssertNoAdditionalWorkGroups = 0x1,
 }

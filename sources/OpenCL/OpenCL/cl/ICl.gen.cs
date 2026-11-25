@@ -96,6 +96,412 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clCloneKernel")]
         static abstract KernelHandle CloneKernel(KernelHandle source_kernel, Ref<int> errcode_ret);
 
+        [NativeName("clCommandBarrierWithWaitListKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandBarrierWithWaitListKHR")]
+        static abstract int CommandBarrierWithWaitListKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            ulong* properties,
+            uint num_sync_points_in_wait_list,
+            uint* sync_point_wait_list,
+            uint* sync_point,
+            MutableCommandHandleKHR* mutable_handle
+        );
+
+        [NativeName("clCommandBarrierWithWaitListKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandBarrierWithWaitListKHR")]
+        static abstract int CommandBarrierWithWaitListKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            Ref<ulong> properties,
+            uint num_sync_points_in_wait_list,
+            Ref<uint> sync_point_wait_list,
+            Ref<uint> sync_point,
+            Ref<MutableCommandHandleKHR> mutable_handle
+        );
+
+        [NativeName("clCommandCopyBufferKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandCopyBufferKHR")]
+        static abstract int CommandCopyBufferKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            ulong* properties,
+            MemHandle src_buffer,
+            MemHandle dst_buffer,
+            nuint src_offset,
+            nuint dst_offset,
+            nuint size,
+            uint num_sync_points_in_wait_list,
+            uint* sync_point_wait_list,
+            uint* sync_point,
+            MutableCommandHandleKHR* mutable_handle
+        );
+
+        [NativeName("clCommandCopyBufferKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandCopyBufferKHR")]
+        static abstract int CommandCopyBufferKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            Ref<ulong> properties,
+            MemHandle src_buffer,
+            MemHandle dst_buffer,
+            nuint src_offset,
+            nuint dst_offset,
+            nuint size,
+            uint num_sync_points_in_wait_list,
+            Ref<uint> sync_point_wait_list,
+            Ref<uint> sync_point,
+            Ref<MutableCommandHandleKHR> mutable_handle
+        );
+
+        [NativeName("clCommandCopyBufferRectKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandCopyBufferRectKHR")]
+        static abstract int CommandCopyBufferRectKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            ulong* properties,
+            MemHandle src_buffer,
+            MemHandle dst_buffer,
+            nuint* src_origin,
+            nuint* dst_origin,
+            nuint* region,
+            nuint src_row_pitch,
+            nuint src_slice_pitch,
+            nuint dst_row_pitch,
+            nuint dst_slice_pitch,
+            uint num_sync_points_in_wait_list,
+            uint* sync_point_wait_list,
+            uint* sync_point,
+            MutableCommandHandleKHR* mutable_handle
+        );
+
+        [NativeName("clCommandCopyBufferRectKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandCopyBufferRectKHR")]
+        static abstract int CommandCopyBufferRectKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            Ref<ulong> properties,
+            MemHandle src_buffer,
+            MemHandle dst_buffer,
+            Ref<nuint> src_origin,
+            Ref<nuint> dst_origin,
+            Ref<nuint> region,
+            nuint src_row_pitch,
+            nuint src_slice_pitch,
+            nuint dst_row_pitch,
+            nuint dst_slice_pitch,
+            uint num_sync_points_in_wait_list,
+            Ref<uint> sync_point_wait_list,
+            Ref<uint> sync_point,
+            Ref<MutableCommandHandleKHR> mutable_handle
+        );
+
+        [NativeName("clCommandCopyBufferToImageKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandCopyBufferToImageKHR")]
+        static abstract int CommandCopyBufferToImageKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            ulong* properties,
+            MemHandle src_buffer,
+            MemHandle dst_image,
+            nuint src_offset,
+            nuint* dst_origin,
+            nuint* region,
+            uint num_sync_points_in_wait_list,
+            uint* sync_point_wait_list,
+            uint* sync_point,
+            MutableCommandHandleKHR* mutable_handle
+        );
+
+        [NativeName("clCommandCopyBufferToImageKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandCopyBufferToImageKHR")]
+        static abstract int CommandCopyBufferToImageKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            Ref<ulong> properties,
+            MemHandle src_buffer,
+            MemHandle dst_image,
+            nuint src_offset,
+            Ref<nuint> dst_origin,
+            Ref<nuint> region,
+            uint num_sync_points_in_wait_list,
+            Ref<uint> sync_point_wait_list,
+            Ref<uint> sync_point,
+            Ref<MutableCommandHandleKHR> mutable_handle
+        );
+
+        [NativeName("clCommandCopyImageKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandCopyImageKHR")]
+        static abstract int CommandCopyImageKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            ulong* properties,
+            MemHandle src_image,
+            MemHandle dst_image,
+            nuint* src_origin,
+            nuint* dst_origin,
+            nuint* region,
+            uint num_sync_points_in_wait_list,
+            uint* sync_point_wait_list,
+            uint* sync_point,
+            MutableCommandHandleKHR* mutable_handle
+        );
+
+        [NativeName("clCommandCopyImageKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandCopyImageKHR")]
+        static abstract int CommandCopyImageKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            Ref<ulong> properties,
+            MemHandle src_image,
+            MemHandle dst_image,
+            Ref<nuint> src_origin,
+            Ref<nuint> dst_origin,
+            Ref<nuint> region,
+            uint num_sync_points_in_wait_list,
+            Ref<uint> sync_point_wait_list,
+            Ref<uint> sync_point,
+            Ref<MutableCommandHandleKHR> mutable_handle
+        );
+
+        [NativeName("clCommandCopyImageToBufferKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandCopyImageToBufferKHR")]
+        static abstract int CommandCopyImageToBufferKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            ulong* properties,
+            MemHandle src_image,
+            MemHandle dst_buffer,
+            nuint* src_origin,
+            nuint* region,
+            nuint dst_offset,
+            uint num_sync_points_in_wait_list,
+            uint* sync_point_wait_list,
+            uint* sync_point,
+            MutableCommandHandleKHR* mutable_handle
+        );
+
+        [NativeName("clCommandCopyImageToBufferKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandCopyImageToBufferKHR")]
+        static abstract int CommandCopyImageToBufferKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            Ref<ulong> properties,
+            MemHandle src_image,
+            MemHandle dst_buffer,
+            Ref<nuint> src_origin,
+            Ref<nuint> region,
+            nuint dst_offset,
+            uint num_sync_points_in_wait_list,
+            Ref<uint> sync_point_wait_list,
+            Ref<uint> sync_point,
+            Ref<MutableCommandHandleKHR> mutable_handle
+        );
+
+        [NativeName("clCommandFillBufferKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandFillBufferKHR")]
+        static abstract int CommandFillBufferKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            ulong* properties,
+            MemHandle buffer,
+            void* pattern,
+            nuint pattern_size,
+            nuint offset,
+            nuint size,
+            uint num_sync_points_in_wait_list,
+            uint* sync_point_wait_list,
+            uint* sync_point,
+            MutableCommandHandleKHR* mutable_handle
+        );
+
+        [NativeName("clCommandFillBufferKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandFillBufferKHR")]
+        static abstract int CommandFillBufferKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            Ref<ulong> properties,
+            MemHandle buffer,
+            Ref pattern,
+            nuint pattern_size,
+            nuint offset,
+            nuint size,
+            uint num_sync_points_in_wait_list,
+            Ref<uint> sync_point_wait_list,
+            Ref<uint> sync_point,
+            Ref<MutableCommandHandleKHR> mutable_handle
+        );
+
+        [NativeName("clCommandFillImageKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandFillImageKHR")]
+        static abstract int CommandFillImageKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            ulong* properties,
+            MemHandle image,
+            void* fill_color,
+            nuint* origin,
+            nuint* region,
+            uint num_sync_points_in_wait_list,
+            uint* sync_point_wait_list,
+            uint* sync_point,
+            MutableCommandHandleKHR* mutable_handle
+        );
+
+        [NativeName("clCommandFillImageKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandFillImageKHR")]
+        static abstract int CommandFillImageKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            Ref<ulong> properties,
+            MemHandle image,
+            Ref fill_color,
+            Ref<nuint> origin,
+            Ref<nuint> region,
+            uint num_sync_points_in_wait_list,
+            Ref<uint> sync_point_wait_list,
+            Ref<uint> sync_point,
+            Ref<MutableCommandHandleKHR> mutable_handle
+        );
+
+        [NativeName("clCommandNDRangeKernelKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandNDRangeKernelKHR")]
+        static abstract int CommandNDRangeKernelKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            ulong* properties,
+            KernelHandle kernel,
+            uint work_dim,
+            nuint* global_work_offset,
+            nuint* global_work_size,
+            nuint* local_work_size,
+            uint num_sync_points_in_wait_list,
+            uint* sync_point_wait_list,
+            uint* sync_point,
+            MutableCommandHandleKHR* mutable_handle
+        );
+
+        [NativeName("clCommandNDRangeKernelKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCommandNDRangeKernelKHR")]
+        static abstract int CommandNDRangeKernelKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            Ref<ulong> properties,
+            KernelHandle kernel,
+            uint work_dim,
+            Ref<nuint> global_work_offset,
+            Ref<nuint> global_work_size,
+            Ref<nuint> local_work_size,
+            uint num_sync_points_in_wait_list,
+            Ref<uint> sync_point_wait_list,
+            Ref<uint> sync_point,
+            Ref<MutableCommandHandleKHR> mutable_handle
+        );
+
+        [NativeName("clCommandSVMMemcpyKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_command_buffer", "CL_VERSION_2_0"],
+            ImpliesSets = ["CL_VERSION_1_2"],
+            RequireAll = true
+        )]
+        [NativeFunction("opencl", EntryPoint = "clCommandSVMMemcpyKHR")]
+        static abstract int CommandSvmMemcpyKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            ulong* properties,
+            void* dst_ptr,
+            void* src_ptr,
+            nuint size,
+            uint num_sync_points_in_wait_list,
+            uint* sync_point_wait_list,
+            uint* sync_point,
+            MutableCommandHandleKHR* mutable_handle
+        );
+
+        [NativeName("clCommandSVMMemcpyKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_command_buffer", "CL_VERSION_2_0"],
+            ImpliesSets = ["CL_VERSION_1_2"],
+            RequireAll = true
+        )]
+        [NativeFunction("opencl", EntryPoint = "clCommandSVMMemcpyKHR")]
+        static abstract int CommandSvmMemcpyKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            Ref<ulong> properties,
+            Ref dst_ptr,
+            Ref src_ptr,
+            nuint size,
+            uint num_sync_points_in_wait_list,
+            Ref<uint> sync_point_wait_list,
+            Ref<uint> sync_point,
+            Ref<MutableCommandHandleKHR> mutable_handle
+        );
+
+        [NativeName("clCommandSVMMemFillKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_command_buffer", "CL_VERSION_2_0"],
+            ImpliesSets = ["CL_VERSION_1_2"],
+            RequireAll = true
+        )]
+        [NativeFunction("opencl", EntryPoint = "clCommandSVMMemFillKHR")]
+        static abstract int CommandSvmMemFillKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            ulong* properties,
+            void* svm_ptr,
+            void* pattern,
+            nuint pattern_size,
+            nuint size,
+            uint num_sync_points_in_wait_list,
+            uint* sync_point_wait_list,
+            uint* sync_point,
+            MutableCommandHandleKHR* mutable_handle
+        );
+
+        [NativeName("clCommandSVMMemFillKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_command_buffer", "CL_VERSION_2_0"],
+            ImpliesSets = ["CL_VERSION_1_2"],
+            RequireAll = true
+        )]
+        [NativeFunction("opencl", EntryPoint = "clCommandSVMMemFillKHR")]
+        static abstract int CommandSvmMemFillKHR(
+            CommandBufferHandleKHR command_buffer,
+            CommandQueueHandle command_queue,
+            Ref<ulong> properties,
+            Ref svm_ptr,
+            Ref pattern,
+            nuint pattern_size,
+            nuint size,
+            uint num_sync_points_in_wait_list,
+            Ref<uint> sync_point_wait_list,
+            Ref<uint> sync_point,
+            Ref<MutableCommandHandleKHR> mutable_handle
+        );
+
         [NativeName("clCompileProgram")]
         [SupportedApiProfile(
             "opencl",
@@ -266,7 +672,28 @@ public unsafe partial interface ICl
             Ref<int> errcode_ret
         );
 
+        [NativeName("clCreateCommandBufferKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateCommandBufferKHR")]
+        static abstract CommandBufferHandleKHR CreateCommandBufferKHR(
+            uint num_queues,
+            CommandQueueHandle* queues,
+            ulong* properties,
+            int* errcode_ret
+        );
+
+        [NativeName("clCreateCommandBufferKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateCommandBufferKHR")]
+        static abstract CommandBufferHandleKHR CreateCommandBufferKHR(
+            uint num_queues,
+            Ref<CommandQueueHandle> queues,
+            Ref<ulong> properties,
+            Ref<int> errcode_ret
+        );
+
         [NativeName("clCreateCommandQueue")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -290,6 +717,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateCommandQueue")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -517,6 +945,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateImage2D")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -544,6 +973,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateImage2D")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -571,6 +1001,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateImage3D")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -600,6 +1031,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateImage3D")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -981,6 +1413,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateSampler")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -1005,6 +1438,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateSampler")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -1316,6 +1750,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clEnqueueBarrier")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -1370,6 +1805,30 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clEnqueueBarrierWithWaitList")]
         static abstract int EnqueueBarrierWithWaitList(
             CommandQueueHandle command_queue,
+            uint num_events_in_wait_list,
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
+        );
+
+        [NativeName("clEnqueueCommandBufferKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueCommandBufferKHR")]
+        static abstract int EnqueueCommandBufferKHR(
+            uint num_queues,
+            CommandQueueHandle* queues,
+            CommandBufferHandleKHR command_buffer,
+            uint num_events_in_wait_list,
+            EventHandle* event_wait_list,
+            EventHandle* @event
+        );
+
+        [NativeName("clEnqueueCommandBufferKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueCommandBufferKHR")]
+        static abstract int EnqueueCommandBufferKHR(
+            uint num_queues,
+            Ref<CommandQueueHandle> queues,
+            CommandBufferHandleKHR command_buffer,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
             Ref<EventHandle> @event
@@ -1914,6 +2373,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clEnqueueMarker")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -1932,6 +2392,7 @@ public unsafe partial interface ICl
         static abstract int EnqueueMarker(CommandQueueHandle command_queue, EventHandle* @event);
 
         [NativeName("clEnqueueMarker")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -3013,6 +3474,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clEnqueueTask")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -3037,6 +3499,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clEnqueueTask")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -3111,6 +3574,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clEnqueueWaitForEvents")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -3133,6 +3597,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clEnqueueWaitForEvents")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -3390,6 +3855,11 @@ public unsafe partial interface ICl
             Ref<EventHandle> @event
         );
 
+        [NativeName("clFinalizeCommandBufferKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clFinalizeCommandBufferKHR")]
+        static abstract int FinalizeCommandBufferKHR(CommandBufferHandleKHR command_buffer);
+
         [NativeName("clFinish")]
         [SupportedApiProfile(
             "opencl",
@@ -3442,6 +3912,28 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
         static abstract int GetAcceleratorInfoINTEL(
             AcceleratorHandleINTEL accelerator,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        );
+
+        [NativeName("clGetCommandBufferInfoKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clGetCommandBufferInfoKHR")]
+        static abstract int GetCommandBufferInfoKHR(
+            CommandBufferHandleKHR command_buffer,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        );
+
+        [NativeName("clGetCommandBufferInfoKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clGetCommandBufferInfoKHR")]
+        static abstract int GetCommandBufferInfoKHR(
+            CommandBufferHandleKHR command_buffer,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -3791,6 +4283,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clGetExtensionFunctionAddress")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -3809,6 +4302,7 @@ public unsafe partial interface ICl
         static abstract void* GetExtensionFunctionAddress(sbyte* func_name);
 
         [NativeName("clGetExtensionFunctionAddress")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -4119,6 +4613,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clGetKernelSubGroupInfoKHR")]
+        [Obsolete]
         [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
         static abstract int GetKernelSubGroupInfoKHR(
@@ -4133,6 +4628,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clGetKernelSubGroupInfoKHR")]
+        [Obsolete]
         [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
         static abstract int GetKernelSubGroupInfoKHR(
@@ -4330,6 +4826,36 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clGetMemObjectInfo")]
         static abstract int GetMemObjectInfo(
             MemHandle memobj,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        );
+
+        [NativeName("clGetMutableCommandInfoKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_command_buffer_mutable_dispatch"],
+            ImpliesSets = ["cl_khr_command_buffer"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clGetMutableCommandInfoKHR")]
+        static abstract int GetMutableCommandInfoKHR(
+            MutableCommandHandleKHR command,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        );
+
+        [NativeName("clGetMutableCommandInfoKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_command_buffer_mutable_dispatch"],
+            ImpliesSets = ["cl_khr_command_buffer"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clGetMutableCommandInfoKHR")]
+        static abstract int GetMutableCommandInfoKHR(
+            MutableCommandHandleKHR command,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -4720,6 +5246,56 @@ public unsafe partial interface ICl
             Ref<uint> num_image_formats
         );
 
+        [NativeName("clGetSVMPointerInfoKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+        [NativeFunction("opencl", EntryPoint = "clGetSVMPointerInfoKHR")]
+        static abstract int GetSvmPointerInfoKHR(
+            ContextHandle context,
+            DeviceIdHandle device,
+            void* ptr,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        );
+
+        [NativeName("clGetSVMPointerInfoKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+        [NativeFunction("opencl", EntryPoint = "clGetSVMPointerInfoKHR")]
+        static abstract int GetSvmPointerInfoKHR(
+            ContextHandle context,
+            DeviceIdHandle device,
+            Ref ptr,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        );
+
+        [NativeName("clGetSVMSuggestedTypeIndexKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+        [NativeFunction("opencl", EntryPoint = "clGetSVMSuggestedTypeIndexKHR")]
+        static abstract int GetSvmSuggestedTypeIndexKHR(
+            ContextHandle context,
+            ulong required_capabilities,
+            ulong desired_capabilities,
+            ulong* properties,
+            nuint size,
+            uint* suggested_svm_type_index
+        );
+
+        [NativeName("clGetSVMSuggestedTypeIndexKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+        [NativeFunction("opencl", EntryPoint = "clGetSVMSuggestedTypeIndexKHR")]
+        static abstract int GetSvmSuggestedTypeIndexKHR(
+            ContextHandle context,
+            ulong required_capabilities,
+            ulong desired_capabilities,
+            Ref<ulong> properties,
+            nuint size,
+            Ref<uint> suggested_svm_type_index
+        );
+
         [NativeName("clHostMemAllocINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
@@ -5021,6 +5597,11 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
         static abstract int ReleaseAcceleratorINTEL(AcceleratorHandleINTEL accelerator);
 
+        [NativeName("clReleaseCommandBufferKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseCommandBufferKHR")]
+        static abstract int ReleaseCommandBufferKHR(CommandBufferHandleKHR command_buffer);
+
         [NativeName("clReleaseCommandQueue")]
         [SupportedApiProfile(
             "opencl",
@@ -5173,10 +5754,51 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
         static abstract int ReleaseSemaphoreKHR(SemaphoreHandleKHR sema_object);
 
+        [NativeName("clRemapCommandBufferKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_command_buffer_multi_device"],
+            ImpliesSets = ["cl_khr_command_buffer"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clRemapCommandBufferKHR")]
+        static abstract CommandBufferHandleKHR RemapCommandBufferKHR(
+            CommandBufferHandleKHR command_buffer,
+            uint automatic,
+            uint num_queues,
+            CommandQueueHandle* queues,
+            uint num_handles,
+            MutableCommandHandleKHR* handles,
+            MutableCommandHandleKHR* handles_ret,
+            int* errcode_ret
+        );
+
+        [NativeName("clRemapCommandBufferKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_command_buffer_multi_device"],
+            ImpliesSets = ["cl_khr_command_buffer"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clRemapCommandBufferKHR")]
+        static abstract CommandBufferHandleKHR RemapCommandBufferKHR(
+            CommandBufferHandleKHR command_buffer,
+            MaybeBool<uint> automatic,
+            uint num_queues,
+            Ref<CommandQueueHandle> queues,
+            uint num_handles,
+            Ref<MutableCommandHandleKHR> handles,
+            Ref<MutableCommandHandleKHR> handles_ret,
+            Ref<int> errcode_ret
+        );
+
         [NativeName("clRetainAcceleratorINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
         [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
         static abstract int RetainAcceleratorINTEL(AcceleratorHandleINTEL accelerator);
+
+        [NativeName("clRetainCommandBufferKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainCommandBufferKHR")]
+        static abstract int RetainCommandBufferKHR(CommandBufferHandleKHR command_buffer);
 
         [NativeName("clRetainCommandQueue")]
         [SupportedApiProfile(
@@ -5672,6 +6294,7 @@ public unsafe partial interface ICl
         static abstract int SetPerfHintQCOM(ContextHandle context, uint perf_hint);
 
         [NativeName("clSetProgramReleaseCallback")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -5685,6 +6308,7 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clSetProgramReleaseCallback")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -5826,6 +6450,28 @@ public unsafe partial interface ICl
             uint alignment
         );
 
+        [NativeName("clSVMAllocWithPropertiesKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMAllocWithPropertiesKHR")]
+        static abstract void* SvmAllocWithPropertiesKHR(
+            ContextHandle context,
+            ulong* properties,
+            uint svm_type_index,
+            nuint size,
+            int* errcode_ret
+        );
+
+        [NativeName("clSVMAllocWithPropertiesKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMAllocWithPropertiesKHR")]
+        static abstract Ptr SvmAllocWithPropertiesKHR(
+            ContextHandle context,
+            Ref<ulong> properties,
+            uint svm_type_index,
+            nuint size,
+            Ref<int> errcode_ret
+        );
+
         [NativeName("clSVMFree")]
         [SupportedApiProfile(
             "opencl",
@@ -5866,12 +6512,33 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
         static abstract void SvmFreeARM(ContextHandle context, Ref svm_pointer);
 
+        [NativeName("clSVMFreeWithPropertiesKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMFreeWithPropertiesKHR")]
+        static abstract int SvmFreeWithPropertiesKHR(
+            ContextHandle context,
+            ulong* properties,
+            ulong flags,
+            void* ptr
+        );
+
+        [NativeName("clSVMFreeWithPropertiesKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMFreeWithPropertiesKHR")]
+        static abstract int SvmFreeWithPropertiesKHR(
+            ContextHandle context,
+            Ref<ulong> properties,
+            ulong flags,
+            Ref ptr
+        );
+
         [NativeName("clTerminateContextKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
         [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
         static abstract int TerminateContextKHR(ContextHandle context);
 
         [NativeName("clUnloadCompiler")]
+        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -5904,6 +6571,34 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clUnloadPlatformCompiler")]
         static abstract int UnloadPlatformCompiler(PlatformIdHandle platform);
+
+        [NativeName("clUpdateMutableCommandsKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_command_buffer_mutable_dispatch"],
+            ImpliesSets = ["cl_khr_command_buffer"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clUpdateMutableCommandsKHR")]
+        static abstract int UpdateMutableCommandsKHR(
+            CommandBufferHandleKHR command_buffer,
+            uint num_configs,
+            uint* config_types,
+            void** configs
+        );
+
+        [NativeName("clUpdateMutableCommandsKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_command_buffer_mutable_dispatch"],
+            ImpliesSets = ["cl_khr_command_buffer"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clUpdateMutableCommandsKHR")]
+        static abstract int UpdateMutableCommandsKHR(
+            CommandBufferHandleKHR command_buffer,
+            uint num_configs,
+            Ref<uint> config_types,
+            Ref2D configs
+        );
 
         [NativeName("clWaitForEvents")]
         [SupportedApiProfile(
@@ -6019,6 +6714,412 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clCloneKernel")]
     KernelHandle CloneKernel(KernelHandle source_kernel, Ref<int> errcode_ret);
+
+    [NativeName("clCommandBarrierWithWaitListKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandBarrierWithWaitListKHR")]
+    int CommandBarrierWithWaitListKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        ulong* properties,
+        uint num_sync_points_in_wait_list,
+        uint* sync_point_wait_list,
+        uint* sync_point,
+        MutableCommandHandleKHR* mutable_handle
+    );
+
+    [NativeName("clCommandBarrierWithWaitListKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandBarrierWithWaitListKHR")]
+    int CommandBarrierWithWaitListKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        Ref<ulong> properties,
+        uint num_sync_points_in_wait_list,
+        Ref<uint> sync_point_wait_list,
+        Ref<uint> sync_point,
+        Ref<MutableCommandHandleKHR> mutable_handle
+    );
+
+    [NativeName("clCommandCopyBufferKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandCopyBufferKHR")]
+    int CommandCopyBufferKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        ulong* properties,
+        MemHandle src_buffer,
+        MemHandle dst_buffer,
+        nuint src_offset,
+        nuint dst_offset,
+        nuint size,
+        uint num_sync_points_in_wait_list,
+        uint* sync_point_wait_list,
+        uint* sync_point,
+        MutableCommandHandleKHR* mutable_handle
+    );
+
+    [NativeName("clCommandCopyBufferKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandCopyBufferKHR")]
+    int CommandCopyBufferKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        Ref<ulong> properties,
+        MemHandle src_buffer,
+        MemHandle dst_buffer,
+        nuint src_offset,
+        nuint dst_offset,
+        nuint size,
+        uint num_sync_points_in_wait_list,
+        Ref<uint> sync_point_wait_list,
+        Ref<uint> sync_point,
+        Ref<MutableCommandHandleKHR> mutable_handle
+    );
+
+    [NativeName("clCommandCopyBufferRectKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandCopyBufferRectKHR")]
+    int CommandCopyBufferRectKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        ulong* properties,
+        MemHandle src_buffer,
+        MemHandle dst_buffer,
+        nuint* src_origin,
+        nuint* dst_origin,
+        nuint* region,
+        nuint src_row_pitch,
+        nuint src_slice_pitch,
+        nuint dst_row_pitch,
+        nuint dst_slice_pitch,
+        uint num_sync_points_in_wait_list,
+        uint* sync_point_wait_list,
+        uint* sync_point,
+        MutableCommandHandleKHR* mutable_handle
+    );
+
+    [NativeName("clCommandCopyBufferRectKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandCopyBufferRectKHR")]
+    int CommandCopyBufferRectKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        Ref<ulong> properties,
+        MemHandle src_buffer,
+        MemHandle dst_buffer,
+        Ref<nuint> src_origin,
+        Ref<nuint> dst_origin,
+        Ref<nuint> region,
+        nuint src_row_pitch,
+        nuint src_slice_pitch,
+        nuint dst_row_pitch,
+        nuint dst_slice_pitch,
+        uint num_sync_points_in_wait_list,
+        Ref<uint> sync_point_wait_list,
+        Ref<uint> sync_point,
+        Ref<MutableCommandHandleKHR> mutable_handle
+    );
+
+    [NativeName("clCommandCopyBufferToImageKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandCopyBufferToImageKHR")]
+    int CommandCopyBufferToImageKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        ulong* properties,
+        MemHandle src_buffer,
+        MemHandle dst_image,
+        nuint src_offset,
+        nuint* dst_origin,
+        nuint* region,
+        uint num_sync_points_in_wait_list,
+        uint* sync_point_wait_list,
+        uint* sync_point,
+        MutableCommandHandleKHR* mutable_handle
+    );
+
+    [NativeName("clCommandCopyBufferToImageKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandCopyBufferToImageKHR")]
+    int CommandCopyBufferToImageKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        Ref<ulong> properties,
+        MemHandle src_buffer,
+        MemHandle dst_image,
+        nuint src_offset,
+        Ref<nuint> dst_origin,
+        Ref<nuint> region,
+        uint num_sync_points_in_wait_list,
+        Ref<uint> sync_point_wait_list,
+        Ref<uint> sync_point,
+        Ref<MutableCommandHandleKHR> mutable_handle
+    );
+
+    [NativeName("clCommandCopyImageKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandCopyImageKHR")]
+    int CommandCopyImageKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        ulong* properties,
+        MemHandle src_image,
+        MemHandle dst_image,
+        nuint* src_origin,
+        nuint* dst_origin,
+        nuint* region,
+        uint num_sync_points_in_wait_list,
+        uint* sync_point_wait_list,
+        uint* sync_point,
+        MutableCommandHandleKHR* mutable_handle
+    );
+
+    [NativeName("clCommandCopyImageKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandCopyImageKHR")]
+    int CommandCopyImageKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        Ref<ulong> properties,
+        MemHandle src_image,
+        MemHandle dst_image,
+        Ref<nuint> src_origin,
+        Ref<nuint> dst_origin,
+        Ref<nuint> region,
+        uint num_sync_points_in_wait_list,
+        Ref<uint> sync_point_wait_list,
+        Ref<uint> sync_point,
+        Ref<MutableCommandHandleKHR> mutable_handle
+    );
+
+    [NativeName("clCommandCopyImageToBufferKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandCopyImageToBufferKHR")]
+    int CommandCopyImageToBufferKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        ulong* properties,
+        MemHandle src_image,
+        MemHandle dst_buffer,
+        nuint* src_origin,
+        nuint* region,
+        nuint dst_offset,
+        uint num_sync_points_in_wait_list,
+        uint* sync_point_wait_list,
+        uint* sync_point,
+        MutableCommandHandleKHR* mutable_handle
+    );
+
+    [NativeName("clCommandCopyImageToBufferKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandCopyImageToBufferKHR")]
+    int CommandCopyImageToBufferKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        Ref<ulong> properties,
+        MemHandle src_image,
+        MemHandle dst_buffer,
+        Ref<nuint> src_origin,
+        Ref<nuint> region,
+        nuint dst_offset,
+        uint num_sync_points_in_wait_list,
+        Ref<uint> sync_point_wait_list,
+        Ref<uint> sync_point,
+        Ref<MutableCommandHandleKHR> mutable_handle
+    );
+
+    [NativeName("clCommandFillBufferKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandFillBufferKHR")]
+    int CommandFillBufferKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        ulong* properties,
+        MemHandle buffer,
+        void* pattern,
+        nuint pattern_size,
+        nuint offset,
+        nuint size,
+        uint num_sync_points_in_wait_list,
+        uint* sync_point_wait_list,
+        uint* sync_point,
+        MutableCommandHandleKHR* mutable_handle
+    );
+
+    [NativeName("clCommandFillBufferKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandFillBufferKHR")]
+    int CommandFillBufferKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        Ref<ulong> properties,
+        MemHandle buffer,
+        Ref pattern,
+        nuint pattern_size,
+        nuint offset,
+        nuint size,
+        uint num_sync_points_in_wait_list,
+        Ref<uint> sync_point_wait_list,
+        Ref<uint> sync_point,
+        Ref<MutableCommandHandleKHR> mutable_handle
+    );
+
+    [NativeName("clCommandFillImageKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandFillImageKHR")]
+    int CommandFillImageKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        ulong* properties,
+        MemHandle image,
+        void* fill_color,
+        nuint* origin,
+        nuint* region,
+        uint num_sync_points_in_wait_list,
+        uint* sync_point_wait_list,
+        uint* sync_point,
+        MutableCommandHandleKHR* mutable_handle
+    );
+
+    [NativeName("clCommandFillImageKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandFillImageKHR")]
+    int CommandFillImageKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        Ref<ulong> properties,
+        MemHandle image,
+        Ref fill_color,
+        Ref<nuint> origin,
+        Ref<nuint> region,
+        uint num_sync_points_in_wait_list,
+        Ref<uint> sync_point_wait_list,
+        Ref<uint> sync_point,
+        Ref<MutableCommandHandleKHR> mutable_handle
+    );
+
+    [NativeName("clCommandNDRangeKernelKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandNDRangeKernelKHR")]
+    int CommandNDRangeKernelKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        ulong* properties,
+        KernelHandle kernel,
+        uint work_dim,
+        nuint* global_work_offset,
+        nuint* global_work_size,
+        nuint* local_work_size,
+        uint num_sync_points_in_wait_list,
+        uint* sync_point_wait_list,
+        uint* sync_point,
+        MutableCommandHandleKHR* mutable_handle
+    );
+
+    [NativeName("clCommandNDRangeKernelKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCommandNDRangeKernelKHR")]
+    int CommandNDRangeKernelKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        Ref<ulong> properties,
+        KernelHandle kernel,
+        uint work_dim,
+        Ref<nuint> global_work_offset,
+        Ref<nuint> global_work_size,
+        Ref<nuint> local_work_size,
+        uint num_sync_points_in_wait_list,
+        Ref<uint> sync_point_wait_list,
+        Ref<uint> sync_point,
+        Ref<MutableCommandHandleKHR> mutable_handle
+    );
+
+    [NativeName("clCommandSVMMemcpyKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_command_buffer", "CL_VERSION_2_0"],
+        ImpliesSets = ["CL_VERSION_1_2"],
+        RequireAll = true
+    )]
+    [NativeFunction("opencl", EntryPoint = "clCommandSVMMemcpyKHR")]
+    int CommandSvmMemcpyKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        ulong* properties,
+        void* dst_ptr,
+        void* src_ptr,
+        nuint size,
+        uint num_sync_points_in_wait_list,
+        uint* sync_point_wait_list,
+        uint* sync_point,
+        MutableCommandHandleKHR* mutable_handle
+    );
+
+    [NativeName("clCommandSVMMemcpyKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_command_buffer", "CL_VERSION_2_0"],
+        ImpliesSets = ["CL_VERSION_1_2"],
+        RequireAll = true
+    )]
+    [NativeFunction("opencl", EntryPoint = "clCommandSVMMemcpyKHR")]
+    int CommandSvmMemcpyKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        Ref<ulong> properties,
+        Ref dst_ptr,
+        Ref src_ptr,
+        nuint size,
+        uint num_sync_points_in_wait_list,
+        Ref<uint> sync_point_wait_list,
+        Ref<uint> sync_point,
+        Ref<MutableCommandHandleKHR> mutable_handle
+    );
+
+    [NativeName("clCommandSVMMemFillKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_command_buffer", "CL_VERSION_2_0"],
+        ImpliesSets = ["CL_VERSION_1_2"],
+        RequireAll = true
+    )]
+    [NativeFunction("opencl", EntryPoint = "clCommandSVMMemFillKHR")]
+    int CommandSvmMemFillKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        ulong* properties,
+        void* svm_ptr,
+        void* pattern,
+        nuint pattern_size,
+        nuint size,
+        uint num_sync_points_in_wait_list,
+        uint* sync_point_wait_list,
+        uint* sync_point,
+        MutableCommandHandleKHR* mutable_handle
+    );
+
+    [NativeName("clCommandSVMMemFillKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_command_buffer", "CL_VERSION_2_0"],
+        ImpliesSets = ["CL_VERSION_1_2"],
+        RequireAll = true
+    )]
+    [NativeFunction("opencl", EntryPoint = "clCommandSVMMemFillKHR")]
+    int CommandSvmMemFillKHR(
+        CommandBufferHandleKHR command_buffer,
+        CommandQueueHandle command_queue,
+        Ref<ulong> properties,
+        Ref svm_ptr,
+        Ref pattern,
+        nuint pattern_size,
+        nuint size,
+        uint num_sync_points_in_wait_list,
+        Ref<uint> sync_point_wait_list,
+        Ref<uint> sync_point,
+        Ref<MutableCommandHandleKHR> mutable_handle
+    );
 
     [NativeName("clCompileProgram")]
     [SupportedApiProfile(
@@ -6190,7 +7291,28 @@ public unsafe partial interface ICl
         Ref<int> errcode_ret
     );
 
+    [NativeName("clCreateCommandBufferKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateCommandBufferKHR")]
+    CommandBufferHandleKHR CreateCommandBufferKHR(
+        uint num_queues,
+        CommandQueueHandle* queues,
+        ulong* properties,
+        int* errcode_ret
+    );
+
+    [NativeName("clCreateCommandBufferKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateCommandBufferKHR")]
+    CommandBufferHandleKHR CreateCommandBufferKHR(
+        uint num_queues,
+        Ref<CommandQueueHandle> queues,
+        Ref<ulong> properties,
+        Ref<int> errcode_ret
+    );
+
     [NativeName("clCreateCommandQueue")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -6214,6 +7336,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateCommandQueue")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -6429,6 +7552,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateImage2D")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -6456,6 +7580,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateImage2D")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -6483,6 +7608,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateImage3D")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -6512,6 +7638,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateImage3D")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -6873,6 +8000,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateSampler")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -6897,6 +8025,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateSampler")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -7188,6 +8317,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clEnqueueBarrier")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -7242,6 +8372,30 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clEnqueueBarrierWithWaitList")]
     int EnqueueBarrierWithWaitList(
         CommandQueueHandle command_queue,
+        uint num_events_in_wait_list,
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
+    );
+
+    [NativeName("clEnqueueCommandBufferKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueCommandBufferKHR")]
+    int EnqueueCommandBufferKHR(
+        uint num_queues,
+        CommandQueueHandle* queues,
+        CommandBufferHandleKHR command_buffer,
+        uint num_events_in_wait_list,
+        EventHandle* event_wait_list,
+        EventHandle* @event
+    );
+
+    [NativeName("clEnqueueCommandBufferKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueCommandBufferKHR")]
+    int EnqueueCommandBufferKHR(
+        uint num_queues,
+        Ref<CommandQueueHandle> queues,
+        CommandBufferHandleKHR command_buffer,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
         Ref<EventHandle> @event
@@ -7786,6 +8940,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clEnqueueMarker")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -7804,6 +8959,7 @@ public unsafe partial interface ICl
     int EnqueueMarker(CommandQueueHandle command_queue, EventHandle* @event);
 
     [NativeName("clEnqueueMarker")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -8814,6 +9970,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clEnqueueTask")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -8838,6 +9995,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clEnqueueTask")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -8912,6 +10070,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clEnqueueWaitForEvents")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -8934,6 +10093,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clEnqueueWaitForEvents")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -9191,6 +10351,11 @@ public unsafe partial interface ICl
         Ref<EventHandle> @event
     );
 
+    [NativeName("clFinalizeCommandBufferKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clFinalizeCommandBufferKHR")]
+    int FinalizeCommandBufferKHR(CommandBufferHandleKHR command_buffer);
+
     [NativeName("clFinish")]
     [SupportedApiProfile(
         "opencl",
@@ -9243,6 +10408,28 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
     int GetAcceleratorInfoINTEL(
         AcceleratorHandleINTEL accelerator,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    );
+
+    [NativeName("clGetCommandBufferInfoKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clGetCommandBufferInfoKHR")]
+    int GetCommandBufferInfoKHR(
+        CommandBufferHandleKHR command_buffer,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    );
+
+    [NativeName("clGetCommandBufferInfoKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clGetCommandBufferInfoKHR")]
+    int GetCommandBufferInfoKHR(
+        CommandBufferHandleKHR command_buffer,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -9592,6 +10779,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clGetExtensionFunctionAddress")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -9610,6 +10798,7 @@ public unsafe partial interface ICl
     void* GetExtensionFunctionAddress(sbyte* func_name);
 
     [NativeName("clGetExtensionFunctionAddress")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -9914,6 +11103,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clGetKernelSubGroupInfoKHR")]
+    [Obsolete]
     [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
     int GetKernelSubGroupInfoKHR(
@@ -9928,6 +11118,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clGetKernelSubGroupInfoKHR")]
+    [Obsolete]
     [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
     int GetKernelSubGroupInfoKHR(
@@ -10125,6 +11316,36 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clGetMemObjectInfo")]
     int GetMemObjectInfo(
         MemHandle memobj,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    );
+
+    [NativeName("clGetMutableCommandInfoKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_command_buffer_mutable_dispatch"],
+        ImpliesSets = ["cl_khr_command_buffer"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clGetMutableCommandInfoKHR")]
+    int GetMutableCommandInfoKHR(
+        MutableCommandHandleKHR command,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    );
+
+    [NativeName("clGetMutableCommandInfoKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_command_buffer_mutable_dispatch"],
+        ImpliesSets = ["cl_khr_command_buffer"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clGetMutableCommandInfoKHR")]
+    int GetMutableCommandInfoKHR(
+        MutableCommandHandleKHR command,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10495,6 +11716,56 @@ public unsafe partial interface ICl
         Ref<uint> num_image_formats
     );
 
+    [NativeName("clGetSVMPointerInfoKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+    [NativeFunction("opencl", EntryPoint = "clGetSVMPointerInfoKHR")]
+    int GetSvmPointerInfoKHR(
+        ContextHandle context,
+        DeviceIdHandle device,
+        void* ptr,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    );
+
+    [NativeName("clGetSVMPointerInfoKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+    [NativeFunction("opencl", EntryPoint = "clGetSVMPointerInfoKHR")]
+    int GetSvmPointerInfoKHR(
+        ContextHandle context,
+        DeviceIdHandle device,
+        Ref ptr,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    );
+
+    [NativeName("clGetSVMSuggestedTypeIndexKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+    [NativeFunction("opencl", EntryPoint = "clGetSVMSuggestedTypeIndexKHR")]
+    int GetSvmSuggestedTypeIndexKHR(
+        ContextHandle context,
+        ulong required_capabilities,
+        ulong desired_capabilities,
+        ulong* properties,
+        nuint size,
+        uint* suggested_svm_type_index
+    );
+
+    [NativeName("clGetSVMSuggestedTypeIndexKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+    [NativeFunction("opencl", EntryPoint = "clGetSVMSuggestedTypeIndexKHR")]
+    int GetSvmSuggestedTypeIndexKHR(
+        ContextHandle context,
+        ulong required_capabilities,
+        ulong desired_capabilities,
+        Ref<ulong> properties,
+        nuint size,
+        Ref<uint> suggested_svm_type_index
+    );
+
     [NativeName("clHostMemAllocINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
@@ -10746,6 +12017,11 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
     int ReleaseAcceleratorINTEL(AcceleratorHandleINTEL accelerator);
 
+    [NativeName("clReleaseCommandBufferKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clReleaseCommandBufferKHR")]
+    int ReleaseCommandBufferKHR(CommandBufferHandleKHR command_buffer);
+
     [NativeName("clReleaseCommandQueue")]
     [SupportedApiProfile(
         "opencl",
@@ -10898,10 +12174,51 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
     int ReleaseSemaphoreKHR(SemaphoreHandleKHR sema_object);
 
+    [NativeName("clRemapCommandBufferKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_command_buffer_multi_device"],
+        ImpliesSets = ["cl_khr_command_buffer"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clRemapCommandBufferKHR")]
+    CommandBufferHandleKHR RemapCommandBufferKHR(
+        CommandBufferHandleKHR command_buffer,
+        uint automatic,
+        uint num_queues,
+        CommandQueueHandle* queues,
+        uint num_handles,
+        MutableCommandHandleKHR* handles,
+        MutableCommandHandleKHR* handles_ret,
+        int* errcode_ret
+    );
+
+    [NativeName("clRemapCommandBufferKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_command_buffer_multi_device"],
+        ImpliesSets = ["cl_khr_command_buffer"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clRemapCommandBufferKHR")]
+    CommandBufferHandleKHR RemapCommandBufferKHR(
+        CommandBufferHandleKHR command_buffer,
+        MaybeBool<uint> automatic,
+        uint num_queues,
+        Ref<CommandQueueHandle> queues,
+        uint num_handles,
+        Ref<MutableCommandHandleKHR> handles,
+        Ref<MutableCommandHandleKHR> handles_ret,
+        Ref<int> errcode_ret
+    );
+
     [NativeName("clRetainAcceleratorINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
     int RetainAcceleratorINTEL(AcceleratorHandleINTEL accelerator);
+
+    [NativeName("clRetainCommandBufferKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_command_buffer"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clRetainCommandBufferKHR")]
+    int RetainCommandBufferKHR(CommandBufferHandleKHR command_buffer);
 
     [NativeName("clRetainCommandQueue")]
     [SupportedApiProfile(
@@ -11332,6 +12649,7 @@ public unsafe partial interface ICl
     int SetPerfHintQCOM(ContextHandle context, uint perf_hint);
 
     [NativeName("clSetProgramReleaseCallback")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -11345,6 +12663,7 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clSetProgramReleaseCallback")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -11454,6 +12773,28 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clSVMAlloc")]
     void* SvmAllocRaw(ContextHandle context, ulong flags, nuint size, uint alignment);
 
+    [NativeName("clSVMAllocWithPropertiesKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+    [NativeFunction("opencl", EntryPoint = "clSVMAllocWithPropertiesKHR")]
+    void* SvmAllocWithPropertiesKHR(
+        ContextHandle context,
+        ulong* properties,
+        uint svm_type_index,
+        nuint size,
+        int* errcode_ret
+    );
+
+    [NativeName("clSVMAllocWithPropertiesKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+    [NativeFunction("opencl", EntryPoint = "clSVMAllocWithPropertiesKHR")]
+    Ptr SvmAllocWithPropertiesKHR(
+        ContextHandle context,
+        Ref<ulong> properties,
+        uint svm_type_index,
+        nuint size,
+        Ref<int> errcode_ret
+    );
+
     [NativeName("clSVMFree")]
     [SupportedApiProfile(
         "opencl",
@@ -11482,12 +12823,28 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
     void SvmFreeARM(ContextHandle context, Ref svm_pointer);
 
+    [NativeName("clSVMFreeWithPropertiesKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+    [NativeFunction("opencl", EntryPoint = "clSVMFreeWithPropertiesKHR")]
+    int SvmFreeWithPropertiesKHR(ContextHandle context, ulong* properties, ulong flags, void* ptr);
+
+    [NativeName("clSVMFreeWithPropertiesKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_unified_svm"])]
+    [NativeFunction("opencl", EntryPoint = "clSVMFreeWithPropertiesKHR")]
+    int SvmFreeWithPropertiesKHR(
+        ContextHandle context,
+        Ref<ulong> properties,
+        ulong flags,
+        Ref ptr
+    );
+
     [NativeName("clTerminateContextKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
     [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
     int TerminateContextKHR(ContextHandle context);
 
     [NativeName("clUnloadCompiler")]
+    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -11520,6 +12877,34 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clUnloadPlatformCompiler")]
     int UnloadPlatformCompiler(PlatformIdHandle platform);
+
+    [NativeName("clUpdateMutableCommandsKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_command_buffer_mutable_dispatch"],
+        ImpliesSets = ["cl_khr_command_buffer"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clUpdateMutableCommandsKHR")]
+    int UpdateMutableCommandsKHR(
+        CommandBufferHandleKHR command_buffer,
+        uint num_configs,
+        uint* config_types,
+        void** configs
+    );
+
+    [NativeName("clUpdateMutableCommandsKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_command_buffer_mutable_dispatch"],
+        ImpliesSets = ["cl_khr_command_buffer"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clUpdateMutableCommandsKHR")]
+    int UpdateMutableCommandsKHR(
+        CommandBufferHandleKHR command_buffer,
+        uint num_configs,
+        Ref<uint> config_types,
+        Ref2D configs
+    );
 
     [NativeName("clWaitForEvents")]
     [SupportedApiProfile(

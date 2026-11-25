@@ -15,6 +15,18 @@ public enum ErrorCodes : int
     [NativeName("CL_INVALID_SEMAPHORE_KHR")]
     InvalidSemaphoreKHR = -1142,
 
+    [NativeName("CL_INVALID_MUTABLE_COMMAND_KHR")]
+    InvalidMutableCommandKHR = -1141,
+
+    [NativeName("CL_INCOMPATIBLE_COMMAND_QUEUE_KHR")]
+    IncompatibleCommandQueueKHR = -1140,
+
+    [NativeName("CL_INVALID_SYNC_POINT_WAIT_LIST_KHR")]
+    InvalidSyncPointWaitListKHR = -1139,
+
+    [NativeName("CL_INVALID_COMMAND_BUFFER_KHR")]
+    InvalidCommandBufferKHR = -1138,
+
     [NativeName("CL_ECC_UNRECOVERED_IMG")]
     EccUnrecoveredIMG = -1130,
 

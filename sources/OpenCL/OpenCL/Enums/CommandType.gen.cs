@@ -105,6 +105,9 @@ public enum CommandType : uint
     [NativeName("CL_COMMAND_SVM_MIGRATE_MEM")]
     SvmMigrateMem = 4622,
 
+    [NativeName("CL_COMMAND_COMMAND_BUFFER_KHR")]
+    CommandBufferKHR = 4776,
+
     [NativeName("CL_COMMAND_SEMAPHORE_WAIT_KHR")]
     SemaphoreWaitKHR = 8258,
 

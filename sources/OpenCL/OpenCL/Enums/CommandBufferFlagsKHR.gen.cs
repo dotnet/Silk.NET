@@ -14,4 +14,13 @@ namespace Silk.NET.OpenCL;
 public enum CommandBufferFlagsKHR : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_COMMAND_BUFFER_SIMULTANEOUS_USE_KHR")]
+    SimultaneousUse = 0x1,
+
+    [NativeName("CL_COMMAND_BUFFER_MUTABLE_KHR")]
+    Mutable = 0x2,
+
+    [NativeName("CL_COMMAND_BUFFER_DEVICE_SIDE_SYNC_KHR")]
+    DeviceSideSync = 0x4,
 }

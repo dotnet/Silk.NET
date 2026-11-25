@@ -10,4 +10,26 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_svm_pointer_info_khr")]
-public enum SvmPointerInfoKHR : uint { }
+public enum SvmPointerInfoKHR : uint
+{
+    [NativeName("CL_SVM_INFO_TYPE_INDEX_KHR")]
+    TypeIndex = 8328,
+
+    [NativeName("CL_SVM_INFO_CAPABILITIES_KHR")]
+    Capabilities = 8329,
+
+    [NativeName("CL_SVM_INFO_PROPERTIES_KHR")]
+    Properties = 8330,
+
+    [NativeName("CL_SVM_INFO_ACCESS_FLAGS_KHR")]
+    AccessFlags = 8331,
+
+    [NativeName("CL_SVM_INFO_BASE_PTR_KHR")]
+    BasePtr = 16795,
+
+    [NativeName("CL_SVM_INFO_SIZE_KHR")]
+    Size = 16796,
+
+    [NativeName("CL_SVM_INFO_ASSOCIATED_DEVICE_HANDLE_KHR")]
+    AssociatedDeviceHandle = 16797,
+}
