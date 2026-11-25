@@ -68,6 +68,7 @@
           ]
         },
         "dependencies": [
+          "sources/SilkTouch/Jobs/Jobs.OpenAL.cs",
           "eng/silktouch/openal/**"
         ]
       },
@@ -85,6 +86,7 @@
           ]
         },
         "dependencies": [
+          "sources/SilkTouch/Jobs/Jobs.OpenCL.cs",
           "eng/silktouch/opencl/**"
         ]
       },
@@ -99,6 +101,7 @@
           ]
         },
         "dependencies": [
+          "sources/SilkTouch/Jobs/Jobs.OpenGL.cs",
           "eng/silktouch/opengl/**",
           "eng/include/**"
         ]
@@ -120,6 +123,7 @@
           ]
         },
         "dependencies": [
+          "sources/SilkTouch/Jobs/Jobs.OpenXR.cs",
           "eng/silktouch/openxr/**"
         ]
       },
@@ -133,6 +137,7 @@
           ]
         },
         "dependencies": [
+          "sources/SilkTouch/Jobs/Jobs.SDL.cs",
           "eng/silktouch/sdl/**"
         ]
       },
@@ -153,6 +158,7 @@
           ]
         },
         "dependencies": [
+          "sources/SilkTouch/Jobs/Jobs.Vulkan.cs",
           "eng/silktouch/vulkan/**"
         ]
       }
