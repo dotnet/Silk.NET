@@ -28,6 +28,6 @@ public unsafe partial struct EnumerateInstanceVersionChain
     [SupportedApiProfile("vulkan")]
     public readonly Result CallDown(uint* pApiVersion)
     {
-        return PfnNextLayer(PNextLink, pApiVersion);
+        return PfnNextLayer.Handle(PNextLink, pApiVersion);
     }
 }

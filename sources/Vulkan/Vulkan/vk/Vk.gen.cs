@@ -28,6 +28,25 @@ public unsafe partial class Vk : IVk, IVk.Static
             DisplayHandleKHR display
         );
 
+        [NativeName("vkAcquireFullScreenExclusiveModeEXT")]
+        [DllImport(
+            "vulkan",
+            ExactSpelling = true,
+            EntryPoint = "vkAcquireFullScreenExclusiveModeEXT"
+        )]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        public static extern Result AcquireFullScreenExclusiveModeEXT(
+            DeviceHandle device,
+            SwapchainHandleKHR swapchain
+        );
+
         [NativeName("vkAcquireNextImage2KHR")]
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkAcquireNextImage2KHR")]
         [SupportedApiProfile(
@@ -180,6 +199,18 @@ public unsafe partial class Vk : IVk, IVk.Static
                 return (Result)AcquireProfilingLockKHR(device, __dsl_pInfo);
             }
         }
+
+        [NativeName("vkAcquireWinrtDisplayNV")]
+        [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkAcquireWinrtDisplayNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_acquire_winrt_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        public static extern Result AcquireWinrtDisplayNV(
+            PhysicalDeviceHandle physicalDevice,
+            DisplayHandleKHR display
+        );
 
         [NativeName("vkAcquireXlibDisplayEXT")]
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkAcquireXlibDisplayEXT")]
@@ -16667,6 +16698,114 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkCreateIOSSurfaceMVK")]
+        [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCreateIOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        public static extern Result CreateIosSurfaceMVK(
+            InstanceHandle instance,
+            IosSurfaceCreateInfoMVK* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateIOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateIOSSurfaceMVK")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result CreateIosSurfaceMVK(
+            InstanceHandle instance,
+            Ref<IosSurfaceCreateInfoMVK> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        )
+        {
+            fixed (SurfaceHandleKHR* __dsl_pSurface = pSurface)
+            fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
+            fixed (IosSurfaceCreateInfoMVK* __dsl_pCreateInfo = pCreateInfo)
+            {
+                return (Result)CreateIosSurfaceMVK(
+                    instance,
+                    __dsl_pCreateInfo,
+                    __dsl_pAllocator,
+                    __dsl_pSurface
+                );
+            }
+        }
+
+        [NativeName("vkCreateMacOSSurfaceMVK")]
+        [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        public static extern Result CreateMacOSSurfaceMVK(
+            InstanceHandle instance,
+            MacOSSurfaceCreateInfoMVK* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateMacOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result CreateMacOSSurfaceMVK(
+            InstanceHandle instance,
+            Ref<MacOSSurfaceCreateInfoMVK> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        )
+        {
+            fixed (SurfaceHandleKHR* __dsl_pSurface = pSurface)
+            fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
+            fixed (MacOSSurfaceCreateInfoMVK* __dsl_pCreateInfo = pCreateInfo)
+            {
+                return (Result)CreateMacOSSurfaceMVK(
+                    instance,
+                    __dsl_pCreateInfo,
+                    __dsl_pAllocator,
+                    __dsl_pSurface
+                );
+            }
+        }
+
+        [NativeName("vkCreateMetalSurfaceEXT")]
+        [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCreateMetalSurfaceEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        public static extern Result CreateMetalSurfaceEXT(
+            InstanceHandle instance,
+            MetalSurfaceCreateInfoEXT* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateMetalSurfaceEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateMetalSurfaceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result CreateMetalSurfaceEXT(
+            InstanceHandle instance,
+            Ref<MetalSurfaceCreateInfoEXT> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        )
+        {
+            fixed (SurfaceHandleKHR* __dsl_pSurface = pSurface)
+            fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
+            fixed (MetalSurfaceCreateInfoEXT* __dsl_pCreateInfo = pCreateInfo)
+            {
+                return (Result)CreateMetalSurfaceEXT(
+                    instance,
+                    __dsl_pCreateInfo,
+                    __dsl_pAllocator,
+                    __dsl_pSurface
+                );
+            }
+        }
+
         [NativeName("vkCreateMicromapEXT")]
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCreateMicromapEXT")]
         [SupportedApiProfile(
@@ -18315,6 +18454,42 @@ public unsafe partial class Vk : IVk, IVk.Static
             fixed (WaylandSurfaceCreateInfoKHR* __dsl_pCreateInfo = pCreateInfo)
             {
                 return (Result)CreateWaylandSurfaceKHR(
+                    instance,
+                    __dsl_pCreateInfo,
+                    __dsl_pAllocator,
+                    __dsl_pSurface
+                );
+            }
+        }
+
+        [NativeName("vkCreateWin32SurfaceKHR")]
+        [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCreateWin32SurfaceKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        public static extern Result CreateWin32SurfaceKHR(
+            InstanceHandle instance,
+            Win32SurfaceCreateInfoKHR* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateWin32SurfaceKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateWin32SurfaceKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result CreateWin32SurfaceKHR(
+            InstanceHandle instance,
+            Ref<Win32SurfaceCreateInfoKHR> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        )
+        {
+            fixed (SurfaceHandleKHR* __dsl_pSurface = pSurface)
+            fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
+            fixed (Win32SurfaceCreateInfoKHR* __dsl_pCreateInfo = pCreateInfo)
+            {
+                return (Result)CreateWin32SurfaceKHR(
                     instance,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -21987,6 +22162,31 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkExportMetalObjectsEXT")]
+        [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkExportMetalObjectsEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+        public static extern void ExportMetalObjectsEXT(
+            DeviceHandle device,
+            ExportMetalObjectsInfoEXT* pMetalObjectsInfo
+        );
+
+        [NativeName("vkExportMetalObjectsEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+        [NativeFunction("vulkan", EntryPoint = "vkExportMetalObjectsEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void ExportMetalObjectsEXT(
+            DeviceHandle device,
+            Ref<ExportMetalObjectsInfoEXT> pMetalObjectsInfo
+        )
+        {
+            fixed (ExportMetalObjectsInfoEXT* __dsl_pMetalObjectsInfo = pMetalObjectsInfo)
+            {
+                ExportMetalObjectsEXT(device, __dsl_pMetalObjectsInfo);
+            }
+        }
+
         [NativeName("vkFlushMappedMemoryRanges")]
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkFlushMappedMemoryRanges")]
         [SupportedApiProfile(
@@ -24315,6 +24515,62 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkGetDeviceGroupSurfacePresentModes2EXT")]
+        [DllImport(
+            "vulkan",
+            ExactSpelling = true,
+            EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT"
+        )]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_EXT_full_screen_exclusive+VK_KHR_device_group",
+                "VK_EXT_full_screen_exclusive+VK_VERSION_1_1",
+            ],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        public static extern Result GetDeviceGroupSurfacePresentModes2EXT(
+            DeviceHandle device,
+            PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+            DeviceGroupPresentModeFlagsKHR* pModes
+        );
+
+        [NativeName("vkGetDeviceGroupSurfacePresentModes2EXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_EXT_full_screen_exclusive+VK_KHR_device_group",
+                "VK_EXT_full_screen_exclusive+VK_VERSION_1_1",
+            ],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetDeviceGroupSurfacePresentModes2EXT(
+            DeviceHandle device,
+            Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+            Ref<DeviceGroupPresentModeFlagsKHR> pModes
+        )
+        {
+            fixed (DeviceGroupPresentModeFlagsKHR* __dsl_pModes = pModes)
+            fixed (PhysicalDeviceSurfaceInfo2KHR* __dsl_pSurfaceInfo = pSurfaceInfo)
+            {
+                return (Result)GetDeviceGroupSurfacePresentModes2EXT(
+                    device,
+                    __dsl_pSurfaceInfo,
+                    __dsl_pModes
+                );
+            }
+        }
+
         [NativeName("vkGetDeviceGroupSurfacePresentModesKHR")]
         [DllImport(
             "vulkan",
@@ -25649,6 +25905,46 @@ public unsafe partial class Vk : IVk, IVk.Static
             MinVersion = "1.0"
         )]
         public static extern Result GetFenceStatus(DeviceHandle device, FenceHandle fence);
+
+        [NativeName("vkGetFenceWin32HandleKHR")]
+        [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        public static extern Result GetFenceWin32HandleKHR(
+            DeviceHandle device,
+            FenceGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+            void** pHandle
+        );
+
+        [NativeName("vkGetFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetFenceWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetFenceWin32HandleKHR(
+            DeviceHandle device,
+            Ref<FenceGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+            Ref2D pHandle
+        )
+        {
+            fixed (void** __dsl_pHandle = pHandle)
+            fixed (FenceGetWin32HandleInfoKHR* __dsl_pGetWin32HandleInfo = pGetWin32HandleInfo)
+            {
+                return (Result)GetFenceWin32HandleKHR(
+                    device,
+                    __dsl_pGetWin32HandleInfo,
+                    __dsl_pHandle
+                );
+            }
+        }
 
         [NativeName("vkGetFramebufferTilePropertiesQCOM")]
         [DllImport(
@@ -27120,6 +27416,108 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkGetMemoryMetalHandleEXT")]
+        [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetMemoryMetalHandleEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        public static extern Result GetMemoryMetalHandleEXT(
+            DeviceHandle device,
+            MemoryGetMetalHandleInfoEXT* pGetMetalHandleInfo,
+            void** pHandle
+        );
+
+        [NativeName("vkGetMemoryMetalHandleEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandleEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryMetalHandleEXT(
+            DeviceHandle device,
+            Ref<MemoryGetMetalHandleInfoEXT> pGetMetalHandleInfo,
+            Ref2D pHandle
+        )
+        {
+            fixed (void** __dsl_pHandle = pHandle)
+            fixed (MemoryGetMetalHandleInfoEXT* __dsl_pGetMetalHandleInfo = pGetMetalHandleInfo)
+            {
+                return (Result)GetMemoryMetalHandleEXT(
+                    device,
+                    __dsl_pGetMetalHandleInfo,
+                    __dsl_pHandle
+                );
+            }
+        }
+
+        [NativeName("vkGetMemoryMetalHandlePropertiesEXT")]
+        [DllImport(
+            "vulkan",
+            ExactSpelling = true,
+            EntryPoint = "vkGetMemoryMetalHandlePropertiesEXT"
+        )]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        public static extern Result GetMemoryMetalHandlePropertiesEXT(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            void* pHandle,
+            MemoryMetalHandlePropertiesEXT* pMemoryMetalHandleProperties
+        );
+
+        [NativeName("vkGetMemoryMetalHandlePropertiesEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandlePropertiesEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryMetalHandlePropertiesEXT(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            Ref pHandle,
+            Ref<MemoryMetalHandlePropertiesEXT> pMemoryMetalHandleProperties
+        )
+        {
+            fixed (
+                MemoryMetalHandlePropertiesEXT* __dsl_pMemoryMetalHandleProperties =
+                    pMemoryMetalHandleProperties
+            )
+            fixed (void* __dsl_pHandle = pHandle)
+            {
+                return (Result)GetMemoryMetalHandlePropertiesEXT(
+                    device,
+                    handleType,
+                    __dsl_pHandle,
+                    __dsl_pMemoryMetalHandleProperties
+                );
+            }
+        }
+
         [NativeName("vkGetMemoryNativeBufferOHOS")]
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetMemoryNativeBufferOHOS")]
         [SupportedApiProfile(
@@ -27207,6 +27605,145 @@ public unsafe partial class Vk : IVk, IVk.Static
                     device,
                     __dsl_pMemoryGetRemoteAddressInfo,
                     __dsl_pAddress
+                );
+            }
+        }
+
+        [NativeName("vkGetMemoryWin32HandleKHR")]
+        [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetMemoryWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        public static extern Result GetMemoryWin32HandleKHR(
+            DeviceHandle device,
+            MemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+            void** pHandle
+        );
+
+        [NativeName("vkGetMemoryWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryWin32HandleKHR(
+            DeviceHandle device,
+            Ref<MemoryGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+            Ref2D pHandle
+        )
+        {
+            fixed (void** __dsl_pHandle = pHandle)
+            fixed (MemoryGetWin32HandleInfoKHR* __dsl_pGetWin32HandleInfo = pGetWin32HandleInfo)
+            {
+                return (Result)GetMemoryWin32HandleKHR(
+                    device,
+                    __dsl_pGetWin32HandleInfo,
+                    __dsl_pHandle
+                );
+            }
+        }
+
+        [NativeName("vkGetMemoryWin32HandleNV")]
+        [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetMemoryWin32HandleNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_external_memory_win32"],
+            ImpliesSets = ["VK_NV_external_memory"]
+        )]
+        public static extern Result GetMemoryWin32HandleNV(
+            DeviceHandle device,
+            DeviceMemoryHandle memory,
+            ExternalMemoryHandleTypeFlagsNV handleType,
+            void** pHandle
+        );
+
+        [NativeName("vkGetMemoryWin32HandleNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_external_memory_win32"],
+            ImpliesSets = ["VK_NV_external_memory"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleNV")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryWin32HandleNV(
+            DeviceHandle device,
+            DeviceMemoryHandle memory,
+            ExternalMemoryHandleTypeFlagsNV handleType,
+            Ref2D pHandle
+        )
+        {
+            fixed (void** __dsl_pHandle = pHandle)
+            {
+                return (Result)GetMemoryWin32HandleNV(device, memory, handleType, __dsl_pHandle);
+            }
+        }
+
+        [NativeName("vkGetMemoryWin32HandlePropertiesKHR")]
+        [DllImport(
+            "vulkan",
+            ExactSpelling = true,
+            EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR"
+        )]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        public static extern Result GetMemoryWin32HandlePropertiesKHR(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            void* handle,
+            MemoryWin32HandlePropertiesKHR* pMemoryWin32HandleProperties
+        );
+
+        [NativeName("vkGetMemoryWin32HandlePropertiesKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryWin32HandlePropertiesKHR(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            Ref handle,
+            Ref<MemoryWin32HandlePropertiesKHR> pMemoryWin32HandleProperties
+        )
+        {
+            fixed (
+                MemoryWin32HandlePropertiesKHR* __dsl_pMemoryWin32HandleProperties =
+                    pMemoryWin32HandleProperties
+            )
+            fixed (void* __dsl_handle = handle)
+            {
+                return (Result)GetMemoryWin32HandlePropertiesKHR(
+                    device,
+                    handleType,
+                    __dsl_handle,
+                    __dsl_pMemoryWin32HandleProperties
                 );
             }
         }
@@ -30575,6 +31112,60 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        [DllImport(
+            "vulkan",
+            ExactSpelling = true,
+            EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT"
+        )]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        public static extern Result GetPhysicalDeviceSurfacePresentModes2EXT(
+            PhysicalDeviceHandle physicalDevice,
+            PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+            uint* pPresentModeCount,
+            PresentModeKHR* pPresentModes
+        );
+
+        [NativeName("vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetPhysicalDeviceSurfacePresentModes2EXT(
+            PhysicalDeviceHandle physicalDevice,
+            Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+            Ref<uint> pPresentModeCount,
+            Ref<PresentModeKHR> pPresentModes
+        )
+        {
+            fixed (PresentModeKHR* __dsl_pPresentModes = pPresentModes)
+            fixed (uint* __dsl_pPresentModeCount = pPresentModeCount)
+            fixed (PhysicalDeviceSurfaceInfo2KHR* __dsl_pSurfaceInfo = pSurfaceInfo)
+            {
+                return (Result)GetPhysicalDeviceSurfacePresentModes2EXT(
+                    physicalDevice,
+                    __dsl_pSurfaceInfo,
+                    __dsl_pPresentModeCount,
+                    __dsl_pPresentModes
+                );
+            }
+        }
+
         [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
         [DllImport(
             "vulkan",
@@ -30935,6 +31526,31 @@ public unsafe partial class Vk : IVk, IVk.Static
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
             WlDisplayHandle display
+        );
+
+        [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        public static MaybeBool<uint> GetPhysicalDeviceWin32PresentationSupportKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex
+        ) =>
+            (MaybeBool<uint>)
+                (uint)GetPhysicalDeviceWin32PresentationSupportRawKHR(
+                    physicalDevice,
+                    queueFamilyIndex
+                );
+
+        [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        [DllImport(
+            "vulkan",
+            ExactSpelling = true,
+            EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR"
+        )]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        public static extern uint GetPhysicalDeviceWin32PresentationSupportRawKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex
         );
 
         [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
@@ -32368,6 +32984,46 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkGetSemaphoreWin32HandleKHR")]
+        [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        public static extern Result GetSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            SemaphoreGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+            void** pHandle
+        );
+
+        [NativeName("vkGetSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            Ref<SemaphoreGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+            Ref2D pHandle
+        )
+        {
+            fixed (void** __dsl_pHandle = pHandle)
+            fixed (SemaphoreGetWin32HandleInfoKHR* __dsl_pGetWin32HandleInfo = pGetWin32HandleInfo)
+            {
+                return (Result)GetSemaphoreWin32HandleKHR(
+                    device,
+                    __dsl_pGetWin32HandleInfo,
+                    __dsl_pHandle
+                );
+            }
+        }
+
         [NativeName("vkGetShaderBinaryDataEXT")]
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetShaderBinaryDataEXT")]
         [SupportedApiProfile(
@@ -33081,6 +33737,41 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkGetWinrtDisplayNV")]
+        [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetWinrtDisplayNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_acquire_winrt_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        public static extern Result GetWinrtDisplayNV(
+            PhysicalDeviceHandle physicalDevice,
+            uint deviceRelativeId,
+            DisplayHandleKHR* pDisplay
+        );
+
+        [NativeName("vkGetWinrtDisplayNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_acquire_winrt_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetWinrtDisplayNV")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetWinrtDisplayNV(
+            PhysicalDeviceHandle physicalDevice,
+            uint deviceRelativeId,
+            Ref<DisplayHandleKHR> pDisplay
+        )
+        {
+            fixed (DisplayHandleKHR* __dsl_pDisplay = pDisplay)
+            {
+                return (Result)GetWinrtDisplayNV(physicalDevice, deviceRelativeId, __dsl_pDisplay);
+            }
+        }
+
         [NativeName("vkImportFenceFdKHR")]
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkImportFenceFdKHR")]
         [SupportedApiProfile(
@@ -33120,6 +33811,42 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkImportFenceWin32HandleKHR")]
+        [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkImportFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        public static extern Result ImportFenceWin32HandleKHR(
+            DeviceHandle device,
+            ImportFenceWin32HandleInfoKHR* pImportFenceWin32HandleInfo
+        );
+
+        [NativeName("vkImportFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportFenceWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result ImportFenceWin32HandleKHR(
+            DeviceHandle device,
+            Ref<ImportFenceWin32HandleInfoKHR> pImportFenceWin32HandleInfo
+        )
+        {
+            fixed (
+                ImportFenceWin32HandleInfoKHR* __dsl_pImportFenceWin32HandleInfo =
+                    pImportFenceWin32HandleInfo
+            )
+            {
+                return (Result)ImportFenceWin32HandleKHR(device, __dsl_pImportFenceWin32HandleInfo);
+            }
+        }
+
         [NativeName("vkImportSemaphoreFdKHR")]
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkImportSemaphoreFdKHR")]
         [SupportedApiProfile(
@@ -33156,6 +33883,45 @@ public unsafe partial class Vk : IVk, IVk.Static
             fixed (ImportSemaphoreFdInfoKHR* __dsl_pImportSemaphoreFdInfo = pImportSemaphoreFdInfo)
             {
                 return (Result)ImportSemaphoreFdKHR(device, __dsl_pImportSemaphoreFdInfo);
+            }
+        }
+
+        [NativeName("vkImportSemaphoreWin32HandleKHR")]
+        [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkImportSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        public static extern Result ImportSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            ImportSemaphoreWin32HandleInfoKHR* pImportSemaphoreWin32HandleInfo
+        );
+
+        [NativeName("vkImportSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result ImportSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            Ref<ImportSemaphoreWin32HandleInfoKHR> pImportSemaphoreWin32HandleInfo
+        )
+        {
+            fixed (
+                ImportSemaphoreWin32HandleInfoKHR* __dsl_pImportSemaphoreWin32HandleInfo =
+                    pImportSemaphoreWin32HandleInfo
+            )
+            {
+                return (Result)ImportSemaphoreWin32HandleKHR(
+                    device,
+                    __dsl_pImportSemaphoreWin32HandleInfo
+                );
             }
         }
 
@@ -34265,6 +35031,25 @@ public unsafe partial class Vk : IVk, IVk.Static
         public static extern Result ReleaseDisplayEXT(
             PhysicalDeviceHandle physicalDevice,
             DisplayHandleKHR display
+        );
+
+        [NativeName("vkReleaseFullScreenExclusiveModeEXT")]
+        [DllImport(
+            "vulkan",
+            ExactSpelling = true,
+            EntryPoint = "vkReleaseFullScreenExclusiveModeEXT"
+        )]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        public static extern Result ReleaseFullScreenExclusiveModeEXT(
+            DeviceHandle device,
+            SwapchainHandleKHR swapchain
         );
 
         [NativeName("vkReleasePerformanceConfigurationINTEL")]
@@ -36258,6 +37043,24 @@ public unsafe partial class Vk : IVk, IVk.Static
             DisplayHandleKHR display
         ) => T.AcquireDrmDisplayEXT(physicalDevice, drmFd, display);
 
+        [NativeName("vkAcquireFullScreenExclusiveModeEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkAcquireFullScreenExclusiveModeEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result AcquireFullScreenExclusiveModeEXT(
+            DeviceHandle device,
+            SwapchainHandleKHR swapchain
+        ) => T.AcquireFullScreenExclusiveModeEXT(device, swapchain);
+
         [NativeName("vkAcquireNextImage2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -36381,6 +37184,21 @@ public unsafe partial class Vk : IVk, IVk.Static
             DeviceHandle device,
             Ref<AcquireProfilingLockInfoKHR> pInfo
         ) => T.AcquireProfilingLockKHR(device, pInfo);
+
+        [NativeName("vkAcquireWinrtDisplayNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_acquire_winrt_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkAcquireWinrtDisplayNV")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result AcquireWinrtDisplayNV(
+            PhysicalDeviceHandle physicalDevice,
+            DisplayHandleKHR display
+        ) => T.AcquireWinrtDisplayNV(physicalDevice, display);
 
         [NativeName("vkAcquireXlibDisplayEXT")]
         [SupportedApiProfile(
@@ -52437,6 +53255,84 @@ public unsafe partial class Vk : IVk, IVk.Static
             Ref<InstanceHandle> pInstance
         ) => T.CreateInstance(pCreateInfo, pAllocator, pInstance);
 
+        [NativeName("vkCreateIOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateIOSSurfaceMVK")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result CreateIosSurfaceMVK(
+            InstanceHandle instance,
+            IosSurfaceCreateInfoMVK* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        ) => T.CreateIosSurfaceMVK(instance, pCreateInfo, pAllocator, pSurface);
+
+        [NativeName("vkCreateIOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateIOSSurfaceMVK")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result CreateIosSurfaceMVK(
+            InstanceHandle instance,
+            Ref<IosSurfaceCreateInfoMVK> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        ) => T.CreateIosSurfaceMVK(instance, pCreateInfo, pAllocator, pSurface);
+
+        [NativeName("vkCreateMacOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result CreateMacOSSurfaceMVK(
+            InstanceHandle instance,
+            MacOSSurfaceCreateInfoMVK* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        ) => T.CreateMacOSSurfaceMVK(instance, pCreateInfo, pAllocator, pSurface);
+
+        [NativeName("vkCreateMacOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result CreateMacOSSurfaceMVK(
+            InstanceHandle instance,
+            Ref<MacOSSurfaceCreateInfoMVK> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        ) => T.CreateMacOSSurfaceMVK(instance, pCreateInfo, pAllocator, pSurface);
+
+        [NativeName("vkCreateMetalSurfaceEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateMetalSurfaceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result CreateMetalSurfaceEXT(
+            InstanceHandle instance,
+            MetalSurfaceCreateInfoEXT* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        ) => T.CreateMetalSurfaceEXT(instance, pCreateInfo, pAllocator, pSurface);
+
+        [NativeName("vkCreateMetalSurfaceEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateMetalSurfaceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result CreateMetalSurfaceEXT(
+            InstanceHandle instance,
+            Ref<MetalSurfaceCreateInfoEXT> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        ) => T.CreateMetalSurfaceEXT(instance, pCreateInfo, pAllocator, pSurface);
+
         [NativeName("vkCreateMicromapEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -53834,6 +54730,32 @@ public unsafe partial class Vk : IVk, IVk.Static
             Ref<AllocationCallbacks> pAllocator,
             Ref<SurfaceHandleKHR> pSurface
         ) => T.CreateWaylandSurfaceKHR(instance, pCreateInfo, pAllocator, pSurface);
+
+        [NativeName("vkCreateWin32SurfaceKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateWin32SurfaceKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result CreateWin32SurfaceKHR(
+            InstanceHandle instance,
+            Win32SurfaceCreateInfoKHR* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        ) => T.CreateWin32SurfaceKHR(instance, pCreateInfo, pAllocator, pSurface);
+
+        [NativeName("vkCreateWin32SurfaceKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateWin32SurfaceKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result CreateWin32SurfaceKHR(
+            InstanceHandle instance,
+            Ref<Win32SurfaceCreateInfoKHR> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        ) => T.CreateWin32SurfaceKHR(instance, pCreateInfo, pAllocator, pSurface);
 
         [NativeName("vkCreateXcbSurfaceKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
@@ -57241,6 +58163,28 @@ public unsafe partial class Vk : IVk, IVk.Static
                 pDescriptions
             );
 
+        [NativeName("vkExportMetalObjectsEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+        [NativeFunction("vulkan", EntryPoint = "vkExportMetalObjectsEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void ExportMetalObjectsEXT(
+            DeviceHandle device,
+            ExportMetalObjectsInfoEXT* pMetalObjectsInfo
+        ) => T.ExportMetalObjectsEXT(device, pMetalObjectsInfo);
+
+        [NativeName("vkExportMetalObjectsEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+        [NativeFunction("vulkan", EntryPoint = "vkExportMetalObjectsEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void ExportMetalObjectsEXT(
+            DeviceHandle device,
+            Ref<ExportMetalObjectsInfoEXT> pMetalObjectsInfo
+        ) => T.ExportMetalObjectsEXT(device, pMetalObjectsInfo);
+
         [NativeName("vkFlushMappedMemoryRanges")]
         [SupportedApiProfile(
             "vulkan",
@@ -59332,6 +60276,50 @@ public unsafe partial class Vk : IVk, IVk.Static
             Ref<DeviceGroupPresentCapabilitiesKHR> pDeviceGroupPresentCapabilities
         ) => T.GetDeviceGroupPresentCapabilitiesKHR(device, pDeviceGroupPresentCapabilities);
 
+        [NativeName("vkGetDeviceGroupSurfacePresentModes2EXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_EXT_full_screen_exclusive+VK_KHR_device_group",
+                "VK_EXT_full_screen_exclusive+VK_VERSION_1_1",
+            ],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetDeviceGroupSurfacePresentModes2EXT(
+            DeviceHandle device,
+            PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+            DeviceGroupPresentModeFlagsKHR* pModes
+        ) => T.GetDeviceGroupSurfacePresentModes2EXT(device, pSurfaceInfo, pModes);
+
+        [NativeName("vkGetDeviceGroupSurfacePresentModes2EXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_EXT_full_screen_exclusive+VK_KHR_device_group",
+                "VK_EXT_full_screen_exclusive+VK_VERSION_1_1",
+            ],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetDeviceGroupSurfacePresentModes2EXT(
+            DeviceHandle device,
+            Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+            Ref<DeviceGroupPresentModeFlagsKHR> pModes
+        ) => T.GetDeviceGroupSurfacePresentModes2EXT(device, pSurfaceInfo, pModes);
+
         [NativeName("vkGetDeviceGroupSurfacePresentModesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -60499,6 +61487,38 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public Result GetFenceStatus(DeviceHandle device, FenceHandle fence) =>
             T.GetFenceStatus(device, fence);
+
+        [NativeName("vkGetFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetFenceWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetFenceWin32HandleKHR(
+            DeviceHandle device,
+            FenceGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+            void** pHandle
+        ) => T.GetFenceWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
+
+        [NativeName("vkGetFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetFenceWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetFenceWin32HandleKHR(
+            DeviceHandle device,
+            Ref<FenceGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+            Ref2D pHandle
+        ) => T.GetFenceWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
 
         [NativeName("vkGetFramebufferTilePropertiesQCOM")]
         [SupportedApiProfile(
@@ -61786,6 +62806,96 @@ public unsafe partial class Vk : IVk, IVk.Static
                 pMemoryHostPointerProperties
             );
 
+        [NativeName("vkGetMemoryMetalHandleEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandleEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetMemoryMetalHandleEXT(
+            DeviceHandle device,
+            MemoryGetMetalHandleInfoEXT* pGetMetalHandleInfo,
+            void** pHandle
+        ) => T.GetMemoryMetalHandleEXT(device, pGetMetalHandleInfo, pHandle);
+
+        [NativeName("vkGetMemoryMetalHandleEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandleEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetMemoryMetalHandleEXT(
+            DeviceHandle device,
+            Ref<MemoryGetMetalHandleInfoEXT> pGetMetalHandleInfo,
+            Ref2D pHandle
+        ) => T.GetMemoryMetalHandleEXT(device, pGetMetalHandleInfo, pHandle);
+
+        [NativeName("vkGetMemoryMetalHandlePropertiesEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandlePropertiesEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetMemoryMetalHandlePropertiesEXT(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            void* pHandle,
+            MemoryMetalHandlePropertiesEXT* pMemoryMetalHandleProperties
+        ) =>
+            T.GetMemoryMetalHandlePropertiesEXT(
+                device,
+                handleType,
+                pHandle,
+                pMemoryMetalHandleProperties
+            );
+
+        [NativeName("vkGetMemoryMetalHandlePropertiesEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandlePropertiesEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetMemoryMetalHandlePropertiesEXT(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            Ref pHandle,
+            Ref<MemoryMetalHandlePropertiesEXT> pMemoryMetalHandleProperties
+        ) =>
+            T.GetMemoryMetalHandlePropertiesEXT(
+                device,
+                handleType,
+                pHandle,
+                pMemoryMetalHandleProperties
+            );
+
         [NativeName("vkGetMemoryNativeBufferOHOS")]
         [SupportedApiProfile(
             "vulkan",
@@ -61861,6 +62971,130 @@ public unsafe partial class Vk : IVk, IVk.Static
             Ref<MemoryGetRemoteAddressInfoNV> pMemoryGetRemoteAddressInfo,
             Ref2D pAddress
         ) => T.GetMemoryRemoteAddressNV(device, pMemoryGetRemoteAddressInfo, pAddress);
+
+        [NativeName("vkGetMemoryWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetMemoryWin32HandleKHR(
+            DeviceHandle device,
+            MemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+            void** pHandle
+        ) => T.GetMemoryWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
+
+        [NativeName("vkGetMemoryWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetMemoryWin32HandleKHR(
+            DeviceHandle device,
+            Ref<MemoryGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+            Ref2D pHandle
+        ) => T.GetMemoryWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
+
+        [NativeName("vkGetMemoryWin32HandleNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_external_memory_win32"],
+            ImpliesSets = ["VK_NV_external_memory"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleNV")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetMemoryWin32HandleNV(
+            DeviceHandle device,
+            DeviceMemoryHandle memory,
+            ExternalMemoryHandleTypeFlagsNV handleType,
+            void** pHandle
+        ) => T.GetMemoryWin32HandleNV(device, memory, handleType, pHandle);
+
+        [NativeName("vkGetMemoryWin32HandleNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_external_memory_win32"],
+            ImpliesSets = ["VK_NV_external_memory"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleNV")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetMemoryWin32HandleNV(
+            DeviceHandle device,
+            DeviceMemoryHandle memory,
+            ExternalMemoryHandleTypeFlagsNV handleType,
+            Ref2D pHandle
+        ) => T.GetMemoryWin32HandleNV(device, memory, handleType, pHandle);
+
+        [NativeName("vkGetMemoryWin32HandlePropertiesKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetMemoryWin32HandlePropertiesKHR(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            void* handle,
+            MemoryWin32HandlePropertiesKHR* pMemoryWin32HandleProperties
+        ) =>
+            T.GetMemoryWin32HandlePropertiesKHR(
+                device,
+                handleType,
+                handle,
+                pMemoryWin32HandleProperties
+            );
+
+        [NativeName("vkGetMemoryWin32HandlePropertiesKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetMemoryWin32HandlePropertiesKHR(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            Ref handle,
+            Ref<MemoryWin32HandlePropertiesKHR> pMemoryWin32HandleProperties
+        ) =>
+            T.GetMemoryWin32HandlePropertiesKHR(
+                device,
+                handleType,
+                handle,
+                pMemoryWin32HandleProperties
+            );
 
         [NativeName("vkGetMicromapBuildSizesEXT")]
         [SupportedApiProfile(
@@ -64999,6 +66233,58 @@ public unsafe partial class Vk : IVk, IVk.Static
                 pSurfaceFormats
             );
 
+        [NativeName("vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetPhysicalDeviceSurfacePresentModes2EXT(
+            PhysicalDeviceHandle physicalDevice,
+            PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+            uint* pPresentModeCount,
+            PresentModeKHR* pPresentModes
+        ) =>
+            T.GetPhysicalDeviceSurfacePresentModes2EXT(
+                physicalDevice,
+                pSurfaceInfo,
+                pPresentModeCount,
+                pPresentModes
+            );
+
+        [NativeName("vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetPhysicalDeviceSurfacePresentModes2EXT(
+            PhysicalDeviceHandle physicalDevice,
+            Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+            Ref<uint> pPresentModeCount,
+            Ref<PresentModeKHR> pPresentModes
+        ) =>
+            T.GetPhysicalDeviceSurfacePresentModes2EXT(
+                physicalDevice,
+                pSurfaceInfo,
+                pPresentModeCount,
+                pPresentModes
+            );
+
         [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -65322,6 +66608,28 @@ public unsafe partial class Vk : IVk, IVk.Static
                 queueFamilyIndex,
                 display
             );
+
+        [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<uint> GetPhysicalDeviceWin32PresentationSupportKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex
+        ) => T.GetPhysicalDeviceWin32PresentationSupportKHR(physicalDevice, queueFamilyIndex);
+
+        [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public uint GetPhysicalDeviceWin32PresentationSupportRawKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex
+        ) => T.GetPhysicalDeviceWin32PresentationSupportRawKHR(physicalDevice, queueFamilyIndex);
 
         [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
@@ -66661,6 +67969,38 @@ public unsafe partial class Vk : IVk, IVk.Static
             Ref<int> pFd
         ) => T.GetSemaphoreFdKHR(device, pGetFdInfo, pFd);
 
+        [NativeName("vkGetSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            SemaphoreGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+            void** pHandle
+        ) => T.GetSemaphoreWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
+
+        [NativeName("vkGetSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            Ref<SemaphoreGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+            Ref2D pHandle
+        ) => T.GetSemaphoreWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
+
         [NativeName("vkGetShaderBinaryDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -67269,6 +68609,38 @@ public unsafe partial class Vk : IVk, IVk.Static
                 pMemoryRequirements
             );
 
+        [NativeName("vkGetWinrtDisplayNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_acquire_winrt_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetWinrtDisplayNV")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetWinrtDisplayNV(
+            PhysicalDeviceHandle physicalDevice,
+            uint deviceRelativeId,
+            DisplayHandleKHR* pDisplay
+        ) => T.GetWinrtDisplayNV(physicalDevice, deviceRelativeId, pDisplay);
+
+        [NativeName("vkGetWinrtDisplayNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_acquire_winrt_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetWinrtDisplayNV")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result GetWinrtDisplayNV(
+            PhysicalDeviceHandle physicalDevice,
+            uint deviceRelativeId,
+            Ref<DisplayHandleKHR> pDisplay
+        ) => T.GetWinrtDisplayNV(physicalDevice, deviceRelativeId, pDisplay);
+
         [NativeName("vkImportFenceFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -67305,6 +68677,36 @@ public unsafe partial class Vk : IVk, IVk.Static
             Ref<ImportFenceFdInfoKHR> pImportFenceFdInfo
         ) => T.ImportFenceFdKHR(device, pImportFenceFdInfo);
 
+        [NativeName("vkImportFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportFenceWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result ImportFenceWin32HandleKHR(
+            DeviceHandle device,
+            ImportFenceWin32HandleInfoKHR* pImportFenceWin32HandleInfo
+        ) => T.ImportFenceWin32HandleKHR(device, pImportFenceWin32HandleInfo);
+
+        [NativeName("vkImportFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportFenceWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result ImportFenceWin32HandleKHR(
+            DeviceHandle device,
+            Ref<ImportFenceWin32HandleInfoKHR> pImportFenceWin32HandleInfo
+        ) => T.ImportFenceWin32HandleKHR(device, pImportFenceWin32HandleInfo);
+
         [NativeName("vkImportSemaphoreFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -67340,6 +68742,36 @@ public unsafe partial class Vk : IVk, IVk.Static
             DeviceHandle device,
             Ref<ImportSemaphoreFdInfoKHR> pImportSemaphoreFdInfo
         ) => T.ImportSemaphoreFdKHR(device, pImportSemaphoreFdInfo);
+
+        [NativeName("vkImportSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result ImportSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            ImportSemaphoreWin32HandleInfoKHR* pImportSemaphoreWin32HandleInfo
+        ) => T.ImportSemaphoreWin32HandleKHR(device, pImportSemaphoreWin32HandleInfo);
+
+        [NativeName("vkImportSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result ImportSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            Ref<ImportSemaphoreWin32HandleInfoKHR> pImportSemaphoreWin32HandleInfo
+        ) => T.ImportSemaphoreWin32HandleKHR(device, pImportSemaphoreWin32HandleInfo);
 
         [NativeName("vkInitializePerformanceApiINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
@@ -68342,6 +69774,24 @@ public unsafe partial class Vk : IVk, IVk.Static
             PhysicalDeviceHandle physicalDevice,
             DisplayHandleKHR display
         ) => T.ReleaseDisplayEXT(physicalDevice, display);
+
+        [NativeName("vkReleaseFullScreenExclusiveModeEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkReleaseFullScreenExclusiveModeEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result ReleaseFullScreenExclusiveModeEXT(
+            DeviceHandle device,
+            SwapchainHandleKHR swapchain
+        ) => T.ReleaseFullScreenExclusiveModeEXT(device, swapchain);
 
         [NativeName("vkReleasePerformanceConfigurationINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
@@ -70274,6 +71724,24 @@ public unsafe partial class Vk : IVk, IVk.Static
             DisplayHandleKHR display
         ) => Underlying.Value!.AcquireDrmDisplayEXT(physicalDevice, drmFd, display);
 
+        [NativeName("vkAcquireFullScreenExclusiveModeEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkAcquireFullScreenExclusiveModeEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result AcquireFullScreenExclusiveModeEXT(
+            DeviceHandle device,
+            SwapchainHandleKHR swapchain
+        ) => Underlying.Value!.AcquireFullScreenExclusiveModeEXT(device, swapchain);
+
         [NativeName("vkAcquireNextImage2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -70447,6 +71915,21 @@ public unsafe partial class Vk : IVk, IVk.Static
                 return (Result)AcquireProfilingLockKHR(device, __dsl_pInfo);
             }
         }
+
+        [NativeName("vkAcquireWinrtDisplayNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_acquire_winrt_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkAcquireWinrtDisplayNV")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result AcquireWinrtDisplayNV(
+            PhysicalDeviceHandle physicalDevice,
+            DisplayHandleKHR display
+        ) => Underlying.Value!.AcquireWinrtDisplayNV(physicalDevice, display);
 
         [NativeName("vkAcquireXlibDisplayEXT")]
         [SupportedApiProfile(
@@ -88848,6 +90331,123 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkCreateIOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateIOSSurfaceMVK")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result CreateIosSurfaceMVK(
+            InstanceHandle instance,
+            IosSurfaceCreateInfoMVK* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        ) => Underlying.Value!.CreateIosSurfaceMVK(instance, pCreateInfo, pAllocator, pSurface);
+
+        [NativeName("vkCreateIOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateIOSSurfaceMVK")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result CreateIosSurfaceMVK(
+            InstanceHandle instance,
+            Ref<IosSurfaceCreateInfoMVK> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        )
+        {
+            fixed (SurfaceHandleKHR* __dsl_pSurface = pSurface)
+            fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
+            fixed (IosSurfaceCreateInfoMVK* __dsl_pCreateInfo = pCreateInfo)
+            {
+                return (Result)CreateIosSurfaceMVK(
+                    instance,
+                    __dsl_pCreateInfo,
+                    __dsl_pAllocator,
+                    __dsl_pSurface
+                );
+            }
+        }
+
+        [NativeName("vkCreateMacOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result CreateMacOSSurfaceMVK(
+            InstanceHandle instance,
+            MacOSSurfaceCreateInfoMVK* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        ) => Underlying.Value!.CreateMacOSSurfaceMVK(instance, pCreateInfo, pAllocator, pSurface);
+
+        [NativeName("vkCreateMacOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result CreateMacOSSurfaceMVK(
+            InstanceHandle instance,
+            Ref<MacOSSurfaceCreateInfoMVK> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        )
+        {
+            fixed (SurfaceHandleKHR* __dsl_pSurface = pSurface)
+            fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
+            fixed (MacOSSurfaceCreateInfoMVK* __dsl_pCreateInfo = pCreateInfo)
+            {
+                return (Result)CreateMacOSSurfaceMVK(
+                    instance,
+                    __dsl_pCreateInfo,
+                    __dsl_pAllocator,
+                    __dsl_pSurface
+                );
+            }
+        }
+
+        [NativeName("vkCreateMetalSurfaceEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateMetalSurfaceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result CreateMetalSurfaceEXT(
+            InstanceHandle instance,
+            MetalSurfaceCreateInfoEXT* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        ) => Underlying.Value!.CreateMetalSurfaceEXT(instance, pCreateInfo, pAllocator, pSurface);
+
+        [NativeName("vkCreateMetalSurfaceEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateMetalSurfaceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result CreateMetalSurfaceEXT(
+            InstanceHandle instance,
+            Ref<MetalSurfaceCreateInfoEXT> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        )
+        {
+            fixed (SurfaceHandleKHR* __dsl_pSurface = pSurface)
+            fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
+            fixed (MetalSurfaceCreateInfoEXT* __dsl_pCreateInfo = pCreateInfo)
+            {
+                return (Result)CreateMetalSurfaceEXT(
+                    instance,
+                    __dsl_pCreateInfo,
+                    __dsl_pAllocator,
+                    __dsl_pSurface
+                );
+            }
+        }
+
         [NativeName("vkCreateMicromapEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -90660,6 +92260,45 @@ public unsafe partial class Vk : IVk, IVk.Static
             fixed (WaylandSurfaceCreateInfoKHR* __dsl_pCreateInfo = pCreateInfo)
             {
                 return (Result)CreateWaylandSurfaceKHR(
+                    instance,
+                    __dsl_pCreateInfo,
+                    __dsl_pAllocator,
+                    __dsl_pSurface
+                );
+            }
+        }
+
+        [NativeName("vkCreateWin32SurfaceKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateWin32SurfaceKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result CreateWin32SurfaceKHR(
+            InstanceHandle instance,
+            Win32SurfaceCreateInfoKHR* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        ) => Underlying.Value!.CreateWin32SurfaceKHR(instance, pCreateInfo, pAllocator, pSurface);
+
+        [NativeName("vkCreateWin32SurfaceKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateWin32SurfaceKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result CreateWin32SurfaceKHR(
+            InstanceHandle instance,
+            Ref<Win32SurfaceCreateInfoKHR> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        )
+        {
+            fixed (SurfaceHandleKHR* __dsl_pSurface = pSurface)
+            fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
+            fixed (Win32SurfaceCreateInfoKHR* __dsl_pCreateInfo = pCreateInfo)
+            {
+                return (Result)CreateWin32SurfaceKHR(
                     instance,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -94592,6 +96231,34 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkExportMetalObjectsEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+        [NativeFunction("vulkan", EntryPoint = "vkExportMetalObjectsEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void ExportMetalObjectsEXT(
+            DeviceHandle device,
+            ExportMetalObjectsInfoEXT* pMetalObjectsInfo
+        ) => Underlying.Value!.ExportMetalObjectsEXT(device, pMetalObjectsInfo);
+
+        [NativeName("vkExportMetalObjectsEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+        [NativeFunction("vulkan", EntryPoint = "vkExportMetalObjectsEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void ExportMetalObjectsEXT(
+            DeviceHandle device,
+            Ref<ExportMetalObjectsInfoEXT> pMetalObjectsInfo
+        )
+        {
+            fixed (ExportMetalObjectsInfoEXT* __dsl_pMetalObjectsInfo = pMetalObjectsInfo)
+            {
+                ExportMetalObjectsEXT(device, __dsl_pMetalObjectsInfo);
+            }
+        }
+
         [NativeName("vkFlushMappedMemoryRanges")]
         [SupportedApiProfile(
             "vulkan",
@@ -97086,6 +98753,61 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkGetDeviceGroupSurfacePresentModes2EXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_EXT_full_screen_exclusive+VK_KHR_device_group",
+                "VK_EXT_full_screen_exclusive+VK_VERSION_1_1",
+            ],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetDeviceGroupSurfacePresentModes2EXT(
+            DeviceHandle device,
+            PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+            DeviceGroupPresentModeFlagsKHR* pModes
+        ) => Underlying.Value!.GetDeviceGroupSurfacePresentModes2EXT(device, pSurfaceInfo, pModes);
+
+        [NativeName("vkGetDeviceGroupSurfacePresentModes2EXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_EXT_full_screen_exclusive+VK_KHR_device_group",
+                "VK_EXT_full_screen_exclusive+VK_VERSION_1_1",
+            ],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetDeviceGroupSurfacePresentModes2EXT(
+            DeviceHandle device,
+            Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+            Ref<DeviceGroupPresentModeFlagsKHR> pModes
+        )
+        {
+            fixed (DeviceGroupPresentModeFlagsKHR* __dsl_pModes = pModes)
+            fixed (PhysicalDeviceSurfaceInfo2KHR* __dsl_pSurfaceInfo = pSurfaceInfo)
+            {
+                return (Result)GetDeviceGroupSurfacePresentModes2EXT(
+                    device,
+                    __dsl_pSurfaceInfo,
+                    __dsl_pModes
+                );
+            }
+        }
+
         [NativeName("vkGetDeviceGroupSurfacePresentModesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -98516,6 +100238,49 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result GetFenceStatus(DeviceHandle device, FenceHandle fence) =>
             Underlying.Value!.GetFenceStatus(device, fence);
+
+        [NativeName("vkGetFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetFenceWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetFenceWin32HandleKHR(
+            DeviceHandle device,
+            FenceGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+            void** pHandle
+        ) => Underlying.Value!.GetFenceWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
+
+        [NativeName("vkGetFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetFenceWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetFenceWin32HandleKHR(
+            DeviceHandle device,
+            Ref<FenceGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+            Ref2D pHandle
+        )
+        {
+            fixed (void** __dsl_pHandle = pHandle)
+            fixed (FenceGetWin32HandleInfoKHR* __dsl_pGetWin32HandleInfo = pGetWin32HandleInfo)
+            {
+                return (Result)GetFenceWin32HandleKHR(
+                    device,
+                    __dsl_pGetWin32HandleInfo,
+                    __dsl_pHandle
+                );
+            }
+        }
 
         [NativeName("vkGetFramebufferTilePropertiesQCOM")]
         [SupportedApiProfile(
@@ -100076,6 +101841,116 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkGetMemoryMetalHandleEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandleEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryMetalHandleEXT(
+            DeviceHandle device,
+            MemoryGetMetalHandleInfoEXT* pGetMetalHandleInfo,
+            void** pHandle
+        ) => Underlying.Value!.GetMemoryMetalHandleEXT(device, pGetMetalHandleInfo, pHandle);
+
+        [NativeName("vkGetMemoryMetalHandleEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandleEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryMetalHandleEXT(
+            DeviceHandle device,
+            Ref<MemoryGetMetalHandleInfoEXT> pGetMetalHandleInfo,
+            Ref2D pHandle
+        )
+        {
+            fixed (void** __dsl_pHandle = pHandle)
+            fixed (MemoryGetMetalHandleInfoEXT* __dsl_pGetMetalHandleInfo = pGetMetalHandleInfo)
+            {
+                return (Result)GetMemoryMetalHandleEXT(
+                    device,
+                    __dsl_pGetMetalHandleInfo,
+                    __dsl_pHandle
+                );
+            }
+        }
+
+        [NativeName("vkGetMemoryMetalHandlePropertiesEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandlePropertiesEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryMetalHandlePropertiesEXT(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            void* pHandle,
+            MemoryMetalHandlePropertiesEXT* pMemoryMetalHandleProperties
+        ) =>
+            Underlying.Value!.GetMemoryMetalHandlePropertiesEXT(
+                device,
+                handleType,
+                pHandle,
+                pMemoryMetalHandleProperties
+            );
+
+        [NativeName("vkGetMemoryMetalHandlePropertiesEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandlePropertiesEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryMetalHandlePropertiesEXT(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            Ref pHandle,
+            Ref<MemoryMetalHandlePropertiesEXT> pMemoryMetalHandleProperties
+        )
+        {
+            fixed (
+                MemoryMetalHandlePropertiesEXT* __dsl_pMemoryMetalHandleProperties =
+                    pMemoryMetalHandleProperties
+            )
+            fixed (void* __dsl_pHandle = pHandle)
+            {
+                return (Result)GetMemoryMetalHandlePropertiesEXT(
+                    device,
+                    handleType,
+                    __dsl_pHandle,
+                    __dsl_pMemoryMetalHandleProperties
+                );
+            }
+        }
+
         [NativeName("vkGetMemoryNativeBufferOHOS")]
         [SupportedApiProfile(
             "vulkan",
@@ -100174,6 +102049,156 @@ public unsafe partial class Vk : IVk, IVk.Static
                     device,
                     __dsl_pMemoryGetRemoteAddressInfo,
                     __dsl_pAddress
+                );
+            }
+        }
+
+        [NativeName("vkGetMemoryWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryWin32HandleKHR(
+            DeviceHandle device,
+            MemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+            void** pHandle
+        ) => Underlying.Value!.GetMemoryWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
+
+        [NativeName("vkGetMemoryWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryWin32HandleKHR(
+            DeviceHandle device,
+            Ref<MemoryGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+            Ref2D pHandle
+        )
+        {
+            fixed (void** __dsl_pHandle = pHandle)
+            fixed (MemoryGetWin32HandleInfoKHR* __dsl_pGetWin32HandleInfo = pGetWin32HandleInfo)
+            {
+                return (Result)GetMemoryWin32HandleKHR(
+                    device,
+                    __dsl_pGetWin32HandleInfo,
+                    __dsl_pHandle
+                );
+            }
+        }
+
+        [NativeName("vkGetMemoryWin32HandleNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_external_memory_win32"],
+            ImpliesSets = ["VK_NV_external_memory"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleNV")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryWin32HandleNV(
+            DeviceHandle device,
+            DeviceMemoryHandle memory,
+            ExternalMemoryHandleTypeFlagsNV handleType,
+            void** pHandle
+        ) => Underlying.Value!.GetMemoryWin32HandleNV(device, memory, handleType, pHandle);
+
+        [NativeName("vkGetMemoryWin32HandleNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_external_memory_win32"],
+            ImpliesSets = ["VK_NV_external_memory"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleNV")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryWin32HandleNV(
+            DeviceHandle device,
+            DeviceMemoryHandle memory,
+            ExternalMemoryHandleTypeFlagsNV handleType,
+            Ref2D pHandle
+        )
+        {
+            fixed (void** __dsl_pHandle = pHandle)
+            {
+                return (Result)GetMemoryWin32HandleNV(device, memory, handleType, __dsl_pHandle);
+            }
+        }
+
+        [NativeName("vkGetMemoryWin32HandlePropertiesKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryWin32HandlePropertiesKHR(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            void* handle,
+            MemoryWin32HandlePropertiesKHR* pMemoryWin32HandleProperties
+        ) =>
+            Underlying.Value!.GetMemoryWin32HandlePropertiesKHR(
+                device,
+                handleType,
+                handle,
+                pMemoryWin32HandleProperties
+            );
+
+        [NativeName("vkGetMemoryWin32HandlePropertiesKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetMemoryWin32HandlePropertiesKHR(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            Ref handle,
+            Ref<MemoryWin32HandlePropertiesKHR> pMemoryWin32HandleProperties
+        )
+        {
+            fixed (
+                MemoryWin32HandlePropertiesKHR* __dsl_pMemoryWin32HandleProperties =
+                    pMemoryWin32HandleProperties
+            )
+            fixed (void* __dsl_handle = handle)
+            {
+                return (Result)GetMemoryWin32HandlePropertiesKHR(
+                    device,
+                    handleType,
+                    __dsl_handle,
+                    __dsl_pMemoryWin32HandleProperties
                 );
             }
         }
@@ -103818,6 +105843,65 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetPhysicalDeviceSurfacePresentModes2EXT(
+            PhysicalDeviceHandle physicalDevice,
+            PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+            uint* pPresentModeCount,
+            PresentModeKHR* pPresentModes
+        ) =>
+            Underlying.Value!.GetPhysicalDeviceSurfacePresentModes2EXT(
+                physicalDevice,
+                pSurfaceInfo,
+                pPresentModeCount,
+                pPresentModes
+            );
+
+        [NativeName("vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetPhysicalDeviceSurfacePresentModes2EXT(
+            PhysicalDeviceHandle physicalDevice,
+            Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+            Ref<uint> pPresentModeCount,
+            Ref<PresentModeKHR> pPresentModes
+        )
+        {
+            fixed (PresentModeKHR* __dsl_pPresentModes = pPresentModes)
+            fixed (uint* __dsl_pPresentModeCount = pPresentModeCount)
+            fixed (PhysicalDeviceSurfaceInfo2KHR* __dsl_pSurfaceInfo = pSurfaceInfo)
+            {
+                return (Result)GetPhysicalDeviceSurfacePresentModes2EXT(
+                    physicalDevice,
+                    __dsl_pSurfaceInfo,
+                    __dsl_pPresentModeCount,
+                    __dsl_pPresentModes
+                );
+            }
+        }
+
         [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -104218,6 +106302,36 @@ public unsafe partial class Vk : IVk, IVk.Static
                 physicalDevice,
                 queueFamilyIndex,
                 display
+            );
+
+        [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<uint> GetPhysicalDeviceWin32PresentationSupportKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex
+        ) =>
+            Underlying.Value!.GetPhysicalDeviceWin32PresentationSupportKHR(
+                physicalDevice,
+                queueFamilyIndex
+            );
+
+        [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static uint GetPhysicalDeviceWin32PresentationSupportRawKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex
+        ) =>
+            Underlying.Value!.GetPhysicalDeviceWin32PresentationSupportRawKHR(
+                physicalDevice,
+                queueFamilyIndex
             );
 
         [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
@@ -105811,6 +107925,49 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkGetSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            SemaphoreGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+            void** pHandle
+        ) => Underlying.Value!.GetSemaphoreWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
+
+        [NativeName("vkGetSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            Ref<SemaphoreGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+            Ref2D pHandle
+        )
+        {
+            fixed (void** __dsl_pHandle = pHandle)
+            fixed (SemaphoreGetWin32HandleInfoKHR* __dsl_pGetWin32HandleInfo = pGetWin32HandleInfo)
+            {
+                return (Result)GetSemaphoreWin32HandleKHR(
+                    device,
+                    __dsl_pGetWin32HandleInfo,
+                    __dsl_pHandle
+                );
+            }
+        }
+
         [NativeName("vkGetShaderBinaryDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -106588,6 +108745,44 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkGetWinrtDisplayNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_acquire_winrt_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetWinrtDisplayNV")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetWinrtDisplayNV(
+            PhysicalDeviceHandle physicalDevice,
+            uint deviceRelativeId,
+            DisplayHandleKHR* pDisplay
+        ) => Underlying.Value!.GetWinrtDisplayNV(physicalDevice, deviceRelativeId, pDisplay);
+
+        [NativeName("vkGetWinrtDisplayNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_acquire_winrt_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetWinrtDisplayNV")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result GetWinrtDisplayNV(
+            PhysicalDeviceHandle physicalDevice,
+            uint deviceRelativeId,
+            Ref<DisplayHandleKHR> pDisplay
+        )
+        {
+            fixed (DisplayHandleKHR* __dsl_pDisplay = pDisplay)
+            {
+                return (Result)GetWinrtDisplayNV(physicalDevice, deviceRelativeId, __dsl_pDisplay);
+            }
+        }
+
         [NativeName("vkImportFenceFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -106630,6 +108825,45 @@ public unsafe partial class Vk : IVk, IVk.Static
             }
         }
 
+        [NativeName("vkImportFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportFenceWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result ImportFenceWin32HandleKHR(
+            DeviceHandle device,
+            ImportFenceWin32HandleInfoKHR* pImportFenceWin32HandleInfo
+        ) => Underlying.Value!.ImportFenceWin32HandleKHR(device, pImportFenceWin32HandleInfo);
+
+        [NativeName("vkImportFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportFenceWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result ImportFenceWin32HandleKHR(
+            DeviceHandle device,
+            Ref<ImportFenceWin32HandleInfoKHR> pImportFenceWin32HandleInfo
+        )
+        {
+            fixed (
+                ImportFenceWin32HandleInfoKHR* __dsl_pImportFenceWin32HandleInfo =
+                    pImportFenceWin32HandleInfo
+            )
+            {
+                return (Result)ImportFenceWin32HandleKHR(device, __dsl_pImportFenceWin32HandleInfo);
+            }
+        }
+
         [NativeName("vkImportSemaphoreFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -106669,6 +108903,52 @@ public unsafe partial class Vk : IVk, IVk.Static
             fixed (ImportSemaphoreFdInfoKHR* __dsl_pImportSemaphoreFdInfo = pImportSemaphoreFdInfo)
             {
                 return (Result)ImportSemaphoreFdKHR(device, __dsl_pImportSemaphoreFdInfo);
+            }
+        }
+
+        [NativeName("vkImportSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result ImportSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            ImportSemaphoreWin32HandleInfoKHR* pImportSemaphoreWin32HandleInfo
+        ) =>
+            Underlying.Value!.ImportSemaphoreWin32HandleKHR(
+                device,
+                pImportSemaphoreWin32HandleInfo
+            );
+
+        [NativeName("vkImportSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreWin32HandleKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result ImportSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            Ref<ImportSemaphoreWin32HandleInfoKHR> pImportSemaphoreWin32HandleInfo
+        )
+        {
+            fixed (
+                ImportSemaphoreWin32HandleInfoKHR* __dsl_pImportSemaphoreWin32HandleInfo =
+                    pImportSemaphoreWin32HandleInfo
+            )
+            {
+                return (Result)ImportSemaphoreWin32HandleKHR(
+                    device,
+                    __dsl_pImportSemaphoreWin32HandleInfo
+                );
             }
         }
 
@@ -107864,6 +110144,24 @@ public unsafe partial class Vk : IVk, IVk.Static
             PhysicalDeviceHandle physicalDevice,
             DisplayHandleKHR display
         ) => Underlying.Value!.ReleaseDisplayEXT(physicalDevice, display);
+
+        [NativeName("vkReleaseFullScreenExclusiveModeEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkReleaseFullScreenExclusiveModeEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result ReleaseFullScreenExclusiveModeEXT(
+            DeviceHandle device,
+            SwapchainHandleKHR swapchain
+        ) => Underlying.Value!.ReleaseFullScreenExclusiveModeEXT(device, swapchain);
 
         [NativeName("vkReleasePerformanceConfigurationINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
@@ -119322,6 +121620,10 @@ public unsafe partial class Vk : IVk, IVk.Static
     public static Utf8String KhrAccelerationStructureExtensionName =>
         "VK_KHR_acceleration_structure"u8;
 
+    [NativeName("VULKAN_IOS_H_")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanIosH = 1;
+
     [NativeName("VK_KHR_RAY_TRACING_PIPELINE_SPEC_VERSION")]
     [SupportedApiProfile(
         "vulkan",
@@ -119344,6 +121646,14 @@ public unsafe partial class Vk : IVk, IVk.Static
     )]
     public static Utf8String KhrRayTracingPipelineExtensionName => "VK_KHR_ray_tracing_pipeline"u8;
 
+    [NativeName("VK_MVK_IOS_SURFACE_SPEC_VERSION")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    public const int MvkIosSurfaceSpecVersion = 3;
+
+    [NativeName("VK_MVK_IOS_SURFACE_EXTENSION_NAME")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    public static Utf8String MvkIosSurfaceExtensionName => "VK_MVK_ios_surface"u8;
+
     [NativeName("VK_KHR_RAY_QUERY_SPEC_VERSION")]
     [SupportedApiProfile(
         "vulkan",
@@ -119354,6 +121664,10 @@ public unsafe partial class Vk : IVk, IVk.Static
         ]
     )]
     public const int KhrRayQuerySpecVersion = 1;
+
+    [NativeName("VULKAN_MACOS_H_")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanMacosH = 1;
 
     [NativeName("VK_KHR_RAY_QUERY_EXTENSION_NAME")]
     [SupportedApiProfile(
@@ -119366,6 +121680,10 @@ public unsafe partial class Vk : IVk, IVk.Static
     )]
     public static Utf8String KhrRayQueryExtensionName => "VK_KHR_ray_query"u8;
 
+    [NativeName("VK_MVK_MACOS_SURFACE_SPEC_VERSION")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    public const int MvkMacosSurfaceSpecVersion = 3;
+
     [NativeName("VK_EXT_MESH_SHADER_SPEC_VERSION")]
     [SupportedApiProfile(
         "vulkan",
@@ -119373,6 +121691,10 @@ public unsafe partial class Vk : IVk, IVk.Static
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
     public const int ExtMeshShaderSpecVersion = 1;
+
+    [NativeName("VK_MVK_MACOS_SURFACE_EXTENSION_NAME")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    public static Utf8String MvkMacosSurfaceExtensionName => "VK_MVK_macos_surface"u8;
 
     [NativeName("VK_EXT_MESH_SHADER_EXTENSION_NAME")]
     [SupportedApiProfile(
@@ -119382,17 +121704,45 @@ public unsafe partial class Vk : IVk, IVk.Static
     )]
     public static Utf8String ExtMeshShaderExtensionName => "VK_EXT_mesh_shader"u8;
 
+    [NativeName("VULKAN_METAL_H_")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanMetalH = 1;
+
     [NativeName("VULKAN_ANDROID_H_")]
     [SupportedApiProfile("vulkan")]
     public const int VulkanAndroidH = 1;
+
+    [NativeName("VULKAN_WIN32_H_")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanWin32H = 1;
+
+    [NativeName("VK_EXT_METAL_SURFACE_SPEC_VERSION")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    public const int ExtMetalSurfaceSpecVersion = 1;
 
     [NativeName("VK_KHR_ANDROID_SURFACE_SPEC_VERSION")]
     [SupportedApiProfile("vulkan", ["VK_KHR_android_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public const int KhrAndroidSurfaceSpecVersion = 6;
 
+    [NativeName("VK_EXT_METAL_SURFACE_EXTENSION_NAME")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    public static Utf8String ExtMetalSurfaceExtensionName => "VK_EXT_metal_surface"u8;
+
+    [NativeName("VK_KHR_WIN32_SURFACE_SPEC_VERSION")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    public const int KhrWin32SurfaceSpecVersion = 6;
+
     [NativeName("VK_KHR_ANDROID_SURFACE_EXTENSION_NAME")]
     [SupportedApiProfile("vulkan", ["VK_KHR_android_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public static Utf8String KhrAndroidSurfaceExtensionName => "VK_KHR_android_surface"u8;
+
+    [NativeName("VK_KHR_WIN32_SURFACE_EXTENSION_NAME")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    public static Utf8String KhrWin32SurfaceExtensionName => "VK_KHR_win32_surface"u8;
+
+    [NativeName("VK_EXT_METAL_OBJECTS_SPEC_VERSION")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+    public const int ExtMetalObjectsSpecVersion = 2;
 
     [NativeName("VK_ANDROID_EXTERNAL_MEMORY_ANDROID_HARDWARE_BUFFER_SPEC_VERSION")]
     [SupportedApiProfile(
@@ -119404,6 +121754,21 @@ public unsafe partial class Vk : IVk, IVk.Static
         ]
     )]
     public const int AndroidExternalMemoryAndroidHardwareBufferSpecVersion = 5;
+
+    [NativeName("VK_EXT_METAL_OBJECTS_EXTENSION_NAME")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+    public static Utf8String ExtMetalObjectsExtensionName => "VK_EXT_metal_objects"u8;
+
+    [NativeName("VK_KHR_EXTERNAL_MEMORY_WIN32_SPEC_VERSION")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_win32"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+            "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+        ]
+    )]
+    public const int KhrExternalMemoryWin32SpecVersion = 1;
 
     [NativeName("VK_ANDROID_EXTERNAL_MEMORY_ANDROID_HARDWARE_BUFFER_EXTENSION_NAME")]
     [SupportedApiProfile(
@@ -119417,6 +121782,29 @@ public unsafe partial class Vk : IVk, IVk.Static
     public static Utf8String AndroidExternalMemoryAndroidHardwareBufferExtensionName =>
         "VK_ANDROID_external_memory_android_hardware_buffer"u8;
 
+    [NativeName("VK_KHR_EXTERNAL_MEMORY_WIN32_EXTENSION_NAME")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_win32"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+            "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+        ]
+    )]
+    public static Utf8String KhrExternalMemoryWin32ExtensionName =>
+        "VK_KHR_external_memory_win32"u8;
+
+    [NativeName("VK_EXT_EXTERNAL_MEMORY_METAL_SPEC_VERSION")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_metal"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+            "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+        ]
+    )]
+    public const int ExtExternalMemoryMetalSpecVersion = 1;
+
     [NativeName("VK_ANDROID_EXTERNAL_FORMAT_RESOLVE_SPEC_VERSION")]
     [SupportedApiProfile(
         "vulkan",
@@ -119424,6 +121812,26 @@ public unsafe partial class Vk : IVk, IVk.Static
         ImpliesSets = ["VK_ANDROID_external_memory_android_hardware_buffer"]
     )]
     public const int AndroidExternalFormatResolveSpecVersion = 1;
+
+    [NativeName("VK_EXT_EXTERNAL_MEMORY_METAL_EXTENSION_NAME")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_metal"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+            "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+        ]
+    )]
+    public static Utf8String ExtExternalMemoryMetalExtensionName =>
+        "VK_EXT_external_memory_metal"u8;
+
+    [NativeName("VK_KHR_WIN32_KEYED_MUTEX_SPEC_VERSION")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_win32_keyed_mutex"],
+        ImpliesSets = ["VK_KHR_external_memory_win32"]
+    )]
+    public const int KhrWin32KeyedMutexSpecVersion = 1;
 
     [NativeName("VK_ANDROID_EXTERNAL_FORMAT_RESOLVE_EXTENSION_NAME")]
     [SupportedApiProfile(
@@ -119434,13 +121842,38 @@ public unsafe partial class Vk : IVk, IVk.Static
     public static Utf8String AndroidExternalFormatResolveExtensionName =>
         "VK_ANDROID_external_format_resolve"u8;
 
+    [NativeName("VK_KHR_WIN32_KEYED_MUTEX_EXTENSION_NAME")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_win32_keyed_mutex"],
+        ImpliesSets = ["VK_KHR_external_memory_win32"]
+    )]
+    public static Utf8String KhrWin32KeyedMutexExtensionName => "VK_KHR_win32_keyed_mutex"u8;
+
     [NativeName("VULKAN_VI_H_")]
     [SupportedApiProfile("vulkan")]
     public const int VulkanViH = 1;
 
+    [NativeName("VK_KHR_EXTERNAL_SEMAPHORE_WIN32_SPEC_VERSION")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_win32"],
+        ImpliesSets = ["VK_KHR_external_semaphore"]
+    )]
+    public const int KhrExternalSemaphoreWin32SpecVersion = 1;
+
     [NativeName("VK_NN_VI_SURFACE_SPEC_VERSION")]
     [SupportedApiProfile("vulkan", ["VK_NN_vi_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public const int NnViSurfaceSpecVersion = 1;
+
+    [NativeName("VK_KHR_EXTERNAL_SEMAPHORE_WIN32_EXTENSION_NAME")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_win32"],
+        ImpliesSets = ["VK_KHR_external_semaphore"]
+    )]
+    public static Utf8String KhrExternalSemaphoreWin32ExtensionName =>
+        "VK_KHR_external_semaphore_win32"u8;
 
     [NativeName("VK_NN_VI_SURFACE_EXTENSION_NAME")]
     [SupportedApiProfile("vulkan", ["VK_NN_vi_surface"], ImpliesSets = ["VK_KHR_surface"])]
@@ -119450,6 +121883,22 @@ public unsafe partial class Vk : IVk, IVk.Static
     [SupportedApiProfile("vulkan")]
     public const int VulkanWaylandH = 1;
 
+    [NativeName("VK_KHR_EXTERNAL_FENCE_WIN32_SPEC_VERSION")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_win32"],
+        ImpliesSets = ["VK_KHR_external_fence"]
+    )]
+    public const int KhrExternalFenceWin32SpecVersion = 1;
+
+    [NativeName("VK_KHR_EXTERNAL_FENCE_WIN32_EXTENSION_NAME")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_win32"],
+        ImpliesSets = ["VK_KHR_external_fence"]
+    )]
+    public static Utf8String KhrExternalFenceWin32ExtensionName => "VK_KHR_external_fence_win32"u8;
+
     [NativeName("VK_KHR_WAYLAND_SURFACE_SPEC_VERSION")]
     [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public const int KhrWaylandSurfaceSpecVersion = 6;
@@ -119458,25 +121907,80 @@ public unsafe partial class Vk : IVk, IVk.Static
     [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public static Utf8String KhrWaylandSurfaceExtensionName => "VK_KHR_wayland_surface"u8;
 
+    [NativeName("VK_NV_EXTERNAL_MEMORY_WIN32_SPEC_VERSION")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory_win32"],
+        ImpliesSets = ["VK_NV_external_memory"]
+    )]
+    public const int NvExternalMemoryWin32SpecVersion = 1;
+
     [NativeName("VULKAN_XCB_H_")]
     [SupportedApiProfile("vulkan")]
     public const int VulkanXcbH = 1;
+
+    [NativeName("VK_NV_EXTERNAL_MEMORY_WIN32_EXTENSION_NAME")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory_win32"],
+        ImpliesSets = ["VK_NV_external_memory"]
+    )]
+    public static Utf8String NvExternalMemoryWin32ExtensionName => "VK_NV_external_memory_win32"u8;
 
     [NativeName("VK_KHR_XCB_SURFACE_SPEC_VERSION")]
     [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public const int KhrXcbSurfaceSpecVersion = 6;
 
+    [NativeName("VK_NV_WIN32_KEYED_MUTEX_SPEC_VERSION")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_win32_keyed_mutex"],
+        ImpliesSets = ["VK_NV_external_memory_win32"]
+    )]
+    public const int NvWin32KeyedMutexSpecVersion = 2;
+
     [NativeName("VK_KHR_XCB_SURFACE_EXTENSION_NAME")]
     [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public static Utf8String KhrXcbSurfaceExtensionName => "VK_KHR_xcb_surface"u8;
+
+    [NativeName("VK_NV_WIN32_KEYED_MUTEX_EXTENSION_NAME")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_win32_keyed_mutex"],
+        ImpliesSets = ["VK_NV_external_memory_win32"]
+    )]
+    public static Utf8String NvWin32KeyedMutexExtensionName => "VK_NV_win32_keyed_mutex"u8;
 
     [NativeName("VULKAN_XLIB_H_")]
     [SupportedApiProfile("vulkan")]
     public const int VulkanXlibH = 1;
 
+    [NativeName("VK_EXT_FULL_SCREEN_EXCLUSIVE_SPEC_VERSION")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    public const int ExtFullScreenExclusiveSpecVersion = 4;
+
     [NativeName("VK_KHR_XLIB_SURFACE_SPEC_VERSION")]
     [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public const int KhrXlibSurfaceSpecVersion = 6;
+
+    [NativeName("VK_EXT_FULL_SCREEN_EXCLUSIVE_EXTENSION_NAME")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    public static Utf8String ExtFullScreenExclusiveExtensionName =>
+        "VK_EXT_full_screen_exclusive"u8;
 
     [NativeName("VK_KHR_XLIB_SURFACE_EXTENSION_NAME")]
     [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
@@ -119485,6 +121989,22 @@ public unsafe partial class Vk : IVk, IVk.Static
     [NativeName("VULKAN_XLIB_XRANDR_H_")]
     [SupportedApiProfile("vulkan")]
     public const int VulkanXlibXrandrH = 1;
+
+    [NativeName("VK_NV_ACQUIRE_WINRT_DISPLAY_SPEC_VERSION")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_acquire_winrt_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    public const int NvAcquireWinrtDisplaySpecVersion = 1;
+
+    [NativeName("VK_NV_ACQUIRE_WINRT_DISPLAY_EXTENSION_NAME")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_acquire_winrt_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    public static Utf8String NvAcquireWinrtDisplayExtensionName => "VK_NV_acquire_winrt_display"u8;
 
     [NativeName("VK_EXT_ACQUIRE_XLIB_DISPLAY_SPEC_VERSION")]
     [SupportedApiProfile(
@@ -119587,6 +122107,48 @@ public unsafe partial class Vk : IVk, IVk.Static
         DisplayHandleKHR display
     ) => ThisThread.AcquireDrmDisplayEXT(physicalDevice, drmFd, display);
 
+    [NativeName("vkAcquireFullScreenExclusiveModeEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkAcquireFullScreenExclusiveModeEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.AcquireFullScreenExclusiveModeEXT(
+        DeviceHandle device,
+        SwapchainHandleKHR swapchain
+    ) =>
+        (
+            (delegate* unmanaged<DeviceHandle, SwapchainHandleKHR, Result>)(
+                _slots[1] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[1] = nativeContext.LoadFunction(
+                        "vkAcquireFullScreenExclusiveModeEXT",
+                        "vulkan"
+                    )
+            )
+        )(device, swapchain);
+
+    [NativeName("vkAcquireFullScreenExclusiveModeEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkAcquireFullScreenExclusiveModeEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result AcquireFullScreenExclusiveModeEXT(
+        DeviceHandle device,
+        SwapchainHandleKHR swapchain
+    ) => ThisThread.AcquireFullScreenExclusiveModeEXT(device, swapchain);
+
     [NativeName("vkAcquireNextImage2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -119603,9 +122165,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, AcquireNextImageInfoKHR*, uint*, Result>)(
-                _slots[1] is not null and var loadedFnPtr
+                _slots[2] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[1] = nativeContext.LoadFunction("vkAcquireNextImage2KHR", "vulkan")
+                    : _slots[2] = nativeContext.LoadFunction("vkAcquireNextImage2KHR", "vulkan")
             )
         )(device, pAcquireInfo, pImageIndex);
 
@@ -119683,9 +122245,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 FenceHandle,
                 uint*,
                 Result>)(
-                _slots[2] is not null and var loadedFnPtr
+                _slots[3] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[2] = nativeContext.LoadFunction("vkAcquireNextImageKHR", "vulkan")
+                    : _slots[3] = nativeContext.LoadFunction("vkAcquireNextImageKHR", "vulkan")
             )
         )(device, swapchain, timeout, semaphore, fence, pImageIndex);
 
@@ -119757,9 +122319,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PerformanceConfigurationAcquireInfoINTEL*,
                 PerformanceConfigurationHandleINTEL*,
                 Result>)(
-                _slots[3] is not null and var loadedFnPtr
+                _slots[4] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[3] = nativeContext.LoadFunction(
+                    : _slots[4] = nativeContext.LoadFunction(
                         "vkAcquirePerformanceConfigurationINTEL",
                         "vulkan"
                     )
@@ -119822,9 +122384,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.AcquireProfilingLockKHR(DeviceHandle device, AcquireProfilingLockInfoKHR* pInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, AcquireProfilingLockInfoKHR*, Result>)(
-                _slots[4] is not null and var loadedFnPtr
+                _slots[5] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[4] = nativeContext.LoadFunction("vkAcquireProfilingLockKHR", "vulkan")
+                    : _slots[5] = nativeContext.LoadFunction("vkAcquireProfilingLockKHR", "vulkan")
             )
         )(device, pInfo);
 
@@ -119879,6 +122441,39 @@ public unsafe partial class Vk : IVk, IVk.Static
         Ref<AcquireProfilingLockInfoKHR> pInfo
     ) => ThisThread.AcquireProfilingLockKHR(device, pInfo);
 
+    [NativeName("vkAcquireWinrtDisplayNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_acquire_winrt_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkAcquireWinrtDisplayNV")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.AcquireWinrtDisplayNV(
+        PhysicalDeviceHandle physicalDevice,
+        DisplayHandleKHR display
+    ) =>
+        (
+            (delegate* unmanaged<PhysicalDeviceHandle, DisplayHandleKHR, Result>)(
+                _slots[6] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[6] = nativeContext.LoadFunction("vkAcquireWinrtDisplayNV", "vulkan")
+            )
+        )(physicalDevice, display);
+
+    [NativeName("vkAcquireWinrtDisplayNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_acquire_winrt_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkAcquireWinrtDisplayNV")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result AcquireWinrtDisplayNV(
+        PhysicalDeviceHandle physicalDevice,
+        DisplayHandleKHR display
+    ) => ThisThread.AcquireWinrtDisplayNV(physicalDevice, display);
+
     [NativeName("vkAcquireXlibDisplayEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -119894,9 +122489,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, XDisplayHandle, DisplayHandleKHR, Result>)(
-                _slots[5] is not null and var loadedFnPtr
+                _slots[7] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[5] = nativeContext.LoadFunction("vkAcquireXlibDisplayEXT", "vulkan")
+                    : _slots[7] = nativeContext.LoadFunction("vkAcquireXlibDisplayEXT", "vulkan")
             )
         )(physicalDevice, dpy, display);
 
@@ -119954,9 +122549,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 CommandBufferAllocateInfo*,
                 CommandBufferHandle*,
                 Result>)(
-                _slots[6] is not null and var loadedFnPtr
+                _slots[8] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[6] = nativeContext.LoadFunction("vkAllocateCommandBuffers", "vulkan")
+                    : _slots[8] = nativeContext.LoadFunction("vkAllocateCommandBuffers", "vulkan")
             )
         )(device, pAllocateInfo, pCommandBuffers);
 
@@ -120112,9 +122707,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DescriptorSetAllocateInfo*,
                 DescriptorSetHandle*,
                 Result>)(
-                _slots[7] is not null and var loadedFnPtr
+                _slots[9] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[7] = nativeContext.LoadFunction("vkAllocateDescriptorSets", "vulkan")
+                    : _slots[9] = nativeContext.LoadFunction("vkAllocateDescriptorSets", "vulkan")
             )
         )(device, pAllocateInfo, pDescriptorSets);
 
@@ -120262,9 +122857,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 DeviceMemoryHandle*,
                 Result>)(
-                _slots[8] is not null and var loadedFnPtr
+                _slots[10] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[8] = nativeContext.LoadFunction("vkAllocateMemory", "vulkan")
+                    : _slots[10] = nativeContext.LoadFunction("vkAllocateMemory", "vulkan")
             )
         )(device, pAllocateInfo, pAllocator, pMemory);
 
@@ -120404,9 +122999,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.AntiLagUpdateAMD(DeviceHandle device, AntiLagDataAMD* pData) =>
         (
             (delegate* unmanaged<DeviceHandle, AntiLagDataAMD*, void>)(
-                _slots[9] is not null and var loadedFnPtr
+                _slots[11] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[9] = nativeContext.LoadFunction("vkAntiLagUpdateAMD", "vulkan")
+                    : _slots[11] = nativeContext.LoadFunction("vkAntiLagUpdateAMD", "vulkan")
             )
         )(device, pData);
 
@@ -120492,9 +123087,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CommandBufferBeginInfo*, Result>)(
-                _slots[10] is not null and var loadedFnPtr
+                _slots[12] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[10] = nativeContext.LoadFunction("vkBeginCommandBuffer", "vulkan")
+                    : _slots[12] = nativeContext.LoadFunction("vkBeginCommandBuffer", "vulkan")
             )
         )(commandBuffer, pBeginInfo);
 
@@ -120628,9 +123223,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 BindAccelerationStructureMemoryInfoNV*,
                 Result>)(
-                _slots[11] is not null and var loadedFnPtr
+                _slots[13] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[11] = nativeContext.LoadFunction(
+                    : _slots[13] = nativeContext.LoadFunction(
                         "vkBindAccelerationStructureMemoryNV",
                         "vulkan"
                     )
@@ -120736,9 +123331,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, BufferHandle, DeviceMemoryHandle, ulong, Result>)(
-                _slots[12] is not null and var loadedFnPtr
+                _slots[14] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[12] = nativeContext.LoadFunction("vkBindBufferMemory", "vulkan")
+                    : _slots[14] = nativeContext.LoadFunction("vkBindBufferMemory", "vulkan")
             )
         )(device, buffer, memory, memoryOffset);
 
@@ -120810,9 +123405,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, BindBufferMemoryInfo*, Result>)(
-                _slots[13] is not null and var loadedFnPtr
+                _slots[15] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[13] = nativeContext.LoadFunction("vkBindBufferMemory2", "vulkan")
+                    : _slots[15] = nativeContext.LoadFunction("vkBindBufferMemory2", "vulkan")
             )
         )(device, bindInfoCount, pBindInfos);
 
@@ -120926,9 +123521,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, BindBufferMemoryInfo*, Result>)(
-                _slots[14] is not null and var loadedFnPtr
+                _slots[16] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[14] = nativeContext.LoadFunction("vkBindBufferMemory2KHR", "vulkan")
+                    : _slots[16] = nativeContext.LoadFunction("vkBindBufferMemory2KHR", "vulkan")
             )
         )(device, bindInfoCount, pBindInfos);
 
@@ -120991,9 +123586,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 BindDataGraphPipelineSessionMemoryInfoARM*,
                 Result>)(
-                _slots[15] is not null and var loadedFnPtr
+                _slots[17] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[15] = nativeContext.LoadFunction(
+                    : _slots[17] = nativeContext.LoadFunction(
                         "vkBindDataGraphPipelineSessionMemoryARM",
                         "vulkan"
                     )
@@ -121099,9 +123694,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ImageHandle, DeviceMemoryHandle, ulong, Result>)(
-                _slots[16] is not null and var loadedFnPtr
+                _slots[18] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[16] = nativeContext.LoadFunction("vkBindImageMemory", "vulkan")
+                    : _slots[18] = nativeContext.LoadFunction("vkBindImageMemory", "vulkan")
             )
         )(device, image, memory, memoryOffset);
 
@@ -121173,9 +123768,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, BindImageMemoryInfo*, Result>)(
-                _slots[17] is not null and var loadedFnPtr
+                _slots[19] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[17] = nativeContext.LoadFunction("vkBindImageMemory2", "vulkan")
+                    : _slots[19] = nativeContext.LoadFunction("vkBindImageMemory2", "vulkan")
             )
         )(device, bindInfoCount, pBindInfos);
 
@@ -121289,9 +123884,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, BindImageMemoryInfo*, Result>)(
-                _slots[18] is not null and var loadedFnPtr
+                _slots[20] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[18] = nativeContext.LoadFunction("vkBindImageMemory2KHR", "vulkan")
+                    : _slots[20] = nativeContext.LoadFunction("vkBindImageMemory2KHR", "vulkan")
             )
         )(device, bindInfoCount, pBindInfos);
 
@@ -121358,9 +123953,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ImageViewHandle,
                 ImageLayout,
                 Result>)(
-                _slots[19] is not null and var loadedFnPtr
+                _slots[21] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[19] = nativeContext.LoadFunction(
+                    : _slots[21] = nativeContext.LoadFunction(
                         "vkBindOpticalFlowSessionImageNV",
                         "vulkan"
                     )
@@ -121398,9 +123993,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, BindTensorMemoryInfoARM*, Result>)(
-                _slots[20] is not null and var loadedFnPtr
+                _slots[22] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[20] = nativeContext.LoadFunction("vkBindTensorMemoryARM", "vulkan")
+                    : _slots[22] = nativeContext.LoadFunction("vkBindTensorMemoryARM", "vulkan")
             )
         )(device, bindInfoCount, pBindInfos);
 
@@ -121461,9 +124056,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 BindVideoSessionMemoryInfoKHR*,
                 Result>)(
-                _slots[21] is not null and var loadedFnPtr
+                _slots[23] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[21] = nativeContext.LoadFunction(
+                    : _slots[23] = nativeContext.LoadFunction(
                         "vkBindVideoSessionMemoryKHR",
                         "vulkan"
                     )
@@ -121567,9 +124162,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AccelerationStructureBuildGeometryInfoKHR*,
                 AccelerationStructureBuildRangeInfoKHR**,
                 Result>)(
-                _slots[22] is not null and var loadedFnPtr
+                _slots[24] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[22] = nativeContext.LoadFunction(
+                    : _slots[24] = nativeContext.LoadFunction(
                         "vkBuildAccelerationStructuresKHR",
                         "vulkan"
                     )
@@ -121685,9 +124280,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 MicromapBuildInfoEXT*,
                 Result>)(
-                _slots[23] is not null and var loadedFnPtr
+                _slots[25] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[23] = nativeContext.LoadFunction("vkBuildMicromapsEXT", "vulkan")
+                    : _slots[25] = nativeContext.LoadFunction("vkBuildMicromapsEXT", "vulkan")
             )
         )(device, deferredOperation, infoCount, pInfos);
 
@@ -121769,9 +124364,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ShaderInstrumentationHandleARM, void>)(
-                _slots[24] is not null and var loadedFnPtr
+                _slots[26] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[24] = nativeContext.LoadFunction(
+                    : _slots[26] = nativeContext.LoadFunction(
                         "vkClearShaderInstrumentationMetricsARM",
                         "vulkan"
                     )
@@ -121814,9 +124409,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, ConditionalRenderingBeginInfo2EXT*, void>)(
-                _slots[25] is not null and var loadedFnPtr
+                _slots[27] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[25] = nativeContext.LoadFunction(
+                    : _slots[27] = nativeContext.LoadFunction(
                         "vkCmdBeginConditionalRendering2EXT",
                         "vulkan"
                     )
@@ -121909,9 +124504,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, ConditionalRenderingBeginInfoEXT*, void>)(
-                _slots[26] is not null and var loadedFnPtr
+                _slots[28] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[26] = nativeContext.LoadFunction(
+                    : _slots[28] = nativeContext.LoadFunction(
                         "vkCmdBeginConditionalRenderingEXT",
                         "vulkan"
                     )
@@ -121995,9 +124590,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BeginCustomResolveInfoEXT*, void>)(
-                _slots[27] is not null and var loadedFnPtr
+                _slots[29] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[27] = nativeContext.LoadFunction(
+                    : _slots[29] = nativeContext.LoadFunction(
                         "vkCmdBeginCustomResolveEXT",
                         "vulkan"
                     )
@@ -122068,9 +124663,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DebugUtilsLabelEXT*, void>)(
-                _slots[28] is not null and var loadedFnPtr
+                _slots[30] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[28] = nativeContext.LoadFunction(
+                    : _slots[30] = nativeContext.LoadFunction(
                         "vkCmdBeginDebugUtilsLabelEXT",
                         "vulkan"
                     )
@@ -122134,9 +124729,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 GpaSampleBeginInfoAMD*,
                 uint*,
                 Result>)(
-                _slots[29] is not null and var loadedFnPtr
+                _slots[31] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[29] = nativeContext.LoadFunction("vkCmdBeginGpaSampleAMD", "vulkan")
+                    : _slots[31] = nativeContext.LoadFunction("vkCmdBeginGpaSampleAMD", "vulkan")
             )
         )(commandBuffer, gpaSession, pGpaSampleBeginInfo, pSampleID);
 
@@ -122224,9 +124819,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, GpaSessionHandleAMD, Result>)(
-                _slots[30] is not null and var loadedFnPtr
+                _slots[32] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[30] = nativeContext.LoadFunction("vkCmdBeginGpaSessionAMD", "vulkan")
+                    : _slots[32] = nativeContext.LoadFunction("vkCmdBeginGpaSessionAMD", "vulkan")
             )
         )(commandBuffer, gpaSession);
 
@@ -122260,9 +124855,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PerTileBeginInfoQCOM*, void>)(
-                _slots[31] is not null and var loadedFnPtr
+                _slots[33] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[31] = nativeContext.LoadFunction(
+                    : _slots[33] = nativeContext.LoadFunction(
                         "vkCmdBeginPerTileExecutionQCOM",
                         "vulkan"
                     )
@@ -122356,9 +124951,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 QueryControlFlags,
                 void>)(
-                _slots[32] is not null and var loadedFnPtr
+                _slots[34] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[32] = nativeContext.LoadFunction("vkCmdBeginQuery", "vulkan")
+                    : _slots[34] = nativeContext.LoadFunction("vkCmdBeginQuery", "vulkan")
             )
         )(commandBuffer, queryPool, query, flags);
 
@@ -122424,9 +125019,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 QueryControlFlags,
                 uint,
                 void>)(
-                _slots[33] is not null and var loadedFnPtr
+                _slots[35] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[33] = nativeContext.LoadFunction("vkCmdBeginQueryIndexedEXT", "vulkan")
+                    : _slots[35] = nativeContext.LoadFunction("vkCmdBeginQueryIndexedEXT", "vulkan")
             )
         )(commandBuffer, queryPool, query, flags, index);
 
@@ -122460,9 +125055,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdBeginRendering(CommandBufferHandle commandBuffer, RenderingInfo* pRenderingInfo) =>
         (
             (delegate* unmanaged<CommandBufferHandle, RenderingInfo*, void>)(
-                _slots[34] is not null and var loadedFnPtr
+                _slots[36] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[34] = nativeContext.LoadFunction("vkCmdBeginRendering", "vulkan")
+                    : _slots[36] = nativeContext.LoadFunction("vkCmdBeginRendering", "vulkan")
             )
         )(commandBuffer, pRenderingInfo);
 
@@ -122526,9 +125121,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, RenderingInfo*, void>)(
-                _slots[35] is not null and var loadedFnPtr
+                _slots[37] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[35] = nativeContext.LoadFunction("vkCmdBeginRenderingKHR", "vulkan")
+                    : _slots[37] = nativeContext.LoadFunction("vkCmdBeginRenderingKHR", "vulkan")
             )
         )(commandBuffer, pRenderingInfo);
 
@@ -122615,9 +125210,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, RenderPassBeginInfo*, SubpassContents, void>)(
-                _slots[36] is not null and var loadedFnPtr
+                _slots[38] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[36] = nativeContext.LoadFunction("vkCmdBeginRenderPass", "vulkan")
+                    : _slots[38] = nativeContext.LoadFunction("vkCmdBeginRenderPass", "vulkan")
             )
         )(commandBuffer, pRenderPassBegin, contents);
 
@@ -122728,9 +125323,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 RenderPassBeginInfo*,
                 SubpassBeginInfo*,
                 void>)(
-                _slots[37] is not null and var loadedFnPtr
+                _slots[39] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[37] = nativeContext.LoadFunction("vkCmdBeginRenderPass2", "vulkan")
+                    : _slots[39] = nativeContext.LoadFunction("vkCmdBeginRenderPass2", "vulkan")
             )
         )(commandBuffer, pRenderPassBegin, pSubpassBeginInfo);
 
@@ -122827,9 +125422,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 RenderPassBeginInfo*,
                 SubpassBeginInfo*,
                 void>)(
-                _slots[38] is not null and var loadedFnPtr
+                _slots[40] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[38] = nativeContext.LoadFunction("vkCmdBeginRenderPass2KHR", "vulkan")
+                    : _slots[40] = nativeContext.LoadFunction("vkCmdBeginRenderPass2KHR", "vulkan")
             )
         )(commandBuffer, pRenderPassBegin, pSubpassBeginInfo);
 
@@ -122903,9 +125498,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, ShaderInstrumentationHandleARM, void>)(
-                _slots[39] is not null and var loadedFnPtr
+                _slots[41] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[39] = nativeContext.LoadFunction(
+                    : _slots[41] = nativeContext.LoadFunction(
                         "vkCmdBeginShaderInstrumentationARM",
                         "vulkan"
                     )
@@ -122955,9 +125550,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 BindTransformFeedbackBuffer2InfoEXT*,
                 void>)(
-                _slots[40] is not null and var loadedFnPtr
+                _slots[42] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[40] = nativeContext.LoadFunction(
+                    : _slots[42] = nativeContext.LoadFunction(
                         "vkCmdBeginTransformFeedback2EXT",
                         "vulkan"
                     )
@@ -123116,9 +125711,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, BufferHandle*, ulong*, void>)(
-                _slots[41] is not null and var loadedFnPtr
+                _slots[43] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[41] = nativeContext.LoadFunction(
+                    : _slots[43] = nativeContext.LoadFunction(
                         "vkCmdBeginTransformFeedbackEXT",
                         "vulkan"
                     )
@@ -123229,9 +125824,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, VideoBeginCodingInfoKHR*, void>)(
-                _slots[42] is not null and var loadedFnPtr
+                _slots[44] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[42] = nativeContext.LoadFunction("vkCmdBeginVideoCodingKHR", "vulkan")
+                    : _slots[44] = nativeContext.LoadFunction("vkCmdBeginVideoCodingKHR", "vulkan")
             )
         )(commandBuffer, pBeginInfo);
 
@@ -123298,9 +125893,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 CommandBufferHandle,
                 BindDescriptorBufferEmbeddedSamplersInfoEXT*,
                 void>)(
-                _slots[43] is not null and var loadedFnPtr
+                _slots[45] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[43] = nativeContext.LoadFunction(
+                    : _slots[45] = nativeContext.LoadFunction(
                         "vkCmdBindDescriptorBufferEmbeddedSamplers2EXT",
                         "vulkan"
                     )
@@ -123395,9 +125990,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PipelineLayoutHandle,
                 uint,
                 void>)(
-                _slots[44] is not null and var loadedFnPtr
+                _slots[46] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[44] = nativeContext.LoadFunction(
+                    : _slots[46] = nativeContext.LoadFunction(
                         "vkCmdBindDescriptorBufferEmbeddedSamplersEXT",
                         "vulkan"
                     )
@@ -123491,9 +126086,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, DescriptorBufferBindingInfoEXT*, void>)(
-                _slots[45] is not null and var loadedFnPtr
+                _slots[47] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[45] = nativeContext.LoadFunction(
+                    : _slots[47] = nativeContext.LoadFunction(
                         "vkCmdBindDescriptorBuffersEXT",
                         "vulkan"
                     )
@@ -123612,9 +126207,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint*,
                 void>)(
-                _slots[46] is not null and var loadedFnPtr
+                _slots[48] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[46] = nativeContext.LoadFunction("vkCmdBindDescriptorSets", "vulkan")
+                    : _slots[48] = nativeContext.LoadFunction("vkCmdBindDescriptorSets", "vulkan")
             )
         )(
             commandBuffer,
@@ -123782,9 +126377,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BindDescriptorSetsInfo*, void>)(
-                _slots[47] is not null and var loadedFnPtr
+                _slots[49] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[47] = nativeContext.LoadFunction("vkCmdBindDescriptorSets2", "vulkan")
+                    : _slots[49] = nativeContext.LoadFunction("vkCmdBindDescriptorSets2", "vulkan")
             )
         )(commandBuffer, pBindDescriptorSetsInfo);
 
@@ -123843,9 +126438,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BindDescriptorSetsInfo*, void>)(
-                _slots[48] is not null and var loadedFnPtr
+                _slots[50] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[48] = nativeContext.LoadFunction(
+                    : _slots[50] = nativeContext.LoadFunction(
                         "vkCmdBindDescriptorSets2KHR",
                         "vulkan"
                     )
@@ -123912,9 +126507,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BufferHandle, ulong, IndexType, void>)(
-                _slots[49] is not null and var loadedFnPtr
+                _slots[51] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[49] = nativeContext.LoadFunction("vkCmdBindIndexBuffer", "vulkan")
+                    : _slots[51] = nativeContext.LoadFunction("vkCmdBindIndexBuffer", "vulkan")
             )
         )(commandBuffer, buffer, offset, indexType);
 
@@ -123961,9 +126556,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BufferHandle, ulong, ulong, IndexType, void>)(
-                _slots[50] is not null and var loadedFnPtr
+                _slots[52] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[50] = nativeContext.LoadFunction("vkCmdBindIndexBuffer2", "vulkan")
+                    : _slots[52] = nativeContext.LoadFunction("vkCmdBindIndexBuffer2", "vulkan")
             )
         )(commandBuffer, buffer, offset, size, indexType);
 
@@ -124000,9 +126595,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BufferHandle, ulong, ulong, IndexType, void>)(
-                _slots[51] is not null and var loadedFnPtr
+                _slots[53] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[51] = nativeContext.LoadFunction("vkCmdBindIndexBuffer2KHR", "vulkan")
+                    : _slots[53] = nativeContext.LoadFunction("vkCmdBindIndexBuffer2KHR", "vulkan")
             )
         )(commandBuffer, buffer, offset, size, indexType);
 
@@ -124041,9 +126636,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BindIndexBuffer3InfoKHR*, void>)(
-                _slots[52] is not null and var loadedFnPtr
+                _slots[54] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[52] = nativeContext.LoadFunction("vkCmdBindIndexBuffer3KHR", "vulkan")
+                    : _slots[54] = nativeContext.LoadFunction("vkCmdBindIndexBuffer3KHR", "vulkan")
             )
         )(commandBuffer, pInfo);
 
@@ -124125,9 +126720,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, ImageViewHandle, ImageLayout, void>)(
-                _slots[53] is not null and var loadedFnPtr
+                _slots[55] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[53] = nativeContext.LoadFunction(
+                    : _slots[55] = nativeContext.LoadFunction(
                         "vkCmdBindInvocationMaskHUAWEI",
                         "vulkan"
                     )
@@ -124182,9 +126777,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PipelineBindPoint, PipelineHandle, void>)(
-                _slots[54] is not null and var loadedFnPtr
+                _slots[56] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[54] = nativeContext.LoadFunction("vkCmdBindPipeline", "vulkan")
+                    : _slots[56] = nativeContext.LoadFunction("vkCmdBindPipeline", "vulkan")
             )
         )(commandBuffer, pipelineBindPoint, pipeline);
 
@@ -124239,9 +126834,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PipelineHandle,
                 uint,
                 void>)(
-                _slots[55] is not null and var loadedFnPtr
+                _slots[57] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[55] = nativeContext.LoadFunction(
+                    : _slots[57] = nativeContext.LoadFunction(
                         "vkCmdBindPipelineShaderGroupNV",
                         "vulkan"
                     )
@@ -124289,9 +126884,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BindHeapInfoEXT*, void>)(
-                _slots[56] is not null and var loadedFnPtr
+                _slots[58] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[56] = nativeContext.LoadFunction("vkCmdBindResourceHeapEXT", "vulkan")
+                    : _slots[58] = nativeContext.LoadFunction("vkCmdBindResourceHeapEXT", "vulkan")
             )
         )(commandBuffer, pBindInfo);
 
@@ -124375,9 +126970,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdBindSamplerHeapEXT(CommandBufferHandle commandBuffer, BindHeapInfoEXT* pBindInfo) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BindHeapInfoEXT*, void>)(
-                _slots[57] is not null and var loadedFnPtr
+                _slots[59] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[57] = nativeContext.LoadFunction("vkCmdBindSamplerHeapEXT", "vulkan")
+                    : _slots[59] = nativeContext.LoadFunction("vkCmdBindSamplerHeapEXT", "vulkan")
             )
         )(commandBuffer, pBindInfo);
 
@@ -124469,9 +127064,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ShaderStageFlags*,
                 ShaderHandleEXT*,
                 void>)(
-                _slots[58] is not null and var loadedFnPtr
+                _slots[60] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[58] = nativeContext.LoadFunction("vkCmdBindShadersEXT", "vulkan")
+                    : _slots[60] = nativeContext.LoadFunction("vkCmdBindShadersEXT", "vulkan")
             )
         )(commandBuffer, stageCount, pStages, pShaders);
 
@@ -124557,9 +127152,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, ImageViewHandle, ImageLayout, void>)(
-                _slots[59] is not null and var loadedFnPtr
+                _slots[61] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[59] = nativeContext.LoadFunction(
+                    : _slots[61] = nativeContext.LoadFunction(
                         "vkCmdBindShadingRateImageNV",
                         "vulkan"
                     )
@@ -124600,9 +127195,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, TileMemoryBindInfoQCOM*, void>)(
-                _slots[60] is not null and var loadedFnPtr
+                _slots[62] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[60] = nativeContext.LoadFunction("vkCmdBindTileMemoryQCOM", "vulkan")
+                    : _slots[62] = nativeContext.LoadFunction("vkCmdBindTileMemoryQCOM", "vulkan")
             )
         )(commandBuffer, pTileMemoryBindInfo);
 
@@ -124687,9 +127282,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 BindTransformFeedbackBuffer2InfoEXT*,
                 void>)(
-                _slots[61] is not null and var loadedFnPtr
+                _slots[63] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[61] = nativeContext.LoadFunction(
+                    : _slots[63] = nativeContext.LoadFunction(
                         "vkCmdBindTransformFeedbackBuffers2EXT",
                         "vulkan"
                     )
@@ -124856,9 +127451,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ulong*,
                 ulong*,
                 void>)(
-                _slots[62] is not null and var loadedFnPtr
+                _slots[64] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[62] = nativeContext.LoadFunction(
+                    : _slots[64] = nativeContext.LoadFunction(
                         "vkCmdBindTransformFeedbackBuffersEXT",
                         "vulkan"
                     )
@@ -124984,9 +127579,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, BufferHandle*, ulong*, void>)(
-                _slots[63] is not null and var loadedFnPtr
+                _slots[65] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[63] = nativeContext.LoadFunction("vkCmdBindVertexBuffers", "vulkan")
+                    : _slots[65] = nativeContext.LoadFunction("vkCmdBindVertexBuffers", "vulkan")
             )
         )(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets);
 
@@ -125125,9 +127720,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ulong*,
                 ulong*,
                 void>)(
-                _slots[64] is not null and var loadedFnPtr
+                _slots[66] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[64] = nativeContext.LoadFunction("vkCmdBindVertexBuffers2", "vulkan")
+                    : _slots[66] = nativeContext.LoadFunction("vkCmdBindVertexBuffers2", "vulkan")
             )
         )(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
 
@@ -125250,9 +127845,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ulong*,
                 ulong*,
                 void>)(
-                _slots[65] is not null and var loadedFnPtr
+                _slots[67] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[65] = nativeContext.LoadFunction(
+                    : _slots[67] = nativeContext.LoadFunction(
                         "vkCmdBindVertexBuffers2EXT",
                         "vulkan"
                     )
@@ -125378,9 +127973,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, BindVertexBuffer3InfoKHR*, void>)(
-                _slots[66] is not null and var loadedFnPtr
+                _slots[68] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[66] = nativeContext.LoadFunction(
+                    : _slots[68] = nativeContext.LoadFunction(
                         "vkCmdBindVertexBuffers3KHR",
                         "vulkan"
                     )
@@ -125554,9 +128149,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ImageBlit*,
                 Filter,
                 void>)(
-                _slots[67] is not null and var loadedFnPtr
+                _slots[69] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[67] = nativeContext.LoadFunction("vkCmdBlitImage", "vulkan")
+                    : _slots[69] = nativeContext.LoadFunction("vkCmdBlitImage", "vulkan")
             )
         )(
             commandBuffer,
@@ -125782,9 +128377,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdBlitImage2(CommandBufferHandle commandBuffer, BlitImageInfo2* pBlitImageInfo) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BlitImageInfo2*, void>)(
-                _slots[68] is not null and var loadedFnPtr
+                _slots[70] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[68] = nativeContext.LoadFunction("vkCmdBlitImage2", "vulkan")
+                    : _slots[70] = nativeContext.LoadFunction("vkCmdBlitImage2", "vulkan")
             )
         )(commandBuffer, pBlitImageInfo);
 
@@ -125844,9 +128439,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdBlitImage2KHR(CommandBufferHandle commandBuffer, BlitImageInfo2* pBlitImageInfo) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BlitImageInfo2*, void>)(
-                _slots[69] is not null and var loadedFnPtr
+                _slots[71] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[69] = nativeContext.LoadFunction("vkCmdBlitImage2KHR", "vulkan")
+                    : _slots[71] = nativeContext.LoadFunction("vkCmdBlitImage2KHR", "vulkan")
             )
         )(commandBuffer, pBlitImageInfo);
 
@@ -125935,9 +128530,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 BufferHandle,
                 ulong,
                 void>)(
-                _slots[70] is not null and var loadedFnPtr
+                _slots[72] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[70] = nativeContext.LoadFunction(
+                    : _slots[72] = nativeContext.LoadFunction(
                         "vkCmdBuildAccelerationStructureNV",
                         "vulkan"
                     )
@@ -126089,9 +128684,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 uint**,
                 void>)(
-                _slots[71] is not null and var loadedFnPtr
+                _slots[73] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[71] = nativeContext.LoadFunction(
+                    : _slots[73] = nativeContext.LoadFunction(
                         "vkCmdBuildAccelerationStructuresIndirectKHR",
                         "vulkan"
                     )
@@ -126221,9 +128816,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AccelerationStructureBuildGeometryInfoKHR*,
                 AccelerationStructureBuildRangeInfoKHR**,
                 void>)(
-                _slots[72] is not null and var loadedFnPtr
+                _slots[74] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[72] = nativeContext.LoadFunction(
+                    : _slots[74] = nativeContext.LoadFunction(
                         "vkCmdBuildAccelerationStructuresKHR",
                         "vulkan"
                     )
@@ -126325,9 +128920,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 CommandBufferHandle,
                 ClusterAccelerationStructureCommandsInfoNV*,
                 void>)(
-                _slots[73] is not null and var loadedFnPtr
+                _slots[75] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[73] = nativeContext.LoadFunction(
+                    : _slots[75] = nativeContext.LoadFunction(
                         "vkCmdBuildClusterAccelerationStructureIndirectNV",
                         "vulkan"
                     )
@@ -126430,9 +129025,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, MicromapBuildInfoEXT*, void>)(
-                _slots[74] is not null and var loadedFnPtr
+                _slots[76] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[74] = nativeContext.LoadFunction("vkCmdBuildMicromapsEXT", "vulkan")
+                    : _slots[76] = nativeContext.LoadFunction("vkCmdBuildMicromapsEXT", "vulkan")
             )
         )(commandBuffer, infoCount, pInfos);
 
@@ -126510,9 +129105,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 CommandBufferHandle,
                 BuildPartitionedAccelerationStructureInfoNV*,
                 void>)(
-                _slots[75] is not null and var loadedFnPtr
+                _slots[77] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[75] = nativeContext.LoadFunction(
+                    : _slots[77] = nativeContext.LoadFunction(
                         "vkCmdBuildPartitionedAccelerationStructuresNV",
                         "vulkan"
                     )
@@ -126601,9 +129196,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 ClearRect*,
                 void>)(
-                _slots[76] is not null and var loadedFnPtr
+                _slots[78] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[76] = nativeContext.LoadFunction("vkCmdClearAttachments", "vulkan")
+                    : _slots[78] = nativeContext.LoadFunction("vkCmdClearAttachments", "vulkan")
             )
         )(commandBuffer, attachmentCount, pAttachments, rectCount, pRects);
 
@@ -126756,9 +129351,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 ImageSubresourceRange*,
                 void>)(
-                _slots[77] is not null and var loadedFnPtr
+                _slots[79] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[77] = nativeContext.LoadFunction("vkCmdClearColorImage", "vulkan")
+                    : _slots[79] = nativeContext.LoadFunction("vkCmdClearColorImage", "vulkan")
             )
         )(commandBuffer, image, imageLayout, pColor, rangeCount, pRanges);
 
@@ -127004,9 +129599,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 ImageSubresourceRange*,
                 void>)(
-                _slots[78] is not null and var loadedFnPtr
+                _slots[80] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[78] = nativeContext.LoadFunction(
+                    : _slots[80] = nativeContext.LoadFunction(
                         "vkCmdClearDepthStencilImage",
                         "vulkan"
                     )
@@ -127215,9 +129810,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, VideoCodingControlInfoKHR*, void>)(
-                _slots[79] is not null and var loadedFnPtr
+                _slots[81] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[79] = nativeContext.LoadFunction(
+                    : _slots[81] = nativeContext.LoadFunction(
                         "vkCmdControlVideoCodingKHR",
                         "vulkan"
                     )
@@ -127291,9 +129886,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 ConvertCooperativeVectorMatrixInfoNV*,
                 void>)(
-                _slots[80] is not null and var loadedFnPtr
+                _slots[82] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[80] = nativeContext.LoadFunction(
+                    : _slots[82] = nativeContext.LoadFunction(
                         "vkCmdConvertCooperativeVectorMatrixNV",
                         "vulkan"
                     )
@@ -127411,9 +130006,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyAccelerationStructureInfoKHR*, void>)(
-                _slots[81] is not null and var loadedFnPtr
+                _slots[83] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[81] = nativeContext.LoadFunction(
+                    : _slots[83] = nativeContext.LoadFunction(
                         "vkCmdCopyAccelerationStructureKHR",
                         "vulkan"
                     )
@@ -127498,9 +130093,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AccelerationStructureHandleNV,
                 CopyAccelerationStructureModeKHR,
                 void>)(
-                _slots[82] is not null and var loadedFnPtr
+                _slots[84] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[82] = nativeContext.LoadFunction(
+                    : _slots[84] = nativeContext.LoadFunction(
                         "vkCmdCopyAccelerationStructureNV",
                         "vulkan"
                     )
@@ -127545,9 +130140,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 CommandBufferHandle,
                 CopyAccelerationStructureToMemoryInfoKHR*,
                 void>)(
-                _slots[83] is not null and var loadedFnPtr
+                _slots[85] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[83] = nativeContext.LoadFunction(
+                    : _slots[85] = nativeContext.LoadFunction(
                         "vkCmdCopyAccelerationStructureToMemoryKHR",
                         "vulkan"
                     )
@@ -127652,9 +130247,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 BufferCopy*,
                 void>)(
-                _slots[84] is not null and var loadedFnPtr
+                _slots[86] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[84] = nativeContext.LoadFunction("vkCmdCopyBuffer", "vulkan")
+                    : _slots[86] = nativeContext.LoadFunction("vkCmdCopyBuffer", "vulkan")
             )
         )(commandBuffer, srcBuffer, dstBuffer, regionCount, pRegions);
 
@@ -127873,9 +130468,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdCopyBuffer2(CommandBufferHandle commandBuffer, CopyBufferInfo2* pCopyBufferInfo) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyBufferInfo2*, void>)(
-                _slots[85] is not null and var loadedFnPtr
+                _slots[87] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[85] = nativeContext.LoadFunction("vkCmdCopyBuffer2", "vulkan")
+                    : _slots[87] = nativeContext.LoadFunction("vkCmdCopyBuffer2", "vulkan")
             )
         )(commandBuffer, pCopyBufferInfo);
 
@@ -127965,9 +130560,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyBufferInfo2*, void>)(
-                _slots[86] is not null and var loadedFnPtr
+                _slots[88] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[86] = nativeContext.LoadFunction("vkCmdCopyBuffer2KHR", "vulkan")
+                    : _slots[88] = nativeContext.LoadFunction("vkCmdCopyBuffer2KHR", "vulkan")
             )
         )(commandBuffer, pCopyBufferInfo);
 
@@ -128071,9 +130666,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 BufferImageCopy*,
                 void>)(
-                _slots[87] is not null and var loadedFnPtr
+                _slots[89] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[87] = nativeContext.LoadFunction("vkCmdCopyBufferToImage", "vulkan")
+                    : _slots[89] = nativeContext.LoadFunction("vkCmdCopyBufferToImage", "vulkan")
             )
         )(commandBuffer, srcBuffer, dstImage, dstImageLayout, regionCount, pRegions);
 
@@ -128332,9 +130927,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyBufferToImageInfo2*, void>)(
-                _slots[88] is not null and var loadedFnPtr
+                _slots[90] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[88] = nativeContext.LoadFunction("vkCmdCopyBufferToImage2", "vulkan")
+                    : _slots[90] = nativeContext.LoadFunction("vkCmdCopyBufferToImage2", "vulkan")
             )
         )(commandBuffer, pCopyBufferToImageInfo);
 
@@ -128427,9 +131022,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyBufferToImageInfo2*, void>)(
-                _slots[89] is not null and var loadedFnPtr
+                _slots[91] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[89] = nativeContext.LoadFunction(
+                    : _slots[91] = nativeContext.LoadFunction(
                         "vkCmdCopyBufferToImage2KHR",
                         "vulkan"
                     )
@@ -128507,9 +131102,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, GpaSessionHandleAMD, void>)(
-                _slots[90] is not null and var loadedFnPtr
+                _slots[92] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[90] = nativeContext.LoadFunction(
+                    : _slots[92] = nativeContext.LoadFunction(
                         "vkCmdCopyGpaSessionResultsAMD",
                         "vulkan"
                     )
@@ -128580,9 +131175,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 ImageCopy*,
                 void>)(
-                _slots[91] is not null and var loadedFnPtr
+                _slots[93] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[91] = nativeContext.LoadFunction("vkCmdCopyImage", "vulkan")
+                    : _slots[93] = nativeContext.LoadFunction("vkCmdCopyImage", "vulkan")
             )
         )(commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, pRegions);
 
@@ -128848,9 +131443,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdCopyImage2(CommandBufferHandle commandBuffer, CopyImageInfo2* pCopyImageInfo) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyImageInfo2*, void>)(
-                _slots[92] is not null and var loadedFnPtr
+                _slots[94] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[92] = nativeContext.LoadFunction("vkCmdCopyImage2", "vulkan")
+                    : _slots[94] = nativeContext.LoadFunction("vkCmdCopyImage2", "vulkan")
             )
         )(commandBuffer, pCopyImageInfo);
 
@@ -128937,9 +131532,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdCopyImage2KHR(CommandBufferHandle commandBuffer, CopyImageInfo2* pCopyImageInfo) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyImageInfo2*, void>)(
-                _slots[93] is not null and var loadedFnPtr
+                _slots[95] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[93] = nativeContext.LoadFunction("vkCmdCopyImage2KHR", "vulkan")
+                    : _slots[95] = nativeContext.LoadFunction("vkCmdCopyImage2KHR", "vulkan")
             )
         )(commandBuffer, pCopyImageInfo);
 
@@ -129040,9 +131635,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 BufferImageCopy*,
                 void>)(
-                _slots[94] is not null and var loadedFnPtr
+                _slots[96] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[94] = nativeContext.LoadFunction("vkCmdCopyImageToBuffer", "vulkan")
+                    : _slots[96] = nativeContext.LoadFunction("vkCmdCopyImageToBuffer", "vulkan")
             )
         )(commandBuffer, srcImage, srcImageLayout, dstBuffer, regionCount, pRegions);
 
@@ -129301,9 +131896,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyImageToBufferInfo2*, void>)(
-                _slots[95] is not null and var loadedFnPtr
+                _slots[97] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[95] = nativeContext.LoadFunction("vkCmdCopyImageToBuffer2", "vulkan")
+                    : _slots[97] = nativeContext.LoadFunction("vkCmdCopyImageToBuffer2", "vulkan")
             )
         )(commandBuffer, pCopyImageToBufferInfo);
 
@@ -129396,9 +131991,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyImageToBufferInfo2*, void>)(
-                _slots[96] is not null and var loadedFnPtr
+                _slots[98] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[96] = nativeContext.LoadFunction(
+                    : _slots[98] = nativeContext.LoadFunction(
                         "vkCmdCopyImageToBuffer2KHR",
                         "vulkan"
                     )
@@ -129478,9 +132073,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyDeviceMemoryImageInfoKHR*, void>)(
-                _slots[97] is not null and var loadedFnPtr
+                _slots[99] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[97] = nativeContext.LoadFunction("vkCmdCopyImageToMemoryKHR", "vulkan")
+                    : _slots[99] = nativeContext.LoadFunction("vkCmdCopyImageToMemoryKHR", "vulkan")
             )
         )(commandBuffer, pCopyMemoryInfo);
 
@@ -129561,9 +132156,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyMemoryIndirectInfoKHR*, void>)(
-                _slots[98] is not null and var loadedFnPtr
+                _slots[100] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[98] = nativeContext.LoadFunction(
+                    : _slots[100] = nativeContext.LoadFunction(
                         "vkCmdCopyMemoryIndirectKHR",
                         "vulkan"
                     )
@@ -129644,9 +132239,12 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, ulong, uint, uint, void>)(
-                _slots[99] is not null and var loadedFnPtr
+                _slots[101] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[99] = nativeContext.LoadFunction("vkCmdCopyMemoryIndirectNV", "vulkan")
+                    : _slots[101] = nativeContext.LoadFunction(
+                        "vkCmdCopyMemoryIndirectNV",
+                        "vulkan"
+                    )
             )
         )(commandBuffer, copyBufferAddress, copyCount, stride);
 
@@ -129688,9 +132286,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyDeviceMemoryInfoKHR*, void>)(
-                _slots[100] is not null and var loadedFnPtr
+                _slots[102] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[100] = nativeContext.LoadFunction("vkCmdCopyMemoryKHR", "vulkan")
+                    : _slots[102] = nativeContext.LoadFunction("vkCmdCopyMemoryKHR", "vulkan")
             )
         )(commandBuffer, pCopyMemoryInfo);
 
@@ -129774,9 +132372,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 CommandBufferHandle,
                 CopyMemoryToAccelerationStructureInfoKHR*,
                 void>)(
-                _slots[101] is not null and var loadedFnPtr
+                _slots[103] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[101] = nativeContext.LoadFunction(
+                    : _slots[103] = nativeContext.LoadFunction(
                         "vkCmdCopyMemoryToAccelerationStructureKHR",
                         "vulkan"
                     )
@@ -129854,9 +132452,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyMemoryToImageIndirectInfoKHR*, void>)(
-                _slots[102] is not null and var loadedFnPtr
+                _slots[104] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[102] = nativeContext.LoadFunction(
+                    : _slots[104] = nativeContext.LoadFunction(
                         "vkCmdCopyMemoryToImageIndirectKHR",
                         "vulkan"
                     )
@@ -129954,9 +132552,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ImageLayout,
                 ImageSubresourceLayers*,
                 void>)(
-                _slots[103] is not null and var loadedFnPtr
+                _slots[105] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[103] = nativeContext.LoadFunction(
+                    : _slots[105] = nativeContext.LoadFunction(
                         "vkCmdCopyMemoryToImageIndirectNV",
                         "vulkan"
                     )
@@ -130147,9 +132745,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyDeviceMemoryImageInfoKHR*, void>)(
-                _slots[104] is not null and var loadedFnPtr
+                _slots[106] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[104] = nativeContext.LoadFunction(
+                    : _slots[106] = nativeContext.LoadFunction(
                         "vkCmdCopyMemoryToImageKHR",
                         "vulkan"
                     )
@@ -130233,9 +132831,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyMemoryToMicromapInfoEXT*, void>)(
-                _slots[105] is not null and var loadedFnPtr
+                _slots[107] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[105] = nativeContext.LoadFunction(
+                    : _slots[107] = nativeContext.LoadFunction(
                         "vkCmdCopyMemoryToMicromapEXT",
                         "vulkan"
                     )
@@ -130310,9 +132908,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdCopyMicromapEXT(CommandBufferHandle commandBuffer, CopyMicromapInfoEXT* pInfo) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyMicromapInfoEXT*, void>)(
-                _slots[106] is not null and var loadedFnPtr
+                _slots[108] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[106] = nativeContext.LoadFunction("vkCmdCopyMicromapEXT", "vulkan")
+                    : _slots[108] = nativeContext.LoadFunction("vkCmdCopyMicromapEXT", "vulkan")
             )
         )(commandBuffer, pInfo);
 
@@ -130384,9 +132982,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyMicromapToMemoryInfoEXT*, void>)(
-                _slots[107] is not null and var loadedFnPtr
+                _slots[109] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[107] = nativeContext.LoadFunction(
+                    : _slots[109] = nativeContext.LoadFunction(
                         "vkCmdCopyMicromapToMemoryEXT",
                         "vulkan"
                     )
@@ -130497,9 +133095,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ulong,
                 QueryResultFlags,
                 void>)(
-                _slots[108] is not null and var loadedFnPtr
+                _slots[110] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[108] = nativeContext.LoadFunction(
+                    : _slots[110] = nativeContext.LoadFunction(
                         "vkCmdCopyQueryPoolResults",
                         "vulkan"
                     )
@@ -130588,9 +133186,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AddressCommandFlagsKHR,
                 QueryResultFlags,
                 void>)(
-                _slots[109] is not null and var loadedFnPtr
+                _slots[111] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[109] = nativeContext.LoadFunction(
+                    : _slots[111] = nativeContext.LoadFunction(
                         "vkCmdCopyQueryPoolResultsToMemoryKHR",
                         "vulkan"
                     )
@@ -130708,9 +133306,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CopyTensorInfoARM*, void>)(
-                _slots[110] is not null and var loadedFnPtr
+                _slots[112] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[110] = nativeContext.LoadFunction("vkCmdCopyTensorARM", "vulkan")
+                    : _slots[112] = nativeContext.LoadFunction("vkCmdCopyTensorARM", "vulkan")
             )
         )(commandBuffer, pCopyTensorInfo);
 
@@ -130757,9 +133355,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CuLaunchInfoNVX*, void>)(
-                _slots[111] is not null and var loadedFnPtr
+                _slots[113] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[111] = nativeContext.LoadFunction("vkCmdCuLaunchKernelNVX", "vulkan")
+                    : _slots[113] = nativeContext.LoadFunction("vkCmdCuLaunchKernelNVX", "vulkan")
             )
         )(commandBuffer, pLaunchInfo);
 
@@ -130806,9 +133404,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DebugMarkerMarkerInfoEXT*, void>)(
-                _slots[112] is not null and var loadedFnPtr
+                _slots[114] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[112] = nativeContext.LoadFunction("vkCmdDebugMarkerBeginEXT", "vulkan")
+                    : _slots[114] = nativeContext.LoadFunction("vkCmdDebugMarkerBeginEXT", "vulkan")
             )
         )(commandBuffer, pMarkerInfo);
 
@@ -130852,9 +133450,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdDebugMarkerEndEXT(CommandBufferHandle commandBuffer) =>
         (
             (delegate* unmanaged<CommandBufferHandle, void>)(
-                _slots[113] is not null and var loadedFnPtr
+                _slots[115] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[113] = nativeContext.LoadFunction("vkCmdDebugMarkerEndEXT", "vulkan")
+                    : _slots[115] = nativeContext.LoadFunction("vkCmdDebugMarkerEndEXT", "vulkan")
             )
         )(commandBuffer);
 
@@ -130875,9 +133473,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DebugMarkerMarkerInfoEXT*, void>)(
-                _slots[114] is not null and var loadedFnPtr
+                _slots[116] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[114] = nativeContext.LoadFunction(
+                    : _slots[116] = nativeContext.LoadFunction(
                         "vkCmdDebugMarkerInsertEXT",
                         "vulkan"
                     )
@@ -130934,9 +133532,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, VideoDecodeInfoKHR*, void>)(
-                _slots[115] is not null and var loadedFnPtr
+                _slots[117] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[115] = nativeContext.LoadFunction("vkCmdDecodeVideoKHR", "vulkan")
+                    : _slots[117] = nativeContext.LoadFunction("vkCmdDecodeVideoKHR", "vulkan")
             )
         )(commandBuffer, pDecodeInfo);
 
@@ -131008,9 +133606,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DecompressMemoryInfoEXT*, void>)(
-                _slots[116] is not null and var loadedFnPtr
+                _slots[118] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[116] = nativeContext.LoadFunction("vkCmdDecompressMemoryEXT", "vulkan")
+                    : _slots[118] = nativeContext.LoadFunction("vkCmdDecompressMemoryEXT", "vulkan")
             )
         )(commandBuffer, pDecompressMemoryInfoEXT);
 
@@ -131084,9 +133682,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint,
                 void>)(
-                _slots[117] is not null and var loadedFnPtr
+                _slots[119] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[117] = nativeContext.LoadFunction(
+                    : _slots[119] = nativeContext.LoadFunction(
                         "vkCmdDecompressMemoryIndirectCountEXT",
                         "vulkan"
                     )
@@ -131145,9 +133743,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, ulong, ulong, uint, void>)(
-                _slots[118] is not null and var loadedFnPtr
+                _slots[120] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[118] = nativeContext.LoadFunction(
+                    : _slots[120] = nativeContext.LoadFunction(
                         "vkCmdDecompressMemoryIndirectCountNV",
                         "vulkan"
                     )
@@ -131198,9 +133796,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, DecompressMemoryRegionNV*, void>)(
-                _slots[119] is not null and var loadedFnPtr
+                _slots[121] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[119] = nativeContext.LoadFunction("vkCmdDecompressMemoryNV", "vulkan")
+                    : _slots[121] = nativeContext.LoadFunction("vkCmdDecompressMemoryNV", "vulkan")
             )
         )(commandBuffer, decompressRegionCount, pDecompressMemoryRegions);
 
@@ -131349,9 +133947,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, uint, void>)(
-                _slots[120] is not null and var loadedFnPtr
+                _slots[122] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[120] = nativeContext.LoadFunction("vkCmdDispatch", "vulkan")
+                    : _slots[122] = nativeContext.LoadFunction("vkCmdDispatch", "vulkan")
             )
         )(commandBuffer, groupCountX, groupCountY, groupCountZ);
 
@@ -131418,9 +134016,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, uint, uint, uint, uint, void>)(
-                _slots[121] is not null and var loadedFnPtr
+                _slots[123] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[121] = nativeContext.LoadFunction("vkCmdDispatchBase", "vulkan")
+                    : _slots[123] = nativeContext.LoadFunction("vkCmdDispatchBase", "vulkan")
             )
         )(commandBuffer, baseGroupX, baseGroupY, baseGroupZ, groupCountX, groupCountY, groupCountZ);
 
@@ -131483,9 +134081,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, uint, uint, uint, uint, void>)(
-                _slots[122] is not null and var loadedFnPtr
+                _slots[124] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[122] = nativeContext.LoadFunction("vkCmdDispatchBaseKHR", "vulkan")
+                    : _slots[124] = nativeContext.LoadFunction("vkCmdDispatchBaseKHR", "vulkan")
             )
         )(commandBuffer, baseGroupX, baseGroupY, baseGroupZ, groupCountX, groupCountY, groupCountZ);
 
@@ -131538,9 +134136,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DataGraphPipelineSessionHandleARM,
                 DataGraphPipelineDispatchInfoARM*,
                 void>)(
-                _slots[123] is not null and var loadedFnPtr
+                _slots[125] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[123] = nativeContext.LoadFunction(
+                    : _slots[125] = nativeContext.LoadFunction(
                         "vkCmdDispatchDataGraphARM",
                         "vulkan"
                     )
@@ -131635,9 +134233,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BufferHandle, ulong, void>)(
-                _slots[124] is not null and var loadedFnPtr
+                _slots[126] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[124] = nativeContext.LoadFunction("vkCmdDispatchIndirect", "vulkan")
+                    : _slots[126] = nativeContext.LoadFunction("vkCmdDispatchIndirect", "vulkan")
             )
         )(commandBuffer, buffer, offset);
 
@@ -131690,9 +134288,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DispatchIndirect2InfoKHR*, void>)(
-                _slots[125] is not null and var loadedFnPtr
+                _slots[127] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[125] = nativeContext.LoadFunction(
+                    : _slots[127] = nativeContext.LoadFunction(
                         "vkCmdDispatchIndirect2KHR",
                         "vulkan"
                     )
@@ -131773,9 +134371,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DispatchTileInfoQCOM*, void>)(
-                _slots[126] is not null and var loadedFnPtr
+                _slots[128] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[126] = nativeContext.LoadFunction("vkCmdDispatchTileQCOM", "vulkan")
+                    : _slots[128] = nativeContext.LoadFunction("vkCmdDispatchTileQCOM", "vulkan")
             )
         )(commandBuffer, pDispatchTileInfo);
 
@@ -131852,9 +134450,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, uint, uint, void>)(
-                _slots[127] is not null and var loadedFnPtr
+                _slots[129] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[127] = nativeContext.LoadFunction("vkCmdDraw", "vulkan")
+                    : _slots[129] = nativeContext.LoadFunction("vkCmdDraw", "vulkan")
             )
         )(commandBuffer, vertexCount, instanceCount, firstVertex, firstInstance);
 
@@ -131904,9 +134502,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, uint, void>)(
-                _slots[128] is not null and var loadedFnPtr
+                _slots[130] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[128] = nativeContext.LoadFunction("vkCmdDrawClusterHUAWEI", "vulkan")
+                    : _slots[130] = nativeContext.LoadFunction("vkCmdDrawClusterHUAWEI", "vulkan")
             )
         )(commandBuffer, groupCountX, groupCountY, groupCountZ);
 
@@ -131946,9 +134544,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BufferHandle, ulong, void>)(
-                _slots[129] is not null and var loadedFnPtr
+                _slots[131] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[129] = nativeContext.LoadFunction(
+                    : _slots[131] = nativeContext.LoadFunction(
                         "vkCmdDrawClusterIndirectHUAWEI",
                         "vulkan"
                     )
@@ -132001,9 +134599,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, uint, int, uint, void>)(
-                _slots[130] is not null and var loadedFnPtr
+                _slots[132] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[130] = nativeContext.LoadFunction("vkCmdDrawIndexed", "vulkan")
+                    : _slots[132] = nativeContext.LoadFunction("vkCmdDrawIndexed", "vulkan")
             )
         )(commandBuffer, indexCount, instanceCount, firstIndex, vertexOffset, firstInstance);
 
@@ -132071,9 +134669,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BufferHandle, ulong, uint, uint, void>)(
-                _slots[131] is not null and var loadedFnPtr
+                _slots[133] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[131] = nativeContext.LoadFunction("vkCmdDrawIndexedIndirect", "vulkan")
+                    : _slots[133] = nativeContext.LoadFunction("vkCmdDrawIndexedIndirect", "vulkan")
             )
         )(commandBuffer, buffer, offset, drawCount, stride);
 
@@ -132123,9 +134721,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DrawIndirect2InfoKHR*, void>)(
-                _slots[132] is not null and var loadedFnPtr
+                _slots[134] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[132] = nativeContext.LoadFunction(
+                    : _slots[134] = nativeContext.LoadFunction(
                         "vkCmdDrawIndexedIndirect2KHR",
                         "vulkan"
                     )
@@ -132226,9 +134824,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint,
                 void>)(
-                _slots[133] is not null and var loadedFnPtr
+                _slots[135] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[133] = nativeContext.LoadFunction(
+                    : _slots[135] = nativeContext.LoadFunction(
                         "vkCmdDrawIndexedIndirectCount",
                         "vulkan"
                     )
@@ -132291,9 +134889,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DrawIndirectCount2InfoKHR*, void>)(
-                _slots[134] is not null and var loadedFnPtr
+                _slots[136] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[134] = nativeContext.LoadFunction(
+                    : _slots[136] = nativeContext.LoadFunction(
                         "vkCmdDrawIndexedIndirectCount2KHR",
                         "vulkan"
                     )
@@ -132392,9 +134990,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint,
                 void>)(
-                _slots[135] is not null and var loadedFnPtr
+                _slots[137] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[135] = nativeContext.LoadFunction(
+                    : _slots[137] = nativeContext.LoadFunction(
                         "vkCmdDrawIndexedIndirectCountAMD",
                         "vulkan"
                     )
@@ -132447,9 +135045,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint,
                 void>)(
-                _slots[136] is not null and var loadedFnPtr
+                _slots[138] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[136] = nativeContext.LoadFunction(
+                    : _slots[138] = nativeContext.LoadFunction(
                         "vkCmdDrawIndexedIndirectCountKHR",
                         "vulkan"
                     )
@@ -132507,9 +135105,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BufferHandle, ulong, uint, uint, void>)(
-                _slots[137] is not null and var loadedFnPtr
+                _slots[139] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[137] = nativeContext.LoadFunction("vkCmdDrawIndirect", "vulkan")
+                    : _slots[139] = nativeContext.LoadFunction("vkCmdDrawIndirect", "vulkan")
             )
         )(commandBuffer, buffer, offset, drawCount, stride);
 
@@ -132556,9 +135154,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdDrawIndirect2KHR(CommandBufferHandle commandBuffer, DrawIndirect2InfoKHR* pInfo) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DrawIndirect2InfoKHR*, void>)(
-                _slots[138] is not null and var loadedFnPtr
+                _slots[140] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[138] = nativeContext.LoadFunction("vkCmdDrawIndirect2KHR", "vulkan")
+                    : _slots[140] = nativeContext.LoadFunction("vkCmdDrawIndirect2KHR", "vulkan")
             )
         )(commandBuffer, pInfo);
 
@@ -132650,9 +135248,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint,
                 void>)(
-                _slots[139] is not null and var loadedFnPtr
+                _slots[141] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[139] = nativeContext.LoadFunction(
+                    : _slots[141] = nativeContext.LoadFunction(
                         "vkCmdDrawIndirectByteCount2EXT",
                         "vulkan"
                     )
@@ -132787,9 +135385,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint,
                 void>)(
-                _slots[140] is not null and var loadedFnPtr
+                _slots[142] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[140] = nativeContext.LoadFunction(
+                    : _slots[142] = nativeContext.LoadFunction(
                         "vkCmdDrawIndirectByteCountEXT",
                         "vulkan"
                     )
@@ -132868,9 +135466,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint,
                 void>)(
-                _slots[141] is not null and var loadedFnPtr
+                _slots[143] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[141] = nativeContext.LoadFunction("vkCmdDrawIndirectCount", "vulkan")
+                    : _slots[143] = nativeContext.LoadFunction("vkCmdDrawIndirectCount", "vulkan")
             )
         )(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
 
@@ -132930,9 +135528,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DrawIndirectCount2InfoKHR*, void>)(
-                _slots[142] is not null and var loadedFnPtr
+                _slots[144] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[142] = nativeContext.LoadFunction(
+                    : _slots[144] = nativeContext.LoadFunction(
                         "vkCmdDrawIndirectCount2KHR",
                         "vulkan"
                     )
@@ -133031,9 +135629,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint,
                 void>)(
-                _slots[143] is not null and var loadedFnPtr
+                _slots[145] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[143] = nativeContext.LoadFunction(
+                    : _slots[145] = nativeContext.LoadFunction(
                         "vkCmdDrawIndirectCountAMD",
                         "vulkan"
                     )
@@ -133086,9 +135684,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint,
                 void>)(
-                _slots[144] is not null and var loadedFnPtr
+                _slots[146] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[144] = nativeContext.LoadFunction(
+                    : _slots[146] = nativeContext.LoadFunction(
                         "vkCmdDrawIndirectCountKHR",
                         "vulkan"
                     )
@@ -133134,9 +135732,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, uint, void>)(
-                _slots[145] is not null and var loadedFnPtr
+                _slots[147] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[145] = nativeContext.LoadFunction("vkCmdDrawMeshTasksEXT", "vulkan")
+                    : _slots[147] = nativeContext.LoadFunction("vkCmdDrawMeshTasksEXT", "vulkan")
             )
         )(commandBuffer, groupCountX, groupCountY, groupCountZ);
 
@@ -133175,9 +135773,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DrawIndirect2InfoKHR*, void>)(
-                _slots[146] is not null and var loadedFnPtr
+                _slots[148] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[146] = nativeContext.LoadFunction(
+                    : _slots[148] = nativeContext.LoadFunction(
                         "vkCmdDrawMeshTasksIndirect2EXT",
                         "vulkan"
                     )
@@ -133269,9 +135867,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DrawIndirectCount2InfoKHR*, void>)(
-                _slots[147] is not null and var loadedFnPtr
+                _slots[149] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[147] = nativeContext.LoadFunction(
+                    : _slots[149] = nativeContext.LoadFunction(
                         "vkCmdDrawMeshTasksIndirectCount2EXT",
                         "vulkan"
                     )
@@ -133378,9 +135976,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint,
                 void>)(
-                _slots[148] is not null and var loadedFnPtr
+                _slots[150] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[148] = nativeContext.LoadFunction(
+                    : _slots[150] = nativeContext.LoadFunction(
                         "vkCmdDrawMeshTasksIndirectCountEXT",
                         "vulkan"
                     )
@@ -133452,9 +136050,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint,
                 void>)(
-                _slots[149] is not null and var loadedFnPtr
+                _slots[151] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[149] = nativeContext.LoadFunction(
+                    : _slots[151] = nativeContext.LoadFunction(
                         "vkCmdDrawMeshTasksIndirectCountNV",
                         "vulkan"
                     )
@@ -133512,9 +136110,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BufferHandle, ulong, uint, uint, void>)(
-                _slots[150] is not null and var loadedFnPtr
+                _slots[152] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[150] = nativeContext.LoadFunction(
+                    : _slots[152] = nativeContext.LoadFunction(
                         "vkCmdDrawMeshTasksIndirectEXT",
                         "vulkan"
                     )
@@ -133557,9 +136155,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BufferHandle, ulong, uint, uint, void>)(
-                _slots[151] is not null and var loadedFnPtr
+                _slots[153] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[151] = nativeContext.LoadFunction(
+                    : _slots[153] = nativeContext.LoadFunction(
                         "vkCmdDrawMeshTasksIndirectNV",
                         "vulkan"
                     )
@@ -133603,9 +136201,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, void>)(
-                _slots[152] is not null and var loadedFnPtr
+                _slots[154] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[152] = nativeContext.LoadFunction("vkCmdDrawMeshTasksNV", "vulkan")
+                    : _slots[154] = nativeContext.LoadFunction("vkCmdDrawMeshTasksNV", "vulkan")
             )
         )(commandBuffer, taskCount, firstTask);
 
@@ -133654,9 +136252,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint,
                 void>)(
-                _slots[153] is not null and var loadedFnPtr
+                _slots[155] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[153] = nativeContext.LoadFunction("vkCmdDrawMultiEXT", "vulkan")
+                    : _slots[155] = nativeContext.LoadFunction("vkCmdDrawMultiEXT", "vulkan")
             )
         )(commandBuffer, drawCount, pVertexInfo, instanceCount, firstInstance, stride);
 
@@ -133832,9 +136430,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 int*,
                 void>)(
-                _slots[154] is not null and var loadedFnPtr
+                _slots[156] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[154] = nativeContext.LoadFunction("vkCmdDrawMultiIndexedEXT", "vulkan")
+                    : _slots[156] = nativeContext.LoadFunction("vkCmdDrawMultiIndexedEXT", "vulkan")
             )
         )(
             commandBuffer,
@@ -134021,9 +136619,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, VideoEncodeInfoKHR*, void>)(
-                _slots[155] is not null and var loadedFnPtr
+                _slots[157] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[155] = nativeContext.LoadFunction("vkCmdEncodeVideoKHR", "vulkan")
+                    : _slots[157] = nativeContext.LoadFunction("vkCmdEncodeVideoKHR", "vulkan")
             )
         )(commandBuffer, pEncodeInfo);
 
@@ -134095,9 +136693,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdEndConditionalRenderingEXT(CommandBufferHandle commandBuffer) =>
         (
             (delegate* unmanaged<CommandBufferHandle, void>)(
-                _slots[156] is not null and var loadedFnPtr
+                _slots[158] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[156] = nativeContext.LoadFunction(
+                    : _slots[158] = nativeContext.LoadFunction(
                         "vkCmdEndConditionalRenderingEXT",
                         "vulkan"
                     )
@@ -134125,9 +136723,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdEndDebugUtilsLabelEXT(CommandBufferHandle commandBuffer) =>
         (
             (delegate* unmanaged<CommandBufferHandle, void>)(
-                _slots[157] is not null and var loadedFnPtr
+                _slots[159] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[157] = nativeContext.LoadFunction(
+                    : _slots[159] = nativeContext.LoadFunction(
                         "vkCmdEndDebugUtilsLabelEXT",
                         "vulkan"
                     )
@@ -134159,9 +136757,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, GpaSessionHandleAMD, uint, void>)(
-                _slots[158] is not null and var loadedFnPtr
+                _slots[160] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[158] = nativeContext.LoadFunction("vkCmdEndGpaSampleAMD", "vulkan")
+                    : _slots[160] = nativeContext.LoadFunction("vkCmdEndGpaSampleAMD", "vulkan")
             )
         )(commandBuffer, gpaSession, sampleID);
 
@@ -134199,9 +136797,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, GpaSessionHandleAMD, Result>)(
-                _slots[159] is not null and var loadedFnPtr
+                _slots[161] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[159] = nativeContext.LoadFunction("vkCmdEndGpaSessionAMD", "vulkan")
+                    : _slots[161] = nativeContext.LoadFunction("vkCmdEndGpaSessionAMD", "vulkan")
             )
         )(commandBuffer, gpaSession);
 
@@ -134235,9 +136833,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PerTileEndInfoQCOM*, void>)(
-                _slots[160] is not null and var loadedFnPtr
+                _slots[162] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[160] = nativeContext.LoadFunction(
+                    : _slots[162] = nativeContext.LoadFunction(
                         "vkCmdEndPerTileExecutionQCOM",
                         "vulkan"
                     )
@@ -134325,9 +136923,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, QueryPoolHandle, uint, void>)(
-                _slots[161] is not null and var loadedFnPtr
+                _slots[163] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[161] = nativeContext.LoadFunction("vkCmdEndQuery", "vulkan")
+                    : _slots[163] = nativeContext.LoadFunction("vkCmdEndQuery", "vulkan")
             )
         )(commandBuffer, queryPool, query);
 
@@ -134385,9 +136983,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, QueryPoolHandle, uint, uint, void>)(
-                _slots[162] is not null and var loadedFnPtr
+                _slots[164] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[162] = nativeContext.LoadFunction("vkCmdEndQueryIndexedEXT", "vulkan")
+                    : _slots[164] = nativeContext.LoadFunction("vkCmdEndQueryIndexedEXT", "vulkan")
             )
         )(commandBuffer, queryPool, query, index);
 
@@ -134420,9 +137018,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdEndRendering(CommandBufferHandle commandBuffer) =>
         (
             (delegate* unmanaged<CommandBufferHandle, void>)(
-                _slots[163] is not null and var loadedFnPtr
+                _slots[165] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[163] = nativeContext.LoadFunction("vkCmdEndRendering", "vulkan")
+                    : _slots[165] = nativeContext.LoadFunction("vkCmdEndRendering", "vulkan")
             )
         )(commandBuffer);
 
@@ -134460,9 +137058,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, RenderingEndInfoKHR*, void>)(
-                _slots[164] is not null and var loadedFnPtr
+                _slots[166] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[164] = nativeContext.LoadFunction("vkCmdEndRendering2EXT", "vulkan")
+                    : _slots[166] = nativeContext.LoadFunction("vkCmdEndRendering2EXT", "vulkan")
             )
         )(commandBuffer, pRenderingEndInfo);
 
@@ -134555,9 +137153,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, RenderingEndInfoKHR*, void>)(
-                _slots[165] is not null and var loadedFnPtr
+                _slots[167] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[165] = nativeContext.LoadFunction("vkCmdEndRendering2KHR", "vulkan")
+                    : _slots[167] = nativeContext.LoadFunction("vkCmdEndRendering2KHR", "vulkan")
             )
         )(commandBuffer, pRenderingEndInfo);
 
@@ -134630,9 +137228,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdEndRenderingKHR(CommandBufferHandle commandBuffer) =>
         (
             (delegate* unmanaged<CommandBufferHandle, void>)(
-                _slots[166] is not null and var loadedFnPtr
+                _slots[168] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[166] = nativeContext.LoadFunction("vkCmdEndRenderingKHR", "vulkan")
+                    : _slots[168] = nativeContext.LoadFunction("vkCmdEndRenderingKHR", "vulkan")
             )
         )(commandBuffer);
 
@@ -134673,9 +137271,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdEndRenderPass(CommandBufferHandle commandBuffer) =>
         (
             (delegate* unmanaged<CommandBufferHandle, void>)(
-                _slots[167] is not null and var loadedFnPtr
+                _slots[169] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[167] = nativeContext.LoadFunction("vkCmdEndRenderPass", "vulkan")
+                    : _slots[169] = nativeContext.LoadFunction("vkCmdEndRenderPass", "vulkan")
             )
         )(commandBuffer);
 
@@ -134722,9 +137320,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, SubpassEndInfo*, void>)(
-                _slots[168] is not null and var loadedFnPtr
+                _slots[170] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[168] = nativeContext.LoadFunction("vkCmdEndRenderPass2", "vulkan")
+                    : _slots[170] = nativeContext.LoadFunction("vkCmdEndRenderPass2", "vulkan")
             )
         )(commandBuffer, pSubpassEndInfo);
 
@@ -134808,9 +137406,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, SubpassEndInfo*, void>)(
-                _slots[169] is not null and var loadedFnPtr
+                _slots[171] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[169] = nativeContext.LoadFunction("vkCmdEndRenderPass2KHR", "vulkan")
+                    : _slots[171] = nativeContext.LoadFunction("vkCmdEndRenderPass2KHR", "vulkan")
             )
         )(commandBuffer, pSubpassEndInfo);
 
@@ -134873,9 +137471,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdEndShaderInstrumentationARM(CommandBufferHandle commandBuffer) =>
         (
             (delegate* unmanaged<CommandBufferHandle, void>)(
-                _slots[170] is not null and var loadedFnPtr
+                _slots[172] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[170] = nativeContext.LoadFunction(
+                    : _slots[172] = nativeContext.LoadFunction(
                         "vkCmdEndShaderInstrumentationARM",
                         "vulkan"
                     )
@@ -134923,9 +137521,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 BindTransformFeedbackBuffer2InfoEXT*,
                 void>)(
-                _slots[171] is not null and var loadedFnPtr
+                _slots[173] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[171] = nativeContext.LoadFunction(
+                    : _slots[173] = nativeContext.LoadFunction(
                         "vkCmdEndTransformFeedback2EXT",
                         "vulkan"
                     )
@@ -135084,9 +137682,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, BufferHandle*, ulong*, void>)(
-                _slots[172] is not null and var loadedFnPtr
+                _slots[174] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[172] = nativeContext.LoadFunction(
+                    : _slots[174] = nativeContext.LoadFunction(
                         "vkCmdEndTransformFeedbackEXT",
                         "vulkan"
                     )
@@ -135197,9 +137795,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, VideoEndCodingInfoKHR*, void>)(
-                _slots[173] is not null and var loadedFnPtr
+                _slots[175] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[173] = nativeContext.LoadFunction("vkCmdEndVideoCodingKHR", "vulkan")
+                    : _slots[175] = nativeContext.LoadFunction("vkCmdEndVideoCodingKHR", "vulkan")
             )
         )(commandBuffer, pEndCodingInfo);
 
@@ -135352,9 +137950,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, CommandBufferHandle*, void>)(
-                _slots[174] is not null and var loadedFnPtr
+                _slots[176] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[174] = nativeContext.LoadFunction("vkCmdExecuteCommands", "vulkan")
+                    : _slots[176] = nativeContext.LoadFunction("vkCmdExecuteCommands", "vulkan")
             )
         )(commandBuffer, commandBufferCount, pCommandBuffers);
 
@@ -135494,9 +138092,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, GeneratedCommandsInfoEXT*, void>)(
-                _slots[175] is not null and var loadedFnPtr
+                _slots[177] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[175] = nativeContext.LoadFunction(
+                    : _slots[177] = nativeContext.LoadFunction(
                         "vkCmdExecuteGeneratedCommandsEXT",
                         "vulkan"
                     )
@@ -135598,9 +138196,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, GeneratedCommandsInfoNV*, void>)(
-                _slots[176] is not null and var loadedFnPtr
+                _slots[178] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[176] = nativeContext.LoadFunction(
+                    : _slots[178] = nativeContext.LoadFunction(
                         "vkCmdExecuteGeneratedCommandsNV",
                         "vulkan"
                     )
@@ -135707,9 +138305,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BufferHandle, ulong, ulong, uint, void>)(
-                _slots[177] is not null and var loadedFnPtr
+                _slots[179] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[177] = nativeContext.LoadFunction("vkCmdFillBuffer", "vulkan")
+                    : _slots[179] = nativeContext.LoadFunction("vkCmdFillBuffer", "vulkan")
             )
         )(commandBuffer, dstBuffer, dstOffset, size, data);
 
@@ -135776,9 +138374,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AddressCommandFlagsKHR,
                 uint,
                 void>)(
-                _slots[178] is not null and var loadedFnPtr
+                _slots[180] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[178] = nativeContext.LoadFunction("vkCmdFillMemoryKHR", "vulkan")
+                    : _slots[180] = nativeContext.LoadFunction("vkCmdFillMemoryKHR", "vulkan")
             )
         )(commandBuffer, pDstRange, dstFlags, data);
 
@@ -135858,9 +138456,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DebugUtilsLabelEXT*, void>)(
-                _slots[179] is not null and var loadedFnPtr
+                _slots[181] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[179] = nativeContext.LoadFunction(
+                    : _slots[181] = nativeContext.LoadFunction(
                         "vkCmdInsertDebugUtilsLabelEXT",
                         "vulkan"
                     )
@@ -135922,9 +138520,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdNextSubpass(CommandBufferHandle commandBuffer, SubpassContents contents) =>
         (
             (delegate* unmanaged<CommandBufferHandle, SubpassContents, void>)(
-                _slots[180] is not null and var loadedFnPtr
+                _slots[182] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[180] = nativeContext.LoadFunction("vkCmdNextSubpass", "vulkan")
+                    : _slots[182] = nativeContext.LoadFunction("vkCmdNextSubpass", "vulkan")
             )
         )(commandBuffer, contents);
 
@@ -135974,9 +138572,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, SubpassBeginInfo*, SubpassEndInfo*, void>)(
-                _slots[181] is not null and var loadedFnPtr
+                _slots[183] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[181] = nativeContext.LoadFunction("vkCmdNextSubpass2", "vulkan")
+                    : _slots[183] = nativeContext.LoadFunction("vkCmdNextSubpass2", "vulkan")
             )
         )(commandBuffer, pSubpassBeginInfo, pSubpassEndInfo);
 
@@ -136069,9 +138667,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, SubpassBeginInfo*, SubpassEndInfo*, void>)(
-                _slots[182] is not null and var loadedFnPtr
+                _slots[184] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[182] = nativeContext.LoadFunction("vkCmdNextSubpass2KHR", "vulkan")
+                    : _slots[184] = nativeContext.LoadFunction("vkCmdNextSubpass2KHR", "vulkan")
             )
         )(commandBuffer, pSubpassBeginInfo, pSubpassEndInfo);
 
@@ -136151,9 +138749,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 OpticalFlowSessionHandleNV,
                 OpticalFlowExecuteInfoNV*,
                 void>)(
-                _slots[183] is not null and var loadedFnPtr
+                _slots[185] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[183] = nativeContext.LoadFunction(
+                    : _slots[185] = nativeContext.LoadFunction(
                         "vkCmdOpticalFlowExecuteNV",
                         "vulkan"
                     )
@@ -136274,9 +138872,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 ImageMemoryBarrier*,
                 void>)(
-                _slots[184] is not null and var loadedFnPtr
+                _slots[186] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[184] = nativeContext.LoadFunction("vkCmdPipelineBarrier", "vulkan")
+                    : _slots[186] = nativeContext.LoadFunction("vkCmdPipelineBarrier", "vulkan")
             )
         )(
             commandBuffer,
@@ -136483,9 +139081,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DependencyInfo*, void>)(
-                _slots[185] is not null and var loadedFnPtr
+                _slots[187] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[185] = nativeContext.LoadFunction("vkCmdPipelineBarrier2", "vulkan")
+                    : _slots[187] = nativeContext.LoadFunction("vkCmdPipelineBarrier2", "vulkan")
             )
         )(commandBuffer, pDependencyInfo);
 
@@ -136578,9 +139176,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DependencyInfo*, void>)(
-                _slots[186] is not null and var loadedFnPtr
+                _slots[188] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[186] = nativeContext.LoadFunction("vkCmdPipelineBarrier2KHR", "vulkan")
+                    : _slots[188] = nativeContext.LoadFunction("vkCmdPipelineBarrier2KHR", "vulkan")
             )
         )(commandBuffer, pDependencyInfo);
 
@@ -136663,9 +139261,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 GeneratedCommandsInfoEXT*,
                 CommandBufferHandle,
                 void>)(
-                _slots[187] is not null and var loadedFnPtr
+                _slots[189] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[187] = nativeContext.LoadFunction(
+                    : _slots[189] = nativeContext.LoadFunction(
                         "vkCmdPreprocessGeneratedCommandsEXT",
                         "vulkan"
                     )
@@ -136766,9 +139364,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, GeneratedCommandsInfoNV*, void>)(
-                _slots[188] is not null and var loadedFnPtr
+                _slots[190] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[188] = nativeContext.LoadFunction(
+                    : _slots[190] = nativeContext.LoadFunction(
                         "vkCmdPreprocessGeneratedCommandsNV",
                         "vulkan"
                     )
@@ -136864,9 +139462,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 void*,
                 void>)(
-                _slots[189] is not null and var loadedFnPtr
+                _slots[191] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[189] = nativeContext.LoadFunction("vkCmdPushConstants", "vulkan")
+                    : _slots[191] = nativeContext.LoadFunction("vkCmdPushConstants", "vulkan")
             )
         )(commandBuffer, layout, stageFlags, offset, size, pValues);
 
@@ -136996,9 +139594,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PushConstantsInfo*, void>)(
-                _slots[190] is not null and var loadedFnPtr
+                _slots[192] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[190] = nativeContext.LoadFunction("vkCmdPushConstants2", "vulkan")
+                    : _slots[192] = nativeContext.LoadFunction("vkCmdPushConstants2", "vulkan")
             )
         )(commandBuffer, pPushConstantsInfo);
 
@@ -137057,9 +139655,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PushConstantsInfo*, void>)(
-                _slots[191] is not null and var loadedFnPtr
+                _slots[193] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[191] = nativeContext.LoadFunction("vkCmdPushConstants2KHR", "vulkan")
+                    : _slots[193] = nativeContext.LoadFunction("vkCmdPushConstants2KHR", "vulkan")
             )
         )(commandBuffer, pPushConstantsInfo);
 
@@ -137113,9 +139711,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdPushDataEXT(CommandBufferHandle commandBuffer, PushDataInfoEXT* pPushDataInfo) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PushDataInfoEXT*, void>)(
-                _slots[192] is not null and var loadedFnPtr
+                _slots[194] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[192] = nativeContext.LoadFunction("vkCmdPushDataEXT", "vulkan")
+                    : _slots[194] = nativeContext.LoadFunction("vkCmdPushDataEXT", "vulkan")
             )
         )(commandBuffer, pPushDataInfo);
 
@@ -137204,9 +139802,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 WriteDescriptorSet*,
                 void>)(
-                _slots[193] is not null and var loadedFnPtr
+                _slots[195] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[193] = nativeContext.LoadFunction("vkCmdPushDescriptorSet", "vulkan")
+                    : _slots[195] = nativeContext.LoadFunction("vkCmdPushDescriptorSet", "vulkan")
             )
         )(commandBuffer, pipelineBindPoint, layout, set, descriptorWriteCount, pDescriptorWrites);
 
@@ -137351,9 +139949,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PushDescriptorSetInfo*, void>)(
-                _slots[194] is not null and var loadedFnPtr
+                _slots[196] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[194] = nativeContext.LoadFunction("vkCmdPushDescriptorSet2", "vulkan")
+                    : _slots[196] = nativeContext.LoadFunction("vkCmdPushDescriptorSet2", "vulkan")
             )
         )(commandBuffer, pPushDescriptorSetInfo);
 
@@ -137417,9 +140015,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PushDescriptorSetInfo*, void>)(
-                _slots[195] is not null and var loadedFnPtr
+                _slots[197] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[195] = nativeContext.LoadFunction(
+                    : _slots[197] = nativeContext.LoadFunction(
                         "vkCmdPushDescriptorSet2KHR",
                         "vulkan"
                     )
@@ -137502,9 +140100,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 WriteDescriptorSet*,
                 void>)(
-                _slots[196] is not null and var loadedFnPtr
+                _slots[198] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[196] = nativeContext.LoadFunction(
+                    : _slots[198] = nativeContext.LoadFunction(
                         "vkCmdPushDescriptorSetKHR",
                         "vulkan"
                     )
@@ -137676,9 +140274,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 void*,
                 void>)(
-                _slots[197] is not null and var loadedFnPtr
+                _slots[199] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[197] = nativeContext.LoadFunction(
+                    : _slots[199] = nativeContext.LoadFunction(
                         "vkCmdPushDescriptorSetWithTemplate",
                         "vulkan"
                     )
@@ -137773,9 +140371,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PushDescriptorSetWithTemplateInfo*, void>)(
-                _slots[198] is not null and var loadedFnPtr
+                _slots[200] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[198] = nativeContext.LoadFunction(
+                    : _slots[200] = nativeContext.LoadFunction(
                         "vkCmdPushDescriptorSetWithTemplate2",
                         "vulkan"
                     )
@@ -137856,9 +140454,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PushDescriptorSetWithTemplateInfo*, void>)(
-                _slots[199] is not null and var loadedFnPtr
+                _slots[201] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[199] = nativeContext.LoadFunction(
+                    : _slots[201] = nativeContext.LoadFunction(
                         "vkCmdPushDescriptorSetWithTemplate2KHR",
                         "vulkan"
                     )
@@ -137956,9 +140554,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 void*,
                 void>)(
-                _slots[200] is not null and var loadedFnPtr
+                _slots[202] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[200] = nativeContext.LoadFunction(
+                    : _slots[202] = nativeContext.LoadFunction(
                         "vkCmdPushDescriptorSetWithTemplateKHR",
                         "vulkan"
                     )
@@ -138088,9 +140686,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, EventHandle, PipelineStageFlags, void>)(
-                _slots[201] is not null and var loadedFnPtr
+                _slots[203] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[201] = nativeContext.LoadFunction("vkCmdResetEvent", "vulkan")
+                    : _slots[203] = nativeContext.LoadFunction("vkCmdResetEvent", "vulkan")
             )
         )(commandBuffer, @event, stageMask);
 
@@ -138146,9 +140744,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, EventHandle, PipelineStageFlags2, void>)(
-                _slots[202] is not null and var loadedFnPtr
+                _slots[204] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[202] = nativeContext.LoadFunction("vkCmdResetEvent2", "vulkan")
+                    : _slots[204] = nativeContext.LoadFunction("vkCmdResetEvent2", "vulkan")
             )
         )(commandBuffer, @event, stageMask);
 
@@ -138191,9 +140789,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, EventHandle, PipelineStageFlags2, void>)(
-                _slots[203] is not null and var loadedFnPtr
+                _slots[205] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[203] = nativeContext.LoadFunction("vkCmdResetEvent2KHR", "vulkan")
+                    : _slots[205] = nativeContext.LoadFunction("vkCmdResetEvent2KHR", "vulkan")
             )
         )(commandBuffer, @event, stageMask);
 
@@ -138251,9 +140849,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, QueryPoolHandle, uint, uint, void>)(
-                _slots[204] is not null and var loadedFnPtr
+                _slots[206] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[204] = nativeContext.LoadFunction("vkCmdResetQueryPool", "vulkan")
+                    : _slots[206] = nativeContext.LoadFunction("vkCmdResetQueryPool", "vulkan")
             )
         )(commandBuffer, queryPool, firstQuery, queryCount);
 
@@ -138331,9 +140929,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 ImageResolve*,
                 void>)(
-                _slots[205] is not null and var loadedFnPtr
+                _slots[207] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[205] = nativeContext.LoadFunction("vkCmdResolveImage", "vulkan")
+                    : _slots[207] = nativeContext.LoadFunction("vkCmdResolveImage", "vulkan")
             )
         )(commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, pRegions);
 
@@ -138543,9 +141141,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, ResolveImageInfo2*, void>)(
-                _slots[206] is not null and var loadedFnPtr
+                _slots[208] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[206] = nativeContext.LoadFunction("vkCmdResolveImage2", "vulkan")
+                    : _slots[208] = nativeContext.LoadFunction("vkCmdResolveImage2", "vulkan")
             )
         )(commandBuffer, pResolveImageInfo);
 
@@ -138611,9 +141209,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, ResolveImageInfo2*, void>)(
-                _slots[207] is not null and var loadedFnPtr
+                _slots[209] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[207] = nativeContext.LoadFunction("vkCmdResolveImage2KHR", "vulkan")
+                    : _slots[209] = nativeContext.LoadFunction("vkCmdResolveImage2KHR", "vulkan")
             )
         )(commandBuffer, pResolveImageInfo);
 
@@ -138688,9 +141286,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[208] is not null and var loadedFnPtr
+                _slots[210] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[208] = nativeContext.LoadFunction(
+                    : _slots[210] = nativeContext.LoadFunction(
                         "vkCmdSetAlphaToCoverageEnableEXT",
                         "vulkan"
                     )
@@ -138759,9 +141357,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetAlphaToOneEnableEXT(CommandBufferHandle commandBuffer, uint alphaToOneEnable) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[209] is not null and var loadedFnPtr
+                _slots[211] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[209] = nativeContext.LoadFunction(
+                    : _slots[211] = nativeContext.LoadFunction(
                         "vkCmdSetAlphaToOneEnableEXT",
                         "vulkan"
                     )
@@ -138833,9 +141431,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, ImageAspectFlags, void>)(
-                _slots[210] is not null and var loadedFnPtr
+                _slots[212] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[210] = nativeContext.LoadFunction(
+                    : _slots[212] = nativeContext.LoadFunction(
                         "vkCmdSetAttachmentFeedbackLoopEnableEXT",
                         "vulkan"
                     )
@@ -138880,9 +141478,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetBlendConstants(CommandBufferHandle commandBuffer, float* blendConstants) =>
         (
             (delegate* unmanaged<CommandBufferHandle, float*, void>)(
-                _slots[211] is not null and var loadedFnPtr
+                _slots[213] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[211] = nativeContext.LoadFunction("vkCmdSetBlendConstants", "vulkan")
+                    : _slots[213] = nativeContext.LoadFunction("vkCmdSetBlendConstants", "vulkan")
             )
         )(commandBuffer, blendConstants);
 
@@ -138975,9 +141573,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetCheckpointNV(CommandBufferHandle commandBuffer, void* pCheckpointMarker) =>
         (
             (delegate* unmanaged<CommandBufferHandle, void*, void>)(
-                _slots[212] is not null and var loadedFnPtr
+                _slots[214] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[212] = nativeContext.LoadFunction("vkCmdSetCheckpointNV", "vulkan")
+                    : _slots[214] = nativeContext.LoadFunction("vkCmdSetCheckpointNV", "vulkan")
             )
         )(commandBuffer, pCheckpointMarker);
 
@@ -139056,9 +141654,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 CoarseSampleOrderCustomNV*,
                 void>)(
-                _slots[213] is not null and var loadedFnPtr
+                _slots[215] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[213] = nativeContext.LoadFunction(
+                    : _slots[215] = nativeContext.LoadFunction(
                         "vkCmdSetCoarseSampleOrderNV",
                         "vulkan"
                     )
@@ -139202,9 +141800,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, ColorBlendAdvancedEXT*, void>)(
-                _slots[214] is not null and var loadedFnPtr
+                _slots[216] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[214] = nativeContext.LoadFunction(
+                    : _slots[216] = nativeContext.LoadFunction(
                         "vkCmdSetColorBlendAdvancedEXT",
                         "vulkan"
                     )
@@ -139353,9 +141951,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, uint*, void>)(
-                _slots[215] is not null and var loadedFnPtr
+                _slots[217] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[215] = nativeContext.LoadFunction(
+                    : _slots[217] = nativeContext.LoadFunction(
                         "vkCmdSetColorBlendEnableEXT",
                         "vulkan"
                     )
@@ -139498,9 +142096,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, ColorBlendEquationEXT*, void>)(
-                _slots[216] is not null and var loadedFnPtr
+                _slots[218] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[216] = nativeContext.LoadFunction(
+                    : _slots[218] = nativeContext.LoadFunction(
                         "vkCmdSetColorBlendEquationEXT",
                         "vulkan"
                     )
@@ -139647,9 +142245,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint*, void>)(
-                _slots[217] is not null and var loadedFnPtr
+                _slots[219] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[217] = nativeContext.LoadFunction(
+                    : _slots[219] = nativeContext.LoadFunction(
                         "vkCmdSetColorWriteEnableEXT",
                         "vulkan"
                     )
@@ -139768,9 +142366,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, ColorComponentFlags*, void>)(
-                _slots[218] is not null and var loadedFnPtr
+                _slots[220] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[218] = nativeContext.LoadFunction(
+                    : _slots[220] = nativeContext.LoadFunction(
                         "vkCmdSetColorWriteMaskEXT",
                         "vulkan"
                     )
@@ -139911,9 +142509,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, ComputeOccupancyPriorityParametersNV*, void>)(
-                _slots[219] is not null and var loadedFnPtr
+                _slots[221] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[219] = nativeContext.LoadFunction(
+                    : _slots[221] = nativeContext.LoadFunction(
                         "vkCmdSetComputeOccupancyPriorityNV",
                         "vulkan"
                     )
@@ -139992,9 +142590,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, ConservativeRasterizationModeEXT, void>)(
-                _slots[220] is not null and var loadedFnPtr
+                _slots[222] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[220] = nativeContext.LoadFunction(
+                    : _slots[222] = nativeContext.LoadFunction(
                         "vkCmdSetConservativeRasterizationModeEXT",
                         "vulkan"
                     )
@@ -140040,9 +142638,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CoverageModulationModeNV, void>)(
-                _slots[221] is not null and var loadedFnPtr
+                _slots[223] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[221] = nativeContext.LoadFunction(
+                    : _slots[223] = nativeContext.LoadFunction(
                         "vkCmdSetCoverageModulationModeNV",
                         "vulkan"
                     )
@@ -140084,9 +142682,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[222] is not null and var loadedFnPtr
+                _slots[224] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[222] = nativeContext.LoadFunction(
+                    : _slots[224] = nativeContext.LoadFunction(
                         "vkCmdSetCoverageModulationTableEnableNV",
                         "vulkan"
                     )
@@ -140175,9 +142773,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, float*, void>)(
-                _slots[223] is not null and var loadedFnPtr
+                _slots[225] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[223] = nativeContext.LoadFunction(
+                    : _slots[225] = nativeContext.LoadFunction(
                         "vkCmdSetCoverageModulationTableNV",
                         "vulkan"
                     )
@@ -140315,9 +142913,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CoverageReductionModeNV, void>)(
-                _slots[224] is not null and var loadedFnPtr
+                _slots[226] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[224] = nativeContext.LoadFunction(
+                    : _slots[226] = nativeContext.LoadFunction(
                         "vkCmdSetCoverageReductionModeNV",
                         "vulkan"
                     )
@@ -140359,9 +142957,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[225] is not null and var loadedFnPtr
+                _slots[227] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[225] = nativeContext.LoadFunction(
+                    : _slots[227] = nativeContext.LoadFunction(
                         "vkCmdSetCoverageToColorEnableNV",
                         "vulkan"
                     )
@@ -140437,9 +143035,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[226] is not null and var loadedFnPtr
+                _slots[228] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[226] = nativeContext.LoadFunction(
+                    : _slots[228] = nativeContext.LoadFunction(
                         "vkCmdSetCoverageToColorLocationNV",
                         "vulkan"
                     )
@@ -140474,9 +143072,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetCullMode(CommandBufferHandle commandBuffer, CullModeFlags cullMode) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CullModeFlags, void>)(
-                _slots[227] is not null and var loadedFnPtr
+                _slots[229] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[227] = nativeContext.LoadFunction("vkCmdSetCullMode", "vulkan")
+                    : _slots[229] = nativeContext.LoadFunction("vkCmdSetCullMode", "vulkan")
             )
         )(commandBuffer, cullMode);
 
@@ -140505,9 +143103,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetCullModeEXT(CommandBufferHandle commandBuffer, CullModeFlags cullMode) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CullModeFlags, void>)(
-                _slots[228] is not null and var loadedFnPtr
+                _slots[230] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[228] = nativeContext.LoadFunction("vkCmdSetCullModeEXT", "vulkan")
+                    : _slots[230] = nativeContext.LoadFunction("vkCmdSetCullModeEXT", "vulkan")
             )
         )(commandBuffer, cullMode);
 
@@ -140554,9 +143152,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, float, float, float, void>)(
-                _slots[229] is not null and var loadedFnPtr
+                _slots[231] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[229] = nativeContext.LoadFunction("vkCmdSetDepthBias", "vulkan")
+                    : _slots[231] = nativeContext.LoadFunction("vkCmdSetDepthBias", "vulkan")
             )
         )(commandBuffer, depthBiasConstantFactor, depthBiasClamp, depthBiasSlopeFactor);
 
@@ -140609,9 +143207,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DepthBiasInfoEXT*, void>)(
-                _slots[230] is not null and var loadedFnPtr
+                _slots[232] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[230] = nativeContext.LoadFunction("vkCmdSetDepthBias2EXT", "vulkan")
+                    : _slots[232] = nativeContext.LoadFunction("vkCmdSetDepthBias2EXT", "vulkan")
             )
         )(commandBuffer, pDepthBiasInfo);
 
@@ -140680,9 +143278,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetDepthBiasEnable(CommandBufferHandle commandBuffer, uint depthBiasEnable) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[231] is not null and var loadedFnPtr
+                _slots[233] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[231] = nativeContext.LoadFunction("vkCmdSetDepthBiasEnable", "vulkan")
+                    : _slots[233] = nativeContext.LoadFunction("vkCmdSetDepthBiasEnable", "vulkan")
             )
         )(commandBuffer, depthBiasEnable);
 
@@ -140739,9 +143337,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetDepthBiasEnableEXT(CommandBufferHandle commandBuffer, uint depthBiasEnable) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[232] is not null and var loadedFnPtr
+                _slots[234] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[232] = nativeContext.LoadFunction(
+                    : _slots[234] = nativeContext.LoadFunction(
                         "vkCmdSetDepthBiasEnableEXT",
                         "vulkan"
                     )
@@ -140822,9 +143420,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, float, float, void>)(
-                _slots[233] is not null and var loadedFnPtr
+                _slots[235] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[233] = nativeContext.LoadFunction("vkCmdSetDepthBounds", "vulkan")
+                    : _slots[235] = nativeContext.LoadFunction("vkCmdSetDepthBounds", "vulkan")
             )
         )(commandBuffer, minDepthBounds, maxDepthBounds);
 
@@ -140867,9 +143465,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[234] is not null and var loadedFnPtr
+                _slots[236] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[234] = nativeContext.LoadFunction(
+                    : _slots[236] = nativeContext.LoadFunction(
                         "vkCmdSetDepthBoundsTestEnable",
                         "vulkan"
                     )
@@ -140932,9 +143530,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[235] is not null and var loadedFnPtr
+                _slots[237] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[235] = nativeContext.LoadFunction(
+                    : _slots[237] = nativeContext.LoadFunction(
                         "vkCmdSetDepthBoundsTestEnableEXT",
                         "vulkan"
                     )
@@ -141003,9 +143601,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetDepthClampEnableEXT(CommandBufferHandle commandBuffer, uint depthClampEnable) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[236] is not null and var loadedFnPtr
+                _slots[238] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[236] = nativeContext.LoadFunction(
+                    : _slots[238] = nativeContext.LoadFunction(
                         "vkCmdSetDepthClampEnableEXT",
                         "vulkan"
                     )
@@ -141084,9 +143682,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DepthClampModeEXT,
                 DepthClampRangeEXT*,
                 void>)(
-                _slots[237] is not null and var loadedFnPtr
+                _slots[239] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[237] = nativeContext.LoadFunction(
+                    : _slots[239] = nativeContext.LoadFunction(
                         "vkCmdSetDepthClampRangeEXT",
                         "vulkan"
                     )
@@ -141175,9 +143773,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetDepthClipEnableEXT(CommandBufferHandle commandBuffer, uint depthClipEnable) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[238] is not null and var loadedFnPtr
+                _slots[240] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[238] = nativeContext.LoadFunction(
+                    : _slots[240] = nativeContext.LoadFunction(
                         "vkCmdSetDepthClipEnableEXT",
                         "vulkan"
                     )
@@ -141253,9 +143851,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[239] is not null and var loadedFnPtr
+                _slots[241] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[239] = nativeContext.LoadFunction(
+                    : _slots[241] = nativeContext.LoadFunction(
                         "vkCmdSetDepthClipNegativeOneToOneEXT",
                         "vulkan"
                     )
@@ -141324,9 +143922,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetDepthCompareOp(CommandBufferHandle commandBuffer, CompareOp depthCompareOp) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CompareOp, void>)(
-                _slots[240] is not null and var loadedFnPtr
+                _slots[242] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[240] = nativeContext.LoadFunction("vkCmdSetDepthCompareOp", "vulkan")
+                    : _slots[242] = nativeContext.LoadFunction("vkCmdSetDepthCompareOp", "vulkan")
             )
         )(commandBuffer, depthCompareOp);
 
@@ -141357,9 +143955,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetDepthCompareOpEXT(CommandBufferHandle commandBuffer, CompareOp depthCompareOp) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CompareOp, void>)(
-                _slots[241] is not null and var loadedFnPtr
+                _slots[243] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[241] = nativeContext.LoadFunction(
+                    : _slots[243] = nativeContext.LoadFunction(
                         "vkCmdSetDepthCompareOpEXT",
                         "vulkan"
                     )
@@ -141393,9 +143991,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetDepthTestEnable(CommandBufferHandle commandBuffer, uint depthTestEnable) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[242] is not null and var loadedFnPtr
+                _slots[244] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[242] = nativeContext.LoadFunction("vkCmdSetDepthTestEnable", "vulkan")
+                    : _slots[244] = nativeContext.LoadFunction("vkCmdSetDepthTestEnable", "vulkan")
             )
         )(commandBuffer, depthTestEnable);
 
@@ -141452,9 +144050,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetDepthTestEnableEXT(CommandBufferHandle commandBuffer, uint depthTestEnable) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[243] is not null and var loadedFnPtr
+                _slots[245] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[243] = nativeContext.LoadFunction(
+                    : _slots[245] = nativeContext.LoadFunction(
                         "vkCmdSetDepthTestEnableEXT",
                         "vulkan"
                     )
@@ -141520,9 +144118,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetDepthWriteEnable(CommandBufferHandle commandBuffer, uint depthWriteEnable) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[244] is not null and var loadedFnPtr
+                _slots[246] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[244] = nativeContext.LoadFunction("vkCmdSetDepthWriteEnable", "vulkan")
+                    : _slots[246] = nativeContext.LoadFunction("vkCmdSetDepthWriteEnable", "vulkan")
             )
         )(commandBuffer, depthWriteEnable);
 
@@ -141579,9 +144177,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetDepthWriteEnableEXT(CommandBufferHandle commandBuffer, uint depthWriteEnable) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[245] is not null and var loadedFnPtr
+                _slots[247] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[245] = nativeContext.LoadFunction(
+                    : _slots[247] = nativeContext.LoadFunction(
                         "vkCmdSetDepthWriteEnableEXT",
                         "vulkan"
                     )
@@ -141651,9 +144249,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, SetDescriptorBufferOffsetsInfoEXT*, void>)(
-                _slots[246] is not null and var loadedFnPtr
+                _slots[248] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[246] = nativeContext.LoadFunction(
+                    : _slots[248] = nativeContext.LoadFunction(
                         "vkCmdSetDescriptorBufferOffsets2EXT",
                         "vulkan"
                     )
@@ -141754,9 +144352,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 ulong*,
                 void>)(
-                _slots[247] is not null and var loadedFnPtr
+                _slots[249] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[247] = nativeContext.LoadFunction(
+                    : _slots[249] = nativeContext.LoadFunction(
                         "vkCmdSetDescriptorBufferOffsetsEXT",
                         "vulkan"
                     )
@@ -141893,9 +144491,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetDeviceMask(CommandBufferHandle commandBuffer, uint deviceMask) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[248] is not null and var loadedFnPtr
+                _slots[250] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[248] = nativeContext.LoadFunction("vkCmdSetDeviceMask", "vulkan")
+                    : _slots[250] = nativeContext.LoadFunction("vkCmdSetDeviceMask", "vulkan")
             )
         )(commandBuffer, deviceMask);
 
@@ -141938,9 +144536,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetDeviceMaskKHR(CommandBufferHandle commandBuffer, uint deviceMask) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[249] is not null and var loadedFnPtr
+                _slots[251] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[249] = nativeContext.LoadFunction("vkCmdSetDeviceMaskKHR", "vulkan")
+                    : _slots[251] = nativeContext.LoadFunction("vkCmdSetDeviceMaskKHR", "vulkan")
             )
         )(commandBuffer, deviceMask);
 
@@ -141972,9 +144570,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[250] is not null and var loadedFnPtr
+                _slots[252] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[250] = nativeContext.LoadFunction(
+                    : _slots[252] = nativeContext.LoadFunction(
                         "vkCmdSetDiscardRectangleEnableEXT",
                         "vulkan"
                     )
@@ -142048,9 +144646,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, Rect2D*, void>)(
-                _slots[251] is not null and var loadedFnPtr
+                _slots[253] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[251] = nativeContext.LoadFunction(
+                    : _slots[253] = nativeContext.LoadFunction(
                         "vkCmdSetDiscardRectangleEXT",
                         "vulkan"
                     )
@@ -142196,9 +144794,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DiscardRectangleModeEXT, void>)(
-                _slots[252] is not null and var loadedFnPtr
+                _slots[254] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[252] = nativeContext.LoadFunction(
+                    : _slots[254] = nativeContext.LoadFunction(
                         "vkCmdSetDiscardRectangleModeEXT",
                         "vulkan"
                     )
@@ -142235,9 +144833,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, DispatchParametersARM*, void>)(
-                _slots[253] is not null and var loadedFnPtr
+                _slots[255] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[253] = nativeContext.LoadFunction(
+                    : _slots[255] = nativeContext.LoadFunction(
                         "vkCmdSetDispatchParametersARM",
                         "vulkan"
                     )
@@ -142320,9 +144918,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, EventHandle, PipelineStageFlags, void>)(
-                _slots[254] is not null and var loadedFnPtr
+                _slots[256] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[254] = nativeContext.LoadFunction("vkCmdSetEvent", "vulkan")
+                    : _slots[256] = nativeContext.LoadFunction("vkCmdSetEvent", "vulkan")
             )
         )(commandBuffer, @event, stageMask);
 
@@ -142378,9 +144976,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, EventHandle, DependencyInfo*, void>)(
-                _slots[255] is not null and var loadedFnPtr
+                _slots[257] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[255] = nativeContext.LoadFunction("vkCmdSetEvent2", "vulkan")
+                    : _slots[257] = nativeContext.LoadFunction("vkCmdSetEvent2", "vulkan")
             )
         )(commandBuffer, @event, pDependencyInfo);
 
@@ -142471,9 +145069,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, EventHandle, DependencyInfo*, void>)(
-                _slots[256] is not null and var loadedFnPtr
+                _slots[258] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[256] = nativeContext.LoadFunction("vkCmdSetEvent2KHR", "vulkan")
+                    : _slots[258] = nativeContext.LoadFunction("vkCmdSetEvent2KHR", "vulkan")
             )
         )(commandBuffer, @event, pDependencyInfo);
 
@@ -142553,9 +145151,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, uint*, void>)(
-                _slots[257] is not null and var loadedFnPtr
+                _slots[259] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[257] = nativeContext.LoadFunction(
+                    : _slots[259] = nativeContext.LoadFunction(
                         "vkCmdSetExclusiveScissorEnableNV",
                         "vulkan"
                     )
@@ -142703,9 +145301,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, Rect2D*, void>)(
-                _slots[258] is not null and var loadedFnPtr
+                _slots[260] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[258] = nativeContext.LoadFunction(
+                    : _slots[260] = nativeContext.LoadFunction(
                         "vkCmdSetExclusiveScissorNV",
                         "vulkan"
                     )
@@ -142852,9 +145450,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, float, void>)(
-                _slots[259] is not null and var loadedFnPtr
+                _slots[261] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[259] = nativeContext.LoadFunction(
+                    : _slots[261] = nativeContext.LoadFunction(
                         "vkCmdSetExtraPrimitiveOverestimationSizeEXT",
                         "vulkan"
                     )
@@ -142901,9 +145499,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 FragmentShadingRateNV,
                 FragmentShadingRateCombinerOpKHR*,
                 void>)(
-                _slots[260] is not null and var loadedFnPtr
+                _slots[262] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[260] = nativeContext.LoadFunction(
+                    : _slots[262] = nativeContext.LoadFunction(
                         "vkCmdSetFragmentShadingRateEnumNV",
                         "vulkan"
                     )
@@ -142985,9 +145583,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 Extent2D*,
                 FragmentShadingRateCombinerOpKHR*,
                 void>)(
-                _slots[261] is not null and var loadedFnPtr
+                _slots[263] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[261] = nativeContext.LoadFunction(
+                    : _slots[263] = nativeContext.LoadFunction(
                         "vkCmdSetFragmentShadingRateKHR",
                         "vulkan"
                     )
@@ -143070,9 +145668,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetFrontFace(CommandBufferHandle commandBuffer, FrontFace frontFace) =>
         (
             (delegate* unmanaged<CommandBufferHandle, FrontFace, void>)(
-                _slots[262] is not null and var loadedFnPtr
+                _slots[264] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[262] = nativeContext.LoadFunction("vkCmdSetFrontFace", "vulkan")
+                    : _slots[264] = nativeContext.LoadFunction("vkCmdSetFrontFace", "vulkan")
             )
         )(commandBuffer, frontFace);
 
@@ -143101,9 +145699,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetFrontFaceEXT(CommandBufferHandle commandBuffer, FrontFace frontFace) =>
         (
             (delegate* unmanaged<CommandBufferHandle, FrontFace, void>)(
-                _slots[263] is not null and var loadedFnPtr
+                _slots[265] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[263] = nativeContext.LoadFunction("vkCmdSetFrontFaceEXT", "vulkan")
+                    : _slots[265] = nativeContext.LoadFunction("vkCmdSetFrontFaceEXT", "vulkan")
             )
         )(commandBuffer, frontFace);
 
@@ -143142,9 +145740,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, LineRasterizationMode, void>)(
-                _slots[264] is not null and var loadedFnPtr
+                _slots[266] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[264] = nativeContext.LoadFunction(
+                    : _slots[266] = nativeContext.LoadFunction(
                         "vkCmdSetLineRasterizationModeEXT",
                         "vulkan"
                     )
@@ -143186,9 +145784,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, ushort, void>)(
-                _slots[265] is not null and var loadedFnPtr
+                _slots[267] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[265] = nativeContext.LoadFunction("vkCmdSetLineStipple", "vulkan")
+                    : _slots[267] = nativeContext.LoadFunction("vkCmdSetLineStipple", "vulkan")
             )
         )(commandBuffer, lineStippleFactor, lineStipplePattern);
 
@@ -143227,9 +145825,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[266] is not null and var loadedFnPtr
+                _slots[268] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[266] = nativeContext.LoadFunction(
+                    : _slots[268] = nativeContext.LoadFunction(
                         "vkCmdSetLineStippleEnableEXT",
                         "vulkan"
                     )
@@ -143314,9 +145912,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, ushort, void>)(
-                _slots[267] is not null and var loadedFnPtr
+                _slots[269] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[267] = nativeContext.LoadFunction("vkCmdSetLineStippleEXT", "vulkan")
+                    : _slots[269] = nativeContext.LoadFunction("vkCmdSetLineStippleEXT", "vulkan")
             )
         )(commandBuffer, lineStippleFactor, lineStipplePattern);
 
@@ -143355,9 +145953,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, ushort, void>)(
-                _slots[268] is not null and var loadedFnPtr
+                _slots[270] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[268] = nativeContext.LoadFunction("vkCmdSetLineStippleKHR", "vulkan")
+                    : _slots[270] = nativeContext.LoadFunction("vkCmdSetLineStippleKHR", "vulkan")
             )
         )(commandBuffer, lineStippleFactor, lineStipplePattern);
 
@@ -143400,9 +145998,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetLineWidth(CommandBufferHandle commandBuffer, float lineWidth) =>
         (
             (delegate* unmanaged<CommandBufferHandle, float, void>)(
-                _slots[269] is not null and var loadedFnPtr
+                _slots[271] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[269] = nativeContext.LoadFunction("vkCmdSetLineWidth", "vulkan")
+                    : _slots[271] = nativeContext.LoadFunction("vkCmdSetLineWidth", "vulkan")
             )
         )(commandBuffer, lineWidth);
 
@@ -143442,9 +146040,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetLogicOpEnableEXT(CommandBufferHandle commandBuffer, uint logicOpEnable) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[270] is not null and var loadedFnPtr
+                _slots[272] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[270] = nativeContext.LoadFunction("vkCmdSetLogicOpEnableEXT", "vulkan")
+                    : _slots[272] = nativeContext.LoadFunction("vkCmdSetLogicOpEnableEXT", "vulkan")
             )
         )(commandBuffer, logicOpEnable);
 
@@ -143510,9 +146108,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetLogicOpEXT(CommandBufferHandle commandBuffer, LogicOp logicOp) =>
         (
             (delegate* unmanaged<CommandBufferHandle, LogicOp, void>)(
-                _slots[271] is not null and var loadedFnPtr
+                _slots[273] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[271] = nativeContext.LoadFunction("vkCmdSetLogicOpEXT", "vulkan")
+                    : _slots[273] = nativeContext.LoadFunction("vkCmdSetLogicOpEXT", "vulkan")
             )
         )(commandBuffer, logicOp);
 
@@ -143547,9 +146145,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[272] is not null and var loadedFnPtr
+                _slots[274] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[272] = nativeContext.LoadFunction(
+                    : _slots[274] = nativeContext.LoadFunction(
                         "vkCmdSetPatchControlPointsEXT",
                         "vulkan"
                     )
@@ -143582,9 +146180,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PerformanceMarkerInfoINTEL*, Result>)(
-                _slots[273] is not null and var loadedFnPtr
+                _slots[275] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[273] = nativeContext.LoadFunction(
+                    : _slots[275] = nativeContext.LoadFunction(
                         "vkCmdSetPerformanceMarkerINTEL",
                         "vulkan"
                     )
@@ -143635,9 +146233,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PerformanceOverrideInfoINTEL*, Result>)(
-                _slots[274] is not null and var loadedFnPtr
+                _slots[276] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[274] = nativeContext.LoadFunction(
+                    : _slots[276] = nativeContext.LoadFunction(
                         "vkCmdSetPerformanceOverrideINTEL",
                         "vulkan"
                     )
@@ -143688,9 +146286,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PerformanceStreamMarkerInfoINTEL*, Result>)(
-                _slots[275] is not null and var loadedFnPtr
+                _slots[277] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[275] = nativeContext.LoadFunction(
+                    : _slots[277] = nativeContext.LoadFunction(
                         "vkCmdSetPerformanceStreamMarkerINTEL",
                         "vulkan"
                     )
@@ -143745,9 +146343,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetPolygonModeEXT(CommandBufferHandle commandBuffer, PolygonMode polygonMode) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PolygonMode, void>)(
-                _slots[276] is not null and var loadedFnPtr
+                _slots[278] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[276] = nativeContext.LoadFunction("vkCmdSetPolygonModeEXT", "vulkan")
+                    : _slots[278] = nativeContext.LoadFunction("vkCmdSetPolygonModeEXT", "vulkan")
             )
         )(commandBuffer, polygonMode);
 
@@ -143781,9 +146379,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[277] is not null and var loadedFnPtr
+                _slots[279] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[277] = nativeContext.LoadFunction(
+                    : _slots[279] = nativeContext.LoadFunction(
                         "vkCmdSetPrimitiveRestartEnable",
                         "vulkan"
                     )
@@ -143846,9 +146444,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[278] is not null and var loadedFnPtr
+                _slots[280] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[278] = nativeContext.LoadFunction(
+                    : _slots[280] = nativeContext.LoadFunction(
                         "vkCmdSetPrimitiveRestartEnableEXT",
                         "vulkan"
                     )
@@ -143920,9 +146518,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[279] is not null and var loadedFnPtr
+                _slots[281] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[279] = nativeContext.LoadFunction(
+                    : _slots[281] = nativeContext.LoadFunction(
                         "vkCmdSetPrimitiveRestartIndexEXT",
                         "vulkan"
                     )
@@ -143959,9 +146557,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PrimitiveTopology, void>)(
-                _slots[280] is not null and var loadedFnPtr
+                _slots[282] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[280] = nativeContext.LoadFunction(
+                    : _slots[282] = nativeContext.LoadFunction(
                         "vkCmdSetPrimitiveTopology",
                         "vulkan"
                     )
@@ -143998,9 +146596,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PrimitiveTopology, void>)(
-                _slots[281] is not null and var loadedFnPtr
+                _slots[283] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[281] = nativeContext.LoadFunction(
+                    : _slots[283] = nativeContext.LoadFunction(
                         "vkCmdSetPrimitiveTopologyEXT",
                         "vulkan"
                     )
@@ -144041,9 +146639,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, ProvokingVertexModeEXT, void>)(
-                _slots[282] is not null and var loadedFnPtr
+                _slots[284] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[282] = nativeContext.LoadFunction(
+                    : _slots[284] = nativeContext.LoadFunction(
                         "vkCmdSetProvokingVertexModeEXT",
                         "vulkan"
                     )
@@ -144084,9 +146682,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, SampleCountFlags, void>)(
-                _slots[283] is not null and var loadedFnPtr
+                _slots[285] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[283] = nativeContext.LoadFunction(
+                    : _slots[285] = nativeContext.LoadFunction(
                         "vkCmdSetRasterizationSamplesEXT",
                         "vulkan"
                     )
@@ -144127,9 +146725,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[284] is not null and var loadedFnPtr
+                _slots[286] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[284] = nativeContext.LoadFunction(
+                    : _slots[286] = nativeContext.LoadFunction(
                         "vkCmdSetRasterizationStreamEXT",
                         "vulkan"
                     )
@@ -144167,9 +146765,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[285] is not null and var loadedFnPtr
+                _slots[287] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[285] = nativeContext.LoadFunction(
+                    : _slots[287] = nativeContext.LoadFunction(
                         "vkCmdSetRasterizerDiscardEnable",
                         "vulkan"
                     )
@@ -144232,9 +146830,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[286] is not null and var loadedFnPtr
+                _slots[288] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[286] = nativeContext.LoadFunction(
+                    : _slots[288] = nativeContext.LoadFunction(
                         "vkCmdSetRasterizerDiscardEnableEXT",
                         "vulkan"
                     )
@@ -144306,9 +146904,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[287] is not null and var loadedFnPtr
+                _slots[289] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[287] = nativeContext.LoadFunction(
+                    : _slots[289] = nativeContext.LoadFunction(
                         "vkCmdSetRayTracingPipelineStackSizeKHR",
                         "vulkan"
                     )
@@ -144345,9 +146943,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, RenderingAttachmentLocationInfo*, void>)(
-                _slots[288] is not null and var loadedFnPtr
+                _slots[290] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[288] = nativeContext.LoadFunction(
+                    : _slots[290] = nativeContext.LoadFunction(
                         "vkCmdSetRenderingAttachmentLocations",
                         "vulkan"
                     )
@@ -144416,9 +147014,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, RenderingAttachmentLocationInfo*, void>)(
-                _slots[289] is not null and var loadedFnPtr
+                _slots[291] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[289] = nativeContext.LoadFunction(
+                    : _slots[291] = nativeContext.LoadFunction(
                         "vkCmdSetRenderingAttachmentLocationsKHR",
                         "vulkan"
                     )
@@ -144493,9 +147091,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, RenderingInputAttachmentIndexInfo*, void>)(
-                _slots[290] is not null and var loadedFnPtr
+                _slots[292] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[290] = nativeContext.LoadFunction(
+                    : _slots[292] = nativeContext.LoadFunction(
                         "vkCmdSetRenderingInputAttachmentIndices",
                         "vulkan"
                     )
@@ -144570,9 +147168,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, RenderingInputAttachmentIndexInfo*, void>)(
-                _slots[291] is not null and var loadedFnPtr
+                _slots[293] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[291] = nativeContext.LoadFunction(
+                    : _slots[293] = nativeContext.LoadFunction(
                         "vkCmdSetRenderingInputAttachmentIndicesKHR",
                         "vulkan"
                     )
@@ -144665,9 +147263,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[292] is not null and var loadedFnPtr
+                _slots[294] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[292] = nativeContext.LoadFunction(
+                    : _slots[294] = nativeContext.LoadFunction(
                         "vkCmdSetRepresentativeFragmentTestEnableNV",
                         "vulkan"
                     )
@@ -144755,9 +147353,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[293] is not null and var loadedFnPtr
+                _slots[295] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[293] = nativeContext.LoadFunction(
+                    : _slots[295] = nativeContext.LoadFunction(
                         "vkCmdSetSampleLocationsEnableEXT",
                         "vulkan"
                     )
@@ -144832,9 +147430,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, SampleLocationsInfoEXT*, void>)(
-                _slots[294] is not null and var loadedFnPtr
+                _slots[296] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[294] = nativeContext.LoadFunction(
+                    : _slots[296] = nativeContext.LoadFunction(
                         "vkCmdSetSampleLocationsEXT",
                         "vulkan"
                     )
@@ -144913,9 +147511,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, SampleCountFlags, uint*, void>)(
-                _slots[295] is not null and var loadedFnPtr
+                _slots[297] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[295] = nativeContext.LoadFunction("vkCmdSetSampleMaskEXT", "vulkan")
+                    : _slots[297] = nativeContext.LoadFunction("vkCmdSetSampleMaskEXT", "vulkan")
             )
         )(commandBuffer, samples, pSampleMask);
 
@@ -145003,9 +147601,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, Rect2D*, void>)(
-                _slots[296] is not null and var loadedFnPtr
+                _slots[298] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[296] = nativeContext.LoadFunction("vkCmdSetScissor", "vulkan")
+                    : _slots[298] = nativeContext.LoadFunction("vkCmdSetScissor", "vulkan")
             )
         )(commandBuffer, firstScissor, scissorCount, pScissors);
 
@@ -145158,9 +147756,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, Rect2D*, void>)(
-                _slots[297] is not null and var loadedFnPtr
+                _slots[299] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[297] = nativeContext.LoadFunction("vkCmdSetScissorWithCount", "vulkan")
+                    : _slots[299] = nativeContext.LoadFunction("vkCmdSetScissorWithCount", "vulkan")
             )
         )(commandBuffer, scissorCount, pScissors);
 
@@ -145254,9 +147852,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, Rect2D*, void>)(
-                _slots[298] is not null and var loadedFnPtr
+                _slots[300] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[298] = nativeContext.LoadFunction(
+                    : _slots[300] = nativeContext.LoadFunction(
                         "vkCmdSetScissorWithCountEXT",
                         "vulkan"
                     )
@@ -145368,9 +147966,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[299] is not null and var loadedFnPtr
+                _slots[301] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[299] = nativeContext.LoadFunction(
+                    : _slots[301] = nativeContext.LoadFunction(
                         "vkCmdSetShadingRateImageEnableNV",
                         "vulkan"
                     )
@@ -145454,9 +148052,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, StencilFaceFlags, uint, void>)(
-                _slots[300] is not null and var loadedFnPtr
+                _slots[302] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[300] = nativeContext.LoadFunction(
+                    : _slots[302] = nativeContext.LoadFunction(
                         "vkCmdSetStencilCompareMask",
                         "vulkan"
                     )
@@ -145513,9 +148111,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 StencilOp,
                 CompareOp,
                 void>)(
-                _slots[301] is not null and var loadedFnPtr
+                _slots[303] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[301] = nativeContext.LoadFunction("vkCmdSetStencilOp", "vulkan")
+                    : _slots[303] = nativeContext.LoadFunction("vkCmdSetStencilOp", "vulkan")
             )
         )(commandBuffer, faceMask, failOp, passOp, depthFailOp, compareOp);
 
@@ -145565,9 +148163,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 StencilOp,
                 CompareOp,
                 void>)(
-                _slots[302] is not null and var loadedFnPtr
+                _slots[304] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[302] = nativeContext.LoadFunction("vkCmdSetStencilOpEXT", "vulkan")
+                    : _slots[304] = nativeContext.LoadFunction("vkCmdSetStencilOpEXT", "vulkan")
             )
         )(commandBuffer, faceMask, failOp, passOp, depthFailOp, compareOp);
 
@@ -145625,9 +148223,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, StencilFaceFlags, uint, void>)(
-                _slots[303] is not null and var loadedFnPtr
+                _slots[305] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[303] = nativeContext.LoadFunction("vkCmdSetStencilReference", "vulkan")
+                    : _slots[305] = nativeContext.LoadFunction("vkCmdSetStencilReference", "vulkan")
             )
         )(commandBuffer, faceMask, reference);
 
@@ -145667,9 +148265,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSetStencilTestEnable(CommandBufferHandle commandBuffer, uint stencilTestEnable) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[304] is not null and var loadedFnPtr
+                _slots[306] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[304] = nativeContext.LoadFunction(
+                    : _slots[306] = nativeContext.LoadFunction(
                         "vkCmdSetStencilTestEnable",
                         "vulkan"
                     )
@@ -145732,9 +148330,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[305] is not null and var loadedFnPtr
+                _slots[307] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[305] = nativeContext.LoadFunction(
+                    : _slots[307] = nativeContext.LoadFunction(
                         "vkCmdSetStencilTestEnableEXT",
                         "vulkan"
                     )
@@ -145815,9 +148413,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, StencilFaceFlags, uint, void>)(
-                _slots[306] is not null and var loadedFnPtr
+                _slots[308] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[306] = nativeContext.LoadFunction("vkCmdSetStencilWriteMask", "vulkan")
+                    : _slots[308] = nativeContext.LoadFunction("vkCmdSetStencilWriteMask", "vulkan")
             )
         )(commandBuffer, faceMask, writeMask);
 
@@ -145866,9 +148464,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, TessellationDomainOrigin, void>)(
-                _slots[307] is not null and var loadedFnPtr
+                _slots[309] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[307] = nativeContext.LoadFunction(
+                    : _slots[309] = nativeContext.LoadFunction(
                         "vkCmdSetTessellationDomainOriginEXT",
                         "vulkan"
                     )
@@ -145920,9 +148518,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 VertexInputAttributeDescription2EXT*,
                 void>)(
-                _slots[308] is not null and var loadedFnPtr
+                _slots[310] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[308] = nativeContext.LoadFunction("vkCmdSetVertexInputEXT", "vulkan")
+                    : _slots[310] = nativeContext.LoadFunction("vkCmdSetVertexInputEXT", "vulkan")
             )
         )(
             commandBuffer,
@@ -146049,9 +148647,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, Viewport*, void>)(
-                _slots[309] is not null and var loadedFnPtr
+                _slots[311] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[309] = nativeContext.LoadFunction("vkCmdSetViewport", "vulkan")
+                    : _slots[311] = nativeContext.LoadFunction("vkCmdSetViewport", "vulkan")
             )
         )(commandBuffer, firstViewport, viewportCount, pViewports);
 
@@ -146213,9 +148811,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, ShadingRatePaletteNV*, void>)(
-                _slots[310] is not null and var loadedFnPtr
+                _slots[312] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[310] = nativeContext.LoadFunction(
+                    : _slots[312] = nativeContext.LoadFunction(
                         "vkCmdSetViewportShadingRatePaletteNV",
                         "vulkan"
                     )
@@ -146364,9 +148962,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, ViewportSwizzleNV*, void>)(
-                _slots[311] is not null and var loadedFnPtr
+                _slots[313] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[311] = nativeContext.LoadFunction(
+                    : _slots[313] = nativeContext.LoadFunction(
                         "vkCmdSetViewportSwizzleNV",
                         "vulkan"
                     )
@@ -146510,9 +149108,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, Viewport*, void>)(
-                _slots[312] is not null and var loadedFnPtr
+                _slots[314] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[312] = nativeContext.LoadFunction(
+                    : _slots[314] = nativeContext.LoadFunction(
                         "vkCmdSetViewportWithCount",
                         "vulkan"
                     )
@@ -146609,9 +149207,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, Viewport*, void>)(
-                _slots[313] is not null and var loadedFnPtr
+                _slots[315] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[313] = nativeContext.LoadFunction(
+                    : _slots[315] = nativeContext.LoadFunction(
                         "vkCmdSetViewportWithCountEXT",
                         "vulkan"
                     )
@@ -146723,9 +149321,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, void>)(
-                _slots[314] is not null and var loadedFnPtr
+                _slots[316] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[314] = nativeContext.LoadFunction(
+                    : _slots[316] = nativeContext.LoadFunction(
                         "vkCmdSetViewportWScalingEnableNV",
                         "vulkan"
                     )
@@ -146795,9 +149393,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, uint, ViewportWScalingNV*, void>)(
-                _slots[315] is not null and var loadedFnPtr
+                _slots[317] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[315] = nativeContext.LoadFunction(
+                    : _slots[317] = nativeContext.LoadFunction(
                         "vkCmdSetViewportWScalingNV",
                         "vulkan"
                     )
@@ -146901,9 +149499,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.CmdSubpassShadingHUAWEI(CommandBufferHandle commandBuffer) =>
         (
             (delegate* unmanaged<CommandBufferHandle, void>)(
-                _slots[316] is not null and var loadedFnPtr
+                _slots[318] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[316] = nativeContext.LoadFunction(
+                    : _slots[318] = nativeContext.LoadFunction(
                         "vkCmdSubpassShadingHUAWEI",
                         "vulkan"
                     )
@@ -146940,9 +149538,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, ulong, void>)(
-                _slots[317] is not null and var loadedFnPtr
+                _slots[319] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[317] = nativeContext.LoadFunction(
+                    : _slots[319] = nativeContext.LoadFunction(
                         "vkCmdTraceRaysIndirect2KHR",
                         "vulkan"
                     )
@@ -146991,9 +149589,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 StridedDeviceAddressRegionKHR*,
                 ulong,
                 void>)(
-                _slots[318] is not null and var loadedFnPtr
+                _slots[320] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[318] = nativeContext.LoadFunction(
+                    : _slots[320] = nativeContext.LoadFunction(
                         "vkCmdTraceRaysIndirectKHR",
                         "vulkan"
                     )
@@ -147139,9 +149737,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint,
                 void>)(
-                _slots[319] is not null and var loadedFnPtr
+                _slots[321] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[319] = nativeContext.LoadFunction("vkCmdTraceRaysKHR", "vulkan")
+                    : _slots[321] = nativeContext.LoadFunction("vkCmdTraceRaysKHR", "vulkan")
             )
         )(
             commandBuffer,
@@ -147312,9 +149910,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint,
                 void>)(
-                _slots[320] is not null and var loadedFnPtr
+                _slots[322] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[320] = nativeContext.LoadFunction("vkCmdTraceRaysNV", "vulkan")
+                    : _slots[322] = nativeContext.LoadFunction("vkCmdTraceRaysNV", "vulkan")
             )
         )(
             commandBuffer,
@@ -147418,9 +150016,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, BufferHandle, ulong, ulong, void*, void>)(
-                _slots[321] is not null and var loadedFnPtr
+                _slots[323] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[321] = nativeContext.LoadFunction("vkCmdUpdateBuffer", "vulkan")
+                    : _slots[323] = nativeContext.LoadFunction("vkCmdUpdateBuffer", "vulkan")
             )
         )(commandBuffer, dstBuffer, dstOffset, dataSize, pData);
 
@@ -147569,9 +150167,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ulong,
                 void*,
                 void>)(
-                _slots[322] is not null and var loadedFnPtr
+                _slots[324] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[322] = nativeContext.LoadFunction("vkCmdUpdateMemoryKHR", "vulkan")
+                    : _slots[324] = nativeContext.LoadFunction("vkCmdUpdateMemoryKHR", "vulkan")
             )
         )(commandBuffer, pDstRange, dstFlags, dataSize, pData);
 
@@ -147666,9 +150264,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, PipelineBindPoint, PipelineHandle, void>)(
-                _slots[323] is not null and var loadedFnPtr
+                _slots[325] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[323] = nativeContext.LoadFunction(
+                    : _slots[325] = nativeContext.LoadFunction(
                         "vkCmdUpdatePipelineIndirectBufferNV",
                         "vulkan"
                     )
@@ -147740,9 +150338,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 ImageMemoryBarrier*,
                 void>)(
-                _slots[324] is not null and var loadedFnPtr
+                _slots[326] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[324] = nativeContext.LoadFunction("vkCmdWaitEvents", "vulkan")
+                    : _slots[326] = nativeContext.LoadFunction("vkCmdWaitEvents", "vulkan")
             )
         )(
             commandBuffer,
@@ -147942,9 +150540,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, EventHandle*, DependencyInfo*, void>)(
-                _slots[325] is not null and var loadedFnPtr
+                _slots[327] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[325] = nativeContext.LoadFunction("vkCmdWaitEvents2", "vulkan")
+                    : _slots[327] = nativeContext.LoadFunction("vkCmdWaitEvents2", "vulkan")
             )
         )(commandBuffer, eventCount, pEvents, pDependencyInfos);
 
@@ -148045,9 +150643,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, uint, EventHandle*, DependencyInfo*, void>)(
-                _slots[326] is not null and var loadedFnPtr
+                _slots[328] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[326] = nativeContext.LoadFunction("vkCmdWaitEvents2KHR", "vulkan")
+                    : _slots[328] = nativeContext.LoadFunction("vkCmdWaitEvents2KHR", "vulkan")
             )
         )(commandBuffer, eventCount, pEvents, pDependencyInfos);
 
@@ -148145,9 +150743,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 QueryPoolHandle,
                 uint,
                 void>)(
-                _slots[327] is not null and var loadedFnPtr
+                _slots[329] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[327] = nativeContext.LoadFunction(
+                    : _slots[329] = nativeContext.LoadFunction(
                         "vkCmdWriteAccelerationStructuresPropertiesKHR",
                         "vulkan"
                     )
@@ -148280,9 +150878,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 QueryPoolHandle,
                 uint,
                 void>)(
-                _slots[328] is not null and var loadedFnPtr
+                _slots[330] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[328] = nativeContext.LoadFunction(
+                    : _slots[330] = nativeContext.LoadFunction(
                         "vkCmdWriteAccelerationStructuresPropertiesNV",
                         "vulkan"
                     )
@@ -148515,9 +151113,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ulong,
                 uint,
                 void>)(
-                _slots[329] is not null and var loadedFnPtr
+                _slots[331] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[329] = nativeContext.LoadFunction(
+                    : _slots[331] = nativeContext.LoadFunction(
                         "vkCmdWriteBufferMarker2AMD",
                         "vulkan"
                     )
@@ -148558,9 +151156,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ulong,
                 uint,
                 void>)(
-                _slots[330] is not null and var loadedFnPtr
+                _slots[332] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[330] = nativeContext.LoadFunction(
+                    : _slots[332] = nativeContext.LoadFunction(
                         "vkCmdWriteBufferMarkerAMD",
                         "vulkan"
                     )
@@ -148606,9 +151204,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, MemoryMarkerInfoAMD*, void>)(
-                _slots[331] is not null and var loadedFnPtr
+                _slots[333] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[331] = nativeContext.LoadFunction(
+                    : _slots[333] = nativeContext.LoadFunction(
                         "vkCmdWriteMarkerToMemoryAMD",
                         "vulkan"
                     )
@@ -148706,9 +151304,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 QueryPoolHandle,
                 uint,
                 void>)(
-                _slots[332] is not null and var loadedFnPtr
+                _slots[334] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[332] = nativeContext.LoadFunction(
+                    : _slots[334] = nativeContext.LoadFunction(
                         "vkCmdWriteMicromapsPropertiesEXT",
                         "vulkan"
                     )
@@ -148899,9 +151497,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 QueryPoolHandle,
                 uint,
                 void>)(
-                _slots[333] is not null and var loadedFnPtr
+                _slots[335] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[333] = nativeContext.LoadFunction("vkCmdWriteTimestamp", "vulkan")
+                    : _slots[335] = nativeContext.LoadFunction("vkCmdWriteTimestamp", "vulkan")
             )
         )(commandBuffer, pipelineStage, queryPool, query);
 
@@ -148971,9 +151569,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 QueryPoolHandle,
                 uint,
                 void>)(
-                _slots[334] is not null and var loadedFnPtr
+                _slots[336] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[334] = nativeContext.LoadFunction("vkCmdWriteTimestamp2", "vulkan")
+                    : _slots[336] = nativeContext.LoadFunction("vkCmdWriteTimestamp2", "vulkan")
             )
         )(commandBuffer, stage, queryPool, query);
 
@@ -149025,9 +151623,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 QueryPoolHandle,
                 uint,
                 void>)(
-                _slots[335] is not null and var loadedFnPtr
+                _slots[337] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[335] = nativeContext.LoadFunction("vkCmdWriteTimestamp2KHR", "vulkan")
+                    : _slots[337] = nativeContext.LoadFunction("vkCmdWriteTimestamp2KHR", "vulkan")
             )
         )(commandBuffer, stage, queryPool, query);
 
@@ -149063,9 +151661,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.CompileDeferredNV(DeviceHandle device, PipelineHandle pipeline, uint shader) =>
         (
             (delegate* unmanaged<DeviceHandle, PipelineHandle, uint, Result>)(
-                _slots[336] is not null and var loadedFnPtr
+                _slots[338] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[336] = nativeContext.LoadFunction("vkCompileDeferredNV", "vulkan")
+                    : _slots[338] = nativeContext.LoadFunction("vkCompileDeferredNV", "vulkan")
             )
         )(device, pipeline, shader);
 
@@ -149103,9 +151701,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ConvertCooperativeVectorMatrixInfoNV*, Result>)(
-                _slots[337] is not null and var loadedFnPtr
+                _slots[339] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[337] = nativeContext.LoadFunction(
+                    : _slots[339] = nativeContext.LoadFunction(
                         "vkConvertCooperativeVectorMatrixNV",
                         "vulkan"
                     )
@@ -149188,9 +151786,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DeferredOperationHandleKHR,
                 CopyAccelerationStructureInfoKHR*,
                 Result>)(
-                _slots[338] is not null and var loadedFnPtr
+                _slots[340] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[338] = nativeContext.LoadFunction(
+                    : _slots[340] = nativeContext.LoadFunction(
                         "vkCopyAccelerationStructureKHR",
                         "vulkan"
                     )
@@ -149277,9 +151875,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DeferredOperationHandleKHR,
                 CopyAccelerationStructureToMemoryInfoKHR*,
                 Result>)(
-                _slots[339] is not null and var loadedFnPtr
+                _slots[341] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[339] = nativeContext.LoadFunction(
+                    : _slots[341] = nativeContext.LoadFunction(
                         "vkCopyAccelerationStructureToMemoryKHR",
                         "vulkan"
                     )
@@ -149364,9 +151962,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.CopyImageToImage(DeviceHandle device, CopyImageToImageInfo* pCopyImageToImageInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, CopyImageToImageInfo*, Result>)(
-                _slots[340] is not null and var loadedFnPtr
+                _slots[342] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[340] = nativeContext.LoadFunction("vkCopyImageToImage", "vulkan")
+                    : _slots[342] = nativeContext.LoadFunction("vkCopyImageToImage", "vulkan")
             )
         )(device, pCopyImageToImageInfo);
 
@@ -149448,9 +152046,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, CopyImageToImageInfo*, Result>)(
-                _slots[341] is not null and var loadedFnPtr
+                _slots[343] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[341] = nativeContext.LoadFunction("vkCopyImageToImageEXT", "vulkan")
+                    : _slots[343] = nativeContext.LoadFunction("vkCopyImageToImageEXT", "vulkan")
             )
         )(device, pCopyImageToImageInfo);
 
@@ -149530,9 +152128,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, CopyImageToMemoryInfo*, Result>)(
-                _slots[342] is not null and var loadedFnPtr
+                _slots[344] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[342] = nativeContext.LoadFunction("vkCopyImageToMemory", "vulkan")
+                    : _slots[344] = nativeContext.LoadFunction("vkCopyImageToMemory", "vulkan")
             )
         )(device, pCopyImageToMemoryInfo);
 
@@ -149614,9 +152212,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, CopyImageToMemoryInfo*, Result>)(
-                _slots[343] is not null and var loadedFnPtr
+                _slots[345] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[343] = nativeContext.LoadFunction("vkCopyImageToMemoryEXT", "vulkan")
+                    : _slots[345] = nativeContext.LoadFunction("vkCopyImageToMemoryEXT", "vulkan")
             )
         )(device, pCopyImageToMemoryInfo);
 
@@ -149699,9 +152297,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DeferredOperationHandleKHR,
                 CopyMemoryToAccelerationStructureInfoKHR*,
                 Result>)(
-                _slots[344] is not null and var loadedFnPtr
+                _slots[346] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[344] = nativeContext.LoadFunction(
+                    : _slots[346] = nativeContext.LoadFunction(
                         "vkCopyMemoryToAccelerationStructureKHR",
                         "vulkan"
                     )
@@ -149789,9 +152387,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, CopyMemoryToImageInfo*, Result>)(
-                _slots[345] is not null and var loadedFnPtr
+                _slots[347] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[345] = nativeContext.LoadFunction("vkCopyMemoryToImage", "vulkan")
+                    : _slots[347] = nativeContext.LoadFunction("vkCopyMemoryToImage", "vulkan")
             )
         )(device, pCopyMemoryToImageInfo);
 
@@ -149873,9 +152471,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, CopyMemoryToImageInfo*, Result>)(
-                _slots[346] is not null and var loadedFnPtr
+                _slots[348] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[346] = nativeContext.LoadFunction("vkCopyMemoryToImageEXT", "vulkan")
+                    : _slots[348] = nativeContext.LoadFunction("vkCopyMemoryToImageEXT", "vulkan")
             )
         )(device, pCopyMemoryToImageInfo);
 
@@ -149958,9 +152556,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DeferredOperationHandleKHR,
                 CopyMemoryToMicromapInfoEXT*,
                 Result>)(
-                _slots[347] is not null and var loadedFnPtr
+                _slots[349] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[347] = nativeContext.LoadFunction(
+                    : _slots[349] = nativeContext.LoadFunction(
                         "vkCopyMemoryToMicromapEXT",
                         "vulkan"
                     )
@@ -150047,9 +152645,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DeferredOperationHandleKHR,
                 CopyMicromapInfoEXT*,
                 Result>)(
-                _slots[348] is not null and var loadedFnPtr
+                _slots[350] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[348] = nativeContext.LoadFunction("vkCopyMicromapEXT", "vulkan")
+                    : _slots[350] = nativeContext.LoadFunction("vkCopyMicromapEXT", "vulkan")
             )
         )(device, deferredOperation, pInfo);
 
@@ -150132,9 +152730,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DeferredOperationHandleKHR,
                 CopyMicromapToMemoryInfoEXT*,
                 Result>)(
-                _slots[349] is not null and var loadedFnPtr
+                _slots[351] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[349] = nativeContext.LoadFunction(
+                    : _slots[351] = nativeContext.LoadFunction(
                         "vkCopyMicromapToMemoryEXT",
                         "vulkan"
                     )
@@ -150226,9 +152824,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 AccelerationStructureHandleKHR*,
                 Result>)(
-                _slots[350] is not null and var loadedFnPtr
+                _slots[352] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[350] = nativeContext.LoadFunction(
+                    : _slots[352] = nativeContext.LoadFunction(
                         "vkCreateAccelerationStructure2KHR",
                         "vulkan"
                     )
@@ -150350,9 +152948,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 AccelerationStructureHandleKHR*,
                 Result>)(
-                _slots[351] is not null and var loadedFnPtr
+                _slots[353] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[351] = nativeContext.LoadFunction(
+                    : _slots[353] = nativeContext.LoadFunction(
                         "vkCreateAccelerationStructureKHR",
                         "vulkan"
                     )
@@ -150465,9 +153063,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 AccelerationStructureHandleNV*,
                 Result>)(
-                _slots[352] is not null and var loadedFnPtr
+                _slots[354] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[352] = nativeContext.LoadFunction(
+                    : _slots[354] = nativeContext.LoadFunction(
                         "vkCreateAccelerationStructureNV",
                         "vulkan"
                     )
@@ -150571,9 +153169,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 SurfaceHandleKHR*,
                 Result>)(
-                _slots[353] is not null and var loadedFnPtr
+                _slots[355] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[353] = nativeContext.LoadFunction(
+                    : _slots[355] = nativeContext.LoadFunction(
                         "vkCreateAndroidSurfaceKHR",
                         "vulkan"
                     )
@@ -150669,9 +153267,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 BufferHandle*,
                 Result>)(
-                _slots[354] is not null and var loadedFnPtr
+                _slots[356] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[354] = nativeContext.LoadFunction("vkCreateBuffer", "vulkan")
+                    : _slots[356] = nativeContext.LoadFunction("vkCreateBuffer", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pBuffer);
 
@@ -150834,9 +153432,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 BufferViewHandle*,
                 Result>)(
-                _slots[355] is not null and var loadedFnPtr
+                _slots[357] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[355] = nativeContext.LoadFunction("vkCreateBufferView", "vulkan")
+                    : _slots[357] = nativeContext.LoadFunction("vkCreateBufferView", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pView);
 
@@ -150989,9 +153587,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 CommandPoolHandle*,
                 Result>)(
-                _slots[356] is not null and var loadedFnPtr
+                _slots[358] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[356] = nativeContext.LoadFunction("vkCreateCommandPool", "vulkan")
+                    : _slots[358] = nativeContext.LoadFunction("vkCreateCommandPool", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pCommandPool);
 
@@ -151158,9 +153756,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 PipelineHandle*,
                 Result>)(
-                _slots[357] is not null and var loadedFnPtr
+                _slots[359] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[357] = nativeContext.LoadFunction("vkCreateComputePipelines", "vulkan")
+                    : _slots[359] = nativeContext.LoadFunction("vkCreateComputePipelines", "vulkan")
             )
         )(device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines);
 
@@ -151312,9 +153910,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 CuFunctionHandleNVX*,
                 Result>)(
-                _slots[358] is not null and var loadedFnPtr
+                _slots[360] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[358] = nativeContext.LoadFunction("vkCreateCuFunctionNVX", "vulkan")
+                    : _slots[360] = nativeContext.LoadFunction("vkCreateCuFunctionNVX", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pFunction);
 
@@ -151382,9 +153980,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 CuModuleHandleNVX*,
                 Result>)(
-                _slots[359] is not null and var loadedFnPtr
+                _slots[361] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[359] = nativeContext.LoadFunction("vkCreateCuModuleNVX", "vulkan")
+                    : _slots[361] = nativeContext.LoadFunction("vkCreateCuModuleNVX", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pModule);
 
@@ -151465,9 +154063,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 PipelineHandle*,
                 Result>)(
-                _slots[360] is not null and var loadedFnPtr
+                _slots[362] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[360] = nativeContext.LoadFunction(
+                    : _slots[362] = nativeContext.LoadFunction(
                         "vkCreateDataGraphPipelinesARM",
                         "vulkan"
                     )
@@ -151604,9 +154202,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 DataGraphPipelineSessionHandleARM*,
                 Result>)(
-                _slots[361] is not null and var loadedFnPtr
+                _slots[363] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[361] = nativeContext.LoadFunction(
+                    : _slots[363] = nativeContext.LoadFunction(
                         "vkCreateDataGraphPipelineSessionARM",
                         "vulkan"
                     )
@@ -151698,9 +154296,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 DebugReportCallbackHandleEXT*,
                 Result>)(
-                _slots[362] is not null and var loadedFnPtr
+                _slots[364] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[362] = nativeContext.LoadFunction(
+                    : _slots[364] = nativeContext.LoadFunction(
                         "vkCreateDebugReportCallbackEXT",
                         "vulkan"
                     )
@@ -151771,9 +154369,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 DebugUtilsMessengerHandleEXT*,
                 Result>)(
-                _slots[363] is not null and var loadedFnPtr
+                _slots[365] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[363] = nativeContext.LoadFunction(
+                    : _slots[365] = nativeContext.LoadFunction(
                         "vkCreateDebugUtilsMessengerEXT",
                         "vulkan"
                     )
@@ -151842,9 +154440,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 DeferredOperationHandleKHR*,
                 Result>)(
-                _slots[364] is not null and var loadedFnPtr
+                _slots[366] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[364] = nativeContext.LoadFunction(
+                    : _slots[366] = nativeContext.LoadFunction(
                         "vkCreateDeferredOperationKHR",
                         "vulkan"
                     )
@@ -151930,9 +154528,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 DescriptorPoolHandle*,
                 Result>)(
-                _slots[365] is not null and var loadedFnPtr
+                _slots[367] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[365] = nativeContext.LoadFunction("vkCreateDescriptorPool", "vulkan")
+                    : _slots[367] = nativeContext.LoadFunction("vkCreateDescriptorPool", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pDescriptorPool);
 
@@ -152080,9 +154678,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 DescriptorSetLayoutHandle*,
                 Result>)(
-                _slots[366] is not null and var loadedFnPtr
+                _slots[368] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[366] = nativeContext.LoadFunction(
+                    : _slots[368] = nativeContext.LoadFunction(
                         "vkCreateDescriptorSetLayout",
                         "vulkan"
                     )
@@ -152230,9 +154828,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 DescriptorUpdateTemplateHandle*,
                 Result>)(
-                _slots[367] is not null and var loadedFnPtr
+                _slots[369] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[367] = nativeContext.LoadFunction(
+                    : _slots[369] = nativeContext.LoadFunction(
                         "vkCreateDescriptorUpdateTemplate",
                         "vulkan"
                     )
@@ -152369,9 +154967,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 DescriptorUpdateTemplateHandle*,
                 Result>)(
-                _slots[368] is not null and var loadedFnPtr
+                _slots[370] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[368] = nativeContext.LoadFunction(
+                    : _slots[370] = nativeContext.LoadFunction(
                         "vkCreateDescriptorUpdateTemplateKHR",
                         "vulkan"
                     )
@@ -152604,9 +155202,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 DeviceHandle*,
                 Result>)(
-                _slots[369] is not null and var loadedFnPtr
+                _slots[371] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[369] = nativeContext.LoadFunction("vkCreateDevice", "vulkan")
+                    : _slots[371] = nativeContext.LoadFunction("vkCreateDevice", "vulkan")
             )
         )(physicalDevice, pCreateInfo, pAllocator, pDevice);
 
@@ -152678,9 +155276,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 DisplayModeHandleKHR*,
                 Result>)(
-                _slots[370] is not null and var loadedFnPtr
+                _slots[372] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[370] = nativeContext.LoadFunction("vkCreateDisplayModeKHR", "vulkan")
+                    : _slots[372] = nativeContext.LoadFunction("vkCreateDisplayModeKHR", "vulkan")
             )
         )(physicalDevice, display, pCreateInfo, pAllocator, pMode);
 
@@ -152752,9 +155350,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 SurfaceHandleKHR*,
                 Result>)(
-                _slots[371] is not null and var loadedFnPtr
+                _slots[373] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[371] = nativeContext.LoadFunction(
+                    : _slots[373] = nativeContext.LoadFunction(
                         "vkCreateDisplayPlaneSurfaceKHR",
                         "vulkan"
                     )
@@ -152845,9 +155443,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 EventHandle*,
                 Result>)(
-                _slots[372] is not null and var loadedFnPtr
+                _slots[374] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[372] = nativeContext.LoadFunction("vkCreateEvent", "vulkan")
+                    : _slots[374] = nativeContext.LoadFunction("vkCreateEvent", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pEvent);
 
@@ -152970,9 +155568,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 ExternalComputeQueueHandleNV*,
                 Result>)(
-                _slots[373] is not null and var loadedFnPtr
+                _slots[375] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[373] = nativeContext.LoadFunction(
+                    : _slots[375] = nativeContext.LoadFunction(
                         "vkCreateExternalComputeQueueNV",
                         "vulkan"
                     )
@@ -153068,9 +155666,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 FenceHandle*,
                 Result>)(
-                _slots[374] is not null and var loadedFnPtr
+                _slots[376] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[374] = nativeContext.LoadFunction("vkCreateFence", "vulkan")
+                    : _slots[376] = nativeContext.LoadFunction("vkCreateFence", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pFence);
 
@@ -153223,9 +155821,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 FramebufferHandle*,
                 Result>)(
-                _slots[375] is not null and var loadedFnPtr
+                _slots[377] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[375] = nativeContext.LoadFunction("vkCreateFramebuffer", "vulkan")
+                    : _slots[377] = nativeContext.LoadFunction("vkCreateFramebuffer", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pFramebuffer);
 
@@ -153345,9 +155943,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 GpaSessionHandleAMD*,
                 Result>)(
-                _slots[376] is not null and var loadedFnPtr
+                _slots[378] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[376] = nativeContext.LoadFunction("vkCreateGpaSessionAMD", "vulkan")
+                    : _slots[378] = nativeContext.LoadFunction("vkCreateGpaSessionAMD", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pGpaSession);
 
@@ -153455,9 +156053,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 PipelineHandle*,
                 Result>)(
-                _slots[377] is not null and var loadedFnPtr
+                _slots[379] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[377] = nativeContext.LoadFunction(
+                    : _slots[379] = nativeContext.LoadFunction(
                         "vkCreateGraphicsPipelines",
                         "vulkan"
                     )
@@ -153597,9 +156195,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 SurfaceHandleKHR*,
                 Result>)(
-                _slots[378] is not null and var loadedFnPtr
+                _slots[380] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[378] = nativeContext.LoadFunction(
+                    : _slots[380] = nativeContext.LoadFunction(
                         "vkCreateHeadlessSurfaceEXT",
                         "vulkan"
                     )
@@ -153695,9 +156293,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 ImageHandle*,
                 Result>)(
-                _slots[379] is not null and var loadedFnPtr
+                _slots[381] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[379] = nativeContext.LoadFunction("vkCreateImage", "vulkan")
+                    : _slots[381] = nativeContext.LoadFunction("vkCreateImage", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pImage);
 
@@ -153860,9 +156458,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 ImageViewHandle*,
                 Result>)(
-                _slots[380] is not null and var loadedFnPtr
+                _slots[382] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[380] = nativeContext.LoadFunction("vkCreateImageView", "vulkan")
+                    : _slots[382] = nativeContext.LoadFunction("vkCreateImageView", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pView);
 
@@ -154015,9 +156613,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 IndirectCommandsLayoutHandleEXT*,
                 Result>)(
-                _slots[381] is not null and var loadedFnPtr
+                _slots[383] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[381] = nativeContext.LoadFunction(
+                    : _slots[383] = nativeContext.LoadFunction(
                         "vkCreateIndirectCommandsLayoutEXT",
                         "vulkan"
                     )
@@ -154136,9 +156734,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 IndirectCommandsLayoutHandleNV*,
                 Result>)(
-                _slots[382] is not null and var loadedFnPtr
+                _slots[384] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[382] = nativeContext.LoadFunction(
+                    : _slots[384] = nativeContext.LoadFunction(
                         "vkCreateIndirectCommandsLayoutNV",
                         "vulkan"
                     )
@@ -154245,9 +156843,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 IndirectExecutionSetHandleEXT*,
                 Result>)(
-                _slots[383] is not null and var loadedFnPtr
+                _slots[385] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[383] = nativeContext.LoadFunction(
+                    : _slots[385] = nativeContext.LoadFunction(
                         "vkCreateIndirectExecutionSetEXT",
                         "vulkan"
                     )
@@ -154497,9 +157095,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 InstanceHandle*,
                 Result>)(
-                _slots[384] is not null and var loadedFnPtr
+                _slots[386] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[384] = nativeContext.LoadFunction("vkCreateInstance", "vulkan")
+                    : _slots[386] = nativeContext.LoadFunction("vkCreateInstance", "vulkan")
             )
         )(pCreateInfo, pAllocator, pInstance);
 
@@ -154550,6 +157148,216 @@ public unsafe partial class Vk : IVk, IVk.Static
         }
     }
 
+    [NativeName("vkCreateIOSSurfaceMVK")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateIOSSurfaceMVK")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.CreateIosSurfaceMVK(
+        InstanceHandle instance,
+        IosSurfaceCreateInfoMVK* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    ) =>
+        (
+            (delegate* unmanaged<
+                InstanceHandle,
+                IosSurfaceCreateInfoMVK*,
+                AllocationCallbacks*,
+                SurfaceHandleKHR*,
+                Result>)(
+                _slots[387] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[387] = nativeContext.LoadFunction("vkCreateIOSSurfaceMVK", "vulkan")
+            )
+        )(instance, pCreateInfo, pAllocator, pSurface);
+
+    [NativeName("vkCreateIOSSurfaceMVK")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateIOSSurfaceMVK")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result CreateIosSurfaceMVK(
+        InstanceHandle instance,
+        IosSurfaceCreateInfoMVK* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    ) => ThisThread.CreateIosSurfaceMVK(instance, pCreateInfo, pAllocator, pSurface);
+
+    [NativeName("vkCreateIOSSurfaceMVK")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateIOSSurfaceMVK")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.CreateIosSurfaceMVK(
+        InstanceHandle instance,
+        Ref<IosSurfaceCreateInfoMVK> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    )
+    {
+        fixed (SurfaceHandleKHR* __dsl_pSurface = pSurface)
+        fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
+        fixed (IosSurfaceCreateInfoMVK* __dsl_pCreateInfo = pCreateInfo)
+        {
+            return (Result)
+                ((IVk)this).CreateIosSurfaceMVK(
+                    instance,
+                    __dsl_pCreateInfo,
+                    __dsl_pAllocator,
+                    __dsl_pSurface
+                );
+        }
+    }
+
+    [NativeName("vkCreateIOSSurfaceMVK")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateIOSSurfaceMVK")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result CreateIosSurfaceMVK(
+        InstanceHandle instance,
+        Ref<IosSurfaceCreateInfoMVK> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    ) => ThisThread.CreateIosSurfaceMVK(instance, pCreateInfo, pAllocator, pSurface);
+
+    [NativeName("vkCreateMacOSSurfaceMVK")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateMacOSSurfaceMVK")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.CreateMacOSSurfaceMVK(
+        InstanceHandle instance,
+        MacOSSurfaceCreateInfoMVK* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    ) =>
+        (
+            (delegate* unmanaged<
+                InstanceHandle,
+                MacOSSurfaceCreateInfoMVK*,
+                AllocationCallbacks*,
+                SurfaceHandleKHR*,
+                Result>)(
+                _slots[388] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[388] = nativeContext.LoadFunction("vkCreateMacOSSurfaceMVK", "vulkan")
+            )
+        )(instance, pCreateInfo, pAllocator, pSurface);
+
+    [NativeName("vkCreateMacOSSurfaceMVK")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateMacOSSurfaceMVK")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result CreateMacOSSurfaceMVK(
+        InstanceHandle instance,
+        MacOSSurfaceCreateInfoMVK* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    ) => ThisThread.CreateMacOSSurfaceMVK(instance, pCreateInfo, pAllocator, pSurface);
+
+    [NativeName("vkCreateMacOSSurfaceMVK")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateMacOSSurfaceMVK")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.CreateMacOSSurfaceMVK(
+        InstanceHandle instance,
+        Ref<MacOSSurfaceCreateInfoMVK> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    )
+    {
+        fixed (SurfaceHandleKHR* __dsl_pSurface = pSurface)
+        fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
+        fixed (MacOSSurfaceCreateInfoMVK* __dsl_pCreateInfo = pCreateInfo)
+        {
+            return (Result)
+                ((IVk)this).CreateMacOSSurfaceMVK(
+                    instance,
+                    __dsl_pCreateInfo,
+                    __dsl_pAllocator,
+                    __dsl_pSurface
+                );
+        }
+    }
+
+    [NativeName("vkCreateMacOSSurfaceMVK")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateMacOSSurfaceMVK")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result CreateMacOSSurfaceMVK(
+        InstanceHandle instance,
+        Ref<MacOSSurfaceCreateInfoMVK> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    ) => ThisThread.CreateMacOSSurfaceMVK(instance, pCreateInfo, pAllocator, pSurface);
+
+    [NativeName("vkCreateMetalSurfaceEXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateMetalSurfaceEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.CreateMetalSurfaceEXT(
+        InstanceHandle instance,
+        MetalSurfaceCreateInfoEXT* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    ) =>
+        (
+            (delegate* unmanaged<
+                InstanceHandle,
+                MetalSurfaceCreateInfoEXT*,
+                AllocationCallbacks*,
+                SurfaceHandleKHR*,
+                Result>)(
+                _slots[389] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[389] = nativeContext.LoadFunction("vkCreateMetalSurfaceEXT", "vulkan")
+            )
+        )(instance, pCreateInfo, pAllocator, pSurface);
+
+    [NativeName("vkCreateMetalSurfaceEXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateMetalSurfaceEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result CreateMetalSurfaceEXT(
+        InstanceHandle instance,
+        MetalSurfaceCreateInfoEXT* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    ) => ThisThread.CreateMetalSurfaceEXT(instance, pCreateInfo, pAllocator, pSurface);
+
+    [NativeName("vkCreateMetalSurfaceEXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateMetalSurfaceEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.CreateMetalSurfaceEXT(
+        InstanceHandle instance,
+        Ref<MetalSurfaceCreateInfoEXT> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    )
+    {
+        fixed (SurfaceHandleKHR* __dsl_pSurface = pSurface)
+        fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
+        fixed (MetalSurfaceCreateInfoEXT* __dsl_pCreateInfo = pCreateInfo)
+        {
+            return (Result)
+                ((IVk)this).CreateMetalSurfaceEXT(
+                    instance,
+                    __dsl_pCreateInfo,
+                    __dsl_pAllocator,
+                    __dsl_pSurface
+                );
+        }
+    }
+
+    [NativeName("vkCreateMetalSurfaceEXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateMetalSurfaceEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result CreateMetalSurfaceEXT(
+        InstanceHandle instance,
+        Ref<MetalSurfaceCreateInfoEXT> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    ) => ThisThread.CreateMetalSurfaceEXT(instance, pCreateInfo, pAllocator, pSurface);
+
     [NativeName("vkCreateMicromapEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -154574,9 +157382,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 MicromapHandleEXT*,
                 Result>)(
-                _slots[385] is not null and var loadedFnPtr
+                _slots[390] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[385] = nativeContext.LoadFunction("vkCreateMicromapEXT", "vulkan")
+                    : _slots[390] = nativeContext.LoadFunction("vkCreateMicromapEXT", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pMicromap);
 
@@ -154673,9 +157481,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 OpticalFlowSessionHandleNV*,
                 Result>)(
-                _slots[386] is not null and var loadedFnPtr
+                _slots[391] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[386] = nativeContext.LoadFunction(
+                    : _slots[391] = nativeContext.LoadFunction(
                         "vkCreateOpticalFlowSessionNV",
                         "vulkan"
                     )
@@ -154778,9 +157586,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 PipelineBinaryHandlesInfoKHR*,
                 Result>)(
-                _slots[387] is not null and var loadedFnPtr
+                _slots[392] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[387] = nativeContext.LoadFunction(
+                    : _slots[392] = nativeContext.LoadFunction(
                         "vkCreatePipelineBinariesKHR",
                         "vulkan"
                     )
@@ -154895,9 +157703,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 PipelineCacheHandle*,
                 Result>)(
-                _slots[388] is not null and var loadedFnPtr
+                _slots[393] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[388] = nativeContext.LoadFunction("vkCreatePipelineCache", "vulkan")
+                    : _slots[393] = nativeContext.LoadFunction("vkCreatePipelineCache", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pPipelineCache);
 
@@ -155045,9 +157853,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 PipelineLayoutHandle*,
                 Result>)(
-                _slots[389] is not null and var loadedFnPtr
+                _slots[394] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[389] = nativeContext.LoadFunction("vkCreatePipelineLayout", "vulkan")
+                    : _slots[394] = nativeContext.LoadFunction("vkCreatePipelineLayout", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pPipelineLayout);
 
@@ -155188,9 +157996,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 PrivateDataSlotHandle*,
                 Result>)(
-                _slots[390] is not null and var loadedFnPtr
+                _slots[395] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[390] = nativeContext.LoadFunction("vkCreatePrivateDataSlot", "vulkan")
+                    : _slots[395] = nativeContext.LoadFunction("vkCreatePrivateDataSlot", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pPrivateDataSlot);
 
@@ -155304,9 +158112,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 PrivateDataSlotHandle*,
                 Result>)(
-                _slots[391] is not null and var loadedFnPtr
+                _slots[396] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[391] = nativeContext.LoadFunction(
+                    : _slots[396] = nativeContext.LoadFunction(
                         "vkCreatePrivateDataSlotEXT",
                         "vulkan"
                     )
@@ -155423,9 +158231,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 QueryPoolHandle*,
                 Result>)(
-                _slots[392] is not null and var loadedFnPtr
+                _slots[397] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[392] = nativeContext.LoadFunction("vkCreateQueryPool", "vulkan")
+                    : _slots[397] = nativeContext.LoadFunction("vkCreateQueryPool", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pQueryPool);
 
@@ -155581,9 +158389,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 PipelineHandle*,
                 Result>)(
-                _slots[393] is not null and var loadedFnPtr
+                _slots[398] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[393] = nativeContext.LoadFunction(
+                    : _slots[398] = nativeContext.LoadFunction(
                         "vkCreateRayTracingPipelinesKHR",
                         "vulkan"
                     )
@@ -155724,9 +158532,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 PipelineHandle*,
                 Result>)(
-                _slots[394] is not null and var loadedFnPtr
+                _slots[399] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[394] = nativeContext.LoadFunction(
+                    : _slots[399] = nativeContext.LoadFunction(
                         "vkCreateRayTracingPipelinesNV",
                         "vulkan"
                     )
@@ -155857,9 +158665,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 RenderPassHandle*,
                 Result>)(
-                _slots[395] is not null and var loadedFnPtr
+                _slots[400] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[395] = nativeContext.LoadFunction("vkCreateRenderPass", "vulkan")
+                    : _slots[400] = nativeContext.LoadFunction("vkCreateRenderPass", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pRenderPass);
 
@@ -155983,9 +158791,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 RenderPassHandle*,
                 Result>)(
-                _slots[396] is not null and var loadedFnPtr
+                _slots[401] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[396] = nativeContext.LoadFunction("vkCreateRenderPass2", "vulkan")
+                    : _slots[401] = nativeContext.LoadFunction("vkCreateRenderPass2", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pRenderPass);
 
@@ -156090,9 +158898,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 RenderPassHandle*,
                 Result>)(
-                _slots[397] is not null and var loadedFnPtr
+                _slots[402] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[397] = nativeContext.LoadFunction("vkCreateRenderPass2KHR", "vulkan")
+                    : _slots[402] = nativeContext.LoadFunction("vkCreateRenderPass2KHR", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pRenderPass);
 
@@ -156192,9 +159000,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 SamplerHandle*,
                 Result>)(
-                _slots[398] is not null and var loadedFnPtr
+                _slots[403] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[398] = nativeContext.LoadFunction("vkCreateSampler", "vulkan")
+                    : _slots[403] = nativeContext.LoadFunction("vkCreateSampler", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pSampler);
 
@@ -156339,9 +159147,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 SamplerYcbcrConversionHandle*,
                 Result>)(
-                _slots[399] is not null and var loadedFnPtr
+                _slots[404] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[399] = nativeContext.LoadFunction(
+                    : _slots[404] = nativeContext.LoadFunction(
                         "vkCreateSamplerYcbcrConversion",
                         "vulkan"
                     )
@@ -156470,9 +159278,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 SamplerYcbcrConversionHandle*,
                 Result>)(
-                _slots[400] is not null and var loadedFnPtr
+                _slots[405] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[400] = nativeContext.LoadFunction(
+                    : _slots[405] = nativeContext.LoadFunction(
                         "vkCreateSamplerYcbcrConversionKHR",
                         "vulkan"
                     )
@@ -156601,9 +159409,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 SemaphoreHandle*,
                 Result>)(
-                _slots[401] is not null and var loadedFnPtr
+                _slots[406] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[401] = nativeContext.LoadFunction("vkCreateSemaphore", "vulkan")
+                    : _slots[406] = nativeContext.LoadFunction("vkCreateSemaphore", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pSemaphore);
 
@@ -156753,9 +159561,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 ShaderInstrumentationHandleARM*,
                 Result>)(
-                _slots[402] is not null and var loadedFnPtr
+                _slots[407] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[402] = nativeContext.LoadFunction(
+                    : _slots[407] = nativeContext.LoadFunction(
                         "vkCreateShaderInstrumentationARM",
                         "vulkan"
                     )
@@ -156879,9 +159687,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 ShaderModuleHandle*,
                 Result>)(
-                _slots[403] is not null and var loadedFnPtr
+                _slots[408] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[403] = nativeContext.LoadFunction("vkCreateShaderModule", "vulkan")
+                    : _slots[408] = nativeContext.LoadFunction("vkCreateShaderModule", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pShaderModule);
 
@@ -157019,9 +159827,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 ShaderHandleEXT*,
                 Result>)(
-                _slots[404] is not null and var loadedFnPtr
+                _slots[409] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[404] = nativeContext.LoadFunction("vkCreateShadersEXT", "vulkan")
+                    : _slots[409] = nativeContext.LoadFunction("vkCreateShadersEXT", "vulkan")
             )
         )(device, createInfoCount, pCreateInfos, pAllocator, pShaders);
 
@@ -157123,9 +159931,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 SwapchainHandleKHR*,
                 Result>)(
-                _slots[405] is not null and var loadedFnPtr
+                _slots[410] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[405] = nativeContext.LoadFunction(
+                    : _slots[410] = nativeContext.LoadFunction(
                         "vkCreateSharedSwapchainsKHR",
                         "vulkan"
                     )
@@ -157226,9 +160034,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 SurfaceHandleKHR*,
                 Result>)(
-                _slots[406] is not null and var loadedFnPtr
+                _slots[411] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[406] = nativeContext.LoadFunction("vkCreateSurfaceOHOS", "vulkan")
+                    : _slots[411] = nativeContext.LoadFunction("vkCreateSurfaceOHOS", "vulkan")
             )
         )(instance, pCreateInfo, pAllocator, pSurface);
 
@@ -157296,9 +160104,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 SwapchainHandleKHR*,
                 Result>)(
-                _slots[407] is not null and var loadedFnPtr
+                _slots[412] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[407] = nativeContext.LoadFunction("vkCreateSwapchainKHR", "vulkan")
+                    : _slots[412] = nativeContext.LoadFunction("vkCreateSwapchainKHR", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pSwapchain);
 
@@ -157366,9 +160174,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 TensorHandleARM*,
                 Result>)(
-                _slots[408] is not null and var loadedFnPtr
+                _slots[413] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[408] = nativeContext.LoadFunction("vkCreateTensorARM", "vulkan")
+                    : _slots[413] = nativeContext.LoadFunction("vkCreateTensorARM", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pTensor);
 
@@ -157436,9 +160244,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 TensorViewHandleARM*,
                 Result>)(
-                _slots[409] is not null and var loadedFnPtr
+                _slots[414] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[409] = nativeContext.LoadFunction("vkCreateTensorViewARM", "vulkan")
+                    : _slots[414] = nativeContext.LoadFunction("vkCreateTensorViewARM", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pView);
 
@@ -157506,9 +160314,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 ValidationCacheHandleEXT*,
                 Result>)(
-                _slots[410] is not null and var loadedFnPtr
+                _slots[415] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[410] = nativeContext.LoadFunction(
+                    : _slots[415] = nativeContext.LoadFunction(
                         "vkCreateValidationCacheEXT",
                         "vulkan"
                     )
@@ -157583,9 +160391,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 VideoSessionHandleKHR*,
                 Result>)(
-                _slots[411] is not null and var loadedFnPtr
+                _slots[416] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[411] = nativeContext.LoadFunction("vkCreateVideoSessionKHR", "vulkan")
+                    : _slots[416] = nativeContext.LoadFunction("vkCreateVideoSessionKHR", "vulkan")
             )
         )(device, pCreateInfo, pAllocator, pVideoSession);
 
@@ -157669,9 +160477,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 VideoSessionParametersHandleKHR*,
                 Result>)(
-                _slots[412] is not null and var loadedFnPtr
+                _slots[417] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[412] = nativeContext.LoadFunction(
+                    : _slots[417] = nativeContext.LoadFunction(
                         "vkCreateVideoSessionParametersKHR",
                         "vulkan"
                     )
@@ -157768,9 +160576,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 SurfaceHandleKHR*,
                 Result>)(
-                _slots[413] is not null and var loadedFnPtr
+                _slots[418] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[413] = nativeContext.LoadFunction("vkCreateViSurfaceNN", "vulkan")
+                    : _slots[418] = nativeContext.LoadFunction("vkCreateViSurfaceNN", "vulkan")
             )
         )(instance, pCreateInfo, pAllocator, pSurface);
 
@@ -157838,9 +160646,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 SurfaceHandleKHR*,
                 Result>)(
-                _slots[414] is not null and var loadedFnPtr
+                _slots[419] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[414] = nativeContext.LoadFunction(
+                    : _slots[419] = nativeContext.LoadFunction(
                         "vkCreateWaylandSurfaceKHR",
                         "vulkan"
                     )
@@ -157894,6 +160702,76 @@ public unsafe partial class Vk : IVk, IVk.Static
         Ref<SurfaceHandleKHR> pSurface
     ) => ThisThread.CreateWaylandSurfaceKHR(instance, pCreateInfo, pAllocator, pSurface);
 
+    [NativeName("vkCreateWin32SurfaceKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateWin32SurfaceKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.CreateWin32SurfaceKHR(
+        InstanceHandle instance,
+        Win32SurfaceCreateInfoKHR* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    ) =>
+        (
+            (delegate* unmanaged<
+                InstanceHandle,
+                Win32SurfaceCreateInfoKHR*,
+                AllocationCallbacks*,
+                SurfaceHandleKHR*,
+                Result>)(
+                _slots[420] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[420] = nativeContext.LoadFunction("vkCreateWin32SurfaceKHR", "vulkan")
+            )
+        )(instance, pCreateInfo, pAllocator, pSurface);
+
+    [NativeName("vkCreateWin32SurfaceKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateWin32SurfaceKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result CreateWin32SurfaceKHR(
+        InstanceHandle instance,
+        Win32SurfaceCreateInfoKHR* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    ) => ThisThread.CreateWin32SurfaceKHR(instance, pCreateInfo, pAllocator, pSurface);
+
+    [NativeName("vkCreateWin32SurfaceKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateWin32SurfaceKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.CreateWin32SurfaceKHR(
+        InstanceHandle instance,
+        Ref<Win32SurfaceCreateInfoKHR> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    )
+    {
+        fixed (SurfaceHandleKHR* __dsl_pSurface = pSurface)
+        fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
+        fixed (Win32SurfaceCreateInfoKHR* __dsl_pCreateInfo = pCreateInfo)
+        {
+            return (Result)
+                ((IVk)this).CreateWin32SurfaceKHR(
+                    instance,
+                    __dsl_pCreateInfo,
+                    __dsl_pAllocator,
+                    __dsl_pSurface
+                );
+        }
+    }
+
+    [NativeName("vkCreateWin32SurfaceKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateWin32SurfaceKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result CreateWin32SurfaceKHR(
+        InstanceHandle instance,
+        Ref<Win32SurfaceCreateInfoKHR> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    ) => ThisThread.CreateWin32SurfaceKHR(instance, pCreateInfo, pAllocator, pSurface);
+
     [NativeName("vkCreateXcbSurfaceKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateXcbSurfaceKHR")]
@@ -157911,9 +160789,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 SurfaceHandleKHR*,
                 Result>)(
-                _slots[415] is not null and var loadedFnPtr
+                _slots[421] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[415] = nativeContext.LoadFunction("vkCreateXcbSurfaceKHR", "vulkan")
+                    : _slots[421] = nativeContext.LoadFunction("vkCreateXcbSurfaceKHR", "vulkan")
             )
         )(instance, pCreateInfo, pAllocator, pSurface);
 
@@ -157981,9 +160859,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 SurfaceHandleKHR*,
                 Result>)(
-                _slots[416] is not null and var loadedFnPtr
+                _slots[422] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[416] = nativeContext.LoadFunction("vkCreateXlibSurfaceKHR", "vulkan")
+                    : _slots[422] = nativeContext.LoadFunction("vkCreateXlibSurfaceKHR", "vulkan")
             )
         )(instance, pCreateInfo, pAllocator, pSurface);
 
@@ -158044,9 +160922,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DebugMarkerObjectNameInfoEXT*, Result>)(
-                _slots[417] is not null and var loadedFnPtr
+                _slots[423] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[417] = nativeContext.LoadFunction(
+                    : _slots[423] = nativeContext.LoadFunction(
                         "vkDebugMarkerSetObjectNameEXT",
                         "vulkan"
                     )
@@ -158096,9 +160974,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DebugMarkerObjectTagInfoEXT*, Result>)(
-                _slots[418] is not null and var loadedFnPtr
+                _slots[424] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[418] = nativeContext.LoadFunction(
+                    : _slots[424] = nativeContext.LoadFunction(
                         "vkDebugMarkerSetObjectTagEXT",
                         "vulkan"
                     )
@@ -158163,9 +161041,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 sbyte*,
                 sbyte*,
                 void>)(
-                _slots[419] is not null and var loadedFnPtr
+                _slots[425] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[419] = nativeContext.LoadFunction("vkDebugReportMessageEXT", "vulkan")
+                    : _slots[425] = nativeContext.LoadFunction("vkDebugReportMessageEXT", "vulkan")
             )
         )(instance, flags, objectType, @object, location, messageCode, pLayerPrefix, pMessage);
 
@@ -158260,9 +161138,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DeferredOperationHandleKHR, Result>)(
-                _slots[420] is not null and var loadedFnPtr
+                _slots[426] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[420] = nativeContext.LoadFunction(
+                    : _slots[426] = nativeContext.LoadFunction(
                         "vkDeferredOperationJoinKHR",
                         "vulkan"
                     )
@@ -158300,9 +161178,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AccelerationStructureHandleKHR,
                 AllocationCallbacks*,
                 void>)(
-                _slots[421] is not null and var loadedFnPtr
+                _slots[427] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[421] = nativeContext.LoadFunction(
+                    : _slots[427] = nativeContext.LoadFunction(
                         "vkDestroyAccelerationStructureKHR",
                         "vulkan"
                     )
@@ -158392,9 +161270,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AccelerationStructureHandleNV,
                 AllocationCallbacks*,
                 void>)(
-                _slots[422] is not null and var loadedFnPtr
+                _slots[428] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[422] = nativeContext.LoadFunction(
+                    : _slots[428] = nativeContext.LoadFunction(
                         "vkDestroyAccelerationStructureNV",
                         "vulkan"
                     )
@@ -158498,9 +161376,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, BufferHandle, AllocationCallbacks*, void>)(
-                _slots[423] is not null and var loadedFnPtr
+                _slots[429] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[423] = nativeContext.LoadFunction("vkDestroyBuffer", "vulkan")
+                    : _slots[429] = nativeContext.LoadFunction("vkDestroyBuffer", "vulkan")
             )
         )(device, buffer, pAllocator);
 
@@ -158646,9 +161524,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, BufferViewHandle, AllocationCallbacks*, void>)(
-                _slots[424] is not null and var loadedFnPtr
+                _slots[430] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[424] = nativeContext.LoadFunction("vkDestroyBufferView", "vulkan")
+                    : _slots[430] = nativeContext.LoadFunction("vkDestroyBufferView", "vulkan")
             )
         )(device, bufferView, pAllocator);
 
@@ -158784,9 +161662,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, CommandPoolHandle, AllocationCallbacks*, void>)(
-                _slots[425] is not null and var loadedFnPtr
+                _slots[431] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[425] = nativeContext.LoadFunction("vkDestroyCommandPool", "vulkan")
+                    : _slots[431] = nativeContext.LoadFunction("vkDestroyCommandPool", "vulkan")
             )
         )(device, commandPool, pAllocator);
 
@@ -158912,9 +161790,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, CuFunctionHandleNVX, AllocationCallbacks*, void>)(
-                _slots[426] is not null and var loadedFnPtr
+                _slots[432] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[426] = nativeContext.LoadFunction("vkDestroyCuFunctionNVX", "vulkan")
+                    : _slots[432] = nativeContext.LoadFunction("vkDestroyCuFunctionNVX", "vulkan")
             )
         )(device, function, pAllocator);
 
@@ -158965,9 +161843,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, CuModuleHandleNVX, AllocationCallbacks*, void>)(
-                _slots[427] is not null and var loadedFnPtr
+                _slots[433] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[427] = nativeContext.LoadFunction("vkDestroyCuModuleNVX", "vulkan")
+                    : _slots[433] = nativeContext.LoadFunction("vkDestroyCuModuleNVX", "vulkan")
             )
         )(device, module, pAllocator);
 
@@ -159029,9 +161907,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DataGraphPipelineSessionHandleARM,
                 AllocationCallbacks*,
                 void>)(
-                _slots[428] is not null and var loadedFnPtr
+                _slots[434] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[428] = nativeContext.LoadFunction(
+                    : _slots[434] = nativeContext.LoadFunction(
                         "vkDestroyDataGraphPipelineSessionARM",
                         "vulkan"
                     )
@@ -159110,9 +161988,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DebugReportCallbackHandleEXT,
                 AllocationCallbacks*,
                 void>)(
-                _slots[429] is not null and var loadedFnPtr
+                _slots[435] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[429] = nativeContext.LoadFunction(
+                    : _slots[435] = nativeContext.LoadFunction(
                         "vkDestroyDebugReportCallbackEXT",
                         "vulkan"
                     )
@@ -159170,9 +162048,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DebugUtilsMessengerHandleEXT,
                 AllocationCallbacks*,
                 void>)(
-                _slots[430] is not null and var loadedFnPtr
+                _slots[436] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[430] = nativeContext.LoadFunction(
+                    : _slots[436] = nativeContext.LoadFunction(
                         "vkDestroyDebugUtilsMessengerEXT",
                         "vulkan"
                     )
@@ -159230,9 +162108,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DeferredOperationHandleKHR,
                 AllocationCallbacks*,
                 void>)(
-                _slots[431] is not null and var loadedFnPtr
+                _slots[437] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[431] = nativeContext.LoadFunction(
+                    : _slots[437] = nativeContext.LoadFunction(
                         "vkDestroyDeferredOperationKHR",
                         "vulkan"
                     )
@@ -159306,9 +162184,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DescriptorPoolHandle, AllocationCallbacks*, void>)(
-                _slots[432] is not null and var loadedFnPtr
+                _slots[438] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[432] = nativeContext.LoadFunction("vkDestroyDescriptorPool", "vulkan")
+                    : _slots[438] = nativeContext.LoadFunction("vkDestroyDescriptorPool", "vulkan")
             )
         )(device, descriptorPool, pAllocator);
 
@@ -159443,9 +162321,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DescriptorSetLayoutHandle,
                 AllocationCallbacks*,
                 void>)(
-                _slots[433] is not null and var loadedFnPtr
+                _slots[439] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[433] = nativeContext.LoadFunction(
+                    : _slots[439] = nativeContext.LoadFunction(
                         "vkDestroyDescriptorSetLayout",
                         "vulkan"
                     )
@@ -159580,9 +162458,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DescriptorUpdateTemplateHandle,
                 AllocationCallbacks*,
                 void>)(
-                _slots[434] is not null and var loadedFnPtr
+                _slots[440] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[434] = nativeContext.LoadFunction(
+                    : _slots[440] = nativeContext.LoadFunction(
                         "vkDestroyDescriptorUpdateTemplate",
                         "vulkan"
                     )
@@ -159695,9 +162573,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DescriptorUpdateTemplateHandle,
                 AllocationCallbacks*,
                 void>)(
-                _slots[435] is not null and var loadedFnPtr
+                _slots[441] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[435] = nativeContext.LoadFunction(
+                    : _slots[441] = nativeContext.LoadFunction(
                         "vkDestroyDescriptorUpdateTemplateKHR",
                         "vulkan"
                     )
@@ -159778,9 +162656,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.DestroyDevice(DeviceHandle device, AllocationCallbacks* pAllocator) =>
         (
             (delegate* unmanaged<DeviceHandle, AllocationCallbacks*, void>)(
-                _slots[436] is not null and var loadedFnPtr
+                _slots[442] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[436] = nativeContext.LoadFunction("vkDestroyDevice", "vulkan")
+                    : _slots[442] = nativeContext.LoadFunction("vkDestroyDevice", "vulkan")
             )
         )(device, pAllocator);
 
@@ -159916,9 +162794,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, EventHandle, AllocationCallbacks*, void>)(
-                _slots[437] is not null and var loadedFnPtr
+                _slots[443] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[437] = nativeContext.LoadFunction("vkDestroyEvent", "vulkan")
+                    : _slots[443] = nativeContext.LoadFunction("vkDestroyEvent", "vulkan")
             )
         )(device, @event, pAllocator);
 
@@ -160033,9 +162911,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ExternalComputeQueueHandleNV,
                 AllocationCallbacks*,
                 void>)(
-                _slots[438] is not null and var loadedFnPtr
+                _slots[444] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[438] = nativeContext.LoadFunction(
+                    : _slots[444] = nativeContext.LoadFunction(
                         "vkDestroyExternalComputeQueueNV",
                         "vulkan"
                     )
@@ -160114,9 +162992,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, FenceHandle, AllocationCallbacks*, void>)(
-                _slots[439] is not null and var loadedFnPtr
+                _slots[445] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[439] = nativeContext.LoadFunction("vkDestroyFence", "vulkan")
+                    : _slots[445] = nativeContext.LoadFunction("vkDestroyFence", "vulkan")
             )
         )(device, fence, pAllocator);
 
@@ -160257,9 +163135,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, FramebufferHandle, AllocationCallbacks*, void>)(
-                _slots[440] is not null and var loadedFnPtr
+                _slots[446] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[440] = nativeContext.LoadFunction("vkDestroyFramebuffer", "vulkan")
+                    : _slots[446] = nativeContext.LoadFunction("vkDestroyFramebuffer", "vulkan")
             )
         )(device, framebuffer, pAllocator);
 
@@ -160362,9 +163240,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, GpaSessionHandleAMD, AllocationCallbacks*, void>)(
-                _slots[441] is not null and var loadedFnPtr
+                _slots[447] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[441] = nativeContext.LoadFunction("vkDestroyGpaSessionAMD", "vulkan")
+                    : _slots[447] = nativeContext.LoadFunction("vkDestroyGpaSessionAMD", "vulkan")
             )
         )(device, gpaSession, pAllocator);
 
@@ -160461,9 +163339,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ImageHandle, AllocationCallbacks*, void>)(
-                _slots[442] is not null and var loadedFnPtr
+                _slots[448] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[442] = nativeContext.LoadFunction("vkDestroyImage", "vulkan")
+                    : _slots[448] = nativeContext.LoadFunction("vkDestroyImage", "vulkan")
             )
         )(device, image, pAllocator);
 
@@ -160614,9 +163492,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ImageViewHandle, AllocationCallbacks*, void>)(
-                _slots[443] is not null and var loadedFnPtr
+                _slots[449] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[443] = nativeContext.LoadFunction("vkDestroyImageView", "vulkan")
+                    : _slots[449] = nativeContext.LoadFunction("vkDestroyImageView", "vulkan")
             )
         )(device, imageView, pAllocator);
 
@@ -160756,9 +163634,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 IndirectCommandsLayoutHandleEXT,
                 AllocationCallbacks*,
                 void>)(
-                _slots[444] is not null and var loadedFnPtr
+                _slots[450] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[444] = nativeContext.LoadFunction(
+                    : _slots[450] = nativeContext.LoadFunction(
                         "vkDestroyIndirectCommandsLayoutEXT",
                         "vulkan"
                     )
@@ -160854,9 +163732,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 IndirectCommandsLayoutHandleNV,
                 AllocationCallbacks*,
                 void>)(
-                _slots[445] is not null and var loadedFnPtr
+                _slots[451] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[445] = nativeContext.LoadFunction(
+                    : _slots[451] = nativeContext.LoadFunction(
                         "vkDestroyIndirectCommandsLayoutNV",
                         "vulkan"
                     )
@@ -160940,9 +163818,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 IndirectExecutionSetHandleEXT,
                 AllocationCallbacks*,
                 void>)(
-                _slots[446] is not null and var loadedFnPtr
+                _slots[452] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[446] = nativeContext.LoadFunction(
+                    : _slots[452] = nativeContext.LoadFunction(
                         "vkDestroyIndirectExecutionSetEXT",
                         "vulkan"
                     )
@@ -161051,9 +163929,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.DestroyInstance(InstanceHandle instance, AllocationCallbacks* pAllocator) =>
         (
             (delegate* unmanaged<InstanceHandle, AllocationCallbacks*, void>)(
-                _slots[447] is not null and var loadedFnPtr
+                _slots[453] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[447] = nativeContext.LoadFunction("vkDestroyInstance", "vulkan")
+                    : _slots[453] = nativeContext.LoadFunction("vkDestroyInstance", "vulkan")
             )
         )(instance, pAllocator);
 
@@ -161178,9 +164056,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, MicromapHandleEXT, AllocationCallbacks*, void>)(
-                _slots[448] is not null and var loadedFnPtr
+                _slots[454] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[448] = nativeContext.LoadFunction("vkDestroyMicromapEXT", "vulkan")
+                    : _slots[454] = nativeContext.LoadFunction("vkDestroyMicromapEXT", "vulkan")
             )
         )(device, micromap, pAllocator);
 
@@ -161264,9 +164142,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 OpticalFlowSessionHandleNV,
                 AllocationCallbacks*,
                 void>)(
-                _slots[449] is not null and var loadedFnPtr
+                _slots[455] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[449] = nativeContext.LoadFunction(
+                    : _slots[455] = nativeContext.LoadFunction(
                         "vkDestroyOpticalFlowSessionNV",
                         "vulkan"
                     )
@@ -161364,9 +164242,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, PipelineHandle, AllocationCallbacks*, void>)(
-                _slots[450] is not null and var loadedFnPtr
+                _slots[456] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[450] = nativeContext.LoadFunction("vkDestroyPipeline", "vulkan")
+                    : _slots[456] = nativeContext.LoadFunction("vkDestroyPipeline", "vulkan")
             )
         )(device, pipeline, pAllocator);
 
@@ -161489,9 +164367,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PipelineBinaryHandleKHR,
                 AllocationCallbacks*,
                 void>)(
-                _slots[451] is not null and var loadedFnPtr
+                _slots[457] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[451] = nativeContext.LoadFunction(
+                    : _slots[457] = nativeContext.LoadFunction(
                         "vkDestroyPipelineBinaryKHR",
                         "vulkan"
                     )
@@ -161589,9 +164467,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, PipelineCacheHandle, AllocationCallbacks*, void>)(
-                _slots[452] is not null and var loadedFnPtr
+                _slots[458] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[452] = nativeContext.LoadFunction("vkDestroyPipelineCache", "vulkan")
+                    : _slots[458] = nativeContext.LoadFunction("vkDestroyPipelineCache", "vulkan")
             )
         )(device, pipelineCache, pAllocator);
 
@@ -161722,9 +164600,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, PipelineLayoutHandle, AllocationCallbacks*, void>)(
-                _slots[453] is not null and var loadedFnPtr
+                _slots[459] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[453] = nativeContext.LoadFunction("vkDestroyPipelineLayout", "vulkan")
+                    : _slots[459] = nativeContext.LoadFunction("vkDestroyPipelineLayout", "vulkan")
             )
         )(device, pipelineLayout, pAllocator);
 
@@ -161848,9 +164726,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, PrivateDataSlotHandle, AllocationCallbacks*, void>)(
-                _slots[454] is not null and var loadedFnPtr
+                _slots[460] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[454] = nativeContext.LoadFunction("vkDestroyPrivateDataSlot", "vulkan")
+                    : _slots[460] = nativeContext.LoadFunction("vkDestroyPrivateDataSlot", "vulkan")
             )
         )(device, privateDataSlot, pAllocator);
 
@@ -161947,9 +164825,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, PrivateDataSlotHandle, AllocationCallbacks*, void>)(
-                _slots[455] is not null and var loadedFnPtr
+                _slots[461] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[455] = nativeContext.LoadFunction(
+                    : _slots[461] = nativeContext.LoadFunction(
                         "vkDestroyPrivateDataSlotEXT",
                         "vulkan"
                     )
@@ -162049,9 +164927,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, QueryPoolHandle, AllocationCallbacks*, void>)(
-                _slots[456] is not null and var loadedFnPtr
+                _slots[462] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[456] = nativeContext.LoadFunction("vkDestroyQueryPool", "vulkan")
+                    : _slots[462] = nativeContext.LoadFunction("vkDestroyQueryPool", "vulkan")
             )
         )(device, queryPool, pAllocator);
 
@@ -162192,9 +165070,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, RenderPassHandle, AllocationCallbacks*, void>)(
-                _slots[457] is not null and var loadedFnPtr
+                _slots[463] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[457] = nativeContext.LoadFunction("vkDestroyRenderPass", "vulkan")
+                    : _slots[463] = nativeContext.LoadFunction("vkDestroyRenderPass", "vulkan")
             )
         )(device, renderPass, pAllocator);
 
@@ -162310,9 +165188,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SamplerHandle, AllocationCallbacks*, void>)(
-                _slots[458] is not null and var loadedFnPtr
+                _slots[464] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[458] = nativeContext.LoadFunction("vkDestroySampler", "vulkan")
+                    : _slots[464] = nativeContext.LoadFunction("vkDestroySampler", "vulkan")
             )
         )(device, sampler, pAllocator);
 
@@ -162444,9 +165322,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 SamplerYcbcrConversionHandle,
                 AllocationCallbacks*,
                 void>)(
-                _slots[459] is not null and var loadedFnPtr
+                _slots[465] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[459] = nativeContext.LoadFunction(
+                    : _slots[465] = nativeContext.LoadFunction(
                         "vkDestroySamplerYcbcrConversion",
                         "vulkan"
                     )
@@ -162562,9 +165440,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 SamplerYcbcrConversionHandle,
                 AllocationCallbacks*,
                 void>)(
-                _slots[460] is not null and var loadedFnPtr
+                _slots[466] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[460] = nativeContext.LoadFunction(
+                    : _slots[466] = nativeContext.LoadFunction(
                         "vkDestroySamplerYcbcrConversionKHR",
                         "vulkan"
                     )
@@ -162664,9 +165542,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SemaphoreHandle, AllocationCallbacks*, void>)(
-                _slots[461] is not null and var loadedFnPtr
+                _slots[467] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[461] = nativeContext.LoadFunction("vkDestroySemaphore", "vulkan")
+                    : _slots[467] = nativeContext.LoadFunction("vkDestroySemaphore", "vulkan")
             )
         )(device, semaphore, pAllocator);
 
@@ -162800,9 +165678,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ShaderHandleEXT, AllocationCallbacks*, void>)(
-                _slots[462] is not null and var loadedFnPtr
+                _slots[468] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[462] = nativeContext.LoadFunction("vkDestroyShaderEXT", "vulkan")
+                    : _slots[468] = nativeContext.LoadFunction("vkDestroyShaderEXT", "vulkan")
             )
         )(device, shader, pAllocator);
 
@@ -162888,9 +165766,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ShaderInstrumentationHandleARM,
                 AllocationCallbacks*,
                 void>)(
-                _slots[463] is not null and var loadedFnPtr
+                _slots[469] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[463] = nativeContext.LoadFunction(
+                    : _slots[469] = nativeContext.LoadFunction(
                         "vkDestroyShaderInstrumentationARM",
                         "vulkan"
                     )
@@ -162985,9 +165863,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ShaderModuleHandle, AllocationCallbacks*, void>)(
-                _slots[464] is not null and var loadedFnPtr
+                _slots[470] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[464] = nativeContext.LoadFunction("vkDestroyShaderModule", "vulkan")
+                    : _slots[470] = nativeContext.LoadFunction("vkDestroyShaderModule", "vulkan")
             )
         )(device, shaderModule, pAllocator);
 
@@ -163098,9 +165976,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<InstanceHandle, SurfaceHandleKHR, AllocationCallbacks*, void>)(
-                _slots[465] is not null and var loadedFnPtr
+                _slots[471] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[465] = nativeContext.LoadFunction("vkDestroySurfaceKHR", "vulkan")
+                    : _slots[471] = nativeContext.LoadFunction("vkDestroySurfaceKHR", "vulkan")
             )
         )(instance, surface, pAllocator);
 
@@ -163151,9 +166029,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SwapchainHandleKHR, AllocationCallbacks*, void>)(
-                _slots[466] is not null and var loadedFnPtr
+                _slots[472] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[466] = nativeContext.LoadFunction("vkDestroySwapchainKHR", "vulkan")
+                    : _slots[472] = nativeContext.LoadFunction("vkDestroySwapchainKHR", "vulkan")
             )
         )(device, swapchain, pAllocator);
 
@@ -163204,9 +166082,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, TensorHandleARM, AllocationCallbacks*, void>)(
-                _slots[467] is not null and var loadedFnPtr
+                _slots[473] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[467] = nativeContext.LoadFunction("vkDestroyTensorARM", "vulkan")
+                    : _slots[473] = nativeContext.LoadFunction("vkDestroyTensorARM", "vulkan")
             )
         )(device, tensor, pAllocator);
 
@@ -163257,9 +166135,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, TensorViewHandleARM, AllocationCallbacks*, void>)(
-                _slots[468] is not null and var loadedFnPtr
+                _slots[474] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[468] = nativeContext.LoadFunction("vkDestroyTensorViewARM", "vulkan")
+                    : _slots[474] = nativeContext.LoadFunction("vkDestroyTensorViewARM", "vulkan")
             )
         )(device, tensorView, pAllocator);
 
@@ -163314,9 +166192,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ValidationCacheHandleEXT,
                 AllocationCallbacks*,
                 void>)(
-                _slots[469] is not null and var loadedFnPtr
+                _slots[475] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[469] = nativeContext.LoadFunction(
+                    : _slots[475] = nativeContext.LoadFunction(
                         "vkDestroyValidationCacheEXT",
                         "vulkan"
                     )
@@ -163374,9 +166252,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, VideoSessionHandleKHR, AllocationCallbacks*, void>)(
-                _slots[470] is not null and var loadedFnPtr
+                _slots[476] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[470] = nativeContext.LoadFunction("vkDestroyVideoSessionKHR", "vulkan")
+                    : _slots[476] = nativeContext.LoadFunction("vkDestroyVideoSessionKHR", "vulkan")
             )
         )(device, videoSession, pAllocator);
 
@@ -163447,9 +166325,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 VideoSessionParametersHandleKHR,
                 AllocationCallbacks*,
                 void>)(
-                _slots[471] is not null and var loadedFnPtr
+                _slots[477] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[471] = nativeContext.LoadFunction(
+                    : _slots[477] = nativeContext.LoadFunction(
                         "vkDestroyVideoSessionParametersKHR",
                         "vulkan"
                     )
@@ -163540,9 +166418,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.DeviceWaitIdle(DeviceHandle device) =>
         (
             (delegate* unmanaged<DeviceHandle, Result>)(
-                _slots[472] is not null and var loadedFnPtr
+                _slots[478] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[472] = nativeContext.LoadFunction("vkDeviceWaitIdle", "vulkan")
+                    : _slots[478] = nativeContext.LoadFunction("vkDeviceWaitIdle", "vulkan")
             )
         )(device);
 
@@ -163592,9 +166470,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DisplayHandleKHR, DisplayPowerInfoEXT*, Result>)(
-                _slots[473] is not null and var loadedFnPtr
+                _slots[479] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[473] = nativeContext.LoadFunction("vkDisplayPowerControlEXT", "vulkan")
+                    : _slots[479] = nativeContext.LoadFunction("vkDisplayPowerControlEXT", "vulkan")
             )
         )(device, display, pDisplayPowerInfo);
 
@@ -163679,9 +166557,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.EndCommandBuffer(CommandBufferHandle commandBuffer) =>
         (
             (delegate* unmanaged<CommandBufferHandle, Result>)(
-                _slots[474] is not null and var loadedFnPtr
+                _slots[480] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[474] = nativeContext.LoadFunction("vkEndCommandBuffer", "vulkan")
+                    : _slots[480] = nativeContext.LoadFunction("vkEndCommandBuffer", "vulkan")
             )
         )(commandBuffer);
 
@@ -163759,9 +166637,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 ExtensionProperties*,
                 Result>)(
-                _slots[475] is not null and var loadedFnPtr
+                _slots[481] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[475] = nativeContext.LoadFunction(
+                    : _slots[481] = nativeContext.LoadFunction(
                         "vkEnumerateDeviceExtensionProperties",
                         "vulkan"
                     )
@@ -163938,9 +166816,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint*, LayerProperties*, Result>)(
-                _slots[476] is not null and var loadedFnPtr
+                _slots[482] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[476] = nativeContext.LoadFunction(
+                    : _slots[482] = nativeContext.LoadFunction(
                         "vkEnumerateDeviceLayerProperties",
                         "vulkan"
                     )
@@ -164100,9 +166978,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, uint*, ExtensionProperties*, Result>)(
-                _slots[477] is not null and var loadedFnPtr
+                _slots[483] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[477] = nativeContext.LoadFunction(
+                    : _slots[483] = nativeContext.LoadFunction(
                         "vkEnumerateInstanceExtensionProperties",
                         "vulkan"
                     )
@@ -164262,9 +167140,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<uint*, LayerProperties*, Result>)(
-                _slots[478] is not null and var loadedFnPtr
+                _slots[484] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[478] = nativeContext.LoadFunction(
+                    : _slots[484] = nativeContext.LoadFunction(
                         "vkEnumerateInstanceLayerProperties",
                         "vulkan"
                     )
@@ -164412,9 +167290,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.EnumerateInstanceVersion(uint* pApiVersion) =>
         (
             (delegate* unmanaged<uint*, Result>)(
-                _slots[479] is not null and var loadedFnPtr
+                _slots[485] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[479] = nativeContext.LoadFunction(
+                    : _slots[485] = nativeContext.LoadFunction(
                         "vkEnumerateInstanceVersion",
                         "vulkan"
                     )
@@ -164542,9 +167420,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<InstanceHandle, uint*, PhysicalDeviceGroupProperties*, Result>)(
-                _slots[480] is not null and var loadedFnPtr
+                _slots[486] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[480] = nativeContext.LoadFunction(
+                    : _slots[486] = nativeContext.LoadFunction(
                         "vkEnumeratePhysicalDeviceGroups",
                         "vulkan"
                     )
@@ -164680,9 +167558,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<InstanceHandle, uint*, PhysicalDeviceGroupProperties*, Result>)(
-                _slots[481] is not null and var loadedFnPtr
+                _slots[487] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[481] = nativeContext.LoadFunction(
+                    : _slots[487] = nativeContext.LoadFunction(
                         "vkEnumeratePhysicalDeviceGroupsKHR",
                         "vulkan"
                     )
@@ -164773,9 +167651,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PerformanceCounterARM*,
                 PerformanceCounterDescriptionARM*,
                 Result>)(
-                _slots[482] is not null and var loadedFnPtr
+                _slots[488] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[482] = nativeContext.LoadFunction(
+                    : _slots[488] = nativeContext.LoadFunction(
                         "vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM",
                         "vulkan"
                     )
@@ -164906,9 +167784,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PerformanceCounterKHR*,
                 PerformanceCounterDescriptionKHR*,
                 Result>)(
-                _slots[483] is not null and var loadedFnPtr
+                _slots[489] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[483] = nativeContext.LoadFunction(
+                    : _slots[489] = nativeContext.LoadFunction(
                         "vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR",
                         "vulkan"
                     )
@@ -165046,9 +167924,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<InstanceHandle, uint*, PhysicalDeviceHandle*, Result>)(
-                _slots[484] is not null and var loadedFnPtr
+                _slots[490] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[484] = nativeContext.LoadFunction(
+                    : _slots[490] = nativeContext.LoadFunction(
                         "vkEnumeratePhysicalDevices",
                         "vulkan"
                     )
@@ -165197,9 +168075,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 ShaderInstrumentationMetricDescriptionARM*,
                 Result>)(
-                _slots[485] is not null and var loadedFnPtr
+                _slots[491] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[485] = nativeContext.LoadFunction(
+                    : _slots[491] = nativeContext.LoadFunction(
                         "vkEnumeratePhysicalDeviceShaderInstrumentationMetricsARM",
                         "vulkan"
                     )
@@ -165288,6 +168166,55 @@ public unsafe partial class Vk : IVk, IVk.Static
             pDescriptions
         );
 
+    [NativeName("vkExportMetalObjectsEXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+    [NativeFunction("vulkan", EntryPoint = "vkExportMetalObjectsEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IVk.ExportMetalObjectsEXT(
+        DeviceHandle device,
+        ExportMetalObjectsInfoEXT* pMetalObjectsInfo
+    ) =>
+        (
+            (delegate* unmanaged<DeviceHandle, ExportMetalObjectsInfoEXT*, void>)(
+                _slots[492] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[492] = nativeContext.LoadFunction("vkExportMetalObjectsEXT", "vulkan")
+            )
+        )(device, pMetalObjectsInfo);
+
+    [NativeName("vkExportMetalObjectsEXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+    [NativeFunction("vulkan", EntryPoint = "vkExportMetalObjectsEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void ExportMetalObjectsEXT(
+        DeviceHandle device,
+        ExportMetalObjectsInfoEXT* pMetalObjectsInfo
+    ) => ThisThread.ExportMetalObjectsEXT(device, pMetalObjectsInfo);
+
+    [NativeName("vkExportMetalObjectsEXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+    [NativeFunction("vulkan", EntryPoint = "vkExportMetalObjectsEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IVk.ExportMetalObjectsEXT(
+        DeviceHandle device,
+        Ref<ExportMetalObjectsInfoEXT> pMetalObjectsInfo
+    )
+    {
+        fixed (ExportMetalObjectsInfoEXT* __dsl_pMetalObjectsInfo = pMetalObjectsInfo)
+        {
+            ((IVk)this).ExportMetalObjectsEXT(device, __dsl_pMetalObjectsInfo);
+        }
+    }
+
+    [NativeName("vkExportMetalObjectsEXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+    [NativeFunction("vulkan", EntryPoint = "vkExportMetalObjectsEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void ExportMetalObjectsEXT(
+        DeviceHandle device,
+        Ref<ExportMetalObjectsInfoEXT> pMetalObjectsInfo
+    ) => ThisThread.ExportMetalObjectsEXT(device, pMetalObjectsInfo);
+
     [NativeName("vkFlushMappedMemoryRanges")]
     [SupportedApiProfile(
         "vulkan",
@@ -165324,9 +168251,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, MappedMemoryRange*, Result>)(
-                _slots[486] is not null and var loadedFnPtr
+                _slots[493] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[486] = nativeContext.LoadFunction(
+                    : _slots[493] = nativeContext.LoadFunction(
                         "vkFlushMappedMemoryRanges",
                         "vulkan"
                     )
@@ -165563,9 +168490,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 CommandBufferHandle*,
                 void>)(
-                _slots[487] is not null and var loadedFnPtr
+                _slots[494] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[487] = nativeContext.LoadFunction("vkFreeCommandBuffers", "vulkan")
+                    : _slots[494] = nativeContext.LoadFunction("vkFreeCommandBuffers", "vulkan")
             )
         )(device, commandPool, commandBufferCount, pCommandBuffers);
 
@@ -165725,9 +168652,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 DescriptorSetHandle*,
                 Result>)(
-                _slots[488] is not null and var loadedFnPtr
+                _slots[495] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[488] = nativeContext.LoadFunction("vkFreeDescriptorSets", "vulkan")
+                    : _slots[495] = nativeContext.LoadFunction("vkFreeDescriptorSets", "vulkan")
             )
         )(device, descriptorPool, descriptorSetCount, pDescriptorSets);
 
@@ -165872,9 +168799,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DeviceMemoryHandle, AllocationCallbacks*, void>)(
-                _slots[489] is not null and var loadedFnPtr
+                _slots[496] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[489] = nativeContext.LoadFunction("vkFreeMemory", "vulkan")
+                    : _slots[496] = nativeContext.LoadFunction("vkFreeMemory", "vulkan")
             )
         )(device, memory, pAllocator);
 
@@ -166015,9 +168942,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 AccelerationStructureBuildSizesInfoKHR*,
                 void>)(
-                _slots[490] is not null and var loadedFnPtr
+                _slots[497] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[490] = nativeContext.LoadFunction(
+                    : _slots[497] = nativeContext.LoadFunction(
                         "vkGetAccelerationStructureBuildSizesKHR",
                         "vulkan"
                     )
@@ -166126,9 +169053,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, AccelerationStructureDeviceAddressInfoKHR*, ulong>)(
-                _slots[491] is not null and var loadedFnPtr
+                _slots[498] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[491] = nativeContext.LoadFunction(
+                    : _slots[498] = nativeContext.LoadFunction(
                         "vkGetAccelerationStructureDeviceAddressKHR",
                         "vulkan"
                     )
@@ -166213,9 +169140,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 nuint,
                 void*,
                 Result>)(
-                _slots[492] is not null and var loadedFnPtr
+                _slots[499] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[492] = nativeContext.LoadFunction(
+                    : _slots[499] = nativeContext.LoadFunction(
                         "vkGetAccelerationStructureHandleNV",
                         "vulkan"
                     )
@@ -166312,9 +169239,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AccelerationStructureMemoryRequirementsInfoNV*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[493] is not null and var loadedFnPtr
+                _slots[500] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[493] = nativeContext.LoadFunction(
+                    : _slots[500] = nativeContext.LoadFunction(
                         "vkGetAccelerationStructureMemoryRequirementsNV",
                         "vulkan"
                     )
@@ -166415,9 +169342,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AccelerationStructureCaptureDescriptorDataInfoEXT*,
                 void*,
                 Result>)(
-                _slots[494] is not null and var loadedFnPtr
+                _slots[501] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[494] = nativeContext.LoadFunction(
+                    : _slots[501] = nativeContext.LoadFunction(
                         "vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT",
                         "vulkan"
                     )
@@ -166533,9 +169460,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AHardwareBufferHandle,
                 AndroidHardwareBufferPropertiesANDROID*,
                 Result>)(
-                _slots[495] is not null and var loadedFnPtr
+                _slots[502] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[495] = nativeContext.LoadFunction(
+                    : _slots[502] = nativeContext.LoadFunction(
                         "vkGetAndroidHardwareBufferPropertiesANDROID",
                         "vulkan"
                     )
@@ -166628,9 +169555,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ulong IVk.GetBufferDeviceAddress(DeviceHandle device, BufferDeviceAddressInfo* pInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, BufferDeviceAddressInfo*, ulong>)(
-                _slots[496] is not null and var loadedFnPtr
+                _slots[503] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[496] = nativeContext.LoadFunction("vkGetBufferDeviceAddress", "vulkan")
+                    : _slots[503] = nativeContext.LoadFunction("vkGetBufferDeviceAddress", "vulkan")
             )
         )(device, pInfo);
 
@@ -166729,9 +169656,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ulong IVk.GetBufferDeviceAddressEXT(DeviceHandle device, BufferDeviceAddressInfo* pInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, BufferDeviceAddressInfo*, ulong>)(
-                _slots[497] is not null and var loadedFnPtr
+                _slots[504] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[497] = nativeContext.LoadFunction(
+                    : _slots[504] = nativeContext.LoadFunction(
                         "vkGetBufferDeviceAddressEXT",
                         "vulkan"
                     )
@@ -166803,9 +169730,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ulong IVk.GetBufferDeviceAddressKHR(DeviceHandle device, BufferDeviceAddressInfo* pInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, BufferDeviceAddressInfo*, ulong>)(
-                _slots[498] is not null and var loadedFnPtr
+                _slots[505] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[498] = nativeContext.LoadFunction(
+                    : _slots[505] = nativeContext.LoadFunction(
                         "vkGetBufferDeviceAddressKHR",
                         "vulkan"
                     )
@@ -166899,9 +169826,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, BufferHandle, MemoryRequirements*, void>)(
-                _slots[499] is not null and var loadedFnPtr
+                _slots[506] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[499] = nativeContext.LoadFunction(
+                    : _slots[506] = nativeContext.LoadFunction(
                         "vkGetBufferMemoryRequirements",
                         "vulkan"
                     )
@@ -167055,9 +169982,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 BufferMemoryRequirementsInfo2*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[500] is not null and var loadedFnPtr
+                _slots[507] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[500] = nativeContext.LoadFunction(
+                    : _slots[507] = nativeContext.LoadFunction(
                         "vkGetBufferMemoryRequirements2",
                         "vulkan"
                     )
@@ -167183,9 +170110,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 BufferMemoryRequirementsInfo2*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[501] is not null and var loadedFnPtr
+                _slots[508] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[501] = nativeContext.LoadFunction(
+                    : _slots[508] = nativeContext.LoadFunction(
                         "vkGetBufferMemoryRequirements2KHR",
                         "vulkan"
                     )
@@ -167257,9 +170184,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ulong IVk.GetBufferOpaqueCaptureAddress(DeviceHandle device, BufferDeviceAddressInfo* pInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, BufferDeviceAddressInfo*, ulong>)(
-                _slots[502] is not null and var loadedFnPtr
+                _slots[509] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[502] = nativeContext.LoadFunction(
+                    : _slots[509] = nativeContext.LoadFunction(
                         "vkGetBufferOpaqueCaptureAddress",
                         "vulkan"
                     )
@@ -167364,9 +170291,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, BufferDeviceAddressInfo*, ulong>)(
-                _slots[503] is not null and var loadedFnPtr
+                _slots[510] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[503] = nativeContext.LoadFunction(
+                    : _slots[510] = nativeContext.LoadFunction(
                         "vkGetBufferOpaqueCaptureAddressKHR",
                         "vulkan"
                     )
@@ -167447,9 +170374,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, BufferCaptureDescriptorDataInfoEXT*, void*, Result>)(
-                _slots[504] is not null and var loadedFnPtr
+                _slots[511] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[504] = nativeContext.LoadFunction(
+                    : _slots[511] = nativeContext.LoadFunction(
                         "vkGetBufferOpaqueCaptureDescriptorDataEXT",
                         "vulkan"
                     )
@@ -167551,9 +170478,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ulong*,
                 ulong*,
                 Result>)(
-                _slots[505] is not null and var loadedFnPtr
+                _slots[512] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[505] = nativeContext.LoadFunction(
+                    : _slots[512] = nativeContext.LoadFunction(
                         "vkGetCalibratedTimestampsEXT",
                         "vulkan"
                     )
@@ -167672,9 +170599,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ulong*,
                 ulong*,
                 Result>)(
-                _slots[506] is not null and var loadedFnPtr
+                _slots[513] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[506] = nativeContext.LoadFunction(
+                    : _slots[513] = nativeContext.LoadFunction(
                         "vkGetCalibratedTimestampsKHR",
                         "vulkan"
                     )
@@ -167786,9 +170713,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ClusterAccelerationStructureInputInfoNV*,
                 AccelerationStructureBuildSizesInfoKHR*,
                 void>)(
-                _slots[507] is not null and var loadedFnPtr
+                _slots[514] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[507] = nativeContext.LoadFunction(
+                    : _slots[514] = nativeContext.LoadFunction(
                         "vkGetClusterAccelerationStructureBuildSizesNV",
                         "vulkan"
                     )
@@ -167872,9 +170799,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 DataGraphPipelinePropertyARM*,
                 Result>)(
-                _slots[508] is not null and var loadedFnPtr
+                _slots[515] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[508] = nativeContext.LoadFunction(
+                    : _slots[515] = nativeContext.LoadFunction(
                         "vkGetDataGraphPipelineAvailablePropertiesARM",
                         "vulkan"
                     )
@@ -167985,9 +170912,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 DataGraphPipelinePropertyQueryResultARM*,
                 Result>)(
-                _slots[509] is not null and var loadedFnPtr
+                _slots[516] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[509] = nativeContext.LoadFunction(
+                    : _slots[516] = nativeContext.LoadFunction(
                         "vkGetDataGraphPipelinePropertiesARM",
                         "vulkan"
                     )
@@ -168097,9 +171024,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 DataGraphPipelineSessionBindPointRequirementARM*,
                 Result>)(
-                _slots[510] is not null and var loadedFnPtr
+                _slots[517] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[510] = nativeContext.LoadFunction(
+                    : _slots[517] = nativeContext.LoadFunction(
                         "vkGetDataGraphPipelineSessionBindPointRequirementsARM",
                         "vulkan"
                     )
@@ -168211,9 +171138,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DataGraphPipelineSessionMemoryRequirementsInfoARM*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[511] is not null and var loadedFnPtr
+                _slots[518] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[511] = nativeContext.LoadFunction(
+                    : _slots[518] = nativeContext.LoadFunction(
                         "vkGetDataGraphPipelineSessionMemoryRequirementsARM",
                         "vulkan"
                     )
@@ -168302,9 +171229,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DeferredOperationHandleKHR, uint>)(
-                _slots[512] is not null and var loadedFnPtr
+                _slots[519] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[512] = nativeContext.LoadFunction(
+                    : _slots[519] = nativeContext.LoadFunction(
                         "vkGetDeferredOperationMaxConcurrencyKHR",
                         "vulkan"
                     )
@@ -168330,9 +171257,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DeferredOperationHandleKHR, Result>)(
-                _slots[513] is not null and var loadedFnPtr
+                _slots[520] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[513] = nativeContext.LoadFunction(
+                    : _slots[520] = nativeContext.LoadFunction(
                         "vkGetDeferredOperationResultKHR",
                         "vulkan"
                     )
@@ -168369,9 +171296,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DescriptorGetInfoEXT*, nuint, void*, void>)(
-                _slots[514] is not null and var loadedFnPtr
+                _slots[521] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[514] = nativeContext.LoadFunction("vkGetDescriptorEXT", "vulkan")
+                    : _slots[521] = nativeContext.LoadFunction("vkGetDescriptorEXT", "vulkan")
             )
         )(device, pDescriptorInfo, dataSize, pDescriptor);
 
@@ -168465,9 +171392,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DescriptorSetHandle, void**, void>)(
-                _slots[515] is not null and var loadedFnPtr
+                _slots[522] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[515] = nativeContext.LoadFunction(
+                    : _slots[522] = nativeContext.LoadFunction(
                         "vkGetDescriptorSetHostMappingVALVE",
                         "vulkan"
                     )
@@ -168552,9 +171479,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DescriptorSetLayoutHandle, uint, ulong*, void>)(
-                _slots[516] is not null and var loadedFnPtr
+                _slots[523] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[516] = nativeContext.LoadFunction(
+                    : _slots[523] = nativeContext.LoadFunction(
                         "vkGetDescriptorSetLayoutBindingOffsetEXT",
                         "vulkan"
                     )
@@ -168654,9 +171581,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DescriptorSetBindingReferenceVALVE*,
                 DescriptorSetLayoutHostMappingInfoVALVE*,
                 void>)(
-                _slots[517] is not null and var loadedFnPtr
+                _slots[524] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[517] = nativeContext.LoadFunction(
+                    : _slots[524] = nativeContext.LoadFunction(
                         "vkGetDescriptorSetLayoutHostMappingInfoVALVE",
                         "vulkan"
                     )
@@ -168755,9 +171682,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DescriptorSetLayoutHandle, ulong*, void>)(
-                _slots[518] is not null and var loadedFnPtr
+                _slots[525] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[518] = nativeContext.LoadFunction(
+                    : _slots[525] = nativeContext.LoadFunction(
                         "vkGetDescriptorSetLayoutSizeEXT",
                         "vulkan"
                     )
@@ -168859,9 +171786,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DescriptorSetLayoutCreateInfo*,
                 DescriptorSetLayoutSupport*,
                 void>)(
-                _slots[519] is not null and var loadedFnPtr
+                _slots[526] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[519] = nativeContext.LoadFunction(
+                    : _slots[526] = nativeContext.LoadFunction(
                         "vkGetDescriptorSetLayoutSupport",
                         "vulkan"
                     )
@@ -168978,9 +171905,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DescriptorSetLayoutCreateInfo*,
                 DescriptorSetLayoutSupport*,
                 void>)(
-                _slots[520] is not null and var loadedFnPtr
+                _slots[527] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[520] = nativeContext.LoadFunction(
+                    : _slots[527] = nativeContext.LoadFunction(
                         "vkGetDescriptorSetLayoutSupportKHR",
                         "vulkan"
                     )
@@ -169067,9 +171994,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AccelerationStructureVersionInfoKHR*,
                 AccelerationStructureCompatibilityKHR*,
                 void>)(
-                _slots[521] is not null and var loadedFnPtr
+                _slots[528] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[521] = nativeContext.LoadFunction(
+                    : _slots[528] = nativeContext.LoadFunction(
                         "vkGetDeviceAccelerationStructureCompatibilityKHR",
                         "vulkan"
                     )
@@ -169176,9 +172103,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DeviceBufferMemoryRequirements*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[522] is not null and var loadedFnPtr
+                _slots[529] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[522] = nativeContext.LoadFunction(
+                    : _slots[529] = nativeContext.LoadFunction(
                         "vkGetDeviceBufferMemoryRequirements",
                         "vulkan"
                     )
@@ -169280,9 +172207,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DeviceBufferMemoryRequirements*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[523] is not null and var loadedFnPtr
+                _slots[530] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[523] = nativeContext.LoadFunction(
+                    : _slots[530] = nativeContext.LoadFunction(
                         "vkGetDeviceBufferMemoryRequirementsKHR",
                         "vulkan"
                     )
@@ -169341,9 +172268,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ulong, ulong, ulong>)(
-                _slots[524] is not null and var loadedFnPtr
+                _slots[531] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[524] = nativeContext.LoadFunction(
+                    : _slots[531] = nativeContext.LoadFunction(
                         "vkGetDeviceCombinedImageSamplerIndexNVX",
                         "vulkan"
                     )
@@ -169377,9 +172304,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DeviceFaultDebugInfoKHR*, Result>)(
-                _slots[525] is not null and var loadedFnPtr
+                _slots[532] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[525] = nativeContext.LoadFunction(
+                    : _slots[532] = nativeContext.LoadFunction(
                         "vkGetDeviceFaultDebugInfoKHR",
                         "vulkan"
                     )
@@ -169458,9 +172385,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DeviceFaultCountsEXT*, DeviceFaultInfoEXT*, Result>)(
-                _slots[526] is not null and var loadedFnPtr
+                _slots[533] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[526] = nativeContext.LoadFunction("vkGetDeviceFaultInfoEXT", "vulkan")
+                    : _slots[533] = nativeContext.LoadFunction("vkGetDeviceFaultInfoEXT", "vulkan")
             )
         )(device, pFaultCounts, pFaultInfo);
 
@@ -169542,9 +172469,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ulong, uint*, DeviceFaultInfoKHR*, Result>)(
-                _slots[527] is not null and var loadedFnPtr
+                _slots[534] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[527] = nativeContext.LoadFunction(
+                    : _slots[534] = nativeContext.LoadFunction(
                         "vkGetDeviceFaultReportsKHR",
                         "vulkan"
                     )
@@ -169652,9 +172579,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, uint, uint, PeerMemoryFeatureFlags*, void>)(
-                _slots[528] is not null and var loadedFnPtr
+                _slots[535] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[528] = nativeContext.LoadFunction(
+                    : _slots[535] = nativeContext.LoadFunction(
                         "vkGetDeviceGroupPeerMemoryFeatures",
                         "vulkan"
                     )
@@ -169803,9 +172730,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, uint, uint, PeerMemoryFeatureFlags*, void>)(
-                _slots[529] is not null and var loadedFnPtr
+                _slots[536] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[529] = nativeContext.LoadFunction(
+                    : _slots[536] = nativeContext.LoadFunction(
                         "vkGetDeviceGroupPeerMemoryFeaturesKHR",
                         "vulkan"
                     )
@@ -169901,9 +172828,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DeviceGroupPresentCapabilitiesKHR*, Result>)(
-                _slots[530] is not null and var loadedFnPtr
+                _slots[537] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[530] = nativeContext.LoadFunction(
+                    : _slots[537] = nativeContext.LoadFunction(
                         "vkGetDeviceGroupPresentCapabilitiesKHR",
                         "vulkan"
                     )
@@ -169965,6 +172892,112 @@ public unsafe partial class Vk : IVk, IVk.Static
         Ref<DeviceGroupPresentCapabilitiesKHR> pDeviceGroupPresentCapabilities
     ) => ThisThread.GetDeviceGroupPresentCapabilitiesKHR(device, pDeviceGroupPresentCapabilities);
 
+    [NativeName("vkGetDeviceGroupSurfacePresentModes2EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_EXT_full_screen_exclusive+VK_KHR_device_group",
+            "VK_EXT_full_screen_exclusive+VK_VERSION_1_1",
+        ],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetDeviceGroupSurfacePresentModes2EXT(
+        DeviceHandle device,
+        PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+        DeviceGroupPresentModeFlagsKHR* pModes
+    ) =>
+        (
+            (delegate* unmanaged<
+                DeviceHandle,
+                PhysicalDeviceSurfaceInfo2KHR*,
+                DeviceGroupPresentModeFlagsKHR*,
+                Result>)(
+                _slots[538] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[538] = nativeContext.LoadFunction(
+                        "vkGetDeviceGroupSurfacePresentModes2EXT",
+                        "vulkan"
+                    )
+            )
+        )(device, pSurfaceInfo, pModes);
+
+    [NativeName("vkGetDeviceGroupSurfacePresentModes2EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_EXT_full_screen_exclusive+VK_KHR_device_group",
+            "VK_EXT_full_screen_exclusive+VK_VERSION_1_1",
+        ],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetDeviceGroupSurfacePresentModes2EXT(
+        DeviceHandle device,
+        PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+        DeviceGroupPresentModeFlagsKHR* pModes
+    ) => ThisThread.GetDeviceGroupSurfacePresentModes2EXT(device, pSurfaceInfo, pModes);
+
+    [NativeName("vkGetDeviceGroupSurfacePresentModes2EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_EXT_full_screen_exclusive+VK_KHR_device_group",
+            "VK_EXT_full_screen_exclusive+VK_VERSION_1_1",
+        ],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetDeviceGroupSurfacePresentModes2EXT(
+        DeviceHandle device,
+        Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+        Ref<DeviceGroupPresentModeFlagsKHR> pModes
+    )
+    {
+        fixed (DeviceGroupPresentModeFlagsKHR* __dsl_pModes = pModes)
+        fixed (PhysicalDeviceSurfaceInfo2KHR* __dsl_pSurfaceInfo = pSurfaceInfo)
+        {
+            return (Result)
+                ((IVk)this).GetDeviceGroupSurfacePresentModes2EXT(
+                    device,
+                    __dsl_pSurfaceInfo,
+                    __dsl_pModes
+                );
+        }
+    }
+
+    [NativeName("vkGetDeviceGroupSurfacePresentModes2EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_EXT_full_screen_exclusive+VK_KHR_device_group",
+            "VK_EXT_full_screen_exclusive+VK_VERSION_1_1",
+        ],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetDeviceGroupSurfacePresentModes2EXT(
+        DeviceHandle device,
+        Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+        Ref<DeviceGroupPresentModeFlagsKHR> pModes
+    ) => ThisThread.GetDeviceGroupSurfacePresentModes2EXT(device, pSurfaceInfo, pModes);
+
     [NativeName("vkGetDeviceGroupSurfacePresentModesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -169985,9 +173018,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 SurfaceHandleKHR,
                 DeviceGroupPresentModeFlagsKHR*,
                 Result>)(
-                _slots[531] is not null and var loadedFnPtr
+                _slots[539] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[531] = nativeContext.LoadFunction(
+                    : _slots[539] = nativeContext.LoadFunction(
                         "vkGetDeviceGroupSurfacePresentModesKHR",
                         "vulkan"
                     )
@@ -170074,9 +173107,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DeviceImageMemoryRequirements*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[532] is not null and var loadedFnPtr
+                _slots[540] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[532] = nativeContext.LoadFunction(
+                    : _slots[540] = nativeContext.LoadFunction(
                         "vkGetDeviceImageMemoryRequirements",
                         "vulkan"
                     )
@@ -170178,9 +173211,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DeviceImageMemoryRequirements*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[533] is not null and var loadedFnPtr
+                _slots[541] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[533] = nativeContext.LoadFunction(
+                    : _slots[541] = nativeContext.LoadFunction(
                         "vkGetDeviceImageMemoryRequirementsKHR",
                         "vulkan"
                     )
@@ -170258,9 +173291,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 SparseImageMemoryRequirements2*,
                 void>)(
-                _slots[534] is not null and var loadedFnPtr
+                _slots[542] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[534] = nativeContext.LoadFunction(
+                    : _slots[542] = nativeContext.LoadFunction(
                         "vkGetDeviceImageSparseMemoryRequirements",
                         "vulkan"
                     )
@@ -170384,9 +173417,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 SparseImageMemoryRequirements2*,
                 void>)(
-                _slots[535] is not null and var loadedFnPtr
+                _slots[543] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[535] = nativeContext.LoadFunction(
+                    : _slots[543] = nativeContext.LoadFunction(
                         "vkGetDeviceImageSparseMemoryRequirementsKHR",
                         "vulkan"
                     )
@@ -170478,9 +173511,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DeviceImageSubresourceInfo*,
                 SubresourceLayout2*,
                 void>)(
-                _slots[536] is not null and var loadedFnPtr
+                _slots[544] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[536] = nativeContext.LoadFunction(
+                    : _slots[544] = nativeContext.LoadFunction(
                         "vkGetDeviceImageSubresourceLayout",
                         "vulkan"
                     )
@@ -170570,9 +173603,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DeviceImageSubresourceInfo*,
                 SubresourceLayout2*,
                 void>)(
-                _slots[537] is not null and var loadedFnPtr
+                _slots[545] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[537] = nativeContext.LoadFunction(
+                    : _slots[545] = nativeContext.LoadFunction(
                         "vkGetDeviceImageSubresourceLayoutKHR",
                         "vulkan"
                     )
@@ -170664,9 +173697,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DeviceMemoryHandle, ulong*, void>)(
-                _slots[538] is not null and var loadedFnPtr
+                _slots[546] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[538] = nativeContext.LoadFunction(
+                    : _slots[546] = nativeContext.LoadFunction(
                         "vkGetDeviceMemoryCommitment",
                         "vulkan"
                     )
@@ -170811,9 +173844,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DeviceMemoryOpaqueCaptureAddressInfo*, ulong>)(
-                _slots[539] is not null and var loadedFnPtr
+                _slots[547] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[539] = nativeContext.LoadFunction(
+                    : _slots[547] = nativeContext.LoadFunction(
                         "vkGetDeviceMemoryOpaqueCaptureAddress",
                         "vulkan"
                     )
@@ -170921,9 +173954,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DeviceMemoryOpaqueCaptureAddressInfo*, ulong>)(
-                _slots[540] is not null and var loadedFnPtr
+                _slots[548] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[540] = nativeContext.LoadFunction(
+                    : _slots[548] = nativeContext.LoadFunction(
                         "vkGetDeviceMemoryOpaqueCaptureAddressKHR",
                         "vulkan"
                     )
@@ -171006,9 +174039,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 MicromapVersionInfoEXT*,
                 AccelerationStructureCompatibilityKHR*,
                 void>)(
-                _slots[541] is not null and var loadedFnPtr
+                _slots[549] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[541] = nativeContext.LoadFunction(
+                    : _slots[549] = nativeContext.LoadFunction(
                         "vkGetDeviceMicromapCompatibilityEXT",
                         "vulkan"
                     )
@@ -171109,9 +174142,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     VoidFunction IVk.GetDeviceProcAddr(DeviceHandle device, sbyte* pName) =>
         (
             (delegate* unmanaged<DeviceHandle, sbyte*, VoidFunction>)(
-                _slots[542] is not null and var loadedFnPtr
+                _slots[550] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[542] = nativeContext.LoadFunction("vkGetDeviceProcAddr", "vulkan")
+                    : _slots[550] = nativeContext.LoadFunction("vkGetDeviceProcAddr", "vulkan")
             )
         )(device, pName);
 
@@ -171253,9 +174286,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, uint, QueueHandle*, void>)(
-                _slots[543] is not null and var loadedFnPtr
+                _slots[551] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[543] = nativeContext.LoadFunction("vkGetDeviceQueue", "vulkan")
+                    : _slots[551] = nativeContext.LoadFunction("vkGetDeviceQueue", "vulkan")
             )
         )(device, queueFamilyIndex, queueIndex, pQueue);
 
@@ -171405,9 +174438,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DeviceQueueInfo2*, QueueHandle*, void>)(
-                _slots[544] is not null and var loadedFnPtr
+                _slots[552] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[544] = nativeContext.LoadFunction("vkGetDeviceQueue2", "vulkan")
+                    : _slots[552] = nativeContext.LoadFunction("vkGetDeviceQueue2", "vulkan")
             )
         )(device, pQueueInfo, pQueue);
 
@@ -171530,9 +174563,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, RenderPassHandle, Extent2D*, Result>)(
-                _slots[545] is not null and var loadedFnPtr
+                _slots[553] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[545] = nativeContext.LoadFunction(
+                    : _slots[553] = nativeContext.LoadFunction(
                         "vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI",
                         "vulkan"
                     )
@@ -171629,9 +174662,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DeviceTensorMemoryRequirementsARM*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[546] is not null and var loadedFnPtr
+                _slots[554] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[546] = nativeContext.LoadFunction(
+                    : _slots[554] = nativeContext.LoadFunction(
                         "vkGetDeviceTensorMemoryRequirementsARM",
                         "vulkan"
                     )
@@ -171700,9 +174733,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 DisplayModeProperties2KHR*,
                 Result>)(
-                _slots[547] is not null and var loadedFnPtr
+                _slots[555] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[547] = nativeContext.LoadFunction(
+                    : _slots[555] = nativeContext.LoadFunction(
                         "vkGetDisplayModeProperties2KHR",
                         "vulkan"
                     )
@@ -171796,9 +174829,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 DisplayModePropertiesKHR*,
                 Result>)(
-                _slots[548] is not null and var loadedFnPtr
+                _slots[556] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[548] = nativeContext.LoadFunction(
+                    : _slots[556] = nativeContext.LoadFunction(
                         "vkGetDisplayModePropertiesKHR",
                         "vulkan"
                     )
@@ -171882,9 +174915,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DisplayPlaneInfo2KHR*,
                 DisplayPlaneCapabilities2KHR*,
                 Result>)(
-                _slots[549] is not null and var loadedFnPtr
+                _slots[557] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[549] = nativeContext.LoadFunction(
+                    : _slots[557] = nativeContext.LoadFunction(
                         "vkGetDisplayPlaneCapabilities2KHR",
                         "vulkan"
                     )
@@ -171972,9 +175005,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 DisplayPlaneCapabilitiesKHR*,
                 Result>)(
-                _slots[550] is not null and var loadedFnPtr
+                _slots[558] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[550] = nativeContext.LoadFunction(
+                    : _slots[558] = nativeContext.LoadFunction(
                         "vkGetDisplayPlaneCapabilitiesKHR",
                         "vulkan"
                     )
@@ -172038,9 +175071,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint, uint*, DisplayHandleKHR*, Result>)(
-                _slots[551] is not null and var loadedFnPtr
+                _slots[559] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[551] = nativeContext.LoadFunction(
+                    : _slots[559] = nativeContext.LoadFunction(
                         "vkGetDisplayPlaneSupportedDisplaysKHR",
                         "vulkan"
                     )
@@ -172121,9 +175154,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, int, uint, DisplayHandleKHR*, Result>)(
-                _slots[552] is not null and var loadedFnPtr
+                _slots[560] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[552] = nativeContext.LoadFunction("vkGetDrmDisplayEXT", "vulkan")
+                    : _slots[560] = nativeContext.LoadFunction("vkGetDrmDisplayEXT", "vulkan")
             )
         )(physicalDevice, drmFd, connectorId, display);
 
@@ -172197,9 +175230,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, RenderingInfo*, TilePropertiesQCOM*, Result>)(
-                _slots[553] is not null and var loadedFnPtr
+                _slots[561] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[553] = nativeContext.LoadFunction(
+                    : _slots[561] = nativeContext.LoadFunction(
                         "vkGetDynamicRenderingTilePropertiesQCOM",
                         "vulkan"
                     )
@@ -172295,9 +175328,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 nuint*,
                 void*,
                 Result>)(
-                _slots[554] is not null and var loadedFnPtr
+                _slots[562] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[554] = nativeContext.LoadFunction(
+                    : _slots[562] = nativeContext.LoadFunction(
                         "vkGetEncodedVideoSessionParametersKHR",
                         "vulkan"
                     )
@@ -172421,9 +175454,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.GetEventStatus(DeviceHandle device, EventHandle @event) =>
         (
             (delegate* unmanaged<DeviceHandle, EventHandle, Result>)(
-                _slots[555] is not null and var loadedFnPtr
+                _slots[563] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[555] = nativeContext.LoadFunction("vkGetEventStatus", "vulkan")
+                    : _slots[563] = nativeContext.LoadFunction("vkGetEventStatus", "vulkan")
             )
         )(device, @event);
 
@@ -172469,9 +175502,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ExternalComputeQueueDataParamsNV*,
                 void*,
                 void>)(
-                _slots[556] is not null and var loadedFnPtr
+                _slots[564] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[556] = nativeContext.LoadFunction(
+                    : _slots[564] = nativeContext.LoadFunction(
                         "vkGetExternalComputeQueueDataNV",
                         "vulkan"
                     )
@@ -172529,9 +175562,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.GetFenceFdKHR(DeviceHandle device, FenceGetFdInfoKHR* pGetFdInfo, int* pFd) =>
         (
             (delegate* unmanaged<DeviceHandle, FenceGetFdInfoKHR*, int*, Result>)(
-                _slots[557] is not null and var loadedFnPtr
+                _slots[565] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[557] = nativeContext.LoadFunction("vkGetFenceFdKHR", "vulkan")
+                    : _slots[565] = nativeContext.LoadFunction("vkGetFenceFdKHR", "vulkan")
             )
         )(device, pGetFdInfo, pFd);
 
@@ -172621,9 +175654,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.GetFenceStatus(DeviceHandle device, FenceHandle fence) =>
         (
             (delegate* unmanaged<DeviceHandle, FenceHandle, Result>)(
-                _slots[558] is not null and var loadedFnPtr
+                _slots[566] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[558] = nativeContext.LoadFunction("vkGetFenceStatus", "vulkan")
+                    : _slots[566] = nativeContext.LoadFunction("vkGetFenceStatus", "vulkan")
             )
         )(device, fence);
 
@@ -172659,6 +175692,81 @@ public unsafe partial class Vk : IVk, IVk.Static
     public static Result GetFenceStatus(DeviceHandle device, FenceHandle fence) =>
         ThisThread.GetFenceStatus(device, fence);
 
+    [NativeName("vkGetFenceWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_win32"],
+        ImpliesSets = ["VK_KHR_external_fence"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetFenceWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetFenceWin32HandleKHR(
+        DeviceHandle device,
+        FenceGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+        void** pHandle
+    ) =>
+        (
+            (delegate* unmanaged<DeviceHandle, FenceGetWin32HandleInfoKHR*, void**, Result>)(
+                _slots[567] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[567] = nativeContext.LoadFunction("vkGetFenceWin32HandleKHR", "vulkan")
+            )
+        )(device, pGetWin32HandleInfo, pHandle);
+
+    [NativeName("vkGetFenceWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_win32"],
+        ImpliesSets = ["VK_KHR_external_fence"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetFenceWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetFenceWin32HandleKHR(
+        DeviceHandle device,
+        FenceGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+        void** pHandle
+    ) => ThisThread.GetFenceWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
+
+    [NativeName("vkGetFenceWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_win32"],
+        ImpliesSets = ["VK_KHR_external_fence"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetFenceWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetFenceWin32HandleKHR(
+        DeviceHandle device,
+        Ref<FenceGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+        Ref2D pHandle
+    )
+    {
+        fixed (void** __dsl_pHandle = pHandle)
+        fixed (FenceGetWin32HandleInfoKHR* __dsl_pGetWin32HandleInfo = pGetWin32HandleInfo)
+        {
+            return (Result)
+                ((IVk)this).GetFenceWin32HandleKHR(
+                    device,
+                    __dsl_pGetWin32HandleInfo,
+                    __dsl_pHandle
+                );
+        }
+    }
+
+    [NativeName("vkGetFenceWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_win32"],
+        ImpliesSets = ["VK_KHR_external_fence"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetFenceWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetFenceWin32HandleKHR(
+        DeviceHandle device,
+        Ref<FenceGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+        Ref2D pHandle
+    ) => ThisThread.GetFenceWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
+
     [NativeName("vkGetFramebufferTilePropertiesQCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -172683,9 +175791,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 TilePropertiesQCOM*,
                 Result>)(
-                _slots[559] is not null and var loadedFnPtr
+                _slots[568] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[559] = nativeContext.LoadFunction(
+                    : _slots[568] = nativeContext.LoadFunction(
                         "vkGetFramebufferTilePropertiesQCOM",
                         "vulkan"
                     )
@@ -172796,9 +175904,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 GeneratedCommandsMemoryRequirementsInfoEXT*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[560] is not null and var loadedFnPtr
+                _slots[569] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[560] = nativeContext.LoadFunction(
+                    : _slots[569] = nativeContext.LoadFunction(
                         "vkGetGeneratedCommandsMemoryRequirementsEXT",
                         "vulkan"
                     )
@@ -172895,9 +176003,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 GeneratedCommandsMemoryRequirementsInfoNV*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[561] is not null and var loadedFnPtr
+                _slots[570] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[561] = nativeContext.LoadFunction(
+                    : _slots[570] = nativeContext.LoadFunction(
                         "vkGetGeneratedCommandsMemoryRequirementsNV",
                         "vulkan"
                     )
@@ -172971,9 +176079,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.GetGpaDeviceClockInfoAMD(DeviceHandle device, GpaDeviceGetClockInfoAMD* pInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, GpaDeviceGetClockInfoAMD*, Result>)(
-                _slots[562] is not null and var loadedFnPtr
+                _slots[571] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[562] = nativeContext.LoadFunction(
+                    : _slots[571] = nativeContext.LoadFunction(
                         "vkGetGpaDeviceClockInfoAMD",
                         "vulkan"
                     )
@@ -173051,9 +176159,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, GpaSessionHandleAMD, uint, nuint*, void*, Result>)(
-                _slots[563] is not null and var loadedFnPtr
+                _slots[572] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[563] = nativeContext.LoadFunction(
+                    : _slots[572] = nativeContext.LoadFunction(
                         "vkGetGpaSessionResultsAMD",
                         "vulkan"
                     )
@@ -173145,9 +176253,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.GetGpaSessionStatusAMD(DeviceHandle device, GpaSessionHandleAMD gpaSession) =>
         (
             (delegate* unmanaged<DeviceHandle, GpaSessionHandleAMD, Result>)(
-                _slots[564] is not null and var loadedFnPtr
+                _slots[573] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[564] = nativeContext.LoadFunction("vkGetGpaSessionStatusAMD", "vulkan")
+                    : _slots[573] = nativeContext.LoadFunction("vkGetGpaSessionStatusAMD", "vulkan")
             )
         )(device, gpaSession);
 
@@ -173190,9 +176298,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ImageHandle,
                 ImageDrmFormatModifierPropertiesEXT*,
                 Result>)(
-                _slots[565] is not null and var loadedFnPtr
+                _slots[574] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[565] = nativeContext.LoadFunction(
+                    : _slots[574] = nativeContext.LoadFunction(
                         "vkGetImageDrmFormatModifierPropertiesEXT",
                         "vulkan"
                     )
@@ -173300,9 +176408,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ImageHandle, MemoryRequirements*, void>)(
-                _slots[566] is not null and var loadedFnPtr
+                _slots[575] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[566] = nativeContext.LoadFunction(
+                    : _slots[575] = nativeContext.LoadFunction(
                         "vkGetImageMemoryRequirements",
                         "vulkan"
                     )
@@ -173456,9 +176564,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ImageMemoryRequirementsInfo2*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[567] is not null and var loadedFnPtr
+                _slots[576] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[567] = nativeContext.LoadFunction(
+                    : _slots[576] = nativeContext.LoadFunction(
                         "vkGetImageMemoryRequirements2",
                         "vulkan"
                     )
@@ -173580,9 +176688,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ImageMemoryRequirementsInfo2*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[568] is not null and var loadedFnPtr
+                _slots[577] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[568] = nativeContext.LoadFunction(
+                    : _slots[577] = nativeContext.LoadFunction(
                         "vkGetImageMemoryRequirements2KHR",
                         "vulkan"
                     )
@@ -173652,9 +176760,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, ImageHandle*, HostAddressRangeEXT*, Result>)(
-                _slots[569] is not null and var loadedFnPtr
+                _slots[578] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[569] = nativeContext.LoadFunction(
+                    : _slots[578] = nativeContext.LoadFunction(
                         "vkGetImageOpaqueCaptureDataEXT",
                         "vulkan"
                     )
@@ -173757,9 +176865,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ImageCaptureDescriptorDataInfoEXT*, void*, Result>)(
-                _slots[570] is not null and var loadedFnPtr
+                _slots[579] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[570] = nativeContext.LoadFunction(
+                    : _slots[579] = nativeContext.LoadFunction(
                         "vkGetImageOpaqueCaptureDescriptorDataEXT",
                         "vulkan"
                     )
@@ -173877,9 +176985,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 SparseImageMemoryRequirements*,
                 void>)(
-                _slots[571] is not null and var loadedFnPtr
+                _slots[580] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[571] = nativeContext.LoadFunction(
+                    : _slots[580] = nativeContext.LoadFunction(
                         "vkGetImageSparseMemoryRequirements",
                         "vulkan"
                     )
@@ -174059,9 +177167,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 SparseImageMemoryRequirements2*,
                 void>)(
-                _slots[572] is not null and var loadedFnPtr
+                _slots[581] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[572] = nativeContext.LoadFunction(
+                    : _slots[581] = nativeContext.LoadFunction(
                         "vkGetImageSparseMemoryRequirements2",
                         "vulkan"
                     )
@@ -174209,9 +177317,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 SparseImageMemoryRequirements2*,
                 void>)(
-                _slots[573] is not null and var loadedFnPtr
+                _slots[582] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[573] = nativeContext.LoadFunction(
+                    : _slots[582] = nativeContext.LoadFunction(
                         "vkGetImageSparseMemoryRequirements2KHR",
                         "vulkan"
                     )
@@ -174321,9 +177429,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ImageSubresource*,
                 SubresourceLayout*,
                 void>)(
-                _slots[574] is not null and var loadedFnPtr
+                _slots[583] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[574] = nativeContext.LoadFunction(
+                    : _slots[583] = nativeContext.LoadFunction(
                         "vkGetImageSubresourceLayout",
                         "vulkan"
                     )
@@ -174471,9 +177579,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ImageSubresource2*,
                 SubresourceLayout2*,
                 void>)(
-                _slots[575] is not null and var loadedFnPtr
+                _slots[584] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[575] = nativeContext.LoadFunction(
+                    : _slots[584] = nativeContext.LoadFunction(
                         "vkGetImageSubresourceLayout2",
                         "vulkan"
                     )
@@ -174577,9 +177685,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ImageSubresource2*,
                 SubresourceLayout2*,
                 void>)(
-                _slots[576] is not null and var loadedFnPtr
+                _slots[585] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[576] = nativeContext.LoadFunction(
+                    : _slots[585] = nativeContext.LoadFunction(
                         "vkGetImageSubresourceLayout2EXT",
                         "vulkan"
                     )
@@ -174676,9 +177784,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ImageSubresource2*,
                 SubresourceLayout2*,
                 void>)(
-                _slots[577] is not null and var loadedFnPtr
+                _slots[586] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[577] = nativeContext.LoadFunction(
+                    : _slots[586] = nativeContext.LoadFunction(
                         "vkGetImageSubresourceLayout2KHR",
                         "vulkan"
                     )
@@ -174757,9 +177865,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ImageViewHandle,
                 ImageViewAddressPropertiesNVX*,
                 Result>)(
-                _slots[578] is not null and var loadedFnPtr
+                _slots[587] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[578] = nativeContext.LoadFunction("vkGetImageViewAddressNVX", "vulkan")
+                    : _slots[587] = nativeContext.LoadFunction("vkGetImageViewAddressNVX", "vulkan")
             )
         )(device, imageView, pProperties);
 
@@ -174806,9 +177914,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ulong IVk.GetImageViewHandle64NVX(DeviceHandle device, ImageViewHandleInfoNVX* pInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, ImageViewHandleInfoNVX*, ulong>)(
-                _slots[579] is not null and var loadedFnPtr
+                _slots[588] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[579] = nativeContext.LoadFunction(
+                    : _slots[588] = nativeContext.LoadFunction(
                         "vkGetImageViewHandle64NVX",
                         "vulkan"
                     )
@@ -174852,9 +177960,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     uint IVk.GetImageViewHandleNVX(DeviceHandle device, ImageViewHandleInfoNVX* pInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, ImageViewHandleInfoNVX*, uint>)(
-                _slots[580] is not null and var loadedFnPtr
+                _slots[589] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[580] = nativeContext.LoadFunction("vkGetImageViewHandleNVX", "vulkan")
+                    : _slots[589] = nativeContext.LoadFunction("vkGetImageViewHandleNVX", "vulkan")
             )
         )(device, pInfo);
 
@@ -174910,9 +178018,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ImageViewCaptureDescriptorDataInfoEXT*,
                 void*,
                 Result>)(
-                _slots[581] is not null and var loadedFnPtr
+                _slots[590] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[581] = nativeContext.LoadFunction(
+                    : _slots[590] = nativeContext.LoadFunction(
                         "vkGetImageViewOpaqueCaptureDescriptorDataEXT",
                         "vulkan"
                     )
@@ -175020,9 +178128,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     VoidFunction IVk.GetInstanceProcAddr(InstanceHandle instance, sbyte* pName) =>
         (
             (delegate* unmanaged<InstanceHandle, sbyte*, VoidFunction>)(
-                _slots[582] is not null and var loadedFnPtr
+                _slots[591] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[582] = nativeContext.LoadFunction("vkGetInstanceProcAddr", "vulkan")
+                    : _slots[591] = nativeContext.LoadFunction("vkGetInstanceProcAddr", "vulkan")
             )
         )(instance, pName);
 
@@ -175147,9 +178255,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SwapchainHandleKHR, GetLatencyMarkerInfoNV*, void>)(
-                _slots[583] is not null and var loadedFnPtr
+                _slots[592] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[583] = nativeContext.LoadFunction("vkGetLatencyTimingsNV", "vulkan")
+                    : _slots[592] = nativeContext.LoadFunction("vkGetLatencyTimingsNV", "vulkan")
             )
         )(device, swapchain, pLatencyMarkerInfo);
 
@@ -175238,9 +178346,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 MemoryGetAndroidHardwareBufferInfoANDROID*,
                 AHardwareBufferHandle*,
                 Result>)(
-                _slots[584] is not null and var loadedFnPtr
+                _slots[593] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[584] = nativeContext.LoadFunction(
+                    : _slots[593] = nativeContext.LoadFunction(
                         "vkGetMemoryAndroidHardwareBufferANDROID",
                         "vulkan"
                     )
@@ -175324,9 +178432,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.GetMemoryFdKHR(DeviceHandle device, MemoryGetFdInfoKHR* pGetFdInfo, int* pFd) =>
         (
             (delegate* unmanaged<DeviceHandle, MemoryGetFdInfoKHR*, int*, Result>)(
-                _slots[585] is not null and var loadedFnPtr
+                _slots[594] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[585] = nativeContext.LoadFunction("vkGetMemoryFdKHR", "vulkan")
+                    : _slots[594] = nativeContext.LoadFunction("vkGetMemoryFdKHR", "vulkan")
             )
         )(device, pGetFdInfo, pFd);
 
@@ -175408,9 +178516,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 int,
                 MemoryFdPropertiesKHR*,
                 Result>)(
-                _slots[586] is not null and var loadedFnPtr
+                _slots[595] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[586] = nativeContext.LoadFunction(
+                    : _slots[595] = nativeContext.LoadFunction(
                         "vkGetMemoryFdPropertiesKHR",
                         "vulkan"
                     )
@@ -175507,9 +178615,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 void*,
                 MemoryHostPointerPropertiesEXT*,
                 Result>)(
-                _slots[587] is not null and var loadedFnPtr
+                _slots[596] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[587] = nativeContext.LoadFunction(
+                    : _slots[596] = nativeContext.LoadFunction(
                         "vkGetMemoryHostPointerPropertiesEXT",
                         "vulkan"
                     )
@@ -175598,6 +178706,211 @@ public unsafe partial class Vk : IVk, IVk.Static
             pMemoryHostPointerProperties
         );
 
+    [NativeName("vkGetMemoryMetalHandleEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_metal"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+            "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandleEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetMemoryMetalHandleEXT(
+        DeviceHandle device,
+        MemoryGetMetalHandleInfoEXT* pGetMetalHandleInfo,
+        void** pHandle
+    ) =>
+        (
+            (delegate* unmanaged<DeviceHandle, MemoryGetMetalHandleInfoEXT*, void**, Result>)(
+                _slots[597] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[597] = nativeContext.LoadFunction(
+                        "vkGetMemoryMetalHandleEXT",
+                        "vulkan"
+                    )
+            )
+        )(device, pGetMetalHandleInfo, pHandle);
+
+    [NativeName("vkGetMemoryMetalHandleEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_metal"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+            "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandleEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetMemoryMetalHandleEXT(
+        DeviceHandle device,
+        MemoryGetMetalHandleInfoEXT* pGetMetalHandleInfo,
+        void** pHandle
+    ) => ThisThread.GetMemoryMetalHandleEXT(device, pGetMetalHandleInfo, pHandle);
+
+    [NativeName("vkGetMemoryMetalHandleEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_metal"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+            "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandleEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetMemoryMetalHandleEXT(
+        DeviceHandle device,
+        Ref<MemoryGetMetalHandleInfoEXT> pGetMetalHandleInfo,
+        Ref2D pHandle
+    )
+    {
+        fixed (void** __dsl_pHandle = pHandle)
+        fixed (MemoryGetMetalHandleInfoEXT* __dsl_pGetMetalHandleInfo = pGetMetalHandleInfo)
+        {
+            return (Result)
+                ((IVk)this).GetMemoryMetalHandleEXT(
+                    device,
+                    __dsl_pGetMetalHandleInfo,
+                    __dsl_pHandle
+                );
+        }
+    }
+
+    [NativeName("vkGetMemoryMetalHandleEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_metal"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+            "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandleEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetMemoryMetalHandleEXT(
+        DeviceHandle device,
+        Ref<MemoryGetMetalHandleInfoEXT> pGetMetalHandleInfo,
+        Ref2D pHandle
+    ) => ThisThread.GetMemoryMetalHandleEXT(device, pGetMetalHandleInfo, pHandle);
+
+    [NativeName("vkGetMemoryMetalHandlePropertiesEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_metal"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+            "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandlePropertiesEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetMemoryMetalHandlePropertiesEXT(
+        DeviceHandle device,
+        ExternalMemoryHandleTypeFlags handleType,
+        void* pHandle,
+        MemoryMetalHandlePropertiesEXT* pMemoryMetalHandleProperties
+    ) =>
+        (
+            (delegate* unmanaged<
+                DeviceHandle,
+                ExternalMemoryHandleTypeFlags,
+                void*,
+                MemoryMetalHandlePropertiesEXT*,
+                Result>)(
+                _slots[598] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[598] = nativeContext.LoadFunction(
+                        "vkGetMemoryMetalHandlePropertiesEXT",
+                        "vulkan"
+                    )
+            )
+        )(device, handleType, pHandle, pMemoryMetalHandleProperties);
+
+    [NativeName("vkGetMemoryMetalHandlePropertiesEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_metal"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+            "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandlePropertiesEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetMemoryMetalHandlePropertiesEXT(
+        DeviceHandle device,
+        ExternalMemoryHandleTypeFlags handleType,
+        void* pHandle,
+        MemoryMetalHandlePropertiesEXT* pMemoryMetalHandleProperties
+    ) =>
+        ThisThread.GetMemoryMetalHandlePropertiesEXT(
+            device,
+            handleType,
+            pHandle,
+            pMemoryMetalHandleProperties
+        );
+
+    [NativeName("vkGetMemoryMetalHandlePropertiesEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_metal"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+            "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandlePropertiesEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetMemoryMetalHandlePropertiesEXT(
+        DeviceHandle device,
+        ExternalMemoryHandleTypeFlags handleType,
+        Ref pHandle,
+        Ref<MemoryMetalHandlePropertiesEXT> pMemoryMetalHandleProperties
+    )
+    {
+        fixed (
+            MemoryMetalHandlePropertiesEXT* __dsl_pMemoryMetalHandleProperties =
+                pMemoryMetalHandleProperties
+        )
+        fixed (void* __dsl_pHandle = pHandle)
+        {
+            return (Result)
+                ((IVk)this).GetMemoryMetalHandlePropertiesEXT(
+                    device,
+                    handleType,
+                    __dsl_pHandle,
+                    __dsl_pMemoryMetalHandleProperties
+                );
+        }
+    }
+
+    [NativeName("vkGetMemoryMetalHandlePropertiesEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_metal"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+            "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandlePropertiesEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetMemoryMetalHandlePropertiesEXT(
+        DeviceHandle device,
+        ExternalMemoryHandleTypeFlags handleType,
+        Ref pHandle,
+        Ref<MemoryMetalHandlePropertiesEXT> pMemoryMetalHandleProperties
+    ) =>
+        ThisThread.GetMemoryMetalHandlePropertiesEXT(
+            device,
+            handleType,
+            pHandle,
+            pMemoryMetalHandleProperties
+        );
+
     [NativeName("vkGetMemoryNativeBufferOHOS")]
     [SupportedApiProfile(
         "vulkan",
@@ -175620,9 +178933,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 MemoryGetNativeBufferInfoOHOS*,
                 OHNativeBufferHandle*,
                 Result>)(
-                _slots[588] is not null and var loadedFnPtr
+                _slots[599] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[588] = nativeContext.LoadFunction(
+                    : _slots[599] = nativeContext.LoadFunction(
                         "vkGetMemoryNativeBufferOHOS",
                         "vulkan"
                     )
@@ -175706,9 +179019,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, MemoryGetRemoteAddressInfoNV*, void**, Result>)(
-                _slots[589] is not null and var loadedFnPtr
+                _slots[600] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[589] = nativeContext.LoadFunction(
+                    : _slots[600] = nativeContext.LoadFunction(
                         "vkGetMemoryRemoteAddressNV",
                         "vulkan"
                     )
@@ -175781,6 +179094,290 @@ public unsafe partial class Vk : IVk, IVk.Static
         Ref2D pAddress
     ) => ThisThread.GetMemoryRemoteAddressNV(device, pMemoryGetRemoteAddressInfo, pAddress);
 
+    [NativeName("vkGetMemoryWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_win32"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+            "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetMemoryWin32HandleKHR(
+        DeviceHandle device,
+        MemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+        void** pHandle
+    ) =>
+        (
+            (delegate* unmanaged<DeviceHandle, MemoryGetWin32HandleInfoKHR*, void**, Result>)(
+                _slots[601] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[601] = nativeContext.LoadFunction(
+                        "vkGetMemoryWin32HandleKHR",
+                        "vulkan"
+                    )
+            )
+        )(device, pGetWin32HandleInfo, pHandle);
+
+    [NativeName("vkGetMemoryWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_win32"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+            "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetMemoryWin32HandleKHR(
+        DeviceHandle device,
+        MemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+        void** pHandle
+    ) => ThisThread.GetMemoryWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
+
+    [NativeName("vkGetMemoryWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_win32"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+            "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetMemoryWin32HandleKHR(
+        DeviceHandle device,
+        Ref<MemoryGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+        Ref2D pHandle
+    )
+    {
+        fixed (void** __dsl_pHandle = pHandle)
+        fixed (MemoryGetWin32HandleInfoKHR* __dsl_pGetWin32HandleInfo = pGetWin32HandleInfo)
+        {
+            return (Result)
+                ((IVk)this).GetMemoryWin32HandleKHR(
+                    device,
+                    __dsl_pGetWin32HandleInfo,
+                    __dsl_pHandle
+                );
+        }
+    }
+
+    [NativeName("vkGetMemoryWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_win32"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+            "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetMemoryWin32HandleKHR(
+        DeviceHandle device,
+        Ref<MemoryGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+        Ref2D pHandle
+    ) => ThisThread.GetMemoryWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
+
+    [NativeName("vkGetMemoryWin32HandleNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory_win32"],
+        ImpliesSets = ["VK_NV_external_memory"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleNV")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetMemoryWin32HandleNV(
+        DeviceHandle device,
+        DeviceMemoryHandle memory,
+        ExternalMemoryHandleTypeFlagsNV handleType,
+        void** pHandle
+    ) =>
+        (
+            (delegate* unmanaged<
+                DeviceHandle,
+                DeviceMemoryHandle,
+                ExternalMemoryHandleTypeFlagsNV,
+                void**,
+                Result>)(
+                _slots[602] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[602] = nativeContext.LoadFunction("vkGetMemoryWin32HandleNV", "vulkan")
+            )
+        )(device, memory, handleType, pHandle);
+
+    [NativeName("vkGetMemoryWin32HandleNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory_win32"],
+        ImpliesSets = ["VK_NV_external_memory"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleNV")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetMemoryWin32HandleNV(
+        DeviceHandle device,
+        DeviceMemoryHandle memory,
+        ExternalMemoryHandleTypeFlagsNV handleType,
+        void** pHandle
+    ) => ThisThread.GetMemoryWin32HandleNV(device, memory, handleType, pHandle);
+
+    [NativeName("vkGetMemoryWin32HandleNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory_win32"],
+        ImpliesSets = ["VK_NV_external_memory"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleNV")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetMemoryWin32HandleNV(
+        DeviceHandle device,
+        DeviceMemoryHandle memory,
+        ExternalMemoryHandleTypeFlagsNV handleType,
+        Ref2D pHandle
+    )
+    {
+        fixed (void** __dsl_pHandle = pHandle)
+        {
+            return (Result)
+                ((IVk)this).GetMemoryWin32HandleNV(device, memory, handleType, __dsl_pHandle);
+        }
+    }
+
+    [NativeName("vkGetMemoryWin32HandleNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory_win32"],
+        ImpliesSets = ["VK_NV_external_memory"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleNV")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetMemoryWin32HandleNV(
+        DeviceHandle device,
+        DeviceMemoryHandle memory,
+        ExternalMemoryHandleTypeFlagsNV handleType,
+        Ref2D pHandle
+    ) => ThisThread.GetMemoryWin32HandleNV(device, memory, handleType, pHandle);
+
+    [NativeName("vkGetMemoryWin32HandlePropertiesKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_win32"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+            "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetMemoryWin32HandlePropertiesKHR(
+        DeviceHandle device,
+        ExternalMemoryHandleTypeFlags handleType,
+        void* handle,
+        MemoryWin32HandlePropertiesKHR* pMemoryWin32HandleProperties
+    ) =>
+        (
+            (delegate* unmanaged<
+                DeviceHandle,
+                ExternalMemoryHandleTypeFlags,
+                void*,
+                MemoryWin32HandlePropertiesKHR*,
+                Result>)(
+                _slots[603] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[603] = nativeContext.LoadFunction(
+                        "vkGetMemoryWin32HandlePropertiesKHR",
+                        "vulkan"
+                    )
+            )
+        )(device, handleType, handle, pMemoryWin32HandleProperties);
+
+    [NativeName("vkGetMemoryWin32HandlePropertiesKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_win32"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+            "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetMemoryWin32HandlePropertiesKHR(
+        DeviceHandle device,
+        ExternalMemoryHandleTypeFlags handleType,
+        void* handle,
+        MemoryWin32HandlePropertiesKHR* pMemoryWin32HandleProperties
+    ) =>
+        ThisThread.GetMemoryWin32HandlePropertiesKHR(
+            device,
+            handleType,
+            handle,
+            pMemoryWin32HandleProperties
+        );
+
+    [NativeName("vkGetMemoryWin32HandlePropertiesKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_win32"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+            "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetMemoryWin32HandlePropertiesKHR(
+        DeviceHandle device,
+        ExternalMemoryHandleTypeFlags handleType,
+        Ref handle,
+        Ref<MemoryWin32HandlePropertiesKHR> pMemoryWin32HandleProperties
+    )
+    {
+        fixed (
+            MemoryWin32HandlePropertiesKHR* __dsl_pMemoryWin32HandleProperties =
+                pMemoryWin32HandleProperties
+        )
+        fixed (void* __dsl_handle = handle)
+        {
+            return (Result)
+                ((IVk)this).GetMemoryWin32HandlePropertiesKHR(
+                    device,
+                    handleType,
+                    __dsl_handle,
+                    __dsl_pMemoryWin32HandleProperties
+                );
+        }
+    }
+
+    [NativeName("vkGetMemoryWin32HandlePropertiesKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_win32"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+            "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetMemoryWin32HandlePropertiesKHR(
+        DeviceHandle device,
+        ExternalMemoryHandleTypeFlags handleType,
+        Ref handle,
+        Ref<MemoryWin32HandlePropertiesKHR> pMemoryWin32HandleProperties
+    ) =>
+        ThisThread.GetMemoryWin32HandlePropertiesKHR(
+            device,
+            handleType,
+            handle,
+            pMemoryWin32HandleProperties
+        );
+
     [NativeName("vkGetMicromapBuildSizesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -175805,9 +179402,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 MicromapBuildInfoEXT*,
                 MicromapBuildSizesInfoEXT*,
                 void>)(
-                _slots[590] is not null and var loadedFnPtr
+                _slots[604] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[590] = nativeContext.LoadFunction(
+                    : _slots[604] = nativeContext.LoadFunction(
                         "vkGetMicromapBuildSizesEXT",
                         "vulkan"
                     )
@@ -175902,9 +179499,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 OHNativeBufferHandle,
                 NativeBufferPropertiesOHOS*,
                 Result>)(
-                _slots[591] is not null and var loadedFnPtr
+                _slots[605] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[591] = nativeContext.LoadFunction(
+                    : _slots[605] = nativeContext.LoadFunction(
                         "vkGetNativeBufferPropertiesOHOS",
                         "vulkan"
                     )
@@ -175988,9 +179585,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PartitionedAccelerationStructureInstancesInputNV*,
                 AccelerationStructureBuildSizesInfoKHR*,
                 void>)(
-                _slots[592] is not null and var loadedFnPtr
+                _slots[606] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[592] = nativeContext.LoadFunction(
+                    : _slots[606] = nativeContext.LoadFunction(
                         "vkGetPartitionedAccelerationStructuresBuildSizesNV",
                         "vulkan"
                     )
@@ -176074,9 +179671,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PastPresentationTimingInfoEXT*,
                 PastPresentationTimingPropertiesEXT*,
                 Result>)(
-                _slots[593] is not null and var loadedFnPtr
+                _slots[607] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[593] = nativeContext.LoadFunction(
+                    : _slots[607] = nativeContext.LoadFunction(
                         "vkGetPastPresentationTimingEXT",
                         "vulkan"
                     )
@@ -176189,9 +179786,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 PastPresentationTimingGOOGLE*,
                 Result>)(
-                _slots[594] is not null and var loadedFnPtr
+                _slots[608] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[594] = nativeContext.LoadFunction(
+                    : _slots[608] = nativeContext.LoadFunction(
                         "vkGetPastPresentationTimingGOOGLE",
                         "vulkan"
                     )
@@ -176283,9 +179880,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PerformanceParameterTypeINTEL,
                 PerformanceValueINTEL*,
                 Result>)(
-                _slots[595] is not null and var loadedFnPtr
+                _slots[609] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[595] = nativeContext.LoadFunction(
+                    : _slots[609] = nativeContext.LoadFunction(
                         "vkGetPerformanceParameterINTEL",
                         "vulkan"
                     )
@@ -176347,9 +179944,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint*, TimeDomainKHR*, Result>)(
-                _slots[596] is not null and var loadedFnPtr
+                _slots[610] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[596] = nativeContext.LoadFunction(
+                    : _slots[610] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT",
                         "vulkan"
                     )
@@ -176447,9 +180044,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint*, TimeDomainKHR*, Result>)(
-                _slots[597] is not null and var loadedFnPtr
+                _slots[611] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[597] = nativeContext.LoadFunction(
+                    : _slots[611] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceCalibrateableTimeDomainsKHR",
                         "vulkan"
                     )
@@ -176551,9 +180148,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 CooperativeMatrixFlexibleDimensionsPropertiesNV*,
                 Result>)(
-                _slots[598] is not null and var loadedFnPtr
+                _slots[612] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[598] = nativeContext.LoadFunction(
+                    : _slots[612] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV",
                         "vulkan"
                     )
@@ -176655,9 +180252,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 CooperativeMatrixPropertiesKHR*,
                 Result>)(
-                _slots[599] is not null and var loadedFnPtr
+                _slots[613] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[599] = nativeContext.LoadFunction(
+                    : _slots[613] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR",
                         "vulkan"
                     )
@@ -176759,9 +180356,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 CooperativeMatrixPropertiesNV*,
                 Result>)(
-                _slots[600] is not null and var loadedFnPtr
+                _slots[614] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[600] = nativeContext.LoadFunction(
+                    : _slots[614] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceCooperativeMatrixPropertiesNV",
                         "vulkan"
                     )
@@ -176863,9 +180460,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 CooperativeVectorPropertiesNV*,
                 Result>)(
-                _slots[601] is not null and var loadedFnPtr
+                _slots[615] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[601] = nativeContext.LoadFunction(
+                    : _slots[615] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceCooperativeVectorPropertiesNV",
                         "vulkan"
                     )
@@ -176965,9 +180562,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, DescriptorType, ulong>)(
-                _slots[602] is not null and var loadedFnPtr
+                _slots[616] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[602] = nativeContext.LoadFunction(
+                    : _slots[616] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceDescriptorSizeEXT",
                         "vulkan"
                     )
@@ -177008,9 +180605,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint*, DisplayPlaneProperties2KHR*, Result>)(
-                _slots[603] is not null and var loadedFnPtr
+                _slots[617] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[603] = nativeContext.LoadFunction(
+                    : _slots[617] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceDisplayPlaneProperties2KHR",
                         "vulkan"
                     )
@@ -177092,9 +180689,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint*, DisplayPlanePropertiesKHR*, Result>)(
-                _slots[604] is not null and var loadedFnPtr
+                _slots[618] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[604] = nativeContext.LoadFunction(
+                    : _slots[618] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceDisplayPlanePropertiesKHR",
                         "vulkan"
                     )
@@ -177168,9 +180765,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint*, DisplayProperties2KHR*, Result>)(
-                _slots[605] is not null and var loadedFnPtr
+                _slots[619] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[605] = nativeContext.LoadFunction(
+                    : _slots[619] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceDisplayProperties2KHR",
                         "vulkan"
                     )
@@ -177252,9 +180849,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint*, DisplayPropertiesKHR*, Result>)(
-                _slots[606] is not null and var loadedFnPtr
+                _slots[620] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[606] = nativeContext.LoadFunction(
+                    : _slots[620] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceDisplayPropertiesKHR",
                         "vulkan"
                     )
@@ -177349,9 +180946,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PhysicalDeviceExternalBufferInfo*,
                 ExternalBufferProperties*,
                 void>)(
-                _slots[607] is not null and var loadedFnPtr
+                _slots[621] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[607] = nativeContext.LoadFunction(
+                    : _slots[621] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceExternalBufferProperties",
                         "vulkan"
                     )
@@ -177496,9 +181093,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PhysicalDeviceExternalBufferInfo*,
                 ExternalBufferProperties*,
                 void>)(
-                _slots[608] is not null and var loadedFnPtr
+                _slots[622] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[608] = nativeContext.LoadFunction(
+                    : _slots[622] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceExternalBufferPropertiesKHR",
                         "vulkan"
                     )
@@ -177615,9 +181212,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PhysicalDeviceExternalFenceInfo*,
                 ExternalFenceProperties*,
                 void>)(
-                _slots[609] is not null and var loadedFnPtr
+                _slots[623] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[609] = nativeContext.LoadFunction(
+                    : _slots[623] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceExternalFenceProperties",
                         "vulkan"
                     )
@@ -177760,9 +181357,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PhysicalDeviceExternalFenceInfo*,
                 ExternalFenceProperties*,
                 void>)(
-                _slots[610] is not null and var loadedFnPtr
+                _slots[624] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[610] = nativeContext.LoadFunction(
+                    : _slots[624] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceExternalFencePropertiesKHR",
                         "vulkan"
                     )
@@ -177866,9 +181463,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ExternalMemoryHandleTypeFlagsNV,
                 ExternalImageFormatPropertiesNV*,
                 Result>)(
-                _slots[611] is not null and var loadedFnPtr
+                _slots[625] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[611] = nativeContext.LoadFunction(
+                    : _slots[625] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceExternalImageFormatPropertiesNV",
                         "vulkan"
                     )
@@ -178004,9 +181601,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PhysicalDeviceExternalSemaphoreInfo*,
                 ExternalSemaphoreProperties*,
                 void>)(
-                _slots[612] is not null and var loadedFnPtr
+                _slots[626] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[612] = nativeContext.LoadFunction(
+                    : _slots[626] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceExternalSemaphoreProperties",
                         "vulkan"
                     )
@@ -178155,9 +181752,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PhysicalDeviceExternalSemaphoreInfo*,
                 ExternalSemaphoreProperties*,
                 void>)(
-                _slots[613] is not null and var loadedFnPtr
+                _slots[627] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[613] = nativeContext.LoadFunction(
+                    : _slots[627] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceExternalSemaphorePropertiesKHR",
                         "vulkan"
                     )
@@ -178257,9 +181854,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PhysicalDeviceExternalTensorInfoARM*,
                 ExternalTensorPropertiesARM*,
                 void>)(
-                _slots[614] is not null and var loadedFnPtr
+                _slots[628] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[614] = nativeContext.LoadFunction(
+                    : _slots[628] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceExternalTensorPropertiesARM",
                         "vulkan"
                     )
@@ -178354,9 +181951,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, PhysicalDeviceFeatures*, void>)(
-                _slots[615] is not null and var loadedFnPtr
+                _slots[629] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[615] = nativeContext.LoadFunction(
+                    : _slots[629] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceFeatures",
                         "vulkan"
                     )
@@ -178502,9 +182099,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, PhysicalDeviceFeatures2*, void>)(
-                _slots[616] is not null and var loadedFnPtr
+                _slots[630] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[616] = nativeContext.LoadFunction(
+                    : _slots[630] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceFeatures2",
                         "vulkan"
                     )
@@ -178617,9 +182214,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, PhysicalDeviceFeatures2*, void>)(
-                _slots[617] is not null and var loadedFnPtr
+                _slots[631] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[617] = nativeContext.LoadFunction(
+                    : _slots[631] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceFeatures2KHR",
                         "vulkan"
                     )
@@ -178695,9 +182292,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, Format, FormatProperties*, void>)(
-                _slots[618] is not null and var loadedFnPtr
+                _slots[632] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[618] = nativeContext.LoadFunction(
+                    : _slots[632] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceFormatProperties",
                         "vulkan"
                     )
@@ -178851,9 +182448,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, Format, FormatProperties2*, void>)(
-                _slots[619] is not null and var loadedFnPtr
+                _slots[633] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[619] = nativeContext.LoadFunction(
+                    : _slots[633] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceFormatProperties2",
                         "vulkan"
                     )
@@ -178974,9 +182571,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, Format, FormatProperties2*, void>)(
-                _slots[620] is not null and var loadedFnPtr
+                _slots[634] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[620] = nativeContext.LoadFunction(
+                    : _slots[634] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceFormatProperties2KHR",
                         "vulkan"
                     )
@@ -179048,9 +182645,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 PhysicalDeviceFragmentShadingRateKHR*,
                 Result>)(
-                _slots[621] is not null and var loadedFnPtr
+                _slots[635] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[621] = nativeContext.LoadFunction(
+                    : _slots[635] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceFragmentShadingRatesKHR",
                         "vulkan"
                     )
@@ -179184,9 +182781,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ImageCreateFlags,
                 ImageFormatProperties*,
                 Result>)(
-                _slots[622] is not null and var loadedFnPtr
+                _slots[636] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[622] = nativeContext.LoadFunction(
+                    : _slots[636] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceImageFormatProperties",
                         "vulkan"
                     )
@@ -179379,9 +182976,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PhysicalDeviceImageFormatInfo2*,
                 ImageFormatProperties2*,
                 Result>)(
-                _slots[623] is not null and var loadedFnPtr
+                _slots[637] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[623] = nativeContext.LoadFunction(
+                    : _slots[637] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceImageFormatProperties2",
                         "vulkan"
                     )
@@ -179518,9 +183115,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PhysicalDeviceImageFormatInfo2*,
                 ImageFormatProperties2*,
                 Result>)(
-                _slots[624] is not null and var loadedFnPtr
+                _slots[638] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[624] = nativeContext.LoadFunction(
+                    : _slots[638] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceImageFormatProperties2KHR",
                         "vulkan"
                     )
@@ -179614,9 +183211,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, PhysicalDeviceMemoryProperties*, void>)(
-                _slots[625] is not null and var loadedFnPtr
+                _slots[639] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[625] = nativeContext.LoadFunction(
+                    : _slots[639] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceMemoryProperties",
                         "vulkan"
                     )
@@ -179762,9 +183359,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, PhysicalDeviceMemoryProperties2*, void>)(
-                _slots[626] is not null and var loadedFnPtr
+                _slots[640] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[626] = nativeContext.LoadFunction(
+                    : _slots[640] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceMemoryProperties2",
                         "vulkan"
                     )
@@ -179877,9 +183474,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, PhysicalDeviceMemoryProperties2*, void>)(
-                _slots[627] is not null and var loadedFnPtr
+                _slots[641] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[627] = nativeContext.LoadFunction(
+                    : _slots[641] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceMemoryProperties2KHR",
                         "vulkan"
                     )
@@ -179944,9 +183541,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 SampleCountFlags,
                 MultisamplePropertiesEXT*,
                 void>)(
-                _slots[628] is not null and var loadedFnPtr
+                _slots[642] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[628] = nativeContext.LoadFunction(
+                    : _slots[642] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceMultisamplePropertiesEXT",
                         "vulkan"
                     )
@@ -180049,9 +183646,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 OpticalFlowImageFormatPropertiesNV*,
                 Result>)(
-                _slots[629] is not null and var loadedFnPtr
+                _slots[643] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[629] = nativeContext.LoadFunction(
+                    : _slots[643] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceOpticalFlowImageFormatsNV",
                         "vulkan"
                     )
@@ -180164,9 +183761,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, SurfaceHandleKHR, uint*, Rect2D*, Result>)(
-                _slots[630] is not null and var loadedFnPtr
+                _slots[644] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[630] = nativeContext.LoadFunction(
+                    : _slots[644] = nativeContext.LoadFunction(
                         "vkGetPhysicalDevicePresentRectanglesKHR",
                         "vulkan"
                     )
@@ -180281,9 +183878,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, PhysicalDeviceProperties*, void>)(
-                _slots[631] is not null and var loadedFnPtr
+                _slots[645] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[631] = nativeContext.LoadFunction(
+                    : _slots[645] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceProperties",
                         "vulkan"
                     )
@@ -180429,9 +184026,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, PhysicalDeviceProperties2*, void>)(
-                _slots[632] is not null and var loadedFnPtr
+                _slots[646] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[632] = nativeContext.LoadFunction(
+                    : _slots[646] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceProperties2",
                         "vulkan"
                     )
@@ -180544,9 +184141,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, PhysicalDeviceProperties2*, void>)(
-                _slots[633] is not null and var loadedFnPtr
+                _slots[647] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[633] = nativeContext.LoadFunction(
+                    : _slots[647] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceProperties2KHR",
                         "vulkan"
                     )
@@ -180610,9 +184207,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 QueueFamilyDataGraphPropertiesARM*,
                 BaseOutStructure*,
                 Result>)(
-                _slots[634] is not null and var loadedFnPtr
+                _slots[648] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[634] = nativeContext.LoadFunction(
+                    : _slots[648] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM",
                         "vulkan"
                     )
@@ -180729,9 +184326,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 DataGraphOpticalFlowImageFormatPropertiesARM*,
                 Result>)(
-                _slots[635] is not null and var loadedFnPtr
+                _slots[649] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[635] = nativeContext.LoadFunction(
+                    : _slots[649] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceQueueFamilyDataGraphOpticalFlowImageFormatsARM",
                         "vulkan"
                     )
@@ -180872,9 +184469,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM*,
                 QueueFamilyDataGraphProcessingEnginePropertiesARM*,
                 void>)(
-                _slots[636] is not null and var loadedFnPtr
+                _slots[650] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[636] = nativeContext.LoadFunction(
+                    : _slots[650] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM",
                         "vulkan"
                     )
@@ -180996,9 +184593,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 QueueFamilyDataGraphPropertiesARM*,
                 Result>)(
-                _slots[637] is not null and var loadedFnPtr
+                _slots[651] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[637] = nativeContext.LoadFunction(
+                    : _slots[651] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM",
                         "vulkan"
                     )
@@ -181117,9 +184714,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 QueryPoolPerformanceCreateInfoKHR*,
                 uint*,
                 void>)(
-                _slots[638] is not null and var loadedFnPtr
+                _slots[652] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[638] = nativeContext.LoadFunction(
+                    : _slots[652] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR",
                         "vulkan"
                     )
@@ -181246,9 +184843,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint*, QueueFamilyProperties*, void>)(
-                _slots[639] is not null and var loadedFnPtr
+                _slots[653] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[639] = nativeContext.LoadFunction(
+                    : _slots[653] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceQueueFamilyProperties",
                         "vulkan"
                     )
@@ -181413,9 +185010,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint*, QueueFamilyProperties2*, void>)(
-                _slots[640] is not null and var loadedFnPtr
+                _slots[654] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[640] = nativeContext.LoadFunction(
+                    : _slots[654] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceQueueFamilyProperties2",
                         "vulkan"
                     )
@@ -181547,9 +185144,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint*, QueueFamilyProperties2*, void>)(
-                _slots[641] is not null and var loadedFnPtr
+                _slots[655] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[641] = nativeContext.LoadFunction(
+                    : _slots[655] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceQueueFamilyProperties2KHR",
                         "vulkan"
                     )
@@ -181657,9 +185254,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 SparseImageFormatProperties*,
                 void>)(
-                _slots[642] is not null and var loadedFnPtr
+                _slots[656] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[642] = nativeContext.LoadFunction(
+                    : _slots[656] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceSparseImageFormatProperties",
                         "vulkan"
                     )
@@ -181860,9 +185457,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 SparseImageFormatProperties2*,
                 void>)(
-                _slots[643] is not null and var loadedFnPtr
+                _slots[657] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[643] = nativeContext.LoadFunction(
+                    : _slots[657] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceSparseImageFormatProperties2",
                         "vulkan"
                     )
@@ -182007,9 +185604,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 SparseImageFormatProperties2*,
                 void>)(
-                _slots[644] is not null and var loadedFnPtr
+                _slots[658] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[644] = nativeContext.LoadFunction(
+                    : _slots[658] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceSparseImageFormatProperties2KHR",
                         "vulkan"
                     )
@@ -182099,9 +185696,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 FramebufferMixedSamplesCombinationNV*,
                 Result>)(
-                _slots[645] is not null and var loadedFnPtr
+                _slots[659] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[645] = nativeContext.LoadFunction(
+                    : _slots[659] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV",
                         "vulkan"
                     )
@@ -182209,9 +185806,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 SurfaceHandleKHR,
                 SurfaceCapabilities2EXT*,
                 Result>)(
-                _slots[646] is not null and var loadedFnPtr
+                _slots[660] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[646] = nativeContext.LoadFunction(
+                    : _slots[660] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceSurfaceCapabilities2EXT",
                         "vulkan"
                     )
@@ -182300,9 +185897,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PhysicalDeviceSurfaceInfo2KHR*,
                 SurfaceCapabilities2KHR*,
                 Result>)(
-                _slots[647] is not null and var loadedFnPtr
+                _slots[661] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[647] = nativeContext.LoadFunction(
+                    : _slots[661] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceSurfaceCapabilities2KHR",
                         "vulkan"
                     )
@@ -182388,9 +185985,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 SurfaceHandleKHR,
                 SurfaceCapabilitiesKHR*,
                 Result>)(
-                _slots[648] is not null and var loadedFnPtr
+                _slots[662] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[648] = nativeContext.LoadFunction(
+                    : _slots[662] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceSurfaceCapabilitiesKHR",
                         "vulkan"
                     )
@@ -182469,9 +186066,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 SurfaceFormat2KHR*,
                 Result>)(
-                _slots[649] is not null and var loadedFnPtr
+                _slots[663] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[649] = nativeContext.LoadFunction(
+                    : _slots[663] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceSurfaceFormats2KHR",
                         "vulkan"
                     )
@@ -182566,9 +186163,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 SurfaceFormatKHR*,
                 Result>)(
-                _slots[650] is not null and var loadedFnPtr
+                _slots[664] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[650] = nativeContext.LoadFunction(
+                    : _slots[664] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceSurfaceFormatsKHR",
                         "vulkan"
                     )
@@ -182633,6 +186230,119 @@ public unsafe partial class Vk : IVk, IVk.Static
             pSurfaceFormats
         );
 
+    [NativeName("vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetPhysicalDeviceSurfacePresentModes2EXT(
+        PhysicalDeviceHandle physicalDevice,
+        PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+        uint* pPresentModeCount,
+        PresentModeKHR* pPresentModes
+    ) =>
+        (
+            (delegate* unmanaged<
+                PhysicalDeviceHandle,
+                PhysicalDeviceSurfaceInfo2KHR*,
+                uint*,
+                PresentModeKHR*,
+                Result>)(
+                _slots[665] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[665] = nativeContext.LoadFunction(
+                        "vkGetPhysicalDeviceSurfacePresentModes2EXT",
+                        "vulkan"
+                    )
+            )
+        )(physicalDevice, pSurfaceInfo, pPresentModeCount, pPresentModes);
+
+    [NativeName("vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetPhysicalDeviceSurfacePresentModes2EXT(
+        PhysicalDeviceHandle physicalDevice,
+        PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+        uint* pPresentModeCount,
+        PresentModeKHR* pPresentModes
+    ) =>
+        ThisThread.GetPhysicalDeviceSurfacePresentModes2EXT(
+            physicalDevice,
+            pSurfaceInfo,
+            pPresentModeCount,
+            pPresentModes
+        );
+
+    [NativeName("vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetPhysicalDeviceSurfacePresentModes2EXT(
+        PhysicalDeviceHandle physicalDevice,
+        Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+        Ref<uint> pPresentModeCount,
+        Ref<PresentModeKHR> pPresentModes
+    )
+    {
+        fixed (PresentModeKHR* __dsl_pPresentModes = pPresentModes)
+        fixed (uint* __dsl_pPresentModeCount = pPresentModeCount)
+        fixed (PhysicalDeviceSurfaceInfo2KHR* __dsl_pSurfaceInfo = pSurfaceInfo)
+        {
+            return (Result)
+                ((IVk)this).GetPhysicalDeviceSurfacePresentModes2EXT(
+                    physicalDevice,
+                    __dsl_pSurfaceInfo,
+                    __dsl_pPresentModeCount,
+                    __dsl_pPresentModes
+                );
+        }
+    }
+
+    [NativeName("vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetPhysicalDeviceSurfacePresentModes2EXT(
+        PhysicalDeviceHandle physicalDevice,
+        Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+        Ref<uint> pPresentModeCount,
+        Ref<PresentModeKHR> pPresentModes
+    ) =>
+        ThisThread.GetPhysicalDeviceSurfacePresentModes2EXT(
+            physicalDevice,
+            pSurfaceInfo,
+            pPresentModeCount,
+            pPresentModes
+        );
+
     [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -182650,9 +186360,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 PresentModeKHR*,
                 Result>)(
-                _slots[651] is not null and var loadedFnPtr
+                _slots[666] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[651] = nativeContext.LoadFunction(
+                    : _slots[666] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceSurfacePresentModesKHR",
                         "vulkan"
                     )
@@ -182729,9 +186439,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint, SurfaceHandleKHR, uint*, Result>)(
-                _slots[652] is not null and var loadedFnPtr
+                _slots[667] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[652] = nativeContext.LoadFunction(
+                    : _slots[667] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceSurfaceSupportKHR",
                         "vulkan"
                     )
@@ -182823,9 +186533,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 PhysicalDeviceToolProperties*,
                 Result>)(
-                _slots[653] is not null and var loadedFnPtr
+                _slots[668] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[653] = nativeContext.LoadFunction(
+                    : _slots[668] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceToolProperties",
                         "vulkan"
                     )
@@ -182928,9 +186638,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 PhysicalDeviceToolProperties*,
                 Result>)(
-                _slots[654] is not null and var loadedFnPtr
+                _slots[669] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[654] = nativeContext.LoadFunction(
+                    : _slots[669] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceToolPropertiesEXT",
                         "vulkan"
                     )
@@ -182998,9 +186708,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 VideoProfileInfoKHR*,
                 VideoCapabilitiesKHR*,
                 Result>)(
-                _slots[655] is not null and var loadedFnPtr
+                _slots[670] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[655] = nativeContext.LoadFunction(
+                    : _slots[670] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceVideoCapabilitiesKHR",
                         "vulkan"
                     )
@@ -183096,9 +186806,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PhysicalDeviceVideoEncodeQualityLevelInfoKHR*,
                 VideoEncodeQualityLevelPropertiesKHR*,
                 Result>)(
-                _slots[656] is not null and var loadedFnPtr
+                _slots[671] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[656] = nativeContext.LoadFunction(
+                    : _slots[671] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR",
                         "vulkan"
                     )
@@ -183214,9 +186924,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 VideoFormatPropertiesKHR*,
                 Result>)(
-                _slots[657] is not null and var loadedFnPtr
+                _slots[672] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[657] = nativeContext.LoadFunction(
+                    : _slots[672] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceVideoFormatPropertiesKHR",
                         "vulkan"
                     )
@@ -183337,9 +187047,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint, WlDisplayHandle, uint>)(
-                _slots[658] is not null and var loadedFnPtr
+                _slots[673] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[658] = nativeContext.LoadFunction(
+                    : _slots[673] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceWaylandPresentationSupportKHR",
                         "vulkan"
                     )
@@ -183359,6 +187069,62 @@ public unsafe partial class Vk : IVk, IVk.Static
             physicalDevice,
             queueFamilyIndex,
             display
+        );
+
+    [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<uint> IVk.GetPhysicalDeviceWin32PresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex
+    ) =>
+        (MaybeBool<uint>)
+            (uint)
+                ((IVk)this).GetPhysicalDeviceWin32PresentationSupportRawKHR(
+                    physicalDevice,
+                    queueFamilyIndex
+                );
+
+    [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<uint> GetPhysicalDeviceWin32PresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex
+    ) => ThisThread.GetPhysicalDeviceWin32PresentationSupportKHR(physicalDevice, queueFamilyIndex);
+
+    [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    uint IVk.GetPhysicalDeviceWin32PresentationSupportRawKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex
+    ) =>
+        (
+            (delegate* unmanaged<PhysicalDeviceHandle, uint, uint>)(
+                _slots[674] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[674] = nativeContext.LoadFunction(
+                        "vkGetPhysicalDeviceWin32PresentationSupportKHR",
+                        "vulkan"
+                    )
+            )
+        )(physicalDevice, queueFamilyIndex);
+
+    [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static uint GetPhysicalDeviceWin32PresentationSupportRawKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex
+    ) =>
+        ThisThread.GetPhysicalDeviceWin32PresentationSupportRawKHR(
+            physicalDevice,
+            queueFamilyIndex
         );
 
     [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
@@ -183409,9 +187175,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint, XcbConnectionTHandle, uint, uint>)(
-                _slots[659] is not null and var loadedFnPtr
+                _slots[675] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[659] = nativeContext.LoadFunction(
+                    : _slots[675] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceXcbPresentationSupportKHR",
                         "vulkan"
                     )
@@ -183483,9 +187249,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, uint, XDisplayHandle, nuint, uint>)(
-                _slots[660] is not null and var loadedFnPtr
+                _slots[676] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[660] = nativeContext.LoadFunction(
+                    : _slots[676] = nativeContext.LoadFunction(
                         "vkGetPhysicalDeviceXlibPresentationSupportKHR",
                         "vulkan"
                     )
@@ -183536,9 +187302,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 nuint*,
                 void*,
                 Result>)(
-                _slots[661] is not null and var loadedFnPtr
+                _slots[677] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[661] = nativeContext.LoadFunction(
+                    : _slots[677] = nativeContext.LoadFunction(
                         "vkGetPipelineBinaryDataKHR",
                         "vulkan"
                     )
@@ -183667,9 +187433,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, PipelineCacheHandle, nuint*, void*, Result>)(
-                _slots[662] is not null and var loadedFnPtr
+                _slots[678] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[662] = nativeContext.LoadFunction("vkGetPipelineCacheData", "vulkan")
+                    : _slots[678] = nativeContext.LoadFunction("vkGetPipelineCacheData", "vulkan")
             )
         )(device, pipelineCache, pDataSize, pData);
 
@@ -183803,9 +187569,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 PipelineExecutableInternalRepresentationKHR*,
                 Result>)(
-                _slots[663] is not null and var loadedFnPtr
+                _slots[679] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[663] = nativeContext.LoadFunction(
+                    : _slots[679] = nativeContext.LoadFunction(
                         "vkGetPipelineExecutableInternalRepresentationsKHR",
                         "vulkan"
                     )
@@ -183919,9 +187685,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 PipelineExecutablePropertiesKHR*,
                 Result>)(
-                _slots[664] is not null and var loadedFnPtr
+                _slots[680] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[664] = nativeContext.LoadFunction(
+                    : _slots[680] = nativeContext.LoadFunction(
                         "vkGetPipelineExecutablePropertiesKHR",
                         "vulkan"
                     )
@@ -184032,9 +187798,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 PipelineExecutableStatisticKHR*,
                 Result>)(
-                _slots[665] is not null and var loadedFnPtr
+                _slots[681] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[665] = nativeContext.LoadFunction(
+                    : _slots[681] = nativeContext.LoadFunction(
                         "vkGetPipelineExecutableStatisticsKHR",
                         "vulkan"
                     )
@@ -184135,9 +187901,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, PipelineIndirectDeviceAddressInfoNV*, ulong>)(
-                _slots[666] is not null and var loadedFnPtr
+                _slots[682] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[666] = nativeContext.LoadFunction(
+                    : _slots[682] = nativeContext.LoadFunction(
                         "vkGetPipelineIndirectDeviceAddressNV",
                         "vulkan"
                     )
@@ -184208,9 +187974,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ComputePipelineCreateInfo*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[667] is not null and var loadedFnPtr
+                _slots[683] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[667] = nativeContext.LoadFunction(
+                    : _slots[683] = nativeContext.LoadFunction(
                         "vkGetPipelineIndirectMemoryRequirementsNV",
                         "vulkan"
                     )
@@ -184303,9 +188069,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PipelineCreateInfoKHR*,
                 PipelineBinaryKeyKHR*,
                 Result>)(
-                _slots[668] is not null and var loadedFnPtr
+                _slots[684] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[668] = nativeContext.LoadFunction("vkGetPipelineKeyKHR", "vulkan")
+                    : _slots[684] = nativeContext.LoadFunction("vkGetPipelineKeyKHR", "vulkan")
             )
         )(device, pPipelineCreateInfo, pPipelineKey);
 
@@ -184393,9 +188159,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, PipelineInfoKHR*, BaseOutStructure*, Result>)(
-                _slots[669] is not null and var loadedFnPtr
+                _slots[685] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[669] = nativeContext.LoadFunction(
+                    : _slots[685] = nativeContext.LoadFunction(
                         "vkGetPipelinePropertiesEXT",
                         "vulkan"
                     )
@@ -184497,9 +188263,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PrivateDataSlotHandle,
                 ulong*,
                 void>)(
-                _slots[670] is not null and var loadedFnPtr
+                _slots[686] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[670] = nativeContext.LoadFunction("vkGetPrivateData", "vulkan")
+                    : _slots[686] = nativeContext.LoadFunction("vkGetPrivateData", "vulkan")
             )
         )(device, objectType, objectHandle, privateDataSlot, pData);
 
@@ -184616,9 +188382,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PrivateDataSlotHandle,
                 ulong*,
                 void>)(
-                _slots[671] is not null and var loadedFnPtr
+                _slots[687] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[671] = nativeContext.LoadFunction("vkGetPrivateDataEXT", "vulkan")
+                    : _slots[687] = nativeContext.LoadFunction("vkGetPrivateDataEXT", "vulkan")
             )
         )(device, objectType, objectHandle, privateDataSlot, pData);
 
@@ -184741,9 +188507,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ulong,
                 QueryResultFlags,
                 Result>)(
-                _slots[672] is not null and var loadedFnPtr
+                _slots[688] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[672] = nativeContext.LoadFunction("vkGetQueryPoolResults", "vulkan")
+                    : _slots[688] = nativeContext.LoadFunction("vkGetQueryPoolResults", "vulkan")
             )
         )(device, queryPool, firstQuery, queryCount, dataSize, pData, stride, flags);
 
@@ -184924,9 +188690,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<QueueHandle, uint*, CheckpointData2NV*, void>)(
-                _slots[673] is not null and var loadedFnPtr
+                _slots[689] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[673] = nativeContext.LoadFunction(
+                    : _slots[689] = nativeContext.LoadFunction(
                         "vkGetQueueCheckpointData2NV",
                         "vulkan"
                     )
@@ -185022,9 +188788,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<QueueHandle, uint*, CheckpointDataNV*, void>)(
-                _slots[674] is not null and var loadedFnPtr
+                _slots[690] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[674] = nativeContext.LoadFunction(
+                    : _slots[690] = nativeContext.LoadFunction(
                         "vkGetQueueCheckpointDataNV",
                         "vulkan"
                     )
@@ -185114,9 +188880,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 nuint,
                 DisplayHandleKHR*,
                 Result>)(
-                _slots[675] is not null and var loadedFnPtr
+                _slots[691] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[675] = nativeContext.LoadFunction(
+                    : _slots[691] = nativeContext.LoadFunction(
                         "vkGetRandROutputDisplayEXT",
                         "vulkan"
                     )
@@ -185196,9 +188962,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, PipelineHandle, uint, uint, nuint, void*, Result>)(
-                _slots[676] is not null and var loadedFnPtr
+                _slots[692] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[676] = nativeContext.LoadFunction(
+                    : _slots[692] = nativeContext.LoadFunction(
                         "vkGetRayTracingCaptureReplayShaderGroupHandlesKHR",
                         "vulkan"
                     )
@@ -185316,9 +189082,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, PipelineHandle, uint, uint, nuint, void*, Result>)(
-                _slots[677] is not null and var loadedFnPtr
+                _slots[693] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[677] = nativeContext.LoadFunction(
+                    : _slots[693] = nativeContext.LoadFunction(
                         "vkGetRayTracingShaderGroupHandlesKHR",
                         "vulkan"
                     )
@@ -185436,9 +189202,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, PipelineHandle, uint, uint, nuint, void*, Result>)(
-                _slots[678] is not null and var loadedFnPtr
+                _slots[694] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[678] = nativeContext.LoadFunction(
+                    : _slots[694] = nativeContext.LoadFunction(
                         "vkGetRayTracingShaderGroupHandlesNV",
                         "vulkan"
                     )
@@ -185554,9 +189320,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, PipelineHandle, uint, ShaderGroupShaderKHR, ulong>)(
-                _slots[679] is not null and var loadedFnPtr
+                _slots[695] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[679] = nativeContext.LoadFunction(
+                    : _slots[695] = nativeContext.LoadFunction(
                         "vkGetRayTracingShaderGroupStackSizeKHR",
                         "vulkan"
                     )
@@ -185600,9 +189366,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 SwapchainHandleKHR,
                 RefreshCycleDurationGOOGLE*,
                 Result>)(
-                _slots[680] is not null and var loadedFnPtr
+                _slots[696] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[680] = nativeContext.LoadFunction(
+                    : _slots[696] = nativeContext.LoadFunction(
                         "vkGetRefreshCycleDurationGOOGLE",
                         "vulkan"
                     )
@@ -185690,9 +189456,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, RenderPassHandle, Extent2D*, void>)(
-                _slots[681] is not null and var loadedFnPtr
+                _slots[697] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[681] = nativeContext.LoadFunction(
+                    : _slots[697] = nativeContext.LoadFunction(
                         "vkGetRenderAreaGranularity",
                         "vulkan"
                     )
@@ -185795,9 +189561,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, RenderingAreaInfo*, Extent2D*, void>)(
-                _slots[682] is not null and var loadedFnPtr
+                _slots[698] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[682] = nativeContext.LoadFunction(
+                    : _slots[698] = nativeContext.LoadFunction(
                         "vkGetRenderingAreaGranularity",
                         "vulkan"
                     )
@@ -185872,9 +189638,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, RenderingAreaInfo*, Extent2D*, void>)(
-                _slots[683] is not null and var loadedFnPtr
+                _slots[699] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[683] = nativeContext.LoadFunction(
+                    : _slots[699] = nativeContext.LoadFunction(
                         "vkGetRenderingAreaGranularityKHR",
                         "vulkan"
                     )
@@ -185958,9 +189724,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 SamplerCaptureDescriptorDataInfoEXT*,
                 void*,
                 Result>)(
-                _slots[684] is not null and var loadedFnPtr
+                _slots[700] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[684] = nativeContext.LoadFunction(
+                    : _slots[700] = nativeContext.LoadFunction(
                         "vkGetSamplerOpaqueCaptureDescriptorDataEXT",
                         "vulkan"
                     )
@@ -186064,9 +189830,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SemaphoreHandle, ulong*, Result>)(
-                _slots[685] is not null and var loadedFnPtr
+                _slots[701] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[685] = nativeContext.LoadFunction(
+                    : _slots[701] = nativeContext.LoadFunction(
                         "vkGetSemaphoreCounterValue",
                         "vulkan"
                     )
@@ -186178,9 +189944,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SemaphoreHandle, ulong*, Result>)(
-                _slots[686] is not null and var loadedFnPtr
+                _slots[702] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[686] = nativeContext.LoadFunction(
+                    : _slots[702] = nativeContext.LoadFunction(
                         "vkGetSemaphoreCounterValueKHR",
                         "vulkan"
                     )
@@ -186262,9 +190028,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SemaphoreGetFdInfoKHR*, int*, Result>)(
-                _slots[687] is not null and var loadedFnPtr
+                _slots[703] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[687] = nativeContext.LoadFunction("vkGetSemaphoreFdKHR", "vulkan")
+                    : _slots[703] = nativeContext.LoadFunction("vkGetSemaphoreFdKHR", "vulkan")
             )
         )(device, pGetFdInfo, pFd);
 
@@ -186326,6 +190092,84 @@ public unsafe partial class Vk : IVk, IVk.Static
         Ref<int> pFd
     ) => ThisThread.GetSemaphoreFdKHR(device, pGetFdInfo, pFd);
 
+    [NativeName("vkGetSemaphoreWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_win32"],
+        ImpliesSets = ["VK_KHR_external_semaphore"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetSemaphoreWin32HandleKHR(
+        DeviceHandle device,
+        SemaphoreGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+        void** pHandle
+    ) =>
+        (
+            (delegate* unmanaged<DeviceHandle, SemaphoreGetWin32HandleInfoKHR*, void**, Result>)(
+                _slots[704] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[704] = nativeContext.LoadFunction(
+                        "vkGetSemaphoreWin32HandleKHR",
+                        "vulkan"
+                    )
+            )
+        )(device, pGetWin32HandleInfo, pHandle);
+
+    [NativeName("vkGetSemaphoreWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_win32"],
+        ImpliesSets = ["VK_KHR_external_semaphore"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetSemaphoreWin32HandleKHR(
+        DeviceHandle device,
+        SemaphoreGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+        void** pHandle
+    ) => ThisThread.GetSemaphoreWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
+
+    [NativeName("vkGetSemaphoreWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_win32"],
+        ImpliesSets = ["VK_KHR_external_semaphore"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetSemaphoreWin32HandleKHR(
+        DeviceHandle device,
+        Ref<SemaphoreGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+        Ref2D pHandle
+    )
+    {
+        fixed (void** __dsl_pHandle = pHandle)
+        fixed (SemaphoreGetWin32HandleInfoKHR* __dsl_pGetWin32HandleInfo = pGetWin32HandleInfo)
+        {
+            return (Result)
+                ((IVk)this).GetSemaphoreWin32HandleKHR(
+                    device,
+                    __dsl_pGetWin32HandleInfo,
+                    __dsl_pHandle
+                );
+        }
+    }
+
+    [NativeName("vkGetSemaphoreWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_win32"],
+        ImpliesSets = ["VK_KHR_external_semaphore"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetSemaphoreWin32HandleKHR(
+        DeviceHandle device,
+        Ref<SemaphoreGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+        Ref2D pHandle
+    ) => ThisThread.GetSemaphoreWin32HandleKHR(device, pGetWin32HandleInfo, pHandle);
+
     [NativeName("vkGetShaderBinaryDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -186346,9 +190190,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ShaderHandleEXT, nuint*, void*, Result>)(
-                _slots[688] is not null and var loadedFnPtr
+                _slots[705] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[688] = nativeContext.LoadFunction("vkGetShaderBinaryDataEXT", "vulkan")
+                    : _slots[705] = nativeContext.LoadFunction("vkGetShaderBinaryDataEXT", "vulkan")
             )
         )(device, shader, pDataSize, pData);
 
@@ -186438,9 +190282,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 nuint*,
                 void*,
                 Result>)(
-                _slots[689] is not null and var loadedFnPtr
+                _slots[706] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[689] = nativeContext.LoadFunction("vkGetShaderInfoAMD", "vulkan")
+                    : _slots[706] = nativeContext.LoadFunction("vkGetShaderInfoAMD", "vulkan")
             )
         )(device, pipeline, shaderStage, infoType, pInfoSize, pInfo);
 
@@ -186524,9 +190368,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 void*,
                 uint,
                 Result>)(
-                _slots[690] is not null and var loadedFnPtr
+                _slots[707] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[690] = nativeContext.LoadFunction(
+                    : _slots[707] = nativeContext.LoadFunction(
                         "vkGetShaderInstrumentationValuesARM",
                         "vulkan"
                     )
@@ -186641,9 +190485,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ShaderModuleCreateInfo*,
                 ShaderModuleIdentifierEXT*,
                 void>)(
-                _slots[691] is not null and var loadedFnPtr
+                _slots[708] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[691] = nativeContext.LoadFunction(
+                    : _slots[708] = nativeContext.LoadFunction(
                         "vkGetShaderModuleCreateInfoIdentifierEXT",
                         "vulkan"
                     )
@@ -186738,9 +190582,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ShaderModuleHandle,
                 ShaderModuleIdentifierEXT*,
                 void>)(
-                _slots[692] is not null and var loadedFnPtr
+                _slots[709] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[692] = nativeContext.LoadFunction(
+                    : _slots[709] = nativeContext.LoadFunction(
                         "vkGetShaderModuleIdentifierEXT",
                         "vulkan"
                     )
@@ -186828,9 +190672,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 SurfaceCounterFlagsEXT,
                 ulong*,
                 Result>)(
-                _slots[693] is not null and var loadedFnPtr
+                _slots[710] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[693] = nativeContext.LoadFunction("vkGetSwapchainCounterEXT", "vulkan")
+                    : _slots[710] = nativeContext.LoadFunction("vkGetSwapchainCounterEXT", "vulkan")
             )
         )(device, swapchain, counter, pCounterValue);
 
@@ -186898,9 +190742,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SwapchainHandleKHR, uint*, ImageHandle*, Result>)(
-                _slots[694] is not null and var loadedFnPtr
+                _slots[711] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[694] = nativeContext.LoadFunction("vkGetSwapchainImagesKHR", "vulkan")
+                    : _slots[711] = nativeContext.LoadFunction("vkGetSwapchainImagesKHR", "vulkan")
             )
         )(device, swapchain, pSwapchainImageCount, pSwapchainImages);
 
@@ -186966,9 +190810,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.GetSwapchainStatusKHR(DeviceHandle device, SwapchainHandleKHR swapchain) =>
         (
             (delegate* unmanaged<DeviceHandle, SwapchainHandleKHR, Result>)(
-                _slots[695] is not null and var loadedFnPtr
+                _slots[712] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[695] = nativeContext.LoadFunction("vkGetSwapchainStatusKHR", "vulkan")
+                    : _slots[712] = nativeContext.LoadFunction("vkGetSwapchainStatusKHR", "vulkan")
             )
         )(device, swapchain);
 
@@ -187012,9 +190856,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 SwapchainTimeDomainPropertiesEXT*,
                 ulong*,
                 Result>)(
-                _slots[696] is not null and var loadedFnPtr
+                _slots[713] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[696] = nativeContext.LoadFunction(
+                    : _slots[713] = nativeContext.LoadFunction(
                         "vkGetSwapchainTimeDomainPropertiesEXT",
                         "vulkan"
                     )
@@ -187135,9 +190979,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 SwapchainTimingPropertiesEXT*,
                 ulong*,
                 Result>)(
-                _slots[697] is not null and var loadedFnPtr
+                _slots[714] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[697] = nativeContext.LoadFunction(
+                    : _slots[714] = nativeContext.LoadFunction(
                         "vkGetSwapchainTimingPropertiesEXT",
                         "vulkan"
                     )
@@ -187247,9 +191091,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 TensorMemoryRequirementsInfoARM*,
                 MemoryRequirements2*,
                 void>)(
-                _slots[698] is not null and var loadedFnPtr
+                _slots[715] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[698] = nativeContext.LoadFunction(
+                    : _slots[715] = nativeContext.LoadFunction(
                         "vkGetTensorMemoryRequirementsARM",
                         "vulkan"
                     )
@@ -187325,9 +191169,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 TensorHandleARM*,
                 HostAddressRangeEXT*,
                 Result>)(
-                _slots[699] is not null and var loadedFnPtr
+                _slots[716] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[699] = nativeContext.LoadFunction(
+                    : _slots[716] = nativeContext.LoadFunction(
                         "vkGetTensorOpaqueCaptureDataARM",
                         "vulkan"
                     )
@@ -187429,9 +191273,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, TensorCaptureDescriptorDataInfoARM*, void*, Result>)(
-                _slots[700] is not null and var loadedFnPtr
+                _slots[717] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[700] = nativeContext.LoadFunction(
+                    : _slots[717] = nativeContext.LoadFunction(
                         "vkGetTensorOpaqueCaptureDescriptorDataARM",
                         "vulkan"
                     )
@@ -187515,9 +191359,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 TensorViewCaptureDescriptorDataInfoARM*,
                 void*,
                 Result>)(
-                _slots[701] is not null and var loadedFnPtr
+                _slots[718] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[701] = nativeContext.LoadFunction(
+                    : _slots[718] = nativeContext.LoadFunction(
                         "vkGetTensorViewOpaqueCaptureDescriptorDataARM",
                         "vulkan"
                     )
@@ -187593,9 +191437,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ValidationCacheHandleEXT, nuint*, void*, Result>)(
-                _slots[702] is not null and var loadedFnPtr
+                _slots[719] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[702] = nativeContext.LoadFunction(
+                    : _slots[719] = nativeContext.LoadFunction(
                         "vkGetValidationCacheDataEXT",
                         "vulkan"
                     )
@@ -187669,9 +191513,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint*,
                 VideoSessionMemoryRequirementsKHR*,
                 Result>)(
-                _slots[703] is not null and var loadedFnPtr
+                _slots[720] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[703] = nativeContext.LoadFunction(
+                    : _slots[720] = nativeContext.LoadFunction(
                         "vkGetVideoSessionMemoryRequirementsKHR",
                         "vulkan"
                     )
@@ -187748,6 +191592,76 @@ public unsafe partial class Vk : IVk, IVk.Static
             pMemoryRequirements
         );
 
+    [NativeName("vkGetWinrtDisplayNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_acquire_winrt_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetWinrtDisplayNV")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetWinrtDisplayNV(
+        PhysicalDeviceHandle physicalDevice,
+        uint deviceRelativeId,
+        DisplayHandleKHR* pDisplay
+    ) =>
+        (
+            (delegate* unmanaged<PhysicalDeviceHandle, uint, DisplayHandleKHR*, Result>)(
+                _slots[721] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[721] = nativeContext.LoadFunction("vkGetWinrtDisplayNV", "vulkan")
+            )
+        )(physicalDevice, deviceRelativeId, pDisplay);
+
+    [NativeName("vkGetWinrtDisplayNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_acquire_winrt_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetWinrtDisplayNV")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetWinrtDisplayNV(
+        PhysicalDeviceHandle physicalDevice,
+        uint deviceRelativeId,
+        DisplayHandleKHR* pDisplay
+    ) => ThisThread.GetWinrtDisplayNV(physicalDevice, deviceRelativeId, pDisplay);
+
+    [NativeName("vkGetWinrtDisplayNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_acquire_winrt_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetWinrtDisplayNV")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.GetWinrtDisplayNV(
+        PhysicalDeviceHandle physicalDevice,
+        uint deviceRelativeId,
+        Ref<DisplayHandleKHR> pDisplay
+    )
+    {
+        fixed (DisplayHandleKHR* __dsl_pDisplay = pDisplay)
+        {
+            return (Result)
+                ((IVk)this).GetWinrtDisplayNV(physicalDevice, deviceRelativeId, __dsl_pDisplay);
+        }
+    }
+
+    [NativeName("vkGetWinrtDisplayNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_acquire_winrt_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetWinrtDisplayNV")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result GetWinrtDisplayNV(
+        PhysicalDeviceHandle physicalDevice,
+        uint deviceRelativeId,
+        Ref<DisplayHandleKHR> pDisplay
+    ) => ThisThread.GetWinrtDisplayNV(physicalDevice, deviceRelativeId, pDisplay);
+
     [NativeName("vkImportFenceFdKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -187762,9 +191676,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.ImportFenceFdKHR(DeviceHandle device, ImportFenceFdInfoKHR* pImportFenceFdInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, ImportFenceFdInfoKHR*, Result>)(
-                _slots[704] is not null and var loadedFnPtr
+                _slots[722] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[704] = nativeContext.LoadFunction("vkImportFenceFdKHR", "vulkan")
+                    : _slots[722] = nativeContext.LoadFunction("vkImportFenceFdKHR", "vulkan")
             )
         )(device, pImportFenceFdInfo);
 
@@ -187819,6 +191733,78 @@ public unsafe partial class Vk : IVk, IVk.Static
         Ref<ImportFenceFdInfoKHR> pImportFenceFdInfo
     ) => ThisThread.ImportFenceFdKHR(device, pImportFenceFdInfo);
 
+    [NativeName("vkImportFenceWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_win32"],
+        ImpliesSets = ["VK_KHR_external_fence"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkImportFenceWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.ImportFenceWin32HandleKHR(
+        DeviceHandle device,
+        ImportFenceWin32HandleInfoKHR* pImportFenceWin32HandleInfo
+    ) =>
+        (
+            (delegate* unmanaged<DeviceHandle, ImportFenceWin32HandleInfoKHR*, Result>)(
+                _slots[723] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[723] = nativeContext.LoadFunction(
+                        "vkImportFenceWin32HandleKHR",
+                        "vulkan"
+                    )
+            )
+        )(device, pImportFenceWin32HandleInfo);
+
+    [NativeName("vkImportFenceWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_win32"],
+        ImpliesSets = ["VK_KHR_external_fence"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkImportFenceWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result ImportFenceWin32HandleKHR(
+        DeviceHandle device,
+        ImportFenceWin32HandleInfoKHR* pImportFenceWin32HandleInfo
+    ) => ThisThread.ImportFenceWin32HandleKHR(device, pImportFenceWin32HandleInfo);
+
+    [NativeName("vkImportFenceWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_win32"],
+        ImpliesSets = ["VK_KHR_external_fence"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkImportFenceWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.ImportFenceWin32HandleKHR(
+        DeviceHandle device,
+        Ref<ImportFenceWin32HandleInfoKHR> pImportFenceWin32HandleInfo
+    )
+    {
+        fixed (
+            ImportFenceWin32HandleInfoKHR* __dsl_pImportFenceWin32HandleInfo =
+                pImportFenceWin32HandleInfo
+        )
+        {
+            return (Result)
+                ((IVk)this).ImportFenceWin32HandleKHR(device, __dsl_pImportFenceWin32HandleInfo);
+        }
+    }
+
+    [NativeName("vkImportFenceWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_win32"],
+        ImpliesSets = ["VK_KHR_external_fence"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkImportFenceWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result ImportFenceWin32HandleKHR(
+        DeviceHandle device,
+        Ref<ImportFenceWin32HandleInfoKHR> pImportFenceWin32HandleInfo
+    ) => ThisThread.ImportFenceWin32HandleKHR(device, pImportFenceWin32HandleInfo);
+
     [NativeName("vkImportSemaphoreFdKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -187836,9 +191822,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ImportSemaphoreFdInfoKHR*, Result>)(
-                _slots[705] is not null and var loadedFnPtr
+                _slots[724] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[705] = nativeContext.LoadFunction("vkImportSemaphoreFdKHR", "vulkan")
+                    : _slots[724] = nativeContext.LoadFunction("vkImportSemaphoreFdKHR", "vulkan")
             )
         )(device, pImportSemaphoreFdInfo);
 
@@ -187896,6 +191882,81 @@ public unsafe partial class Vk : IVk, IVk.Static
         Ref<ImportSemaphoreFdInfoKHR> pImportSemaphoreFdInfo
     ) => ThisThread.ImportSemaphoreFdKHR(device, pImportSemaphoreFdInfo);
 
+    [NativeName("vkImportSemaphoreWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_win32"],
+        ImpliesSets = ["VK_KHR_external_semaphore"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.ImportSemaphoreWin32HandleKHR(
+        DeviceHandle device,
+        ImportSemaphoreWin32HandleInfoKHR* pImportSemaphoreWin32HandleInfo
+    ) =>
+        (
+            (delegate* unmanaged<DeviceHandle, ImportSemaphoreWin32HandleInfoKHR*, Result>)(
+                _slots[725] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[725] = nativeContext.LoadFunction(
+                        "vkImportSemaphoreWin32HandleKHR",
+                        "vulkan"
+                    )
+            )
+        )(device, pImportSemaphoreWin32HandleInfo);
+
+    [NativeName("vkImportSemaphoreWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_win32"],
+        ImpliesSets = ["VK_KHR_external_semaphore"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result ImportSemaphoreWin32HandleKHR(
+        DeviceHandle device,
+        ImportSemaphoreWin32HandleInfoKHR* pImportSemaphoreWin32HandleInfo
+    ) => ThisThread.ImportSemaphoreWin32HandleKHR(device, pImportSemaphoreWin32HandleInfo);
+
+    [NativeName("vkImportSemaphoreWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_win32"],
+        ImpliesSets = ["VK_KHR_external_semaphore"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.ImportSemaphoreWin32HandleKHR(
+        DeviceHandle device,
+        Ref<ImportSemaphoreWin32HandleInfoKHR> pImportSemaphoreWin32HandleInfo
+    )
+    {
+        fixed (
+            ImportSemaphoreWin32HandleInfoKHR* __dsl_pImportSemaphoreWin32HandleInfo =
+                pImportSemaphoreWin32HandleInfo
+        )
+        {
+            return (Result)
+                ((IVk)this).ImportSemaphoreWin32HandleKHR(
+                    device,
+                    __dsl_pImportSemaphoreWin32HandleInfo
+                );
+        }
+    }
+
+    [NativeName("vkImportSemaphoreWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_win32"],
+        ImpliesSets = ["VK_KHR_external_semaphore"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreWin32HandleKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result ImportSemaphoreWin32HandleKHR(
+        DeviceHandle device,
+        Ref<ImportSemaphoreWin32HandleInfoKHR> pImportSemaphoreWin32HandleInfo
+    ) => ThisThread.ImportSemaphoreWin32HandleKHR(device, pImportSemaphoreWin32HandleInfo);
+
     [NativeName("vkInitializePerformanceApiINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkInitializePerformanceApiINTEL")]
@@ -187906,9 +191967,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, InitializePerformanceApiInfoINTEL*, Result>)(
-                _slots[706] is not null and var loadedFnPtr
+                _slots[726] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[706] = nativeContext.LoadFunction(
+                    : _slots[726] = nativeContext.LoadFunction(
                         "vkInitializePerformanceApiINTEL",
                         "vulkan"
                     )
@@ -187984,9 +192045,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, MappedMemoryRange*, Result>)(
-                _slots[707] is not null and var loadedFnPtr
+                _slots[727] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[707] = nativeContext.LoadFunction(
+                    : _slots[727] = nativeContext.LoadFunction(
                         "vkInvalidateMappedMemoryRanges",
                         "vulkan"
                     )
@@ -188129,9 +192190,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SwapchainHandleKHR, LatencySleepInfoNV*, Result>)(
-                _slots[708] is not null and var loadedFnPtr
+                _slots[728] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[708] = nativeContext.LoadFunction("vkLatencySleepNV", "vulkan")
+                    : _slots[728] = nativeContext.LoadFunction("vkLatencySleepNV", "vulkan")
             )
         )(device, swapchain, pSleepInfo);
 
@@ -188244,9 +192305,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 MemoryMapFlags,
                 void**,
                 Result>)(
-                _slots[709] is not null and var loadedFnPtr
+                _slots[729] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[709] = nativeContext.LoadFunction("vkMapMemory", "vulkan")
+                    : _slots[729] = nativeContext.LoadFunction("vkMapMemory", "vulkan")
             )
         )(device, memory, offset, size, flags, ppData);
 
@@ -188386,9 +192447,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.MapMemory2(DeviceHandle device, MemoryMapInfo* pMemoryMapInfo, void** ppData) =>
         (
             (delegate* unmanaged<DeviceHandle, MemoryMapInfo*, void**, Result>)(
-                _slots[710] is not null and var loadedFnPtr
+                _slots[730] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[710] = nativeContext.LoadFunction("vkMapMemory2", "vulkan")
+                    : _slots[730] = nativeContext.LoadFunction("vkMapMemory2", "vulkan")
             )
         )(device, pMemoryMapInfo, ppData);
 
@@ -188459,9 +192520,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.MapMemory2KHR(DeviceHandle device, MemoryMapInfo* pMemoryMapInfo, void** ppData) =>
         (
             (delegate* unmanaged<DeviceHandle, MemoryMapInfo*, void**, Result>)(
-                _slots[711] is not null and var loadedFnPtr
+                _slots[731] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[711] = nativeContext.LoadFunction("vkMapMemory2KHR", "vulkan")
+                    : _slots[731] = nativeContext.LoadFunction("vkMapMemory2KHR", "vulkan")
             )
         )(device, pMemoryMapInfo, ppData);
 
@@ -188535,9 +192596,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 PipelineCacheHandle*,
                 Result>)(
-                _slots[712] is not null and var loadedFnPtr
+                _slots[732] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[712] = nativeContext.LoadFunction("vkMergePipelineCaches", "vulkan")
+                    : _slots[732] = nativeContext.LoadFunction("vkMergePipelineCaches", "vulkan")
             )
         )(device, dstCache, srcCacheCount, pSrcCaches);
 
@@ -188658,9 +192719,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 ValidationCacheHandleEXT*,
                 Result>)(
-                _slots[713] is not null and var loadedFnPtr
+                _slots[733] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[713] = nativeContext.LoadFunction(
+                    : _slots[733] = nativeContext.LoadFunction(
                         "vkMergeValidationCachesEXT",
                         "vulkan"
                     )
@@ -188719,9 +192780,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.NegotiateLoaderLayerInterfaceVersion(NegotiateLayerInterface* pVersionStruct) =>
         (
             (delegate* unmanaged<NegotiateLayerInterface*, Result>)(
-                _slots[714] is not null and var loadedFnPtr
+                _slots[734] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[714] = nativeContext.LoadFunction(
+                    : _slots[734] = nativeContext.LoadFunction(
                         "vkNegotiateLoaderLayerInterfaceVersion",
                         "vulkan"
                     )
@@ -188763,9 +192824,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.QueueBeginDebugUtilsLabelEXT(QueueHandle queue, DebugUtilsLabelEXT* pLabelInfo) =>
         (
             (delegate* unmanaged<QueueHandle, DebugUtilsLabelEXT*, void>)(
-                _slots[715] is not null and var loadedFnPtr
+                _slots[735] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[715] = nativeContext.LoadFunction(
+                    : _slots[735] = nativeContext.LoadFunction(
                         "vkQueueBeginDebugUtilsLabelEXT",
                         "vulkan"
                     )
@@ -188839,9 +192900,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<QueueHandle, uint, BindSparseInfo*, FenceHandle, Result>)(
-                _slots[716] is not null and var loadedFnPtr
+                _slots[736] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[716] = nativeContext.LoadFunction("vkQueueBindSparse", "vulkan")
+                    : _slots[736] = nativeContext.LoadFunction("vkQueueBindSparse", "vulkan")
             )
         )(queue, bindInfoCount, pBindInfo, fence);
 
@@ -188967,9 +193028,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.QueueEndDebugUtilsLabelEXT(QueueHandle queue) =>
         (
             (delegate* unmanaged<QueueHandle, void>)(
-                _slots[717] is not null and var loadedFnPtr
+                _slots[737] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[717] = nativeContext.LoadFunction(
+                    : _slots[737] = nativeContext.LoadFunction(
                         "vkQueueEndDebugUtilsLabelEXT",
                         "vulkan"
                     )
@@ -188990,9 +193051,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.QueueInsertDebugUtilsLabelEXT(QueueHandle queue, DebugUtilsLabelEXT* pLabelInfo) =>
         (
             (delegate* unmanaged<QueueHandle, DebugUtilsLabelEXT*, void>)(
-                _slots[718] is not null and var loadedFnPtr
+                _slots[738] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[718] = nativeContext.LoadFunction(
+                    : _slots[738] = nativeContext.LoadFunction(
                         "vkQueueInsertDebugUtilsLabelEXT",
                         "vulkan"
                     )
@@ -189045,9 +193106,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.QueueNotifyOutOfBandNV(QueueHandle queue, OutOfBandQueueTypeInfoNV* pQueueTypeInfo) =>
         (
             (delegate* unmanaged<QueueHandle, OutOfBandQueueTypeInfoNV*, void>)(
-                _slots[719] is not null and var loadedFnPtr
+                _slots[739] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[719] = nativeContext.LoadFunction("vkQueueNotifyOutOfBandNV", "vulkan")
+                    : _slots[739] = nativeContext.LoadFunction("vkQueueNotifyOutOfBandNV", "vulkan")
             )
         )(queue, pQueueTypeInfo);
 
@@ -189115,9 +193176,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.QueuePresentKHR(QueueHandle queue, PresentInfoKHR* pPresentInfo) =>
         (
             (delegate* unmanaged<QueueHandle, PresentInfoKHR*, Result>)(
-                _slots[720] is not null and var loadedFnPtr
+                _slots[740] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[720] = nativeContext.LoadFunction("vkQueuePresentKHR", "vulkan")
+                    : _slots[740] = nativeContext.LoadFunction("vkQueuePresentKHR", "vulkan")
             )
         )(queue, pPresentInfo);
 
@@ -189161,9 +193222,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.QueueSetPerfHintQCOM(QueueHandle queue, PerfHintInfoQCOM* pPerfHintInfo) =>
         (
             (delegate* unmanaged<QueueHandle, PerfHintInfoQCOM*, Result>)(
-                _slots[721] is not null and var loadedFnPtr
+                _slots[741] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[721] = nativeContext.LoadFunction("vkQueueSetPerfHintQCOM", "vulkan")
+                    : _slots[741] = nativeContext.LoadFunction("vkQueueSetPerfHintQCOM", "vulkan")
             )
         )(queue, pPerfHintInfo);
 
@@ -189226,9 +193287,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<QueueHandle, PerformanceConfigurationHandleINTEL, Result>)(
-                _slots[722] is not null and var loadedFnPtr
+                _slots[742] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[722] = nativeContext.LoadFunction(
+                    : _slots[742] = nativeContext.LoadFunction(
                         "vkQueueSetPerformanceConfigurationINTEL",
                         "vulkan"
                     )
@@ -189281,9 +193342,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<QueueHandle, uint, SubmitInfo*, FenceHandle, Result>)(
-                _slots[723] is not null and var loadedFnPtr
+                _slots[743] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[723] = nativeContext.LoadFunction("vkQueueSubmit", "vulkan")
+                    : _slots[743] = nativeContext.LoadFunction("vkQueueSubmit", "vulkan")
             )
         )(queue, submitCount, pSubmits, fence);
 
@@ -189426,9 +193487,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<QueueHandle, uint, SubmitInfo2*, FenceHandle, Result>)(
-                _slots[724] is not null and var loadedFnPtr
+                _slots[744] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[724] = nativeContext.LoadFunction("vkQueueSubmit2", "vulkan")
+                    : _slots[744] = nativeContext.LoadFunction("vkQueueSubmit2", "vulkan")
             )
         )(queue, submitCount, pSubmits, fence);
 
@@ -189529,9 +193590,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<QueueHandle, uint, SubmitInfo2*, FenceHandle, Result>)(
-                _slots[725] is not null and var loadedFnPtr
+                _slots[745] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[725] = nativeContext.LoadFunction("vkQueueSubmit2KHR", "vulkan")
+                    : _slots[745] = nativeContext.LoadFunction("vkQueueSubmit2KHR", "vulkan")
             )
         )(queue, submitCount, pSubmits, fence);
 
@@ -189627,9 +193688,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.QueueWaitIdle(QueueHandle queue) =>
         (
             (delegate* unmanaged<QueueHandle, Result>)(
-                _slots[726] is not null and var loadedFnPtr
+                _slots[746] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[726] = nativeContext.LoadFunction("vkQueueWaitIdle", "vulkan")
+                    : _slots[746] = nativeContext.LoadFunction("vkQueueWaitIdle", "vulkan")
             )
         )(queue);
 
@@ -189692,9 +193753,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 uint*,
                 Result>)(
-                _slots[727] is not null and var loadedFnPtr
+                _slots[747] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[727] = nativeContext.LoadFunction(
+                    : _slots[747] = nativeContext.LoadFunction(
                         "vkRegisterCustomBorderColorEXT",
                         "vulkan"
                     )
@@ -189801,9 +193862,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 FenceHandle*,
                 Result>)(
-                _slots[728] is not null and var loadedFnPtr
+                _slots[748] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[728] = nativeContext.LoadFunction("vkRegisterDeviceEventEXT", "vulkan")
+                    : _slots[748] = nativeContext.LoadFunction("vkRegisterDeviceEventEXT", "vulkan")
             )
         )(device, pDeviceEventInfo, pAllocator, pFence);
 
@@ -189889,9 +193950,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 AllocationCallbacks*,
                 FenceHandle*,
                 Result>)(
-                _slots[729] is not null and var loadedFnPtr
+                _slots[749] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[729] = nativeContext.LoadFunction(
+                    : _slots[749] = nativeContext.LoadFunction(
                         "vkRegisterDisplayEventEXT",
                         "vulkan"
                     )
@@ -189984,9 +194045,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ReleaseCapturedPipelineDataInfoKHR*,
                 AllocationCallbacks*,
                 Result>)(
-                _slots[730] is not null and var loadedFnPtr
+                _slots[750] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[730] = nativeContext.LoadFunction(
+                    : _slots[750] = nativeContext.LoadFunction(
                         "vkReleaseCapturedPipelineDataKHR",
                         "vulkan"
                     )
@@ -190066,9 +194127,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.ReleaseDisplayEXT(PhysicalDeviceHandle physicalDevice, DisplayHandleKHR display) =>
         (
             (delegate* unmanaged<PhysicalDeviceHandle, DisplayHandleKHR, Result>)(
-                _slots[731] is not null and var loadedFnPtr
+                _slots[751] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[731] = nativeContext.LoadFunction("vkReleaseDisplayEXT", "vulkan")
+                    : _slots[751] = nativeContext.LoadFunction("vkReleaseDisplayEXT", "vulkan")
             )
         )(physicalDevice, display);
 
@@ -190085,6 +194146,48 @@ public unsafe partial class Vk : IVk, IVk.Static
         DisplayHandleKHR display
     ) => ThisThread.ReleaseDisplayEXT(physicalDevice, display);
 
+    [NativeName("vkReleaseFullScreenExclusiveModeEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkReleaseFullScreenExclusiveModeEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.ReleaseFullScreenExclusiveModeEXT(
+        DeviceHandle device,
+        SwapchainHandleKHR swapchain
+    ) =>
+        (
+            (delegate* unmanaged<DeviceHandle, SwapchainHandleKHR, Result>)(
+                _slots[752] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[752] = nativeContext.LoadFunction(
+                        "vkReleaseFullScreenExclusiveModeEXT",
+                        "vulkan"
+                    )
+            )
+        )(device, swapchain);
+
+    [NativeName("vkReleaseFullScreenExclusiveModeEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkReleaseFullScreenExclusiveModeEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result ReleaseFullScreenExclusiveModeEXT(
+        DeviceHandle device,
+        SwapchainHandleKHR swapchain
+    ) => ThisThread.ReleaseFullScreenExclusiveModeEXT(device, swapchain);
+
     [NativeName("vkReleasePerformanceConfigurationINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkReleasePerformanceConfigurationINTEL")]
@@ -190095,9 +194198,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, PerformanceConfigurationHandleINTEL, Result>)(
-                _slots[732] is not null and var loadedFnPtr
+                _slots[753] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[732] = nativeContext.LoadFunction(
+                    : _slots[753] = nativeContext.LoadFunction(
                         "vkReleasePerformanceConfigurationINTEL",
                         "vulkan"
                     )
@@ -190127,9 +194230,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.ReleaseProfilingLockKHR(DeviceHandle device) =>
         (
             (delegate* unmanaged<DeviceHandle, void>)(
-                _slots[733] is not null and var loadedFnPtr
+                _slots[754] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[733] = nativeContext.LoadFunction(
+                    : _slots[754] = nativeContext.LoadFunction(
                         "vkReleaseProfilingLockKHR",
                         "vulkan"
                     )
@@ -190167,9 +194270,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ReleaseSwapchainImagesInfoKHR*, Result>)(
-                _slots[734] is not null and var loadedFnPtr
+                _slots[755] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[734] = nativeContext.LoadFunction(
+                    : _slots[755] = nativeContext.LoadFunction(
                         "vkReleaseSwapchainImagesEXT",
                         "vulkan"
                     )
@@ -190247,9 +194350,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, ReleaseSwapchainImagesInfoKHR*, Result>)(
-                _slots[735] is not null and var loadedFnPtr
+                _slots[756] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[735] = nativeContext.LoadFunction(
+                    : _slots[756] = nativeContext.LoadFunction(
                         "vkReleaseSwapchainImagesKHR",
                         "vulkan"
                     )
@@ -190345,9 +194448,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<CommandBufferHandle, CommandBufferResetFlags, Result>)(
-                _slots[736] is not null and var loadedFnPtr
+                _slots[757] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[736] = nativeContext.LoadFunction("vkResetCommandBuffer", "vulkan")
+                    : _slots[757] = nativeContext.LoadFunction("vkResetCommandBuffer", "vulkan")
             )
         )(commandBuffer, flags);
 
@@ -190421,9 +194524,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, CommandPoolHandle, CommandPoolResetFlags, Result>)(
-                _slots[737] is not null and var loadedFnPtr
+                _slots[758] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[737] = nativeContext.LoadFunction("vkResetCommandPool", "vulkan")
+                    : _slots[758] = nativeContext.LoadFunction("vkResetCommandPool", "vulkan")
             )
         )(device, commandPool, flags);
 
@@ -190493,9 +194596,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DescriptorPoolHandle, uint, Result>)(
-                _slots[738] is not null and var loadedFnPtr
+                _slots[759] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[738] = nativeContext.LoadFunction("vkResetDescriptorPool", "vulkan")
+                    : _slots[759] = nativeContext.LoadFunction("vkResetDescriptorPool", "vulkan")
             )
         )(device, descriptorPool, flags);
 
@@ -190556,9 +194659,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.ResetEvent(DeviceHandle device, EventHandle @event) =>
         (
             (delegate* unmanaged<DeviceHandle, EventHandle, Result>)(
-                _slots[739] is not null and var loadedFnPtr
+                _slots[760] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[739] = nativeContext.LoadFunction("vkResetEvent", "vulkan")
+                    : _slots[760] = nativeContext.LoadFunction("vkResetEvent", "vulkan")
             )
         )(device, @event);
 
@@ -190621,9 +194724,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.ResetFences(DeviceHandle device, uint fenceCount, FenceHandle* pFences) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, FenceHandle*, Result>)(
-                _slots[740] is not null and var loadedFnPtr
+                _slots[761] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[740] = nativeContext.LoadFunction("vkResetFences", "vulkan")
+                    : _slots[761] = nativeContext.LoadFunction("vkResetFences", "vulkan")
             )
         )(device, fenceCount, pFences);
 
@@ -190745,9 +194848,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.ResetGpaSessionAMD(DeviceHandle device, GpaSessionHandleAMD gpaSession) =>
         (
             (delegate* unmanaged<DeviceHandle, GpaSessionHandleAMD, Result>)(
-                _slots[741] is not null and var loadedFnPtr
+                _slots[762] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[741] = nativeContext.LoadFunction("vkResetGpaSessionAMD", "vulkan")
+                    : _slots[762] = nativeContext.LoadFunction("vkResetGpaSessionAMD", "vulkan")
             )
         )(device, gpaSession);
 
@@ -190794,9 +194897,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, QueryPoolHandle, uint, uint, void>)(
-                _slots[742] is not null and var loadedFnPtr
+                _slots[763] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[742] = nativeContext.LoadFunction("vkResetQueryPool", "vulkan")
+                    : _slots[763] = nativeContext.LoadFunction("vkResetQueryPool", "vulkan")
             )
         )(device, queryPool, firstQuery, queryCount);
 
@@ -190847,9 +194950,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, QueryPoolHandle, uint, uint, void>)(
-                _slots[743] is not null and var loadedFnPtr
+                _slots[764] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[743] = nativeContext.LoadFunction("vkResetQueryPoolEXT", "vulkan")
+                    : _slots[764] = nativeContext.LoadFunction("vkResetQueryPoolEXT", "vulkan")
             )
         )(device, queryPool, firstQuery, queryCount);
 
@@ -190881,9 +194984,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DebugUtilsObjectNameInfoEXT*, Result>)(
-                _slots[744] is not null and var loadedFnPtr
+                _slots[765] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[744] = nativeContext.LoadFunction(
+                    : _slots[765] = nativeContext.LoadFunction(
                         "vkSetDebugUtilsObjectNameEXT",
                         "vulkan"
                     )
@@ -190933,9 +195036,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DebugUtilsObjectTagInfoEXT*, Result>)(
-                _slots[745] is not null and var loadedFnPtr
+                _slots[766] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[745] = nativeContext.LoadFunction(
+                    : _slots[766] = nativeContext.LoadFunction(
                         "vkSetDebugUtilsObjectTagEXT",
                         "vulkan"
                     )
@@ -190990,9 +195093,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, DeviceMemoryHandle, float, void>)(
-                _slots[746] is not null and var loadedFnPtr
+                _slots[767] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[746] = nativeContext.LoadFunction(
+                    : _slots[767] = nativeContext.LoadFunction(
                         "vkSetDeviceMemoryPriorityEXT",
                         "vulkan"
                     )
@@ -191040,9 +195143,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.SetEvent(DeviceHandle device, EventHandle @event) =>
         (
             (delegate* unmanaged<DeviceHandle, EventHandle, Result>)(
-                _slots[747] is not null and var loadedFnPtr
+                _slots[768] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[747] = nativeContext.LoadFunction("vkSetEvent", "vulkan")
+                    : _slots[768] = nativeContext.LoadFunction("vkSetEvent", "vulkan")
             )
         )(device, @event);
 
@@ -191087,9 +195190,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.SetGpaDeviceClockModeAMD(DeviceHandle device, GpaDeviceClockModeInfoAMD* pInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, GpaDeviceClockModeInfoAMD*, Result>)(
-                _slots[748] is not null and var loadedFnPtr
+                _slots[769] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[748] = nativeContext.LoadFunction(
+                    : _slots[769] = nativeContext.LoadFunction(
                         "vkSetGpaDeviceClockModeAMD",
                         "vulkan"
                     )
@@ -191159,9 +195262,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, SwapchainHandleKHR*, HdrMetadataEXT*, void>)(
-                _slots[749] is not null and var loadedFnPtr
+                _slots[770] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[749] = nativeContext.LoadFunction("vkSetHdrMetadataEXT", "vulkan")
+                    : _slots[770] = nativeContext.LoadFunction("vkSetHdrMetadataEXT", "vulkan")
             )
         )(device, swapchainCount, pSwapchains, pMetadata);
 
@@ -191230,9 +195333,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SwapchainHandleKHR, SetLatencyMarkerInfoNV*, void>)(
-                _slots[750] is not null and var loadedFnPtr
+                _slots[771] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[750] = nativeContext.LoadFunction("vkSetLatencyMarkerNV", "vulkan")
+                    : _slots[771] = nativeContext.LoadFunction("vkSetLatencyMarkerNV", "vulkan")
             )
         )(device, swapchain, pLatencyMarkerInfo);
 
@@ -191323,9 +195426,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 SwapchainHandleKHR,
                 LatencySleepModeInfoNV*,
                 Result>)(
-                _slots[751] is not null and var loadedFnPtr
+                _slots[772] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[751] = nativeContext.LoadFunction("vkSetLatencySleepModeNV", "vulkan")
+                    : _slots[772] = nativeContext.LoadFunction("vkSetLatencySleepModeNV", "vulkan")
             )
         )(device, swapchain, pSleepModeInfo);
 
@@ -191411,9 +195514,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SwapchainHandleKHR, uint, void>)(
-                _slots[752] is not null and var loadedFnPtr
+                _slots[773] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[752] = nativeContext.LoadFunction("vkSetLocalDimmingAMD", "vulkan")
+                    : _slots[773] = nativeContext.LoadFunction("vkSetLocalDimmingAMD", "vulkan")
             )
         )(device, swapChain, localDimmingEnable);
 
@@ -191500,9 +195603,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PrivateDataSlotHandle,
                 ulong,
                 Result>)(
-                _slots[753] is not null and var loadedFnPtr
+                _slots[774] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[753] = nativeContext.LoadFunction("vkSetPrivateData", "vulkan")
+                    : _slots[774] = nativeContext.LoadFunction("vkSetPrivateData", "vulkan")
             )
         )(device, objectType, objectHandle, privateDataSlot, data);
 
@@ -191557,9 +195660,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 PrivateDataSlotHandle,
                 ulong,
                 Result>)(
-                _slots[754] is not null and var loadedFnPtr
+                _slots[775] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[754] = nativeContext.LoadFunction("vkSetPrivateDataEXT", "vulkan")
+                    : _slots[775] = nativeContext.LoadFunction("vkSetPrivateDataEXT", "vulkan")
             )
         )(device, objectType, objectHandle, privateDataSlot, data);
 
@@ -191602,9 +195705,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SwapchainHandleKHR, uint, Result>)(
-                _slots[755] is not null and var loadedFnPtr
+                _slots[776] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[755] = nativeContext.LoadFunction(
+                    : _slots[776] = nativeContext.LoadFunction(
                         "vkSetSwapchainPresentTimingQueueSizeEXT",
                         "vulkan"
                     )
@@ -191654,9 +195757,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.SignalSemaphore(DeviceHandle device, SemaphoreSignalInfo* pSignalInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, SemaphoreSignalInfo*, Result>)(
-                _slots[756] is not null and var loadedFnPtr
+                _slots[777] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[756] = nativeContext.LoadFunction("vkSignalSemaphore", "vulkan")
+                    : _slots[777] = nativeContext.LoadFunction("vkSignalSemaphore", "vulkan")
             )
         )(device, pSignalInfo);
 
@@ -191753,9 +195856,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.SignalSemaphoreKHR(DeviceHandle device, SemaphoreSignalInfo* pSignalInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, SemaphoreSignalInfo*, Result>)(
-                _slots[757] is not null and var loadedFnPtr
+                _slots[778] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[757] = nativeContext.LoadFunction("vkSignalSemaphoreKHR", "vulkan")
+                    : _slots[778] = nativeContext.LoadFunction("vkSignalSemaphoreKHR", "vulkan")
             )
         )(device, pSignalInfo);
 
@@ -191827,9 +195930,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DebugUtilsMessageTypeFlagsEXT,
                 DebugUtilsMessengerCallbackDataEXT*,
                 void>)(
-                _slots[758] is not null and var loadedFnPtr
+                _slots[779] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[758] = nativeContext.LoadFunction(
+                    : _slots[779] = nativeContext.LoadFunction(
                         "vkSubmitDebugUtilsMessageEXT",
                         "vulkan"
                     )
@@ -191912,9 +196015,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, HostImageLayoutTransitionInfo*, Result>)(
-                _slots[759] is not null and var loadedFnPtr
+                _slots[780] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[759] = nativeContext.LoadFunction("vkTransitionImageLayout", "vulkan")
+                    : _slots[780] = nativeContext.LoadFunction("vkTransitionImageLayout", "vulkan")
             )
         )(device, transitionCount, pTransitions);
 
@@ -192001,9 +196104,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, HostImageLayoutTransitionInfo*, Result>)(
-                _slots[760] is not null and var loadedFnPtr
+                _slots[781] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[760] = nativeContext.LoadFunction(
+                    : _slots[781] = nativeContext.LoadFunction(
                         "vkTransitionImageLayoutEXT",
                         "vulkan"
                     )
@@ -192099,9 +196202,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.TrimCommandPool(DeviceHandle device, CommandPoolHandle commandPool, uint flags) =>
         (
             (delegate* unmanaged<DeviceHandle, CommandPoolHandle, uint, void>)(
-                _slots[761] is not null and var loadedFnPtr
+                _slots[782] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[761] = nativeContext.LoadFunction("vkTrimCommandPool", "vulkan")
+                    : _slots[782] = nativeContext.LoadFunction("vkTrimCommandPool", "vulkan")
             )
         )(device, commandPool, flags);
 
@@ -192143,9 +196246,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.TrimCommandPoolKHR(DeviceHandle device, CommandPoolHandle commandPool, uint flags) =>
         (
             (delegate* unmanaged<DeviceHandle, CommandPoolHandle, uint, void>)(
-                _slots[762] is not null and var loadedFnPtr
+                _slots[783] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[762] = nativeContext.LoadFunction("vkTrimCommandPoolKHR", "vulkan")
+                    : _slots[783] = nativeContext.LoadFunction("vkTrimCommandPoolKHR", "vulkan")
             )
         )(device, commandPool, flags);
 
@@ -192166,9 +196269,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.UninitializePerformanceApiINTEL(DeviceHandle device) =>
         (
             (delegate* unmanaged<DeviceHandle, void>)(
-                _slots[763] is not null and var loadedFnPtr
+                _slots[784] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[763] = nativeContext.LoadFunction(
+                    : _slots[784] = nativeContext.LoadFunction(
                         "vkUninitializePerformanceApiINTEL",
                         "vulkan"
                     )
@@ -192214,9 +196317,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.UnmapMemory(DeviceHandle device, DeviceMemoryHandle memory) =>
         (
             (delegate* unmanaged<DeviceHandle, DeviceMemoryHandle, void>)(
-                _slots[764] is not null and var loadedFnPtr
+                _slots[785] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[764] = nativeContext.LoadFunction("vkUnmapMemory", "vulkan")
+                    : _slots[785] = nativeContext.LoadFunction("vkUnmapMemory", "vulkan")
             )
         )(device, memory);
 
@@ -192268,9 +196371,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.UnmapMemory2(DeviceHandle device, MemoryUnmapInfo* pMemoryUnmapInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, MemoryUnmapInfo*, Result>)(
-                _slots[765] is not null and var loadedFnPtr
+                _slots[786] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[765] = nativeContext.LoadFunction("vkUnmapMemory2", "vulkan")
+                    : _slots[786] = nativeContext.LoadFunction("vkUnmapMemory2", "vulkan")
             )
         )(device, pMemoryUnmapInfo);
 
@@ -192334,9 +196437,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.UnmapMemory2KHR(DeviceHandle device, MemoryUnmapInfo* pMemoryUnmapInfo) =>
         (
             (delegate* unmanaged<DeviceHandle, MemoryUnmapInfo*, Result>)(
-                _slots[766] is not null and var loadedFnPtr
+                _slots[787] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[766] = nativeContext.LoadFunction("vkUnmapMemory2KHR", "vulkan")
+                    : _slots[787] = nativeContext.LoadFunction("vkUnmapMemory2KHR", "vulkan")
             )
         )(device, pMemoryUnmapInfo);
 
@@ -192386,9 +196489,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     void IVk.UnregisterCustomBorderColorEXT(DeviceHandle device, uint index) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, void>)(
-                _slots[767] is not null and var loadedFnPtr
+                _slots[788] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[767] = nativeContext.LoadFunction(
+                    : _slots[788] = nativeContext.LoadFunction(
                         "vkUnregisterCustomBorderColorEXT",
                         "vulkan"
                     )
@@ -192452,9 +196555,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 CopyDescriptorSet*,
                 void>)(
-                _slots[768] is not null and var loadedFnPtr
+                _slots[789] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[768] = nativeContext.LoadFunction("vkUpdateDescriptorSets", "vulkan")
+                    : _slots[789] = nativeContext.LoadFunction("vkUpdateDescriptorSets", "vulkan")
             )
         )(device, descriptorWriteCount, pDescriptorWrites, descriptorCopyCount, pDescriptorCopies);
 
@@ -192615,9 +196718,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DescriptorUpdateTemplateHandle,
                 void*,
                 void>)(
-                _slots[769] is not null and var loadedFnPtr
+                _slots[790] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[769] = nativeContext.LoadFunction(
+                    : _slots[790] = nativeContext.LoadFunction(
                         "vkUpdateDescriptorSetWithTemplate",
                         "vulkan"
                     )
@@ -192748,9 +196851,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 DescriptorUpdateTemplateHandle,
                 void*,
                 void>)(
-                _slots[770] is not null and var loadedFnPtr
+                _slots[791] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[770] = nativeContext.LoadFunction(
+                    : _slots[791] = nativeContext.LoadFunction(
                         "vkUpdateDescriptorSetWithTemplateKHR",
                         "vulkan"
                     )
@@ -192840,9 +196943,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 WriteIndirectExecutionSetPipelineEXT*,
                 void>)(
-                _slots[771] is not null and var loadedFnPtr
+                _slots[792] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[771] = nativeContext.LoadFunction(
+                    : _slots[792] = nativeContext.LoadFunction(
                         "vkUpdateIndirectExecutionSetPipelineEXT",
                         "vulkan"
                     )
@@ -193015,9 +197118,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 uint,
                 WriteIndirectExecutionSetShaderEXT*,
                 void>)(
-                _slots[772] is not null and var loadedFnPtr
+                _slots[793] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[772] = nativeContext.LoadFunction(
+                    : _slots[793] = nativeContext.LoadFunction(
                         "vkUpdateIndirectExecutionSetShaderEXT",
                         "vulkan"
                     )
@@ -193180,9 +197283,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 VideoSessionParametersHandleKHR,
                 VideoSessionParametersUpdateInfoKHR*,
                 Result>)(
-                _slots[773] is not null and var loadedFnPtr
+                _slots[794] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[773] = nativeContext.LoadFunction(
+                    : _slots[794] = nativeContext.LoadFunction(
                         "vkUpdateVideoSessionParametersKHR",
                         "vulkan"
                     )
@@ -193280,9 +197383,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, uint, FenceHandle*, uint, ulong, Result>)(
-                _slots[774] is not null and var loadedFnPtr
+                _slots[795] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[774] = nativeContext.LoadFunction("vkWaitForFences", "vulkan")
+                    : _slots[795] = nativeContext.LoadFunction("vkWaitForFences", "vulkan")
             )
         )(device, fenceCount, pFences, waitAll, timeout);
 
@@ -193430,9 +197533,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SwapchainHandleKHR, PresentWait2InfoKHR*, Result>)(
-                _slots[775] is not null and var loadedFnPtr
+                _slots[796] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[775] = nativeContext.LoadFunction("vkWaitForPresent2KHR", "vulkan")
+                    : _slots[796] = nativeContext.LoadFunction("vkWaitForPresent2KHR", "vulkan")
             )
         )(device, swapchain, pPresentWait2Info);
 
@@ -193516,9 +197619,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SwapchainHandleKHR, ulong, ulong, Result>)(
-                _slots[776] is not null and var loadedFnPtr
+                _slots[797] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[776] = nativeContext.LoadFunction("vkWaitForPresentKHR", "vulkan")
+                    : _slots[797] = nativeContext.LoadFunction("vkWaitForPresentKHR", "vulkan")
             )
         )(device, swapchain, presentId, timeout);
 
@@ -193561,9 +197664,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.WaitSemaphores(DeviceHandle device, SemaphoreWaitInfo* pWaitInfo, ulong timeout) =>
         (
             (delegate* unmanaged<DeviceHandle, SemaphoreWaitInfo*, ulong, Result>)(
-                _slots[777] is not null and var loadedFnPtr
+                _slots[798] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[777] = nativeContext.LoadFunction("vkWaitSemaphores", "vulkan")
+                    : _slots[798] = nativeContext.LoadFunction("vkWaitSemaphores", "vulkan")
             )
         )(device, pWaitInfo, timeout);
 
@@ -193668,9 +197771,9 @@ public unsafe partial class Vk : IVk, IVk.Static
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, SemaphoreWaitInfo*, ulong, Result>)(
-                _slots[778] is not null and var loadedFnPtr
+                _slots[799] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[778] = nativeContext.LoadFunction("vkWaitSemaphoresKHR", "vulkan")
+                    : _slots[799] = nativeContext.LoadFunction("vkWaitSemaphoresKHR", "vulkan")
             )
         )(device, pWaitInfo, timeout);
 
@@ -193761,9 +197864,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 void*,
                 nuint,
                 Result>)(
-                _slots[779] is not null and var loadedFnPtr
+                _slots[800] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[779] = nativeContext.LoadFunction(
+                    : _slots[800] = nativeContext.LoadFunction(
                         "vkWriteAccelerationStructuresPropertiesKHR",
                         "vulkan"
                     )
@@ -193907,9 +198010,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 void*,
                 nuint,
                 Result>)(
-                _slots[780] is not null and var loadedFnPtr
+                _slots[801] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[780] = nativeContext.LoadFunction(
+                    : _slots[801] = nativeContext.LoadFunction(
                         "vkWriteMicromapsPropertiesEXT",
                         "vulkan"
                     )
@@ -194040,9 +198143,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 ResourceDescriptorInfoEXT*,
                 HostAddressRangeEXT*,
                 Result>)(
-                _slots[781] is not null and var loadedFnPtr
+                _slots[802] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[781] = nativeContext.LoadFunction(
+                    : _slots[802] = nativeContext.LoadFunction(
                         "vkWriteResourceDescriptorsEXT",
                         "vulkan"
                     )
@@ -194152,9 +198255,9 @@ public unsafe partial class Vk : IVk, IVk.Static
                 SamplerCreateInfo*,
                 HostAddressRangeEXT*,
                 Result>)(
-                _slots[782] is not null and var loadedFnPtr
+                _slots[803] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[782] = nativeContext.LoadFunction(
+                    : _slots[803] = nativeContext.LoadFunction(
                         "vkWriteSamplerDescriptorsEXT",
                         "vulkan"
                     )

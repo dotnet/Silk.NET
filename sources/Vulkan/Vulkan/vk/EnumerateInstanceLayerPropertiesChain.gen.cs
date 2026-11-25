@@ -28,6 +28,6 @@ public unsafe partial struct EnumerateInstanceLayerPropertiesChain
     [SupportedApiProfile("vulkan")]
     public readonly Result CallDown(uint* pPropertyCount, LayerProperties* pProperties)
     {
-        return PfnNextLayer(PNextLink, pPropertyCount, pProperties);
+        return PfnNextLayer.Handle(PNextLink, pPropertyCount, pProperties);
     }
 }

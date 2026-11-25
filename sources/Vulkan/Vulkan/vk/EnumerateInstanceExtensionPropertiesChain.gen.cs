@@ -32,6 +32,6 @@ public unsafe partial struct EnumerateInstanceExtensionPropertiesChain
         ExtensionProperties* pProperties
     )
     {
-        return PfnNextLayer(PNextLink, pLayerName, pPropertyCount, pProperties);
+        return PfnNextLayer.Handle(PNextLink, pLayerName, pPropertyCount, pProperties);
     }
 }
