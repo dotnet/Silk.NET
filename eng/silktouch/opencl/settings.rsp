@@ -1,6 +1,7 @@
 @../../common.rsp
 
 --define-macro
+CL_ENABLE_BETA_EXTENSIONS
 TODO_DEFINE_MACROS=HERE
 
 --headerFile
