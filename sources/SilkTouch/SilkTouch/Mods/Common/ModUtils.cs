@@ -329,6 +329,31 @@ public static class ModUtils
     }
 
     /// <summary>
+    /// Modifies the document using the provided function while preserving the syntax root.
+    /// </summary>
+    /// <remarks>
+    /// Modifying the document can cause it to be reparsed.
+    /// C# discord: https://discord.com/channels/143867839282020352/598678594750775301/1494176147351535687
+    /// </remarks>
+    public static async Task<Document> PreserveSyntaxRootAsync(
+        this Document document,
+        Func<Document, Task<Document>> modify,
+        CancellationToken ct
+    )
+    {
+        var syntaxRoot = await document.GetSyntaxRootAsync(ct);
+
+        document = await modify.Invoke(document);
+
+        if (syntaxRoot != null)
+        {
+            document = document.WithSyntaxRoot(syntaxRoot);
+        }
+
+        return document;
+    }
+
+    /// <summary>
     /// Gets the new <see cref="ISymbol"/> matching the given old <see cref="ISymbol"/> in a new
     /// <see cref="Compilation"/>. This is useful for maintaining context after a mutating operation e.g. for getting a
     /// new type symbol instance after a rename operation.

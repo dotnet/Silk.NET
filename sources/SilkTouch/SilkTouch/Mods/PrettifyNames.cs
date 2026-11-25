@@ -223,23 +223,14 @@ public class PrettifyNames(ILogger<PrettifyNames> logger, PrettifyNames.Configur
                 continue;
             }
 
-            // Save syntax tree so we can restore it later
-            // This is because modifying the document can cause it to be reparsed
-            // C# discord: https://discord.com/channels/143867839282020352/598678594750775301/1494176147351535687
-            var syntaxRoot = await doc.GetSyntaxRootAsync(ct);
-            if (syntaxRoot == null)
-            {
-                continue;
-            }
-
             // Rename doc and update path
             var originalName = doc.Name;
             var originalPath = doc.RelativePath();
-            doc = doc.ReplaceNameAndPath(oldName, newName);
+            doc = await doc.PreserveSyntaxRootAsync(
+                async doc => doc.ReplaceNameAndPath(oldName, newName),
+                ct
+            );
             var newPath = doc.RelativePath();
-
-            // Restore syntax tree
-            doc = doc.WithSyntaxRoot(syntaxRoot);
 
             // Check for path conflict
             documentPaths.Remove(originalPath);
