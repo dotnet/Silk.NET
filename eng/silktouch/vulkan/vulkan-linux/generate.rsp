@@ -1,6 +1,15 @@
 @../settings.rsp
 @../remap.rsp
 
+--define-macro
+VK_USE_PLATFORM_ANDROID_KHR
+VK_USE_PLATFORM_OHOS
+VK_USE_PLATFORM_VI_NN
+VK_USE_PLATFORM_WAYLAND_KHR
+VK_USE_PLATFORM_XCB_KHR
+VK_USE_PLATFORM_XLIB_KHR
+VK_USE_PLATFORM_XLIB_XRANDR_EXT
+
 --file
 vulkan-linux.h
 
@@ -31,3 +40,11 @@ Silk.NET.Vulkan
 ../../../submodules/vulkan-headers/include/vk_video/vulkan_video_codecs_common.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_core.h
+
+../../../submodules/vulkan-headers/include/vulkan/vulkan_android.h
+../../../submodules/vulkan-headers/include/vulkan/vulkan_ohos.h
+../../../submodules/vulkan-headers/include/vulkan/vulkan_vi.h
+../../../submodules/vulkan-headers/include/vulkan/vulkan_wayland.h
+../../../submodules/vulkan-headers/include/vulkan/vulkan_xcb.h
+../../../submodules/vulkan-headers/include/vulkan/vulkan_xlib.h
+../../../submodules/vulkan-headers/include/vulkan/vulkan_xlib_xrandr.h

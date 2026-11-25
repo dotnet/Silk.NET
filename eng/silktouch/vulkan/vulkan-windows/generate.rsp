@@ -1,6 +1,9 @@
 @../settings.rsp
 @../remap.rsp
 
+--define-macro
+VK_USE_PLATFORM_WIN32_KHR
+
 --file
 vulkan-windows.h
 
@@ -31,3 +34,5 @@ Silk.NET.Vulkan
 ../../../submodules/vulkan-headers/include/vk_video/vulkan_video_codecs_common.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_core.h
+
+../../../submodules/vulkan-headers/include/vulkan/vulkan_win32.h
