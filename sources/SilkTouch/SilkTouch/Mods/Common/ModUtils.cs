@@ -333,7 +333,11 @@ public static class ModUtils
     /// </summary>
     /// <remarks>
     /// Modifying the document can cause it to be reparsed.
+    /// This is expected behavior, but bad when syntax trees don't contain the whitespace required for proper parsing.
     /// C# discord: https://discord.com/channels/143867839282020352/598678594750775301/1494176147351535687
+    /// <para/>
+    /// Examples of this issue usually look like <c>namespaceSilk.NET.Vulkan</c>
+    /// where the lack of whitespace get locked in by the reparse.
     /// </remarks>
     public static async Task<Document> PreserveSyntaxRootAsync(
         this Document document,
