@@ -14,6 +14,26 @@ public unsafe partial interface IVk
 {
     public partial interface Static
     {
+        [NativeName("vk_icdEnumerateAdapterPhysicalDevices")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdEnumerateAdapterPhysicalDevices")]
+        static abstract Result IcdEnumerateAdapterPhysicalDevices(
+            InstanceHandle instance,
+            _LUID adapterLUID,
+            uint* pPhysicalDeviceCount,
+            PhysicalDeviceHandle* pPhysicalDevices
+        );
+
+        [NativeName("vk_icdEnumerateAdapterPhysicalDevices")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdEnumerateAdapterPhysicalDevices")]
+        static abstract Result IcdEnumerateAdapterPhysicalDevices(
+            InstanceHandle instance,
+            _LUID adapterLUID,
+            Ref<uint> pPhysicalDeviceCount,
+            Ref<PhysicalDeviceHandle> pPhysicalDevices
+        );
+
         [NativeName("vk_icdGetInstanceProcAddr")]
         [SupportedApiProfile("vulkan")]
         [NativeFunction("vulkan", EntryPoint = "vk_icdGetInstanceProcAddr")]
@@ -28226,6 +28246,26 @@ public unsafe partial interface IVk
             Ref<HostAddressRangeEXT> pDescriptors
         );
     }
+
+    [NativeName("vk_icdEnumerateAdapterPhysicalDevices")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdEnumerateAdapterPhysicalDevices")]
+    Result IcdEnumerateAdapterPhysicalDevices(
+        InstanceHandle instance,
+        _LUID adapterLUID,
+        uint* pPhysicalDeviceCount,
+        PhysicalDeviceHandle* pPhysicalDevices
+    );
+
+    [NativeName("vk_icdEnumerateAdapterPhysicalDevices")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdEnumerateAdapterPhysicalDevices")]
+    Result IcdEnumerateAdapterPhysicalDevices(
+        InstanceHandle instance,
+        _LUID adapterLUID,
+        Ref<uint> pPhysicalDeviceCount,
+        Ref<PhysicalDeviceHandle> pPhysicalDevices
+    );
 
     [NativeName("vk_icdGetInstanceProcAddr")]
     [SupportedApiProfile("vulkan")]
