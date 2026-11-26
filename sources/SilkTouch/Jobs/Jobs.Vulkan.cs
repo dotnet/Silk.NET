@@ -128,7 +128,11 @@ internal static partial class Jobs
                     .PrettifyNames(
                         new()
                         {
-                            NameOverrides = new() { ["numAABBs"] = "NumAabbs" },
+                            NameOverrides = new()
+                            {
+                                ["numAABBs"] = "NumAabbs",
+                                ["VK_LOADER_DATA.loaderData"] = "LoaderDataPtr",
+                            },
                             Affixes = new()
                             {
                                 [NameAffixes.HandleType] = new() { Order = 1 },
