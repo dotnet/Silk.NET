@@ -12,6 +12,9 @@
 #include <vk_video/vulkan_video_codecs_common.h>
 
 #include <vulkan/vulkan.h>
+#include <vulkan/vulkan_core.h>
+
+#include <vulkan/vk_icd.h>
 #include <vulkan/vk_layer.h>
 
 #include <vulkan/vulkan_metal.h>

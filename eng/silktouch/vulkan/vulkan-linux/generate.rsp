@@ -41,6 +41,8 @@ Silk.NET.Vulkan
 
 ../../../submodules/vulkan-headers/include/vulkan/vulkan.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_core.h
+
+../../../submodules/vulkan-headers/include/vulkan/vk_icd.h
 ../../../submodules/vulkan-headers/include/vulkan/vk_layer.h
 
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_android.h

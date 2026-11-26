@@ -14,6 +14,45 @@ public unsafe partial interface IVk
 {
     public partial interface Static
     {
+        [NativeName("vk_icdGetInstanceProcAddr")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdGetInstanceProcAddr")]
+        static abstract VoidFunction IcdGetInstanceProcAddr(InstanceHandle instance, sbyte* pName);
+
+        [NativeName("vk_icdGetInstanceProcAddr")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdGetInstanceProcAddr")]
+        static abstract VoidFunction IcdGetInstanceProcAddr(
+            InstanceHandle instance,
+            Ref<sbyte> pName
+        );
+
+        [NativeName("vk_icdGetPhysicalDeviceProcAddr")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdGetPhysicalDeviceProcAddr")]
+        static abstract VoidFunction IcdGetPhysicalDeviceProcAddr(
+            InstanceHandle instance,
+            sbyte* pName
+        );
+
+        [NativeName("vk_icdGetPhysicalDeviceProcAddr")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdGetPhysicalDeviceProcAddr")]
+        static abstract VoidFunction IcdGetPhysicalDeviceProcAddr(
+            InstanceHandle instance,
+            Ref<sbyte> pName
+        );
+
+        [NativeName("vk_icdNegotiateLoaderICDInterfaceVersion")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdNegotiateLoaderICDInterfaceVersion")]
+        static abstract Result IcdNegotiateLoaderIcdInterfaceVersion(uint* pVersion);
+
+        [NativeName("vk_icdNegotiateLoaderICDInterfaceVersion")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdNegotiateLoaderICDInterfaceVersion")]
+        static abstract Result IcdNegotiateLoaderIcdInterfaceVersion(Ref<uint> pVersion);
+
         [NativeName("vkAcquireDrmDisplayEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -28187,6 +28226,36 @@ public unsafe partial interface IVk
             Ref<HostAddressRangeEXT> pDescriptors
         );
     }
+
+    [NativeName("vk_icdGetInstanceProcAddr")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdGetInstanceProcAddr")]
+    VoidFunction IcdGetInstanceProcAddr(InstanceHandle instance, sbyte* pName);
+
+    [NativeName("vk_icdGetInstanceProcAddr")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdGetInstanceProcAddr")]
+    VoidFunction IcdGetInstanceProcAddr(InstanceHandle instance, Ref<sbyte> pName);
+
+    [NativeName("vk_icdGetPhysicalDeviceProcAddr")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdGetPhysicalDeviceProcAddr")]
+    VoidFunction IcdGetPhysicalDeviceProcAddr(InstanceHandle instance, sbyte* pName);
+
+    [NativeName("vk_icdGetPhysicalDeviceProcAddr")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdGetPhysicalDeviceProcAddr")]
+    VoidFunction IcdGetPhysicalDeviceProcAddr(InstanceHandle instance, Ref<sbyte> pName);
+
+    [NativeName("vk_icdNegotiateLoaderICDInterfaceVersion")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdNegotiateLoaderICDInterfaceVersion")]
+    Result IcdNegotiateLoaderIcdInterfaceVersion(uint* pVersion);
+
+    [NativeName("vk_icdNegotiateLoaderICDInterfaceVersion")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdNegotiateLoaderICDInterfaceVersion")]
+    Result IcdNegotiateLoaderIcdInterfaceVersion(Ref<uint> pVersion);
 
     [NativeName("vkAcquireDrmDisplayEXT")]
     [SupportedApiProfile(
