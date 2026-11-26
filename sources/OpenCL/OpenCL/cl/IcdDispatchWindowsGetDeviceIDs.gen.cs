@@ -13,8 +13,22 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsGetDeviceIDs : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<PlatformIdHandle, ulong, uint, DeviceIdHandle*, uint*, int> Handle =>
-        (delegate* unmanaged<PlatformIdHandle, ulong, uint, DeviceIdHandle*, uint*, int>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
+        PlatformIdHandle,
+        ulong,
+        uint,
+        DeviceIdHandle*,
+        uint*,
+        int> Handle =>
+        ref *(delegate* unmanaged<
+            PlatformIdHandle,
+            ulong,
+            uint,
+            DeviceIdHandle*,
+            uint*,
+            int>*)Pointer;
 
     public IcdDispatchWindowsGetDeviceIDs(
         delegate* unmanaged<PlatformIdHandle, ulong, uint, DeviceIdHandle*, uint*, int> ptr

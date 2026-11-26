@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct SetContextDestructorCallbackPfnNotify : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<ContextHandle, void*, void> Handle =>
-        (delegate* unmanaged<ContextHandle, void*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<ContextHandle, void*, void> Handle =>
+        ref *(delegate* unmanaged<ContextHandle, void*, void>*)Pointer;
 
     public SetContextDestructorCallbackPfnNotify(
         delegate* unmanaged<ContextHandle, void*, void> ptr

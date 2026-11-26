@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsSetKernelArgSvmPointer : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<KernelHandle, uint, void*, int> Handle =>
-        (delegate* unmanaged<KernelHandle, uint, void*, int>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<KernelHandle, uint, void*, int> Handle =>
+        ref *(delegate* unmanaged<KernelHandle, uint, void*, int>*)Pointer;
 
     public IcdDispatchWindowsSetKernelArgSvmPointer(
         delegate* unmanaged<KernelHandle, uint, void*, int> ptr

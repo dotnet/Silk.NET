@@ -1810,7 +1810,7 @@ public unsafe partial struct IcdDispatch
     public ref delegate* unmanaged<uint, PlatformIdHandle*, uint*, int> GetPlatformIDs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get { return ref Anonymous1.ClGetPlatformIDs; }
+        get { return ref Anonymous1.ClGetPlatformIDs.Handle; }
     }
 
     [NativeName("clGetPlatformIDs_icd2_tag")]
@@ -1840,7 +1840,7 @@ public unsafe partial struct IcdDispatch
     public ref delegate* unmanaged<int> UnloadCompiler
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get { return ref Anonymous2.ClUnloadCompiler; }
+        get { return ref Anonymous2.ClUnloadCompiler.Handle; }
     }
 
     [NativeName("clUnloadCompiler_icd2_tag")]

@@ -13,7 +13,9 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchGetKernelSuggestedLocalWorkSize : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
         CommandQueueHandle,
         KernelHandle,
         uint,
@@ -21,14 +23,14 @@ public readonly unsafe struct IcdDispatchGetKernelSuggestedLocalWorkSize : IDisp
         nuint*,
         nuint*,
         int> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             CommandQueueHandle,
             KernelHandle,
             uint,
             nuint*,
             nuint*,
             nuint*,
-            int>)Pointer;
+            int>*)Pointer;
 
     public IcdDispatchGetKernelSuggestedLocalWorkSize(
         delegate* unmanaged<CommandQueueHandle, KernelHandle, uint, nuint*, nuint*, nuint*, int> ptr

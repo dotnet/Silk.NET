@@ -13,20 +13,22 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsCreateProgramWithBuiltInKernels : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
         ContextHandle,
         uint,
         DeviceIdHandle*,
         sbyte*,
         int*,
         ProgramHandle> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             ContextHandle,
             uint,
             DeviceIdHandle*,
             sbyte*,
             int*,
-            ProgramHandle>)Pointer;
+            ProgramHandle>*)Pointer;
 
     public IcdDispatchWindowsCreateProgramWithBuiltInKernels(
         delegate* unmanaged<ContextHandle, uint, DeviceIdHandle*, sbyte*, int*, ProgramHandle> ptr

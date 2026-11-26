@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsGetExtensionFunctionAddressForPlatform : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<PlatformIdHandle, sbyte*, void*> Handle =>
-        (delegate* unmanaged<PlatformIdHandle, sbyte*, void*>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<PlatformIdHandle, sbyte*, void*> Handle =>
+        ref *(delegate* unmanaged<PlatformIdHandle, sbyte*, void*>*)Pointer;
 
     public IcdDispatchWindowsGetExtensionFunctionAddressForPlatform(
         delegate* unmanaged<PlatformIdHandle, sbyte*, void*> ptr

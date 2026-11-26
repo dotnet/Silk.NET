@@ -13,8 +13,22 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchCreateProgramWithSource : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<ContextHandle, uint, sbyte**, nuint*, int*, ProgramHandle> Handle =>
-        (delegate* unmanaged<ContextHandle, uint, sbyte**, nuint*, int*, ProgramHandle>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
+        ContextHandle,
+        uint,
+        sbyte**,
+        nuint*,
+        int*,
+        ProgramHandle> Handle =>
+        ref *(delegate* unmanaged<
+            ContextHandle,
+            uint,
+            sbyte**,
+            nuint*,
+            int*,
+            ProgramHandle>*)Pointer;
 
     public IcdDispatchCreateProgramWithSource(
         delegate* unmanaged<ContextHandle, uint, sbyte**, nuint*, int*, ProgramHandle> ptr

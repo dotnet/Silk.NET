@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsCreateUserEvent : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<ContextHandle, int*, EventHandle> Handle =>
-        (delegate* unmanaged<ContextHandle, int*, EventHandle>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<ContextHandle, int*, EventHandle> Handle =>
+        ref *(delegate* unmanaged<ContextHandle, int*, EventHandle>*)Pointer;
 
     public IcdDispatchWindowsCreateUserEvent(
         delegate* unmanaged<ContextHandle, int*, EventHandle> ptr

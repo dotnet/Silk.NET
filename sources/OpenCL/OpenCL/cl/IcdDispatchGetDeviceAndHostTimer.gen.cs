@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchGetDeviceAndHostTimer : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<DeviceIdHandle, ulong*, ulong*, int> Handle =>
-        (delegate* unmanaged<DeviceIdHandle, ulong*, ulong*, int>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<DeviceIdHandle, ulong*, ulong*, int> Handle =>
+        ref *(delegate* unmanaged<DeviceIdHandle, ulong*, ulong*, int>*)Pointer;
 
     public IcdDispatchGetDeviceAndHostTimer(
         delegate* unmanaged<DeviceIdHandle, ulong*, ulong*, int> ptr

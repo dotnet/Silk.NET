@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsEnqueueMarker : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<CommandQueueHandle, EventHandle*, int> Handle =>
-        (delegate* unmanaged<CommandQueueHandle, EventHandle*, int>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<CommandQueueHandle, EventHandle*, int> Handle =>
+        ref *(delegate* unmanaged<CommandQueueHandle, EventHandle*, int>*)Pointer;
 
     public IcdDispatchWindowsEnqueueMarker(
         delegate* unmanaged<CommandQueueHandle, EventHandle*, int> ptr

@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsSetDefaultDeviceCommandQueue : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<ContextHandle, DeviceIdHandle, CommandQueueHandle, int> Handle =>
-        (delegate* unmanaged<ContextHandle, DeviceIdHandle, CommandQueueHandle, int>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<ContextHandle, DeviceIdHandle, CommandQueueHandle, int> Handle =>
+        ref *(delegate* unmanaged<ContextHandle, DeviceIdHandle, CommandQueueHandle, int>*)Pointer;
 
     public IcdDispatchWindowsSetDefaultDeviceCommandQueue(
         delegate* unmanaged<ContextHandle, DeviceIdHandle, CommandQueueHandle, int> ptr

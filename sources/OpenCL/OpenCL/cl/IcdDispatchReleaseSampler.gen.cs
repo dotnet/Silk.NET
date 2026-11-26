@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchReleaseSampler : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<SamplerHandle, int> Handle =>
-        (delegate* unmanaged<SamplerHandle, int>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<SamplerHandle, int> Handle =>
+        ref *(delegate* unmanaged<SamplerHandle, int>*)Pointer;
 
     public IcdDispatchReleaseSampler(delegate* unmanaged<SamplerHandle, int> ptr) => Pointer = ptr;
 

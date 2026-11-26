@@ -13,7 +13,9 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsCompileProgram : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
         ProgramHandle,
         uint,
         DeviceIdHandle*,
@@ -24,7 +26,7 @@ public readonly unsafe struct IcdDispatchWindowsCompileProgram : IDisposable
         IcdDispatchWindowsClCompileProgramP7,
         void*,
         int> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             ProgramHandle,
             uint,
             DeviceIdHandle*,
@@ -34,7 +36,7 @@ public readonly unsafe struct IcdDispatchWindowsCompileProgram : IDisposable
             sbyte**,
             IcdDispatchWindowsClCompileProgramP7,
             void*,
-            int>)Pointer;
+            int>*)Pointer;
 
     public IcdDispatchWindowsCompileProgram(
         delegate* unmanaged<

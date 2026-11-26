@@ -13,16 +13,18 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchSetProgramReleaseCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
         ProgramHandle,
         IcdDispatchClSetProgramReleaseCallbackP1,
         void*,
         int> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             ProgramHandle,
             IcdDispatchClSetProgramReleaseCallbackP1,
             void*,
-            int>)Pointer;
+            int>*)Pointer;
 
     public IcdDispatchSetProgramReleaseCallback(
         delegate* unmanaged<ProgramHandle, IcdDispatchClSetProgramReleaseCallbackP1, void*, int> ptr

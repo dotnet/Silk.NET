@@ -13,20 +13,22 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsCreateContextFromType : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
         nint*,
         ulong,
         IcdDispatchWindowsClCreateContextFromTypeP2,
         void*,
         int*,
         ContextHandle> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             nint*,
             ulong,
             IcdDispatchWindowsClCreateContextFromTypeP2,
             void*,
             int*,
-            ContextHandle>)Pointer;
+            ContextHandle>*)Pointer;
 
     public IcdDispatchWindowsCreateContextFromType(
         delegate* unmanaged<

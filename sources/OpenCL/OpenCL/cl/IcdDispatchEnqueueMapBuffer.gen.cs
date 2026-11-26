@@ -13,7 +13,9 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchEnqueueMapBuffer : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
         CommandQueueHandle,
         MemHandle,
         uint,
@@ -25,7 +27,7 @@ public readonly unsafe struct IcdDispatchEnqueueMapBuffer : IDisposable
         EventHandle*,
         int*,
         void*> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             CommandQueueHandle,
             MemHandle,
             uint,
@@ -36,7 +38,7 @@ public readonly unsafe struct IcdDispatchEnqueueMapBuffer : IDisposable
             EventHandle*,
             EventHandle*,
             int*,
-            void*>)Pointer;
+            void*>*)Pointer;
 
     public IcdDispatchEnqueueMapBuffer(
         delegate* unmanaged<

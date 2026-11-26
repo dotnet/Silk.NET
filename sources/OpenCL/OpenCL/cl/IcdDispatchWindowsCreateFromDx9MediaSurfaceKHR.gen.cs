@@ -13,8 +13,24 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsCreateFromDx9MediaSurfaceKHR : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<ContextHandle, ulong, uint, void*, uint, int*, MemHandle> Handle =>
-        (delegate* unmanaged<ContextHandle, ulong, uint, void*, uint, int*, MemHandle>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
+        ContextHandle,
+        ulong,
+        uint,
+        void*,
+        uint,
+        int*,
+        MemHandle> Handle =>
+        ref *(delegate* unmanaged<
+            ContextHandle,
+            ulong,
+            uint,
+            void*,
+            uint,
+            int*,
+            MemHandle>*)Pointer;
 
     public IcdDispatchWindowsCreateFromDx9MediaSurfaceKHR(
         delegate* unmanaged<ContextHandle, ulong, uint, void*, uint, int*, MemHandle> ptr

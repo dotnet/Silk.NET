@@ -13,8 +13,24 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsGetSupportedImageFormats : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<ContextHandle, ulong, uint, uint, ImageFormat*, uint*, int> Handle =>
-        (delegate* unmanaged<ContextHandle, ulong, uint, uint, ImageFormat*, uint*, int>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
+        ContextHandle,
+        ulong,
+        uint,
+        uint,
+        ImageFormat*,
+        uint*,
+        int> Handle =>
+        ref *(delegate* unmanaged<
+            ContextHandle,
+            ulong,
+            uint,
+            uint,
+            ImageFormat*,
+            uint*,
+            int>*)Pointer;
 
     public IcdDispatchWindowsGetSupportedImageFormats(
         delegate* unmanaged<ContextHandle, ulong, uint, uint, ImageFormat*, uint*, int> ptr

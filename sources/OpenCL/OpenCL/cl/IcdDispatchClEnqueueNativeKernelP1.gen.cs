@@ -13,7 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchClEnqueueNativeKernelP1 : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, void> Handle => (delegate* unmanaged<void*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, void> Handle =>
+        ref *(delegate* unmanaged<void*, void>*)Pointer;
 
     public IcdDispatchClEnqueueNativeKernelP1(delegate* unmanaged<void*, void> ptr) =>
         Pointer = ptr;

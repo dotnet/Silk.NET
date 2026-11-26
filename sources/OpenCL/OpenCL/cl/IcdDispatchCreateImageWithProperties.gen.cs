@@ -13,7 +13,9 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchCreateImageWithProperties : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
         ContextHandle,
         ulong*,
         ulong,
@@ -22,7 +24,7 @@ public readonly unsafe struct IcdDispatchCreateImageWithProperties : IDisposable
         void*,
         int*,
         MemHandle> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             ContextHandle,
             ulong*,
             ulong,
@@ -30,7 +32,7 @@ public readonly unsafe struct IcdDispatchCreateImageWithProperties : IDisposable
             ImageDesc*,
             void*,
             int*,
-            MemHandle>)Pointer;
+            MemHandle>*)Pointer;
 
     public IcdDispatchCreateImageWithProperties(
         delegate* unmanaged<

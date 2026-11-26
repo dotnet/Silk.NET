@@ -13,20 +13,22 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchEnqueueSvmUnmap : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
         CommandQueueHandle,
         void*,
         uint,
         EventHandle*,
         EventHandle*,
         int> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             CommandQueueHandle,
             void*,
             uint,
             EventHandle*,
             EventHandle*,
-            int>)Pointer;
+            int>*)Pointer;
 
     public IcdDispatchEnqueueSvmUnmap(
         delegate* unmanaged<CommandQueueHandle, void*, uint, EventHandle*, EventHandle*, int> ptr

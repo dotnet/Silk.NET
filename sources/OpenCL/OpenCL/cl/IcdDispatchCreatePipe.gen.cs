@@ -13,8 +13,24 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchCreatePipe : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<ContextHandle, ulong, uint, uint, nint*, int*, MemHandle> Handle =>
-        (delegate* unmanaged<ContextHandle, ulong, uint, uint, nint*, int*, MemHandle>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
+        ContextHandle,
+        ulong,
+        uint,
+        uint,
+        nint*,
+        int*,
+        MemHandle> Handle =>
+        ref *(delegate* unmanaged<
+            ContextHandle,
+            ulong,
+            uint,
+            uint,
+            nint*,
+            int*,
+            MemHandle>*)Pointer;
 
     public IcdDispatchCreatePipe(
         delegate* unmanaged<ContextHandle, ulong, uint, uint, nint*, int*, MemHandle> ptr

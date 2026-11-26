@@ -13,7 +13,9 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsGetDeviceIDsFromDx9MediaAdapterKHR : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
         PlatformIdHandle,
         uint,
         uint*,
@@ -23,7 +25,7 @@ public readonly unsafe struct IcdDispatchWindowsGetDeviceIDsFromDx9MediaAdapterK
         DeviceIdHandle*,
         uint*,
         int> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             PlatformIdHandle,
             uint,
             uint*,
@@ -32,7 +34,7 @@ public readonly unsafe struct IcdDispatchWindowsGetDeviceIDsFromDx9MediaAdapterK
             uint,
             DeviceIdHandle*,
             uint*,
-            int>)Pointer;
+            int>*)Pointer;
 
     public IcdDispatchWindowsGetDeviceIDsFromDx9MediaAdapterKHR(
         delegate* unmanaged<

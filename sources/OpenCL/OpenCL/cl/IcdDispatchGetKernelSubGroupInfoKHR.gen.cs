@@ -13,7 +13,9 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchGetKernelSubGroupInfoKHR : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
         KernelHandle,
         DeviceIdHandle,
         uint,
@@ -23,7 +25,7 @@ public readonly unsafe struct IcdDispatchGetKernelSubGroupInfoKHR : IDisposable
         void*,
         nuint*,
         int> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             KernelHandle,
             DeviceIdHandle,
             uint,
@@ -32,7 +34,7 @@ public readonly unsafe struct IcdDispatchGetKernelSubGroupInfoKHR : IDisposable
             nuint,
             void*,
             nuint*,
-            int>)Pointer;
+            int>*)Pointer;
 
     public IcdDispatchGetKernelSubGroupInfoKHR(
         delegate* unmanaged<

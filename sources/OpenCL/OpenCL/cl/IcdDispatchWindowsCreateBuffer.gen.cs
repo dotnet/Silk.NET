@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsCreateBuffer : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<ContextHandle, ulong, nuint, void*, int*, MemHandle> Handle =>
-        (delegate* unmanaged<ContextHandle, ulong, nuint, void*, int*, MemHandle>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<ContextHandle, ulong, nuint, void*, int*, MemHandle> Handle =>
+        ref *(delegate* unmanaged<ContextHandle, ulong, nuint, void*, int*, MemHandle>*)Pointer;
 
     public IcdDispatchWindowsCreateBuffer(
         delegate* unmanaged<ContextHandle, ulong, nuint, void*, int*, MemHandle> ptr

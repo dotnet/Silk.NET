@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchRetainContext : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<ContextHandle, int> Handle =>
-        (delegate* unmanaged<ContextHandle, int>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<ContextHandle, int> Handle =>
+        ref *(delegate* unmanaged<ContextHandle, int>*)Pointer;
 
     public IcdDispatchRetainContext(delegate* unmanaged<ContextHandle, int> ptr) => Pointer = ptr;
 

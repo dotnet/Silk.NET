@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchClEnqueueSvmFreeP3 : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> Handle =>
-        (delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> Handle =>
+        ref *(delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void>*)Pointer;
 
     public IcdDispatchClEnqueueSvmFreeP3(
         delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> ptr

@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchCreateSamplerWithProperties : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<ContextHandle, ulong*, int*, SamplerHandle> Handle =>
-        (delegate* unmanaged<ContextHandle, ulong*, int*, SamplerHandle>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<ContextHandle, ulong*, int*, SamplerHandle> Handle =>
+        ref *(delegate* unmanaged<ContextHandle, ulong*, int*, SamplerHandle>*)Pointer;
 
     public IcdDispatchCreateSamplerWithProperties(
         delegate* unmanaged<ContextHandle, ulong*, int*, SamplerHandle> ptr

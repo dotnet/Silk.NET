@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsGetGLObjectInfo : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<MemHandle, uint*, uint*, int> Handle =>
-        (delegate* unmanaged<MemHandle, uint*, uint*, int>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<MemHandle, uint*, uint*, int> Handle =>
+        ref *(delegate* unmanaged<MemHandle, uint*, uint*, int>*)Pointer;
 
     public IcdDispatchWindowsGetGLObjectInfo(
         delegate* unmanaged<MemHandle, uint*, uint*, int> ptr

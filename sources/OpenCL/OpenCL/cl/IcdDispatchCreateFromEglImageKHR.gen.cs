@@ -13,8 +13,24 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchCreateFromEglImageKHR : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<ContextHandle, void*, void*, ulong, nint*, int*, MemHandle> Handle =>
-        (delegate* unmanaged<ContextHandle, void*, void*, ulong, nint*, int*, MemHandle>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
+        ContextHandle,
+        void*,
+        void*,
+        ulong,
+        nint*,
+        int*,
+        MemHandle> Handle =>
+        ref *(delegate* unmanaged<
+            ContextHandle,
+            void*,
+            void*,
+            ulong,
+            nint*,
+            int*,
+            MemHandle>*)Pointer;
 
     public IcdDispatchCreateFromEglImageKHR(
         delegate* unmanaged<ContextHandle, void*, void*, ulong, nint*, int*, MemHandle> ptr

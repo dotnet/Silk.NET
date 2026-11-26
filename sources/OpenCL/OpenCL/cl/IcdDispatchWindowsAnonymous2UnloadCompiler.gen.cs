@@ -13,7 +13,9 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsAnonymous2UnloadCompiler : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<int> Handle => (delegate* unmanaged<int>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<int> Handle => ref *(delegate* unmanaged<int>*)Pointer;
 
     public IcdDispatchWindowsAnonymous2UnloadCompiler(delegate* unmanaged<int> ptr) =>
         Pointer = ptr;

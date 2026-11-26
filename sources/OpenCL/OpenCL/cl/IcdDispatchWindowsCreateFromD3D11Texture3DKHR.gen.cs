@@ -13,20 +13,22 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct IcdDispatchWindowsCreateFromD3D11Texture3DKHR : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<
         ContextHandle,
         ulong,
         Id3D11Texture3DHandle,
         uint,
         int*,
         MemHandle> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             ContextHandle,
             ulong,
             Id3D11Texture3DHandle,
             uint,
             int*,
-            MemHandle>)Pointer;
+            MemHandle>*)Pointer;
 
     public IcdDispatchWindowsCreateFromD3D11Texture3DKHR(
         delegate* unmanaged<ContextHandle, ulong, Id3D11Texture3DHandle, uint, int*, MemHandle> ptr
