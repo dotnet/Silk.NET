@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct ReallocFunc : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, nuint, void*> Handle =>
-        (delegate* unmanaged<void*, nuint, void*>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, nuint, void*> Handle =>
+        ref *(delegate* unmanaged<void*, nuint, void*>*)Pointer;
 
     public ReallocFunc(delegate* unmanaged<void*, nuint, void*> ptr) => Pointer = ptr;
 

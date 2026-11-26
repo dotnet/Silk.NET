@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct NSTimerCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, uint, ulong, ulong> Handle =>
-        (delegate* unmanaged<void*, uint, ulong, ulong>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, uint, ulong, ulong> Handle =>
+        ref *(delegate* unmanaged<void*, uint, ulong, ulong>*)Pointer;
 
     public NSTimerCallback(delegate* unmanaged<void*, uint, ulong, ulong> ptr) => Pointer = ptr;
 

@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct EglIntArrayCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, void*, void*, int*> Handle =>
-        (delegate* unmanaged<void*, void*, void*, int*>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, void*, void*, int*> Handle =>
+        ref *(delegate* unmanaged<void*, void*, void*, int*>*)Pointer;
 
     public EglIntArrayCallback(delegate* unmanaged<void*, void*, void*, int*> ptr) => Pointer = ptr;
 

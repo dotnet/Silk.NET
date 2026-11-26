@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct StorageInterfaceWriteFile : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, sbyte*, void*, ulong, byte> Handle =>
-        (delegate* unmanaged<void*, sbyte*, void*, ulong, byte>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, sbyte*, void*, ulong, byte> Handle =>
+        ref *(delegate* unmanaged<void*, sbyte*, void*, ulong, byte>*)Pointer;
 
     public StorageInterfaceWriteFile(delegate* unmanaged<void*, sbyte*, void*, ulong, byte> ptr) =>
         Pointer = ptr;

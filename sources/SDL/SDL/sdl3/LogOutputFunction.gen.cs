@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct LogOutputFunction : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, int, LogPriority, sbyte*, void> Handle =>
-        (delegate* unmanaged<void*, int, LogPriority, sbyte*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, int, LogPriority, sbyte*, void> Handle =>
+        ref *(delegate* unmanaged<void*, int, LogPriority, sbyte*, void>*)Pointer;
 
     public LogOutputFunction(delegate* unmanaged<void*, int, LogPriority, sbyte*, void> ptr) =>
         Pointer = ptr;

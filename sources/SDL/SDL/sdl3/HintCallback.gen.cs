@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct HintCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> Handle =>
-        (delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> Handle =>
+        ref *(delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void>*)Pointer;
 
     public HintCallback(delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> ptr) =>
         Pointer = ptr;

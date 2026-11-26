@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct AppIterateFunc : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, AppResult> Handle =>
-        (delegate* unmanaged<void*, AppResult>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, AppResult> Handle =>
+        ref *(delegate* unmanaged<void*, AppResult>*)Pointer;
 
     public AppIterateFunc(delegate* unmanaged<void*, AppResult> ptr) => Pointer = ptr;
 

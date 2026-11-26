@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct HitTest : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> Handle =>
-        (delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> Handle =>
+        ref *(delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult>*)Pointer;
 
     public HitTest(delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> ptr) =>
         Pointer = ptr;

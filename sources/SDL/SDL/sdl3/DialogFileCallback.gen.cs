@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct DialogFileCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, sbyte**, int, void> Handle =>
-        (delegate* unmanaged<void*, sbyte**, int, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, sbyte**, int, void> Handle =>
+        ref *(delegate* unmanaged<void*, sbyte**, int, void>*)Pointer;
 
     public DialogFileCallback(delegate* unmanaged<void*, sbyte**, int, void> ptr) => Pointer = ptr;
 

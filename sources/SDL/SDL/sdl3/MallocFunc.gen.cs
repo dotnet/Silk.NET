@@ -12,7 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct MallocFunc : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<nuint, void*> Handle => (delegate* unmanaged<nuint, void*>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<nuint, void*> Handle =>
+        ref *(delegate* unmanaged<nuint, void*>*)Pointer;
 
     public MallocFunc(delegate* unmanaged<nuint, void*> ptr) => Pointer = ptr;
 

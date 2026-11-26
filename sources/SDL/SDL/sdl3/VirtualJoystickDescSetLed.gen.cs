@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct VirtualJoystickDescSetLed : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, byte, byte, byte, byte> Handle =>
-        (delegate* unmanaged<void*, byte, byte, byte, byte>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, byte, byte, byte, byte> Handle =>
+        ref *(delegate* unmanaged<void*, byte, byte, byte, byte>*)Pointer;
 
     public VirtualJoystickDescSetLed(delegate* unmanaged<void*, byte, byte, byte, byte> ptr) =>
         Pointer = ptr;

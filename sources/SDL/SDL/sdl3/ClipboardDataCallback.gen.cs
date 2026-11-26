@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct ClipboardDataCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, sbyte*, nuint*, void*> Handle =>
-        (delegate* unmanaged<void*, sbyte*, nuint*, void*>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, sbyte*, nuint*, void*> Handle =>
+        ref *(delegate* unmanaged<void*, sbyte*, nuint*, void*>*)Pointer;
 
     public ClipboardDataCallback(delegate* unmanaged<void*, sbyte*, nuint*, void*> ptr) =>
         Pointer = ptr;

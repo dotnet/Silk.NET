@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct EnumeratePropertiesCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, uint, sbyte*, void> Handle =>
-        (delegate* unmanaged<void*, uint, sbyte*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, uint, sbyte*, void> Handle =>
+        ref *(delegate* unmanaged<void*, uint, sbyte*, void>*)Pointer;
 
     public EnumeratePropertiesCallback(delegate* unmanaged<void*, uint, sbyte*, void> ptr) =>
         Pointer = ptr;

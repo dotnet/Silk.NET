@@ -12,7 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct IOStreamInterfaceClose : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, byte> Handle => (delegate* unmanaged<void*, byte>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, byte> Handle =>
+        ref *(delegate* unmanaged<void*, byte>*)Pointer;
 
     public IOStreamInterfaceClose(delegate* unmanaged<void*, byte> ptr) => Pointer = ptr;
 

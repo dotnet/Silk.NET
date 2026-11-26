@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct EnumerateDirectoryCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, sbyte*, sbyte*, EnumerationResult> Handle =>
-        (delegate* unmanaged<void*, sbyte*, sbyte*, EnumerationResult>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, sbyte*, sbyte*, EnumerationResult> Handle =>
+        ref *(delegate* unmanaged<void*, sbyte*, sbyte*, EnumerationResult>*)Pointer;
 
     public EnumerateDirectoryCallback(
         delegate* unmanaged<void*, sbyte*, sbyte*, EnumerationResult> ptr

@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct AudioStreamDataCompleteCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, void*, int, void> Handle =>
-        (delegate* unmanaged<void*, void*, int, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, void*, int, void> Handle =>
+        ref *(delegate* unmanaged<void*, void*, int, void>*)Pointer;
 
     public AudioStreamDataCompleteCallback(delegate* unmanaged<void*, void*, int, void> ptr) =>
         Pointer = ptr;

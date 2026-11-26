@@ -12,7 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct IOStreamInterfaceSize : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, long> Handle => (delegate* unmanaged<void*, long>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, long> Handle =>
+        ref *(delegate* unmanaged<void*, long>*)Pointer;
 
     public IOStreamInterfaceSize(delegate* unmanaged<void*, long> ptr) => Pointer = ptr;
 

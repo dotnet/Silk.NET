@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct StorageInterfaceCopy : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, sbyte*, sbyte*, byte> Handle =>
-        (delegate* unmanaged<void*, sbyte*, sbyte*, byte>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, sbyte*, sbyte*, byte> Handle =>
+        ref *(delegate* unmanaged<void*, sbyte*, sbyte*, byte>*)Pointer;
 
     public StorageInterfaceCopy(delegate* unmanaged<void*, sbyte*, sbyte*, byte> ptr) =>
         Pointer = ptr;

@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct EventFilter : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, Event*, byte> Handle =>
-        (delegate* unmanaged<void*, Event*, byte>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, Event*, byte> Handle =>
+        ref *(delegate* unmanaged<void*, Event*, byte>*)Pointer;
 
     public EventFilter(delegate* unmanaged<void*, Event*, byte> ptr) => Pointer = ptr;
 

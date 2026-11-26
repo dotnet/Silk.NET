@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct AssertionHandler : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<AssertData*, void*, AssertState> Handle =>
-        (delegate* unmanaged<AssertData*, void*, AssertState>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<AssertData*, void*, AssertState> Handle =>
+        ref *(delegate* unmanaged<AssertData*, void*, AssertState>*)Pointer;
 
     public AssertionHandler(delegate* unmanaged<AssertData*, void*, AssertState> ptr) =>
         Pointer = ptr;

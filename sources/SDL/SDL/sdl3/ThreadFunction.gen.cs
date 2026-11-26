@@ -12,7 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct ThreadFunction : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, int> Handle => (delegate* unmanaged<void*, int>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, int> Handle =>
+        ref *(delegate* unmanaged<void*, int>*)Pointer;
 
     public ThreadFunction(delegate* unmanaged<void*, int> ptr) => Pointer = ptr;
 

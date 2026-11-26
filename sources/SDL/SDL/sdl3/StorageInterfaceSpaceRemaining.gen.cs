@@ -12,7 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct StorageInterfaceSpaceRemaining : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, ulong> Handle => (delegate* unmanaged<void*, ulong>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, ulong> Handle =>
+        ref *(delegate* unmanaged<void*, ulong>*)Pointer;
 
     public StorageInterfaceSpaceRemaining(delegate* unmanaged<void*, ulong> ptr) => Pointer = ptr;
 

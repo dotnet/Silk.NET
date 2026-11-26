@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct StorageInterfaceRemove : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, sbyte*, byte> Handle =>
-        (delegate* unmanaged<void*, sbyte*, byte>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, sbyte*, byte> Handle =>
+        ref *(delegate* unmanaged<void*, sbyte*, byte>*)Pointer;
 
     public StorageInterfaceRemove(delegate* unmanaged<void*, sbyte*, byte> ptr) => Pointer = ptr;
 

@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct MouseMotionTransformCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, ulong, WindowHandle, uint, float*, float*, void> Handle =>
-        (delegate* unmanaged<void*, ulong, WindowHandle, uint, float*, float*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, ulong, WindowHandle, uint, float*, float*, void> Handle =>
+        ref *(delegate* unmanaged<void*, ulong, WindowHandle, uint, float*, float*, void>*)Pointer;
 
     public MouseMotionTransformCallback(
         delegate* unmanaged<void*, ulong, WindowHandle, uint, float*, float*, void> ptr

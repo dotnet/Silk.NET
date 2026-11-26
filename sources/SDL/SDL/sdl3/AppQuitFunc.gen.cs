@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct AppQuitFunc : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, AppResult, void> Handle =>
-        (delegate* unmanaged<void*, AppResult, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, AppResult, void> Handle =>
+        ref *(delegate* unmanaged<void*, AppResult, void>*)Pointer;
 
     public AppQuitFunc(delegate* unmanaged<void*, AppResult, void> ptr) => Pointer = ptr;
 

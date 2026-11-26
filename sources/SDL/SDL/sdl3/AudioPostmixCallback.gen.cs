@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct AudioPostmixCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, AudioSpec*, float*, int, void> Handle =>
-        (delegate* unmanaged<void*, AudioSpec*, float*, int, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, AudioSpec*, float*, int, void> Handle =>
+        ref *(delegate* unmanaged<void*, AudioSpec*, float*, int, void>*)Pointer;
 
     public AudioPostmixCallback(delegate* unmanaged<void*, AudioSpec*, float*, int, void> ptr) =>
         Pointer = ptr;

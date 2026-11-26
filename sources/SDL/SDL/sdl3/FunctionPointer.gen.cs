@@ -12,7 +12,9 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct FunctionPointer : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void> Handle => (delegate* unmanaged<void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void> Handle => ref *(delegate* unmanaged<void>*)Pointer;
 
     public FunctionPointer(delegate* unmanaged<void> ptr) => Pointer = ptr;
 

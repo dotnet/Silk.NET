@@ -12,8 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct CleanupPropertyCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, void*, void> Handle =>
-        (delegate* unmanaged<void*, void*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, void*, void> Handle =>
+        ref *(delegate* unmanaged<void*, void*, void>*)Pointer;
 
     public CleanupPropertyCallback(delegate* unmanaged<void*, void*, void> ptr) => Pointer = ptr;
 
