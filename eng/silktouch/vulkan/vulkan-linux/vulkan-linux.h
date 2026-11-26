@@ -23,5 +23,9 @@
 #include <vulkan/vulkan_xlib.h>
 #include <vulkan/vulkan_xlib_xrandr.h>
 
-//#include <vulkan/vulkan_fuchsia.h>
-//#include <vulkan/vulkan_ggp.h>
+// zx_handle_t is from https://fuchsia.googlesource.com/fuchsia/+/master/zircon/system/public/zircon/types.h#35
+typedef uint32_t zx_handle_t;
+#include <vulkan/vulkan_fuchsia.h>
+
+// Google Gaming Platform and Stadia are dead
+// #include <vulkan/vulkan_ggp.h>
