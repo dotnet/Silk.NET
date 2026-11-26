@@ -34,5 +34,5 @@ public unsafe partial struct NegotiateLayerInterface
 
     [NativeName("pfnGetPhysicalDeviceProcAddr")]
     [SupportedApiProfile("vulkan")]
-    public PfnGetPhysicalDeviceProcAddr PfnGetPhysicalDeviceProcAddr;
+    public GetPhysicalDeviceProcAddr PfnGetPhysicalDeviceProcAddr;
 }

@@ -22,5 +22,5 @@ public unsafe partial struct LayerInstanceLink
 
     [NativeName("pfnNextGetPhysicalDeviceProcAddr")]
     [SupportedApiProfile("vulkan")]
-    public PfnGetPhysicalDeviceProcAddr PfnNextGetPhysicalDeviceProcAddr;
+    public GetPhysicalDeviceProcAddr PfnNextGetPhysicalDeviceProcAddr;
 }

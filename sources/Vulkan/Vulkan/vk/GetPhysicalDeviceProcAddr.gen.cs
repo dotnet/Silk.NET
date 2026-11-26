@@ -11,37 +11,37 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("PFN_GetPhysicalDeviceProcAddr")]
 [SupportedApiProfile("vulkan")]
-public readonly unsafe struct PfnGetPhysicalDeviceProcAddr : IDisposable
+public readonly unsafe struct GetPhysicalDeviceProcAddr : IDisposable
 {
     [SupportedApiProfile("vulkan")]
     private readonly void* Pointer;
 
     [UnscopedRef]
     [SupportedApiProfile("vulkan")]
-    public ref delegate* unmanaged<InstanceHandle, sbyte*, PfnGetPhysicalDeviceProcAddrP2> Handle =>
-        ref *(delegate* unmanaged<InstanceHandle, sbyte*, PfnGetPhysicalDeviceProcAddrP2>*)Pointer;
+    public ref delegate* unmanaged<InstanceHandle, sbyte*, GetPhysicalDeviceProcAddrP2> Handle =>
+        ref *(delegate* unmanaged<InstanceHandle, sbyte*, GetPhysicalDeviceProcAddrP2>*)Pointer;
 
     [SupportedApiProfile("vulkan")]
-    public PfnGetPhysicalDeviceProcAddr(
-        delegate* unmanaged<InstanceHandle, sbyte*, PfnGetPhysicalDeviceProcAddrP2> ptr
+    public GetPhysicalDeviceProcAddr(
+        delegate* unmanaged<InstanceHandle, sbyte*, GetPhysicalDeviceProcAddrP2> ptr
     ) => Pointer = ptr;
 
     [SupportedApiProfile("vulkan")]
-    public PfnGetPhysicalDeviceProcAddr(PfnGetPhysicalDeviceProcAddrDelegate proc) =>
+    public GetPhysicalDeviceProcAddr(GetPhysicalDeviceProcAddrDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     [SupportedApiProfile("vulkan")]
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     [SupportedApiProfile("vulkan")]
-    public static implicit operator PfnGetPhysicalDeviceProcAddr(
-        delegate* unmanaged<InstanceHandle, sbyte*, PfnGetPhysicalDeviceProcAddrP2> pfn
+    public static implicit operator GetPhysicalDeviceProcAddr(
+        delegate* unmanaged<InstanceHandle, sbyte*, GetPhysicalDeviceProcAddrP2> pfn
     ) => new(pfn);
 
     [SupportedApiProfile("vulkan")]
     public static implicit operator delegate* unmanaged<
         InstanceHandle,
         sbyte*,
-        PfnGetPhysicalDeviceProcAddrP2>(PfnGetPhysicalDeviceProcAddr pfn) =>
-        (delegate* unmanaged<InstanceHandle, sbyte*, PfnGetPhysicalDeviceProcAddrP2>)pfn.Pointer;
+        GetPhysicalDeviceProcAddrP2>(GetPhysicalDeviceProcAddr pfn) =>
+        (delegate* unmanaged<InstanceHandle, sbyte*, GetPhysicalDeviceProcAddrP2>)pfn.Pointer;
 }

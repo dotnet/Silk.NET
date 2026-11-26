@@ -115,7 +115,7 @@ internal static partial class Jobs
                     .IdentifySharedPrefixes(
                         new()
                         {
-                            GlobalPrefixHints = ["PFN_vk", "vk"],
+                            GlobalPrefixHints = ["PFN_vk", "vk", "PFN"],
                             PrefixOverrides = new()
                             {
                                 ["VkImageCreateFlags2KHR"] = "VK_IMAGE_CREATE_2",

@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("PFN_GetPhysicalDeviceProcAddr_p2")]
 [SupportedApiProfile("vulkan")]
-public readonly unsafe struct PfnGetPhysicalDeviceProcAddrP2 : IDisposable
+public readonly unsafe struct GetPhysicalDeviceProcAddrP2 : IDisposable
 {
     [SupportedApiProfile("vulkan")]
     private readonly void* Pointer;
@@ -21,20 +21,20 @@ public readonly unsafe struct PfnGetPhysicalDeviceProcAddrP2 : IDisposable
     public ref delegate* unmanaged<void> Handle => ref *(delegate* unmanaged<void>*)Pointer;
 
     [SupportedApiProfile("vulkan")]
-    public PfnGetPhysicalDeviceProcAddrP2(delegate* unmanaged<void> ptr) => Pointer = ptr;
+    public GetPhysicalDeviceProcAddrP2(delegate* unmanaged<void> ptr) => Pointer = ptr;
 
     [SupportedApiProfile("vulkan")]
-    public PfnGetPhysicalDeviceProcAddrP2(PfnGetPhysicalDeviceProcAddrP2Delegate proc) =>
+    public GetPhysicalDeviceProcAddrP2(GetPhysicalDeviceProcAddrP2Delegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     [SupportedApiProfile("vulkan")]
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     [SupportedApiProfile("vulkan")]
-    public static implicit operator PfnGetPhysicalDeviceProcAddrP2(delegate* unmanaged<void> pfn) =>
+    public static implicit operator GetPhysicalDeviceProcAddrP2(delegate* unmanaged<void> pfn) =>
         new(pfn);
 
     [SupportedApiProfile("vulkan")]
-    public static implicit operator delegate* unmanaged<void>(PfnGetPhysicalDeviceProcAddrP2 pfn) =>
+    public static implicit operator delegate* unmanaged<void>(GetPhysicalDeviceProcAddrP2 pfn) =>
         (delegate* unmanaged<void>)pfn.Pointer;
 }

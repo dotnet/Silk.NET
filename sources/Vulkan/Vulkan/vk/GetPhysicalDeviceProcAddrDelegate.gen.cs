@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("PFN_GetPhysicalDeviceProcAddr")]
 [SupportedApiProfile("vulkan")]
-public unsafe delegate PfnGetPhysicalDeviceProcAddrP2 PfnGetPhysicalDeviceProcAddrDelegate(
+public unsafe delegate GetPhysicalDeviceProcAddrP2 GetPhysicalDeviceProcAddrDelegate(
     InstanceHandle arg0,
     sbyte* arg1
 );
