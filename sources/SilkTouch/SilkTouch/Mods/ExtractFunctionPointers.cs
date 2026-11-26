@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -101,7 +100,7 @@ public partial class ExtractFunctionPointers(
             project = doc.Project;
         }
 
-        // Update invocation expressions
+        // Update invocation expressions and other expressions with similar issues
         // Unmanaged delegates are invocable, but once we wrap them with a struct, we handle to invoke the .Handle property instead
         // Eg: pfnNextLayer() becomes pfnNextLayer.Handle()
         var compilation = await project.GetCompilationAsync(ct);
@@ -677,6 +676,9 @@ public partial class ExtractFunctionPointers(
         HashSet<INamedTypeSymbol> addedStructSymbols
     ) : CSharpSyntaxRewriter
     {
+        // Expressions are apparently very broad so this rewriter only addresses the cases found so far
+        // Not all expressions represent instances being accessed
+
         public override SyntaxNode VisitInvocationExpression(InvocationExpressionSyntax node)
         {
             var expressionType = semanticModel.GetTypeInfo(node.Expression).Type;
