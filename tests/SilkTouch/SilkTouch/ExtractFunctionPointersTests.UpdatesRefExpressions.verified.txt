@@ -5,7 +5,8 @@
 public unsafe readonly struct _Anonymous1_e__Union_clGetPlatformIDs : IDisposable
 {
     private readonly void* _pointer;
-    public delegate* unmanaged<uint, cl_platform_id**, uint*, int> Handle => (delegate* unmanaged<uint, cl_platform_id**, uint*, int> )_pointer;
+    [UnscopedRef]
+    public ref delegate* unmanaged<uint, cl_platform_id**, uint*, int> Handle => ref *(delegate* unmanaged<uint, cl_platform_id**, uint*, int> *)_pointer;
 
     public _Anonymous1_e__Union_clGetPlatformIDs(delegate* unmanaged<uint, cl_platform_id**, uint*, int> ptr) => _pointer = ptr;
     public _Anonymous1_e__Union_clGetPlatformIDs(_Anonymous1_e__Union_clGetPlatformIDsDelegate proc) => _pointer = SilkMarshal.DelegateToPtr(proc);

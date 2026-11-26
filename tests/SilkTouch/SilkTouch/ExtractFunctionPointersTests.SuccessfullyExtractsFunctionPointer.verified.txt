@@ -3,7 +3,8 @@
 public unsafe readonly struct PFN_vkDebugReportCallbackEXT : IDisposable
 {
     private readonly void* _pointer;
-    public delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> Handle => (delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> )_pointer;
+    [UnscopedRef]
+    public ref delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> Handle => ref *(delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> *)_pointer;
 
     public PFN_vkDebugReportCallbackEXT(delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> ptr) => _pointer = ptr;
     public PFN_vkDebugReportCallbackEXT(PFN_vkDebugReportCallbackEXTDelegate proc) => _pointer = SilkMarshal.DelegateToPtr(proc);

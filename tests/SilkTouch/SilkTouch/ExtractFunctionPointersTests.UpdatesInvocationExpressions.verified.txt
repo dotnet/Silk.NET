@@ -5,7 +5,8 @@
 public unsafe readonly struct VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer : IDisposable
 {
     private readonly void* _pointer;
-    public delegate* unmanaged<VkEnumerateInstanceExtensionPropertiesChain*, sbyte*, uint*, VkExtensionProperties*, VkResult> Handle => (delegate* unmanaged<VkEnumerateInstanceExtensionPropertiesChain*, sbyte*, uint*, VkExtensionProperties*, VkResult> )_pointer;
+    [UnscopedRef]
+    public ref delegate* unmanaged<VkEnumerateInstanceExtensionPropertiesChain*, sbyte*, uint*, VkExtensionProperties*, VkResult> Handle => ref *(delegate* unmanaged<VkEnumerateInstanceExtensionPropertiesChain*, sbyte*, uint*, VkExtensionProperties*, VkResult> *)_pointer;
 
     public VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer(delegate* unmanaged<VkEnumerateInstanceExtensionPropertiesChain*, sbyte*, uint*, VkExtensionProperties*, VkResult> ptr) => _pointer = ptr;
     public VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer(VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayerDelegate proc) => _pointer = SilkMarshal.DelegateToPtr(proc);
