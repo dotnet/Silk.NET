@@ -131,7 +131,7 @@ internal static partial class Jobs
                             NameOverrides = new()
                             {
                                 ["numAABBs"] = "NumAabbs",
-                                ["VK_LOADER_DATA.loaderData"] = "LoaderDataPtr",
+                                ["VK_LOADER_DATA.loaderData"] = "PLoaderData",
                             },
                             Affixes = new()
                             {

@@ -21,5 +21,5 @@ public unsafe partial struct LoaderData
     [NativeName("loaderData")]
     [FieldOffset(0)]
     [SupportedApiProfile("vulkan")]
-    public void* LoaderDataPtr;
+    public void* PLoaderData;
 }
