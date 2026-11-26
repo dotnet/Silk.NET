@@ -1,0 +1,4 @@
+# Unix windowing
+wl_display*=void*
+xcb_connection_t*=void*
+_XDisplay*=void*

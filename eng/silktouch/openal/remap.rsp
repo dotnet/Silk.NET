@@ -1,4 +1,2 @@
 @../../shared/remap-stdint.rsp
-
---remap
-_GUID=System.Guid
+@../../shared/remap-win32-to-primitive.rsp

@@ -1,0 +1,13 @@
+VkFilter=uint
+VkSamplerMipmapMode=uint
+VkSamplerAddressMode=uint
+VkComponentSwizzle=uint
+
+VkAllocationCallbacks*=void*
+VkDeviceCreateInfo*=void*
+VkDevice_T*=void*
+VkFormat*=void*
+VkImage_T*=void*
+VkInstanceCreateInfo*=void*
+VkInstance_T*=void*
+VkPhysicalDevice_T*=void*

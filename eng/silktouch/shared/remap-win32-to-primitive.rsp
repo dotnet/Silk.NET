@@ -1,0 +1,17 @@
+_GUID=System.Guid
+_LUID=ulong
+
+IUnknown*=void*
+HDC__*=void*
+
+# GL
+HGLRC__*=void*
+
+# Direct3D
+D3D_FEATURE_LEVEL=uint
+
+ID3D11Device*=void*
+ID3D11Texture2D*=void*
+ID3D12CommandQueue*=void*
+ID3D12Device*=void*
+ID3D12Resource*=void*

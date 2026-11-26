@@ -1,1 +1,2 @@
 @../../shared/remap-stdint.rsp
+@../../shared/remap-win32-to-primitive.rsp
