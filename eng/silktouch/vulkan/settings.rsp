@@ -1,4 +1,4 @@
-@../../common.rsp
+@../../shared/common.rsp
 
 --define-macro
 VK_ENABLE_BETA_EXTENSIONS

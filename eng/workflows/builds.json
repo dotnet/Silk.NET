@@ -55,6 +55,7 @@
   },
   "bindings": {
     "sharedDependencies": [
+      "eng/silktouch/shared/**",
       "sources/SilkTouch/**"
     ],
     "jobs": {

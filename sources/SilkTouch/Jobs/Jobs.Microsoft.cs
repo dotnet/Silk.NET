@@ -13,7 +13,7 @@ internal static partial class Jobs
                 Solution = "Silk.NET.slnx",
                 SourceProject = "sources/Win32/Win32/Silk.NET.Win32.csproj",
                 TestProject = "tests/Win32/Win32/Silk.NET.Win32.UnitTests.csproj",
-                DefaultLicenseHeader = "eng/silktouch/header.txt",
+                DefaultLicenseHeader = "eng/silktouch/shared/header.txt",
                 DefaultNamespace = "Silk.NET.Windows",
             },
             context =>

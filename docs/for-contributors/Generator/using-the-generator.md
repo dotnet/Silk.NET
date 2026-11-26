@@ -170,7 +170,7 @@ Silk.NET.SDL
 
 `settings.rsp`:
 ```rsp
-@../../common.rsp
+@../../shared/common.rsp
 --define-macro
 TODO_DEFINE_MACROS=HERE
 --headerFile

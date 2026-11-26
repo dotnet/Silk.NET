@@ -1,4 +1,4 @@
-@../../remap-stdint.rsp
+@../../shared/remap-stdint.rsp
 
 --remap
 _cl_platform_id=cl_platform_id
