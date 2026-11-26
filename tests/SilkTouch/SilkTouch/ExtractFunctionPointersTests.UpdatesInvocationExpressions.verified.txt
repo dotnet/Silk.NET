@@ -1,4 +1,6 @@
 ﻿// VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer.gen.cs @ Vulkan/VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer.gen.cs
+using System.Diagnostics.CodeAnalysis;
+
 [NativeName("VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer")]
 [Transformed]
 [NameAffix("Prefix", "FunctionPointerNameFallbackParent", nameof(VkEnumerateInstanceExtensionPropertiesChain))]
@@ -16,6 +18,8 @@ public unsafe readonly struct VkEnumerateInstanceExtensionPropertiesChain_pfnNex
 }
 
 // VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayerDelegate.gen.cs @ Vulkan/VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayerDelegate.gen.cs
+using System.Diagnostics.CodeAnalysis;
+
 [NativeName("VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer")]
 [Transformed]
 [NameAffix("Prefix", "FunctionPointerParent", nameof(VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer))]

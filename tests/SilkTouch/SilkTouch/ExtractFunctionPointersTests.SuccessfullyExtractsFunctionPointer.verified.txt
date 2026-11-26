@@ -1,4 +1,6 @@
 ﻿// PFN_vkDebugReportCallbackEXT.gen.cs @ Vulkan/PFN_vkDebugReportCallbackEXT.gen.cs
+using System.Diagnostics.CodeAnalysis;
+
 [NativeName("PFN_vkDebugReportCallbackEXT")]
 public unsafe readonly struct PFN_vkDebugReportCallbackEXT : IDisposable
 {
@@ -14,6 +16,8 @@ public unsafe readonly struct PFN_vkDebugReportCallbackEXT : IDisposable
 }
 
 // PFN_vkDebugReportCallbackEXTDelegate.gen.cs @ Vulkan/PFN_vkDebugReportCallbackEXTDelegate.gen.cs
+using System.Diagnostics.CodeAnalysis;
+
 [NativeName("PFN_vkDebugReportCallbackEXT")]
 [NameAffix("Prefix", "FunctionPointerParent", nameof(PFN_vkDebugReportCallbackEXT))]
 [NameAffix("Suffix", "FunctionPointerDelegateType", "Delegate")]

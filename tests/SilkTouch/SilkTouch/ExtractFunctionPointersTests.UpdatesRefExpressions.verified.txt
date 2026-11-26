@@ -1,4 +1,6 @@
 ﻿// _Anonymous1_e__Union_clGetPlatformIDs.gen.cs @ OpenCL/_Anonymous1_e__Union_clGetPlatformIDs.gen.cs
+using System.Diagnostics.CodeAnalysis;
+
 [NativeName("_Anonymous1_e__Union_clGetPlatformIDs")]
 [Transformed]
 [NameAffix("Prefix", "FunctionPointerNameFallbackParent", nameof(_Anonymous1_e__Union))]
@@ -16,6 +18,8 @@ public unsafe readonly struct _Anonymous1_e__Union_clGetPlatformIDs : IDisposabl
 }
 
 // _Anonymous1_e__Union_clGetPlatformIDsDelegate.gen.cs @ OpenCL/_Anonymous1_e__Union_clGetPlatformIDsDelegate.gen.cs
+using System.Diagnostics.CodeAnalysis;
+
 [NativeName("_Anonymous1_e__Union_clGetPlatformIDs")]
 [Transformed]
 [NameAffix("Prefix", "FunctionPointerParent", nameof(_Anonymous1_e__Union_clGetPlatformIDs))]

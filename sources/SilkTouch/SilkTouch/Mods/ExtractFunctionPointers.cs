@@ -71,6 +71,8 @@ public partial class ExtractFunctionPointers(
             )
             .ToList();
 
+        documentFactories.Source.AddUsing("System.Diagnostics.CodeAnalysis");
+
         var addedDocumentIds = new List<DocumentId>();
         foreach (var (typeDecl, identifier, fileDirs, namespaces) in extractedFunctionPointers)
         {
