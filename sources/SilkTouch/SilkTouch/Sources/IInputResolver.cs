@@ -148,9 +148,7 @@ public interface IInputResolver
     async Task<SilkTouchConfiguration> Resolve(SilkTouchConfiguration config) =>
         config with
         {
-            SourceProject = config.SourceProject is null
-                ? null
-                : await ResolvePath(config.SourceProject),
+            SourceProject = await ResolvePath(config.SourceProject),
             TestProject = config.TestProject is null ? null : await ResolvePath(config.TestProject),
         };
 }

@@ -63,9 +63,9 @@ public class ExtractEnumConstantsTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
-        var extractEnumConstants = new ExtractEnumConstants(documentFactory);
+        var extractEnumConstants = new ExtractEnumConstants(documentFactories);
 
         await extractEnumConstants.ExecuteAsync(context);
 
@@ -122,9 +122,9 @@ public class ExtractEnumConstantsTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
-        var extractEnumConstants = new ExtractEnumConstants(documentFactory);
+        var extractEnumConstants = new ExtractEnumConstants(documentFactories);
 
         await extractEnumConstants.ExecuteAsync(context);
 
@@ -181,9 +181,9 @@ public class ExtractEnumConstantsTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
-        var extractEnumConstants = new ExtractEnumConstants(documentFactory);
+        var extractEnumConstants = new ExtractEnumConstants(documentFactories);
 
         await extractEnumConstants.ExecuteAsync(context);
 
@@ -244,9 +244,9 @@ public class ExtractEnumConstantsTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
-        var extractEnumConstants = new ExtractEnumConstants(documentFactory);
+        var extractEnumConstants = new ExtractEnumConstants(documentFactories);
 
         await extractEnumConstants.ExecuteAsync(context);
 

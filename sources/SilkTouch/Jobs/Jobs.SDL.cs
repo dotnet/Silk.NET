@@ -15,6 +15,7 @@ internal static partial class Jobs
                 TestProject = "tests/SDL/SDL/Silk.NET.SDL.UnitTests.csproj",
                 DefaultLicenseHeader = "eng/silktouch/sdl/header.txt",
                 DefaultNamespace = "Silk.NET.SDL",
+                DefaultTestNamespace = "Silk.NET.SDL.UnitTests",
             },
             context =>
                 context

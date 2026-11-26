@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
+using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Clang;
@@ -21,7 +22,7 @@ internal class SilkTouchJob : IDisposable
     private readonly ILogger<SilkTouchJob> _logger;
     private readonly IInputResolver _inputResolver;
     private readonly IModContextFactory _modContextFactory;
-    private readonly DocumentFactory _documentFactory;
+    private readonly IDocumentFactories _documentFactories;
 
     /// <summary>
     /// The job key.
@@ -64,7 +65,18 @@ internal class SilkTouchJob : IDisposable
         var services = new ServiceCollection();
         {
             // Register default dependencies
-            services.AddSingleton<DocumentFactory>();
+            {
+                var sourceKey = new object();
+                var testKey = new object();
+
+                services.AddKeyedSingleton<DocumentFactory>(sourceKey);
+                services.AddKeyedSingleton<DocumentFactory>(testKey);
+                services.AddSingleton<IDocumentFactories>(sp => new DocumentFactories(
+                    sp.GetRequiredKeyedService<DocumentFactory>(sourceKey),
+                    sp.GetRequiredKeyedService<DocumentFactory>(testKey)
+                ));
+            }
+
             services.AddSingleton<FunctionTransformer>();
             services.AddSingleton<ResponseFileHandler>();
             services.AddSingleton<IBakeStrategy, DefaultBakeStrategy>();
@@ -77,7 +89,7 @@ internal class SilkTouchJob : IDisposable
         _logger = Provider.GetRequiredService<ILogger<SilkTouchJob>>();
         _inputResolver = Provider.GetRequiredService<IInputResolver>();
         _modContextFactory = Provider.GetRequiredService<IModContextFactory>();
-        _documentFactory = Provider.GetRequiredService<DocumentFactory>();
+        _documentFactories = Provider.GetRequiredService<IDocumentFactories>();
         Mods = Provider.GetRequiredService<IEnumerable<IMod>>().ToArray();
     }
 
@@ -94,18 +106,33 @@ internal class SilkTouchJob : IDisposable
         // Prepare the context
         await using var context = await _modContextFactory.CreateContextAsync(Key, Config, ct);
 
-        // Initialize the document factory
-        _documentFactory.DefaultNamespace = Config.DefaultNamespace;
-        if (Config.DefaultLicenseHeader != null)
+        // Initialize the document factories
         {
-            _documentFactory.DefaultHeader = ParseLeadingTrivia(
-                await File.ReadAllTextAsync(Config.DefaultLicenseHeader, ct)
-            );
-        }
+            var source = _documentFactories.Source;
+            var test = _documentFactories.Test;
+            SyntaxTriviaList? defaultHeader =
+                Config.DefaultLicenseHeader != null
+                    ? ParseLeadingTrivia(
+                        await File.ReadAllTextAsync(Config.DefaultLicenseHeader, ct)
+                    )
+                    : null;
 
-        // Add commonly used namespaces
-        _documentFactory.AddUsing("System.Runtime.CompilerServices");
-        _documentFactory.AddUsing("System.Runtime.InteropServices");
+            // Source
+            {
+                source.DefaultNamespace = Config.DefaultNamespace;
+                source.DefaultHeader = defaultHeader;
+
+                // Add commonly used namespaces
+                source.AddUsing("System.Runtime.CompilerServices");
+                source.AddUsing("System.Runtime.InteropServices");
+            }
+
+            // Test
+            {
+                test.DefaultNamespace = Config.DefaultTestNamespace ?? Config.DefaultNamespace;
+                test.DefaultHeader = defaultHeader;
+            }
+        }
 
         // Just in case a mod gets naughty and tries to modify at the initialization stage.
         var srcProj = context.SourceProject;

@@ -14,14 +14,14 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Merges the APIs of multiple source sets into a single source set.
 /// </summary>
-/// <param name="documentFactory">The document factory to use.</param>
+/// <param name="documentFactories">The document factories to use.</param>
 /// <param name="logger">The logger to use.</param>
 /// <param name="config">The configuration snapshot.</param>
 /// <param name="strategies">
 /// The available bake strategies. The actual strategy to use is determined from the configuration.
 /// </param>
 public class BakeSourceSets(
-    DocumentFactory documentFactory,
+    IDocumentFactories documentFactories,
     ILogger<BakeSourceSets> logger,
     BakeSourceSets.Configuration config,
     IEnumerable<IBakeStrategy> strategies
@@ -343,13 +343,39 @@ public class BakeSourceSets(
             );
         }
 
+        // Bake both projects
+        ctx.SourceProject = await BakeProjectAsync(
+            ctx.SourceProject,
+            documentFactories.Source,
+            strategy,
+            ct
+        );
+
+        if (ctx.TestProject != null)
+        {
+            ctx.TestProject = await BakeProjectAsync(
+                ctx.TestProject,
+                documentFactories.Test,
+                strategy,
+                ct
+            );
+        }
+    }
+
+    private async Task<Project> BakeProjectAsync(
+        Project project,
+        DocumentFactory documentFactory,
+        IBakeStrategy strategy,
+        CancellationToken ct
+    )
+    {
         // Visit each doc
         var visitor = new Visitor(strategy);
         var baked = new List<string>();
-        foreach (var docId in ctx.SourceProject.DocumentIds)
+        foreach (var docId in project.DocumentIds)
         {
             var doc =
-                ctx.SourceProject.GetDocument(docId)
+                project.GetDocument(docId)
                 ?? throw new InvalidOperationException("Document missing");
             var path = doc.RelativePath();
             if (path is null)
@@ -379,11 +405,9 @@ public class BakeSourceSets(
         }
 
         // Remove documents that were used as baker input
-        var proj = ctx.SourceProject.RemoveDocuments([
-            .. ctx
-                .SourceProject.Documents.Where(x =>
-                    x.RelativePath() is { } rp && baked.Contains(rp)
-                )
+        project = project.RemoveDocuments([
+            .. project
+                .Documents.Where(x => x.RelativePath() is { } rp && baked.Contains(rp))
                 .Select(x => x.Id),
         ]);
 
@@ -393,18 +417,20 @@ public class BakeSourceSets(
 
         // Add the final baked documents
         foreach (
-            var (bakedRoot, bakedPath) in GetBaked(outputBakeSets)
+            var (bakedRoot, bakedPath) in GetBaked(outputBakeSets, documentFactory)
                 .Select(x => (x.Value, path: x.Key))
         )
         {
-            proj = proj.AddDocument(
-                Path.GetFileName(bakedPath),
-                documentFactory.PopulateDocument(bakedRoot),
-                filePath: proj.FullPath(bakedPath)
-            ).Project;
+            project = project
+                .AddDocument(
+                    Path.GetFileName(bakedPath),
+                    documentFactory.PopulateDocument(bakedRoot),
+                    filePath: project.FullPath(bakedPath)
+                )
+                .Project;
         }
 
-        ctx.SourceProject = proj;
+        return project;
     }
 
     private Dictionary<string, BakeSet> Bake(
@@ -572,7 +598,8 @@ public class BakeSourceSets(
     }
 
     private IEnumerable<KeyValuePair<string, CompilationUnitSyntax>> GetBaked(
-        Dictionary<string, BakeSet> bakeSets
+        Dictionary<string, BakeSet> bakeSets,
+        DocumentFactory documentFactory
     )
     {
         foreach (var (subdir, bakeSet) in bakeSets)

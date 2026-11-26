@@ -14,8 +14,10 @@ internal static partial class Jobs
             {
                 Solution = "Silk.NET.slnx",
                 SourceProject = "sources/Vulkan/Vulkan/Silk.NET.Vulkan.csproj",
+                // TestProject = "tests/Vulkan/Vulkan/Silk.NET.Vulkan.UnitTests.csproj", // TODO: Disabled due to issues identified during https://github.com/dotnet/Silk.NET/pull/2650
                 DefaultLicenseHeader = "eng/silktouch/vulkan/header.txt",
                 DefaultNamespace = "Silk.NET.Vulkan",
+                DefaultTestNamespace = "Silk.NET.Vulkan.UnitTests",
             },
             context =>
                 context

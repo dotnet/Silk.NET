@@ -18,7 +18,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 public partial class ExtractFunctionPointers(
     ILogger<ExtractFunctionPointers> logger,
-    DocumentFactory documentFactory
+    IDocumentFactories documentFactories
 ) : IMod
 {
     /// <inheritdoc />
@@ -76,7 +76,7 @@ public partial class ExtractFunctionPointers(
             project = project
                 .AddDocument(
                     $"{identifier}.gen.cs",
-                    documentFactory.PopulateDocument(
+                    documentFactories.Source.PopulateDocument(
                         CompilationUnit()
                             .WithMembers(
                                 ns is { Length: > 0 }

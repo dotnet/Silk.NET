@@ -12,7 +12,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Mods the bindings to use the Silk.NET.Core pointer types.
 /// </summary>
-public class TransformFunctions(FunctionTransformer ft, DocumentFactory documentFactory)
+public class TransformFunctions(FunctionTransformer ft, IDocumentFactories documentFactories)
     : CSharpSyntaxRewriter,
         IMod,
         ITransformationContext
@@ -24,7 +24,7 @@ public class TransformFunctions(FunctionTransformer ft, DocumentFactory document
     public IFunctionTransformer[] Transformers { get; set; } = [];
 
     /// <inheritdoc />
-    public DocumentFactory DocumentFactory { get; set; } = documentFactory;
+    public DocumentFactory DocumentFactory { get; set; } = documentFactories.Source;
 
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)

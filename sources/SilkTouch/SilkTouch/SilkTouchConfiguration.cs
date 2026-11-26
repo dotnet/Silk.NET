@@ -16,7 +16,7 @@ public record SilkTouchConfiguration
     /// <summary>
     /// The source output csproj path, the directory of which used when writing the modded bindings.
     /// </summary>
-    public string? SourceProject { get; init; }
+    public required string SourceProject { get; init; }
 
     /// <summary>
     /// The test output csproj path, the directory of which used when writing the modded tests.
@@ -33,4 +33,9 @@ public record SilkTouchConfiguration
     /// The default namespace to be used by generated documents.
     /// </summary>
     public string? DefaultNamespace { get; init; }
+
+    /// <summary>
+    /// The default namespace to be used by generated test documents.
+    /// </summary>
+    public string? DefaultTestNamespace { get; init; }
 }

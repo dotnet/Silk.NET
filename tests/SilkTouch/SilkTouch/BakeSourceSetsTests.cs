@@ -123,10 +123,10 @@ public class BakeSourceSetsTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
         var bakeSourceSets = new BakeSourceSets(
-            documentFactory,
+            documentFactories,
             NullLogger<BakeSourceSets>.Instance,
             new BakeSourceSets.Configuration()
             {
@@ -169,10 +169,10 @@ public class BakeSourceSetsTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
         var bakeSourceSets = new BakeSourceSets(
-            documentFactory,
+            documentFactories,
             NullLogger<BakeSourceSets>.Instance,
             new BakeSourceSets.Configuration()
             {
@@ -215,10 +215,10 @@ public class BakeSourceSetsTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
         var bakeSourceSets = new BakeSourceSets(
-            documentFactory,
+            documentFactories,
             NullLogger<BakeSourceSets>.Instance,
             new BakeSourceSets.Configuration()
             {
@@ -261,10 +261,10 @@ public class BakeSourceSetsTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
-        var documentFactory = new DocumentFactory();
+        var documentFactories = new DummyDocumentFactories();
 
         var bakeSourceSets = new BakeSourceSets(
-            documentFactory,
+            documentFactories,
             NullLogger<BakeSourceSets>.Instance,
             new BakeSourceSets.Configuration()
             {

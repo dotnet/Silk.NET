@@ -14,8 +14,10 @@ internal static partial class Jobs
             {
                 Solution = "Silk.NET.slnx",
                 SourceProject = "sources/OpenXR/OpenXR/Silk.NET.OpenXR.csproj",
+                TestProject = "tests/OpenXR/OpenXR/Silk.NET.OpenXR.UnitTests.csproj",
                 DefaultLicenseHeader = "eng/silktouch/openxr/header.txt",
                 DefaultNamespace = "Silk.NET.OpenXR",
+                DefaultTestNamespace = "Silk.NET.OpenXR.UnitTests",
             },
             context =>
                 context

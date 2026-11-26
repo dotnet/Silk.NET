@@ -90,10 +90,25 @@
     <Folder Name="/tests/Maths/">
         <Project Path="tests/Maths/Maths/Silk.NET.Maths.Tests.csproj" />
     </Folder>
+    <Folder Name="/tests/OpenAL/">
+        <Project Path="tests/OpenAL/OpenAL/Silk.NET.OpenAL.UnitTests.csproj" />
+    </Folder>
+    <Folder Name="/tests/OpenCL/">
+        <Project Path="tests/OpenCL/OpenCL/Silk.NET.OpenCL.UnitTests.csproj" />
+    </Folder>
+    <Folder Name="/tests/OpenGL/">
+        <Project Path="tests/OpenGL/OpenGL/Silk.NET.OpenGL.UnitTests.csproj" />
+    </Folder>
+    <Folder Name="/tests/OpenXR/">
+        <Project Path="tests/OpenXR/OpenXR/Silk.NET.OpenXR.UnitTests.csproj" />
+    </Folder>
     <Folder Name="/tests/SDL/">
         <Project Path="tests/SDL/SDL/Silk.NET.SDL.UnitTests.csproj" />
     </Folder>
     <Folder Name="/tests/SilkTouch/">
         <Project Path="tests/SilkTouch/SilkTouch/Silk.NET.SilkTouch.UnitTests.csproj" />
+    </Folder>
+    <Folder Name="/tests/Vulkan/">
+        <Project Path="tests/Vulkan/Vulkan/Silk.NET.Vulkan.UnitTests.csproj" />
     </Folder>
 </Solution>
