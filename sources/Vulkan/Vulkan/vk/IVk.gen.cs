@@ -13726,6 +13726,26 @@ public unsafe partial interface IVk
             Ref<SamplerYcbcrConversionHandle> pYcbcrConversion
         );
 
+        [NativeName("vkCreateScreenSurfaceQNX")]
+        [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateScreenSurfaceQNX")]
+        static abstract Result CreateScreenSurfaceQNX(
+            InstanceHandle instance,
+            ScreenSurfaceCreateInfoQNX* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateScreenSurfaceQNX")]
+        [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateScreenSurfaceQNX")]
+        static abstract Result CreateScreenSurfaceQNX(
+            InstanceHandle instance,
+            Ref<ScreenSurfaceCreateInfoQNX> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        );
+
         [NativeName("vkCreateSemaphore")]
         [SupportedApiProfile(
             "vulkan",
@@ -23130,6 +23150,24 @@ public unsafe partial interface IVk
             Ref<QueueFamilyProperties2> pQueueFamilyProperties
         );
 
+        [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+        [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+        static abstract MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex,
+            ScreenWindowHandle window
+        );
+
+        [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+        [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+        static abstract uint GetPhysicalDeviceScreenPresentationSupportRawQNX(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex,
+            ScreenWindowHandle window
+        );
+
         [NativeName("vkGetPhysicalDeviceSparseImageFormatProperties")]
         [SupportedApiProfile(
             "vulkan",
@@ -24629,6 +24667,38 @@ public unsafe partial interface IVk
             DeviceHandle device,
             Ref<SamplerCaptureDescriptorDataInfoEXT> pInfo,
             Ref pData
+        );
+
+        [NativeName("vkGetScreenBufferPropertiesQNX")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_QNX_external_memory_screen_buffer"],
+            ImpliesSets = [
+                "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+                "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetScreenBufferPropertiesQNX")]
+        static abstract Result GetScreenBufferPropertiesQNX(
+            DeviceHandle device,
+            ScreenBufferHandle buffer,
+            ScreenBufferPropertiesQNX* pProperties
+        );
+
+        [NativeName("vkGetScreenBufferPropertiesQNX")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_QNX_external_memory_screen_buffer"],
+            ImpliesSets = [
+                "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+                "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetScreenBufferPropertiesQNX")]
+        static abstract Result GetScreenBufferPropertiesQNX(
+            DeviceHandle device,
+            ScreenBufferHandle buffer,
+            Ref<ScreenBufferPropertiesQNX> pProperties
         );
 
         [NativeName("vkGetSemaphoreCounterValue")]
@@ -40991,6 +41061,26 @@ public unsafe partial interface IVk
         Ref<SamplerYcbcrConversionHandle> pYcbcrConversion
     );
 
+    [NativeName("vkCreateScreenSurfaceQNX")]
+    [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateScreenSurfaceQNX")]
+    Result CreateScreenSurfaceQNX(
+        InstanceHandle instance,
+        ScreenSurfaceCreateInfoQNX* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    );
+
+    [NativeName("vkCreateScreenSurfaceQNX")]
+    [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateScreenSurfaceQNX")]
+    Result CreateScreenSurfaceQNX(
+        InstanceHandle instance,
+        Ref<ScreenSurfaceCreateInfoQNX> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    );
+
     [NativeName("vkCreateSemaphore")]
     [SupportedApiProfile(
         "vulkan",
@@ -50212,6 +50302,24 @@ public unsafe partial interface IVk
         Ref<QueueFamilyProperties2> pQueueFamilyProperties
     );
 
+    [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+    [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+    MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        ScreenWindowHandle window
+    );
+
+    [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+    [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+    uint GetPhysicalDeviceScreenPresentationSupportRawQNX(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        ScreenWindowHandle window
+    );
+
     [NativeName("vkGetPhysicalDeviceSparseImageFormatProperties")]
     [SupportedApiProfile(
         "vulkan",
@@ -51697,6 +51805,38 @@ public unsafe partial interface IVk
         DeviceHandle device,
         Ref<SamplerCaptureDescriptorDataInfoEXT> pInfo,
         Ref pData
+    );
+
+    [NativeName("vkGetScreenBufferPropertiesQNX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QNX_external_memory_screen_buffer"],
+        ImpliesSets = [
+            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetScreenBufferPropertiesQNX")]
+    Result GetScreenBufferPropertiesQNX(
+        DeviceHandle device,
+        ScreenBufferHandle buffer,
+        ScreenBufferPropertiesQNX* pProperties
+    );
+
+    [NativeName("vkGetScreenBufferPropertiesQNX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QNX_external_memory_screen_buffer"],
+        ImpliesSets = [
+            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetScreenBufferPropertiesQNX")]
+    Result GetScreenBufferPropertiesQNX(
+        DeviceHandle device,
+        ScreenBufferHandle buffer,
+        Ref<ScreenBufferPropertiesQNX> pProperties
     );
 
     [NativeName("vkGetSemaphoreCounterValue")]

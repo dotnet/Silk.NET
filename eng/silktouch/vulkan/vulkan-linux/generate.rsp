@@ -45,8 +45,12 @@ Silk.NET.Vulkan
 
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_android.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_ohos.h
+../../../submodules/vulkan-headers/include/vulkan/vulkan_screen.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_vi.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_wayland.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_xcb.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_xlib.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_xlib_xrandr.h
+
+../../../submodules/vulkan-headers/include/vulkan/vulkan_fuchsia.h
+../../../submodules/vulkan-headers/include/vulkan/vulkan_ggp.h
