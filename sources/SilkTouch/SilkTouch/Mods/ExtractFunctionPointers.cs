@@ -3,7 +3,6 @@
 
 using System.Diagnostics;
 using System.Text.RegularExpressions;
-using Microsoft.Build.Framework;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -158,7 +157,7 @@ public partial class ExtractFunctionPointers(
                 }
 
                 var semanticModel = compilation.GetSemanticModel(tree);
-                var invocationExpressionRewriter = new InvocationExpressionRewriter(
+                var invocationExpressionRewriter = new ExpressionRewriter(
                     semanticModel,
                     addedStructSymbols
                 );
@@ -663,7 +662,7 @@ public partial class ExtractFunctionPointers(
         private partial Regex FunctionPointerNativeTypeNameRegex();
     }
 
-    private class InvocationExpressionRewriter(
+    private class ExpressionRewriter(
         SemanticModel semanticModel,
         HashSet<INamedTypeSymbol> addedStructSymbols
     ) : CSharpSyntaxRewriter
@@ -672,6 +671,25 @@ public partial class ExtractFunctionPointers(
         {
             var expressionType = semanticModel.GetTypeInfo(node.Expression).Type;
             node = (InvocationExpressionSyntax)base.VisitInvocationExpression(node)!;
+
+            if (addedStructSymbols.Contains(expressionType, SymbolEqualityComparer.Default))
+            {
+                node = node.WithExpression(
+                    MemberAccessExpression(
+                        SyntaxKind.SimpleMemberAccessExpression,
+                        node.Expression,
+                        IdentifierName("Handle")
+                    )
+                );
+            }
+
+            return node;
+        }
+
+        public override SyntaxNode VisitRefExpression(RefExpressionSyntax node)
+        {
+            var expressionType = semanticModel.GetTypeInfo(node.Expression).Type;
+            node = (RefExpressionSyntax)base.VisitRefExpression(node)!;
 
             if (addedStructSymbols.Contains(expressionType, SymbolEqualityComparer.Default))
             {

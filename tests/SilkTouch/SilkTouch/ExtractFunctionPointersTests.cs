@@ -98,4 +98,60 @@ public class ExtractFunctionPointersTests
         // The reference in the CallDown method should be updated to point to pfnNextLayer.Handle
         await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
+
+    [Test]
+    public async Task UpdatesRefExpressions()
+    {
+        var inputDocName = "_cl_icd_dispatch.gen.cs";
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                inputDocName,
+                """
+                public unsafe partial struct _cl_icd_dispatch
+                {
+                    [NativeTypeName("__AnonymousRecord_cl_icd_L48_C21")]
+                    public _Anonymous1_e__Union Anonymous1;
+
+                    [UnscopedRef]
+                    public ref delegate* unmanaged<uint, cl_platform_id**, uint*, int> clGetPlatformIDs
+                    {
+                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                        get
+                        {
+                            return ref Anonymous1.clGetPlatformIDs;
+                        }
+                    }
+
+                    [StructLayout(LayoutKind.Explicit)]
+                    public unsafe partial struct _Anonymous1_e__Union
+                    {
+                        [FieldOffset(0)]
+                        [NativeTypeName("clGetPlatformIDs_t *")]
+                        public delegate* unmanaged<uint, cl_platform_id**, uint*, int> clGetPlatformIDs;
+
+                        [FieldOffset(0)]
+                        [NativeTypeName("intptr_t")]
+                        public nint clGetPlatformIDs_icd2_tag;
+                    }
+                }
+                """,
+                // ExtractFunctionPointers requires the file path to be set and that the document is under a subfolder
+                filePath: $"OpenCL/{inputDocName}"
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+        var documentFactories = new DummyDocumentFactories();
+
+        var extractFunctionPointers = new ExtractFunctionPointers(
+            NullLogger<ExtractFunctionPointers>.Instance,
+            documentFactories
+        );
+
+        await extractFunctionPointers.ExecuteAsync(context);
+
+        // The reference in clGetPlatformID property should be updated to point to Anonymous1.clGetPlatformIDs.Handle
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
+    }
 }
