@@ -14,8 +14,10 @@ namespace Silk.NET.OpenAL;
 public readonly unsafe struct FoldbackCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<int, int, void> Handle =>
-        (delegate* unmanaged<int, int, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<int, int, void> Handle =>
+        ref *(delegate* unmanaged<int, int, void>*)Pointer;
 
     public FoldbackCallback(delegate* unmanaged<int, int, void> ptr) => Pointer = ptr;
 

@@ -14,8 +14,10 @@ namespace Silk.NET.OpenAL;
 public readonly unsafe struct DebugProcEXT : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<int, int, uint, int, int, sbyte*, void*, void> Handle =>
-        (delegate* unmanaged<int, int, uint, int, int, sbyte*, void*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<int, int, uint, int, int, sbyte*, void*, void> Handle =>
+        ref *(delegate* unmanaged<int, int, uint, int, int, sbyte*, void*, void>*)Pointer;
 
     public DebugProcEXT(delegate* unmanaged<int, int, uint, int, int, sbyte*, void*, void> ptr) =>
         Pointer = ptr;

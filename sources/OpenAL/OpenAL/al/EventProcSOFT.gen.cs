@@ -14,8 +14,10 @@ namespace Silk.NET.OpenAL;
 public readonly unsafe struct EventProcSOFT : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<int, uint, uint, int, sbyte*, void*, void> Handle =>
-        (delegate* unmanaged<int, uint, uint, int, sbyte*, void*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<int, uint, uint, int, sbyte*, void*, void> Handle =>
+        ref *(delegate* unmanaged<int, uint, uint, int, sbyte*, void*, void>*)Pointer;
 
     public EventProcSOFT(delegate* unmanaged<int, uint, uint, int, sbyte*, void*, void> ptr) =>
         Pointer = ptr;

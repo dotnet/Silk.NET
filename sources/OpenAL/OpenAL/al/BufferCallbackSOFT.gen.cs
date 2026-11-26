@@ -14,8 +14,10 @@ namespace Silk.NET.OpenAL;
 public readonly unsafe struct BufferCallbackSOFT : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, void*, int, int> Handle =>
-        (delegate* unmanaged<void*, void*, int, int>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, void*, int, int> Handle =>
+        ref *(delegate* unmanaged<void*, void*, int, int>*)Pointer;
 
     public BufferCallbackSOFT(delegate* unmanaged<void*, void*, int, int> ptr) => Pointer = ptr;
 
