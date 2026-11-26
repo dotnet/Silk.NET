@@ -15,8 +15,9 @@ public readonly unsafe struct VoidFunction : IDisposable
     [SupportedApiProfile("openxr")]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("openxr")]
-    public delegate* unmanaged<void> Handle => (delegate* unmanaged<void>)Pointer;
+    public ref delegate* unmanaged<void> Handle => ref *(delegate* unmanaged<void>*)Pointer;
 
     [SupportedApiProfile("openxr")]
     public VoidFunction(delegate* unmanaged<void> ptr) => Pointer = ptr;

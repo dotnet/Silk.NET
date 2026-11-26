@@ -15,9 +15,10 @@ public readonly unsafe struct EglGetProcAddressMNDX : IDisposable
     [SupportedApiProfile("openxr")]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("openxr")]
-    public delegate* unmanaged<sbyte*, EglGetProcAddressMndxP1> Handle =>
-        (delegate* unmanaged<sbyte*, EglGetProcAddressMndxP1>)Pointer;
+    public ref delegate* unmanaged<sbyte*, EglGetProcAddressMndxP1> Handle =>
+        ref *(delegate* unmanaged<sbyte*, EglGetProcAddressMndxP1>*)Pointer;
 
     [SupportedApiProfile("openxr")]
     public EglGetProcAddressMNDX(delegate* unmanaged<sbyte*, EglGetProcAddressMndxP1> ptr) =>

@@ -15,9 +15,10 @@ public readonly unsafe struct PfnVkGetInstanceProcAddr : IDisposable
     [SupportedApiProfile("openxr")]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("openxr")]
-    public delegate* unmanaged<void*, sbyte*, PfnVkGetInstanceProcAddrP2> Handle =>
-        (delegate* unmanaged<void*, sbyte*, PfnVkGetInstanceProcAddrP2>)Pointer;
+    public ref delegate* unmanaged<void*, sbyte*, PfnVkGetInstanceProcAddrP2> Handle =>
+        ref *(delegate* unmanaged<void*, sbyte*, PfnVkGetInstanceProcAddrP2>*)Pointer;
 
     [SupportedApiProfile("openxr")]
     public PfnVkGetInstanceProcAddr(
