@@ -1,2 +1,3 @@
+--remap
 __GLXcontextRec*=void*
 __GLXFBConfigRec*=void*

@@ -1,3 +1,4 @@
+--remap
 _GUID=System.Guid
 _LUID=ulong
 
@@ -5,9 +6,11 @@ IUnknown*=void*
 HDC__*=void*
 
 # GL
+--remap
 HGLRC__*=void*
 
 # Direct3D
+--remap
 D3D_FEATURE_LEVEL=uint
 
 ID3D11Device*=void*
