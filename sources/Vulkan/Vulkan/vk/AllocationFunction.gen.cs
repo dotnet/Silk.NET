@@ -40,6 +40,7 @@ public readonly unsafe struct AllocationFunction : IDisposable
     )]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -66,8 +67,8 @@ public readonly unsafe struct AllocationFunction : IDisposable
         ],
         MinVersion = "1.0"
     )]
-    public delegate* unmanaged<void*, nuint, nuint, SystemAllocationScope, void*> Handle =>
-        (delegate* unmanaged<void*, nuint, nuint, SystemAllocationScope, void*>)Pointer;
+    public ref delegate* unmanaged<void*, nuint, nuint, SystemAllocationScope, void*> Handle =>
+        ref *(delegate* unmanaged<void*, nuint, nuint, SystemAllocationScope, void*>*)Pointer;
 
     [SupportedApiProfile(
         "vulkan",

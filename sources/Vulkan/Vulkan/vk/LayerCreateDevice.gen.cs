@@ -15,8 +15,9 @@ public readonly unsafe struct LayerCreateDevice : IDisposable
     [SupportedApiProfile("vulkan")]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("vulkan")]
-    public delegate* unmanaged<
+    public ref delegate* unmanaged<
         InstanceHandle,
         PhysicalDeviceHandle,
         DeviceCreateInfo*,
@@ -25,7 +26,7 @@ public readonly unsafe struct LayerCreateDevice : IDisposable
         LayerCreateDeviceP5,
         LayerCreateDeviceP6*,
         Result> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             InstanceHandle,
             PhysicalDeviceHandle,
             DeviceCreateInfo*,
@@ -33,7 +34,7 @@ public readonly unsafe struct LayerCreateDevice : IDisposable
             DeviceHandle*,
             LayerCreateDeviceP5,
             LayerCreateDeviceP6*,
-            Result>)Pointer;
+            Result>*)Pointer;
 
     [SupportedApiProfile("vulkan")]
     public LayerCreateDevice(

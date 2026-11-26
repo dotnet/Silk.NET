@@ -15,9 +15,10 @@ public readonly unsafe struct SetDeviceLoaderData : IDisposable
     [SupportedApiProfile("vulkan")]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("vulkan")]
-    public delegate* unmanaged<DeviceHandle, void*, Result> Handle =>
-        (delegate* unmanaged<DeviceHandle, void*, Result>)Pointer;
+    public ref delegate* unmanaged<DeviceHandle, void*, Result> Handle =>
+        ref *(delegate* unmanaged<DeviceHandle, void*, Result>*)Pointer;
 
     [SupportedApiProfile("vulkan")]
     public SetDeviceLoaderData(delegate* unmanaged<DeviceHandle, void*, Result> ptr) =>

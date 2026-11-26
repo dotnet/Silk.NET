@@ -15,8 +15,9 @@ public readonly unsafe struct DebugReportCallbackEXT : IDisposable
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    public delegate* unmanaged<
+    public ref delegate* unmanaged<
         DebugReportFlagsEXT,
         DebugReportObjectTypeEXT,
         ulong,
@@ -26,7 +27,7 @@ public readonly unsafe struct DebugReportCallbackEXT : IDisposable
         sbyte*,
         void*,
         uint> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             DebugReportFlagsEXT,
             DebugReportObjectTypeEXT,
             ulong,
@@ -35,7 +36,7 @@ public readonly unsafe struct DebugReportCallbackEXT : IDisposable
             sbyte*,
             sbyte*,
             void*,
-            uint>)Pointer;
+            uint>*)Pointer;
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     public DebugReportCallbackEXT(

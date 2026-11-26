@@ -15,9 +15,10 @@ public readonly unsafe struct EnumerateInstanceVersionChainPfnNextLayer : IDispo
     [SupportedApiProfile("vulkan")]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("vulkan")]
-    public delegate* unmanaged<EnumerateInstanceVersionChain*, uint*, Result> Handle =>
-        (delegate* unmanaged<EnumerateInstanceVersionChain*, uint*, Result>)Pointer;
+    public ref delegate* unmanaged<EnumerateInstanceVersionChain*, uint*, Result> Handle =>
+        ref *(delegate* unmanaged<EnumerateInstanceVersionChain*, uint*, Result>*)Pointer;
 
     [SupportedApiProfile("vulkan")]
     public EnumerateInstanceVersionChainPfnNextLayer(

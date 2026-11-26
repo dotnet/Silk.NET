@@ -15,9 +15,10 @@ public readonly unsafe struct LayerCreateDeviceP5 : IDisposable
     [SupportedApiProfile("vulkan")]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("vulkan")]
-    public delegate* unmanaged<InstanceHandle, sbyte*, LayerCreateDeviceP5P2> Handle =>
-        (delegate* unmanaged<InstanceHandle, sbyte*, LayerCreateDeviceP5P2>)Pointer;
+    public ref delegate* unmanaged<InstanceHandle, sbyte*, LayerCreateDeviceP5P2> Handle =>
+        ref *(delegate* unmanaged<InstanceHandle, sbyte*, LayerCreateDeviceP5P2>*)Pointer;
 
     [SupportedApiProfile("vulkan")]
     public LayerCreateDeviceP5(

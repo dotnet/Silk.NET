@@ -22,6 +22,7 @@ public readonly unsafe struct DeviceMemoryReportCallbackEXT : IDisposable
     )]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -30,8 +31,8 @@ public readonly unsafe struct DeviceMemoryReportCallbackEXT : IDisposable
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    public delegate* unmanaged<DeviceMemoryReportCallbackDataEXT*, void*, void> Handle =>
-        (delegate* unmanaged<DeviceMemoryReportCallbackDataEXT*, void*, void>)Pointer;
+    public ref delegate* unmanaged<DeviceMemoryReportCallbackDataEXT*, void*, void> Handle =>
+        ref *(delegate* unmanaged<DeviceMemoryReportCallbackDataEXT*, void*, void>*)Pointer;
 
     [SupportedApiProfile(
         "vulkan",

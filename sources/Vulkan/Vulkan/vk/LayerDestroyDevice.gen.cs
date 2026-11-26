@@ -15,17 +15,18 @@ public readonly unsafe struct LayerDestroyDevice : IDisposable
     [SupportedApiProfile("vulkan")]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("vulkan")]
-    public delegate* unmanaged<
+    public ref delegate* unmanaged<
         DeviceHandle,
         AllocationCallbacks*,
         LayerDestroyDeviceP2,
         void> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             DeviceHandle,
             AllocationCallbacks*,
             LayerDestroyDeviceP2,
-            void>)Pointer;
+            void>*)Pointer;
 
     [SupportedApiProfile("vulkan")]
     public LayerDestroyDevice(

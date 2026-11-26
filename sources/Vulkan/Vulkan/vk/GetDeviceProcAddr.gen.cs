@@ -15,9 +15,10 @@ public readonly unsafe struct GetDeviceProcAddr : IDisposable
     [SupportedApiProfile("vulkan")]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("vulkan")]
-    public delegate* unmanaged<DeviceHandle, sbyte*, GetDeviceProcAddrP2> Handle =>
-        (delegate* unmanaged<DeviceHandle, sbyte*, GetDeviceProcAddrP2>)Pointer;
+    public ref delegate* unmanaged<DeviceHandle, sbyte*, GetDeviceProcAddrP2> Handle =>
+        ref *(delegate* unmanaged<DeviceHandle, sbyte*, GetDeviceProcAddrP2>*)Pointer;
 
     [SupportedApiProfile("vulkan")]
     public GetDeviceProcAddr(delegate* unmanaged<DeviceHandle, sbyte*, GetDeviceProcAddrP2> ptr) =>

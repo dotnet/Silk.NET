@@ -15,9 +15,10 @@ public readonly unsafe struct PfnGetPhysicalDeviceProcAddr : IDisposable
     [SupportedApiProfile("vulkan")]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("vulkan")]
-    public delegate* unmanaged<InstanceHandle, sbyte*, PfnGetPhysicalDeviceProcAddrP2> Handle =>
-        (delegate* unmanaged<InstanceHandle, sbyte*, PfnGetPhysicalDeviceProcAddrP2>)Pointer;
+    public ref delegate* unmanaged<InstanceHandle, sbyte*, PfnGetPhysicalDeviceProcAddrP2> Handle =>
+        ref *(delegate* unmanaged<InstanceHandle, sbyte*, PfnGetPhysicalDeviceProcAddrP2>*)Pointer;
 
     [SupportedApiProfile("vulkan")]
     public PfnGetPhysicalDeviceProcAddr(

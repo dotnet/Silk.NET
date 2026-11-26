@@ -15,19 +15,20 @@ public readonly unsafe struct DebugUtilsMessengerCallbackEXT : IDisposable
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public delegate* unmanaged<
+    public ref delegate* unmanaged<
         DebugUtilsMessageSeverityFlagsEXT,
         DebugUtilsMessageTypeFlagsEXT,
         DebugUtilsMessengerCallbackDataEXT*,
         void*,
         uint> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             DebugUtilsMessageSeverityFlagsEXT,
             DebugUtilsMessageTypeFlagsEXT,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,
-            uint>)Pointer;
+            uint>*)Pointer;
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public DebugUtilsMessengerCallbackEXT(

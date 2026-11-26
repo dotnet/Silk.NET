@@ -15,9 +15,10 @@ public readonly unsafe struct GetInstanceProcAddr : IDisposable
     [SupportedApiProfile("vulkan")]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("vulkan")]
-    public delegate* unmanaged<InstanceHandle, sbyte*, GetInstanceProcAddrP2> Handle =>
-        (delegate* unmanaged<InstanceHandle, sbyte*, GetInstanceProcAddrP2>)Pointer;
+    public ref delegate* unmanaged<InstanceHandle, sbyte*, GetInstanceProcAddrP2> Handle =>
+        ref *(delegate* unmanaged<InstanceHandle, sbyte*, GetInstanceProcAddrP2>*)Pointer;
 
     [SupportedApiProfile("vulkan")]
     public GetInstanceProcAddr(

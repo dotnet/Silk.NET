@@ -15,19 +15,20 @@ public readonly unsafe struct EnumerateInstanceExtensionPropertiesChainPfnNextLa
     [SupportedApiProfile("vulkan")]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("vulkan")]
-    public delegate* unmanaged<
+    public ref delegate* unmanaged<
         EnumerateInstanceExtensionPropertiesChain*,
         sbyte*,
         uint*,
         ExtensionProperties*,
         Result> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             EnumerateInstanceExtensionPropertiesChain*,
             sbyte*,
             uint*,
             ExtensionProperties*,
-            Result>)Pointer;
+            Result>*)Pointer;
 
     [SupportedApiProfile("vulkan")]
     public EnumerateInstanceExtensionPropertiesChainPfnNextLayer(
