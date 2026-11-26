@@ -24,7 +24,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         [SupportedApiProfile("vulkan")]
         public static extern Result IcdEnumerateAdapterPhysicalDevices(
             InstanceHandle instance,
-            _LUID adapterLUID,
+            ulong adapterLUID,
             uint* pPhysicalDeviceCount,
             PhysicalDeviceHandle* pPhysicalDevices
         );
@@ -37,7 +37,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result IcdEnumerateAdapterPhysicalDevices(
             InstanceHandle instance,
-            _LUID adapterLUID,
+            ulong adapterLUID,
             Ref<uint> pPhysicalDeviceCount,
             Ref<PhysicalDeviceHandle> pPhysicalDevices
         )
@@ -37726,7 +37726,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public Result IcdEnumerateAdapterPhysicalDevices(
             InstanceHandle instance,
-            _LUID adapterLUID,
+            ulong adapterLUID,
             uint* pPhysicalDeviceCount,
             PhysicalDeviceHandle* pPhysicalDevices
         ) =>
@@ -37745,7 +37745,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public Result IcdEnumerateAdapterPhysicalDevices(
             InstanceHandle instance,
-            _LUID adapterLUID,
+            ulong adapterLUID,
             Ref<uint> pPhysicalDeviceCount,
             Ref<PhysicalDeviceHandle> pPhysicalDevices
         ) =>
@@ -72989,7 +72989,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result IcdEnumerateAdapterPhysicalDevices(
             InstanceHandle instance,
-            _LUID adapterLUID,
+            ulong adapterLUID,
             uint* pPhysicalDeviceCount,
             PhysicalDeviceHandle* pPhysicalDevices
         ) =>
@@ -73008,7 +73008,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result IcdEnumerateAdapterPhysicalDevices(
             InstanceHandle instance,
-            _LUID adapterLUID,
+            ulong adapterLUID,
             Ref<uint> pPhysicalDeviceCount,
             Ref<PhysicalDeviceHandle> pPhysicalDevices
         )
@@ -124284,12 +124284,12 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVk.IcdEnumerateAdapterPhysicalDevices(
         InstanceHandle instance,
-        _LUID adapterLUID,
+        ulong adapterLUID,
         uint* pPhysicalDeviceCount,
         PhysicalDeviceHandle* pPhysicalDevices
     ) =>
         (
-            (delegate* unmanaged<InstanceHandle, _LUID, uint*, PhysicalDeviceHandle*, Result>)(
+            (delegate* unmanaged<InstanceHandle, ulong, uint*, PhysicalDeviceHandle*, Result>)(
                 _slots[0] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[0] = nativeContext.LoadFunction(
@@ -124305,7 +124305,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result IcdEnumerateAdapterPhysicalDevices(
         InstanceHandle instance,
-        _LUID adapterLUID,
+        ulong adapterLUID,
         uint* pPhysicalDeviceCount,
         PhysicalDeviceHandle* pPhysicalDevices
     ) =>
@@ -124322,7 +124322,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVk.IcdEnumerateAdapterPhysicalDevices(
         InstanceHandle instance,
-        _LUID adapterLUID,
+        ulong adapterLUID,
         Ref<uint> pPhysicalDeviceCount,
         Ref<PhysicalDeviceHandle> pPhysicalDevices
     )
@@ -124346,7 +124346,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result IcdEnumerateAdapterPhysicalDevices(
         InstanceHandle instance,
-        _LUID adapterLUID,
+        ulong adapterLUID,
         Ref<uint> pPhysicalDeviceCount,
         Ref<PhysicalDeviceHandle> pPhysicalDevices
     ) =>

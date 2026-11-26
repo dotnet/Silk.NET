@@ -19,7 +19,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vk_icdEnumerateAdapterPhysicalDevices")]
         static abstract Result IcdEnumerateAdapterPhysicalDevices(
             InstanceHandle instance,
-            _LUID adapterLUID,
+            ulong adapterLUID,
             uint* pPhysicalDeviceCount,
             PhysicalDeviceHandle* pPhysicalDevices
         );
@@ -29,7 +29,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vk_icdEnumerateAdapterPhysicalDevices")]
         static abstract Result IcdEnumerateAdapterPhysicalDevices(
             InstanceHandle instance,
-            _LUID adapterLUID,
+            ulong adapterLUID,
             Ref<uint> pPhysicalDeviceCount,
             Ref<PhysicalDeviceHandle> pPhysicalDevices
         );
@@ -28252,7 +28252,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vk_icdEnumerateAdapterPhysicalDevices")]
     Result IcdEnumerateAdapterPhysicalDevices(
         InstanceHandle instance,
-        _LUID adapterLUID,
+        ulong adapterLUID,
         uint* pPhysicalDeviceCount,
         PhysicalDeviceHandle* pPhysicalDevices
     );
@@ -28262,7 +28262,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vk_icdEnumerateAdapterPhysicalDevices")]
     Result IcdEnumerateAdapterPhysicalDevices(
         InstanceHandle instance,
-        _LUID adapterLUID,
+        ulong adapterLUID,
         Ref<uint> pPhysicalDeviceCount,
         Ref<PhysicalDeviceHandle> pPhysicalDevices
     );
