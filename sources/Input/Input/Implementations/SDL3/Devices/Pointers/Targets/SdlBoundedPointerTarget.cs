@@ -7,16 +7,6 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers.Targets;
 
-internal interface ISdlBoundedPointerTarget<out T, THandle>
-    where T : SdlBoundedPointerTarget
-    where THandle : unmanaged
-{
-    uint Id { get; }
-    THandle Handle { get; }
-
-    public static abstract T? Create(ISdl backend, uint id, THandle handle);
-}
-
 internal abstract class SdlBoundedPointerTarget : IPointerTarget
 {
     protected SdlBoundedPointerTarget(ISdl backend)

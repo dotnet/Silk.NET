@@ -30,16 +30,6 @@ internal interface INeedPreUpdate
 }
 
 /// <summary>
-/// For devices that need additional pointer targets to generate points other than the one for their own primary target.
-/// For instance, a mouse may be based on a window as its pointer target, but through this method can generate points
-/// for other targets such as the desktop.
-/// </summary>
-internal interface IMapTargetPoints
-{
-    public void AppendPointsTranslatedToOtherTargets(IReadOnlyList<IPointerTarget> allTargets, IPointerTarget unboundedTarget);
-}
-
-/// <summary>
 /// For devices such as gamepads and joysticks, as their SDL IDs are likely to change when other devices
 /// are removed (likely what drives controller numbers 1-4, etc).
 /// </summary>

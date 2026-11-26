@@ -15,6 +15,26 @@ internal unsafe partial class SdlInputBackend
 {
     // private static uint? GetDisplayId(SilkSdlDisplayHandle x) => x.Id;
 
+    public bool TryGetFocusedWindowHandle(out WindowHandle handle)
+    {
+        if (_focusedWindow is { } windowHandle)
+        {
+            handle = windowHandle;
+            return true;
+        }
+
+        var focusedWindow = Sdl.GetMouseFocus();
+        if (focusedWindow != default)
+        {
+            InputLog.Warn("Backend has not yet updated its focused window prior to input event");
+            _focusedWindow = handle = focusedWindow;
+            return true;
+        }
+
+        handle = default;
+        return false;
+    }
+
     private static uint? GetWindowId(WindowHandle x)
     {
         if (x.Handle == null)

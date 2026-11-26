@@ -14,10 +14,6 @@ namespace Silk.NET.Input.SDL3;
 
 internal partial class SdlInputBackend : IInputBackend
 {
-    [field: MaybeNull]
-    private SdlUnboundedPointerTarget UnboundedPointerTarget =>
-        field ??= new SdlUnboundedPointerTarget(this);
-
     public ISdl Sdl { get; }
 
     public string Name =>
@@ -27,10 +23,8 @@ internal partial class SdlInputBackend : IInputBackend
 
     public IReadOnlyList<IInputDevice> Devices => _deviceRegistry.Devices;
 
-    public WindowHandle? FocusedWindow => _focusedWindow;
     private WindowHandle? _focusedWindow;
 
-    public readonly ICursorConfiguration CursorConfiguration;
     internal readonly SdlCursor SdlCursor;
 
     private const uint _sdlInitFlags =
@@ -61,7 +55,7 @@ internal partial class SdlInputBackend : IInputBackend
         }
 
         // create cursor
-        CursorConfiguration = SdlCursor = new SdlCursor(Sdl);
+        SdlCursor = new SdlCursor(Sdl);
 
         // todo - manage clock drift by semi-regularly recalculating this time basis
         _timeBasis = SdlTimestampCalculator.GetHighPrecisionTimeBasis(iterationCount: 4);
@@ -199,11 +193,6 @@ internal partial class SdlInputBackend : IInputBackend
             if (device is INeedCompletionEachFrame needer)
             {
                 needer.CompleteUpdate();
-            }
-
-            if (device is IMapTargetPoints mapper)
-            {
-                mapper.AppendPointsTranslatedToOtherTargets(_sdlWindowTargets, UnboundedPointerTarget);
             }
         }
 
@@ -401,19 +390,21 @@ internal partial class SdlInputBackend : IInputBackend
             case >= EventType.MouseMotion and < EventType.MouseAdded:
             {
                 (uint id, uint windowId, PointerEventUpdateMethod<SdlMouse>? updateEvent) mouseEvt = type switch {
-                    EventType.MouseMotion => (evt.Motion.Which, evt.Motion.WindowID, static (m, time, ref readonly e, _, target) => m.AddMotion(in e.Motion, target, time)),
-                    EventType.MouseWheel => (evt.Wheel.Which, evt.Wheel.WindowID, static (m, time, ref readonly e, _, target) => m.AddWheelEvent(in e.Wheel, target, time)),
+                    EventType.MouseMotion => (evt.Motion.Which, evt.Motion.WindowID,
+                        static (m, time, ref readonly e, _, target) => m.AddMotion(in e.Motion, target, time)),
+                    EventType.MouseWheel => (evt.Wheel.Which, evt.Wheel.WindowID,
+                        static (m, time, ref readonly e, _, target) => m.AddWheelEvent(in e.Wheel, target, time)),
 
                     // button events are device-scoped: no pointer target required
-                    EventType.MouseButtonDown => (evt.Button.Which, evt.Button.WindowID, static (m, time, ref readonly e, _, _) => m.AddMouseButtonEvent(in e.Button, time)),
-                    EventType.MouseButtonUp => (evt.Button.Which, evt.Button.WindowID, static (m, time, ref readonly e, _, _) => m.AddMouseButtonEvent(in e.Button, time)),
+                    EventType.MouseButtonDown or EventType.MouseButtonUp =>
+                        (evt.Button.Which, evt.Button.WindowID, static (m, time, ref readonly e, _, _) => m.AddMouseButtonEvent(in e.Button, time)),
 
                     _ => (0u, 0u, null)
                 };
 
                 if (mouseEvt.updateEvent is not null)
                 {
-                    _ = backend.TryAddPointerInputEvent(mouseEvt.id, mouseEvt.windowId, timestamp, in evt, mouseEvt.updateEvent);
+                    _ = backend.TryAddPointerInputEvent(mouseEvt.id, mouseEvt.windowId, timestamp, in evt, mouseEvt.updateEvent, requireWindow: false);
                 }
 
                 break;
@@ -460,7 +451,7 @@ internal partial class SdlInputBackend : IInputBackend
 
                 if (ptrEvt.updateEvent is not null)
                 {
-                    _ = backend.TryAddPointerInputEvent(ptrEvt.id, ptrEvt.windowId, timestamp, in evt, ptrEvt.updateEvent);
+                    _ = backend.TryAddPointerInputEvent(ptrEvt.id, ptrEvt.windowId, timestamp, in evt, ptrEvt.updateEvent, requireWindow: true);
                 }
 
                 break;
@@ -589,7 +580,7 @@ internal partial class SdlInputBackend : IInputBackend
 
 
     private delegate void InputEventUpdateMethod<in T>(T device, long timestamp, ref readonly Event evt, SdlInputBackend backend);
-    private delegate void PointerEventUpdateMethod<in T>(T device, long timestamp, ref readonly Event evt, SdlInputBackend backend, IPointerTarget pointerTarget);
+    private delegate void PointerEventUpdateMethod<in T>(T device, long timestamp, ref readonly Event evt, SdlInputBackend backend, IPointerTarget? pointerTarget);
 
     internal enum FingerEventType : uint
     {

@@ -86,19 +86,18 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
         _textRecorder ??= new TextRecorder(null);
         _textRecorder.Clear();
         State.Text = new InputReadOnlyList<char>(_textRecorder.CharacterBuffer);
-        var sdlWindow = Backend.FocusedWindow;
-        if (sdlWindow != null)
+        if (Backend.TryGetFocusedWindowHandle(out var sdlWindow))
         {
-            if (!NativeBackend.SetWindowKeyboardGrab(sdlWindow.Value, true))
+            if (!NativeBackend.SetWindowKeyboardGrab(sdlWindow, true))
             {
                 SdlLog.Debug("Failed to grab keyboard");
             }
 
-            if (NativeBackend.StartTextInput(sdlWindow.Value))
+            if (NativeBackend.StartTextInput(sdlWindow))
             {
                 _textRecordState = TextRecorderState.RecordingSdl;
-                _textEntryWindow = sdlWindow.Value;
-                BeginRecordingSdl(sdlWindow.Value);
+                _textEntryWindow = sdlWindow;
+                BeginRecordingSdl(sdlWindow);
             }
             else
             {

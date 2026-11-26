@@ -1,7 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -62,7 +61,10 @@ internal abstract partial class SdlPointerDevice
         for (var i = 0; i < actualPointsSpan.Length; i++)
         {
             ref readonly var candidatePoint = ref actualPointsSpan[i];
-            if (candidatePoint.Target == target && candidatePoint.Id == touchId)
+            // A single-point device (e.g. a mouse) only ever has one point, even across targets: when its mode changes
+            // it is handed a different target, and that target's point *replaces* the existing one rather than being
+            // added alongside it. For multi-point devices, points are keyed by (target, id) as usual.
+            if (Matches(in candidatePoint, touchId, target))
             {
                 pointIndex = i;
                 break;
@@ -149,6 +151,11 @@ internal abstract partial class SdlPointerDevice
         return ref point;
     }
 
+    private bool Matches(ref readonly TargetPoint candidatePoint, uint touchId, IPointerTarget target) =>
+        OnePointOnly
+            ? candidatePoint.Id == touchId
+            : candidatePoint.Target == target && candidatePoint.Id == touchId;
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static Vector3 GetWorldPosition(IPointerTarget target, in Vector3 posOnTarget)
     {
@@ -214,44 +221,40 @@ internal abstract partial class SdlPointerDevice
             throw new InvalidOperationException("At least one parameter must have a value");
         }
 
-        touchId = ValidateTouchId(touchId);
+        var id = ValidateTouchId(touchId);
 
-        ref var point = ref CreateOrUpdateTargetPoint(
+        ref readonly var updatedPoint = ref CreateOrUpdateTargetPoint(
             target: target,
             timestamp: timestamp,
-            touchId: touchId.Value,
+            touchId: id,
             positionOnTarget: pos,
             ray: ray,
             pressure: pressure,
             oldPoint: out var oldPoint);
 
-        PointEvents.Enqueue(new PointChangedEvent(this, timestamp, OldPoint: oldPoint,
-            NewPoint: point));
+        PointEvents.Enqueue(new PointChangedEvent(this, timestamp, OldPoint: oldPoint, NewPoint: updatedPoint));
 
         if (isDown is false)
         {
-            // point was actually removed - after that point changed event, we should remove it
-            // note - a null newPoint means the point was removed
-            var previous = point;
-            var actualPoints = CollectionsMarshal.AsSpan(_actualPoints);
-            for (var i = 0; i < actualPoints.Length; i++)
-            {
-                ref var candidatePoint = ref actualPoints[i];
-                if (candidatePoint.Id == previous.Id)
-                {
-                    candidatePoint = default;
-                }
-            }
-
             PointEvents.Enqueue(
                 item: new PointChangedEvent(
                     Pointer: this,
                     Timestamp: timestamp,
-                    OldPoint: previous,
-                    NewPoint: point));
+                    OldPoint: updatedPoint,
+                    NewPoint: null)); // null NewPoint indicates removal
+
+            var actualPoints = CollectionsMarshal.AsSpan(_actualPoints);
+            for (var i = 0; i < actualPoints.Length; i++)
+            {
+                ref var candidatePoint = ref actualPoints[i];
+                if (Matches(in candidatePoint, id, target))
+                {
+                    candidatePoint = default;
+                }
+            }
         }
 
-        return point;
+        return updatedPoint;
     }
 
     private uint ValidateTouchId(uint? touchId)
@@ -328,35 +331,4 @@ internal abstract partial class SdlPointerDevice
         }
     }
 
-    // remaps the given point to the given pointer target
-    private static TargetPoint TranslatePoint(ref readonly TargetPoint pt, IPointerTarget target)
-    {
-        Debug.Assert(pt.Target != target);
-        var oldBounds = pt.Target.Bounds;
-        var newBounds = target.Bounds;
-
-        var oldBoundsMin = Unsafe.As<Vector3D<float>, Vector3>(ref oldBounds.Min);
-        oldBoundsMin &= Vector3.IsFinite(oldBoundsMin);
-
-        var newBoundsMin = Unsafe.As<Vector3D<float>, Vector3>(ref newBounds.Min);
-        newBoundsMin &= Vector3.IsFinite(newBoundsMin);
-
-        var newPtPosition = pt.Position + oldBoundsMin - newBoundsMin;
-        var newNormalizedPos = NormalizeOnTarget(newPtPosition, newBounds);
-
-        return new TargetPoint(
-            Id: pt.Id,
-            Position: newPtPosition,
-            NormalizedPosition: newNormalizedPos,
-            Pointer: pt.Pointer,
-            Pressure: pt.Pressure,
-            Target: target,
-
-            // todo - should this be actually measured?
-            // we currently just assert that it's not pointing at a translated target, which is probably the most
-            // intuitive result for consumers looking to just consume the pointer's single-window position. but i think
-            // this is an API design gap.
-            Flags: TargetPointFlags.NotPointingAtTarget
-            );
-    }
 }

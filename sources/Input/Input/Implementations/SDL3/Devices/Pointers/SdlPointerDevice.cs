@@ -12,7 +12,7 @@ namespace Silk.NET.Input.SDL3.Devices.Pointers;
 /// <summary>
 /// A base class for SDL input devices that operate in terms of a window's or DWMs bounds.
 /// </summary>
-internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IMapTargetPoints
+internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice
 {
     /// <summary>
     /// True if the device only supports one point - e.g., a mouse.<br/>
@@ -21,19 +21,12 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
     protected abstract bool OnePointOnly { get; }
     private readonly List<Button<PointerButton>> _buttons = new(EnumInfo<PointerButton>.DistinctCount);
     protected ButtonReadOnlyList<PointerButton> Buttons => new(_buttons);
-    protected InputReadOnlyList<TargetPoint> StatePoints => new(other: _publicPoints);
-
-    internal IReadOnlyList<TargetPoint> TranslatedPoints => _publicPoints;
+    protected InputReadOnlyList<TargetPoint> StatePoints => new(other: _actualPoints);
 
     /// <summary>
     /// This collection is maintained 1:1 with SDL's input events
     /// </summary>
     private readonly List<TargetPoint> _actualPoints = [];
-
-    /// <summary>
-    /// This is the final collection provided to consuming APIs, complete with actual and remapped points
-    /// </summary>
-    private readonly List<TargetPoint> _publicPoints = [];
 
     internal required SdlInputEventQueue<MouseScrollEvent> ScrollEvents { private get; init; }
     internal required SdlInputEventQueue<PointChangedEvent> PointEvents { private get; init; }
@@ -127,45 +120,4 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
 
     public ISimulatedPointerTarget ApplySimulatedTarget(Func<ISdl, ISimulatedPointerTarget> createTarget) =>
         _falseTarget ??= createTarget(NativeBackend);
-
-    public void AppendPointsTranslatedToOtherTargets(IReadOnlyList<IPointerTarget> allTargets, IPointerTarget unboundedPointerTarget)
-    {
-        _publicPoints.Clear();
-        var necessaryCapacity = (allTargets.Count + 1) * _actualPoints.Count;
-        if (_publicPoints.Capacity < necessaryCapacity)
-        {
-            _publicPoints.Capacity = necessaryCapacity;
-        }
-
-        var actualPoints = CollectionsMarshal.AsSpan(_actualPoints);
-
-        // populate "real" points first
-        for (var i = 0; i < actualPoints.Length; ++i)
-        {
-            _publicPoints.Add(actualPoints[i]);
-        }
-
-        // add translated points
-        for (var i = 0; i < allTargets.Count; i++)
-        {
-            ConvertPointsToTarget(in actualPoints, allTargets[i]);
-        }
-
-        ConvertPointsToTarget(in actualPoints, unboundedPointerTarget);
-        return;
-
-        // it might make sense to have "proxy" or "portal" IPointerTargets >:)
-        void ConvertPointsToTarget(ref readonly Span<TargetPoint> realPoints, IPointerTarget target)
-        {
-            for (var p = 0; p < _actualPoints.Count; ++p)
-            {
-                ref readonly var pt = ref realPoints[p];
-                if (!ReferenceEquals(pt.Target, target))
-                {
-                    // convert!
-                    _publicPoints.Add(TranslatePoint(in pt, target));
-                }
-            }
-        }
-    }
 }

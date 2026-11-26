@@ -6,34 +6,34 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers.Targets;
 
-internal sealed class SdlWindowTarget : SdlBoundedPointerTarget, ISdlBoundedPointerTarget<SdlWindowTarget, WindowHandle>
+internal sealed class SdlWindowTarget : SdlBoundedPointerTarget
 {
+    public uint Id { get; }
+    private readonly WindowHandle _handle;
+
     private SdlWindowTarget(ISdl backend, uint id, WindowHandle handle) : base(backend)
     {
         Id = id;
-        Handle = handle;
+        _handle = handle;
     }
 
     protected override bool TryCalculateBounds(out Box3D<float> bounds)
     {
-        var bounds2D = CalculateWindowBoundsFromSdl(NativeBackend, Handle);
-        if (bounds2D == null)
+        var maybeBounds2D = CalculateWindowBoundsFromSdl(NativeBackend, _handle);
+        if (maybeBounds2D is not { } bounds2D)
         {
             bounds = default;
             return false;
         }
 
         bounds = new Box3D<float>(
-            new Vector3D<float>(bounds2D.Value.Min.X, bounds2D.Value.Min.Y, 0),
-            new Vector3D<float>(bounds2D.Value.Max.X, bounds2D.Value.Max.Y, 0));
+            new Vector3D<float>(bounds2D.Min.X, bounds2D.Min.Y, 0),
+            new Vector3D<float>(bounds2D.Max.X, bounds2D.Max.Y, 0));
 
         return true;
     }
 
-    public uint Id { get; }
-    public WindowHandle Handle { get; }
-
-    public static SdlWindowTarget Create(ISdl backend, uint id, WindowHandle handle) =>
+    internal static SdlWindowTarget Create(ISdl backend, uint id, WindowHandle handle) =>
         new(backend, id, handle);
 
     /// <summary>Returns the window bounds, or <c>null</c> when SDL cannot report them.</summary>

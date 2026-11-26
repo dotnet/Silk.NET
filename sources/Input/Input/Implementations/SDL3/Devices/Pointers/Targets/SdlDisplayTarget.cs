@@ -6,7 +6,7 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers.Targets;
 
-internal sealed class SdlDisplayTarget : SdlBoundedPointerTarget, ISdlBoundedPointerTarget<SdlDisplayTarget, SilkSdlDisplayHandle>
+internal sealed class SdlDisplayTarget : SdlBoundedPointerTarget
 {
     private SdlDisplayTarget(ISdl backend, SilkSdlDisplayHandle id) : base(backend)
     {
