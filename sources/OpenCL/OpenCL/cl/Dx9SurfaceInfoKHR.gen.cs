@@ -13,7 +13,7 @@ namespace Silk.NET.OpenCL;
 public unsafe partial struct Dx9SurfaceInfoKHR
 {
     [NativeName("resource")]
-    public IDirect3DSurface9Handle Resource;
+    public void* Resource;
 
     [NativeName("shared_handle")]
     public void* SharedHandle;

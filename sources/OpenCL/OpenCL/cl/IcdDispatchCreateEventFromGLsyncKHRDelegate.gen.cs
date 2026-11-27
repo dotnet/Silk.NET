@@ -12,6 +12,6 @@ namespace Silk.NET.OpenCL;
 [NativeName("_cl_icd_dispatch_clCreateEventFromGLsyncKHR")]
 public unsafe delegate EventHandle IcdDispatchCreateEventFromGLsyncKHRDelegate(
     ContextHandle arg0,
-    GLsyncHandle arg1,
+    void* arg1,
     int* arg2
 );

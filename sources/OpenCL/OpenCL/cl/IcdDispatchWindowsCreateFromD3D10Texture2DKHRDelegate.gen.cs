@@ -13,7 +13,7 @@ namespace Silk.NET.OpenCL;
 public unsafe delegate MemHandle IcdDispatchWindowsCreateFromD3D10Texture2DKHRDelegate(
     ContextHandle arg0,
     ulong arg1,
-    Id3D10Texture2DHandle arg2,
+    void* arg2,
     uint arg3,
     int* arg4
 );

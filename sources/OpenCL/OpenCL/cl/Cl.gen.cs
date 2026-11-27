@@ -1465,7 +1465,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [SupportedApiProfile("opencl", ["cl_khr_gl_event"], ImpliesSets = ["cl_khr_gl_sharing"])]
         public static extern EventHandle CreateEventFromGLsyncKHR(
             ContextHandle context,
-            GLsyncHandle sync,
+            void* sync,
             int* errcode_ret
         );
 
@@ -1477,13 +1477,18 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static EventHandle CreateEventFromGLsyncKHR(
             ContextHandle context,
-            GLsyncHandle sync,
+            Ref sync,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_sync = sync)
             {
-                return (EventHandle)CreateEventFromGLsyncKHR(context, sync, __dsl_errcode_ret);
+                return (EventHandle)CreateEventFromGLsyncKHR(
+                    context,
+                    __dsl_sync,
+                    __dsl_errcode_ret
+                );
             }
         }
 
@@ -1493,7 +1498,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern MemHandle CreateFromD3D10BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10BufferHandle resource,
+            void* resource,
             int* errcode_ret
         );
 
@@ -1506,16 +1511,17 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D10BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10BufferHandle resource,
+            Ref resource,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_resource = resource)
             {
                 return (MemHandle)CreateFromD3D10BufferKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     __dsl_errcode_ret
                 );
             }
@@ -1527,7 +1533,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern MemHandle CreateFromD3D10Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture2DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         );
@@ -1541,17 +1547,18 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D10Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture2DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_resource = resource)
             {
                 return (MemHandle)CreateFromD3D10Texture2DKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     subresource,
                     __dsl_errcode_ret
                 );
@@ -1564,7 +1571,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern MemHandle CreateFromD3D10Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture3DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         );
@@ -1578,17 +1585,18 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D10Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture3DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_resource = resource)
             {
                 return (MemHandle)CreateFromD3D10Texture3DKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     subresource,
                     __dsl_errcode_ret
                 );
@@ -1601,7 +1609,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern MemHandle CreateFromD3D11BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11BufferHandle resource,
+            void* resource,
             int* errcode_ret
         );
 
@@ -1614,16 +1622,17 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D11BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11BufferHandle resource,
+            Ref resource,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_resource = resource)
             {
                 return (MemHandle)CreateFromD3D11BufferKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     __dsl_errcode_ret
                 );
             }
@@ -1635,7 +1644,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern MemHandle CreateFromD3D11Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture2DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         );
@@ -1649,17 +1658,18 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D11Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture2DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_resource = resource)
             {
                 return (MemHandle)CreateFromD3D11Texture2DKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     subresource,
                     __dsl_errcode_ret
                 );
@@ -1672,7 +1682,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern MemHandle CreateFromD3D11Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture3DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         );
@@ -1686,17 +1696,18 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D11Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture3DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_resource = resource)
             {
                 return (MemHandle)CreateFromD3D11Texture3DKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     subresource,
                     __dsl_errcode_ret
                 );
@@ -1709,7 +1720,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern MemHandle CreateFromDx9MediaSurfaceINTEL(
             ContextHandle context,
             ulong flags,
-            IDirect3DSurface9Handle resource,
+            void* resource,
             void* sharedHandle,
             uint plane,
             int* errcode_ret
@@ -1724,7 +1735,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromDx9MediaSurfaceINTEL(
             ContextHandle context,
             ulong flags,
-            IDirect3DSurface9Handle resource,
+            Ref resource,
             Ref sharedHandle,
             uint plane,
             Ref<int> errcode_ret
@@ -1732,11 +1743,12 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
             fixed (void* __dsl_sharedHandle = sharedHandle)
+            fixed (void* __dsl_resource = resource)
             {
                 return (MemHandle)CreateFromDx9MediaSurfaceINTEL(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     __dsl_sharedHandle,
                     plane,
                     __dsl_errcode_ret
@@ -9275,7 +9287,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             ulong flags,
             uint image_type,
             uint num_entries,
-            DxgiFormatHandle d3d10_formats,
+            void* d3d10_formats,
             uint* num_texture_formats
         );
 
@@ -9290,18 +9302,19 @@ public unsafe partial class Cl : ICl, ICl.Static
             ulong flags,
             uint image_type,
             uint num_entries,
-            DxgiFormatHandle d3d10_formats,
+            Ref d3d10_formats,
             Ref<uint> num_texture_formats
         )
         {
             fixed (uint* __dsl_num_texture_formats = num_texture_formats)
+            fixed (void* __dsl_d3d10_formats = d3d10_formats)
             {
                 return (int)GetSupportedD3D10TextureFormatsINTEL(
                     context,
                     flags,
                     image_type,
                     num_entries,
-                    d3d10_formats,
+                    __dsl_d3d10_formats,
                     __dsl_num_texture_formats
                 );
             }
@@ -9320,7 +9333,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            DxgiFormatHandle d3d11_formats,
+            void* d3d11_formats,
             uint* num_texture_formats
         );
 
@@ -9336,11 +9349,12 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            DxgiFormatHandle d3d11_formats,
+            Ref d3d11_formats,
             Ref<uint> num_texture_formats
         )
         {
             fixed (uint* __dsl_num_texture_formats = num_texture_formats)
+            fixed (void* __dsl_d3d11_formats = d3d11_formats)
             {
                 return (int)GetSupportedD3D11TextureFormatsINTEL(
                     context,
@@ -9348,7 +9362,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                     image_type,
                     plane,
                     num_entries,
-                    d3d11_formats,
+                    __dsl_d3d11_formats,
                     __dsl_num_texture_formats
                 );
             }
@@ -9367,7 +9381,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            D3DformatHandle dx9_formats,
+            void* dx9_formats,
             uint* num_surface_formats
         );
 
@@ -9383,11 +9397,12 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            D3DformatHandle dx9_formats,
+            Ref dx9_formats,
             Ref<uint> num_surface_formats
         )
         {
             fixed (uint* __dsl_num_surface_formats = num_surface_formats)
+            fixed (void* __dsl_dx9_formats = dx9_formats)
             {
                 return (int)GetSupportedDx9MediaSurfaceFormatsINTEL(
                     context,
@@ -9395,7 +9410,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                     image_type,
                     plane,
                     num_entries,
-                    dx9_formats,
+                    __dsl_dx9_formats,
                     __dsl_num_surface_formats
                 );
             }
@@ -9526,7 +9541,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            VAImageFormatHandle va_api_formats,
+            void* va_api_formats,
             uint* num_surface_formats
         );
 
@@ -9542,11 +9557,12 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            VAImageFormatHandle va_api_formats,
+            Ref va_api_formats,
             Ref<uint> num_surface_formats
         )
         {
             fixed (uint* __dsl_num_surface_formats = num_surface_formats)
+            fixed (void* __dsl_va_api_formats = va_api_formats)
             {
                 return (int)GetSupportedVAApiMediaSurfaceFormatsINTEL(
                     context,
@@ -9554,7 +9570,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                     image_type,
                     plane,
                     num_entries,
-                    va_api_formats,
+                    __dsl_va_api_formats,
                     __dsl_num_surface_formats
                 );
             }
@@ -12907,7 +12923,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public EventHandle CreateEventFromGLsyncKHR(
             ContextHandle context,
-            GLsyncHandle sync,
+            void* sync,
             int* errcode_ret
         ) => T.CreateEventFromGLsyncKHR(context, sync, errcode_ret);
 
@@ -12919,7 +12935,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public EventHandle CreateEventFromGLsyncKHR(
             ContextHandle context,
-            GLsyncHandle sync,
+            Ref sync,
             Ref<int> errcode_ret
         ) => T.CreateEventFromGLsyncKHR(context, sync, errcode_ret);
 
@@ -12932,7 +12948,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public MemHandle CreateFromD3D10BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10BufferHandle resource,
+            void* resource,
             int* errcode_ret
         ) => T.CreateFromD3D10BufferKHR(context, flags, resource, errcode_ret);
 
@@ -12945,7 +12961,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public MemHandle CreateFromD3D10BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10BufferHandle resource,
+            Ref resource,
             Ref<int> errcode_ret
         ) => T.CreateFromD3D10BufferKHR(context, flags, resource, errcode_ret);
 
@@ -12958,7 +12974,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public MemHandle CreateFromD3D10Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture2DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         ) => T.CreateFromD3D10Texture2DKHR(context, flags, resource, subresource, errcode_ret);
@@ -12972,7 +12988,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public MemHandle CreateFromD3D10Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture2DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         ) => T.CreateFromD3D10Texture2DKHR(context, flags, resource, subresource, errcode_ret);
@@ -12986,7 +13002,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public MemHandle CreateFromD3D10Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture3DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         ) => T.CreateFromD3D10Texture3DKHR(context, flags, resource, subresource, errcode_ret);
@@ -13000,7 +13016,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public MemHandle CreateFromD3D10Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture3DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         ) => T.CreateFromD3D10Texture3DKHR(context, flags, resource, subresource, errcode_ret);
@@ -13014,7 +13030,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public MemHandle CreateFromD3D11BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11BufferHandle resource,
+            void* resource,
             int* errcode_ret
         ) => T.CreateFromD3D11BufferKHR(context, flags, resource, errcode_ret);
 
@@ -13027,7 +13043,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public MemHandle CreateFromD3D11BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11BufferHandle resource,
+            Ref resource,
             Ref<int> errcode_ret
         ) => T.CreateFromD3D11BufferKHR(context, flags, resource, errcode_ret);
 
@@ -13040,7 +13056,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public MemHandle CreateFromD3D11Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture2DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         ) => T.CreateFromD3D11Texture2DKHR(context, flags, resource, subresource, errcode_ret);
@@ -13054,7 +13070,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public MemHandle CreateFromD3D11Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture2DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         ) => T.CreateFromD3D11Texture2DKHR(context, flags, resource, subresource, errcode_ret);
@@ -13068,7 +13084,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public MemHandle CreateFromD3D11Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture3DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         ) => T.CreateFromD3D11Texture3DKHR(context, flags, resource, subresource, errcode_ret);
@@ -13082,7 +13098,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public MemHandle CreateFromD3D11Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture3DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         ) => T.CreateFromD3D11Texture3DKHR(context, flags, resource, subresource, errcode_ret);
@@ -13096,7 +13112,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public MemHandle CreateFromDx9MediaSurfaceINTEL(
             ContextHandle context,
             ulong flags,
-            IDirect3DSurface9Handle resource,
+            void* resource,
             void* sharedHandle,
             uint plane,
             int* errcode_ret
@@ -13119,7 +13135,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public MemHandle CreateFromDx9MediaSurfaceINTEL(
             ContextHandle context,
             ulong flags,
-            IDirect3DSurface9Handle resource,
+            Ref resource,
             Ref sharedHandle,
             uint plane,
             Ref<int> errcode_ret
@@ -20831,7 +20847,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             ulong flags,
             uint image_type,
             uint num_entries,
-            DxgiFormatHandle d3d10_formats,
+            void* d3d10_formats,
             uint* num_texture_formats
         ) =>
             T.GetSupportedD3D10TextureFormatsINTEL(
@@ -20854,7 +20870,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             ulong flags,
             uint image_type,
             uint num_entries,
-            DxgiFormatHandle d3d10_formats,
+            Ref d3d10_formats,
             Ref<uint> num_texture_formats
         ) =>
             T.GetSupportedD3D10TextureFormatsINTEL(
@@ -20878,7 +20894,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            DxgiFormatHandle d3d11_formats,
+            void* d3d11_formats,
             uint* num_texture_formats
         ) =>
             T.GetSupportedD3D11TextureFormatsINTEL(
@@ -20903,7 +20919,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            DxgiFormatHandle d3d11_formats,
+            Ref d3d11_formats,
             Ref<uint> num_texture_formats
         ) =>
             T.GetSupportedD3D11TextureFormatsINTEL(
@@ -20928,7 +20944,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            D3DformatHandle dx9_formats,
+            void* dx9_formats,
             uint* num_surface_formats
         ) =>
             T.GetSupportedDx9MediaSurfaceFormatsINTEL(
@@ -20953,7 +20969,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            D3DformatHandle dx9_formats,
+            Ref dx9_formats,
             Ref<uint> num_surface_formats
         ) =>
             T.GetSupportedDx9MediaSurfaceFormatsINTEL(
@@ -21096,7 +21112,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            VAImageFormatHandle va_api_formats,
+            void* va_api_formats,
             uint* num_surface_formats
         ) =>
             T.GetSupportedVAApiMediaSurfaceFormatsINTEL(
@@ -21121,7 +21137,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            VAImageFormatHandle va_api_formats,
+            Ref va_api_formats,
             Ref<uint> num_surface_formats
         ) =>
             T.GetSupportedVAApiMediaSurfaceFormatsINTEL(
@@ -24737,7 +24753,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static EventHandle CreateEventFromGLsyncKHR(
             ContextHandle context,
-            GLsyncHandle sync,
+            void* sync,
             int* errcode_ret
         ) => Underlying.Value!.CreateEventFromGLsyncKHR(context, sync, errcode_ret);
 
@@ -24749,13 +24765,18 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static EventHandle CreateEventFromGLsyncKHR(
             ContextHandle context,
-            GLsyncHandle sync,
+            Ref sync,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_sync = sync)
             {
-                return (EventHandle)CreateEventFromGLsyncKHR(context, sync, __dsl_errcode_ret);
+                return (EventHandle)CreateEventFromGLsyncKHR(
+                    context,
+                    __dsl_sync,
+                    __dsl_errcode_ret
+                );
             }
         }
 
@@ -24768,7 +24789,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D10BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10BufferHandle resource,
+            void* resource,
             int* errcode_ret
         ) => Underlying.Value!.CreateFromD3D10BufferKHR(context, flags, resource, errcode_ret);
 
@@ -24781,16 +24802,17 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D10BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10BufferHandle resource,
+            Ref resource,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_resource = resource)
             {
                 return (MemHandle)CreateFromD3D10BufferKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     __dsl_errcode_ret
                 );
             }
@@ -24805,7 +24827,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D10Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture2DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         ) =>
@@ -24826,17 +24848,18 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D10Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture2DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_resource = resource)
             {
                 return (MemHandle)CreateFromD3D10Texture2DKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     subresource,
                     __dsl_errcode_ret
                 );
@@ -24852,7 +24875,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D10Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture3DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         ) =>
@@ -24873,17 +24896,18 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D10Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture3DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_resource = resource)
             {
                 return (MemHandle)CreateFromD3D10Texture3DKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     subresource,
                     __dsl_errcode_ret
                 );
@@ -24899,7 +24923,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D11BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11BufferHandle resource,
+            void* resource,
             int* errcode_ret
         ) => Underlying.Value!.CreateFromD3D11BufferKHR(context, flags, resource, errcode_ret);
 
@@ -24912,16 +24936,17 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D11BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11BufferHandle resource,
+            Ref resource,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_resource = resource)
             {
                 return (MemHandle)CreateFromD3D11BufferKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     __dsl_errcode_ret
                 );
             }
@@ -24936,7 +24961,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D11Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture2DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         ) =>
@@ -24957,17 +24982,18 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D11Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture2DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_resource = resource)
             {
                 return (MemHandle)CreateFromD3D11Texture2DKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     subresource,
                     __dsl_errcode_ret
                 );
@@ -24983,7 +25009,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D11Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture3DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         ) =>
@@ -25004,17 +25030,18 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromD3D11Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture3DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_resource = resource)
             {
                 return (MemHandle)CreateFromD3D11Texture3DKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     subresource,
                     __dsl_errcode_ret
                 );
@@ -25030,7 +25057,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromDx9MediaSurfaceINTEL(
             ContextHandle context,
             ulong flags,
-            IDirect3DSurface9Handle resource,
+            void* resource,
             void* sharedHandle,
             uint plane,
             int* errcode_ret
@@ -25053,7 +25080,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static MemHandle CreateFromDx9MediaSurfaceINTEL(
             ContextHandle context,
             ulong flags,
-            IDirect3DSurface9Handle resource,
+            Ref resource,
             Ref sharedHandle,
             uint plane,
             Ref<int> errcode_ret
@@ -25061,11 +25088,12 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
             fixed (void* __dsl_sharedHandle = sharedHandle)
+            fixed (void* __dsl_resource = resource)
             {
                 return (MemHandle)CreateFromDx9MediaSurfaceINTEL(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     __dsl_sharedHandle,
                     plane,
                     __dsl_errcode_ret
@@ -34023,7 +34051,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             ulong flags,
             uint image_type,
             uint num_entries,
-            DxgiFormatHandle d3d10_formats,
+            void* d3d10_formats,
             uint* num_texture_formats
         ) =>
             Underlying.Value!.GetSupportedD3D10TextureFormatsINTEL(
@@ -34046,18 +34074,19 @@ public unsafe partial class Cl : ICl, ICl.Static
             ulong flags,
             uint image_type,
             uint num_entries,
-            DxgiFormatHandle d3d10_formats,
+            Ref d3d10_formats,
             Ref<uint> num_texture_formats
         )
         {
             fixed (uint* __dsl_num_texture_formats = num_texture_formats)
+            fixed (void* __dsl_d3d10_formats = d3d10_formats)
             {
                 return (int)GetSupportedD3D10TextureFormatsINTEL(
                     context,
                     flags,
                     image_type,
                     num_entries,
-                    d3d10_formats,
+                    __dsl_d3d10_formats,
                     __dsl_num_texture_formats
                 );
             }
@@ -34075,7 +34104,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            DxgiFormatHandle d3d11_formats,
+            void* d3d11_formats,
             uint* num_texture_formats
         ) =>
             Underlying.Value!.GetSupportedD3D11TextureFormatsINTEL(
@@ -34100,11 +34129,12 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            DxgiFormatHandle d3d11_formats,
+            Ref d3d11_formats,
             Ref<uint> num_texture_formats
         )
         {
             fixed (uint* __dsl_num_texture_formats = num_texture_formats)
+            fixed (void* __dsl_d3d11_formats = d3d11_formats)
             {
                 return (int)GetSupportedD3D11TextureFormatsINTEL(
                     context,
@@ -34112,7 +34142,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                     image_type,
                     plane,
                     num_entries,
-                    d3d11_formats,
+                    __dsl_d3d11_formats,
                     __dsl_num_texture_formats
                 );
             }
@@ -34130,7 +34160,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            D3DformatHandle dx9_formats,
+            void* dx9_formats,
             uint* num_surface_formats
         ) =>
             Underlying.Value!.GetSupportedDx9MediaSurfaceFormatsINTEL(
@@ -34155,11 +34185,12 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            D3DformatHandle dx9_formats,
+            Ref dx9_formats,
             Ref<uint> num_surface_formats
         )
         {
             fixed (uint* __dsl_num_surface_formats = num_surface_formats)
+            fixed (void* __dsl_dx9_formats = dx9_formats)
             {
                 return (int)GetSupportedDx9MediaSurfaceFormatsINTEL(
                     context,
@@ -34167,7 +34198,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                     image_type,
                     plane,
                     num_entries,
-                    dx9_formats,
+                    __dsl_dx9_formats,
                     __dsl_num_surface_formats
                 );
             }
@@ -34315,7 +34346,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            VAImageFormatHandle va_api_formats,
+            void* va_api_formats,
             uint* num_surface_formats
         ) =>
             Underlying.Value!.GetSupportedVAApiMediaSurfaceFormatsINTEL(
@@ -34340,11 +34371,12 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint image_type,
             uint plane,
             uint num_entries,
-            VAImageFormatHandle va_api_formats,
+            Ref va_api_formats,
             Ref<uint> num_surface_formats
         )
         {
             fixed (uint* __dsl_num_surface_formats = num_surface_formats)
+            fixed (void* __dsl_va_api_formats = va_api_formats)
             {
                 return (int)GetSupportedVAApiMediaSurfaceFormatsINTEL(
                     context,
@@ -34352,7 +34384,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                     image_type,
                     plane,
                     num_entries,
-                    va_api_formats,
+                    __dsl_va_api_formats,
                     __dsl_num_surface_formats
                 );
             }
@@ -41643,13 +41675,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_khr_gl_event"], ImpliesSets = ["cl_khr_gl_sharing"])]
     [NativeFunction("opencl", EntryPoint = "clCreateEventFromGLsyncKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    EventHandle ICl.CreateEventFromGLsyncKHR(
-        ContextHandle context,
-        GLsyncHandle sync,
-        int* errcode_ret
-    ) =>
+    EventHandle ICl.CreateEventFromGLsyncKHR(ContextHandle context, void* sync, int* errcode_ret) =>
         (
-            (delegate* unmanaged<ContextHandle, GLsyncHandle, int*, EventHandle>)(
+            (delegate* unmanaged<ContextHandle, void*, int*, EventHandle>)(
                 _slots[26] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[26] = nativeContext.LoadFunction(
@@ -41665,7 +41693,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static EventHandle CreateEventFromGLsyncKHR(
         ContextHandle context,
-        GLsyncHandle sync,
+        void* sync,
         int* errcode_ret
     ) => ThisThread.CreateEventFromGLsyncKHR(context, sync, errcode_ret);
 
@@ -41673,16 +41701,13 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_khr_gl_event"], ImpliesSets = ["cl_khr_gl_sharing"])]
     [NativeFunction("opencl", EntryPoint = "clCreateEventFromGLsyncKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    EventHandle ICl.CreateEventFromGLsyncKHR(
-        ContextHandle context,
-        GLsyncHandle sync,
-        Ref<int> errcode_ret
-    )
+    EventHandle ICl.CreateEventFromGLsyncKHR(ContextHandle context, Ref sync, Ref<int> errcode_ret)
     {
         fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (void* __dsl_sync = sync)
         {
             return (EventHandle)
-                ((ICl)this).CreateEventFromGLsyncKHR(context, sync, __dsl_errcode_ret);
+                ((ICl)this).CreateEventFromGLsyncKHR(context, __dsl_sync, __dsl_errcode_ret);
         }
     }
 
@@ -41692,7 +41717,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static EventHandle CreateEventFromGLsyncKHR(
         ContextHandle context,
-        GLsyncHandle sync,
+        Ref sync,
         Ref<int> errcode_ret
     ) => ThisThread.CreateEventFromGLsyncKHR(context, sync, errcode_ret);
 
@@ -41703,11 +41728,11 @@ public unsafe partial class Cl : ICl, ICl.Static
     MemHandle ICl.CreateFromD3D10BufferKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10BufferHandle resource,
+        void* resource,
         int* errcode_ret
     ) =>
         (
-            (delegate* unmanaged<ContextHandle, ulong, Id3D10BufferHandle, int*, MemHandle>)(
+            (delegate* unmanaged<ContextHandle, ulong, void*, int*, MemHandle>)(
                 _slots[27] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[27] = nativeContext.LoadFunction(
@@ -41724,7 +41749,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static MemHandle CreateFromD3D10BufferKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10BufferHandle resource,
+        void* resource,
         int* errcode_ret
     ) => ThisThread.CreateFromD3D10BufferKHR(context, flags, resource, errcode_ret);
 
@@ -41735,14 +41760,20 @@ public unsafe partial class Cl : ICl, ICl.Static
     MemHandle ICl.CreateFromD3D10BufferKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10BufferHandle resource,
+        Ref resource,
         Ref<int> errcode_ret
     )
     {
         fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (void* __dsl_resource = resource)
         {
             return (MemHandle)
-                ((ICl)this).CreateFromD3D10BufferKHR(context, flags, resource, __dsl_errcode_ret);
+                ((ICl)this).CreateFromD3D10BufferKHR(
+                    context,
+                    flags,
+                    __dsl_resource,
+                    __dsl_errcode_ret
+                );
         }
     }
 
@@ -41753,7 +41784,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static MemHandle CreateFromD3D10BufferKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10BufferHandle resource,
+        Ref resource,
         Ref<int> errcode_ret
     ) => ThisThread.CreateFromD3D10BufferKHR(context, flags, resource, errcode_ret);
 
@@ -41764,18 +41795,12 @@ public unsafe partial class Cl : ICl, ICl.Static
     MemHandle ICl.CreateFromD3D10Texture2DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10Texture2DHandle resource,
+        void* resource,
         uint subresource,
         int* errcode_ret
     ) =>
         (
-            (delegate* unmanaged<
-                ContextHandle,
-                ulong,
-                Id3D10Texture2DHandle,
-                uint,
-                int*,
-                MemHandle>)(
+            (delegate* unmanaged<ContextHandle, ulong, void*, uint, int*, MemHandle>)(
                 _slots[28] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[28] = nativeContext.LoadFunction(
@@ -41792,7 +41817,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static MemHandle CreateFromD3D10Texture2DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10Texture2DHandle resource,
+        void* resource,
         uint subresource,
         int* errcode_ret
     ) => ThisThread.CreateFromD3D10Texture2DKHR(context, flags, resource, subresource, errcode_ret);
@@ -41804,18 +41829,19 @@ public unsafe partial class Cl : ICl, ICl.Static
     MemHandle ICl.CreateFromD3D10Texture2DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10Texture2DHandle resource,
+        Ref resource,
         uint subresource,
         Ref<int> errcode_ret
     )
     {
         fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (void* __dsl_resource = resource)
         {
             return (MemHandle)
                 ((ICl)this).CreateFromD3D10Texture2DKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     subresource,
                     __dsl_errcode_ret
                 );
@@ -41829,7 +41855,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static MemHandle CreateFromD3D10Texture2DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10Texture2DHandle resource,
+        Ref resource,
         uint subresource,
         Ref<int> errcode_ret
     ) => ThisThread.CreateFromD3D10Texture2DKHR(context, flags, resource, subresource, errcode_ret);
@@ -41841,18 +41867,12 @@ public unsafe partial class Cl : ICl, ICl.Static
     MemHandle ICl.CreateFromD3D10Texture3DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10Texture3DHandle resource,
+        void* resource,
         uint subresource,
         int* errcode_ret
     ) =>
         (
-            (delegate* unmanaged<
-                ContextHandle,
-                ulong,
-                Id3D10Texture3DHandle,
-                uint,
-                int*,
-                MemHandle>)(
+            (delegate* unmanaged<ContextHandle, ulong, void*, uint, int*, MemHandle>)(
                 _slots[29] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[29] = nativeContext.LoadFunction(
@@ -41869,7 +41889,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static MemHandle CreateFromD3D10Texture3DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10Texture3DHandle resource,
+        void* resource,
         uint subresource,
         int* errcode_ret
     ) => ThisThread.CreateFromD3D10Texture3DKHR(context, flags, resource, subresource, errcode_ret);
@@ -41881,18 +41901,19 @@ public unsafe partial class Cl : ICl, ICl.Static
     MemHandle ICl.CreateFromD3D10Texture3DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10Texture3DHandle resource,
+        Ref resource,
         uint subresource,
         Ref<int> errcode_ret
     )
     {
         fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (void* __dsl_resource = resource)
         {
             return (MemHandle)
                 ((ICl)this).CreateFromD3D10Texture3DKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     subresource,
                     __dsl_errcode_ret
                 );
@@ -41906,7 +41927,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static MemHandle CreateFromD3D10Texture3DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10Texture3DHandle resource,
+        Ref resource,
         uint subresource,
         Ref<int> errcode_ret
     ) => ThisThread.CreateFromD3D10Texture3DKHR(context, flags, resource, subresource, errcode_ret);
@@ -41918,11 +41939,11 @@ public unsafe partial class Cl : ICl, ICl.Static
     MemHandle ICl.CreateFromD3D11BufferKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11BufferHandle resource,
+        void* resource,
         int* errcode_ret
     ) =>
         (
-            (delegate* unmanaged<ContextHandle, ulong, Id3D11BufferHandle, int*, MemHandle>)(
+            (delegate* unmanaged<ContextHandle, ulong, void*, int*, MemHandle>)(
                 _slots[30] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[30] = nativeContext.LoadFunction(
@@ -41939,7 +41960,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static MemHandle CreateFromD3D11BufferKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11BufferHandle resource,
+        void* resource,
         int* errcode_ret
     ) => ThisThread.CreateFromD3D11BufferKHR(context, flags, resource, errcode_ret);
 
@@ -41950,14 +41971,20 @@ public unsafe partial class Cl : ICl, ICl.Static
     MemHandle ICl.CreateFromD3D11BufferKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11BufferHandle resource,
+        Ref resource,
         Ref<int> errcode_ret
     )
     {
         fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (void* __dsl_resource = resource)
         {
             return (MemHandle)
-                ((ICl)this).CreateFromD3D11BufferKHR(context, flags, resource, __dsl_errcode_ret);
+                ((ICl)this).CreateFromD3D11BufferKHR(
+                    context,
+                    flags,
+                    __dsl_resource,
+                    __dsl_errcode_ret
+                );
         }
     }
 
@@ -41968,7 +41995,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static MemHandle CreateFromD3D11BufferKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11BufferHandle resource,
+        Ref resource,
         Ref<int> errcode_ret
     ) => ThisThread.CreateFromD3D11BufferKHR(context, flags, resource, errcode_ret);
 
@@ -41979,18 +42006,12 @@ public unsafe partial class Cl : ICl, ICl.Static
     MemHandle ICl.CreateFromD3D11Texture2DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11Texture2DHandle resource,
+        void* resource,
         uint subresource,
         int* errcode_ret
     ) =>
         (
-            (delegate* unmanaged<
-                ContextHandle,
-                ulong,
-                Id3D11Texture2DHandle,
-                uint,
-                int*,
-                MemHandle>)(
+            (delegate* unmanaged<ContextHandle, ulong, void*, uint, int*, MemHandle>)(
                 _slots[31] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[31] = nativeContext.LoadFunction(
@@ -42007,7 +42028,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static MemHandle CreateFromD3D11Texture2DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11Texture2DHandle resource,
+        void* resource,
         uint subresource,
         int* errcode_ret
     ) => ThisThread.CreateFromD3D11Texture2DKHR(context, flags, resource, subresource, errcode_ret);
@@ -42019,18 +42040,19 @@ public unsafe partial class Cl : ICl, ICl.Static
     MemHandle ICl.CreateFromD3D11Texture2DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11Texture2DHandle resource,
+        Ref resource,
         uint subresource,
         Ref<int> errcode_ret
     )
     {
         fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (void* __dsl_resource = resource)
         {
             return (MemHandle)
                 ((ICl)this).CreateFromD3D11Texture2DKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     subresource,
                     __dsl_errcode_ret
                 );
@@ -42044,7 +42066,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static MemHandle CreateFromD3D11Texture2DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11Texture2DHandle resource,
+        Ref resource,
         uint subresource,
         Ref<int> errcode_ret
     ) => ThisThread.CreateFromD3D11Texture2DKHR(context, flags, resource, subresource, errcode_ret);
@@ -42056,18 +42078,12 @@ public unsafe partial class Cl : ICl, ICl.Static
     MemHandle ICl.CreateFromD3D11Texture3DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11Texture3DHandle resource,
+        void* resource,
         uint subresource,
         int* errcode_ret
     ) =>
         (
-            (delegate* unmanaged<
-                ContextHandle,
-                ulong,
-                Id3D11Texture3DHandle,
-                uint,
-                int*,
-                MemHandle>)(
+            (delegate* unmanaged<ContextHandle, ulong, void*, uint, int*, MemHandle>)(
                 _slots[32] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[32] = nativeContext.LoadFunction(
@@ -42084,7 +42100,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static MemHandle CreateFromD3D11Texture3DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11Texture3DHandle resource,
+        void* resource,
         uint subresource,
         int* errcode_ret
     ) => ThisThread.CreateFromD3D11Texture3DKHR(context, flags, resource, subresource, errcode_ret);
@@ -42096,18 +42112,19 @@ public unsafe partial class Cl : ICl, ICl.Static
     MemHandle ICl.CreateFromD3D11Texture3DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11Texture3DHandle resource,
+        Ref resource,
         uint subresource,
         Ref<int> errcode_ret
     )
     {
         fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (void* __dsl_resource = resource)
         {
             return (MemHandle)
                 ((ICl)this).CreateFromD3D11Texture3DKHR(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     subresource,
                     __dsl_errcode_ret
                 );
@@ -42121,7 +42138,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static MemHandle CreateFromD3D11Texture3DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11Texture3DHandle resource,
+        Ref resource,
         uint subresource,
         Ref<int> errcode_ret
     ) => ThisThread.CreateFromD3D11Texture3DKHR(context, flags, resource, subresource, errcode_ret);
@@ -42133,20 +42150,13 @@ public unsafe partial class Cl : ICl, ICl.Static
     MemHandle ICl.CreateFromDx9MediaSurfaceINTEL(
         ContextHandle context,
         ulong flags,
-        IDirect3DSurface9Handle resource,
+        void* resource,
         void* sharedHandle,
         uint plane,
         int* errcode_ret
     ) =>
         (
-            (delegate* unmanaged<
-                ContextHandle,
-                ulong,
-                IDirect3DSurface9Handle,
-                void*,
-                uint,
-                int*,
-                MemHandle>)(
+            (delegate* unmanaged<ContextHandle, ulong, void*, void*, uint, int*, MemHandle>)(
                 _slots[33] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[33] = nativeContext.LoadFunction(
@@ -42163,7 +42173,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static MemHandle CreateFromDx9MediaSurfaceINTEL(
         ContextHandle context,
         ulong flags,
-        IDirect3DSurface9Handle resource,
+        void* resource,
         void* sharedHandle,
         uint plane,
         int* errcode_ret
@@ -42184,7 +42194,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     MemHandle ICl.CreateFromDx9MediaSurfaceINTEL(
         ContextHandle context,
         ulong flags,
-        IDirect3DSurface9Handle resource,
+        Ref resource,
         Ref sharedHandle,
         uint plane,
         Ref<int> errcode_ret
@@ -42192,12 +42202,13 @@ public unsafe partial class Cl : ICl, ICl.Static
     {
         fixed (int* __dsl_errcode_ret = errcode_ret)
         fixed (void* __dsl_sharedHandle = sharedHandle)
+        fixed (void* __dsl_resource = resource)
         {
             return (MemHandle)
                 ((ICl)this).CreateFromDx9MediaSurfaceINTEL(
                     context,
                     flags,
-                    resource,
+                    __dsl_resource,
                     __dsl_sharedHandle,
                     plane,
                     __dsl_errcode_ret
@@ -42212,7 +42223,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static MemHandle CreateFromDx9MediaSurfaceINTEL(
         ContextHandle context,
         ulong flags,
-        IDirect3DSurface9Handle resource,
+        Ref resource,
         Ref sharedHandle,
         uint plane,
         Ref<int> errcode_ret
@@ -59096,11 +59107,11 @@ public unsafe partial class Cl : ICl, ICl.Static
         ulong flags,
         uint image_type,
         uint num_entries,
-        DxgiFormatHandle d3d10_formats,
+        void* d3d10_formats,
         uint* num_texture_formats
     ) =>
         (
-            (delegate* unmanaged<ContextHandle, ulong, uint, uint, DxgiFormatHandle, uint*, int>)(
+            (delegate* unmanaged<ContextHandle, ulong, uint, uint, void*, uint*, int>)(
                 _slots[175] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[175] = nativeContext.LoadFunction(
@@ -59119,7 +59130,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         ulong flags,
         uint image_type,
         uint num_entries,
-        DxgiFormatHandle d3d10_formats,
+        void* d3d10_formats,
         uint* num_texture_formats
     ) =>
         ThisThread.GetSupportedD3D10TextureFormatsINTEL(
@@ -59140,11 +59151,12 @@ public unsafe partial class Cl : ICl, ICl.Static
         ulong flags,
         uint image_type,
         uint num_entries,
-        DxgiFormatHandle d3d10_formats,
+        Ref d3d10_formats,
         Ref<uint> num_texture_formats
     )
     {
         fixed (uint* __dsl_num_texture_formats = num_texture_formats)
+        fixed (void* __dsl_d3d10_formats = d3d10_formats)
         {
             return (int)
                 ((ICl)this).GetSupportedD3D10TextureFormatsINTEL(
@@ -59152,7 +59164,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                     flags,
                     image_type,
                     num_entries,
-                    d3d10_formats,
+                    __dsl_d3d10_formats,
                     __dsl_num_texture_formats
                 );
         }
@@ -59167,7 +59179,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         ulong flags,
         uint image_type,
         uint num_entries,
-        DxgiFormatHandle d3d10_formats,
+        Ref d3d10_formats,
         Ref<uint> num_texture_formats
     ) =>
         ThisThread.GetSupportedD3D10TextureFormatsINTEL(
@@ -59189,19 +59201,11 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint image_type,
         uint plane,
         uint num_entries,
-        DxgiFormatHandle d3d11_formats,
+        void* d3d11_formats,
         uint* num_texture_formats
     ) =>
         (
-            (delegate* unmanaged<
-                ContextHandle,
-                ulong,
-                uint,
-                uint,
-                uint,
-                DxgiFormatHandle,
-                uint*,
-                int>)(
+            (delegate* unmanaged<ContextHandle, ulong, uint, uint, uint, void*, uint*, int>)(
                 _slots[176] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[176] = nativeContext.LoadFunction(
@@ -59221,7 +59225,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint image_type,
         uint plane,
         uint num_entries,
-        DxgiFormatHandle d3d11_formats,
+        void* d3d11_formats,
         uint* num_texture_formats
     ) =>
         ThisThread.GetSupportedD3D11TextureFormatsINTEL(
@@ -59244,11 +59248,12 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint image_type,
         uint plane,
         uint num_entries,
-        DxgiFormatHandle d3d11_formats,
+        Ref d3d11_formats,
         Ref<uint> num_texture_formats
     )
     {
         fixed (uint* __dsl_num_texture_formats = num_texture_formats)
+        fixed (void* __dsl_d3d11_formats = d3d11_formats)
         {
             return (int)
                 ((ICl)this).GetSupportedD3D11TextureFormatsINTEL(
@@ -59257,7 +59262,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                     image_type,
                     plane,
                     num_entries,
-                    d3d11_formats,
+                    __dsl_d3d11_formats,
                     __dsl_num_texture_formats
                 );
         }
@@ -59273,7 +59278,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint image_type,
         uint plane,
         uint num_entries,
-        DxgiFormatHandle d3d11_formats,
+        Ref d3d11_formats,
         Ref<uint> num_texture_formats
     ) =>
         ThisThread.GetSupportedD3D11TextureFormatsINTEL(
@@ -59296,19 +59301,11 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint image_type,
         uint plane,
         uint num_entries,
-        D3DformatHandle dx9_formats,
+        void* dx9_formats,
         uint* num_surface_formats
     ) =>
         (
-            (delegate* unmanaged<
-                ContextHandle,
-                ulong,
-                uint,
-                uint,
-                uint,
-                D3DformatHandle,
-                uint*,
-                int>)(
+            (delegate* unmanaged<ContextHandle, ulong, uint, uint, uint, void*, uint*, int>)(
                 _slots[177] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[177] = nativeContext.LoadFunction(
@@ -59328,7 +59325,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint image_type,
         uint plane,
         uint num_entries,
-        D3DformatHandle dx9_formats,
+        void* dx9_formats,
         uint* num_surface_formats
     ) =>
         ThisThread.GetSupportedDx9MediaSurfaceFormatsINTEL(
@@ -59351,11 +59348,12 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint image_type,
         uint plane,
         uint num_entries,
-        D3DformatHandle dx9_formats,
+        Ref dx9_formats,
         Ref<uint> num_surface_formats
     )
     {
         fixed (uint* __dsl_num_surface_formats = num_surface_formats)
+        fixed (void* __dsl_dx9_formats = dx9_formats)
         {
             return (int)
                 ((ICl)this).GetSupportedDx9MediaSurfaceFormatsINTEL(
@@ -59364,7 +59362,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                     image_type,
                     plane,
                     num_entries,
-                    dx9_formats,
+                    __dsl_dx9_formats,
                     __dsl_num_surface_formats
                 );
         }
@@ -59380,7 +59378,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint image_type,
         uint plane,
         uint num_entries,
-        D3DformatHandle dx9_formats,
+        Ref dx9_formats,
         Ref<uint> num_surface_formats
     ) =>
         ThisThread.GetSupportedDx9MediaSurfaceFormatsINTEL(
@@ -59641,19 +59639,11 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint image_type,
         uint plane,
         uint num_entries,
-        VAImageFormatHandle va_api_formats,
+        void* va_api_formats,
         uint* num_surface_formats
     ) =>
         (
-            (delegate* unmanaged<
-                ContextHandle,
-                ulong,
-                uint,
-                uint,
-                uint,
-                VAImageFormatHandle,
-                uint*,
-                int>)(
+            (delegate* unmanaged<ContextHandle, ulong, uint, uint, uint, void*, uint*, int>)(
                 _slots[180] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[180] = nativeContext.LoadFunction(
@@ -59673,7 +59663,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint image_type,
         uint plane,
         uint num_entries,
-        VAImageFormatHandle va_api_formats,
+        void* va_api_formats,
         uint* num_surface_formats
     ) =>
         ThisThread.GetSupportedVAApiMediaSurfaceFormatsINTEL(
@@ -59696,11 +59686,12 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint image_type,
         uint plane,
         uint num_entries,
-        VAImageFormatHandle va_api_formats,
+        Ref va_api_formats,
         Ref<uint> num_surface_formats
     )
     {
         fixed (uint* __dsl_num_surface_formats = num_surface_formats)
+        fixed (void* __dsl_va_api_formats = va_api_formats)
         {
             return (int)
                 ((ICl)this).GetSupportedVAApiMediaSurfaceFormatsINTEL(
@@ -59709,7 +59700,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                     image_type,
                     plane,
                     num_entries,
-                    va_api_formats,
+                    __dsl_va_api_formats,
                     __dsl_num_surface_formats
                 );
         }
@@ -59725,7 +59716,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint image_type,
         uint plane,
         uint num_entries,
-        VAImageFormatHandle va_api_formats,
+        Ref va_api_formats,
         Ref<uint> num_surface_formats
     ) =>
         ThisThread.GetSupportedVAApiMediaSurfaceFormatsINTEL(

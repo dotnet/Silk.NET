@@ -923,7 +923,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clCreateEventFromGLsyncKHR")]
         static abstract EventHandle CreateEventFromGLsyncKHR(
             ContextHandle context,
-            GLsyncHandle sync,
+            void* sync,
             int* errcode_ret
         );
 
@@ -932,7 +932,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clCreateEventFromGLsyncKHR")]
         static abstract EventHandle CreateEventFromGLsyncKHR(
             ContextHandle context,
-            GLsyncHandle sync,
+            Ref sync,
             Ref<int> errcode_ret
         );
 
@@ -942,7 +942,7 @@ public unsafe partial interface ICl
         static abstract MemHandle CreateFromD3D10BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10BufferHandle resource,
+            void* resource,
             int* errcode_ret
         );
 
@@ -952,7 +952,7 @@ public unsafe partial interface ICl
         static abstract MemHandle CreateFromD3D10BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10BufferHandle resource,
+            Ref resource,
             Ref<int> errcode_ret
         );
 
@@ -962,7 +962,7 @@ public unsafe partial interface ICl
         static abstract MemHandle CreateFromD3D10Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture2DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         );
@@ -973,7 +973,7 @@ public unsafe partial interface ICl
         static abstract MemHandle CreateFromD3D10Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture2DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         );
@@ -984,7 +984,7 @@ public unsafe partial interface ICl
         static abstract MemHandle CreateFromD3D10Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture3DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         );
@@ -995,7 +995,7 @@ public unsafe partial interface ICl
         static abstract MemHandle CreateFromD3D10Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D10Texture3DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         );
@@ -1006,7 +1006,7 @@ public unsafe partial interface ICl
         static abstract MemHandle CreateFromD3D11BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11BufferHandle resource,
+            void* resource,
             int* errcode_ret
         );
 
@@ -1016,7 +1016,7 @@ public unsafe partial interface ICl
         static abstract MemHandle CreateFromD3D11BufferKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11BufferHandle resource,
+            Ref resource,
             Ref<int> errcode_ret
         );
 
@@ -1026,7 +1026,7 @@ public unsafe partial interface ICl
         static abstract MemHandle CreateFromD3D11Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture2DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         );
@@ -1037,7 +1037,7 @@ public unsafe partial interface ICl
         static abstract MemHandle CreateFromD3D11Texture2DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture2DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         );
@@ -1048,7 +1048,7 @@ public unsafe partial interface ICl
         static abstract MemHandle CreateFromD3D11Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture3DHandle resource,
+            void* resource,
             uint subresource,
             int* errcode_ret
         );
@@ -1059,7 +1059,7 @@ public unsafe partial interface ICl
         static abstract MemHandle CreateFromD3D11Texture3DKHR(
             ContextHandle context,
             ulong flags,
-            Id3D11Texture3DHandle resource,
+            Ref resource,
             uint subresource,
             Ref<int> errcode_ret
         );
@@ -1070,7 +1070,7 @@ public unsafe partial interface ICl
         static abstract MemHandle CreateFromDx9MediaSurfaceINTEL(
             ContextHandle context,
             ulong flags,
-            IDirect3DSurface9Handle resource,
+            void* resource,
             void* sharedHandle,
             uint plane,
             int* errcode_ret
@@ -1082,7 +1082,7 @@ public unsafe partial interface ICl
         static abstract MemHandle CreateFromDx9MediaSurfaceINTEL(
             ContextHandle context,
             ulong flags,
-            IDirect3DSurface9Handle resource,
+            Ref resource,
             Ref sharedHandle,
             uint plane,
             Ref<int> errcode_ret
@@ -6110,7 +6110,7 @@ public unsafe partial interface ICl
             ulong flags,
             uint image_type,
             uint num_entries,
-            DxgiFormatHandle d3d10_formats,
+            void* d3d10_formats,
             uint* num_texture_formats
         );
 
@@ -6122,7 +6122,7 @@ public unsafe partial interface ICl
             ulong flags,
             uint image_type,
             uint num_entries,
-            DxgiFormatHandle d3d10_formats,
+            Ref d3d10_formats,
             Ref<uint> num_texture_formats
         );
 
@@ -6135,7 +6135,7 @@ public unsafe partial interface ICl
             uint image_type,
             uint plane,
             uint num_entries,
-            DxgiFormatHandle d3d11_formats,
+            void* d3d11_formats,
             uint* num_texture_formats
         );
 
@@ -6148,7 +6148,7 @@ public unsafe partial interface ICl
             uint image_type,
             uint plane,
             uint num_entries,
-            DxgiFormatHandle d3d11_formats,
+            Ref d3d11_formats,
             Ref<uint> num_texture_formats
         );
 
@@ -6161,7 +6161,7 @@ public unsafe partial interface ICl
             uint image_type,
             uint plane,
             uint num_entries,
-            D3DformatHandle dx9_formats,
+            void* dx9_formats,
             uint* num_surface_formats
         );
 
@@ -6174,7 +6174,7 @@ public unsafe partial interface ICl
             uint image_type,
             uint plane,
             uint num_entries,
-            D3DformatHandle dx9_formats,
+            Ref dx9_formats,
             Ref<uint> num_surface_formats
         );
 
@@ -6261,7 +6261,7 @@ public unsafe partial interface ICl
             uint image_type,
             uint plane,
             uint num_entries,
-            VAImageFormatHandle va_api_formats,
+            void* va_api_formats,
             uint* num_surface_formats
         );
 
@@ -6274,7 +6274,7 @@ public unsafe partial interface ICl
             uint image_type,
             uint plane,
             uint num_entries,
-            VAImageFormatHandle va_api_formats,
+            Ref va_api_formats,
             Ref<uint> num_surface_formats
         );
 
@@ -8602,20 +8602,12 @@ public unsafe partial interface ICl
     [NativeName("clCreateEventFromGLsyncKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_gl_event"], ImpliesSets = ["cl_khr_gl_sharing"])]
     [NativeFunction("opencl", EntryPoint = "clCreateEventFromGLsyncKHR")]
-    EventHandle CreateEventFromGLsyncKHR(
-        ContextHandle context,
-        GLsyncHandle sync,
-        int* errcode_ret
-    );
+    EventHandle CreateEventFromGLsyncKHR(ContextHandle context, void* sync, int* errcode_ret);
 
     [NativeName("clCreateEventFromGLsyncKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_gl_event"], ImpliesSets = ["cl_khr_gl_sharing"])]
     [NativeFunction("opencl", EntryPoint = "clCreateEventFromGLsyncKHR")]
-    EventHandle CreateEventFromGLsyncKHR(
-        ContextHandle context,
-        GLsyncHandle sync,
-        Ref<int> errcode_ret
-    );
+    EventHandle CreateEventFromGLsyncKHR(ContextHandle context, Ref sync, Ref<int> errcode_ret);
 
     [NativeName("clCreateFromD3D10BufferKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_d3d10_sharing"])]
@@ -8623,7 +8615,7 @@ public unsafe partial interface ICl
     MemHandle CreateFromD3D10BufferKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10BufferHandle resource,
+        void* resource,
         int* errcode_ret
     );
 
@@ -8633,7 +8625,7 @@ public unsafe partial interface ICl
     MemHandle CreateFromD3D10BufferKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10BufferHandle resource,
+        Ref resource,
         Ref<int> errcode_ret
     );
 
@@ -8643,7 +8635,7 @@ public unsafe partial interface ICl
     MemHandle CreateFromD3D10Texture2DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10Texture2DHandle resource,
+        void* resource,
         uint subresource,
         int* errcode_ret
     );
@@ -8654,7 +8646,7 @@ public unsafe partial interface ICl
     MemHandle CreateFromD3D10Texture2DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10Texture2DHandle resource,
+        Ref resource,
         uint subresource,
         Ref<int> errcode_ret
     );
@@ -8665,7 +8657,7 @@ public unsafe partial interface ICl
     MemHandle CreateFromD3D10Texture3DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10Texture3DHandle resource,
+        void* resource,
         uint subresource,
         int* errcode_ret
     );
@@ -8676,7 +8668,7 @@ public unsafe partial interface ICl
     MemHandle CreateFromD3D10Texture3DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D10Texture3DHandle resource,
+        Ref resource,
         uint subresource,
         Ref<int> errcode_ret
     );
@@ -8687,7 +8679,7 @@ public unsafe partial interface ICl
     MemHandle CreateFromD3D11BufferKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11BufferHandle resource,
+        void* resource,
         int* errcode_ret
     );
 
@@ -8697,7 +8689,7 @@ public unsafe partial interface ICl
     MemHandle CreateFromD3D11BufferKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11BufferHandle resource,
+        Ref resource,
         Ref<int> errcode_ret
     );
 
@@ -8707,7 +8699,7 @@ public unsafe partial interface ICl
     MemHandle CreateFromD3D11Texture2DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11Texture2DHandle resource,
+        void* resource,
         uint subresource,
         int* errcode_ret
     );
@@ -8718,7 +8710,7 @@ public unsafe partial interface ICl
     MemHandle CreateFromD3D11Texture2DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11Texture2DHandle resource,
+        Ref resource,
         uint subresource,
         Ref<int> errcode_ret
     );
@@ -8729,7 +8721,7 @@ public unsafe partial interface ICl
     MemHandle CreateFromD3D11Texture3DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11Texture3DHandle resource,
+        void* resource,
         uint subresource,
         int* errcode_ret
     );
@@ -8740,7 +8732,7 @@ public unsafe partial interface ICl
     MemHandle CreateFromD3D11Texture3DKHR(
         ContextHandle context,
         ulong flags,
-        Id3D11Texture3DHandle resource,
+        Ref resource,
         uint subresource,
         Ref<int> errcode_ret
     );
@@ -8751,7 +8743,7 @@ public unsafe partial interface ICl
     MemHandle CreateFromDx9MediaSurfaceINTEL(
         ContextHandle context,
         ulong flags,
-        IDirect3DSurface9Handle resource,
+        void* resource,
         void* sharedHandle,
         uint plane,
         int* errcode_ret
@@ -8763,7 +8755,7 @@ public unsafe partial interface ICl
     MemHandle CreateFromDx9MediaSurfaceINTEL(
         ContextHandle context,
         ulong flags,
-        IDirect3DSurface9Handle resource,
+        Ref resource,
         Ref sharedHandle,
         uint plane,
         Ref<int> errcode_ret
@@ -13641,7 +13633,7 @@ public unsafe partial interface ICl
         ulong flags,
         uint image_type,
         uint num_entries,
-        DxgiFormatHandle d3d10_formats,
+        void* d3d10_formats,
         uint* num_texture_formats
     );
 
@@ -13653,7 +13645,7 @@ public unsafe partial interface ICl
         ulong flags,
         uint image_type,
         uint num_entries,
-        DxgiFormatHandle d3d10_formats,
+        Ref d3d10_formats,
         Ref<uint> num_texture_formats
     );
 
@@ -13666,7 +13658,7 @@ public unsafe partial interface ICl
         uint image_type,
         uint plane,
         uint num_entries,
-        DxgiFormatHandle d3d11_formats,
+        void* d3d11_formats,
         uint* num_texture_formats
     );
 
@@ -13679,7 +13671,7 @@ public unsafe partial interface ICl
         uint image_type,
         uint plane,
         uint num_entries,
-        DxgiFormatHandle d3d11_formats,
+        Ref d3d11_formats,
         Ref<uint> num_texture_formats
     );
 
@@ -13692,7 +13684,7 @@ public unsafe partial interface ICl
         uint image_type,
         uint plane,
         uint num_entries,
-        D3DformatHandle dx9_formats,
+        void* dx9_formats,
         uint* num_surface_formats
     );
 
@@ -13705,7 +13697,7 @@ public unsafe partial interface ICl
         uint image_type,
         uint plane,
         uint num_entries,
-        D3DformatHandle dx9_formats,
+        Ref dx9_formats,
         Ref<uint> num_surface_formats
     );
 
@@ -13792,7 +13784,7 @@ public unsafe partial interface ICl
         uint image_type,
         uint plane,
         uint num_entries,
-        VAImageFormatHandle va_api_formats,
+        void* va_api_formats,
         uint* num_surface_formats
     );
 
@@ -13805,7 +13797,7 @@ public unsafe partial interface ICl
         uint image_type,
         uint plane,
         uint num_entries,
-        VAImageFormatHandle va_api_formats,
+        Ref va_api_formats,
         Ref<uint> num_surface_formats
     );
 

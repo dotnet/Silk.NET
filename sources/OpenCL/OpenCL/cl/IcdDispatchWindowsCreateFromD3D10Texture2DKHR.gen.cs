@@ -15,23 +15,11 @@ public readonly unsafe struct IcdDispatchWindowsCreateFromD3D10Texture2DKHR : ID
     private readonly void* Pointer;
 
     [UnscopedRef]
-    public ref delegate* unmanaged<
-        ContextHandle,
-        ulong,
-        Id3D10Texture2DHandle,
-        uint,
-        int*,
-        MemHandle> Handle =>
-        ref *(delegate* unmanaged<
-            ContextHandle,
-            ulong,
-            Id3D10Texture2DHandle,
-            uint,
-            int*,
-            MemHandle>*)Pointer;
+    public ref delegate* unmanaged<ContextHandle, ulong, void*, uint, int*, MemHandle> Handle =>
+        ref *(delegate* unmanaged<ContextHandle, ulong, void*, uint, int*, MemHandle>*)Pointer;
 
     public IcdDispatchWindowsCreateFromD3D10Texture2DKHR(
-        delegate* unmanaged<ContextHandle, ulong, Id3D10Texture2DHandle, uint, int*, MemHandle> ptr
+        delegate* unmanaged<ContextHandle, ulong, void*, uint, int*, MemHandle> ptr
     ) => Pointer = ptr;
 
     public IcdDispatchWindowsCreateFromD3D10Texture2DKHR(
@@ -41,16 +29,15 @@ public readonly unsafe struct IcdDispatchWindowsCreateFromD3D10Texture2DKHR : ID
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     public static implicit operator IcdDispatchWindowsCreateFromD3D10Texture2DKHR(
-        delegate* unmanaged<ContextHandle, ulong, Id3D10Texture2DHandle, uint, int*, MemHandle> pfn
+        delegate* unmanaged<ContextHandle, ulong, void*, uint, int*, MemHandle> pfn
     ) => new(pfn);
 
     public static implicit operator delegate* unmanaged<
         ContextHandle,
         ulong,
-        Id3D10Texture2DHandle,
+        void*,
         uint,
         int*,
         MemHandle>(IcdDispatchWindowsCreateFromD3D10Texture2DKHR pfn) =>
-        (delegate* unmanaged<ContextHandle, ulong, Id3D10Texture2DHandle, uint, int*, MemHandle>)
-            pfn.Pointer;
+        (delegate* unmanaged<ContextHandle, ulong, void*, uint, int*, MemHandle>)pfn.Pointer;
 }

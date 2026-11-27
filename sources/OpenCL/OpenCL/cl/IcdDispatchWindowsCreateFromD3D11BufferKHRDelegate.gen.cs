@@ -13,6 +13,6 @@ namespace Silk.NET.OpenCL;
 public unsafe delegate MemHandle IcdDispatchWindowsCreateFromD3D11BufferKHRDelegate(
     ContextHandle arg0,
     ulong arg1,
-    Id3D11BufferHandle arg2,
+    void* arg2,
     int* arg3
 );

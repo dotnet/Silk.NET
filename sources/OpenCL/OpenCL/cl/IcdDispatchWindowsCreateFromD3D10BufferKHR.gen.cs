@@ -15,21 +15,11 @@ public readonly unsafe struct IcdDispatchWindowsCreateFromD3D10BufferKHR : IDisp
     private readonly void* Pointer;
 
     [UnscopedRef]
-    public ref delegate* unmanaged<
-        ContextHandle,
-        ulong,
-        Id3D10BufferHandle,
-        int*,
-        MemHandle> Handle =>
-        ref *(delegate* unmanaged<
-            ContextHandle,
-            ulong,
-            Id3D10BufferHandle,
-            int*,
-            MemHandle>*)Pointer;
+    public ref delegate* unmanaged<ContextHandle, ulong, void*, int*, MemHandle> Handle =>
+        ref *(delegate* unmanaged<ContextHandle, ulong, void*, int*, MemHandle>*)Pointer;
 
     public IcdDispatchWindowsCreateFromD3D10BufferKHR(
-        delegate* unmanaged<ContextHandle, ulong, Id3D10BufferHandle, int*, MemHandle> ptr
+        delegate* unmanaged<ContextHandle, ulong, void*, int*, MemHandle> ptr
     ) => Pointer = ptr;
 
     public IcdDispatchWindowsCreateFromD3D10BufferKHR(
@@ -39,14 +29,14 @@ public readonly unsafe struct IcdDispatchWindowsCreateFromD3D10BufferKHR : IDisp
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     public static implicit operator IcdDispatchWindowsCreateFromD3D10BufferKHR(
-        delegate* unmanaged<ContextHandle, ulong, Id3D10BufferHandle, int*, MemHandle> pfn
+        delegate* unmanaged<ContextHandle, ulong, void*, int*, MemHandle> pfn
     ) => new(pfn);
 
     public static implicit operator delegate* unmanaged<
         ContextHandle,
         ulong,
-        Id3D10BufferHandle,
+        void*,
         int*,
         MemHandle>(IcdDispatchWindowsCreateFromD3D10BufferKHR pfn) =>
-        (delegate* unmanaged<ContextHandle, ulong, Id3D10BufferHandle, int*, MemHandle>)pfn.Pointer;
+        (delegate* unmanaged<ContextHandle, ulong, void*, int*, MemHandle>)pfn.Pointer;
 }

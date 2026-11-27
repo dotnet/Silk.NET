@@ -15,11 +15,11 @@ public readonly unsafe struct IcdDispatchCreateEventFromGLsyncKHR : IDisposable
     private readonly void* Pointer;
 
     [UnscopedRef]
-    public ref delegate* unmanaged<ContextHandle, GLsyncHandle, int*, EventHandle> Handle =>
-        ref *(delegate* unmanaged<ContextHandle, GLsyncHandle, int*, EventHandle>*)Pointer;
+    public ref delegate* unmanaged<ContextHandle, void*, int*, EventHandle> Handle =>
+        ref *(delegate* unmanaged<ContextHandle, void*, int*, EventHandle>*)Pointer;
 
     public IcdDispatchCreateEventFromGLsyncKHR(
-        delegate* unmanaged<ContextHandle, GLsyncHandle, int*, EventHandle> ptr
+        delegate* unmanaged<ContextHandle, void*, int*, EventHandle> ptr
     ) => Pointer = ptr;
 
     public IcdDispatchCreateEventFromGLsyncKHR(IcdDispatchCreateEventFromGLsyncKHRDelegate proc) =>
@@ -28,13 +28,10 @@ public readonly unsafe struct IcdDispatchCreateEventFromGLsyncKHR : IDisposable
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     public static implicit operator IcdDispatchCreateEventFromGLsyncKHR(
-        delegate* unmanaged<ContextHandle, GLsyncHandle, int*, EventHandle> pfn
+        delegate* unmanaged<ContextHandle, void*, int*, EventHandle> pfn
     ) => new(pfn);
 
-    public static implicit operator delegate* unmanaged<
-        ContextHandle,
-        GLsyncHandle,
-        int*,
-        EventHandle>(IcdDispatchCreateEventFromGLsyncKHR pfn) =>
-        (delegate* unmanaged<ContextHandle, GLsyncHandle, int*, EventHandle>)pfn.Pointer;
+    public static implicit operator delegate* unmanaged<ContextHandle, void*, int*, EventHandle>(
+        IcdDispatchCreateEventFromGLsyncKHR pfn
+    ) => (delegate* unmanaged<ContextHandle, void*, int*, EventHandle>)pfn.Pointer;
 }
