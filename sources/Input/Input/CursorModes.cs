@@ -10,12 +10,8 @@ namespace Silk.NET.Input;
 /// <item>
 /// <term>Bounded <see cref="IPointerTarget"/></term>
 /// <description>
-/// An <see cref="IPointerTarget"/> that is bounded to the desktop environment i.e. the
-/// <see cref="IPointerTarget.Bounds"/> are not infinite and reflect the total screen space that is available to the
-/// running application in window coordinates. This is typically the sum of all monitor resolutions, with the positions
-/// being defined using an implementation-defined mechanism. The window bounds operate in this same coordinate space.
-/// It is highly unlikely that you will be unable to determine the individual points for multiple mice on this target,
-/// as desktop environments typically aggregate all movement from all mice into a single <see cref="TargetPoint"/>.
+/// An <see cref="IPointerTarget"/> that is bounded to the window i.e. the
+/// <see cref="IPointerTarget.Bounds"/> are not infinite and reflect the window client area.
 /// This target is used for every cursor mode except <see cref="Unbounded"/>.
 /// </description>
 /// </item>
@@ -36,15 +32,15 @@ public enum CursorModes
 {
     /// <summary>
     /// The cursor is visible to the user and operating within the bounds of the <b>desktop environment</b>. The
-    /// coordinates received are in desktop coordinates, operating in the same coordinate space as the window
-    /// position/size.
+    /// coordinates received are in window space, relative to the window's client area.
+    /// The window's <see cref="IPointerTarget"/> is used.
     /// </summary>
     Normal = 1 << 0,
 
     /// <summary>
     /// The cursor is visible to the user but is constrained to the <b>window's client area</b>. The coordinates
-    /// received are in desktop coordinates, operating in the same coordinate space as the window position/size.
-    /// The <see cref="IPointerTarget"/> bounded to the desktop environment is used.
+    /// received are in window space, relative to the window's client area.
+    /// The window's <see cref="IPointerTarget"/> is used.
     /// </summary>
     Confined = 1 << 1,
 
