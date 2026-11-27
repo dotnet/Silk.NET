@@ -26,11 +26,11 @@ public unsafe partial struct WaylandSurfaceCreateInfoKHR
 
     [NativeName("display")]
     [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    public WlDisplayHandle Display;
+    public void* Display;
 
     [NativeName("surface")]
     [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    public WlSurfaceHandle Surface;
+    public void* Surface;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public WaylandSurfaceCreateInfoKHR() { }

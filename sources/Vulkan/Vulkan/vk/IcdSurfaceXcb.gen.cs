@@ -18,7 +18,7 @@ public unsafe partial struct IcdSurfaceXcb
 
     [NativeName("connection")]
     [SupportedApiProfile("vulkan")]
-    public XcbConnectionTHandle Connection;
+    public void* Connection;
 
     [NativeName("window")]
     [SupportedApiProfile("vulkan")]

@@ -26,7 +26,7 @@ public unsafe partial struct XcbSurfaceCreateInfoKHR
 
     [NativeName("connection")]
     [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    public XcbConnectionTHandle Connection;
+    public void* Connection;
 
     [NativeName("window")]
     [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]

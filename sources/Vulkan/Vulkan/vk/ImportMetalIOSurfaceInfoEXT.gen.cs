@@ -22,7 +22,7 @@ public unsafe partial struct ImportMetalIOSurfaceInfoEXT
 
     [NativeName("ioSurface")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
-    public IOSurfaceHandle IoSurface;
+    public void* IoSurface;
 
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
     public ImportMetalIOSurfaceInfoEXT() { }

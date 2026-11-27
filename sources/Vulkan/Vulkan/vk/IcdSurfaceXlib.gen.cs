@@ -18,7 +18,7 @@ public unsafe partial struct IcdSurfaceXlib
 
     [NativeName("dpy")]
     [SupportedApiProfile("vulkan")]
-    public XDisplayHandle Dpy;
+    public void* Dpy;
 
     [NativeName("window")]
     [SupportedApiProfile("vulkan")]

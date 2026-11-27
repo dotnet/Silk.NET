@@ -43,7 +43,7 @@ public unsafe partial struct ImportScreenBufferInfoQNX
             "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
         ]
     )]
-    public ScreenBufferHandle Buffer;
+    public void* Buffer;
 
     [SupportedApiProfile(
         "vulkan",

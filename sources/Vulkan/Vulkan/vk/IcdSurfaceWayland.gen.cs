@@ -18,9 +18,9 @@ public unsafe partial struct IcdSurfaceWayland
 
     [NativeName("display")]
     [SupportedApiProfile("vulkan")]
-    public WlDisplayHandle Display;
+    public void* Display;
 
     [NativeName("surface")]
     [SupportedApiProfile("vulkan")]
-    public WlSurfaceHandle Surface;
+    public void* Surface;
 }

@@ -26,11 +26,11 @@ public unsafe partial struct Win32SurfaceCreateInfoKHR
 
     [NativeName("hinstance")]
     [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    public HinstanceHandle Hinstance;
+    public void Hinstance;
 
     [NativeName("hwnd")]
     [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    public HwndHandle Hwnd;
+    public void Hwnd;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public Win32SurfaceCreateInfoKHR() { }

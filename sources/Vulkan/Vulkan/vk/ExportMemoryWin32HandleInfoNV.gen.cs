@@ -34,7 +34,7 @@ public unsafe partial struct ExportMemoryWin32HandleInfoNV
         ["VK_NV_external_memory_win32"],
         ImpliesSets = ["VK_NV_external_memory"]
     )]
-    public SecurityAttributesHandle PAttributes;
+    public void PAttributes;
 
     [NativeName("dwAccess")]
     [SupportedApiProfile(

@@ -18,5 +18,5 @@ public unsafe partial struct IcdSurfaceAndroid
 
     [NativeName("window")]
     [SupportedApiProfile("vulkan")]
-    public ANativeWindowHandle Window;
+    public void* Window;
 }

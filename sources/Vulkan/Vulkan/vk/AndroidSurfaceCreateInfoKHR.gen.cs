@@ -26,7 +26,7 @@ public unsafe partial struct AndroidSurfaceCreateInfoKHR
 
     [NativeName("window")]
     [SupportedApiProfile("vulkan", ["VK_KHR_android_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    public ANativeWindowHandle Window;
+    public void* Window;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_android_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public AndroidSurfaceCreateInfoKHR() { }

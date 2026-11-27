@@ -26,7 +26,7 @@ public unsafe partial struct XlibSurfaceCreateInfoKHR
 
     [NativeName("dpy")]
     [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    public XDisplayHandle Dpy;
+    public void* Dpy;
 
     [NativeName("window")]
     [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]

@@ -46,7 +46,7 @@ public unsafe partial struct SurfaceFullScreenExclusiveWin32InfoEXT
         ],
         RequireAll = true
     )]
-    public HmonitorHandle Hmonitor;
+    public void Hmonitor;
 
     [SupportedApiProfile(
         "vulkan",

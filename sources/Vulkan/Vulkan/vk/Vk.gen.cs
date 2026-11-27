@@ -331,9 +331,31 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static extern Result AcquireXlibDisplayEXT(
             PhysicalDeviceHandle physicalDevice,
-            XDisplayHandle dpy,
+            void* dpy,
             DisplayHandleKHR display
         );
+
+        [NativeName("vkAcquireXlibDisplayEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_acquire_xlib_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkAcquireXlibDisplayEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result AcquireXlibDisplayEXT(
+            PhysicalDeviceHandle physicalDevice,
+            Ref dpy,
+            DisplayHandleKHR display
+        )
+        {
+            fixed (void* __dsl_dpy = dpy)
+            {
+                return (Result)AcquireXlibDisplayEXT(physicalDevice, __dsl_dpy, display);
+            }
+        }
 
         [NativeName("vkAllocateCommandBuffers")]
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkAllocateCommandBuffers")]
@@ -23094,7 +23116,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static extern Result GetAndroidHardwareBufferPropertiesANDROID(
             DeviceHandle device,
-            AHardwareBufferHandle buffer,
+            void* buffer,
             AndroidHardwareBufferPropertiesANDROID* pProperties
         );
 
@@ -23113,15 +23135,16 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result GetAndroidHardwareBufferPropertiesANDROID(
             DeviceHandle device,
-            AHardwareBufferHandle buffer,
+            Ref buffer,
             Ref<AndroidHardwareBufferPropertiesANDROID> pProperties
         )
         {
             fixed (AndroidHardwareBufferPropertiesANDROID* __dsl_pProperties = pProperties)
+            fixed (void* __dsl_buffer = buffer)
             {
                 return (Result)GetAndroidHardwareBufferPropertiesANDROID(
                     device,
-                    buffer,
+                    __dsl_buffer,
                     __dsl_pProperties
                 );
             }
@@ -27567,7 +27590,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         public static extern Result GetMemoryAndroidHardwareBufferANDROID(
             DeviceHandle device,
             MemoryGetAndroidHardwareBufferInfoANDROID* pInfo,
-            AHardwareBufferHandle* pBuffer
+            void** pBuffer
         );
 
         [NativeName("vkGetMemoryAndroidHardwareBufferANDROID")]
@@ -27586,10 +27609,10 @@ public unsafe partial class Vk : IVk, IVk.Static
         public static Result GetMemoryAndroidHardwareBufferANDROID(
             DeviceHandle device,
             Ref<MemoryGetAndroidHardwareBufferInfoANDROID> pInfo,
-            Ref<AHardwareBufferHandle> pBuffer
+            Ref2D pBuffer
         )
         {
-            fixed (AHardwareBufferHandle* __dsl_pBuffer = pBuffer)
+            fixed (void** __dsl_pBuffer = pBuffer)
             fixed (MemoryGetAndroidHardwareBufferInfoANDROID* __dsl_pInfo = pInfo)
             {
                 return (Result)GetMemoryAndroidHardwareBufferANDROID(
@@ -27861,7 +27884,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         public static extern Result GetMemoryNativeBufferOHOS(
             DeviceHandle device,
             MemoryGetNativeBufferInfoOHOS* pInfo,
-            OHNativeBufferHandle* pBuffer
+            void** pBuffer
         );
 
         [NativeName("vkGetMemoryNativeBufferOHOS")]
@@ -27880,10 +27903,10 @@ public unsafe partial class Vk : IVk, IVk.Static
         public static Result GetMemoryNativeBufferOHOS(
             DeviceHandle device,
             Ref<MemoryGetNativeBufferInfoOHOS> pInfo,
-            Ref<OHNativeBufferHandle> pBuffer
+            Ref2D pBuffer
         )
         {
-            fixed (OHNativeBufferHandle* __dsl_pBuffer = pBuffer)
+            fixed (void** __dsl_pBuffer = pBuffer)
             fixed (MemoryGetNativeBufferInfoOHOS* __dsl_pInfo = pInfo)
             {
                 return (Result)GetMemoryNativeBufferOHOS(device, __dsl_pInfo, __dsl_pBuffer);
@@ -28237,7 +28260,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static extern Result GetNativeBufferPropertiesOHOS(
             DeviceHandle device,
-            OHNativeBufferHandle buffer,
+            void* buffer,
             NativeBufferPropertiesOHOS* pProperties
         );
 
@@ -28256,13 +28279,18 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result GetNativeBufferPropertiesOHOS(
             DeviceHandle device,
-            OHNativeBufferHandle buffer,
+            Ref buffer,
             Ref<NativeBufferPropertiesOHOS> pProperties
         )
         {
             fixed (NativeBufferPropertiesOHOS* __dsl_pProperties = pProperties)
+            fixed (void* __dsl_buffer = buffer)
             {
-                return (Result)GetNativeBufferPropertiesOHOS(device, buffer, __dsl_pProperties);
+                return (Result)GetNativeBufferPropertiesOHOS(
+                    device,
+                    __dsl_buffer,
+                    __dsl_pProperties
+                );
             }
         }
 
@@ -31058,32 +31086,40 @@ public unsafe partial class Vk : IVk, IVk.Static
         }
 
         [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
-        [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
-        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
-        public static MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
-            PhysicalDeviceHandle physicalDevice,
-            uint queueFamilyIndex,
-            ScreenWindowHandle window
-        ) =>
-            (MaybeBool<uint>)
-                (uint)GetPhysicalDeviceScreenPresentationSupportRawQNX(
-                    physicalDevice,
-                    queueFamilyIndex,
-                    window
-                );
-
-        [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
         [DllImport(
             "vulkan",
             ExactSpelling = true,
             EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX"
         )]
         [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
-        public static extern uint GetPhysicalDeviceScreenPresentationSupportRawQNX(
+        public static extern uint GetPhysicalDeviceScreenPresentationSupportQNX(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            ScreenWindowHandle window
+            void* window
         );
+
+        [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+        [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex,
+            Ref window
+        )
+        {
+            fixed (void* __dsl_window = window)
+            {
+                return (MaybeBool<uint>)
+                    (uint)GetPhysicalDeviceScreenPresentationSupportQNX(
+                        physicalDevice,
+                        queueFamilyIndex,
+                        __dsl_window
+                    );
+            }
+        }
 
         [NativeName("vkGetPhysicalDeviceSparseImageFormatProperties")]
         [DllImport(
@@ -31954,25 +31990,6 @@ public unsafe partial class Vk : IVk, IVk.Static
         }
 
         [NativeName("vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
-        [SupportedApiProfile(
-            "vulkan",
-            ["VK_KHR_wayland_surface"],
-            ImpliesSets = ["VK_KHR_surface"]
-        )]
-        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
-        public static MaybeBool<uint> GetPhysicalDeviceWaylandPresentationSupportKHR(
-            PhysicalDeviceHandle physicalDevice,
-            uint queueFamilyIndex,
-            WlDisplayHandle display
-        ) =>
-            (MaybeBool<uint>)
-                (uint)GetPhysicalDeviceWaylandPresentationSupportRawKHR(
-                    physicalDevice,
-                    queueFamilyIndex,
-                    display
-                );
-
-        [NativeName("vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
         [DllImport(
             "vulkan",
             ExactSpelling = true,
@@ -31983,11 +32000,38 @@ public unsafe partial class Vk : IVk, IVk.Static
             ["VK_KHR_wayland_surface"],
             ImpliesSets = ["VK_KHR_surface"]
         )]
-        public static extern uint GetPhysicalDeviceWaylandPresentationSupportRawKHR(
+        public static extern uint GetPhysicalDeviceWaylandPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            WlDisplayHandle display
+            void* display
         );
+
+        [NativeName("vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_wayland_surface"],
+            ImpliesSets = ["VK_KHR_surface"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<uint> GetPhysicalDeviceWaylandPresentationSupportKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex,
+            Ref display
+        )
+        {
+            fixed (void* __dsl_display = display)
+            {
+                return (MaybeBool<uint>)
+                    (uint)GetPhysicalDeviceWaylandPresentationSupportKHR(
+                        physicalDevice,
+                        queueFamilyIndex,
+                        __dsl_display
+                    );
+            }
+        }
 
         [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
@@ -32015,52 +32059,43 @@ public unsafe partial class Vk : IVk, IVk.Static
         );
 
         [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
-        [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
-        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
-        public static MaybeBool<uint> GetPhysicalDeviceXcbPresentationSupportKHR(
-            PhysicalDeviceHandle physicalDevice,
-            uint queueFamilyIndex,
-            XcbConnectionTHandle connection,
-            uint visual_id
-        ) =>
-            (MaybeBool<uint>)
-                (uint)GetPhysicalDeviceXcbPresentationSupportRawKHR(
-                    physicalDevice,
-                    queueFamilyIndex,
-                    connection,
-                    visual_id
-                );
-
-        [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
         [DllImport(
             "vulkan",
             ExactSpelling = true,
             EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR"
         )]
         [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
-        public static extern uint GetPhysicalDeviceXcbPresentationSupportRawKHR(
+        public static extern uint GetPhysicalDeviceXcbPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            XcbConnectionTHandle connection,
+            void* connection,
             uint visual_id
         );
 
-        [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
-        [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
-        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
-        public static MaybeBool<uint> GetPhysicalDeviceXlibPresentationSupportKHR(
+        [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<uint> GetPhysicalDeviceXcbPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            XDisplayHandle dpy,
-            nuint visualID
-        ) =>
-            (MaybeBool<uint>)
-                (uint)GetPhysicalDeviceXlibPresentationSupportRawKHR(
-                    physicalDevice,
-                    queueFamilyIndex,
-                    dpy,
-                    visualID
-                );
+            Ref connection,
+            uint visual_id
+        )
+        {
+            fixed (void* __dsl_connection = connection)
+            {
+                return (MaybeBool<uint>)
+                    (uint)GetPhysicalDeviceXcbPresentationSupportKHR(
+                        physicalDevice,
+                        queueFamilyIndex,
+                        __dsl_connection,
+                        visual_id
+                    );
+            }
+        }
 
         [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
         [DllImport(
@@ -32069,12 +32104,37 @@ public unsafe partial class Vk : IVk, IVk.Static
             EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR"
         )]
         [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
-        public static extern uint GetPhysicalDeviceXlibPresentationSupportRawKHR(
+        public static extern uint GetPhysicalDeviceXlibPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            XDisplayHandle dpy,
+            void* dpy,
             nuint visualID
         );
+
+        [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<uint> GetPhysicalDeviceXlibPresentationSupportKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex,
+            Ref dpy,
+            nuint visualID
+        )
+        {
+            fixed (void* __dsl_dpy = dpy)
+            {
+                return (MaybeBool<uint>)
+                    (uint)GetPhysicalDeviceXlibPresentationSupportKHR(
+                        physicalDevice,
+                        queueFamilyIndex,
+                        __dsl_dpy,
+                        visualID
+                    );
+            }
+        }
 
         [NativeName("vkGetPipelineBinaryDataKHR")]
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetPipelineBinaryDataKHR")]
@@ -32844,7 +32904,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static extern Result GetRandROutputDisplayEXT(
             PhysicalDeviceHandle physicalDevice,
-            XDisplayHandle dpy,
+            void* dpy,
             nuint rrOutput,
             DisplayHandleKHR* pDisplay
         );
@@ -32861,16 +32921,17 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result GetRandROutputDisplayEXT(
             PhysicalDeviceHandle physicalDevice,
-            XDisplayHandle dpy,
+            Ref dpy,
             nuint rrOutput,
             Ref<DisplayHandleKHR> pDisplay
         )
         {
             fixed (DisplayHandleKHR* __dsl_pDisplay = pDisplay)
+            fixed (void* __dsl_dpy = dpy)
             {
                 return (Result)GetRandROutputDisplayEXT(
                     physicalDevice,
-                    dpy,
+                    __dsl_dpy,
                     rrOutput,
                     __dsl_pDisplay
                 );
@@ -33313,7 +33374,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static extern Result GetScreenBufferPropertiesQNX(
             DeviceHandle device,
-            ScreenBufferHandle buffer,
+            void* buffer,
             ScreenBufferPropertiesQNX* pProperties
         );
 
@@ -33332,13 +33393,18 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result GetScreenBufferPropertiesQNX(
             DeviceHandle device,
-            ScreenBufferHandle buffer,
+            Ref buffer,
             Ref<ScreenBufferPropertiesQNX> pProperties
         )
         {
             fixed (ScreenBufferPropertiesQNX* __dsl_pProperties = pProperties)
+            fixed (void* __dsl_buffer = buffer)
             {
-                return (Result)GetScreenBufferPropertiesQNX(device, buffer, __dsl_pProperties);
+                return (Result)GetScreenBufferPropertiesQNX(
+                    device,
+                    __dsl_buffer,
+                    __dsl_pProperties
+                );
             }
         }
 
@@ -37998,7 +38064,23 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public Result AcquireXlibDisplayEXT(
             PhysicalDeviceHandle physicalDevice,
-            XDisplayHandle dpy,
+            void* dpy,
+            DisplayHandleKHR display
+        ) => T.AcquireXlibDisplayEXT(physicalDevice, dpy, display);
+
+        [NativeName("vkAcquireXlibDisplayEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_acquire_xlib_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkAcquireXlibDisplayEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Result AcquireXlibDisplayEXT(
+            PhysicalDeviceHandle physicalDevice,
+            Ref dpy,
             DisplayHandleKHR display
         ) => T.AcquireXlibDisplayEXT(physicalDevice, dpy, display);
 
@@ -59675,7 +59757,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public Result GetAndroidHardwareBufferPropertiesANDROID(
             DeviceHandle device,
-            AHardwareBufferHandle buffer,
+            void* buffer,
             AndroidHardwareBufferPropertiesANDROID* pProperties
         ) => T.GetAndroidHardwareBufferPropertiesANDROID(device, buffer, pProperties);
 
@@ -59694,7 +59776,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public Result GetAndroidHardwareBufferPropertiesANDROID(
             DeviceHandle device,
-            AHardwareBufferHandle buffer,
+            Ref buffer,
             Ref<AndroidHardwareBufferPropertiesANDROID> pProperties
         ) => T.GetAndroidHardwareBufferPropertiesANDROID(device, buffer, pProperties);
 
@@ -63616,7 +63698,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         public Result GetMemoryAndroidHardwareBufferANDROID(
             DeviceHandle device,
             MemoryGetAndroidHardwareBufferInfoANDROID* pInfo,
-            AHardwareBufferHandle* pBuffer
+            void** pBuffer
         ) => T.GetMemoryAndroidHardwareBufferANDROID(device, pInfo, pBuffer);
 
         [NativeName("vkGetMemoryAndroidHardwareBufferANDROID")]
@@ -63635,7 +63717,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         public Result GetMemoryAndroidHardwareBufferANDROID(
             DeviceHandle device,
             Ref<MemoryGetAndroidHardwareBufferInfoANDROID> pInfo,
-            Ref<AHardwareBufferHandle> pBuffer
+            Ref2D pBuffer
         ) => T.GetMemoryAndroidHardwareBufferANDROID(device, pInfo, pBuffer);
 
         [NativeName("vkGetMemoryFdKHR")]
@@ -63874,7 +63956,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         public Result GetMemoryNativeBufferOHOS(
             DeviceHandle device,
             MemoryGetNativeBufferInfoOHOS* pInfo,
-            OHNativeBufferHandle* pBuffer
+            void** pBuffer
         ) => T.GetMemoryNativeBufferOHOS(device, pInfo, pBuffer);
 
         [NativeName("vkGetMemoryNativeBufferOHOS")]
@@ -63893,7 +63975,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         public Result GetMemoryNativeBufferOHOS(
             DeviceHandle device,
             Ref<MemoryGetNativeBufferInfoOHOS> pInfo,
-            Ref<OHNativeBufferHandle> pBuffer
+            Ref2D pBuffer
         ) => T.GetMemoryNativeBufferOHOS(device, pInfo, pBuffer);
 
         [NativeName("vkGetMemoryRemoteAddressNV")]
@@ -64203,7 +64285,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public Result GetNativeBufferPropertiesOHOS(
             DeviceHandle device,
-            OHNativeBufferHandle buffer,
+            void* buffer,
             NativeBufferPropertiesOHOS* pProperties
         ) => T.GetNativeBufferPropertiesOHOS(device, buffer, pProperties);
 
@@ -64222,7 +64304,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public Result GetNativeBufferPropertiesOHOS(
             DeviceHandle device,
-            OHNativeBufferHandle buffer,
+            Ref buffer,
             Ref<NativeBufferPropertiesOHOS> pProperties
         ) => T.GetNativeBufferPropertiesOHOS(device, buffer, pProperties);
 
@@ -66807,10 +66889,10 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
+        public uint GetPhysicalDeviceScreenPresentationSupportQNX(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            ScreenWindowHandle window
+            void* window
         ) =>
             T.GetPhysicalDeviceScreenPresentationSupportQNX(
                 physicalDevice,
@@ -66824,12 +66906,12 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public uint GetPhysicalDeviceScreenPresentationSupportRawQNX(
+        public MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            ScreenWindowHandle window
+            Ref window
         ) =>
-            T.GetPhysicalDeviceScreenPresentationSupportRawQNX(
+            T.GetPhysicalDeviceScreenPresentationSupportQNX(
                 physicalDevice,
                 queueFamilyIndex,
                 window
@@ -67663,10 +67745,10 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public MaybeBool<uint> GetPhysicalDeviceWaylandPresentationSupportKHR(
+        public uint GetPhysicalDeviceWaylandPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            WlDisplayHandle display
+            void* display
         ) =>
             T.GetPhysicalDeviceWaylandPresentationSupportKHR(
                 physicalDevice,
@@ -67684,12 +67766,12 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public uint GetPhysicalDeviceWaylandPresentationSupportRawKHR(
+        public MaybeBool<uint> GetPhysicalDeviceWaylandPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            WlDisplayHandle display
+            Ref display
         ) =>
-            T.GetPhysicalDeviceWaylandPresentationSupportRawKHR(
+            T.GetPhysicalDeviceWaylandPresentationSupportKHR(
                 physicalDevice,
                 queueFamilyIndex,
                 display
@@ -67723,10 +67805,10 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public MaybeBool<uint> GetPhysicalDeviceXcbPresentationSupportKHR(
+        public uint GetPhysicalDeviceXcbPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            XcbConnectionTHandle connection,
+            void* connection,
             uint visual_id
         ) =>
             T.GetPhysicalDeviceXcbPresentationSupportKHR(
@@ -67742,13 +67824,13 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public uint GetPhysicalDeviceXcbPresentationSupportRawKHR(
+        public MaybeBool<uint> GetPhysicalDeviceXcbPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            XcbConnectionTHandle connection,
+            Ref connection,
             uint visual_id
         ) =>
-            T.GetPhysicalDeviceXcbPresentationSupportRawKHR(
+            T.GetPhysicalDeviceXcbPresentationSupportKHR(
                 physicalDevice,
                 queueFamilyIndex,
                 connection,
@@ -67761,10 +67843,10 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public MaybeBool<uint> GetPhysicalDeviceXlibPresentationSupportKHR(
+        public uint GetPhysicalDeviceXlibPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            XDisplayHandle dpy,
+            void* dpy,
             nuint visualID
         ) =>
             T.GetPhysicalDeviceXlibPresentationSupportKHR(
@@ -67780,13 +67862,13 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public uint GetPhysicalDeviceXlibPresentationSupportRawKHR(
+        public MaybeBool<uint> GetPhysicalDeviceXlibPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            XDisplayHandle dpy,
+            Ref dpy,
             nuint visualID
         ) =>
-            T.GetPhysicalDeviceXlibPresentationSupportRawKHR(
+            T.GetPhysicalDeviceXlibPresentationSupportKHR(
                 physicalDevice,
                 queueFamilyIndex,
                 dpy,
@@ -68507,7 +68589,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public Result GetRandROutputDisplayEXT(
             PhysicalDeviceHandle physicalDevice,
-            XDisplayHandle dpy,
+            void* dpy,
             nuint rrOutput,
             DisplayHandleKHR* pDisplay
         ) => T.GetRandROutputDisplayEXT(physicalDevice, dpy, rrOutput, pDisplay);
@@ -68524,7 +68606,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public Result GetRandROutputDisplayEXT(
             PhysicalDeviceHandle physicalDevice,
-            XDisplayHandle dpy,
+            Ref dpy,
             nuint rrOutput,
             Ref<DisplayHandleKHR> pDisplay
         ) => T.GetRandROutputDisplayEXT(physicalDevice, dpy, rrOutput, pDisplay);
@@ -68936,7 +69018,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public Result GetScreenBufferPropertiesQNX(
             DeviceHandle device,
-            ScreenBufferHandle buffer,
+            void* buffer,
             ScreenBufferPropertiesQNX* pProperties
         ) => T.GetScreenBufferPropertiesQNX(device, buffer, pProperties);
 
@@ -68955,7 +69037,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public Result GetScreenBufferPropertiesQNX(
             DeviceHandle device,
-            ScreenBufferHandle buffer,
+            Ref buffer,
             Ref<ScreenBufferPropertiesQNX> pProperties
         ) => T.GetScreenBufferPropertiesQNX(device, buffer, pProperties);
 
@@ -73335,9 +73417,31 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result AcquireXlibDisplayEXT(
             PhysicalDeviceHandle physicalDevice,
-            XDisplayHandle dpy,
+            void* dpy,
             DisplayHandleKHR display
         ) => Underlying.Value!.AcquireXlibDisplayEXT(physicalDevice, dpy, display);
+
+        [NativeName("vkAcquireXlibDisplayEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_acquire_xlib_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkAcquireXlibDisplayEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Result AcquireXlibDisplayEXT(
+            PhysicalDeviceHandle physicalDevice,
+            Ref dpy,
+            DisplayHandleKHR display
+        )
+        {
+            fixed (void* __dsl_dpy = dpy)
+            {
+                return (Result)AcquireXlibDisplayEXT(physicalDevice, __dsl_dpy, display);
+            }
+        }
 
         [NativeName("vkAllocateCommandBuffers")]
         [SupportedApiProfile(
@@ -98519,7 +98623,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result GetAndroidHardwareBufferPropertiesANDROID(
             DeviceHandle device,
-            AHardwareBufferHandle buffer,
+            void* buffer,
             AndroidHardwareBufferPropertiesANDROID* pProperties
         ) =>
             Underlying.Value!.GetAndroidHardwareBufferPropertiesANDROID(
@@ -98543,15 +98647,16 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result GetAndroidHardwareBufferPropertiesANDROID(
             DeviceHandle device,
-            AHardwareBufferHandle buffer,
+            Ref buffer,
             Ref<AndroidHardwareBufferPropertiesANDROID> pProperties
         )
         {
             fixed (AndroidHardwareBufferPropertiesANDROID* __dsl_pProperties = pProperties)
+            fixed (void* __dsl_buffer = buffer)
             {
                 return (Result)GetAndroidHardwareBufferPropertiesANDROID(
                     device,
-                    buffer,
+                    __dsl_buffer,
                     __dsl_pProperties
                 );
             }
@@ -103286,7 +103391,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         public static Result GetMemoryAndroidHardwareBufferANDROID(
             DeviceHandle device,
             MemoryGetAndroidHardwareBufferInfoANDROID* pInfo,
-            AHardwareBufferHandle* pBuffer
+            void** pBuffer
         ) => Underlying.Value!.GetMemoryAndroidHardwareBufferANDROID(device, pInfo, pBuffer);
 
         [NativeName("vkGetMemoryAndroidHardwareBufferANDROID")]
@@ -103305,10 +103410,10 @@ public unsafe partial class Vk : IVk, IVk.Static
         public static Result GetMemoryAndroidHardwareBufferANDROID(
             DeviceHandle device,
             Ref<MemoryGetAndroidHardwareBufferInfoANDROID> pInfo,
-            Ref<AHardwareBufferHandle> pBuffer
+            Ref2D pBuffer
         )
         {
-            fixed (AHardwareBufferHandle* __dsl_pBuffer = pBuffer)
+            fixed (void** __dsl_pBuffer = pBuffer)
             fixed (MemoryGetAndroidHardwareBufferInfoANDROID* __dsl_pInfo = pInfo)
             {
                 return (Result)GetMemoryAndroidHardwareBufferANDROID(
@@ -103603,7 +103708,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         public static Result GetMemoryNativeBufferOHOS(
             DeviceHandle device,
             MemoryGetNativeBufferInfoOHOS* pInfo,
-            OHNativeBufferHandle* pBuffer
+            void** pBuffer
         ) => Underlying.Value!.GetMemoryNativeBufferOHOS(device, pInfo, pBuffer);
 
         [NativeName("vkGetMemoryNativeBufferOHOS")]
@@ -103622,10 +103727,10 @@ public unsafe partial class Vk : IVk, IVk.Static
         public static Result GetMemoryNativeBufferOHOS(
             DeviceHandle device,
             Ref<MemoryGetNativeBufferInfoOHOS> pInfo,
-            Ref<OHNativeBufferHandle> pBuffer
+            Ref2D pBuffer
         )
         {
-            fixed (OHNativeBufferHandle* __dsl_pBuffer = pBuffer)
+            fixed (void** __dsl_pBuffer = pBuffer)
             fixed (MemoryGetNativeBufferInfoOHOS* __dsl_pInfo = pInfo)
             {
                 return (Result)GetMemoryNativeBufferOHOS(device, __dsl_pInfo, __dsl_pBuffer);
@@ -104017,7 +104122,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result GetNativeBufferPropertiesOHOS(
             DeviceHandle device,
-            OHNativeBufferHandle buffer,
+            void* buffer,
             NativeBufferPropertiesOHOS* pProperties
         ) => Underlying.Value!.GetNativeBufferPropertiesOHOS(device, buffer, pProperties);
 
@@ -104036,13 +104141,18 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result GetNativeBufferPropertiesOHOS(
             DeviceHandle device,
-            OHNativeBufferHandle buffer,
+            Ref buffer,
             Ref<NativeBufferPropertiesOHOS> pProperties
         )
         {
             fixed (NativeBufferPropertiesOHOS* __dsl_pProperties = pProperties)
+            fixed (void* __dsl_buffer = buffer)
             {
-                return (Result)GetNativeBufferPropertiesOHOS(device, buffer, __dsl_pProperties);
+                return (Result)GetNativeBufferPropertiesOHOS(
+                    device,
+                    __dsl_buffer,
+                    __dsl_pProperties
+                );
             }
         }
 
@@ -107062,10 +107172,10 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
+        public static uint GetPhysicalDeviceScreenPresentationSupportQNX(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            ScreenWindowHandle window
+            void* window
         ) =>
             Underlying.Value!.GetPhysicalDeviceScreenPresentationSupportQNX(
                 physicalDevice,
@@ -107079,16 +107189,22 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static uint GetPhysicalDeviceScreenPresentationSupportRawQNX(
+        public static MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            ScreenWindowHandle window
-        ) =>
-            Underlying.Value!.GetPhysicalDeviceScreenPresentationSupportRawQNX(
-                physicalDevice,
-                queueFamilyIndex,
-                window
-            );
+            Ref window
+        )
+        {
+            fixed (void* __dsl_window = window)
+            {
+                return (MaybeBool<uint>)
+                    (uint)GetPhysicalDeviceScreenPresentationSupportQNX(
+                        physicalDevice,
+                        queueFamilyIndex,
+                        __dsl_window
+                    );
+            }
+        }
 
         [NativeName("vkGetPhysicalDeviceSparseImageFormatProperties")]
         [SupportedApiProfile(
@@ -108058,10 +108174,10 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static MaybeBool<uint> GetPhysicalDeviceWaylandPresentationSupportKHR(
+        public static uint GetPhysicalDeviceWaylandPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            WlDisplayHandle display
+            void* display
         ) =>
             Underlying.Value!.GetPhysicalDeviceWaylandPresentationSupportKHR(
                 physicalDevice,
@@ -108079,16 +108195,22 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static uint GetPhysicalDeviceWaylandPresentationSupportRawKHR(
+        public static MaybeBool<uint> GetPhysicalDeviceWaylandPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            WlDisplayHandle display
-        ) =>
-            Underlying.Value!.GetPhysicalDeviceWaylandPresentationSupportRawKHR(
-                physicalDevice,
-                queueFamilyIndex,
-                display
-            );
+            Ref display
+        )
+        {
+            fixed (void* __dsl_display = display)
+            {
+                return (MaybeBool<uint>)
+                    (uint)GetPhysicalDeviceWaylandPresentationSupportKHR(
+                        physicalDevice,
+                        queueFamilyIndex,
+                        __dsl_display
+                    );
+            }
+        }
 
         [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
@@ -108126,10 +108248,10 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static MaybeBool<uint> GetPhysicalDeviceXcbPresentationSupportKHR(
+        public static uint GetPhysicalDeviceXcbPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            XcbConnectionTHandle connection,
+            void* connection,
             uint visual_id
         ) =>
             Underlying.Value!.GetPhysicalDeviceXcbPresentationSupportKHR(
@@ -108145,18 +108267,24 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static uint GetPhysicalDeviceXcbPresentationSupportRawKHR(
+        public static MaybeBool<uint> GetPhysicalDeviceXcbPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            XcbConnectionTHandle connection,
+            Ref connection,
             uint visual_id
-        ) =>
-            Underlying.Value!.GetPhysicalDeviceXcbPresentationSupportRawKHR(
-                physicalDevice,
-                queueFamilyIndex,
-                connection,
-                visual_id
-            );
+        )
+        {
+            fixed (void* __dsl_connection = connection)
+            {
+                return (MaybeBool<uint>)
+                    (uint)GetPhysicalDeviceXcbPresentationSupportKHR(
+                        physicalDevice,
+                        queueFamilyIndex,
+                        __dsl_connection,
+                        visual_id
+                    );
+            }
+        }
 
         [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
@@ -108164,10 +108292,10 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static MaybeBool<uint> GetPhysicalDeviceXlibPresentationSupportKHR(
+        public static uint GetPhysicalDeviceXlibPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            XDisplayHandle dpy,
+            void* dpy,
             nuint visualID
         ) =>
             Underlying.Value!.GetPhysicalDeviceXlibPresentationSupportKHR(
@@ -108183,18 +108311,24 @@ public unsafe partial class Vk : IVk, IVk.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static uint GetPhysicalDeviceXlibPresentationSupportRawKHR(
+        public static MaybeBool<uint> GetPhysicalDeviceXlibPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            XDisplayHandle dpy,
+            Ref dpy,
             nuint visualID
-        ) =>
-            Underlying.Value!.GetPhysicalDeviceXlibPresentationSupportRawKHR(
-                physicalDevice,
-                queueFamilyIndex,
-                dpy,
-                visualID
-            );
+        )
+        {
+            fixed (void* __dsl_dpy = dpy)
+            {
+                return (MaybeBool<uint>)
+                    (uint)GetPhysicalDeviceXlibPresentationSupportKHR(
+                        physicalDevice,
+                        queueFamilyIndex,
+                        __dsl_dpy,
+                        visualID
+                    );
+            }
+        }
 
         [NativeName("vkGetPipelineBinaryDataKHR")]
         [SupportedApiProfile(
@@ -109053,7 +109187,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result GetRandROutputDisplayEXT(
             PhysicalDeviceHandle physicalDevice,
-            XDisplayHandle dpy,
+            void* dpy,
             nuint rrOutput,
             DisplayHandleKHR* pDisplay
         ) => Underlying.Value!.GetRandROutputDisplayEXT(physicalDevice, dpy, rrOutput, pDisplay);
@@ -109070,16 +109204,17 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result GetRandROutputDisplayEXT(
             PhysicalDeviceHandle physicalDevice,
-            XDisplayHandle dpy,
+            Ref dpy,
             nuint rrOutput,
             Ref<DisplayHandleKHR> pDisplay
         )
         {
             fixed (DisplayHandleKHR* __dsl_pDisplay = pDisplay)
+            fixed (void* __dsl_dpy = dpy)
             {
                 return (Result)GetRandROutputDisplayEXT(
                     physicalDevice,
-                    dpy,
+                    __dsl_dpy,
                     rrOutput,
                     __dsl_pDisplay
                 );
@@ -109573,7 +109708,7 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result GetScreenBufferPropertiesQNX(
             DeviceHandle device,
-            ScreenBufferHandle buffer,
+            void* buffer,
             ScreenBufferPropertiesQNX* pProperties
         ) => Underlying.Value!.GetScreenBufferPropertiesQNX(device, buffer, pProperties);
 
@@ -109592,13 +109727,18 @@ public unsafe partial class Vk : IVk, IVk.Static
         )]
         public static Result GetScreenBufferPropertiesQNX(
             DeviceHandle device,
-            ScreenBufferHandle buffer,
+            Ref buffer,
             Ref<ScreenBufferPropertiesQNX> pProperties
         )
         {
             fixed (ScreenBufferPropertiesQNX* __dsl_pProperties = pProperties)
+            fixed (void* __dsl_buffer = buffer)
             {
-                return (Result)GetScreenBufferPropertiesQNX(device, buffer, __dsl_pProperties);
+                return (Result)GetScreenBufferPropertiesQNX(
+                    device,
+                    __dsl_buffer,
+                    __dsl_pProperties
+                );
             }
         }
 
@@ -124897,11 +125037,11 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVk.AcquireXlibDisplayEXT(
         PhysicalDeviceHandle physicalDevice,
-        XDisplayHandle dpy,
+        void* dpy,
         DisplayHandleKHR display
     ) =>
         (
-            (delegate* unmanaged<PhysicalDeviceHandle, XDisplayHandle, DisplayHandleKHR, Result>)(
+            (delegate* unmanaged<PhysicalDeviceHandle, void*, DisplayHandleKHR, Result>)(
                 _slots[11] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[11] = nativeContext.LoadFunction("vkAcquireXlibDisplayEXT", "vulkan")
@@ -124918,7 +125058,41 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result AcquireXlibDisplayEXT(
         PhysicalDeviceHandle physicalDevice,
-        XDisplayHandle dpy,
+        void* dpy,
+        DisplayHandleKHR display
+    ) => ThisThread.AcquireXlibDisplayEXT(physicalDevice, dpy, display);
+
+    [NativeName("vkAcquireXlibDisplayEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_acquire_xlib_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkAcquireXlibDisplayEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Result IVk.AcquireXlibDisplayEXT(
+        PhysicalDeviceHandle physicalDevice,
+        Ref dpy,
+        DisplayHandleKHR display
+    )
+    {
+        fixed (void* __dsl_dpy = dpy)
+        {
+            return (Result)((IVk)this).AcquireXlibDisplayEXT(physicalDevice, __dsl_dpy, display);
+        }
+    }
+
+    [NativeName("vkAcquireXlibDisplayEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_acquire_xlib_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkAcquireXlibDisplayEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Result AcquireXlibDisplayEXT(
+        PhysicalDeviceHandle physicalDevice,
+        Ref dpy,
         DisplayHandleKHR display
     ) => ThisThread.AcquireXlibDisplayEXT(physicalDevice, dpy, display);
 
@@ -172215,13 +172389,13 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVk.GetAndroidHardwareBufferPropertiesANDROID(
         DeviceHandle device,
-        AHardwareBufferHandle buffer,
+        void* buffer,
         AndroidHardwareBufferPropertiesANDROID* pProperties
     ) =>
         (
             (delegate* unmanaged<
                 DeviceHandle,
-                AHardwareBufferHandle,
+                void*,
                 AndroidHardwareBufferPropertiesANDROID*,
                 Result>)(
                 _slots[510] is not null and var loadedFnPtr
@@ -172246,7 +172420,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetAndroidHardwareBufferPropertiesANDROID(
         DeviceHandle device,
-        AHardwareBufferHandle buffer,
+        void* buffer,
         AndroidHardwareBufferPropertiesANDROID* pProperties
     ) => ThisThread.GetAndroidHardwareBufferPropertiesANDROID(device, buffer, pProperties);
 
@@ -172263,16 +172437,17 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVk.GetAndroidHardwareBufferPropertiesANDROID(
         DeviceHandle device,
-        AHardwareBufferHandle buffer,
+        Ref buffer,
         Ref<AndroidHardwareBufferPropertiesANDROID> pProperties
     )
     {
         fixed (AndroidHardwareBufferPropertiesANDROID* __dsl_pProperties = pProperties)
+        fixed (void* __dsl_buffer = buffer)
         {
             return (Result)
                 ((IVk)this).GetAndroidHardwareBufferPropertiesANDROID(
                     device,
-                    buffer,
+                    __dsl_buffer,
                     __dsl_pProperties
                 );
         }
@@ -172291,7 +172466,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetAndroidHardwareBufferPropertiesANDROID(
         DeviceHandle device,
-        AHardwareBufferHandle buffer,
+        Ref buffer,
         Ref<AndroidHardwareBufferPropertiesANDROID> pProperties
     ) => ThisThread.GetAndroidHardwareBufferPropertiesANDROID(device, buffer, pProperties);
 
@@ -181195,13 +181370,13 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.GetMemoryAndroidHardwareBufferANDROID(
         DeviceHandle device,
         MemoryGetAndroidHardwareBufferInfoANDROID* pInfo,
-        AHardwareBufferHandle* pBuffer
+        void** pBuffer
     ) =>
         (
             (delegate* unmanaged<
                 DeviceHandle,
                 MemoryGetAndroidHardwareBufferInfoANDROID*,
-                AHardwareBufferHandle*,
+                void**,
                 Result>)(
                 _slots[602] is not null and var loadedFnPtr
                     ? loadedFnPtr
@@ -181226,7 +181401,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     public static Result GetMemoryAndroidHardwareBufferANDROID(
         DeviceHandle device,
         MemoryGetAndroidHardwareBufferInfoANDROID* pInfo,
-        AHardwareBufferHandle* pBuffer
+        void** pBuffer
     ) => ThisThread.GetMemoryAndroidHardwareBufferANDROID(device, pInfo, pBuffer);
 
     [NativeName("vkGetMemoryAndroidHardwareBufferANDROID")]
@@ -181243,10 +181418,10 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.GetMemoryAndroidHardwareBufferANDROID(
         DeviceHandle device,
         Ref<MemoryGetAndroidHardwareBufferInfoANDROID> pInfo,
-        Ref<AHardwareBufferHandle> pBuffer
+        Ref2D pBuffer
     )
     {
-        fixed (AHardwareBufferHandle* __dsl_pBuffer = pBuffer)
+        fixed (void** __dsl_pBuffer = pBuffer)
         fixed (MemoryGetAndroidHardwareBufferInfoANDROID* __dsl_pInfo = pInfo)
         {
             return (Result)
@@ -181272,7 +181447,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     public static Result GetMemoryAndroidHardwareBufferANDROID(
         DeviceHandle device,
         Ref<MemoryGetAndroidHardwareBufferInfoANDROID> pInfo,
-        Ref<AHardwareBufferHandle> pBuffer
+        Ref2D pBuffer
     ) => ThisThread.GetMemoryAndroidHardwareBufferANDROID(device, pInfo, pBuffer);
 
     [NativeName("vkGetMemoryFdKHR")]
@@ -181782,14 +181957,10 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.GetMemoryNativeBufferOHOS(
         DeviceHandle device,
         MemoryGetNativeBufferInfoOHOS* pInfo,
-        OHNativeBufferHandle* pBuffer
+        void** pBuffer
     ) =>
         (
-            (delegate* unmanaged<
-                DeviceHandle,
-                MemoryGetNativeBufferInfoOHOS*,
-                OHNativeBufferHandle*,
-                Result>)(
+            (delegate* unmanaged<DeviceHandle, MemoryGetNativeBufferInfoOHOS*, void**, Result>)(
                 _slots[608] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[608] = nativeContext.LoadFunction(
@@ -181813,7 +181984,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     public static Result GetMemoryNativeBufferOHOS(
         DeviceHandle device,
         MemoryGetNativeBufferInfoOHOS* pInfo,
-        OHNativeBufferHandle* pBuffer
+        void** pBuffer
     ) => ThisThread.GetMemoryNativeBufferOHOS(device, pInfo, pBuffer);
 
     [NativeName("vkGetMemoryNativeBufferOHOS")]
@@ -181830,10 +182001,10 @@ public unsafe partial class Vk : IVk, IVk.Static
     Result IVk.GetMemoryNativeBufferOHOS(
         DeviceHandle device,
         Ref<MemoryGetNativeBufferInfoOHOS> pInfo,
-        Ref<OHNativeBufferHandle> pBuffer
+        Ref2D pBuffer
     )
     {
-        fixed (OHNativeBufferHandle* __dsl_pBuffer = pBuffer)
+        fixed (void** __dsl_pBuffer = pBuffer)
         fixed (MemoryGetNativeBufferInfoOHOS* __dsl_pInfo = pInfo)
         {
             return (Result)
@@ -181855,7 +182026,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     public static Result GetMemoryNativeBufferOHOS(
         DeviceHandle device,
         Ref<MemoryGetNativeBufferInfoOHOS> pInfo,
-        Ref<OHNativeBufferHandle> pBuffer
+        Ref2D pBuffer
     ) => ThisThread.GetMemoryNativeBufferOHOS(device, pInfo, pBuffer);
 
     [NativeName("vkGetMemoryRemoteAddressNV")]
@@ -182551,15 +182722,11 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVk.GetNativeBufferPropertiesOHOS(
         DeviceHandle device,
-        OHNativeBufferHandle buffer,
+        void* buffer,
         NativeBufferPropertiesOHOS* pProperties
     ) =>
         (
-            (delegate* unmanaged<
-                DeviceHandle,
-                OHNativeBufferHandle,
-                NativeBufferPropertiesOHOS*,
-                Result>)(
+            (delegate* unmanaged<DeviceHandle, void*, NativeBufferPropertiesOHOS*, Result>)(
                 _slots[616] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[616] = nativeContext.LoadFunction(
@@ -182582,7 +182749,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetNativeBufferPropertiesOHOS(
         DeviceHandle device,
-        OHNativeBufferHandle buffer,
+        void* buffer,
         NativeBufferPropertiesOHOS* pProperties
     ) => ThisThread.GetNativeBufferPropertiesOHOS(device, buffer, pProperties);
 
@@ -182599,14 +182766,15 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVk.GetNativeBufferPropertiesOHOS(
         DeviceHandle device,
-        OHNativeBufferHandle buffer,
+        Ref buffer,
         Ref<NativeBufferPropertiesOHOS> pProperties
     )
     {
         fixed (NativeBufferPropertiesOHOS* __dsl_pProperties = pProperties)
+        fixed (void* __dsl_buffer = buffer)
         {
             return (Result)
-                ((IVk)this).GetNativeBufferPropertiesOHOS(device, buffer, __dsl_pProperties);
+                ((IVk)this).GetNativeBufferPropertiesOHOS(device, __dsl_buffer, __dsl_pProperties);
         }
     }
 
@@ -182623,7 +182791,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetNativeBufferPropertiesOHOS(
         DeviceHandle device,
-        OHNativeBufferHandle buffer,
+        Ref buffer,
         Ref<NativeBufferPropertiesOHOS> pProperties
     ) => ThisThread.GetNativeBufferPropertiesOHOS(device, buffer, pProperties);
 
@@ -188269,45 +188437,13 @@ public unsafe partial class Vk : IVk, IVk.Static
     [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    MaybeBool<uint> IVk.GetPhysicalDeviceScreenPresentationSupportQNX(
+    uint IVk.GetPhysicalDeviceScreenPresentationSupportQNX(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        ScreenWindowHandle window
-    ) =>
-        (MaybeBool<uint>)
-            (uint)
-                ((IVk)this).GetPhysicalDeviceScreenPresentationSupportRawQNX(
-                    physicalDevice,
-                    queueFamilyIndex,
-                    window
-                );
-
-    [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
-    [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
-        PhysicalDeviceHandle physicalDevice,
-        uint queueFamilyIndex,
-        ScreenWindowHandle window
-    ) =>
-        ThisThread.GetPhysicalDeviceScreenPresentationSupportQNX(
-            physicalDevice,
-            queueFamilyIndex,
-            window
-        );
-
-    [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
-    [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IVk.GetPhysicalDeviceScreenPresentationSupportRawQNX(
-        PhysicalDeviceHandle physicalDevice,
-        uint queueFamilyIndex,
-        ScreenWindowHandle window
+        void* window
     ) =>
         (
-            (delegate* unmanaged<PhysicalDeviceHandle, uint, ScreenWindowHandle, uint>)(
+            (delegate* unmanaged<PhysicalDeviceHandle, uint, void*, uint>)(
                 _slots[667] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[667] = nativeContext.LoadFunction(
@@ -188321,12 +188457,49 @@ public unsafe partial class Vk : IVk, IVk.Static
     [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static uint GetPhysicalDeviceScreenPresentationSupportRawQNX(
+    public static uint GetPhysicalDeviceScreenPresentationSupportQNX(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        ScreenWindowHandle window
+        void* window
     ) =>
-        ThisThread.GetPhysicalDeviceScreenPresentationSupportRawQNX(
+        ThisThread.GetPhysicalDeviceScreenPresentationSupportQNX(
+            physicalDevice,
+            queueFamilyIndex,
+            window
+        );
+
+    [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+    [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<uint> IVk.GetPhysicalDeviceScreenPresentationSupportQNX(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        Ref window
+    )
+    {
+        fixed (void* __dsl_window = window)
+        {
+            return (MaybeBool<uint>)
+                (uint)
+                    ((IVk)this).GetPhysicalDeviceScreenPresentationSupportQNX(
+                        physicalDevice,
+                        queueFamilyIndex,
+                        __dsl_window
+                    );
+        }
+    }
+
+    [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+    [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        Ref window
+    ) =>
+        ThisThread.GetPhysicalDeviceScreenPresentationSupportQNX(
             physicalDevice,
             queueFamilyIndex,
             window
@@ -190136,45 +190309,13 @@ public unsafe partial class Vk : IVk, IVk.Static
     [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    MaybeBool<uint> IVk.GetPhysicalDeviceWaylandPresentationSupportKHR(
+    uint IVk.GetPhysicalDeviceWaylandPresentationSupportKHR(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        WlDisplayHandle display
-    ) =>
-        (MaybeBool<uint>)
-            (uint)
-                ((IVk)this).GetPhysicalDeviceWaylandPresentationSupportRawKHR(
-                    physicalDevice,
-                    queueFamilyIndex,
-                    display
-                );
-
-    [NativeName("vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<uint> GetPhysicalDeviceWaylandPresentationSupportKHR(
-        PhysicalDeviceHandle physicalDevice,
-        uint queueFamilyIndex,
-        WlDisplayHandle display
-    ) =>
-        ThisThread.GetPhysicalDeviceWaylandPresentationSupportKHR(
-            physicalDevice,
-            queueFamilyIndex,
-            display
-        );
-
-    [NativeName("vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IVk.GetPhysicalDeviceWaylandPresentationSupportRawKHR(
-        PhysicalDeviceHandle physicalDevice,
-        uint queueFamilyIndex,
-        WlDisplayHandle display
+        void* display
     ) =>
         (
-            (delegate* unmanaged<PhysicalDeviceHandle, uint, WlDisplayHandle, uint>)(
+            (delegate* unmanaged<PhysicalDeviceHandle, uint, void*, uint>)(
                 _slots[685] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[685] = nativeContext.LoadFunction(
@@ -190188,12 +190329,49 @@ public unsafe partial class Vk : IVk, IVk.Static
     [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static uint GetPhysicalDeviceWaylandPresentationSupportRawKHR(
+    public static uint GetPhysicalDeviceWaylandPresentationSupportKHR(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        WlDisplayHandle display
+        void* display
     ) =>
-        ThisThread.GetPhysicalDeviceWaylandPresentationSupportRawKHR(
+        ThisThread.GetPhysicalDeviceWaylandPresentationSupportKHR(
+            physicalDevice,
+            queueFamilyIndex,
+            display
+        );
+
+    [NativeName("vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<uint> IVk.GetPhysicalDeviceWaylandPresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        Ref display
+    )
+    {
+        fixed (void* __dsl_display = display)
+        {
+            return (MaybeBool<uint>)
+                (uint)
+                    ((IVk)this).GetPhysicalDeviceWaylandPresentationSupportKHR(
+                        physicalDevice,
+                        queueFamilyIndex,
+                        __dsl_display
+                    );
+        }
+    }
+
+    [NativeName("vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<uint> GetPhysicalDeviceWaylandPresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        Ref display
+    ) =>
+        ThisThread.GetPhysicalDeviceWaylandPresentationSupportKHR(
             physicalDevice,
             queueFamilyIndex,
             display
@@ -190259,50 +190437,14 @@ public unsafe partial class Vk : IVk, IVk.Static
     [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    MaybeBool<uint> IVk.GetPhysicalDeviceXcbPresentationSupportKHR(
+    uint IVk.GetPhysicalDeviceXcbPresentationSupportKHR(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        XcbConnectionTHandle connection,
-        uint visual_id
-    ) =>
-        (MaybeBool<uint>)
-            (uint)
-                ((IVk)this).GetPhysicalDeviceXcbPresentationSupportRawKHR(
-                    physicalDevice,
-                    queueFamilyIndex,
-                    connection,
-                    visual_id
-                );
-
-    [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<uint> GetPhysicalDeviceXcbPresentationSupportKHR(
-        PhysicalDeviceHandle physicalDevice,
-        uint queueFamilyIndex,
-        XcbConnectionTHandle connection,
-        uint visual_id
-    ) =>
-        ThisThread.GetPhysicalDeviceXcbPresentationSupportKHR(
-            physicalDevice,
-            queueFamilyIndex,
-            connection,
-            visual_id
-        );
-
-    [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IVk.GetPhysicalDeviceXcbPresentationSupportRawKHR(
-        PhysicalDeviceHandle physicalDevice,
-        uint queueFamilyIndex,
-        XcbConnectionTHandle connection,
+        void* connection,
         uint visual_id
     ) =>
         (
-            (delegate* unmanaged<PhysicalDeviceHandle, uint, XcbConnectionTHandle, uint, uint>)(
+            (delegate* unmanaged<PhysicalDeviceHandle, uint, void*, uint, uint>)(
                 _slots[687] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[687] = nativeContext.LoadFunction(
@@ -190316,13 +190458,54 @@ public unsafe partial class Vk : IVk, IVk.Static
     [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static uint GetPhysicalDeviceXcbPresentationSupportRawKHR(
+    public static uint GetPhysicalDeviceXcbPresentationSupportKHR(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        XcbConnectionTHandle connection,
+        void* connection,
         uint visual_id
     ) =>
-        ThisThread.GetPhysicalDeviceXcbPresentationSupportRawKHR(
+        ThisThread.GetPhysicalDeviceXcbPresentationSupportKHR(
+            physicalDevice,
+            queueFamilyIndex,
+            connection,
+            visual_id
+        );
+
+    [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<uint> IVk.GetPhysicalDeviceXcbPresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        Ref connection,
+        uint visual_id
+    )
+    {
+        fixed (void* __dsl_connection = connection)
+        {
+            return (MaybeBool<uint>)
+                (uint)
+                    ((IVk)this).GetPhysicalDeviceXcbPresentationSupportKHR(
+                        physicalDevice,
+                        queueFamilyIndex,
+                        __dsl_connection,
+                        visual_id
+                    );
+        }
+    }
+
+    [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<uint> GetPhysicalDeviceXcbPresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        Ref connection,
+        uint visual_id
+    ) =>
+        ThisThread.GetPhysicalDeviceXcbPresentationSupportKHR(
             physicalDevice,
             queueFamilyIndex,
             connection,
@@ -190333,50 +190516,14 @@ public unsafe partial class Vk : IVk, IVk.Static
     [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    MaybeBool<uint> IVk.GetPhysicalDeviceXlibPresentationSupportKHR(
+    uint IVk.GetPhysicalDeviceXlibPresentationSupportKHR(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        XDisplayHandle dpy,
-        nuint visualID
-    ) =>
-        (MaybeBool<uint>)
-            (uint)
-                ((IVk)this).GetPhysicalDeviceXlibPresentationSupportRawKHR(
-                    physicalDevice,
-                    queueFamilyIndex,
-                    dpy,
-                    visualID
-                );
-
-    [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<uint> GetPhysicalDeviceXlibPresentationSupportKHR(
-        PhysicalDeviceHandle physicalDevice,
-        uint queueFamilyIndex,
-        XDisplayHandle dpy,
-        nuint visualID
-    ) =>
-        ThisThread.GetPhysicalDeviceXlibPresentationSupportKHR(
-            physicalDevice,
-            queueFamilyIndex,
-            dpy,
-            visualID
-        );
-
-    [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IVk.GetPhysicalDeviceXlibPresentationSupportRawKHR(
-        PhysicalDeviceHandle physicalDevice,
-        uint queueFamilyIndex,
-        XDisplayHandle dpy,
+        void* dpy,
         nuint visualID
     ) =>
         (
-            (delegate* unmanaged<PhysicalDeviceHandle, uint, XDisplayHandle, nuint, uint>)(
+            (delegate* unmanaged<PhysicalDeviceHandle, uint, void*, nuint, uint>)(
                 _slots[688] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[688] = nativeContext.LoadFunction(
@@ -190390,13 +190537,54 @@ public unsafe partial class Vk : IVk, IVk.Static
     [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static uint GetPhysicalDeviceXlibPresentationSupportRawKHR(
+    public static uint GetPhysicalDeviceXlibPresentationSupportKHR(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        XDisplayHandle dpy,
+        void* dpy,
         nuint visualID
     ) =>
-        ThisThread.GetPhysicalDeviceXlibPresentationSupportRawKHR(
+        ThisThread.GetPhysicalDeviceXlibPresentationSupportKHR(
+            physicalDevice,
+            queueFamilyIndex,
+            dpy,
+            visualID
+        );
+
+    [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<uint> IVk.GetPhysicalDeviceXlibPresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        Ref dpy,
+        nuint visualID
+    )
+    {
+        fixed (void* __dsl_dpy = dpy)
+        {
+            return (MaybeBool<uint>)
+                (uint)
+                    ((IVk)this).GetPhysicalDeviceXlibPresentationSupportKHR(
+                        physicalDevice,
+                        queueFamilyIndex,
+                        __dsl_dpy,
+                        visualID
+                    );
+        }
+    }
+
+    [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<uint> GetPhysicalDeviceXlibPresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        Ref dpy,
+        nuint visualID
+    ) =>
+        ThisThread.GetPhysicalDeviceXlibPresentationSupportKHR(
             physicalDevice,
             queueFamilyIndex,
             dpy,
@@ -191997,17 +192185,12 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVk.GetRandROutputDisplayEXT(
         PhysicalDeviceHandle physicalDevice,
-        XDisplayHandle dpy,
+        void* dpy,
         nuint rrOutput,
         DisplayHandleKHR* pDisplay
     ) =>
         (
-            (delegate* unmanaged<
-                PhysicalDeviceHandle,
-                XDisplayHandle,
-                nuint,
-                DisplayHandleKHR*,
-                Result>)(
+            (delegate* unmanaged<PhysicalDeviceHandle, void*, nuint, DisplayHandleKHR*, Result>)(
                 _slots[703] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[703] = nativeContext.LoadFunction(
@@ -192027,7 +192210,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetRandROutputDisplayEXT(
         PhysicalDeviceHandle physicalDevice,
-        XDisplayHandle dpy,
+        void* dpy,
         nuint rrOutput,
         DisplayHandleKHR* pDisplay
     ) => ThisThread.GetRandROutputDisplayEXT(physicalDevice, dpy, rrOutput, pDisplay);
@@ -192042,15 +192225,21 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVk.GetRandROutputDisplayEXT(
         PhysicalDeviceHandle physicalDevice,
-        XDisplayHandle dpy,
+        Ref dpy,
         nuint rrOutput,
         Ref<DisplayHandleKHR> pDisplay
     )
     {
         fixed (DisplayHandleKHR* __dsl_pDisplay = pDisplay)
+        fixed (void* __dsl_dpy = dpy)
         {
             return (Result)
-                ((IVk)this).GetRandROutputDisplayEXT(physicalDevice, dpy, rrOutput, __dsl_pDisplay);
+                ((IVk)this).GetRandROutputDisplayEXT(
+                    physicalDevice,
+                    __dsl_dpy,
+                    rrOutput,
+                    __dsl_pDisplay
+                );
         }
     }
 
@@ -192064,7 +192253,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetRandROutputDisplayEXT(
         PhysicalDeviceHandle physicalDevice,
-        XDisplayHandle dpy,
+        Ref dpy,
         nuint rrOutput,
         Ref<DisplayHandleKHR> pDisplay
     ) => ThisThread.GetRandROutputDisplayEXT(physicalDevice, dpy, rrOutput, pDisplay);
@@ -192943,15 +193132,11 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVk.GetScreenBufferPropertiesQNX(
         DeviceHandle device,
-        ScreenBufferHandle buffer,
+        void* buffer,
         ScreenBufferPropertiesQNX* pProperties
     ) =>
         (
-            (delegate* unmanaged<
-                DeviceHandle,
-                ScreenBufferHandle,
-                ScreenBufferPropertiesQNX*,
-                Result>)(
+            (delegate* unmanaged<DeviceHandle, void*, ScreenBufferPropertiesQNX*, Result>)(
                 _slots[713] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[713] = nativeContext.LoadFunction(
@@ -192974,7 +193159,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetScreenBufferPropertiesQNX(
         DeviceHandle device,
-        ScreenBufferHandle buffer,
+        void* buffer,
         ScreenBufferPropertiesQNX* pProperties
     ) => ThisThread.GetScreenBufferPropertiesQNX(device, buffer, pProperties);
 
@@ -192991,14 +193176,15 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVk.GetScreenBufferPropertiesQNX(
         DeviceHandle device,
-        ScreenBufferHandle buffer,
+        Ref buffer,
         Ref<ScreenBufferPropertiesQNX> pProperties
     )
     {
         fixed (ScreenBufferPropertiesQNX* __dsl_pProperties = pProperties)
+        fixed (void* __dsl_buffer = buffer)
         {
             return (Result)
-                ((IVk)this).GetScreenBufferPropertiesQNX(device, buffer, __dsl_pProperties);
+                ((IVk)this).GetScreenBufferPropertiesQNX(device, __dsl_buffer, __dsl_pProperties);
         }
     }
 
@@ -193015,7 +193201,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetScreenBufferPropertiesQNX(
         DeviceHandle device,
-        ScreenBufferHandle buffer,
+        Ref buffer,
         Ref<ScreenBufferPropertiesQNX> pProperties
     ) => ThisThread.GetScreenBufferPropertiesQNX(device, buffer, pProperties);
 

@@ -223,7 +223,20 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkAcquireXlibDisplayEXT")]
         static abstract Result AcquireXlibDisplayEXT(
             PhysicalDeviceHandle physicalDevice,
-            XDisplayHandle dpy,
+            void* dpy,
+            DisplayHandleKHR display
+        );
+
+        [NativeName("vkAcquireXlibDisplayEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_acquire_xlib_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkAcquireXlibDisplayEXT")]
+        static abstract Result AcquireXlibDisplayEXT(
+            PhysicalDeviceHandle physicalDevice,
+            Ref dpy,
             DisplayHandleKHR display
         );
 
@@ -17765,7 +17778,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetAndroidHardwareBufferPropertiesANDROID")]
         static abstract Result GetAndroidHardwareBufferPropertiesANDROID(
             DeviceHandle device,
-            AHardwareBufferHandle buffer,
+            void* buffer,
             AndroidHardwareBufferPropertiesANDROID* pProperties
         );
 
@@ -17781,7 +17794,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetAndroidHardwareBufferPropertiesANDROID")]
         static abstract Result GetAndroidHardwareBufferPropertiesANDROID(
             DeviceHandle device,
-            AHardwareBufferHandle buffer,
+            Ref buffer,
             Ref<AndroidHardwareBufferPropertiesANDROID> pProperties
         );
 
@@ -21001,7 +21014,7 @@ public unsafe partial interface IVk
         static abstract Result GetMemoryAndroidHardwareBufferANDROID(
             DeviceHandle device,
             MemoryGetAndroidHardwareBufferInfoANDROID* pInfo,
-            AHardwareBufferHandle* pBuffer
+            void** pBuffer
         );
 
         [NativeName("vkGetMemoryAndroidHardwareBufferANDROID")]
@@ -21017,7 +21030,7 @@ public unsafe partial interface IVk
         static abstract Result GetMemoryAndroidHardwareBufferANDROID(
             DeviceHandle device,
             Ref<MemoryGetAndroidHardwareBufferInfoANDROID> pInfo,
-            Ref<AHardwareBufferHandle> pBuffer
+            Ref2D pBuffer
         );
 
         [NativeName("vkGetMemoryFdKHR")]
@@ -21199,7 +21212,7 @@ public unsafe partial interface IVk
         static abstract Result GetMemoryNativeBufferOHOS(
             DeviceHandle device,
             MemoryGetNativeBufferInfoOHOS* pInfo,
-            OHNativeBufferHandle* pBuffer
+            void** pBuffer
         );
 
         [NativeName("vkGetMemoryNativeBufferOHOS")]
@@ -21215,7 +21228,7 @@ public unsafe partial interface IVk
         static abstract Result GetMemoryNativeBufferOHOS(
             DeviceHandle device,
             Ref<MemoryGetNativeBufferInfoOHOS> pInfo,
-            Ref<OHNativeBufferHandle> pBuffer
+            Ref2D pBuffer
         );
 
         [NativeName("vkGetMemoryRemoteAddressNV")]
@@ -21456,7 +21469,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetNativeBufferPropertiesOHOS")]
         static abstract Result GetNativeBufferPropertiesOHOS(
             DeviceHandle device,
-            OHNativeBufferHandle buffer,
+            void* buffer,
             NativeBufferPropertiesOHOS* pProperties
         );
 
@@ -21472,7 +21485,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetNativeBufferPropertiesOHOS")]
         static abstract Result GetNativeBufferPropertiesOHOS(
             DeviceHandle device,
-            OHNativeBufferHandle buffer,
+            Ref buffer,
             Ref<NativeBufferPropertiesOHOS> pProperties
         );
 
@@ -23405,19 +23418,19 @@ public unsafe partial interface IVk
         [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
         [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
-        static abstract MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
+        static abstract uint GetPhysicalDeviceScreenPresentationSupportQNX(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            ScreenWindowHandle window
+            void* window
         );
 
         [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
         [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
-        static abstract uint GetPhysicalDeviceScreenPresentationSupportRawQNX(
+        static abstract MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            ScreenWindowHandle window
+            Ref window
         );
 
         [NativeName("vkGetPhysicalDeviceSparseImageFormatProperties")]
@@ -23977,10 +23990,10 @@ public unsafe partial interface IVk
             ImpliesSets = ["VK_KHR_surface"]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
-        static abstract MaybeBool<uint> GetPhysicalDeviceWaylandPresentationSupportKHR(
+        static abstract uint GetPhysicalDeviceWaylandPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            WlDisplayHandle display
+            void* display
         );
 
         [NativeName("vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
@@ -23990,10 +24003,10 @@ public unsafe partial interface IVk
             ImpliesSets = ["VK_KHR_surface"]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
-        static abstract uint GetPhysicalDeviceWaylandPresentationSupportRawKHR(
+        static abstract MaybeBool<uint> GetPhysicalDeviceWaylandPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            WlDisplayHandle display
+            Ref display
         );
 
         [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
@@ -24015,21 +24028,31 @@ public unsafe partial interface IVk
         [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
-        static abstract MaybeBool<uint> GetPhysicalDeviceXcbPresentationSupportKHR(
+        static abstract uint GetPhysicalDeviceXcbPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            XcbConnectionTHandle connection,
+            void* connection,
             uint visual_id
         );
 
         [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
-        static abstract uint GetPhysicalDeviceXcbPresentationSupportRawKHR(
+        static abstract MaybeBool<uint> GetPhysicalDeviceXcbPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            XcbConnectionTHandle connection,
+            Ref connection,
             uint visual_id
+        );
+
+        [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+        static abstract uint GetPhysicalDeviceXlibPresentationSupportKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex,
+            void* dpy,
+            nuint visualID
         );
 
         [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
@@ -24038,17 +24061,7 @@ public unsafe partial interface IVk
         static abstract MaybeBool<uint> GetPhysicalDeviceXlibPresentationSupportKHR(
             PhysicalDeviceHandle physicalDevice,
             uint queueFamilyIndex,
-            XDisplayHandle dpy,
-            nuint visualID
-        );
-
-        [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
-        [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
-        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
-        static abstract uint GetPhysicalDeviceXlibPresentationSupportRawKHR(
-            PhysicalDeviceHandle physicalDevice,
-            uint queueFamilyIndex,
-            XDisplayHandle dpy,
+            Ref dpy,
             nuint visualID
         );
 
@@ -24609,7 +24622,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetRandROutputDisplayEXT")]
         static abstract Result GetRandROutputDisplayEXT(
             PhysicalDeviceHandle physicalDevice,
-            XDisplayHandle dpy,
+            void* dpy,
             nuint rrOutput,
             DisplayHandleKHR* pDisplay
         );
@@ -24623,7 +24636,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetRandROutputDisplayEXT")]
         static abstract Result GetRandROutputDisplayEXT(
             PhysicalDeviceHandle physicalDevice,
-            XDisplayHandle dpy,
+            Ref dpy,
             nuint rrOutput,
             Ref<DisplayHandleKHR> pDisplay
         );
@@ -24933,7 +24946,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetScreenBufferPropertiesQNX")]
         static abstract Result GetScreenBufferPropertiesQNX(
             DeviceHandle device,
-            ScreenBufferHandle buffer,
+            void* buffer,
             ScreenBufferPropertiesQNX* pProperties
         );
 
@@ -24949,7 +24962,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetScreenBufferPropertiesQNX")]
         static abstract Result GetScreenBufferPropertiesQNX(
             DeviceHandle device,
-            ScreenBufferHandle buffer,
+            Ref buffer,
             Ref<ScreenBufferPropertiesQNX> pProperties
         );
 
@@ -28435,7 +28448,20 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkAcquireXlibDisplayEXT")]
     Result AcquireXlibDisplayEXT(
         PhysicalDeviceHandle physicalDevice,
-        XDisplayHandle dpy,
+        void* dpy,
+        DisplayHandleKHR display
+    );
+
+    [NativeName("vkAcquireXlibDisplayEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_acquire_xlib_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkAcquireXlibDisplayEXT")]
+    Result AcquireXlibDisplayEXT(
+        PhysicalDeviceHandle physicalDevice,
+        Ref dpy,
         DisplayHandleKHR display
     );
 
@@ -45383,7 +45409,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetAndroidHardwareBufferPropertiesANDROID")]
     Result GetAndroidHardwareBufferPropertiesANDROID(
         DeviceHandle device,
-        AHardwareBufferHandle buffer,
+        void* buffer,
         AndroidHardwareBufferPropertiesANDROID* pProperties
     );
 
@@ -45399,7 +45425,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetAndroidHardwareBufferPropertiesANDROID")]
     Result GetAndroidHardwareBufferPropertiesANDROID(
         DeviceHandle device,
-        AHardwareBufferHandle buffer,
+        Ref buffer,
         Ref<AndroidHardwareBufferPropertiesANDROID> pProperties
     );
 
@@ -48535,7 +48561,7 @@ public unsafe partial interface IVk
     Result GetMemoryAndroidHardwareBufferANDROID(
         DeviceHandle device,
         MemoryGetAndroidHardwareBufferInfoANDROID* pInfo,
-        AHardwareBufferHandle* pBuffer
+        void** pBuffer
     );
 
     [NativeName("vkGetMemoryAndroidHardwareBufferANDROID")]
@@ -48551,7 +48577,7 @@ public unsafe partial interface IVk
     Result GetMemoryAndroidHardwareBufferANDROID(
         DeviceHandle device,
         Ref<MemoryGetAndroidHardwareBufferInfoANDROID> pInfo,
-        Ref<AHardwareBufferHandle> pBuffer
+        Ref2D pBuffer
     );
 
     [NativeName("vkGetMemoryFdKHR")]
@@ -48725,7 +48751,7 @@ public unsafe partial interface IVk
     Result GetMemoryNativeBufferOHOS(
         DeviceHandle device,
         MemoryGetNativeBufferInfoOHOS* pInfo,
-        OHNativeBufferHandle* pBuffer
+        void** pBuffer
     );
 
     [NativeName("vkGetMemoryNativeBufferOHOS")]
@@ -48741,7 +48767,7 @@ public unsafe partial interface IVk
     Result GetMemoryNativeBufferOHOS(
         DeviceHandle device,
         Ref<MemoryGetNativeBufferInfoOHOS> pInfo,
-        Ref<OHNativeBufferHandle> pBuffer
+        Ref2D pBuffer
     );
 
     [NativeName("vkGetMemoryRemoteAddressNV")]
@@ -48982,7 +49008,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetNativeBufferPropertiesOHOS")]
     Result GetNativeBufferPropertiesOHOS(
         DeviceHandle device,
-        OHNativeBufferHandle buffer,
+        void* buffer,
         NativeBufferPropertiesOHOS* pProperties
     );
 
@@ -48998,7 +49024,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetNativeBufferPropertiesOHOS")]
     Result GetNativeBufferPropertiesOHOS(
         DeviceHandle device,
-        OHNativeBufferHandle buffer,
+        Ref buffer,
         Ref<NativeBufferPropertiesOHOS> pProperties
     );
 
@@ -50913,19 +50939,19 @@ public unsafe partial interface IVk
     [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
     [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
-    MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
+    uint GetPhysicalDeviceScreenPresentationSupportQNX(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        ScreenWindowHandle window
+        void* window
     );
 
     [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
     [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
-    uint GetPhysicalDeviceScreenPresentationSupportRawQNX(
+    MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        ScreenWindowHandle window
+        Ref window
     );
 
     [NativeName("vkGetPhysicalDeviceSparseImageFormatProperties")]
@@ -51475,19 +51501,19 @@ public unsafe partial interface IVk
     [NativeName("vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
-    MaybeBool<uint> GetPhysicalDeviceWaylandPresentationSupportKHR(
+    uint GetPhysicalDeviceWaylandPresentationSupportKHR(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        WlDisplayHandle display
+        void* display
     );
 
     [NativeName("vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
-    uint GetPhysicalDeviceWaylandPresentationSupportRawKHR(
+    MaybeBool<uint> GetPhysicalDeviceWaylandPresentationSupportKHR(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        WlDisplayHandle display
+        Ref display
     );
 
     [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
@@ -51509,21 +51535,31 @@ public unsafe partial interface IVk
     [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
-    MaybeBool<uint> GetPhysicalDeviceXcbPresentationSupportKHR(
+    uint GetPhysicalDeviceXcbPresentationSupportKHR(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        XcbConnectionTHandle connection,
+        void* connection,
         uint visual_id
     );
 
     [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
-    uint GetPhysicalDeviceXcbPresentationSupportRawKHR(
+    MaybeBool<uint> GetPhysicalDeviceXcbPresentationSupportKHR(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        XcbConnectionTHandle connection,
+        Ref connection,
         uint visual_id
+    );
+
+    [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+    uint GetPhysicalDeviceXlibPresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        void* dpy,
+        nuint visualID
     );
 
     [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
@@ -51532,17 +51568,7 @@ public unsafe partial interface IVk
     MaybeBool<uint> GetPhysicalDeviceXlibPresentationSupportKHR(
         PhysicalDeviceHandle physicalDevice,
         uint queueFamilyIndex,
-        XDisplayHandle dpy,
-        nuint visualID
-    );
-
-    [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
-    uint GetPhysicalDeviceXlibPresentationSupportRawKHR(
-        PhysicalDeviceHandle physicalDevice,
-        uint queueFamilyIndex,
-        XDisplayHandle dpy,
+        Ref dpy,
         nuint visualID
     );
 
@@ -52103,7 +52129,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetRandROutputDisplayEXT")]
     Result GetRandROutputDisplayEXT(
         PhysicalDeviceHandle physicalDevice,
-        XDisplayHandle dpy,
+        void* dpy,
         nuint rrOutput,
         DisplayHandleKHR* pDisplay
     );
@@ -52117,7 +52143,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetRandROutputDisplayEXT")]
     Result GetRandROutputDisplayEXT(
         PhysicalDeviceHandle physicalDevice,
-        XDisplayHandle dpy,
+        Ref dpy,
         nuint rrOutput,
         Ref<DisplayHandleKHR> pDisplay
     );
@@ -52427,7 +52453,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetScreenBufferPropertiesQNX")]
     Result GetScreenBufferPropertiesQNX(
         DeviceHandle device,
-        ScreenBufferHandle buffer,
+        void* buffer,
         ScreenBufferPropertiesQNX* pProperties
     );
 
@@ -52443,7 +52469,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetScreenBufferPropertiesQNX")]
     Result GetScreenBufferPropertiesQNX(
         DeviceHandle device,
-        ScreenBufferHandle buffer,
+        Ref buffer,
         Ref<ScreenBufferPropertiesQNX> pProperties
     );
 

@@ -26,11 +26,11 @@ public unsafe partial struct ScreenSurfaceCreateInfoQNX
 
     [NativeName("context")]
     [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    public ScreenContextHandle Context;
+    public void* Context;
 
     [NativeName("window")]
     [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    public ScreenWindowHandle Window;
+    public void* Window;
 
     [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public ScreenSurfaceCreateInfoQNX() { }

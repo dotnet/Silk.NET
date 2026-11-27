@@ -43,7 +43,7 @@ public unsafe partial struct ExportMemoryWin32HandleInfoKHR
             "VK_KHR_external_memory_win32+VK_VERSION_1_1",
         ]
     )]
-    public SecurityAttributesHandle PAttributes;
+    public void PAttributes;
 
     [NativeName("dwAccess")]
     [SupportedApiProfile(

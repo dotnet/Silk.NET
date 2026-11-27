@@ -34,7 +34,7 @@ public unsafe partial struct ExportSemaphoreWin32HandleInfoKHR
         ["VK_KHR_external_semaphore_win32"],
         ImpliesSets = ["VK_KHR_external_semaphore"]
     )]
-    public SecurityAttributesHandle PAttributes;
+    public void PAttributes;
 
     [NativeName("dwAccess")]
     [SupportedApiProfile(
