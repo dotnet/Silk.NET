@@ -28,14 +28,100 @@ internal unsafe partial class SdlCursor : ICursorConfiguration, IDisposable
     public SdlCursor(ISdl sdl)
     {
         _sdl = sdl;
-        SupportedStyles = TestCursorCompatibility(sdl, _cursorStyles);
-        Mode = CursorModes.Normal;
+        SupportedStyles = TestCursorStyles(sdl, _cursorStyles);
+        SupportedModes = TestCursorModes(sdl);
+        Mode = DefaultMode(SupportedModes);
         Style = CursorStyles.Arrow;
         _customCursorSdl = new CustomCursorSdl();
 
         return;
 
-        static CursorStyles TestCursorCompatibility(ISdl sdl, FrozenDictionary<CursorStyles, SystemCursor> styles)
+        static CursorModes DefaultMode(CursorModes supported)
+        {
+            if (supported.HasFlag(CursorModes.Normal))
+            {
+                return CursorModes.Normal;
+            }
+
+            // lowest set bit, first supported mode
+            var lowest = supported & ~(supported - 1);
+            return lowest != default ? lowest : CursorModes.Unbounded;
+        }
+
+        // SDL doesn't have a way to query this per the spec's requirements, so we need to compare what their
+        // platform backends do with what our CursorModes require.
+        static CursorModes TestCursorModes(ISdl sdl)
+        {
+            var modes = CursorModes.Normal;
+
+            if (!TryGetAnyWindowHandle(sdl, out var window))
+            {
+                InputLog.Warn("Unable to test cursor modes without a live window");
+                return modes | CursorModes.Confined | CursorModes.Unbounded;
+            }
+
+            if (CanGrabMouse(sdl, window))
+            {
+                modes |= CursorModes.Confined;
+            }
+
+            if (CanUseRelativeMode(sdl, window))
+            {
+                modes |= CursorModes.Unbounded;
+            }
+
+            return modes;
+
+            static bool CanGrabMouse(ISdl sdl, WindowHandle window)
+            {
+                bool wasGrabbed = sdl.GetWindowMouseGrab(window);
+                if (sdl.SetWindowMouseGrab(window, (byte)1) == 0)
+                {
+                    return false;
+                }
+
+                bool supported = sdl.GetWindowMouseGrab(window);
+                sdl.SetWindowMouseGrab(window, wasGrabbed ? (byte)1 : (byte)0);
+                return supported;
+            }
+
+            static bool CanUseRelativeMode(ISdl sdl, WindowHandle window)
+            {
+                var wasRelative = (byte)sdl.GetWindowRelativeMouseMode(window) != 0;
+                if (sdl.SetWindowRelativeMouseMode(window, (byte)1) == 0)
+                {
+                    return false;
+                }
+
+                var supported = (byte)sdl.GetWindowRelativeMouseMode(window) != 0;
+                sdl.SetWindowRelativeMouseMode(window, wasRelative ? (byte)1 : (byte)0);
+                return supported;
+            }
+
+            static bool TryGetAnyWindowHandle(ISdl sdl, out WindowHandle window)
+            {
+                // prefer the focused window; fall back to the first window; give up if there are none.
+                window = sdl.GetMouseFocus();
+                if (window != default)
+                {
+                    return true;
+                }
+
+                var windowCount = 0;
+                var windows = sdl.GetWindows(&windowCount);
+                if (windows == null || windowCount == 0)
+                {
+                    return false;
+                }
+
+                window = windows[0];
+                sdl.Free(windows);
+                return window != default;
+            }
+        }
+
+
+        static CursorStyles TestCursorStyles(ISdl sdl, FrozenDictionary<CursorStyles, SystemCursor> styles)
         {
             // check cursor style availability
             ReadOnlySpan<CursorStyles> mainStyles = [
@@ -98,10 +184,9 @@ internal unsafe partial class SdlCursor : ICursorConfiguration, IDisposable
 
     public CursorStyles SupportedStyles { get; }
 
-    // TODO we can't query support for these cursor modes, but should we try-it-and-see to be accurate?
     // TODO if you're using one input context for all windows, there is no way to specify a window for
     //  grabbed cursor mode
-    public CursorModes SupportedModes => CursorModes.Normal | CursorModes.Confined | CursorModes.Unbounded;
+    public CursorModes SupportedModes { get; }
 
     public CursorModes Mode
     {

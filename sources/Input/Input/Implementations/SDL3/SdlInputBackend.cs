@@ -25,7 +25,6 @@ internal partial class SdlInputBackend : IInputBackend
 
     private WindowHandle? _focusedWindow;
 
-    internal readonly SdlCursor SdlCursor;
 
     private const uint _sdlInitFlags =
         SDL.Sdl.InitJoystick | SDL.Sdl.InitGamepad | SDL.Sdl.InitEvents | SDL.Sdl.InitHaptic | SDL.Sdl.InitSensor;
@@ -53,9 +52,6 @@ internal partial class SdlInputBackend : IInputBackend
             // set our context ID according to our unique event filter handle
             Id = (nint)_inputSubscriptionEventPtr.Handle;
         }
-
-        // create cursor
-        SdlCursor = new SdlCursor(Sdl);
 
         // todo - manage clock drift by semi-regularly recalculating this time basis
         _timeBasis = SdlTimestampCalculator.GetHighPrecisionTimeBasis(iterationCount: 4);

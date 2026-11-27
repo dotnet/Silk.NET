@@ -29,8 +29,8 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
 
     private readonly MouseState _state;
 
-    private static bool _firstMouse = true;
     private static readonly SdlUnboundedPointerTarget _rawMouseTarget = new();
+    private static SdlCursor? _sdlCursor;
 
     /// <summary>
     /// The accumulated position of the mouse on the "raw mouse input" target. This is
@@ -53,7 +53,14 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
             uniqueId = SdlInputBackend.FallbackUniqueId<SdlMouse>(sdlDeviceId, uniqueId);
         }
 
-        var mouse = new SdlMouse(sdlDeviceId, uniqueId, backend, backend.SdlCursor) {
+        if (_sdlCursor is null)
+        {
+            _sdlCursor = new SdlCursor(backend.Sdl);
+            _sdlCursor.ModeChanged += OnCursorModeChange;
+            OnCursorModeChange(null, _sdlCursor.Mode);
+        }
+
+        return new SdlMouse(sdlDeviceId, uniqueId, backend, _sdlCursor) {
             ScrollEvents = sdlInputEvents.MouseScrollEvents,
             PointEvents = sdlInputEvents.PointChangedEvents,
             ClickEvents = sdlInputEvents.PointerClickEvents,
@@ -62,58 +69,9 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
             TargetEvents = sdlInputEvents.PointerTargetChangedEvents
         };
 
-        return mouse;
-    }
-
-    private SdlMouse(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend,
-        SdlCursor cursor)
-        : base(backend, uniqueId, sdlDeviceId)
-    {
-        _state = new MouseState(Buttons, StatePoints, Vector2.Zero);
-        Cursor = cursor;
-        Name = NativeBackend.GetMouseNameForID((uint)SdlDeviceId).ReadToString();
-
-        cursor.ModeChanged += OnCursorModeChange;
-        if (Interlocked.Exchange(ref _firstMouse, false))
-        {
-            // update the cursor with our state
-            Cursor.Mode = InterpretMouseMode(Backend, NativeBackend);
-
-            static CursorModes InterpretMouseMode(SdlInputBackend backend, ISdl sdl)
-            {
-                if (!backend.TryGetFocusedWindowHandle(out var handle))
-                {
-                    return CursorModes.Normal;
-                }
-
-                var isRelative = (bool)sdl.GetWindowRelativeMouseMode(handle);
-                var isGrabbed = (bool)sdl.GetWindowMouseGrab(handle);
-
-                if (!isRelative && !isGrabbed)
-                {
-                    return CursorModes.Normal;
-                }
-
-                if (isGrabbed && !isRelative)
-                {
-                    return CursorModes.Confined;
-                }
-
-                if (!isGrabbed && isRelative)
-                {
-                    return CursorModes.Unbounded;
-                }
-
-                InputLog.Error("Unexpected mouse condition - mouse is both grabbed and relative");
-                return CursorModes.Normal;
-            }
-        }
-
-        return;
-
         void OnCursorModeChange(object? sender, CursorModes cursorMode)
         {
-            if (!Backend.TryGetFocusedWindowHandle(out var window))
+            if (!backend.TryGetFocusedWindowHandle(out var window))
             {
                 InputLog.Error("No window handle found - a window handle is required for changing cursor modes.");
                 return;
@@ -126,17 +84,17 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
                 // it is a [Flags] after all...
                 case CursorModes.Normal:
                 {
-                    SetGrabbed(sdl: NativeBackend, window: in window, grabbed: false, relativeMode: false);
+                    SetGrabbed(sdl: backend.Sdl, window: in window, grabbed: false, relativeMode: false);
                     return;
                 }
                 case CursorModes.Confined:
                 {
-                    SetGrabbed(sdl: NativeBackend, window: in window, grabbed: true, relativeMode: false);
+                    SetGrabbed(sdl: backend.Sdl, window: in window, grabbed: true, relativeMode: false);
                     break;
                 }
                 case CursorModes.Unbounded:
                 {
-                    SetGrabbed(sdl: NativeBackend, window: in window, grabbed: false, relativeMode: true);
+                    SetGrabbed(sdl: backend.Sdl, window: in window, grabbed: false, relativeMode: true);
                     break;
                 }
                 default:
@@ -163,6 +121,14 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
                 return onlySuccess;
             }
         }
+    }
+
+    private SdlMouse(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend, ICursorConfiguration cursor)
+        : base(backend, uniqueId, sdlDeviceId)
+    {
+        _state = new MouseState(Buttons, StatePoints, Vector2.Zero);
+        Cursor = cursor;
+        Name = NativeBackend.GetMouseNameForID((uint)SdlDeviceId).ReadToString();
     }
 
     protected internal override void Initialize(long timestamp)
