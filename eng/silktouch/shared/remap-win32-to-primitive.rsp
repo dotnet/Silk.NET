@@ -14,8 +14,17 @@ IUnknown*=void*
 
 D3D_FEATURE_LEVEL=uint
 
+DXGI_FORMAT*=void*
+_D3DFORMAT*=void*
+
+ID3D10Buffer*=void*
+ID3D10Texture2D*=void*
+ID3D10Texture3D*=void*
+ID3D11Buffer*=void*
 ID3D11Device*=void*
 ID3D11Texture2D*=void*
+ID3D11Texture3D*=void*
 ID3D12CommandQueue*=void*
 ID3D12Device*=void*
 ID3D12Resource*=void*
+IDirect3DSurface9*=void*
