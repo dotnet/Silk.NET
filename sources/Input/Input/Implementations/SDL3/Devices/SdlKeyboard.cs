@@ -294,11 +294,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
     private class ButtonStates : IReadOnlyList<Button<KeyName>>
     {
-        private byte[] _keyPressures = new byte[EnumInfo<KeyName>.MaxValue.Index() + 1];
-
-        static ButtonStates()
-        {
-        }
+        private byte[] _keyPressures = new byte[EnumInfo<KeyName>.DistinctCount];
 
         public void SetKeyState(KeyName key, byte pressure)
         {

@@ -32,16 +32,6 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     /// </summary>
     public static readonly int DistinctCount;
 
-    /// <summary>
-    /// The value with the highest numerical value
-    /// </summary>
-    public static readonly T MaxValue;
-
-    /// <summary>
-    /// The value with the lowest numerical value
-    /// </summary>
-    public static readonly T MinValue;
-
     private static readonly ConcurrentDictionary<T, int> _numericallyDistinctIndices;
     private static readonly ulong[] _allEnumValuesDistinctRaw;
     private static readonly bool _unnamedAreIndexable;
@@ -55,25 +45,19 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     static unsafe EnumInfo()
     {
         var customAttributeDatas = typeof(T).CustomAttributes;
-        var hasFlagsAttribute = false;
         foreach (var attr in customAttributeDatas)
         {
             if (attr.AttributeType == typeof(FlagsAttribute))
             {
-                hasFlagsAttribute = true;
+                throw new InvalidOperationException($"Enums with a {nameof(FlagsAttribute)} cannot be used with " +
+                                                    $"{nameof(EnumInfo<>)} as they are semantically incompatible with " +
+                                                    $"index-based operations.");
             }
 
             if (attr.AttributeType == typeof(OrderedIndexUsageAttribute))
             {
                 _unnamedAreIndexable = true;
             }
-        }
-
-        if (hasFlagsAttribute)
-        {
-            throw new InvalidOperationException($"Enums with a {nameof(FlagsAttribute)} cannot be used with " +
-                                                $"{nameof(EnumInfo<>)} as they are semantically incompatible with " +
-                                                $"index-based operations.");
         }
 
         var underlyingType = typeof(T).GetEnumUnderlyingType();
@@ -155,8 +139,6 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         DistinctCount = numericallyDistinct.Length;
         _maxCapacity = DistinctCount + 256;
         _numericallyDistinctIndices = dict;
-        MinValue = all[0];
-        MaxValue = all[^1];
 
         return;
 
