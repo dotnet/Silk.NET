@@ -43,6 +43,8 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
     /// </summary>
     private Vector3 _lastMousePositionSdl;
 
+    private static readonly List<SdlMouse> _mice = new();
+
     public static SdlMouse CreateDevice(ulong sdlDeviceId, long timestamp, bool isSimulated, SdlInputBackend backend,
         SdlInputEventContext sdlInputEvents)
     {
@@ -94,6 +96,11 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
                 }
                 case CursorModes.Unbounded:
                 {
+                    foreach (var mouse in _mice)
+                    {
+                        mouse._rawMousePositionSdl = Vector3.Zero;
+                    }
+
                     SetGrabbed(sdl: backend.Sdl, window: in window, grabbed: false, relativeMode: true);
                     break;
                 }
@@ -129,6 +136,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
         _state = new MouseState(Buttons, StatePoints, Vector2.Zero);
         Cursor = cursor;
         Name = NativeBackend.GetMouseNameForID((uint)SdlDeviceId).ReadToString();
+        _mice.Add(this);
     }
 
     protected internal override void Initialize(long timestamp)
@@ -167,6 +175,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
 
     protected override void Release()
     {
+        _mice.Remove(this);
     }
 
     MouseState IMouse.State => _state;

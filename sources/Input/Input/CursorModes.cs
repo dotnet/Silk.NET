@@ -10,8 +10,9 @@ namespace Silk.NET.Input;
 /// <item>
 /// <term>Bounded <see cref="IPointerTarget"/></term>
 /// <description>
-/// An <see cref="IPointerTarget"/> that is bounded to the window i.e. the
-/// <see cref="IPointerTarget.Bounds"/> are not infinite and reflect the window client area.
+/// An <see cref="IPointerTarget"/> that is finite, e.g. the
+/// <see cref="IPointerTarget.Bounds"/> reflect the window client area or some other bounded region defined by the
+/// cursor backend.
 /// This target is used for every cursor mode except <see cref="Unbounded"/>.
 /// </description>
 /// </item>
@@ -19,8 +20,7 @@ namespace Silk.NET.Input;
 /// <term>Unbounded <see cref="IPointerTarget"/></term>
 /// <description>
 /// An <see cref="IPointerTarget"/> that is unbounded and operates in an arbitrary coordinate space. This target is used
-/// for <b>raw mouse mode</b> and points on this target represent the net mouse movement from a mouse. Implementations
-/// are more likely to be able to give multiple <see cref="TargetPoint"/>s for each mouse when this target is used. This
+/// for <b>raw mouse mode</b> and points on this target represent the net mouse movement from a mouse. This
 /// target is used when the <see cref="Unbounded"/> cursor mode is enabled. <see cref="IPointerTarget.Bounds"/> will
 /// represent an infinitely large unbounded target.
 /// </description>
