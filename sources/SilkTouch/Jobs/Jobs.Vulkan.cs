@@ -97,6 +97,10 @@ internal static partial class Jobs
                                 "VK_VENDOR_ID_VIV",
                                 "VK_VENDOR_ID_VSI",
                                 "VK_VENDOR_ID_MESA",
+                                "VK_ICD_WSI_PLATFORM_ANDROID",
+                                "VK_ICD_WSI_PLATFORM_DIRECTFB",
+                                "VK_ICD_WSI_PLATFORM_GGP",
+                                "VK_ICD_WSI_PLATFORM_FUCHSIA",
                             ],
                             IdentifyEnumMemberImpliedVendors = true,
                         }

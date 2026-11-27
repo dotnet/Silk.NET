@@ -14,65 +14,65 @@ public enum IcdWsiPlatform : uint
 {
     [NativeName("VK_ICD_WSI_PLATFORM_MIR")]
     [SupportedApiProfile("vulkan")]
-    PlatformMir = 0,
+    Mir = 0,
 
     [NativeName("VK_ICD_WSI_PLATFORM_WAYLAND")]
     [SupportedApiProfile("vulkan")]
-    PlatformWayland = 1,
+    Wayland = 1,
 
     [NativeName("VK_ICD_WSI_PLATFORM_WIN32")]
     [SupportedApiProfile("vulkan")]
-    PlatformWin32 = 2,
+    Win32 = 2,
 
     [NativeName("VK_ICD_WSI_PLATFORM_XCB")]
     [SupportedApiProfile("vulkan")]
-    PlatformXcb = 3,
+    Xcb = 3,
 
     [NativeName("VK_ICD_WSI_PLATFORM_XLIB")]
     [SupportedApiProfile("vulkan")]
-    PlatformXlib = 4,
+    Xlib = 4,
 
     [NativeName("VK_ICD_WSI_PLATFORM_ANDROID")]
     [SupportedApiProfile("vulkan")]
-    PlatformANDROID = 5,
+    Android = 5,
 
     [NativeName("VK_ICD_WSI_PLATFORM_MACOS")]
     [SupportedApiProfile("vulkan")]
-    PlatformMacos = 6,
+    Macos = 6,
 
     [NativeName("VK_ICD_WSI_PLATFORM_IOS")]
     [SupportedApiProfile("vulkan")]
-    PlatformIos = 7,
+    Ios = 7,
 
     [NativeName("VK_ICD_WSI_PLATFORM_DISPLAY")]
     [SupportedApiProfile("vulkan")]
-    PlatformDisplay = 8,
+    Display = 8,
 
     [NativeName("VK_ICD_WSI_PLATFORM_HEADLESS")]
     [SupportedApiProfile("vulkan")]
-    PlatformHeadless = 9,
+    Headless = 9,
 
     [NativeName("VK_ICD_WSI_PLATFORM_METAL")]
     [SupportedApiProfile("vulkan")]
-    PlatformMetal = 10,
+    Metal = 10,
 
     [NativeName("VK_ICD_WSI_PLATFORM_DIRECTFB")]
     [SupportedApiProfile("vulkan")]
-    PlatformDirectFB = 11,
+    Directfb = 11,
 
     [NativeName("VK_ICD_WSI_PLATFORM_VI")]
     [SupportedApiProfile("vulkan")]
-    PlatformVi = 12,
+    Vi = 12,
 
     [NativeName("VK_ICD_WSI_PLATFORM_GGP")]
     [SupportedApiProfile("vulkan")]
-    PlatformGGP = 13,
+    Ggp = 13,
 
     [NativeName("VK_ICD_WSI_PLATFORM_SCREEN")]
     [SupportedApiProfile("vulkan")]
-    PlatformScreen = 14,
+    Screen = 14,
 
     [NativeName("VK_ICD_WSI_PLATFORM_FUCHSIA")]
     [SupportedApiProfile("vulkan")]
-    PlatformFUCHSIA = 15,
+    Fuchsia = 15,
 }
