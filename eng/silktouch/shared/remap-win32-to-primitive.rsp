@@ -1,13 +1,13 @@
 --remap
 _GUID=System.Guid
 _LUID=ulong
-_SECURITY_ATTRIBUTES*=void
+_SECURITY_ATTRIBUTES*=void*
 
 HDC__*=void*
 HGLRC__*=void*
-HINSTANCE__*=void
-HMONITOR__*=void
-HWND__*=void
+HINSTANCE__*=void*
+HMONITOR__*=void*
+HWND__*=void*
 
 IUnknown*=void*
 
