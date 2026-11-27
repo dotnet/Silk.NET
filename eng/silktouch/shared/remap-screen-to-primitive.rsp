@@ -1,0 +1,4 @@
+--remap
+_screen_buffer*=void*
+_screen_context*=void*
+_screen_window*=void*

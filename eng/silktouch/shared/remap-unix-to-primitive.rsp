@@ -1,4 +1,6 @@
 --remap
 wl_display*=void*
-xcb_connection_t*=void*
+wl_surface*=void*
+
 _XDisplay*=void*
+xcb_connection_t*=void*
