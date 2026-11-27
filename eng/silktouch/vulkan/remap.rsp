@@ -6,4 +6,4 @@
 @../../shared/remap-win32-to-primitive.rsp
 
 OH_NativeBuffer*=void*
-OHNativeWindow*=void*
+NativeWindow*=void*

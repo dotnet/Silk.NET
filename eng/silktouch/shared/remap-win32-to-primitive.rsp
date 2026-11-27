@@ -1,6 +1,7 @@
 --remap
 _GUID=System.Guid
 _LUID=ulong
+
 _SECURITY_ATTRIBUTES*=void*
 
 HDC__*=void*
