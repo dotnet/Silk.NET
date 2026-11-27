@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkIcdSurfaceWin32")]
 [SupportedApiProfile("vulkan")]
-public partial struct IcdSurfaceWin32
+public unsafe partial struct IcdSurfaceWin32
 {
     [NativeName("@base")]
     [SupportedApiProfile("vulkan")]
@@ -18,9 +18,9 @@ public partial struct IcdSurfaceWin32
 
     [NativeName("hinstance")]
     [SupportedApiProfile("vulkan")]
-    public void Hinstance;
+    public void* Hinstance;
 
     [NativeName("hwnd")]
     [SupportedApiProfile("vulkan")]
-    public void Hwnd;
+    public void* Hwnd;
 }

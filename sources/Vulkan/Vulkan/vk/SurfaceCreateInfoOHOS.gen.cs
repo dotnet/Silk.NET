@@ -26,7 +26,7 @@ public unsafe partial struct SurfaceCreateInfoOHOS
 
     [NativeName("window")]
     [SupportedApiProfile("vulkan", ["VK_OHOS_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    public NativeWindowHandle Window;
+    public void* Window;
 
     [SupportedApiProfile("vulkan", ["VK_OHOS_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public SurfaceCreateInfoOHOS() { }

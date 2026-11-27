@@ -34,7 +34,7 @@ public unsafe partial struct ExportFenceWin32HandleInfoKHR
         ["VK_KHR_external_fence_win32"],
         ImpliesSets = ["VK_KHR_external_fence"]
     )]
-    public void PAttributes;
+    public void* PAttributes;
 
     [NativeName("dwAccess")]
     [SupportedApiProfile(
