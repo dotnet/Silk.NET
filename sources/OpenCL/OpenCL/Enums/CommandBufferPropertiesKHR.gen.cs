@@ -10,4 +10,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_command_buffer_properties_khr")]
-public enum CommandBufferPropertiesKHR : ulong { }
+public enum CommandBufferPropertiesKHR : ulong
+{
+    [NativeName("CL_COMMAND_BUFFER_FLAGS_KHR")]
+    Flags = 4755,
+
+    [NativeName("CL_COMMAND_BUFFER_MUTABLE_DISPATCH_ASSERTS_KHR")]
+    MutableDispatchAsserts = 4791,
+}

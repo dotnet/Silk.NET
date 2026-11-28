@@ -3,6 +3,7 @@
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2025 The Khronos Group Inc. Licensed under the MIT license.
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -22,6 +23,7 @@ public readonly unsafe struct DeviceMemoryReportCallbackEXT : IDisposable
     )]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -30,8 +32,8 @@ public readonly unsafe struct DeviceMemoryReportCallbackEXT : IDisposable
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    public delegate* unmanaged<DeviceMemoryReportCallbackDataEXT*, void*, void> Handle =>
-        (delegate* unmanaged<DeviceMemoryReportCallbackDataEXT*, void*, void>)Pointer;
+    public ref delegate* unmanaged<DeviceMemoryReportCallbackDataEXT*, void*, void> Handle =>
+        ref *(delegate* unmanaged<DeviceMemoryReportCallbackDataEXT*, void*, void>*)Pointer;
 
     [SupportedApiProfile(
         "vulkan",

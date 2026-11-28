@@ -420,6 +420,27 @@ public enum DeviceInfo : uint
     [NativeName("CL_DEVICE_KERNEL_CLOCK_CAPABILITIES_KHR")]
     KernelClockCapabilitiesKHR = 4214,
 
+    [NativeName("CL_DEVICE_SVM_TYPE_CAPABILITIES_KHR")]
+    SvmTypeCapabilitiesKHR = 4215,
+
+    [NativeName("CL_DEVICE_COMMAND_BUFFER_SUPPORTED_QUEUE_PROPERTIES_KHR")]
+    CommandBufferSupportedQueuePropertiesKHR = 4762,
+
+    [NativeName("CL_DEVICE_COMMAND_BUFFER_CAPABILITIES_KHR")]
+    CommandBufferCapabilitiesKHR = 4777,
+
+    [NativeName("CL_DEVICE_COMMAND_BUFFER_REQUIRED_QUEUE_PROPERTIES_KHR")]
+    CommandBufferRequiredQueuePropertiesKHR = 4778,
+
+    [NativeName("CL_DEVICE_COMMAND_BUFFER_NUM_SYNC_DEVICES_KHR")]
+    CommandBufferNumSyncDevicesKHR = 4779,
+
+    [NativeName("CL_DEVICE_COMMAND_BUFFER_SYNC_DEVICES_KHR")]
+    CommandBufferSyncDevicesKHR = 4780,
+
+    [NativeName("CL_DEVICE_MUTABLE_DISPATCH_CAPABILITIES_KHR")]
+    MutableDispatchCapabilitiesKHR = 4784,
+
     [NativeName("CL_DEVICE_SPIRV_EXTENDED_INSTRUCTION_SETS")]
     SpirvExtendedInstructionSets = 4793,
 

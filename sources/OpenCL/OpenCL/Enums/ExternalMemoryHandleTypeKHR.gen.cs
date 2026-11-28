@@ -26,4 +26,7 @@ public enum ExternalMemoryHandleTypeKHR : uint
 
     [NativeName("CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_NAME_KHR")]
     OpaqueWin32Name = 8297,
+
+    [NativeName("CL_EXTERNAL_MEMORY_HANDLE_ANDROID_HARDWARE_BUFFER_KHR")]
+    AndroidHardwareBuffer = 8304,
 }

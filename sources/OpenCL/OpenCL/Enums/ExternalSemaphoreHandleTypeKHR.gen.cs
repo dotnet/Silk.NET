@@ -15,6 +15,18 @@ public enum ExternalSemaphoreHandleTypeKHR : uint
     [NativeName("CL_SEMAPHORE_HANDLE_OPAQUE_FD_KHR")]
     OpaqueFd = 8277,
 
+    [NativeName("CL_SEMAPHORE_HANDLE_OPAQUE_WIN32_KHR")]
+    OpaqueWin32 = 8278,
+
+    [NativeName("CL_SEMAPHORE_HANDLE_OPAQUE_WIN32_KMT_KHR")]
+    OpaqueWin32Kmt = 8279,
+
     [NativeName("CL_SEMAPHORE_HANDLE_SYNC_FD_KHR")]
     SyncFd = 8280,
+
+    [NativeName("CL_SEMAPHORE_HANDLE_D3D12_FENCE_KHR")]
+    D3D12Fence = 8281,
+
+    [NativeName("CL_SEMAPHORE_HANDLE_OPAQUE_WIN32_NAME_KHR")]
+    OpaqueWin32Name = 8296,
 }

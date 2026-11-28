@@ -3,6 +3,7 @@
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2025 The Khronos Group Inc. Licensed under the MIT license.
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -40,6 +41,7 @@ public readonly unsafe struct InternalFreeNotification : IDisposable
     )]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -66,18 +68,18 @@ public readonly unsafe struct InternalFreeNotification : IDisposable
         ],
         MinVersion = "1.0"
     )]
-    public delegate* unmanaged<
+    public ref delegate* unmanaged<
         void*,
         nuint,
         InternalAllocationType,
         SystemAllocationScope,
         void> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             void*,
             nuint,
             InternalAllocationType,
             SystemAllocationScope,
-            void>)Pointer;
+            void>*)Pointer;
 
     [SupportedApiProfile(
         "vulkan",

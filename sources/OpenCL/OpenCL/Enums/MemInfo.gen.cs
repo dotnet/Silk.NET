@@ -45,6 +45,27 @@ public enum MemInfo : uint
     [NativeName("CL_MEM_PROPERTIES")]
     Properties = 4362,
 
+    [NativeName("CL_MEM_DX9_MEDIA_ADAPTER_TYPE_KHR")]
+    Dx9MediaAdapterTypeKHR = 8232,
+
+    [NativeName("CL_MEM_DX9_MEDIA_SURFACE_INFO_KHR")]
+    Dx9MediaSurfaceInfoKHR = 8233,
+
+    [NativeName("CL_MEM_D3D10_RESOURCE_KHR")]
+    D3D10ResourceKHR = 16405,
+
+    [NativeName("CL_MEM_D3D11_RESOURCE_KHR")]
+    D3D11ResourceKHR = 16414,
+
+    [NativeName("CL_MEM_DX9_RESOURCE_INTEL")]
+    Dx9ResourceINTEL = 16423,
+
+    [NativeName("CL_MEM_DX9_SHARED_HANDLE_INTEL")]
+    Dx9SharedHandleINTEL = 16500,
+
+    [NativeName("CL_MEM_VA_API_MEDIA_SURFACE_INTEL")]
+    VaApiMediaSurfaceINTEL = 16536,
+
     [NativeName("CL_MEM_USES_SVM_POINTER_ARM")]
     UsesSvmPointerARM = 16567,
 

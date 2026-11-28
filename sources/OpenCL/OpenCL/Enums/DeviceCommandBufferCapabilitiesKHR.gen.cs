@@ -14,4 +14,16 @@ namespace Silk.NET.OpenCL;
 public enum DeviceCommandBufferCapabilitiesKHR : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_COMMAND_BUFFER_CAPABILITY_KERNEL_PRINTF_KHR")]
+    KernelPrintf = 0x1,
+
+    [NativeName("CL_COMMAND_BUFFER_CAPABILITY_DEVICE_SIDE_ENQUEUE_KHR")]
+    DeviceSideEnqueue = 0x2,
+
+    [NativeName("CL_COMMAND_BUFFER_CAPABILITY_SIMULTANEOUS_USE_KHR")]
+    SimultaneousUse = 0x4,
+
+    [NativeName("CL_COMMAND_BUFFER_CAPABILITY_MULTIPLE_QUEUE_KHR")]
+    MultipleQueue = 0x10,
 }

@@ -14,4 +14,16 @@ namespace Silk.NET.OpenCL;
 public enum SvmAllocAccessFlagsKHR : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_SVM_ALLOC_ACCESS_HOST_NOREAD_KHR")]
+    HostNoread = 0x1,
+
+    [NativeName("CL_SVM_ALLOC_ACCESS_HOST_NOWRITE_KHR")]
+    HostNowrite = 0x2,
+
+    [NativeName("CL_SVM_ALLOC_ACCESS_DEVICE_NOREAD_KHR")]
+    DeviceNoread = 0x100,
+
+    [NativeName("CL_SVM_ALLOC_ACCESS_DEVICE_NOWRITE_KHR")]
+    DeviceNowrite = 0x200,
 }

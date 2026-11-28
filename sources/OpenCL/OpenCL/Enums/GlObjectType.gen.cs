@@ -10,4 +10,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_gl_object_type")]
-public enum GlObjectType : uint { }
+public enum GlObjectType : uint
+{
+    [NativeName("CL_GL_OBJECT_BUFFER")]
+    Buffer = 8192,
+
+    [NativeName("CL_GL_OBJECT_TEXTURE2D")]
+    Texture2D = 8193,
+
+    [NativeName("CL_GL_OBJECT_TEXTURE3D")]
+    Texture3D = 8194,
+
+    [NativeName("CL_GL_OBJECT_RENDERBUFFER")]
+    Renderbuffer = 8195,
+
+    [NativeName("CL_GL_OBJECT_TEXTURE2D_ARRAY")]
+    Texture2DArray = 8206,
+
+    [NativeName("CL_GL_OBJECT_TEXTURE1D")]
+    Texture1D = 8207,
+
+    [NativeName("CL_GL_OBJECT_TEXTURE1D_ARRAY")]
+    Texture1DArray = 8208,
+
+    [NativeName("CL_GL_OBJECT_TEXTURE_BUFFER")]
+    TextureBuffer = 8209,
+}

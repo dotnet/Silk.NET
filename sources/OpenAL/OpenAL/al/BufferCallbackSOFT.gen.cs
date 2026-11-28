@@ -5,6 +5,7 @@
 // being header-derived only, implementations of the headers may have a less permissive license.
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -14,8 +15,10 @@ namespace Silk.NET.OpenAL;
 public readonly unsafe struct BufferCallbackSOFT : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, void*, int, int> Handle =>
-        (delegate* unmanaged<void*, void*, int, int>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, void*, int, int> Handle =>
+        ref *(delegate* unmanaged<void*, void*, int, int>*)Pointer;
 
     public BufferCallbackSOFT(delegate* unmanaged<void*, void*, int, int> ptr) => Pointer = ptr;
 

@@ -10,4 +10,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_command_buffer_update_type_khr")]
-public enum CommandBufferUpdateTypeKHR : uint { }
+public enum CommandBufferUpdateTypeKHR : uint
+{
+    [NativeName("CL_STRUCTURE_TYPE_MUTABLE_DISPATCH_CONFIG_KHR")]
+    StructureTypeMutableDispatchConfig = 0,
+}

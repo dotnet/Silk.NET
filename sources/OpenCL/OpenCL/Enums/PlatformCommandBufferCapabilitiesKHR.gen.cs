@@ -14,4 +14,13 @@ namespace Silk.NET.OpenCL;
 public enum PlatformCommandBufferCapabilitiesKHR : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_COMMAND_BUFFER_PLATFORM_UNIVERSAL_SYNC_KHR")]
+    UniversalSync = 0x1,
+
+    [NativeName("CL_COMMAND_BUFFER_PLATFORM_REMAP_QUEUES_KHR")]
+    RemapQueues = 0x2,
+
+    [NativeName("CL_COMMAND_BUFFER_PLATFORM_AUTOMATIC_REMAP_KHR")]
+    AutomaticRemap = 0x4,
 }

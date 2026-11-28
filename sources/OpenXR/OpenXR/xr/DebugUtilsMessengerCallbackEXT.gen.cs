@@ -3,6 +3,7 @@
 // Ported from the OpenXR headers and corresponding dependencies.
 // Original source is Copyright 2017-2026 The Khronos Group Inc. Licensed under the MIT license.
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -15,19 +16,20 @@ public readonly unsafe struct DebugUtilsMessengerCallbackEXT : IDisposable
     [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
-    public delegate* unmanaged<
+    public ref delegate* unmanaged<
         ulong,
         ulong,
         DebugUtilsMessengerCallbackDataEXT*,
         void*,
         uint> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             ulong,
             ulong,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,
-            uint>)Pointer;
+            uint>*)Pointer;
 
     [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public DebugUtilsMessengerCallbackEXT(

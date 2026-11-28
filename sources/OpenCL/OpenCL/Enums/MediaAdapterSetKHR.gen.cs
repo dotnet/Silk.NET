@@ -10,4 +10,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_media_adapter_set_khr")]
-public enum MediaAdapterSetKHR : uint { }
+public enum MediaAdapterSetKHR : uint
+{
+    [NativeName("CL_PREFERRED_DEVICES_FOR_DX9_MEDIA_ADAPTER_KHR")]
+    PreferredDevicesForDx9MediaAdapter = 8227,
+
+    [NativeName("CL_ALL_DEVICES_FOR_DX9_MEDIA_ADAPTER_KHR")]
+    AllDevicesForDx9MediaAdapter = 8228,
+}

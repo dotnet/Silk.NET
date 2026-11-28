@@ -532,4 +532,11 @@ public static class AttributeUtils
                 )
         )
     );
+
+    /// <summary>
+    /// Gets an attribute list representing a <see cref="System.Diagnostics.CodeAnalysis.UnscopedRefAttribute"/>.
+    /// </summary>
+    public static readonly AttributeListSyntax UnscopedRef = AttributeList(
+        SingletonSeparatedList(Attribute(IdentifierName("UnscopedRef")))
+    );
 }

@@ -3,6 +3,7 @@
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -12,7 +13,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct StorageInterfaceSpaceRemaining : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, ulong> Handle => (delegate* unmanaged<void*, ulong>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, ulong> Handle =>
+        ref *(delegate* unmanaged<void*, ulong>*)Pointer;
 
     public StorageInterfaceSpaceRemaining(delegate* unmanaged<void*, ulong> ptr) => Pointer = ptr;
 

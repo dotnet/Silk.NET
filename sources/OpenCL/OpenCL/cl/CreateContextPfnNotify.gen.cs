@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct CreateContextPfnNotify : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<sbyte*, void*, nuint, void*, void> Handle =>
-        (delegate* unmanaged<sbyte*, void*, nuint, void*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<sbyte*, void*, nuint, void*, void> Handle =>
+        ref *(delegate* unmanaged<sbyte*, void*, nuint, void*, void>*)Pointer;
 
     public CreateContextPfnNotify(delegate* unmanaged<sbyte*, void*, nuint, void*, void> ptr) =>
         Pointer = ptr;

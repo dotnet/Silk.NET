@@ -44,4 +44,19 @@ public enum ImageInfo : uint
 
     [NativeName("CL_IMAGE_NUM_SAMPLES")]
     NumSamples = 4378,
+
+    [NativeName("CL_IMAGE_DX9_MEDIA_PLANE_KHR")]
+    Dx9MediaPlaneKHR = 8234,
+
+    [NativeName("CL_IMAGE_D3D10_SUBRESOURCE_KHR")]
+    D3D10SubresourceKHR = 16406,
+
+    [NativeName("CL_IMAGE_D3D11_SUBRESOURCE_KHR")]
+    D3D11SubresourceKHR = 16415,
+
+    [NativeName("CL_IMAGE_DX9_PLANE_INTEL")]
+    Dx9PlaneINTEL = 16501,
+
+    [NativeName("CL_IMAGE_VA_API_PLANE_INTEL")]
+    VaApiPlaneINTEL = 16537,
 }

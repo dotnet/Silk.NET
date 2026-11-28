@@ -13,7 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct EnqueueNativeKernelUserFunc : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, void> Handle => (delegate* unmanaged<void*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, void> Handle =>
+        ref *(delegate* unmanaged<void*, void>*)Pointer;
 
     public EnqueueNativeKernelUserFunc(delegate* unmanaged<void*, void> ptr) => Pointer = ptr;
 

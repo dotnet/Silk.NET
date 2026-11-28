@@ -1,9 +1,12 @@
 ﻿// PFN_vkDebugReportCallbackEXT.gen.cs @ Vulkan/PFN_vkDebugReportCallbackEXT.gen.cs
+using System.Diagnostics.CodeAnalysis;
+
 [NativeName("PFN_vkDebugReportCallbackEXT")]
 public unsafe readonly struct PFN_vkDebugReportCallbackEXT : IDisposable
 {
     private readonly void* _pointer;
-    public delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> Handle => (delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> )_pointer;
+    [UnscopedRef]
+    public ref delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> Handle => ref *(delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> *)_pointer;
 
     public PFN_vkDebugReportCallbackEXT(delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> ptr) => _pointer = ptr;
     public PFN_vkDebugReportCallbackEXT(PFN_vkDebugReportCallbackEXTDelegate proc) => _pointer = SilkMarshal.DelegateToPtr(proc);
@@ -13,6 +16,8 @@ public unsafe readonly struct PFN_vkDebugReportCallbackEXT : IDisposable
 }
 
 // PFN_vkDebugReportCallbackEXTDelegate.gen.cs @ Vulkan/PFN_vkDebugReportCallbackEXTDelegate.gen.cs
+using System.Diagnostics.CodeAnalysis;
+
 [NativeName("PFN_vkDebugReportCallbackEXT")]
 [NameAffix("Prefix", "FunctionPointerParent", nameof(PFN_vkDebugReportCallbackEXT))]
 [NameAffix("Suffix", "FunctionPointerDelegateType", "Delegate")]

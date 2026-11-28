@@ -10,4 +10,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_dx9_device_source_intel")]
-public enum Dx9DeviceSourceINTEL : uint { }
+public enum Dx9DeviceSourceINTEL : uint
+{
+    [NativeName("CL_D3D9_DEVICE_INTEL")]
+    D3D9Device = 16418,
+
+    [NativeName("CL_D3D9EX_DEVICE_INTEL")]
+    D3D9ExDevice = 16496,
+
+    [NativeName("CL_DXVA_DEVICE_INTEL")]
+    DxvaDevice = 16497,
+}

@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct EnqueueSvmFreePfnFreeFunc : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> Handle =>
-        (delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> Handle =>
+        ref *(delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void>*)Pointer;
 
     public EnqueueSvmFreePfnFreeFunc(
         delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> ptr

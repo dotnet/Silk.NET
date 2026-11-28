@@ -18,6 +18,9 @@ public enum KernelExecInfo : uint
     [NativeName("CL_KERNEL_EXEC_INFO_SVM_FINE_GRAIN_SYSTEM")]
     SvmFineGrainSystem = 4535,
 
+    [NativeName("CL_KERNEL_EXEC_INFO_SVM_INDIRECT_ACCESS_KHR")]
+    SvmIndirectAccessKHR = 4539,
+
     [NativeName("CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_ARM")]
     WorkgroupBatchSizeARM = 16869,
 

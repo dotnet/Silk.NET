@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct SetEventCallbackPfnNotify : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<EventHandle, int, void*, void> Handle =>
-        (delegate* unmanaged<EventHandle, int, void*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<EventHandle, int, void*, void> Handle =>
+        ref *(delegate* unmanaged<EventHandle, int, void*, void>*)Pointer;
 
     public SetEventCallbackPfnNotify(delegate* unmanaged<EventHandle, int, void*, void> ptr) =>
         Pointer = ptr;

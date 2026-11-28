@@ -13,8 +13,10 @@ namespace Silk.NET.OpenCL;
 public readonly unsafe struct CompileProgramPfnNotify : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<ProgramHandle, void*, void> Handle =>
-        (delegate* unmanaged<ProgramHandle, void*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<ProgramHandle, void*, void> Handle =>
+        ref *(delegate* unmanaged<ProgramHandle, void*, void>*)Pointer;
 
     public CompileProgramPfnNotify(delegate* unmanaged<ProgramHandle, void*, void> ptr) =>
         Pointer = ptr;

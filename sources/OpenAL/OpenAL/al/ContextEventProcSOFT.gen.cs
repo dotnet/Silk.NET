@@ -5,6 +5,7 @@
 // being header-derived only, implementations of the headers may have a less permissive license.
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -14,8 +15,10 @@ namespace Silk.NET.OpenAL;
 public readonly unsafe struct ContextEventProcSOFT : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<int, int, DeviceHandle, int, sbyte*, void*, void> Handle =>
-        (delegate* unmanaged<int, int, DeviceHandle, int, sbyte*, void*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<int, int, DeviceHandle, int, sbyte*, void*, void> Handle =>
+        ref *(delegate* unmanaged<int, int, DeviceHandle, int, sbyte*, void*, void>*)Pointer;
 
     public ContextEventProcSOFT(
         delegate* unmanaged<int, int, DeviceHandle, int, sbyte*, void*, void> ptr

@@ -29,11 +29,55 @@ internal static partial class Jobs
                     .ClangScraper(
                         new()
                         {
+                            CacheKey = "Windows",
                             ScrapeIf = static () => OperatingSystem.IsWindows(),
 
-                            ClangSharpResponseFiles = ["eng/silktouch/vulkan/**/generate.rsp"],
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/vulkan/vulkan-windows/generate.rsp",
+                            ],
                             InputSourceRoot = "sources/Vulkan",
                             InputTestRoot = "tests/Vulkan",
+                        }
+                    )
+                    .ClangScraper(
+                        new()
+                        {
+                            CacheKey = "Linux",
+                            ScrapeIf = static () => OperatingSystem.IsLinux(),
+
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/vulkan/vulkan-linux/generate.rsp",
+                            ],
+                            InputSourceRoot = "sources/Vulkan",
+                            InputTestRoot = "tests/Vulkan",
+                        }
+                    )
+                    .ClangScraper(
+                        new()
+                        {
+                            CacheKey = "Mac",
+                            ScrapeIf = static () => OperatingSystem.IsMacOS(),
+                            ExitAfterGenerateCacheOnlyRun = true,
+
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/vulkan/vulkan-mac/generate.rsp",
+                            ],
+                            InputSourceRoot = "sources/Vulkan",
+                            InputTestRoot = "tests/Vulkan",
+                        }
+                    )
+                    .BakeSourceSets(
+                        new()
+                        {
+                            SourceSets = new()
+                            {
+                                ["vk-windows"] = "vk",
+                                ["vk-linux"] = "vk",
+                                ["vk-mac"] = "vk",
+                            },
                         }
                     )
                     .MarkNativeNames()
@@ -53,6 +97,10 @@ internal static partial class Jobs
                                 "VK_VENDOR_ID_VIV",
                                 "VK_VENDOR_ID_VSI",
                                 "VK_VENDOR_ID_MESA",
+                                "VK_ICD_WSI_PLATFORM_ANDROID",
+                                "VK_ICD_WSI_PLATFORM_DIRECTFB",
+                                "VK_ICD_WSI_PLATFORM_GGP",
+                                "VK_ICD_WSI_PLATFORM_FUCHSIA",
                             ],
                             IdentifyEnumMemberImpliedVendors = true,
                         }
@@ -71,7 +119,7 @@ internal static partial class Jobs
                     .IdentifySharedPrefixes(
                         new()
                         {
-                            GlobalPrefixHints = ["PFN_vk", "vk"],
+                            GlobalPrefixHints = ["PFN_vk", "vk", "PFN"],
                             PrefixOverrides = new()
                             {
                                 ["VkImageCreateFlags2KHR"] = "VK_IMAGE_CREATE_2",
@@ -84,7 +132,11 @@ internal static partial class Jobs
                     .PrettifyNames(
                         new()
                         {
-                            NameOverrides = new() { ["numAABBs"] = "NumAabbs" },
+                            NameOverrides = new()
+                            {
+                                ["numAABBs"] = "NumAabbs",
+                                ["VK_LOADER_DATA.loaderData"] = "PLoaderData",
+                            },
                             Affixes = new()
                             {
                                 [NameAffixes.HandleType] = new() { Order = 1 },

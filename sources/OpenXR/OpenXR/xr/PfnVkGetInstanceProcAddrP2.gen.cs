@@ -3,6 +3,7 @@
 // Ported from the OpenXR headers and corresponding dependencies.
 // Original source is Copyright 2017-2026 The Khronos Group Inc. Licensed under the MIT license.
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -15,8 +16,9 @@ public readonly unsafe struct PfnVkGetInstanceProcAddrP2 : IDisposable
     [SupportedApiProfile("openxr")]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("openxr")]
-    public delegate* unmanaged<void> Handle => (delegate* unmanaged<void>)Pointer;
+    public ref delegate* unmanaged<void> Handle => ref *(delegate* unmanaged<void>*)Pointer;
 
     [SupportedApiProfile("openxr")]
     public PfnVkGetInstanceProcAddrP2(delegate* unmanaged<void> ptr) => Pointer = ptr;

@@ -57,6 +57,9 @@ public enum ChannelType : uint
     [NativeName("CL_FLOAT")]
     Float = 4318,
 
+    [NativeName("CL_UNORM_INT24")]
+    UnormInt24 = 4319,
+
     [NativeName("CL_UNORM_INT_101010_2")]
     UnormInt101010x2 = 4320,
 

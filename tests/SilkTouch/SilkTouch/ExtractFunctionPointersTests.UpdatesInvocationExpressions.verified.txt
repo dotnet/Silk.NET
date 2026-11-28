@@ -1,0 +1,39 @@
+﻿// VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer.gen.cs @ Vulkan/VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer.gen.cs
+using System.Diagnostics.CodeAnalysis;
+
+[NativeName("VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer")]
+[Transformed]
+[NameAffix("Prefix", "FunctionPointerNameFallbackParent", nameof(VkEnumerateInstanceExtensionPropertiesChain))]
+public unsafe readonly struct VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer : IDisposable
+{
+    private readonly void* _pointer;
+    [UnscopedRef]
+    public ref delegate* unmanaged<VkEnumerateInstanceExtensionPropertiesChain*, sbyte*, uint*, VkExtensionProperties*, VkResult> Handle => ref *(delegate* unmanaged<VkEnumerateInstanceExtensionPropertiesChain*, sbyte*, uint*, VkExtensionProperties*, VkResult> *)_pointer;
+
+    public VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer(delegate* unmanaged<VkEnumerateInstanceExtensionPropertiesChain*, sbyte*, uint*, VkExtensionProperties*, VkResult> ptr) => _pointer = ptr;
+    public VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer(VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayerDelegate proc) => _pointer = SilkMarshal.DelegateToPtr(proc);
+    public void Dispose() => SilkMarshal.Free(_pointer);
+    public static implicit operator VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer(delegate* unmanaged<VkEnumerateInstanceExtensionPropertiesChain*, sbyte*, uint*, VkExtensionProperties*, VkResult> pfn) => new(pfn);
+    public static implicit operator delegate* unmanaged<VkEnumerateInstanceExtensionPropertiesChain*, sbyte*, uint*, VkExtensionProperties*, VkResult> (VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer pfn) => (delegate* unmanaged<VkEnumerateInstanceExtensionPropertiesChain*, sbyte*, uint*, VkExtensionProperties*, VkResult> )pfn._pointer;
+}
+
+// VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayerDelegate.gen.cs @ Vulkan/VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayerDelegate.gen.cs
+using System.Diagnostics.CodeAnalysis;
+
+[NativeName("VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer")]
+[Transformed]
+[NameAffix("Prefix", "FunctionPointerParent", nameof(VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer))]
+[NameAffix("Suffix", "FunctionPointerDelegateType", "Delegate")]
+public unsafe delegate VkResult VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayerDelegate(VkEnumerateInstanceExtensionPropertiesChain* arg0, sbyte* arg1, uint* arg2, VkExtensionProperties* arg3);
+
+// VkEnumerateInstanceExtensionPropertiesChain.gen.cs @ Vulkan/VkEnumerateInstanceExtensionPropertiesChain.gen.cs
+public unsafe partial struct VkEnumerateInstanceExtensionPropertiesChain
+{
+    [NativeTypeName("VkResult (*)(const struct VkEnumerateInstanceExtensionPropertiesChain *, const char *, uint32_t *, VkExtensionProperties *)")]
+    public VkEnumerateInstanceExtensionPropertiesChain_pfnNextLayer pfnNextLayer;
+    [NativeName("CallDown")]
+    public readonly VkResult CallDown([NativeTypeName("const char *")] sbyte* pLayerName, [NativeTypeName("uint32_t *")] uint* pPropertyCount, VkExtensionProperties* pProperties)
+    {
+        return pfnNextLayer.Handle(pNextLink, pLayerName, pPropertyCount, pProperties);
+    }
+}

@@ -1,1 +1,8 @@
-@../../remap-stdint.rsp
+@../../shared/remap-stdint.rsp
+
+@../../shared/remap-android-to-primitive.rsp
+@../../shared/remap-apple-to-primitive.rsp
+@../../shared/remap-open-harmony-to-primitive.rsp
+@../../shared/remap-screen-to-primitive.rsp
+@../../shared/remap-unix-to-primitive.rsp
+@../../shared/remap-win32-to-primitive.rsp

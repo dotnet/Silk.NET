@@ -494,7 +494,11 @@ public partial class MixKhronosData(
                 continue;
             }
 
-            proj = doc.ReplaceNameAndPath("FlagBits", "Flags").Project;
+            doc = await doc.PreserveSyntaxRootAsync(
+                async doc => doc.ReplaceNameAndPath("FlagBits", "Flags"),
+                ct
+            );
+            proj = doc.Project;
         }
 
         ctx.SourceProject = proj;

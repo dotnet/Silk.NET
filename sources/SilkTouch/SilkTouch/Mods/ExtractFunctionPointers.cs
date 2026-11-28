@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 using static Silk.NET.SilkTouch.SilkConstants;
+using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -70,32 +71,104 @@ public partial class ExtractFunctionPointers(
             )
             .ToList();
 
+        documentFactories.Source.AddUsing("System.Diagnostics.CodeAnalysis");
+
+        var addedDocumentIds = new List<DocumentId>();
         foreach (var (typeDecl, identifier, fileDirs, namespaces) in extractedFunctionPointers)
         {
             var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true);
             var dir = NameUtils.FindCommonPrefix(fileDirs, true, false, true).TrimEnd('/');
-            project = project
-                .AddDocument(
-                    $"{identifier}.gen.cs",
-                    documentFactories.Source.PopulateDocument(
-                        CompilationUnit()
-                            .WithMembers(
-                                ns is { Length: > 0 }
-                                    ? SingletonList<MemberDeclarationSyntax>(
-                                        FileScopedNamespaceDeclaration(
-                                                ModUtils.NamespaceIntoIdentifierName(
-                                                    ns.TrimEnd('.')
-                                                )
-                                            )
-                                            .WithMembers(SingletonList(typeDecl))
-                                    )
-                                    : SingletonList(typeDecl)
-                            )
-                    ),
-                    // Place extracted function pointer types in the directory common to where the types are referenced from
-                    filePath: project.FullPath($"{dir}/{identifier}.gen.cs")
+
+            var doc = project.AddDocument(
+                $"{identifier}.gen.cs",
+                documentFactories.Source.PopulateDocument(
+                    CompilationUnit()
+                        .WithMembers(
+                            ns is { Length: > 0 }
+                                ? SingletonList<MemberDeclarationSyntax>(
+                                    FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns.TrimEnd('.'))
+                                        )
+                                        .WithMembers(SingletonList(typeDecl))
+                                )
+                                : SingletonList(typeDecl)
+                        )
+                ),
+                // Place extracted function pointer types in the directory common to where the types are referenced from
+                filePath: project.FullPath($"{dir}/{identifier}.gen.cs")
+            );
+
+            addedDocumentIds.Add(doc.Id);
+            project = doc.Project;
+        }
+
+        // Update invocation expressions and other expressions with similar issues
+        // Unmanaged delegates are invocable, but once we wrap them with a struct, we handle to invoke the .Handle property instead
+        // Eg: pfnNextLayer() becomes pfnNextLayer.Handle()
+        var compilation = await project.GetCompilationAsync(ct);
+        if (compilation != null)
+        {
+            // Gather function pointer struct symbols
+            var addedStructSymbols = new HashSet<INamedTypeSymbol>(SymbolEqualityComparer.Default);
+            foreach (var addedDocumentId in addedDocumentIds)
+            {
+                var document = project.GetDocument(addedDocumentId);
+                if (document == null)
+                {
+                    continue;
+                }
+
+                var tree = await document.GetSyntaxTreeAsync(ct);
+                if (tree == null)
+                {
+                    continue;
+                }
+
+                var root = await tree.GetRootAsync(ct);
+                if (
+                    root.DescendantNodes().FirstOrDefault(x => x is StructDeclarationSyntax)
+                    is not StructDeclarationSyntax structDeclaration
                 )
-                .Project;
+                {
+                    continue;
+                }
+
+                var semanticModel = compilation.GetSemanticModel(tree);
+                var symbol = semanticModel.GetDeclaredSymbol(structDeclaration, ct);
+                if (symbol == null)
+                {
+                    continue;
+                }
+
+                addedStructSymbols.Add(symbol);
+            }
+
+            // Rewrite all docs
+            foreach (var docId in project.DocumentIds)
+            {
+                var doc = project.GetDocument(docId);
+                if (doc == null)
+                {
+                    continue;
+                }
+
+                var tree = await doc.GetSyntaxTreeAsync(ct);
+                if (tree == null)
+                {
+                    continue;
+                }
+
+                var semanticModel = compilation.GetSemanticModel(tree);
+                var invocationExpressionRewriter = new ExpressionRewriter(
+                    semanticModel,
+                    addedStructSymbols
+                );
+
+                project = doc.WithSyntaxRoot(
+                    invocationExpressionRewriter.Visit(await doc.GetSyntaxRootAsync(ct))
+                        ?? throw new InvalidOperationException("Visit returned null.")
+                ).Project;
+            }
         }
 
         ctx.SourceProject = project;
@@ -419,11 +492,20 @@ public partial class ExtractFunctionPointers(
                                     Token(SyntaxKind.ReadOnlyKeyword)
                                 )
                             ),
-                        PropertyDeclaration(rawPfn, "Handle")
+                        PropertyDeclaration(RefType(rawPfn), "Handle")
+                            .WithAttributeLists([AttributeUtils.UnscopedRef])
                             .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
                             .WithExpressionBody(
                                 ArrowExpressionClause(
-                                    CastExpression(rawPfn, IdentifierName("_pointer"))
+                                    RefExpression(
+                                        PrefixUnaryExpression(
+                                            SyntaxKind.PointerIndirectionExpression,
+                                            CastExpression(
+                                                PointerType(rawPfn),
+                                                IdentifierName("_pointer")
+                                            )
+                                        )
+                                    )
                                 )
                             )
                             .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
@@ -589,5 +671,52 @@ public partial class ExtractFunctionPointers(
             @"^((?:[A-Za-z0-9\s\*_]|\[[0-9]*\])+)\((\*)+\)\(((?:(?:[A-Za-z0-9\s\*_]|\[[0-9]*\])+,?)*)\)"
         )]
         private partial Regex FunctionPointerNativeTypeNameRegex();
+    }
+
+    private class ExpressionRewriter(
+        SemanticModel semanticModel,
+        HashSet<INamedTypeSymbol> addedStructSymbols
+    ) : CSharpSyntaxRewriter
+    {
+        // Expressions are apparently very broad so this rewriter only addresses the cases found so far
+        // Not all expressions represent instances being accessed
+
+        public override SyntaxNode VisitInvocationExpression(InvocationExpressionSyntax node)
+        {
+            var expressionType = semanticModel.GetTypeInfo(node.Expression).Type;
+            node = (InvocationExpressionSyntax)base.VisitInvocationExpression(node)!;
+
+            if (addedStructSymbols.Contains(expressionType, SymbolEqualityComparer.Default))
+            {
+                node = node.WithExpression(
+                    MemberAccessExpression(
+                        SyntaxKind.SimpleMemberAccessExpression,
+                        node.Expression,
+                        IdentifierName("Handle")
+                    )
+                );
+            }
+
+            return node;
+        }
+
+        public override SyntaxNode VisitRefExpression(RefExpressionSyntax node)
+        {
+            var expressionType = semanticModel.GetTypeInfo(node.Expression).Type;
+            node = (RefExpressionSyntax)base.VisitRefExpression(node)!;
+
+            if (addedStructSymbols.Contains(expressionType, SymbolEqualityComparer.Default))
+            {
+                node = node.WithExpression(
+                    MemberAccessExpression(
+                        SyntaxKind.SimpleMemberAccessExpression,
+                        node.Expression,
+                        IdentifierName("Handle")
+                    )
+                );
+            }
+
+            return node;
+        }
     }
 }

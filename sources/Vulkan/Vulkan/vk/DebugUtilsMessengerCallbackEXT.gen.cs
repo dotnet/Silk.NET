@@ -3,6 +3,7 @@
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2025 The Khronos Group Inc. Licensed under the MIT license.
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -15,19 +16,20 @@ public readonly unsafe struct DebugUtilsMessengerCallbackEXT : IDisposable
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     private readonly void* Pointer;
 
+    [UnscopedRef]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public delegate* unmanaged<
+    public ref delegate* unmanaged<
         DebugUtilsMessageSeverityFlagsEXT,
         DebugUtilsMessageTypeFlagsEXT,
         DebugUtilsMessengerCallbackDataEXT*,
         void*,
         uint> Handle =>
-        (delegate* unmanaged<
+        ref *(delegate* unmanaged<
             DebugUtilsMessageSeverityFlagsEXT,
             DebugUtilsMessageTypeFlagsEXT,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,
-            uint>)Pointer;
+            uint>*)Pointer;
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public DebugUtilsMessengerCallbackEXT(

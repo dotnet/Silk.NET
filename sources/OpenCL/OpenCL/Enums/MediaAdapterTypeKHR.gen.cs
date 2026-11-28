@@ -10,4 +10,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_media_adapter_type_khr")]
-public enum MediaAdapterTypeKHR : uint { }
+public enum MediaAdapterTypeKHR : uint
+{
+    [NativeName("CL_ADAPTER_D3D9_KHR")]
+    D3D9 = 8224,
+
+    [NativeName("CL_ADAPTER_D3D9EX_KHR")]
+    D3D9Ex = 8225,
+
+    [NativeName("CL_ADAPTER_DXVA_KHR")]
+    Dxva = 8226,
+}

@@ -3,6 +3,7 @@
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2025 The Khronos Group Inc. Licensed under the MIT license.
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -26,7 +27,7 @@ partial class Vk(INativeContext nativeContext) : IDisposable
         private static partial IVk ContextFactory();
     }
 
-    private readonly unsafe void*[] _slots = new void*[767];
+    private readonly unsafe void*[] _slots = new void*[821];
 
     public static IVk Create(INativeContext ctx) => new Vk(ctx);
 

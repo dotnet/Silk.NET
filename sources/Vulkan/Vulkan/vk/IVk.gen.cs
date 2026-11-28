@@ -3,6 +3,7 @@
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2025 The Khronos Group Inc. Licensed under the MIT license.
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -14,6 +15,65 @@ public unsafe partial interface IVk
 {
     public partial interface Static
     {
+        [NativeName("vk_icdEnumerateAdapterPhysicalDevices")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdEnumerateAdapterPhysicalDevices")]
+        static abstract Result IcdEnumerateAdapterPhysicalDevices(
+            InstanceHandle instance,
+            ulong adapterLUID,
+            uint* pPhysicalDeviceCount,
+            PhysicalDeviceHandle* pPhysicalDevices
+        );
+
+        [NativeName("vk_icdEnumerateAdapterPhysicalDevices")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdEnumerateAdapterPhysicalDevices")]
+        static abstract Result IcdEnumerateAdapterPhysicalDevices(
+            InstanceHandle instance,
+            ulong adapterLUID,
+            Ref<uint> pPhysicalDeviceCount,
+            Ref<PhysicalDeviceHandle> pPhysicalDevices
+        );
+
+        [NativeName("vk_icdGetInstanceProcAddr")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdGetInstanceProcAddr")]
+        static abstract VoidFunction IcdGetInstanceProcAddr(InstanceHandle instance, sbyte* pName);
+
+        [NativeName("vk_icdGetInstanceProcAddr")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdGetInstanceProcAddr")]
+        static abstract VoidFunction IcdGetInstanceProcAddr(
+            InstanceHandle instance,
+            Ref<sbyte> pName
+        );
+
+        [NativeName("vk_icdGetPhysicalDeviceProcAddr")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdGetPhysicalDeviceProcAddr")]
+        static abstract VoidFunction IcdGetPhysicalDeviceProcAddr(
+            InstanceHandle instance,
+            sbyte* pName
+        );
+
+        [NativeName("vk_icdGetPhysicalDeviceProcAddr")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdGetPhysicalDeviceProcAddr")]
+        static abstract VoidFunction IcdGetPhysicalDeviceProcAddr(
+            InstanceHandle instance,
+            Ref<sbyte> pName
+        );
+
+        [NativeName("vk_icdNegotiateLoaderICDInterfaceVersion")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdNegotiateLoaderICDInterfaceVersion")]
+        static abstract Result IcdNegotiateLoaderIcdInterfaceVersion(uint* pVersion);
+
+        [NativeName("vk_icdNegotiateLoaderICDInterfaceVersion")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vk_icdNegotiateLoaderICDInterfaceVersion")]
+        static abstract Result IcdNegotiateLoaderIcdInterfaceVersion(Ref<uint> pVersion);
+
         [NativeName("vkAcquireDrmDisplayEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -25,6 +85,21 @@ public unsafe partial interface IVk
             PhysicalDeviceHandle physicalDevice,
             int drmFd,
             DisplayHandleKHR display
+        );
+
+        [NativeName("vkAcquireFullScreenExclusiveModeEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkAcquireFullScreenExclusiveModeEXT")]
+        static abstract Result AcquireFullScreenExclusiveModeEXT(
+            DeviceHandle device,
+            SwapchainHandleKHR swapchain
         );
 
         [NativeName("vkAcquireNextImage2KHR")]
@@ -125,6 +200,44 @@ public unsafe partial interface IVk
         static abstract Result AcquireProfilingLockKHR(
             DeviceHandle device,
             Ref<AcquireProfilingLockInfoKHR> pInfo
+        );
+
+        [NativeName("vkAcquireWinrtDisplayNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_acquire_winrt_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkAcquireWinrtDisplayNV")]
+        static abstract Result AcquireWinrtDisplayNV(
+            PhysicalDeviceHandle physicalDevice,
+            DisplayHandleKHR display
+        );
+
+        [NativeName("vkAcquireXlibDisplayEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_acquire_xlib_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkAcquireXlibDisplayEXT")]
+        static abstract Result AcquireXlibDisplayEXT(
+            PhysicalDeviceHandle physicalDevice,
+            void* dpy,
+            DisplayHandleKHR display
+        );
+
+        [NativeName("vkAcquireXlibDisplayEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_acquire_xlib_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkAcquireXlibDisplayEXT")]
+        static abstract Result AcquireXlibDisplayEXT(
+            PhysicalDeviceHandle physicalDevice,
+            Ref dpy,
+            DisplayHandleKHR display
         );
 
         [NativeName("vkAllocateCommandBuffers")]
@@ -11502,6 +11615,34 @@ public unsafe partial interface IVk
             Ref<AccelerationStructureHandleNV> pAccelerationStructure
         );
 
+        [NativeName("vkCreateAndroidSurfaceKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_android_surface"],
+            ImpliesSets = ["VK_KHR_surface"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateAndroidSurfaceKHR")]
+        static abstract Result CreateAndroidSurfaceKHR(
+            InstanceHandle instance,
+            AndroidSurfaceCreateInfoKHR* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateAndroidSurfaceKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_android_surface"],
+            ImpliesSets = ["VK_KHR_surface"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateAndroidSurfaceKHR")]
+        static abstract Result CreateAndroidSurfaceKHR(
+            InstanceHandle instance,
+            Ref<AndroidSurfaceCreateInfoKHR> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        );
+
         [NativeName("vkCreateBuffer")]
         [SupportedApiProfile(
             "vulkan",
@@ -11570,6 +11711,40 @@ public unsafe partial interface IVk
             Ref<BufferCreateInfo> pCreateInfo,
             Ref<AllocationCallbacks> pAllocator,
             Ref<BufferHandle> pBuffer
+        );
+
+        [NativeName("vkCreateBufferCollectionFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_buffer_collection"],
+            ImpliesSets = [
+                "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+                "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateBufferCollectionFUCHSIA")]
+        static abstract Result CreateBufferCollectionFUCHSIA(
+            DeviceHandle device,
+            BufferCollectionCreateInfoFUCHSIA* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            BufferCollectionHandleFUCHSIA* pCollection
+        );
+
+        [NativeName("vkCreateBufferCollectionFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_buffer_collection"],
+            ImpliesSets = [
+                "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+                "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateBufferCollectionFUCHSIA")]
+        static abstract Result CreateBufferCollectionFUCHSIA(
+            DeviceHandle device,
+            Ref<BufferCollectionCreateInfoFUCHSIA> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<BufferCollectionHandleFUCHSIA> pCollection
         );
 
         [NativeName("vkCreateBufferView")]
@@ -12630,6 +12805,34 @@ public unsafe partial interface IVk
             Ref<ImageHandle> pImage
         );
 
+        [NativeName("vkCreateImagePipeSurfaceFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_imagepipe_surface"],
+            ImpliesSets = ["VK_KHR_surface"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateImagePipeSurfaceFUCHSIA")]
+        static abstract Result CreateImagePipeSurfaceFUCHSIA(
+            InstanceHandle instance,
+            ImagePipeSurfaceCreateInfoFUCHSIA* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateImagePipeSurfaceFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_imagepipe_surface"],
+            ImpliesSets = ["VK_KHR_surface"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateImagePipeSurfaceFUCHSIA")]
+        static abstract Result CreateImagePipeSurfaceFUCHSIA(
+            InstanceHandle instance,
+            Ref<ImagePipeSurfaceCreateInfoFUCHSIA> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        );
+
         [NativeName("vkCreateImageView")]
         [SupportedApiProfile(
             "vulkan",
@@ -12874,6 +13077,66 @@ public unsafe partial interface IVk
             Ref<InstanceCreateInfo> pCreateInfo,
             Ref<AllocationCallbacks> pAllocator,
             Ref<InstanceHandle> pInstance
+        );
+
+        [NativeName("vkCreateIOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateIOSSurfaceMVK")]
+        static abstract Result CreateIosSurfaceMVK(
+            InstanceHandle instance,
+            IosSurfaceCreateInfoMVK* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateIOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateIOSSurfaceMVK")]
+        static abstract Result CreateIosSurfaceMVK(
+            InstanceHandle instance,
+            Ref<IosSurfaceCreateInfoMVK> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        );
+
+        [NativeName("vkCreateMacOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        static abstract Result CreateMacOSSurfaceMVK(
+            InstanceHandle instance,
+            MacOSSurfaceCreateInfoMVK* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateMacOSSurfaceMVK")]
+        [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        static abstract Result CreateMacOSSurfaceMVK(
+            InstanceHandle instance,
+            Ref<MacOSSurfaceCreateInfoMVK> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        );
+
+        [NativeName("vkCreateMetalSurfaceEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateMetalSurfaceEXT")]
+        static abstract Result CreateMetalSurfaceEXT(
+            InstanceHandle instance,
+            MetalSurfaceCreateInfoEXT* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateMetalSurfaceEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateMetalSurfaceEXT")]
+        static abstract Result CreateMetalSurfaceEXT(
+            InstanceHandle instance,
+            Ref<MetalSurfaceCreateInfoEXT> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
         );
 
         [NativeName("vkCreateMicromapEXT")]
@@ -13598,6 +13861,26 @@ public unsafe partial interface IVk
             Ref<SamplerYcbcrConversionHandle> pYcbcrConversion
         );
 
+        [NativeName("vkCreateScreenSurfaceQNX")]
+        [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateScreenSurfaceQNX")]
+        static abstract Result CreateScreenSurfaceQNX(
+            InstanceHandle instance,
+            ScreenSurfaceCreateInfoQNX* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateScreenSurfaceQNX")]
+        [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateScreenSurfaceQNX")]
+        static abstract Result CreateScreenSurfaceQNX(
+            InstanceHandle instance,
+            Ref<ScreenSurfaceCreateInfoQNX> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        );
+
         [NativeName("vkCreateSemaphore")]
         [SupportedApiProfile(
             "vulkan",
@@ -13830,6 +14113,26 @@ public unsafe partial interface IVk
             Ref<SwapchainHandleKHR> pSwapchains
         );
 
+        [NativeName("vkCreateSurfaceOHOS")]
+        [SupportedApiProfile("vulkan", ["VK_OHOS_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateSurfaceOHOS")]
+        static abstract Result CreateSurfaceOHOS(
+            InstanceHandle instance,
+            SurfaceCreateInfoOHOS* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateSurfaceOHOS")]
+        [SupportedApiProfile("vulkan", ["VK_OHOS_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateSurfaceOHOS")]
+        static abstract Result CreateSurfaceOHOS(
+            InstanceHandle instance,
+            Ref<SurfaceCreateInfoOHOS> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        );
+
         [NativeName("vkCreateSwapchainKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateSwapchainKHR")]
@@ -13964,6 +14267,114 @@ public unsafe partial interface IVk
             Ref<VideoSessionParametersCreateInfoKHR> pCreateInfo,
             Ref<AllocationCallbacks> pAllocator,
             Ref<VideoSessionParametersHandleKHR> pVideoSessionParameters
+        );
+
+        [NativeName("vkCreateViSurfaceNN")]
+        [SupportedApiProfile("vulkan", ["VK_NN_vi_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateViSurfaceNN")]
+        static abstract Result CreateViSurfaceNN(
+            InstanceHandle instance,
+            ViSurfaceCreateInfoNN* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateViSurfaceNN")]
+        [SupportedApiProfile("vulkan", ["VK_NN_vi_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateViSurfaceNN")]
+        static abstract Result CreateViSurfaceNN(
+            InstanceHandle instance,
+            Ref<ViSurfaceCreateInfoNN> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        );
+
+        [NativeName("vkCreateWaylandSurfaceKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_wayland_surface"],
+            ImpliesSets = ["VK_KHR_surface"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateWaylandSurfaceKHR")]
+        static abstract Result CreateWaylandSurfaceKHR(
+            InstanceHandle instance,
+            WaylandSurfaceCreateInfoKHR* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateWaylandSurfaceKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_wayland_surface"],
+            ImpliesSets = ["VK_KHR_surface"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateWaylandSurfaceKHR")]
+        static abstract Result CreateWaylandSurfaceKHR(
+            InstanceHandle instance,
+            Ref<WaylandSurfaceCreateInfoKHR> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        );
+
+        [NativeName("vkCreateWin32SurfaceKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateWin32SurfaceKHR")]
+        static abstract Result CreateWin32SurfaceKHR(
+            InstanceHandle instance,
+            Win32SurfaceCreateInfoKHR* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateWin32SurfaceKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateWin32SurfaceKHR")]
+        static abstract Result CreateWin32SurfaceKHR(
+            InstanceHandle instance,
+            Ref<Win32SurfaceCreateInfoKHR> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        );
+
+        [NativeName("vkCreateXcbSurfaceKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateXcbSurfaceKHR")]
+        static abstract Result CreateXcbSurfaceKHR(
+            InstanceHandle instance,
+            XcbSurfaceCreateInfoKHR* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateXcbSurfaceKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateXcbSurfaceKHR")]
+        static abstract Result CreateXcbSurfaceKHR(
+            InstanceHandle instance,
+            Ref<XcbSurfaceCreateInfoKHR> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
+        );
+
+        [NativeName("vkCreateXlibSurfaceKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateXlibSurfaceKHR")]
+        static abstract Result CreateXlibSurfaceKHR(
+            InstanceHandle instance,
+            XlibSurfaceCreateInfoKHR* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            SurfaceHandleKHR* pSurface
+        );
+
+        [NativeName("vkCreateXlibSurfaceKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateXlibSurfaceKHR")]
+        static abstract Result CreateXlibSurfaceKHR(
+            InstanceHandle instance,
+            Ref<XlibSurfaceCreateInfoKHR> pCreateInfo,
+            Ref<AllocationCallbacks> pAllocator,
+            Ref<SurfaceHandleKHR> pSurface
         );
 
         [NativeName("vkDebugMarkerSetObjectNameEXT")]
@@ -14179,6 +14590,38 @@ public unsafe partial interface IVk
         static abstract void DestroyBuffer(
             DeviceHandle device,
             BufferHandle buffer,
+            Ref<AllocationCallbacks> pAllocator
+        );
+
+        [NativeName("vkDestroyBufferCollectionFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_buffer_collection"],
+            ImpliesSets = [
+                "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+                "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkDestroyBufferCollectionFUCHSIA")]
+        static abstract void DestroyBufferCollectionFUCHSIA(
+            DeviceHandle device,
+            BufferCollectionHandleFUCHSIA collection,
+            AllocationCallbacks* pAllocator
+        );
+
+        [NativeName("vkDestroyBufferCollectionFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_buffer_collection"],
+            ImpliesSets = [
+                "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+                "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkDestroyBufferCollectionFUCHSIA")]
+        static abstract void DestroyBufferCollectionFUCHSIA(
+            DeviceHandle device,
+            BufferCollectionHandleFUCHSIA collection,
             Ref<AllocationCallbacks> pAllocator
         );
 
@@ -16827,6 +17270,22 @@ public unsafe partial interface IVk
             Ref<ShaderInstrumentationMetricDescriptionARM> pDescriptions
         );
 
+        [NativeName("vkExportMetalObjectsEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+        [NativeFunction("vulkan", EntryPoint = "vkExportMetalObjectsEXT")]
+        static abstract void ExportMetalObjectsEXT(
+            DeviceHandle device,
+            ExportMetalObjectsInfoEXT* pMetalObjectsInfo
+        );
+
+        [NativeName("vkExportMetalObjectsEXT")]
+        [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+        [NativeFunction("vulkan", EntryPoint = "vkExportMetalObjectsEXT")]
+        static abstract void ExportMetalObjectsEXT(
+            DeviceHandle device,
+            Ref<ExportMetalObjectsInfoEXT> pMetalObjectsInfo
+        );
+
         [NativeName("vkFlushMappedMemoryRanges")]
         [SupportedApiProfile(
             "vulkan",
@@ -17305,6 +17764,70 @@ public unsafe partial interface IVk
             DeviceHandle device,
             Ref<AccelerationStructureCaptureDescriptorDataInfoEXT> pInfo,
             Ref pData
+        );
+
+        [NativeName("vkGetAndroidHardwareBufferPropertiesANDROID")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ANDROID_external_memory_android_hardware_buffer"],
+            ImpliesSets = [
+                "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+                "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetAndroidHardwareBufferPropertiesANDROID")]
+        static abstract Result GetAndroidHardwareBufferPropertiesANDROID(
+            DeviceHandle device,
+            void* buffer,
+            AndroidHardwareBufferPropertiesANDROID* pProperties
+        );
+
+        [NativeName("vkGetAndroidHardwareBufferPropertiesANDROID")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ANDROID_external_memory_android_hardware_buffer"],
+            ImpliesSets = [
+                "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+                "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetAndroidHardwareBufferPropertiesANDROID")]
+        static abstract Result GetAndroidHardwareBufferPropertiesANDROID(
+            DeviceHandle device,
+            Ref buffer,
+            Ref<AndroidHardwareBufferPropertiesANDROID> pProperties
+        );
+
+        [NativeName("vkGetBufferCollectionPropertiesFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_buffer_collection"],
+            ImpliesSets = [
+                "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+                "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetBufferCollectionPropertiesFUCHSIA")]
+        static abstract Result GetBufferCollectionPropertiesFUCHSIA(
+            DeviceHandle device,
+            BufferCollectionHandleFUCHSIA collection,
+            BufferCollectionPropertiesFUCHSIA* pProperties
+        );
+
+        [NativeName("vkGetBufferCollectionPropertiesFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_buffer_collection"],
+            ImpliesSets = [
+                "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+                "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetBufferCollectionPropertiesFUCHSIA")]
+        static abstract Result GetBufferCollectionPropertiesFUCHSIA(
+            DeviceHandle device,
+            BufferCollectionHandleFUCHSIA collection,
+            Ref<BufferCollectionPropertiesFUCHSIA> pProperties
         );
 
         [NativeName("vkGetBufferDeviceAddress")]
@@ -18518,6 +19041,44 @@ public unsafe partial interface IVk
             Ref<DeviceGroupPresentCapabilitiesKHR> pDeviceGroupPresentCapabilities
         );
 
+        [NativeName("vkGetDeviceGroupSurfacePresentModes2EXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_EXT_full_screen_exclusive+VK_KHR_device_group",
+                "VK_EXT_full_screen_exclusive+VK_VERSION_1_1",
+            ],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT")]
+        static abstract Result GetDeviceGroupSurfacePresentModes2EXT(
+            DeviceHandle device,
+            PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+            DeviceGroupPresentModeFlagsKHR* pModes
+        );
+
+        [NativeName("vkGetDeviceGroupSurfacePresentModes2EXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_EXT_full_screen_exclusive+VK_KHR_device_group",
+                "VK_EXT_full_screen_exclusive+VK_VERSION_1_1",
+            ],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT")]
+        static abstract Result GetDeviceGroupSurfacePresentModes2EXT(
+            DeviceHandle device,
+            Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+            Ref<DeviceGroupPresentModeFlagsKHR> pModes
+        );
+
         [NativeName("vkGetDeviceGroupSurfacePresentModesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -19473,6 +20034,32 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetFenceStatus")]
         static abstract Result GetFenceStatus(DeviceHandle device, FenceHandle fence);
 
+        [NativeName("vkGetFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetFenceWin32HandleKHR")]
+        static abstract Result GetFenceWin32HandleKHR(
+            DeviceHandle device,
+            FenceGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+            void** pHandle
+        );
+
+        [NativeName("vkGetFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetFenceWin32HandleKHR")]
+        static abstract Result GetFenceWin32HandleKHR(
+            DeviceHandle device,
+            Ref<FenceGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+            Ref2D pHandle
+        );
+
         [NativeName("vkGetFramebufferTilePropertiesQCOM")]
         [SupportedApiProfile(
             "vulkan",
@@ -20414,6 +21001,38 @@ public unsafe partial interface IVk
             Ref<GetLatencyMarkerInfoNV> pLatencyMarkerInfo
         );
 
+        [NativeName("vkGetMemoryAndroidHardwareBufferANDROID")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ANDROID_external_memory_android_hardware_buffer"],
+            ImpliesSets = [
+                "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+                "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryAndroidHardwareBufferANDROID")]
+        static abstract Result GetMemoryAndroidHardwareBufferANDROID(
+            DeviceHandle device,
+            MemoryGetAndroidHardwareBufferInfoANDROID* pInfo,
+            void** pBuffer
+        );
+
+        [NativeName("vkGetMemoryAndroidHardwareBufferANDROID")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ANDROID_external_memory_android_hardware_buffer"],
+            ImpliesSets = [
+                "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+                "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryAndroidHardwareBufferANDROID")]
+        static abstract Result GetMemoryAndroidHardwareBufferANDROID(
+            DeviceHandle device,
+            Ref<MemoryGetAndroidHardwareBufferInfoANDROID> pInfo,
+            Ref2D pBuffer
+        );
+
         [NativeName("vkGetMemoryFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -20514,6 +21133,104 @@ public unsafe partial interface IVk
             Ref<MemoryHostPointerPropertiesEXT> pMemoryHostPointerProperties
         );
 
+        [NativeName("vkGetMemoryMetalHandleEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandleEXT")]
+        static abstract Result GetMemoryMetalHandleEXT(
+            DeviceHandle device,
+            MemoryGetMetalHandleInfoEXT* pGetMetalHandleInfo,
+            void** pHandle
+        );
+
+        [NativeName("vkGetMemoryMetalHandleEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandleEXT")]
+        static abstract Result GetMemoryMetalHandleEXT(
+            DeviceHandle device,
+            Ref<MemoryGetMetalHandleInfoEXT> pGetMetalHandleInfo,
+            Ref2D pHandle
+        );
+
+        [NativeName("vkGetMemoryMetalHandlePropertiesEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandlePropertiesEXT")]
+        static abstract Result GetMemoryMetalHandlePropertiesEXT(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            void* pHandle,
+            MemoryMetalHandlePropertiesEXT* pMemoryMetalHandleProperties
+        );
+
+        [NativeName("vkGetMemoryMetalHandlePropertiesEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_external_memory_metal"],
+            ImpliesSets = [
+                "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+                "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandlePropertiesEXT")]
+        static abstract Result GetMemoryMetalHandlePropertiesEXT(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            Ref pHandle,
+            Ref<MemoryMetalHandlePropertiesEXT> pMemoryMetalHandleProperties
+        );
+
+        [NativeName("vkGetMemoryNativeBufferOHOS")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_OHOS_external_memory"],
+            ImpliesSets = [
+                "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+                "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryNativeBufferOHOS")]
+        static abstract Result GetMemoryNativeBufferOHOS(
+            DeviceHandle device,
+            MemoryGetNativeBufferInfoOHOS* pInfo,
+            void** pBuffer
+        );
+
+        [NativeName("vkGetMemoryNativeBufferOHOS")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_OHOS_external_memory"],
+            ImpliesSets = [
+                "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+                "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryNativeBufferOHOS")]
+        static abstract Result GetMemoryNativeBufferOHOS(
+            DeviceHandle device,
+            Ref<MemoryGetNativeBufferInfoOHOS> pInfo,
+            Ref2D pBuffer
+        );
+
         [NativeName("vkGetMemoryRemoteAddressNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -20544,6 +21261,166 @@ public unsafe partial interface IVk
             DeviceHandle device,
             Ref<MemoryGetRemoteAddressInfoNV> pMemoryGetRemoteAddressInfo,
             Ref2D pAddress
+        );
+
+        [NativeName("vkGetMemoryWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleKHR")]
+        static abstract Result GetMemoryWin32HandleKHR(
+            DeviceHandle device,
+            MemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+            void** pHandle
+        );
+
+        [NativeName("vkGetMemoryWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleKHR")]
+        static abstract Result GetMemoryWin32HandleKHR(
+            DeviceHandle device,
+            Ref<MemoryGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+            Ref2D pHandle
+        );
+
+        [NativeName("vkGetMemoryWin32HandleNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_external_memory_win32"],
+            ImpliesSets = ["VK_NV_external_memory"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleNV")]
+        static abstract Result GetMemoryWin32HandleNV(
+            DeviceHandle device,
+            DeviceMemoryHandle memory,
+            ExternalMemoryHandleTypeFlagsNV handleType,
+            void** pHandle
+        );
+
+        [NativeName("vkGetMemoryWin32HandleNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_external_memory_win32"],
+            ImpliesSets = ["VK_NV_external_memory"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleNV")]
+        static abstract Result GetMemoryWin32HandleNV(
+            DeviceHandle device,
+            DeviceMemoryHandle memory,
+            ExternalMemoryHandleTypeFlagsNV handleType,
+            Ref2D pHandle
+        );
+
+        [NativeName("vkGetMemoryWin32HandlePropertiesKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
+        static abstract Result GetMemoryWin32HandlePropertiesKHR(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            void* handle,
+            MemoryWin32HandlePropertiesKHR* pMemoryWin32HandleProperties
+        );
+
+        [NativeName("vkGetMemoryWin32HandlePropertiesKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_memory_win32"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+                "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
+        static abstract Result GetMemoryWin32HandlePropertiesKHR(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            Ref handle,
+            Ref<MemoryWin32HandlePropertiesKHR> pMemoryWin32HandleProperties
+        );
+
+        [NativeName("vkGetMemoryZirconHandleFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_external_memory"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_capabilities+VK_KHR_external_memory",
+                "VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryZirconHandleFUCHSIA")]
+        static abstract Result GetMemoryZirconHandleFUCHSIA(
+            DeviceHandle device,
+            MemoryGetZirconHandleInfoFUCHSIA* pGetZirconHandleInfo,
+            uint* pZirconHandle
+        );
+
+        [NativeName("vkGetMemoryZirconHandleFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_external_memory"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_capabilities+VK_KHR_external_memory",
+                "VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryZirconHandleFUCHSIA")]
+        static abstract Result GetMemoryZirconHandleFUCHSIA(
+            DeviceHandle device,
+            Ref<MemoryGetZirconHandleInfoFUCHSIA> pGetZirconHandleInfo,
+            Ref<uint> pZirconHandle
+        );
+
+        [NativeName("vkGetMemoryZirconHandlePropertiesFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_external_memory"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_capabilities+VK_KHR_external_memory",
+                "VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryZirconHandlePropertiesFUCHSIA")]
+        static abstract Result GetMemoryZirconHandlePropertiesFUCHSIA(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            uint zirconHandle,
+            MemoryZirconHandlePropertiesFUCHSIA* pMemoryZirconHandleProperties
+        );
+
+        [NativeName("vkGetMemoryZirconHandlePropertiesFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_external_memory"],
+            ImpliesSets = [
+                "VK_KHR_external_memory_capabilities+VK_KHR_external_memory",
+                "VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetMemoryZirconHandlePropertiesFUCHSIA")]
+        static abstract Result GetMemoryZirconHandlePropertiesFUCHSIA(
+            DeviceHandle device,
+            ExternalMemoryHandleTypeFlags handleType,
+            uint zirconHandle,
+            Ref<MemoryZirconHandlePropertiesFUCHSIA> pMemoryZirconHandleProperties
         );
 
         [NativeName("vkGetMicromapBuildSizesEXT")]
@@ -20578,6 +21455,38 @@ public unsafe partial interface IVk
             AccelerationStructureBuildTypeKHR buildType,
             Ref<MicromapBuildInfoEXT> pBuildInfo,
             Ref<MicromapBuildSizesInfoEXT> pSizeInfo
+        );
+
+        [NativeName("vkGetNativeBufferPropertiesOHOS")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_OHOS_external_memory"],
+            ImpliesSets = [
+                "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+                "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetNativeBufferPropertiesOHOS")]
+        static abstract Result GetNativeBufferPropertiesOHOS(
+            DeviceHandle device,
+            void* buffer,
+            NativeBufferPropertiesOHOS* pProperties
+        );
+
+        [NativeName("vkGetNativeBufferPropertiesOHOS")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_OHOS_external_memory"],
+            ImpliesSets = [
+                "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+                "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetNativeBufferPropertiesOHOS")]
+        static abstract Result GetNativeBufferPropertiesOHOS(
+            DeviceHandle device,
+            Ref buffer,
+            Ref<NativeBufferPropertiesOHOS> pProperties
         );
 
         [NativeName("vkGetPartitionedAccelerationStructuresBuildSizesNV")]
@@ -22506,6 +23415,24 @@ public unsafe partial interface IVk
             Ref<QueueFamilyProperties2> pQueueFamilyProperties
         );
 
+        [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+        [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+        static abstract uint GetPhysicalDeviceScreenPresentationSupportQNX(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex,
+            void* window
+        );
+
+        [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+        [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+        static abstract MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex,
+            Ref window
+        );
+
         [NativeName("vkGetPhysicalDeviceSparseImageFormatProperties")]
         [SupportedApiProfile(
             "vulkan",
@@ -22828,6 +23755,40 @@ public unsafe partial interface IVk
             Ref<SurfaceFormatKHR> pSurfaceFormats
         );
 
+        [NativeName("vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        static abstract Result GetPhysicalDeviceSurfacePresentModes2EXT(
+            PhysicalDeviceHandle physicalDevice,
+            PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+            uint* pPresentModeCount,
+            PresentModeKHR* pPresentModes
+        );
+
+        [NativeName("vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+        static abstract Result GetPhysicalDeviceSurfacePresentModes2EXT(
+            PhysicalDeviceHandle physicalDevice,
+            Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+            Ref<uint> pPresentModeCount,
+            Ref<PresentModeKHR> pPresentModes
+        );
+
         [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -23020,6 +23981,88 @@ public unsafe partial interface IVk
             Ref<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo,
             Ref<uint> pVideoFormatPropertyCount,
             Ref<VideoFormatPropertiesKHR> pVideoFormatProperties
+        );
+
+        [NativeName("vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_wayland_surface"],
+            ImpliesSets = ["VK_KHR_surface"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
+        static abstract uint GetPhysicalDeviceWaylandPresentationSupportKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex,
+            void* display
+        );
+
+        [NativeName("vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_wayland_surface"],
+            ImpliesSets = ["VK_KHR_surface"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
+        static abstract MaybeBool<uint> GetPhysicalDeviceWaylandPresentationSupportKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex,
+            Ref display
+        );
+
+        [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        static abstract MaybeBool<uint> GetPhysicalDeviceWin32PresentationSupportKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex
+        );
+
+        [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+        static abstract uint GetPhysicalDeviceWin32PresentationSupportRawKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex
+        );
+
+        [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
+        static abstract uint GetPhysicalDeviceXcbPresentationSupportKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex,
+            void* connection,
+            uint visual_id
+        );
+
+        [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
+        static abstract MaybeBool<uint> GetPhysicalDeviceXcbPresentationSupportKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex,
+            Ref connection,
+            uint visual_id
+        );
+
+        [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+        static abstract uint GetPhysicalDeviceXlibPresentationSupportKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex,
+            void* dpy,
+            nuint visualID
+        );
+
+        [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+        [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+        static abstract MaybeBool<uint> GetPhysicalDeviceXlibPresentationSupportKHR(
+            PhysicalDeviceHandle physicalDevice,
+            uint queueFamilyIndex,
+            Ref dpy,
+            nuint visualID
         );
 
         [NativeName("vkGetPipelineBinaryDataKHR")]
@@ -23570,6 +24613,34 @@ public unsafe partial interface IVk
             Ref<CheckpointDataNV> pCheckpointData
         );
 
+        [NativeName("vkGetRandROutputDisplayEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_acquire_xlib_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetRandROutputDisplayEXT")]
+        static abstract Result GetRandROutputDisplayEXT(
+            PhysicalDeviceHandle physicalDevice,
+            void* dpy,
+            nuint rrOutput,
+            DisplayHandleKHR* pDisplay
+        );
+
+        [NativeName("vkGetRandROutputDisplayEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_acquire_xlib_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetRandROutputDisplayEXT")]
+        static abstract Result GetRandROutputDisplayEXT(
+            PhysicalDeviceHandle physicalDevice,
+            Ref dpy,
+            nuint rrOutput,
+            Ref<DisplayHandleKHR> pDisplay
+        );
+
         [NativeName("vkGetRayTracingCaptureReplayShaderGroupHandlesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -23863,6 +24934,38 @@ public unsafe partial interface IVk
             Ref pData
         );
 
+        [NativeName("vkGetScreenBufferPropertiesQNX")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_QNX_external_memory_screen_buffer"],
+            ImpliesSets = [
+                "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+                "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetScreenBufferPropertiesQNX")]
+        static abstract Result GetScreenBufferPropertiesQNX(
+            DeviceHandle device,
+            void* buffer,
+            ScreenBufferPropertiesQNX* pProperties
+        );
+
+        [NativeName("vkGetScreenBufferPropertiesQNX")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_QNX_external_memory_screen_buffer"],
+            ImpliesSets = [
+                "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+                "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetScreenBufferPropertiesQNX")]
+        static abstract Result GetScreenBufferPropertiesQNX(
+            DeviceHandle device,
+            Ref buffer,
+            Ref<ScreenBufferPropertiesQNX> pProperties
+        );
+
         [NativeName("vkGetSemaphoreCounterValue")]
         [SupportedApiProfile(
             "vulkan",
@@ -23977,6 +25080,58 @@ public unsafe partial interface IVk
             DeviceHandle device,
             Ref<SemaphoreGetFdInfoKHR> pGetFdInfo,
             Ref<int> pFd
+        );
+
+        [NativeName("vkGetSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreWin32HandleKHR")]
+        static abstract Result GetSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            SemaphoreGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+            void** pHandle
+        );
+
+        [NativeName("vkGetSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreWin32HandleKHR")]
+        static abstract Result GetSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            Ref<SemaphoreGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+            Ref2D pHandle
+        );
+
+        [NativeName("vkGetSemaphoreZirconHandleFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_external_semaphore"],
+            ImpliesSets = ["VK_KHR_external_semaphore", "VK_KHR_external_semaphore_capabilities"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreZirconHandleFUCHSIA")]
+        static abstract Result GetSemaphoreZirconHandleFUCHSIA(
+            DeviceHandle device,
+            SemaphoreGetZirconHandleInfoFUCHSIA* pGetZirconHandleInfo,
+            uint* pZirconHandle
+        );
+
+        [NativeName("vkGetSemaphoreZirconHandleFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_external_semaphore"],
+            ImpliesSets = ["VK_KHR_external_semaphore", "VK_KHR_external_semaphore_capabilities"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreZirconHandleFUCHSIA")]
+        static abstract Result GetSemaphoreZirconHandleFUCHSIA(
+            DeviceHandle device,
+            Ref<SemaphoreGetZirconHandleInfoFUCHSIA> pGetZirconHandleInfo,
+            Ref<uint> pZirconHandle
         );
 
         [NativeName("vkGetShaderBinaryDataEXT")]
@@ -24446,6 +25601,32 @@ public unsafe partial interface IVk
             Ref<VideoSessionMemoryRequirementsKHR> pMemoryRequirements
         );
 
+        [NativeName("vkGetWinrtDisplayNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_acquire_winrt_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetWinrtDisplayNV")]
+        static abstract Result GetWinrtDisplayNV(
+            PhysicalDeviceHandle physicalDevice,
+            uint deviceRelativeId,
+            DisplayHandleKHR* pDisplay
+        );
+
+        [NativeName("vkGetWinrtDisplayNV")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_acquire_winrt_display"],
+            ImpliesSets = ["VK_EXT_direct_mode_display"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkGetWinrtDisplayNV")]
+        static abstract Result GetWinrtDisplayNV(
+            PhysicalDeviceHandle physicalDevice,
+            uint deviceRelativeId,
+            Ref<DisplayHandleKHR> pDisplay
+        );
+
         [NativeName("vkImportFenceFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -24476,6 +25657,30 @@ public unsafe partial interface IVk
             Ref<ImportFenceFdInfoKHR> pImportFenceFdInfo
         );
 
+        [NativeName("vkImportFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportFenceWin32HandleKHR")]
+        static abstract Result ImportFenceWin32HandleKHR(
+            DeviceHandle device,
+            ImportFenceWin32HandleInfoKHR* pImportFenceWin32HandleInfo
+        );
+
+        [NativeName("vkImportFenceWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_fence_win32"],
+            ImpliesSets = ["VK_KHR_external_fence"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportFenceWin32HandleKHR")]
+        static abstract Result ImportFenceWin32HandleKHR(
+            DeviceHandle device,
+            Ref<ImportFenceWin32HandleInfoKHR> pImportFenceWin32HandleInfo
+        );
+
         [NativeName("vkImportSemaphoreFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -24504,6 +25709,54 @@ public unsafe partial interface IVk
         static abstract Result ImportSemaphoreFdKHR(
             DeviceHandle device,
             Ref<ImportSemaphoreFdInfoKHR> pImportSemaphoreFdInfo
+        );
+
+        [NativeName("vkImportSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreWin32HandleKHR")]
+        static abstract Result ImportSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            ImportSemaphoreWin32HandleInfoKHR* pImportSemaphoreWin32HandleInfo
+        );
+
+        [NativeName("vkImportSemaphoreWin32HandleKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_external_semaphore_win32"],
+            ImpliesSets = ["VK_KHR_external_semaphore"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreWin32HandleKHR")]
+        static abstract Result ImportSemaphoreWin32HandleKHR(
+            DeviceHandle device,
+            Ref<ImportSemaphoreWin32HandleInfoKHR> pImportSemaphoreWin32HandleInfo
+        );
+
+        [NativeName("vkImportSemaphoreZirconHandleFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_external_semaphore"],
+            ImpliesSets = ["VK_KHR_external_semaphore", "VK_KHR_external_semaphore_capabilities"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreZirconHandleFUCHSIA")]
+        static abstract Result ImportSemaphoreZirconHandleFUCHSIA(
+            DeviceHandle device,
+            ImportSemaphoreZirconHandleInfoFUCHSIA* pImportSemaphoreZirconHandleInfo
+        );
+
+        [NativeName("vkImportSemaphoreZirconHandleFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_external_semaphore"],
+            ImpliesSets = ["VK_KHR_external_semaphore", "VK_KHR_external_semaphore_capabilities"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreZirconHandleFUCHSIA")]
+        static abstract Result ImportSemaphoreZirconHandleFUCHSIA(
+            DeviceHandle device,
+            Ref<ImportSemaphoreZirconHandleInfoFUCHSIA> pImportSemaphoreZirconHandleInfo
         );
 
         [NativeName("vkInitializePerformanceApiINTEL")]
@@ -24832,6 +26085,20 @@ public unsafe partial interface IVk
             ValidationCacheHandleEXT dstCache,
             uint srcCacheCount,
             Ref<ValidationCacheHandleEXT> pSrcCaches
+        );
+
+        [NativeName("vkNegotiateLoaderLayerInterfaceVersion")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkNegotiateLoaderLayerInterfaceVersion")]
+        static abstract Result NegotiateLoaderLayerInterfaceVersion(
+            NegotiateLayerInterface* pVersionStruct
+        );
+
+        [NativeName("vkNegotiateLoaderLayerInterfaceVersion")]
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkNegotiateLoaderLayerInterfaceVersion")]
+        static abstract Result NegotiateLoaderLayerInterfaceVersion(
+            Ref<NegotiateLayerInterface> pVersionStruct
         );
 
         [NativeName("vkQueueBeginDebugUtilsLabelEXT")]
@@ -25349,6 +26616,21 @@ public unsafe partial interface IVk
             DisplayHandleKHR display
         );
 
+        [NativeName("vkReleaseFullScreenExclusiveModeEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_full_screen_exclusive"],
+            ImpliesSets = [
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkReleaseFullScreenExclusiveModeEXT")]
+        static abstract Result ReleaseFullScreenExclusiveModeEXT(
+            DeviceHandle device,
+            SwapchainHandleKHR swapchain
+        );
+
         [NativeName("vkReleasePerformanceConfigurationINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkReleasePerformanceConfigurationINTEL")]
@@ -25675,6 +26957,70 @@ public unsafe partial interface IVk
             QueryPoolHandle queryPool,
             uint firstQuery,
             uint queryCount
+        );
+
+        [NativeName("vkSetBufferCollectionBufferConstraintsFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_buffer_collection"],
+            ImpliesSets = [
+                "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+                "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkSetBufferCollectionBufferConstraintsFUCHSIA")]
+        static abstract Result SetBufferCollectionBufferConstraintsFUCHSIA(
+            DeviceHandle device,
+            BufferCollectionHandleFUCHSIA collection,
+            BufferConstraintsInfoFUCHSIA* pBufferConstraintsInfo
+        );
+
+        [NativeName("vkSetBufferCollectionBufferConstraintsFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_buffer_collection"],
+            ImpliesSets = [
+                "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+                "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkSetBufferCollectionBufferConstraintsFUCHSIA")]
+        static abstract Result SetBufferCollectionBufferConstraintsFUCHSIA(
+            DeviceHandle device,
+            BufferCollectionHandleFUCHSIA collection,
+            Ref<BufferConstraintsInfoFUCHSIA> pBufferConstraintsInfo
+        );
+
+        [NativeName("vkSetBufferCollectionImageConstraintsFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_buffer_collection"],
+            ImpliesSets = [
+                "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+                "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkSetBufferCollectionImageConstraintsFUCHSIA")]
+        static abstract Result SetBufferCollectionImageConstraintsFUCHSIA(
+            DeviceHandle device,
+            BufferCollectionHandleFUCHSIA collection,
+            ImageConstraintsInfoFUCHSIA* pImageConstraintsInfo
+        );
+
+        [NativeName("vkSetBufferCollectionImageConstraintsFUCHSIA")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_FUCHSIA_buffer_collection"],
+            ImpliesSets = [
+                "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+                "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkSetBufferCollectionImageConstraintsFUCHSIA")]
+        static abstract Result SetBufferCollectionImageConstraintsFUCHSIA(
+            DeviceHandle device,
+            BufferCollectionHandleFUCHSIA collection,
+            Ref<ImageConstraintsInfoFUCHSIA> pImageConstraintsInfo
         );
 
         [NativeName("vkSetDebugUtilsObjectNameEXT")]
@@ -26915,6 +28261,56 @@ public unsafe partial interface IVk
         );
     }
 
+    [NativeName("vk_icdEnumerateAdapterPhysicalDevices")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdEnumerateAdapterPhysicalDevices")]
+    Result IcdEnumerateAdapterPhysicalDevices(
+        InstanceHandle instance,
+        ulong adapterLUID,
+        uint* pPhysicalDeviceCount,
+        PhysicalDeviceHandle* pPhysicalDevices
+    );
+
+    [NativeName("vk_icdEnumerateAdapterPhysicalDevices")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdEnumerateAdapterPhysicalDevices")]
+    Result IcdEnumerateAdapterPhysicalDevices(
+        InstanceHandle instance,
+        ulong adapterLUID,
+        Ref<uint> pPhysicalDeviceCount,
+        Ref<PhysicalDeviceHandle> pPhysicalDevices
+    );
+
+    [NativeName("vk_icdGetInstanceProcAddr")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdGetInstanceProcAddr")]
+    VoidFunction IcdGetInstanceProcAddr(InstanceHandle instance, sbyte* pName);
+
+    [NativeName("vk_icdGetInstanceProcAddr")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdGetInstanceProcAddr")]
+    VoidFunction IcdGetInstanceProcAddr(InstanceHandle instance, Ref<sbyte> pName);
+
+    [NativeName("vk_icdGetPhysicalDeviceProcAddr")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdGetPhysicalDeviceProcAddr")]
+    VoidFunction IcdGetPhysicalDeviceProcAddr(InstanceHandle instance, sbyte* pName);
+
+    [NativeName("vk_icdGetPhysicalDeviceProcAddr")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdGetPhysicalDeviceProcAddr")]
+    VoidFunction IcdGetPhysicalDeviceProcAddr(InstanceHandle instance, Ref<sbyte> pName);
+
+    [NativeName("vk_icdNegotiateLoaderICDInterfaceVersion")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdNegotiateLoaderICDInterfaceVersion")]
+    Result IcdNegotiateLoaderIcdInterfaceVersion(uint* pVersion);
+
+    [NativeName("vk_icdNegotiateLoaderICDInterfaceVersion")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vk_icdNegotiateLoaderICDInterfaceVersion")]
+    Result IcdNegotiateLoaderIcdInterfaceVersion(Ref<uint> pVersion);
+
     [NativeName("vkAcquireDrmDisplayEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -26927,6 +28323,18 @@ public unsafe partial interface IVk
         int drmFd,
         DisplayHandleKHR display
     );
+
+    [NativeName("vkAcquireFullScreenExclusiveModeEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkAcquireFullScreenExclusiveModeEXT")]
+    Result AcquireFullScreenExclusiveModeEXT(DeviceHandle device, SwapchainHandleKHR swapchain);
 
     [NativeName("vkAcquireNextImage2KHR")]
     [SupportedApiProfile(
@@ -27021,6 +28429,41 @@ public unsafe partial interface IVk
     )]
     [NativeFunction("vulkan", EntryPoint = "vkAcquireProfilingLockKHR")]
     Result AcquireProfilingLockKHR(DeviceHandle device, Ref<AcquireProfilingLockInfoKHR> pInfo);
+
+    [NativeName("vkAcquireWinrtDisplayNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_acquire_winrt_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkAcquireWinrtDisplayNV")]
+    Result AcquireWinrtDisplayNV(PhysicalDeviceHandle physicalDevice, DisplayHandleKHR display);
+
+    [NativeName("vkAcquireXlibDisplayEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_acquire_xlib_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkAcquireXlibDisplayEXT")]
+    Result AcquireXlibDisplayEXT(
+        PhysicalDeviceHandle physicalDevice,
+        void* dpy,
+        DisplayHandleKHR display
+    );
+
+    [NativeName("vkAcquireXlibDisplayEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_acquire_xlib_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkAcquireXlibDisplayEXT")]
+    Result AcquireXlibDisplayEXT(
+        PhysicalDeviceHandle physicalDevice,
+        Ref dpy,
+        DisplayHandleKHR display
+    );
 
     [NativeName("vkAllocateCommandBuffers")]
     [SupportedApiProfile(
@@ -37892,6 +39335,26 @@ public unsafe partial interface IVk
         Ref<AccelerationStructureHandleNV> pAccelerationStructure
     );
 
+    [NativeName("vkCreateAndroidSurfaceKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_android_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateAndroidSurfaceKHR")]
+    Result CreateAndroidSurfaceKHR(
+        InstanceHandle instance,
+        AndroidSurfaceCreateInfoKHR* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    );
+
+    [NativeName("vkCreateAndroidSurfaceKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_android_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateAndroidSurfaceKHR")]
+    Result CreateAndroidSurfaceKHR(
+        InstanceHandle instance,
+        Ref<AndroidSurfaceCreateInfoKHR> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    );
+
     [NativeName("vkCreateBuffer")]
     [SupportedApiProfile(
         "vulkan",
@@ -37960,6 +39423,40 @@ public unsafe partial interface IVk
         Ref<BufferCreateInfo> pCreateInfo,
         Ref<AllocationCallbacks> pAllocator,
         Ref<BufferHandle> pBuffer
+    );
+
+    [NativeName("vkCreateBufferCollectionFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_buffer_collection"],
+        ImpliesSets = [
+            "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+            "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateBufferCollectionFUCHSIA")]
+    Result CreateBufferCollectionFUCHSIA(
+        DeviceHandle device,
+        BufferCollectionCreateInfoFUCHSIA* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        BufferCollectionHandleFUCHSIA* pCollection
+    );
+
+    [NativeName("vkCreateBufferCollectionFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_buffer_collection"],
+        ImpliesSets = [
+            "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+            "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateBufferCollectionFUCHSIA")]
+    Result CreateBufferCollectionFUCHSIA(
+        DeviceHandle device,
+        Ref<BufferCollectionCreateInfoFUCHSIA> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<BufferCollectionHandleFUCHSIA> pCollection
     );
 
     [NativeName("vkCreateBufferView")]
@@ -39012,6 +40509,34 @@ public unsafe partial interface IVk
         Ref<ImageHandle> pImage
     );
 
+    [NativeName("vkCreateImagePipeSurfaceFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_imagepipe_surface"],
+        ImpliesSets = ["VK_KHR_surface"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateImagePipeSurfaceFUCHSIA")]
+    Result CreateImagePipeSurfaceFUCHSIA(
+        InstanceHandle instance,
+        ImagePipeSurfaceCreateInfoFUCHSIA* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    );
+
+    [NativeName("vkCreateImagePipeSurfaceFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_imagepipe_surface"],
+        ImpliesSets = ["VK_KHR_surface"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateImagePipeSurfaceFUCHSIA")]
+    Result CreateImagePipeSurfaceFUCHSIA(
+        InstanceHandle instance,
+        Ref<ImagePipeSurfaceCreateInfoFUCHSIA> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    );
+
     [NativeName("vkCreateImageView")]
     [SupportedApiProfile(
         "vulkan",
@@ -39256,6 +40781,66 @@ public unsafe partial interface IVk
         Ref<InstanceCreateInfo> pCreateInfo,
         Ref<AllocationCallbacks> pAllocator,
         Ref<InstanceHandle> pInstance
+    );
+
+    [NativeName("vkCreateIOSSurfaceMVK")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateIOSSurfaceMVK")]
+    Result CreateIosSurfaceMVK(
+        InstanceHandle instance,
+        IosSurfaceCreateInfoMVK* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    );
+
+    [NativeName("vkCreateIOSSurfaceMVK")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateIOSSurfaceMVK")]
+    Result CreateIosSurfaceMVK(
+        InstanceHandle instance,
+        Ref<IosSurfaceCreateInfoMVK> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    );
+
+    [NativeName("vkCreateMacOSSurfaceMVK")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateMacOSSurfaceMVK")]
+    Result CreateMacOSSurfaceMVK(
+        InstanceHandle instance,
+        MacOSSurfaceCreateInfoMVK* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    );
+
+    [NativeName("vkCreateMacOSSurfaceMVK")]
+    [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateMacOSSurfaceMVK")]
+    Result CreateMacOSSurfaceMVK(
+        InstanceHandle instance,
+        Ref<MacOSSurfaceCreateInfoMVK> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    );
+
+    [NativeName("vkCreateMetalSurfaceEXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateMetalSurfaceEXT")]
+    Result CreateMetalSurfaceEXT(
+        InstanceHandle instance,
+        MetalSurfaceCreateInfoEXT* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    );
+
+    [NativeName("vkCreateMetalSurfaceEXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateMetalSurfaceEXT")]
+    Result CreateMetalSurfaceEXT(
+        InstanceHandle instance,
+        Ref<MetalSurfaceCreateInfoEXT> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
     );
 
     [NativeName("vkCreateMicromapEXT")]
@@ -39980,6 +41565,26 @@ public unsafe partial interface IVk
         Ref<SamplerYcbcrConversionHandle> pYcbcrConversion
     );
 
+    [NativeName("vkCreateScreenSurfaceQNX")]
+    [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateScreenSurfaceQNX")]
+    Result CreateScreenSurfaceQNX(
+        InstanceHandle instance,
+        ScreenSurfaceCreateInfoQNX* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    );
+
+    [NativeName("vkCreateScreenSurfaceQNX")]
+    [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateScreenSurfaceQNX")]
+    Result CreateScreenSurfaceQNX(
+        InstanceHandle instance,
+        Ref<ScreenSurfaceCreateInfoQNX> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    );
+
     [NativeName("vkCreateSemaphore")]
     [SupportedApiProfile(
         "vulkan",
@@ -40212,6 +41817,26 @@ public unsafe partial interface IVk
         Ref<SwapchainHandleKHR> pSwapchains
     );
 
+    [NativeName("vkCreateSurfaceOHOS")]
+    [SupportedApiProfile("vulkan", ["VK_OHOS_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateSurfaceOHOS")]
+    Result CreateSurfaceOHOS(
+        InstanceHandle instance,
+        SurfaceCreateInfoOHOS* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    );
+
+    [NativeName("vkCreateSurfaceOHOS")]
+    [SupportedApiProfile("vulkan", ["VK_OHOS_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateSurfaceOHOS")]
+    Result CreateSurfaceOHOS(
+        InstanceHandle instance,
+        Ref<SurfaceCreateInfoOHOS> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    );
+
     [NativeName("vkCreateSwapchainKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateSwapchainKHR")]
@@ -40346,6 +41971,106 @@ public unsafe partial interface IVk
         Ref<VideoSessionParametersCreateInfoKHR> pCreateInfo,
         Ref<AllocationCallbacks> pAllocator,
         Ref<VideoSessionParametersHandleKHR> pVideoSessionParameters
+    );
+
+    [NativeName("vkCreateViSurfaceNN")]
+    [SupportedApiProfile("vulkan", ["VK_NN_vi_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateViSurfaceNN")]
+    Result CreateViSurfaceNN(
+        InstanceHandle instance,
+        ViSurfaceCreateInfoNN* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    );
+
+    [NativeName("vkCreateViSurfaceNN")]
+    [SupportedApiProfile("vulkan", ["VK_NN_vi_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateViSurfaceNN")]
+    Result CreateViSurfaceNN(
+        InstanceHandle instance,
+        Ref<ViSurfaceCreateInfoNN> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    );
+
+    [NativeName("vkCreateWaylandSurfaceKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateWaylandSurfaceKHR")]
+    Result CreateWaylandSurfaceKHR(
+        InstanceHandle instance,
+        WaylandSurfaceCreateInfoKHR* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    );
+
+    [NativeName("vkCreateWaylandSurfaceKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateWaylandSurfaceKHR")]
+    Result CreateWaylandSurfaceKHR(
+        InstanceHandle instance,
+        Ref<WaylandSurfaceCreateInfoKHR> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    );
+
+    [NativeName("vkCreateWin32SurfaceKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateWin32SurfaceKHR")]
+    Result CreateWin32SurfaceKHR(
+        InstanceHandle instance,
+        Win32SurfaceCreateInfoKHR* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    );
+
+    [NativeName("vkCreateWin32SurfaceKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateWin32SurfaceKHR")]
+    Result CreateWin32SurfaceKHR(
+        InstanceHandle instance,
+        Ref<Win32SurfaceCreateInfoKHR> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    );
+
+    [NativeName("vkCreateXcbSurfaceKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateXcbSurfaceKHR")]
+    Result CreateXcbSurfaceKHR(
+        InstanceHandle instance,
+        XcbSurfaceCreateInfoKHR* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    );
+
+    [NativeName("vkCreateXcbSurfaceKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateXcbSurfaceKHR")]
+    Result CreateXcbSurfaceKHR(
+        InstanceHandle instance,
+        Ref<XcbSurfaceCreateInfoKHR> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
+    );
+
+    [NativeName("vkCreateXlibSurfaceKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateXlibSurfaceKHR")]
+    Result CreateXlibSurfaceKHR(
+        InstanceHandle instance,
+        XlibSurfaceCreateInfoKHR* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        SurfaceHandleKHR* pSurface
+    );
+
+    [NativeName("vkCreateXlibSurfaceKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateXlibSurfaceKHR")]
+    Result CreateXlibSurfaceKHR(
+        InstanceHandle instance,
+        Ref<XlibSurfaceCreateInfoKHR> pCreateInfo,
+        Ref<AllocationCallbacks> pAllocator,
+        Ref<SurfaceHandleKHR> pSurface
     );
 
     [NativeName("vkDebugMarkerSetObjectNameEXT")]
@@ -40535,6 +42260,38 @@ public unsafe partial interface IVk
     void DestroyBuffer(
         DeviceHandle device,
         BufferHandle buffer,
+        Ref<AllocationCallbacks> pAllocator
+    );
+
+    [NativeName("vkDestroyBufferCollectionFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_buffer_collection"],
+        ImpliesSets = [
+            "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+            "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkDestroyBufferCollectionFUCHSIA")]
+    void DestroyBufferCollectionFUCHSIA(
+        DeviceHandle device,
+        BufferCollectionHandleFUCHSIA collection,
+        AllocationCallbacks* pAllocator
+    );
+
+    [NativeName("vkDestroyBufferCollectionFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_buffer_collection"],
+        ImpliesSets = [
+            "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+            "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkDestroyBufferCollectionFUCHSIA")]
+    void DestroyBufferCollectionFUCHSIA(
+        DeviceHandle device,
+        BufferCollectionHandleFUCHSIA collection,
         Ref<AllocationCallbacks> pAllocator
     );
 
@@ -43147,6 +44904,19 @@ public unsafe partial interface IVk
         Ref<ShaderInstrumentationMetricDescriptionARM> pDescriptions
     );
 
+    [NativeName("vkExportMetalObjectsEXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+    [NativeFunction("vulkan", EntryPoint = "vkExportMetalObjectsEXT")]
+    void ExportMetalObjectsEXT(DeviceHandle device, ExportMetalObjectsInfoEXT* pMetalObjectsInfo);
+
+    [NativeName("vkExportMetalObjectsEXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
+    [NativeFunction("vulkan", EntryPoint = "vkExportMetalObjectsEXT")]
+    void ExportMetalObjectsEXT(
+        DeviceHandle device,
+        Ref<ExportMetalObjectsInfoEXT> pMetalObjectsInfo
+    );
+
     [NativeName("vkFlushMappedMemoryRanges")]
     [SupportedApiProfile(
         "vulkan",
@@ -43625,6 +45395,70 @@ public unsafe partial interface IVk
         DeviceHandle device,
         Ref<AccelerationStructureCaptureDescriptorDataInfoEXT> pInfo,
         Ref pData
+    );
+
+    [NativeName("vkGetAndroidHardwareBufferPropertiesANDROID")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ANDROID_external_memory_android_hardware_buffer"],
+        ImpliesSets = [
+            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetAndroidHardwareBufferPropertiesANDROID")]
+    Result GetAndroidHardwareBufferPropertiesANDROID(
+        DeviceHandle device,
+        void* buffer,
+        AndroidHardwareBufferPropertiesANDROID* pProperties
+    );
+
+    [NativeName("vkGetAndroidHardwareBufferPropertiesANDROID")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ANDROID_external_memory_android_hardware_buffer"],
+        ImpliesSets = [
+            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetAndroidHardwareBufferPropertiesANDROID")]
+    Result GetAndroidHardwareBufferPropertiesANDROID(
+        DeviceHandle device,
+        Ref buffer,
+        Ref<AndroidHardwareBufferPropertiesANDROID> pProperties
+    );
+
+    [NativeName("vkGetBufferCollectionPropertiesFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_buffer_collection"],
+        ImpliesSets = [
+            "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+            "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetBufferCollectionPropertiesFUCHSIA")]
+    Result GetBufferCollectionPropertiesFUCHSIA(
+        DeviceHandle device,
+        BufferCollectionHandleFUCHSIA collection,
+        BufferCollectionPropertiesFUCHSIA* pProperties
+    );
+
+    [NativeName("vkGetBufferCollectionPropertiesFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_buffer_collection"],
+        ImpliesSets = [
+            "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+            "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetBufferCollectionPropertiesFUCHSIA")]
+    Result GetBufferCollectionPropertiesFUCHSIA(
+        DeviceHandle device,
+        BufferCollectionHandleFUCHSIA collection,
+        Ref<BufferCollectionPropertiesFUCHSIA> pProperties
     );
 
     [NativeName("vkGetBufferDeviceAddress")]
@@ -44787,6 +46621,44 @@ public unsafe partial interface IVk
         Ref<DeviceGroupPresentCapabilitiesKHR> pDeviceGroupPresentCapabilities
     );
 
+    [NativeName("vkGetDeviceGroupSurfacePresentModes2EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_EXT_full_screen_exclusive+VK_KHR_device_group",
+            "VK_EXT_full_screen_exclusive+VK_VERSION_1_1",
+        ],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT")]
+    Result GetDeviceGroupSurfacePresentModes2EXT(
+        DeviceHandle device,
+        PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+        DeviceGroupPresentModeFlagsKHR* pModes
+    );
+
+    [NativeName("vkGetDeviceGroupSurfacePresentModes2EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_EXT_full_screen_exclusive+VK_KHR_device_group",
+            "VK_EXT_full_screen_exclusive+VK_VERSION_1_1",
+        ],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT")]
+    Result GetDeviceGroupSurfacePresentModes2EXT(
+        DeviceHandle device,
+        Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+        Ref<DeviceGroupPresentModeFlagsKHR> pModes
+    );
+
     [NativeName("vkGetDeviceGroupSurfacePresentModesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45730,6 +47602,32 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetFenceStatus")]
     Result GetFenceStatus(DeviceHandle device, FenceHandle fence);
 
+    [NativeName("vkGetFenceWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_win32"],
+        ImpliesSets = ["VK_KHR_external_fence"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetFenceWin32HandleKHR")]
+    Result GetFenceWin32HandleKHR(
+        DeviceHandle device,
+        FenceGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+        void** pHandle
+    );
+
+    [NativeName("vkGetFenceWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_win32"],
+        ImpliesSets = ["VK_KHR_external_fence"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetFenceWin32HandleKHR")]
+    Result GetFenceWin32HandleKHR(
+        DeviceHandle device,
+        Ref<FenceGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+        Ref2D pHandle
+    );
+
     [NativeName("vkGetFramebufferTilePropertiesQCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -46650,6 +48548,38 @@ public unsafe partial interface IVk
         Ref<GetLatencyMarkerInfoNV> pLatencyMarkerInfo
     );
 
+    [NativeName("vkGetMemoryAndroidHardwareBufferANDROID")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ANDROID_external_memory_android_hardware_buffer"],
+        ImpliesSets = [
+            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryAndroidHardwareBufferANDROID")]
+    Result GetMemoryAndroidHardwareBufferANDROID(
+        DeviceHandle device,
+        MemoryGetAndroidHardwareBufferInfoANDROID* pInfo,
+        void** pBuffer
+    );
+
+    [NativeName("vkGetMemoryAndroidHardwareBufferANDROID")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ANDROID_external_memory_android_hardware_buffer"],
+        ImpliesSets = [
+            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryAndroidHardwareBufferANDROID")]
+    Result GetMemoryAndroidHardwareBufferANDROID(
+        DeviceHandle device,
+        Ref<MemoryGetAndroidHardwareBufferInfoANDROID> pInfo,
+        Ref2D pBuffer
+    );
+
     [NativeName("vkGetMemoryFdKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -46742,6 +48672,104 @@ public unsafe partial interface IVk
         Ref<MemoryHostPointerPropertiesEXT> pMemoryHostPointerProperties
     );
 
+    [NativeName("vkGetMemoryMetalHandleEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_metal"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+            "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandleEXT")]
+    Result GetMemoryMetalHandleEXT(
+        DeviceHandle device,
+        MemoryGetMetalHandleInfoEXT* pGetMetalHandleInfo,
+        void** pHandle
+    );
+
+    [NativeName("vkGetMemoryMetalHandleEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_metal"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+            "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandleEXT")]
+    Result GetMemoryMetalHandleEXT(
+        DeviceHandle device,
+        Ref<MemoryGetMetalHandleInfoEXT> pGetMetalHandleInfo,
+        Ref2D pHandle
+    );
+
+    [NativeName("vkGetMemoryMetalHandlePropertiesEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_metal"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+            "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandlePropertiesEXT")]
+    Result GetMemoryMetalHandlePropertiesEXT(
+        DeviceHandle device,
+        ExternalMemoryHandleTypeFlags handleType,
+        void* pHandle,
+        MemoryMetalHandlePropertiesEXT* pMemoryMetalHandleProperties
+    );
+
+    [NativeName("vkGetMemoryMetalHandlePropertiesEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_metal"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_metal+VK_KHR_external_memory",
+            "VK_EXT_external_memory_metal+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryMetalHandlePropertiesEXT")]
+    Result GetMemoryMetalHandlePropertiesEXT(
+        DeviceHandle device,
+        ExternalMemoryHandleTypeFlags handleType,
+        Ref pHandle,
+        Ref<MemoryMetalHandlePropertiesEXT> pMemoryMetalHandleProperties
+    );
+
+    [NativeName("vkGetMemoryNativeBufferOHOS")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_OHOS_external_memory"],
+        ImpliesSets = [
+            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryNativeBufferOHOS")]
+    Result GetMemoryNativeBufferOHOS(
+        DeviceHandle device,
+        MemoryGetNativeBufferInfoOHOS* pInfo,
+        void** pBuffer
+    );
+
+    [NativeName("vkGetMemoryNativeBufferOHOS")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_OHOS_external_memory"],
+        ImpliesSets = [
+            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryNativeBufferOHOS")]
+    Result GetMemoryNativeBufferOHOS(
+        DeviceHandle device,
+        Ref<MemoryGetNativeBufferInfoOHOS> pInfo,
+        Ref2D pBuffer
+    );
+
     [NativeName("vkGetMemoryRemoteAddressNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -46772,6 +48800,166 @@ public unsafe partial interface IVk
         DeviceHandle device,
         Ref<MemoryGetRemoteAddressInfoNV> pMemoryGetRemoteAddressInfo,
         Ref2D pAddress
+    );
+
+    [NativeName("vkGetMemoryWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_win32"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+            "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleKHR")]
+    Result GetMemoryWin32HandleKHR(
+        DeviceHandle device,
+        MemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+        void** pHandle
+    );
+
+    [NativeName("vkGetMemoryWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_win32"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+            "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleKHR")]
+    Result GetMemoryWin32HandleKHR(
+        DeviceHandle device,
+        Ref<MemoryGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+        Ref2D pHandle
+    );
+
+    [NativeName("vkGetMemoryWin32HandleNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory_win32"],
+        ImpliesSets = ["VK_NV_external_memory"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleNV")]
+    Result GetMemoryWin32HandleNV(
+        DeviceHandle device,
+        DeviceMemoryHandle memory,
+        ExternalMemoryHandleTypeFlagsNV handleType,
+        void** pHandle
+    );
+
+    [NativeName("vkGetMemoryWin32HandleNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory_win32"],
+        ImpliesSets = ["VK_NV_external_memory"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandleNV")]
+    Result GetMemoryWin32HandleNV(
+        DeviceHandle device,
+        DeviceMemoryHandle memory,
+        ExternalMemoryHandleTypeFlagsNV handleType,
+        Ref2D pHandle
+    );
+
+    [NativeName("vkGetMemoryWin32HandlePropertiesKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_win32"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+            "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
+    Result GetMemoryWin32HandlePropertiesKHR(
+        DeviceHandle device,
+        ExternalMemoryHandleTypeFlags handleType,
+        void* handle,
+        MemoryWin32HandlePropertiesKHR* pMemoryWin32HandleProperties
+    );
+
+    [NativeName("vkGetMemoryWin32HandlePropertiesKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_win32"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_win32+VK_KHR_external_memory",
+            "VK_KHR_external_memory_win32+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
+    Result GetMemoryWin32HandlePropertiesKHR(
+        DeviceHandle device,
+        ExternalMemoryHandleTypeFlags handleType,
+        Ref handle,
+        Ref<MemoryWin32HandlePropertiesKHR> pMemoryWin32HandleProperties
+    );
+
+    [NativeName("vkGetMemoryZirconHandleFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_external_memory"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_external_memory",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryZirconHandleFUCHSIA")]
+    Result GetMemoryZirconHandleFUCHSIA(
+        DeviceHandle device,
+        MemoryGetZirconHandleInfoFUCHSIA* pGetZirconHandleInfo,
+        uint* pZirconHandle
+    );
+
+    [NativeName("vkGetMemoryZirconHandleFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_external_memory"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_external_memory",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryZirconHandleFUCHSIA")]
+    Result GetMemoryZirconHandleFUCHSIA(
+        DeviceHandle device,
+        Ref<MemoryGetZirconHandleInfoFUCHSIA> pGetZirconHandleInfo,
+        Ref<uint> pZirconHandle
+    );
+
+    [NativeName("vkGetMemoryZirconHandlePropertiesFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_external_memory"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_external_memory",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryZirconHandlePropertiesFUCHSIA")]
+    Result GetMemoryZirconHandlePropertiesFUCHSIA(
+        DeviceHandle device,
+        ExternalMemoryHandleTypeFlags handleType,
+        uint zirconHandle,
+        MemoryZirconHandlePropertiesFUCHSIA* pMemoryZirconHandleProperties
+    );
+
+    [NativeName("vkGetMemoryZirconHandlePropertiesFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_external_memory"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_capabilities+VK_KHR_external_memory",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetMemoryZirconHandlePropertiesFUCHSIA")]
+    Result GetMemoryZirconHandlePropertiesFUCHSIA(
+        DeviceHandle device,
+        ExternalMemoryHandleTypeFlags handleType,
+        uint zirconHandle,
+        Ref<MemoryZirconHandlePropertiesFUCHSIA> pMemoryZirconHandleProperties
     );
 
     [NativeName("vkGetMicromapBuildSizesEXT")]
@@ -46806,6 +48994,38 @@ public unsafe partial interface IVk
         AccelerationStructureBuildTypeKHR buildType,
         Ref<MicromapBuildInfoEXT> pBuildInfo,
         Ref<MicromapBuildSizesInfoEXT> pSizeInfo
+    );
+
+    [NativeName("vkGetNativeBufferPropertiesOHOS")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_OHOS_external_memory"],
+        ImpliesSets = [
+            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetNativeBufferPropertiesOHOS")]
+    Result GetNativeBufferPropertiesOHOS(
+        DeviceHandle device,
+        void* buffer,
+        NativeBufferPropertiesOHOS* pProperties
+    );
+
+    [NativeName("vkGetNativeBufferPropertiesOHOS")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_OHOS_external_memory"],
+        ImpliesSets = [
+            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetNativeBufferPropertiesOHOS")]
+    Result GetNativeBufferPropertiesOHOS(
+        DeviceHandle device,
+        Ref buffer,
+        Ref<NativeBufferPropertiesOHOS> pProperties
     );
 
     [NativeName("vkGetPartitionedAccelerationStructuresBuildSizesNV")]
@@ -48716,6 +50936,24 @@ public unsafe partial interface IVk
         Ref<QueueFamilyProperties2> pQueueFamilyProperties
     );
 
+    [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+    [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+    uint GetPhysicalDeviceScreenPresentationSupportQNX(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        void* window
+    );
+
+    [NativeName("vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+    [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+    MaybeBool<uint> GetPhysicalDeviceScreenPresentationSupportQNX(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        Ref window
+    );
+
     [NativeName("vkGetPhysicalDeviceSparseImageFormatProperties")]
     [SupportedApiProfile(
         "vulkan",
@@ -49032,6 +51270,40 @@ public unsafe partial interface IVk
         Ref<SurfaceFormatKHR> pSurfaceFormats
     );
 
+    [NativeName("vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+    Result GetPhysicalDeviceSurfacePresentModes2EXT(
+        PhysicalDeviceHandle physicalDevice,
+        PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+        uint* pPresentModeCount,
+        PresentModeKHR* pPresentModes
+    );
+
+    [NativeName("vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT")]
+    Result GetPhysicalDeviceSurfacePresentModes2EXT(
+        PhysicalDeviceHandle physicalDevice,
+        Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+        Ref<uint> pPresentModeCount,
+        Ref<PresentModeKHR> pPresentModes
+    );
+
     [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -49224,6 +51496,80 @@ public unsafe partial interface IVk
         Ref<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo,
         Ref<uint> pVideoFormatPropertyCount,
         Ref<VideoFormatPropertiesKHR> pVideoFormatProperties
+    );
+
+    [NativeName("vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
+    uint GetPhysicalDeviceWaylandPresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        void* display
+    );
+
+    [NativeName("vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWaylandPresentationSupportKHR")]
+    MaybeBool<uint> GetPhysicalDeviceWaylandPresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        Ref display
+    );
+
+    [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+    MaybeBool<uint> GetPhysicalDeviceWin32PresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex
+    );
+
+    [NativeName("vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
+    uint GetPhysicalDeviceWin32PresentationSupportRawKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex
+    );
+
+    [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
+    uint GetPhysicalDeviceXcbPresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        void* connection,
+        uint visual_id
+    );
+
+    [NativeName("vkGetPhysicalDeviceXcbPresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
+    MaybeBool<uint> GetPhysicalDeviceXcbPresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        Ref connection,
+        uint visual_id
+    );
+
+    [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+    uint GetPhysicalDeviceXlibPresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        void* dpy,
+        nuint visualID
+    );
+
+    [NativeName("vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+    [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
+    MaybeBool<uint> GetPhysicalDeviceXlibPresentationSupportKHR(
+        PhysicalDeviceHandle physicalDevice,
+        uint queueFamilyIndex,
+        Ref dpy,
+        nuint visualID
     );
 
     [NativeName("vkGetPipelineBinaryDataKHR")]
@@ -49774,6 +52120,34 @@ public unsafe partial interface IVk
         Ref<CheckpointDataNV> pCheckpointData
     );
 
+    [NativeName("vkGetRandROutputDisplayEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_acquire_xlib_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetRandROutputDisplayEXT")]
+    Result GetRandROutputDisplayEXT(
+        PhysicalDeviceHandle physicalDevice,
+        void* dpy,
+        nuint rrOutput,
+        DisplayHandleKHR* pDisplay
+    );
+
+    [NativeName("vkGetRandROutputDisplayEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_acquire_xlib_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetRandROutputDisplayEXT")]
+    Result GetRandROutputDisplayEXT(
+        PhysicalDeviceHandle physicalDevice,
+        Ref dpy,
+        nuint rrOutput,
+        Ref<DisplayHandleKHR> pDisplay
+    );
+
     [NativeName("vkGetRayTracingCaptureReplayShaderGroupHandlesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -50067,6 +52441,38 @@ public unsafe partial interface IVk
         Ref pData
     );
 
+    [NativeName("vkGetScreenBufferPropertiesQNX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QNX_external_memory_screen_buffer"],
+        ImpliesSets = [
+            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetScreenBufferPropertiesQNX")]
+    Result GetScreenBufferPropertiesQNX(
+        DeviceHandle device,
+        void* buffer,
+        ScreenBufferPropertiesQNX* pProperties
+    );
+
+    [NativeName("vkGetScreenBufferPropertiesQNX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QNX_external_memory_screen_buffer"],
+        ImpliesSets = [
+            "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
+            "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetScreenBufferPropertiesQNX")]
+    Result GetScreenBufferPropertiesQNX(
+        DeviceHandle device,
+        Ref buffer,
+        Ref<ScreenBufferPropertiesQNX> pProperties
+    );
+
     [NativeName("vkGetSemaphoreCounterValue")]
     [SupportedApiProfile(
         "vulkan",
@@ -50173,6 +52579,58 @@ public unsafe partial interface IVk
         DeviceHandle device,
         Ref<SemaphoreGetFdInfoKHR> pGetFdInfo,
         Ref<int> pFd
+    );
+
+    [NativeName("vkGetSemaphoreWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_win32"],
+        ImpliesSets = ["VK_KHR_external_semaphore"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreWin32HandleKHR")]
+    Result GetSemaphoreWin32HandleKHR(
+        DeviceHandle device,
+        SemaphoreGetWin32HandleInfoKHR* pGetWin32HandleInfo,
+        void** pHandle
+    );
+
+    [NativeName("vkGetSemaphoreWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_win32"],
+        ImpliesSets = ["VK_KHR_external_semaphore"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreWin32HandleKHR")]
+    Result GetSemaphoreWin32HandleKHR(
+        DeviceHandle device,
+        Ref<SemaphoreGetWin32HandleInfoKHR> pGetWin32HandleInfo,
+        Ref2D pHandle
+    );
+
+    [NativeName("vkGetSemaphoreZirconHandleFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_external_semaphore"],
+        ImpliesSets = ["VK_KHR_external_semaphore", "VK_KHR_external_semaphore_capabilities"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreZirconHandleFUCHSIA")]
+    Result GetSemaphoreZirconHandleFUCHSIA(
+        DeviceHandle device,
+        SemaphoreGetZirconHandleInfoFUCHSIA* pGetZirconHandleInfo,
+        uint* pZirconHandle
+    );
+
+    [NativeName("vkGetSemaphoreZirconHandleFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_external_semaphore"],
+        ImpliesSets = ["VK_KHR_external_semaphore", "VK_KHR_external_semaphore_capabilities"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreZirconHandleFUCHSIA")]
+    Result GetSemaphoreZirconHandleFUCHSIA(
+        DeviceHandle device,
+        Ref<SemaphoreGetZirconHandleInfoFUCHSIA> pGetZirconHandleInfo,
+        Ref<uint> pZirconHandle
     );
 
     [NativeName("vkGetShaderBinaryDataEXT")]
@@ -50639,6 +53097,32 @@ public unsafe partial interface IVk
         Ref<VideoSessionMemoryRequirementsKHR> pMemoryRequirements
     );
 
+    [NativeName("vkGetWinrtDisplayNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_acquire_winrt_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetWinrtDisplayNV")]
+    Result GetWinrtDisplayNV(
+        PhysicalDeviceHandle physicalDevice,
+        uint deviceRelativeId,
+        DisplayHandleKHR* pDisplay
+    );
+
+    [NativeName("vkGetWinrtDisplayNV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_acquire_winrt_display"],
+        ImpliesSets = ["VK_EXT_direct_mode_display"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkGetWinrtDisplayNV")]
+    Result GetWinrtDisplayNV(
+        PhysicalDeviceHandle physicalDevice,
+        uint deviceRelativeId,
+        Ref<DisplayHandleKHR> pDisplay
+    );
+
     [NativeName("vkImportFenceFdKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -50662,6 +53146,30 @@ public unsafe partial interface IVk
     )]
     [NativeFunction("vulkan", EntryPoint = "vkImportFenceFdKHR")]
     Result ImportFenceFdKHR(DeviceHandle device, Ref<ImportFenceFdInfoKHR> pImportFenceFdInfo);
+
+    [NativeName("vkImportFenceWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_win32"],
+        ImpliesSets = ["VK_KHR_external_fence"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkImportFenceWin32HandleKHR")]
+    Result ImportFenceWin32HandleKHR(
+        DeviceHandle device,
+        ImportFenceWin32HandleInfoKHR* pImportFenceWin32HandleInfo
+    );
+
+    [NativeName("vkImportFenceWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_win32"],
+        ImpliesSets = ["VK_KHR_external_fence"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkImportFenceWin32HandleKHR")]
+    Result ImportFenceWin32HandleKHR(
+        DeviceHandle device,
+        Ref<ImportFenceWin32HandleInfoKHR> pImportFenceWin32HandleInfo
+    );
 
     [NativeName("vkImportSemaphoreFdKHR")]
     [SupportedApiProfile(
@@ -50691,6 +53199,54 @@ public unsafe partial interface IVk
     Result ImportSemaphoreFdKHR(
         DeviceHandle device,
         Ref<ImportSemaphoreFdInfoKHR> pImportSemaphoreFdInfo
+    );
+
+    [NativeName("vkImportSemaphoreWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_win32"],
+        ImpliesSets = ["VK_KHR_external_semaphore"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreWin32HandleKHR")]
+    Result ImportSemaphoreWin32HandleKHR(
+        DeviceHandle device,
+        ImportSemaphoreWin32HandleInfoKHR* pImportSemaphoreWin32HandleInfo
+    );
+
+    [NativeName("vkImportSemaphoreWin32HandleKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_win32"],
+        ImpliesSets = ["VK_KHR_external_semaphore"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreWin32HandleKHR")]
+    Result ImportSemaphoreWin32HandleKHR(
+        DeviceHandle device,
+        Ref<ImportSemaphoreWin32HandleInfoKHR> pImportSemaphoreWin32HandleInfo
+    );
+
+    [NativeName("vkImportSemaphoreZirconHandleFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_external_semaphore"],
+        ImpliesSets = ["VK_KHR_external_semaphore", "VK_KHR_external_semaphore_capabilities"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreZirconHandleFUCHSIA")]
+    Result ImportSemaphoreZirconHandleFUCHSIA(
+        DeviceHandle device,
+        ImportSemaphoreZirconHandleInfoFUCHSIA* pImportSemaphoreZirconHandleInfo
+    );
+
+    [NativeName("vkImportSemaphoreZirconHandleFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_external_semaphore"],
+        ImpliesSets = ["VK_KHR_external_semaphore", "VK_KHR_external_semaphore_capabilities"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreZirconHandleFUCHSIA")]
+    Result ImportSemaphoreZirconHandleFUCHSIA(
+        DeviceHandle device,
+        Ref<ImportSemaphoreZirconHandleInfoFUCHSIA> pImportSemaphoreZirconHandleInfo
     );
 
     [NativeName("vkInitializePerformanceApiINTEL")]
@@ -51004,6 +53560,16 @@ public unsafe partial interface IVk
         uint srcCacheCount,
         Ref<ValidationCacheHandleEXT> pSrcCaches
     );
+
+    [NativeName("vkNegotiateLoaderLayerInterfaceVersion")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkNegotiateLoaderLayerInterfaceVersion")]
+    Result NegotiateLoaderLayerInterfaceVersion(NegotiateLayerInterface* pVersionStruct);
+
+    [NativeName("vkNegotiateLoaderLayerInterfaceVersion")]
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkNegotiateLoaderLayerInterfaceVersion")]
+    Result NegotiateLoaderLayerInterfaceVersion(Ref<NegotiateLayerInterface> pVersionStruct);
 
     [NativeName("vkQueueBeginDebugUtilsLabelEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
@@ -51493,6 +54059,18 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkReleaseDisplayEXT")]
     Result ReleaseDisplayEXT(PhysicalDeviceHandle physicalDevice, DisplayHandleKHR display);
 
+    [NativeName("vkReleaseFullScreenExclusiveModeEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_full_screen_exclusive"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkReleaseFullScreenExclusiveModeEXT")]
+    Result ReleaseFullScreenExclusiveModeEXT(DeviceHandle device, SwapchainHandleKHR swapchain);
+
     [NativeName("vkReleasePerformanceConfigurationINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkReleasePerformanceConfigurationINTEL")]
@@ -51805,6 +54383,70 @@ public unsafe partial interface IVk
         QueryPoolHandle queryPool,
         uint firstQuery,
         uint queryCount
+    );
+
+    [NativeName("vkSetBufferCollectionBufferConstraintsFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_buffer_collection"],
+        ImpliesSets = [
+            "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+            "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkSetBufferCollectionBufferConstraintsFUCHSIA")]
+    Result SetBufferCollectionBufferConstraintsFUCHSIA(
+        DeviceHandle device,
+        BufferCollectionHandleFUCHSIA collection,
+        BufferConstraintsInfoFUCHSIA* pBufferConstraintsInfo
+    );
+
+    [NativeName("vkSetBufferCollectionBufferConstraintsFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_buffer_collection"],
+        ImpliesSets = [
+            "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+            "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkSetBufferCollectionBufferConstraintsFUCHSIA")]
+    Result SetBufferCollectionBufferConstraintsFUCHSIA(
+        DeviceHandle device,
+        BufferCollectionHandleFUCHSIA collection,
+        Ref<BufferConstraintsInfoFUCHSIA> pBufferConstraintsInfo
+    );
+
+    [NativeName("vkSetBufferCollectionImageConstraintsFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_buffer_collection"],
+        ImpliesSets = [
+            "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+            "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkSetBufferCollectionImageConstraintsFUCHSIA")]
+    Result SetBufferCollectionImageConstraintsFUCHSIA(
+        DeviceHandle device,
+        BufferCollectionHandleFUCHSIA collection,
+        ImageConstraintsInfoFUCHSIA* pImageConstraintsInfo
+    );
+
+    [NativeName("vkSetBufferCollectionImageConstraintsFUCHSIA")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_FUCHSIA_buffer_collection"],
+        ImpliesSets = [
+            "VK_FUCHSIA_external_memory+VK_KHR_sampler_ycbcr_conversion",
+            "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkSetBufferCollectionImageConstraintsFUCHSIA")]
+    Result SetBufferCollectionImageConstraintsFUCHSIA(
+        DeviceHandle device,
+        BufferCollectionHandleFUCHSIA collection,
+        Ref<ImageConstraintsInfoFUCHSIA> pImageConstraintsInfo
     );
 
     [NativeName("vkSetDebugUtilsObjectNameEXT")]

@@ -29,11 +29,36 @@ internal static partial class Jobs
                     .ClangScraper(
                         new()
                         {
+                            CacheKey = "Windows",
                             ScrapeIf = static () => OperatingSystem.IsWindows(),
 
-                            ClangSharpResponseFiles = ["eng/silktouch/opencl/**/generate.rsp"],
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/opencl/opencl-windows/generate.rsp",
+                            ],
                             InputSourceRoot = "sources/OpenCL",
                             InputTestRoot = "tests/OpenCL",
+                        }
+                    )
+                    .ClangScraper(
+                        new()
+                        {
+                            CacheKey = "Linux",
+                            ScrapeIf = static () => OperatingSystem.IsLinux(),
+                            ExitAfterGenerateCacheOnlyRun = true,
+
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/opencl/opencl-linux/generate.rsp",
+                            ],
+                            InputSourceRoot = "sources/OpenCL",
+                            InputTestRoot = "tests/OpenCL",
+                        }
+                    )
+                    .BakeSourceSets(
+                        new()
+                        {
+                            SourceSets = new() { ["cl-windows"] = "cl", ["cl-linux"] = "cl" },
                         }
                     )
                     .MarkNativeNames()

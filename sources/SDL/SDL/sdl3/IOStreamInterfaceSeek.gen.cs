@@ -3,6 +3,7 @@
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -12,8 +13,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct IOStreamInterfaceSeek : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, long, IOWhence, long> Handle =>
-        (delegate* unmanaged<void*, long, IOWhence, long>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, long, IOWhence, long> Handle =>
+        ref *(delegate* unmanaged<void*, long, IOWhence, long>*)Pointer;
 
     public IOStreamInterfaceSeek(delegate* unmanaged<void*, long, IOWhence, long> ptr) =>
         Pointer = ptr;

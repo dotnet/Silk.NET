@@ -10,4 +10,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_d3d11_device_source_khr")]
-public enum D3D11DeviceSourceKHR : uint { }
+public enum D3D11DeviceSourceKHR : uint
+{
+    [NativeName("CL_D3D11_DEVICE_KHR")]
+    Device = 16409,
+
+    [NativeName("CL_D3D11_DXGI_ADAPTER_KHR")]
+    DxgiAdapter = 16410,
+}

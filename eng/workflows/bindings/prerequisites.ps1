@@ -54,7 +54,7 @@ try {
       $IsWindows {}
       $IsLinux {
         sudo apt-get update
-        sudo apt-get install -y libx11-dev libgl-dev libglx-dev libxcb1-dev libxcb-glx0-dev libegl-dev
+        sudo apt-get install -y libx11-dev libgl-dev libglx-dev libxcb1-dev libxcb-glx0-dev libegl-dev libxrandr-dev libva-dev
       }
       $IsMacOS {}
     }

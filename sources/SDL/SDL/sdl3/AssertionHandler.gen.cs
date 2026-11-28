@@ -3,6 +3,7 @@
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -12,8 +13,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct AssertionHandler : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<AssertData*, void*, AssertState> Handle =>
-        (delegate* unmanaged<AssertData*, void*, AssertState>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<AssertData*, void*, AssertState> Handle =>
+        ref *(delegate* unmanaged<AssertData*, void*, AssertState>*)Pointer;
 
     public AssertionHandler(delegate* unmanaged<AssertData*, void*, AssertState> ptr) =>
         Pointer = ptr;

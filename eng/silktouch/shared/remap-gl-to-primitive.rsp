@@ -1,0 +1,4 @@
+--remap
+__GLXFBConfigRec*=void*
+__GLXcontextRec*=void*
+__GLsync*=void*

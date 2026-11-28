@@ -10,4 +10,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_command_properties_khr")]
-public enum CommandPropertiesKHR : ulong { }
+public enum CommandPropertiesKHR : ulong
+{
+    [NativeName("CL_MUTABLE_DISPATCH_UPDATABLE_FIELDS_KHR")]
+    UpdatableFields = 4785,
+
+    [NativeName("CL_MUTABLE_DISPATCH_ASSERTS_KHR")]
+    Asserts = 4792,
+}

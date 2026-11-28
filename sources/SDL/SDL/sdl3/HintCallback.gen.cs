@@ -3,6 +3,7 @@
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -12,8 +13,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct HintCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> Handle =>
-        (delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void>)Pointer;
+
+    [UnscopedRef]
+    public ref delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> Handle =>
+        ref *(delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void>*)Pointer;
 
     public HintCallback(delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> ptr) =>
         Pointer = ptr;

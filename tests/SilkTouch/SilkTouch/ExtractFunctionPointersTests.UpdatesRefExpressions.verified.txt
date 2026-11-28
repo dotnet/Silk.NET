@@ -1,0 +1,54 @@
+﻿// _Anonymous1_e__Union_clGetPlatformIDs.gen.cs @ OpenCL/_Anonymous1_e__Union_clGetPlatformIDs.gen.cs
+using System.Diagnostics.CodeAnalysis;
+
+[NativeName("_Anonymous1_e__Union_clGetPlatformIDs")]
+[Transformed]
+[NameAffix("Prefix", "FunctionPointerNameFallbackParent", nameof(_Anonymous1_e__Union))]
+public unsafe readonly struct _Anonymous1_e__Union_clGetPlatformIDs : IDisposable
+{
+    private readonly void* _pointer;
+    [UnscopedRef]
+    public ref delegate* unmanaged<uint, cl_platform_id**, uint*, int> Handle => ref *(delegate* unmanaged<uint, cl_platform_id**, uint*, int> *)_pointer;
+
+    public _Anonymous1_e__Union_clGetPlatformIDs(delegate* unmanaged<uint, cl_platform_id**, uint*, int> ptr) => _pointer = ptr;
+    public _Anonymous1_e__Union_clGetPlatformIDs(_Anonymous1_e__Union_clGetPlatformIDsDelegate proc) => _pointer = SilkMarshal.DelegateToPtr(proc);
+    public void Dispose() => SilkMarshal.Free(_pointer);
+    public static implicit operator _Anonymous1_e__Union_clGetPlatformIDs(delegate* unmanaged<uint, cl_platform_id**, uint*, int> pfn) => new(pfn);
+    public static implicit operator delegate* unmanaged<uint, cl_platform_id**, uint*, int> (_Anonymous1_e__Union_clGetPlatformIDs pfn) => (delegate* unmanaged<uint, cl_platform_id**, uint*, int> )pfn._pointer;
+}
+
+// _Anonymous1_e__Union_clGetPlatformIDsDelegate.gen.cs @ OpenCL/_Anonymous1_e__Union_clGetPlatformIDsDelegate.gen.cs
+using System.Diagnostics.CodeAnalysis;
+
+[NativeName("_Anonymous1_e__Union_clGetPlatformIDs")]
+[Transformed]
+[NameAffix("Prefix", "FunctionPointerParent", nameof(_Anonymous1_e__Union_clGetPlatformIDs))]
+[NameAffix("Suffix", "FunctionPointerDelegateType", "Delegate")]
+public unsafe delegate int _Anonymous1_e__Union_clGetPlatformIDsDelegate(uint arg0, cl_platform_id** arg1, uint* arg2);
+
+// _cl_icd_dispatch.gen.cs @ OpenCL/_cl_icd_dispatch.gen.cs
+public unsafe partial struct _cl_icd_dispatch
+{
+    [NativeTypeName("__AnonymousRecord_cl_icd_L48_C21")]
+    public _Anonymous1_e__Union Anonymous1;
+    [UnscopedRef]
+    public ref delegate* unmanaged<uint, cl_platform_id**, uint*, int> clGetPlatformIDs
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous1.clGetPlatformIDs.Handle;
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous1_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("clGetPlatformIDs_t *")]
+        public _Anonymous1_e__Union_clGetPlatformIDs clGetPlatformIDs;
+        [FieldOffset(0)]
+        [NativeTypeName("intptr_t")]
+        public nint clGetPlatformIDs_icd2_tag;
+    }
+}
